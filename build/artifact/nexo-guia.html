@@ -1,0 +1,527 @@
+<title>Así funciona Nexo Académico</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+  :root{
+    --paper:#ece6d9;
+    --paper-raised:#f7f3e9;
+    --ink:#221f1a;
+    --ink-muted:#6c6353;
+    --line:#d8d0bc;
+    --mark:#a8391f;
+    --mark-soft:#f1ddd4;
+    --accent:#2c4a7c;
+    --accent-soft:#dde4ef;
+
+    --font-display:"Newsreader",Georgia,"Times New Roman",serif;
+    --font-body:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    --font-mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+    --font-app:"Inter",-apple-system,sans-serif;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#181613;
+      --paper-raised:#211e19;
+      --ink:#eee8da;
+      --ink-muted:#9c9384;
+      --line:#3a352b;
+      --mark:#e2795c;
+      --mark-soft:#3a231b;
+      --accent:#8fadde;
+      --accent-soft:#20293a;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#181613; --paper-raised:#211e19; --ink:#eee8da; --ink-muted:#9c9384;
+    --line:#3a352b; --mark:#e2795c; --mark-soft:#3a231b; --accent:#8fadde; --accent-soft:#20293a;
+  }
+
+  /* fixed app-mockup palette (always dark, it's a device) */
+  :root{
+    --app-bg:#0b1220; --app-card:#121a2b; --app-card2:#0f1729; --app-border:#223047;
+    --app-text:#e8ecf6; --app-muted:#7c8aa3; --app-blue:#3b6fe0; --app-blue-soft:#182645;
+    --app-green:#3ecf8e; --app-green-soft:#112d22; --app-orange:#e0a53a; --app-orange-soft:#33240f;
+    --app-red:#e2664f; --app-red-soft:#331813;
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:var(--font-body); line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2{ font-family:var(--font-display); text-wrap:balance; margin:0; }
+  img{ max-width:100%; }
+
+  .hero{ max-width:760px; margin:0 auto; padding:60px 24px 30px; }
+  .hero .eyebrow{
+    font-family:var(--font-mono); font-size:12px; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--mark); font-weight:600; display:block; margin-bottom:16px;
+  }
+  .hero h1{ font-size:clamp(32px,6vw,48px); font-weight:600; font-style:italic; line-height:1.08; }
+  .hero p{ font-size:16.5px; color:var(--ink-muted); max-width:52ch; margin-top:18px; }
+
+  .railnav{
+    position:sticky; top:0; z-index:5;
+    background:color-mix(in srgb, var(--paper) 90%, transparent);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+    padding:10px 16px; display:flex; gap:7px; overflow-x:auto; scrollbar-width:none;
+  }
+  .railnav::-webkit-scrollbar{ display:none; }
+  .railnav a{
+    flex:none; font-family:var(--font-mono); font-size:11.5px; color:var(--ink-muted);
+    text-decoration:none; padding:6px 12px; border-radius:999px; border:1px solid var(--line);
+    white-space:nowrap;
+  }
+  .railnav a:hover{ color:var(--accent); border-color:var(--accent); }
+
+  main{ max-width:760px; margin:0 auto; padding:6px 24px 60px; }
+
+  .screen-block{
+    display:flex; flex-direction:column; align-items:center; gap:26px;
+    padding:52px 0; border-bottom:1px solid var(--line);
+    scroll-margin-top:56px;
+  }
+  .screen-block:last-of-type{ border-bottom:none; }
+
+  .note{ width:100%; max-width:420px; }
+  .step{
+    font-family:var(--font-mono); font-size:11.5px; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--mark); font-weight:600; display:block; margin-bottom:8px;
+  }
+  .note h2{ font-size:26px; font-weight:600; margin-bottom:10px; }
+  .note p{ color:var(--ink-muted); font-size:15px; margin:0 0 10px; }
+  .note p b{ color:var(--ink); font-weight:600; }
+
+  .script{
+    margin-top:16px; background:var(--paper-raised); border-left:2.5px solid var(--mark);
+    border-radius:2px; padding:14px 16px;
+  }
+  .script .lbl{
+    font-family:var(--font-mono); font-size:10px; letter-spacing:.12em; text-transform:uppercase;
+    color:var(--mark); font-weight:600; display:block; margin-bottom:6px;
+  }
+  .script q{ font-style:italic; color:var(--ink); font-size:14.5px; line-height:1.5; quotes:"“" "”"; }
+
+  /* ---------------- phone mockup ---------------- */
+  .phone{
+    flex:none; width:272px; background:#0a0a0a; border-radius:38px;
+    padding:12px; box-shadow:0 20px 40px -12px rgba(0,0,0,.35), 0 0 0 1px rgba(0,0,0,.4);
+  }
+  .phone .notch{
+    width:84px; height:18px; background:#0a0a0a; border-radius:0 0 14px 14px;
+    position:relative; margin:0 auto; z-index:2; top:12px;
+  }
+  .screen{
+    background:var(--app-bg); border-radius:26px; overflow:hidden; height:560px;
+    font-family:var(--font-app); color:var(--app-text); position:relative;
+    display:flex; flex-direction:column;
+  }
+  .sbar{ display:flex; justify-content:space-between; align-items:center; padding:16px 16px 0; font-size:9px; color:var(--app-muted); font-weight:600;}
+  .topb{ display:flex; align-items:center; justify-content:space-between; padding:10px 16px 12px; }
+  .topb .logo{ font-family:var(--font-app); font-weight:700; font-size:12.5px; letter-spacing:.04em; }
+  .topb .logo span{ color:var(--app-blue); display:block; font-weight:600; font-size:8px; letter-spacing:.1em; }
+  .avatar{ width:22px; height:22px; border-radius:7px; background:var(--app-blue); color:#fff; font-size:9px; font-weight:700; display:flex; align-items:center; justify-content:center; }
+  .scr-body{ padding:2px 14px 14px; overflow:hidden; flex:1; }
+  .scr-title{ font-size:16px; font-weight:700; margin:6px 0 2px; }
+  .scr-sub{ font-size:10px; color:var(--app-muted); margin-bottom:12px; }
+
+  .card{ background:var(--app-card); border:1px solid var(--app-border); border-radius:11px; padding:11px 12px; margin-bottom:9px; }
+  .card .lbl{ font-size:8px; letter-spacing:.07em; text-transform:uppercase; color:var(--app-muted); font-weight:600; }
+  .card .big{ font-size:19px; font-weight:700; margin-top:3px; }
+  .bar{ height:4px; border-radius:3px; background:var(--app-border); margin-top:7px; overflow:hidden; }
+  .bar i{ display:block; height:100%; border-radius:3px; }
+  .row{ display:flex; gap:7px; }
+  .row .card{ flex:1; }
+  .pill{ display:inline-flex; align-items:center; gap:4px; font-size:8.5px; font-weight:600; padding:3px 8px; border-radius:999px; }
+  .pill.blue{ background:var(--app-blue-soft); color:#9db9f5; }
+  .pill.green{ background:var(--app-green-soft); color:var(--app-green); }
+  .pill.orange{ background:var(--app-orange-soft); color:var(--app-orange); }
+  .pill.red{ background:var(--app-red-soft); color:var(--app-red); }
+  .btn{ display:flex; align-items:center; justify-content:center; gap:5px; background:var(--app-blue); color:#fff; font-size:10.5px; font-weight:700; padding:9px; border-radius:8px; margin-top:8px; }
+  .btn.ghost{ background:transparent; border:1px solid var(--app-border); color:var(--app-text); }
+  .list-row{ display:flex; justify-content:space-between; align-items:center; padding:9px 0; border-bottom:1px solid var(--app-border); font-size:10.5px; }
+  .list-row:last-child{ border-bottom:none; }
+  .list-row .m{ color:var(--app-muted); font-size:9px; }
+  .navmini{ display:flex; gap:5px; padding:0 14px 12px; }
+  .navmini span{ font-size:7.5px; color:var(--app-muted); background:var(--app-card2); padding:5px 7px; border-radius:6px; border:1px solid var(--app-border); }
+  .navmini span.on{ color:#fff; background:var(--app-blue-soft); border-color:var(--app-blue); }
+
+  .footer-note{ max-width:760px; margin:0 auto; padding:20px 24px 70px; color:var(--ink-muted); font-size:13px; text-align:center; }
+</style>
+
+<div class="hero">
+  <span class="eyebrow">Guía para alumnos</span>
+  <h1>Así funciona tu Área de Alumno</h1>
+  <p>Un recorrido pantalla a pantalla por la aplicación de Nexo Académico: lo que vais a ver, dónde está cada cosa y qué podéis hacer desde el móvil.</p>
+</div>
+
+<nav class="railnav">
+  <a href="#login">Acceso</a>
+  <a href="#inicio">Inicio</a>
+  <a href="#sesiones">Sesiones</a>
+  <a href="#informes">Informes</a>
+  <a href="#bonos">Bonos</a>
+  <a href="#calendario">Calendario</a>
+  <a href="#profesor">Mi Profesor</a>
+  <a href="#material">Material</a>
+  <a href="#tareas">Tareas</a>
+  <a href="#tests">Tests</a>
+  <a href="#avisos">Avisos</a>
+</nav>
+
+<main>
+
+  <!-- 1 LOGIN -->
+  <section class="screen-block" id="login">
+    <div class="phone"><div class="notch"></div><div class="screen">
+      <div class="scr-body" style="display:flex;flex-direction:column;justify-content:center;height:100%;padding-top:0;">
+        <div style="text-align:center;margin-bottom:22px;">
+          <div style="font-weight:700;font-size:18px;letter-spacing:.03em;">NEXO</div>
+          <div style="font-size:9px;letter-spacing:.18em;color:var(--app-blue);margin-top:2px;">ACADÉMICO</div>
+        </div>
+        <div style="display:flex;gap:6px;margin-bottom:12px;">
+          <div style="flex:1;text-align:center;font-size:10px;font-weight:700;background:var(--app-blue-soft);color:#a9c2f7;border:1px solid var(--app-blue);border-radius:8px;padding:8px;">Soy alumno</div>
+          <div style="flex:1;text-align:center;font-size:10px;font-weight:600;color:var(--app-muted);border:1px solid var(--app-border);border-radius:8px;padding:8px;">Soy profesor</div>
+        </div>
+        <div class="card">
+          <div style="font-weight:700;font-size:12px;margin-bottom:2px;">Acceso al área del alumno</div>
+          <div style="font-size:9px;color:var(--app-muted);margin-bottom:10px;">Introduce tus credenciales</div>
+          <div class="lbl" style="margin-bottom:3px;">Usuario</div>
+          <div style="background:var(--app-card2);border:1px solid var(--app-border);border-radius:7px;padding:7px 9px;font-size:10px;color:var(--app-muted);margin-bottom:8px;">ALU2026MCR</div>
+          <div class="lbl" style="margin-bottom:3px;">Contraseña</div>
+          <div style="background:var(--app-card2);border:1px solid var(--app-border);border-radius:7px;padding:7px 9px;font-size:10px;color:var(--app-muted);">••••••••</div>
+          <div class="btn">Entrar</div>
+        </div>
+        <div style="text-align:center;font-size:9px;color:var(--app-muted);margin-top:6px;">¿Problemas? <span style="color:#9db9f5;">Contacta con Nexo</span></div>
+      </div>
+    </div></div>
+    <div class="note">
+      <span class="step">Paso 1</span>
+      <h2>Entra en tu área personal</h2>
+      <p>Nexo Académico os entrega a cada uno un <b>usuario</b> (por ejemplo, <i>ALU2026MCR</i>) y una <b>contraseña</b>. Con esos datos accedéis siempre desde la pestaña <b>«Soy alumno»</b>.</p>
+      <p>No hace falta registrarse: el acceso ya viene preparado de fábrica, tanto para entrar desde el ordenador como desde el móvil.</p>
+      <div class="script">
+        <span class="lbl">Guion sugerido</span>
+        <q>Lo primero que vais a ver es esta pantalla de acceso. Nexo os pasa un usuario y una contraseña, elegís «Soy alumno» y entráis con esos datos.</q>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 INICIO -->
+  <section class="screen-block" id="inicio">
+    <div class="phone"><div class="notch"></div><div class="screen">
+      <div class="topb"><div class="logo">NEXO<span>ACADÉMICO</span></div><div class="avatar">JI</div></div>
+      <div class="scr-body">
+        <div class="scr-title">Hola, Juan</div>
+        <div class="scr-sub">4.º ESO · Matemáticas, Valenciano</div>
+        <div class="card"><div class="lbl">Horas restantes bono</div><div class="big">0.0h</div><div class="bar"><i style="width:2%;background:var(--app-orange);"></i></div></div>
+        <div class="row">
+          <div class="card"><div class="lbl">Sesiones este mes</div><div class="big" style="font-size:16px;">8</div></div>
+          <div class="card"><div class="lbl">Próxima clase</div><div style="font-size:11px;color:var(--app-muted);margin-top:8px;">Sin clases</div></div>
+        </div>
+        <div class="card" style="border-color:var(--app-red);">
+          <div class="lbl">Estado del bono</div>
+          <div class="bar" style="margin:7px 0;"><i style="width:100%;background:var(--app-red);"></i></div>
+          <div style="font-size:9px;color:#f0a99c;margin-bottom:6px;">Quedan 0.0h — renueva para no interrumpir</div>
+          <div class="btn" style="background:var(--app-orange);color:#241705;">↻ Renovar por WhatsApp</div>
+        </div>
+      </div>
+    </div></div>
+    <div class="note">
+      <span class="step">Paso 2</span>
+      <h2>Inicio: tu resumen de un vistazo</h2>
+      <p>Es la primera pantalla que veis al entrar: <b>horas de bono restantes</b>, <b>sesiones del mes</b> y vuestra <b>próxima clase</b>, todo en una sola pantalla.</p>
+      <p>Cuando el bono se agota, aparece el aviso en naranja con el botón <b>«Renovar por WhatsApp»</b>: se abre un mensaje ya escrito para pedir la renovación directamente al equipo de Nexo.</p>
+      <div class="script">
+        <span class="lbl">Guion sugerido</span>
+        <q>El Inicio es vuestro panel de control. Y si el bono se agota, no tenéis que buscar a nadie: pulsáis «Renovar» y se os abre WhatsApp ya escrito.</q>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 SESIONES -->
+  <section class="screen-block" id="sesiones">
+    <div class="phone"><div class="notch"></div><div class="screen">
+      <div class="topb"><div class="logo">NEXO<span>ACADÉMICO</span></div><div class="avatar">JI</div></div>
+      <div class="scr-body">
+        <div class="scr-title">Sesiones</div>
+        <div class="scr-sub">Historial de clases registradas</div>
+        <div class="card" style="padding:4px 12px;">
+          <div class="list-row"><div>26 ago<div class="m">Valenciano · 1h</div></div><span class="pill green">Confirmada</span></div>
+          <div class="list-row"><div>24 ago<div class="m">Valenciano · 2h</div></div><span class="pill green">Confirmada</span></div>
+          <div class="list-row"><div>19 ago<div class="m">Valenciano · 2h</div></div><span class="pill green">Confirmada</span></div>
+          <div class="list-row"><div>17 ago<div class="m">Valenciano · 2h</div></div><span class="pill green">Confirmada</span></div>
+        </div>
+      </div>
+    </div></div>
+    <div class="note">
+      <span class="step">Paso 3</span>
+      <h2>Sesiones: el historial de tus clases</h2>
+      <p>Cada vez que vuestro profesor registra una clase, aparece aquí con la <b>fecha</b>, la <b>asignatura</b> y la <b>duración</b>.</p>
+      <p>Es vuestro comprobante: podéis mirar hacia atrás en cualquier momento y ver todas las horas realmente impartidas frente a las de vuestro bono.</p>
+      <div class="script">
+        <span class="lbl">Guion sugerido</span>
+        <q>Aquí veis el historial de clases que ha registrado vuestro profesor: fecha, asignatura y duración de cada una, todo confirmado.</q>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 INFORMES -->
+  <section class="screen-block" id="informes">
+    <div class="phone"><div class="notch"></div><div class="screen">
+      <div class="topb"><div class="logo">NEXO<span>ACADÉMICO</span></div><div class="avatar">JI</div></div>
+      <div class="scr-body">
+        <div class="scr-title">Informes</div>
+        <div class="scr-sub">Seguimiento elaborado por Nexo</div>
+        <div class="card" style="text-align:center;padding:20px 14px;">
+          <div style="width:34px;height:34px;border-radius:9px;background:var(--app-blue-soft);color:#9db9f5;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;font-size:15px;">▤</div>
+          <div style="font-weight:700;font-size:11.5px;">Informe mensual</div>
+          <div style="font-size:9px;color:var(--app-muted);margin:2px 0 10px;">Juan Iborra Lopetegui · agosto 2026</div>
+          <div class="btn">↓ Descargar</div>
+        </div>
+      </div>
+    </div></div>
+    <div class="note">
+      <span class="step">Paso 4</span>
+      <h2>Informes: seguimiento mensual</h2>
+      <p>Cada mes, el equipo de Nexo Académico elabora un <b>informe de seguimiento</b>: temario trabajado, progreso y observaciones del profesor.</p>
+      <p>Se descarga en PDF con un solo toque — perfecto para compartirlo con la familia.</p>
+      <div class="script">
+        <span class="lbl">Guion sugerido</span>
+        <q>Cada mes os dejamos aquí un informe descargable con vuestra evolución. Un toque en «Descargar» y lo tenéis guardado en el móvil.</q>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 BONOS -->
+  <section class="screen-block" id="bonos">
+    <div class="phone"><div class="notch"></div><div class="screen">
+      <div class="topb"><div class="logo">NEXO<span>ACADÉMICO</span></div><div class="avatar">JI</div></div>
+      <div class="scr-body">
+        <div class="scr-title">Bonos</div>
+        <div class="scr-sub">Horas contratadas y disponibles</div>
+        <div class="card" style="display:flex;gap:6px;margin-bottom:8px;">
+          <div style="flex:1;text-align:center;font-size:10px;font-weight:700;background:var(--app-blue-soft);color:#a9c2f7;border-radius:6px;padding:6px;">Presencial</div>
+          <div style="flex:1;text-align:center;font-size:10px;color:var(--app-muted);padding:6px;">Online</div>
+        </div>
+        <div class="row" style="margin-bottom:9px;">
+          <div class="card" style="text-align:center;"><div style="font-weight:700;font-size:16px;">2<span style="font-size:8px;color:var(--app-muted);"> h</span></div><div style="font-size:10px;color:var(--app-blue);font-weight:700;">48.00€</div></div>
+          <div class="card" style="text-align:center;"><div style="font-weight:700;font-size:16px;">4<span style="font-size:8px;color:var(--app-muted);"> h</span></div><div style="font-size:10px;color:var(--app-blue);font-weight:700;">94.00€</div></div>
+          <div class="card" style="text-align:center;"><div style="font-weight:700;font-size:16px;">8<span style="font-size:8px;color:var(--app-muted);"> h</span></div><div style="font-size:10px;color:var(--app-blue);font-weight:700;">185€</div></div>
+        </div>
+        <div class="btn">💬 Contratar por WhatsApp</div>
+      </div>
+    </div></div>
+    <div class="note">
+      <span class="step">Paso 5</span>
+      <h2>Bonos: tus horas contratadas</h2>
+      <p>Controláis todo lo relacionado con vuestras horas: el <b>bono activo</b>, el historial de bonos anteriores, y cómo contratar más.</p>
+      <p>Elegís entre <b>Presencial</b> u <b>Online</b>, el número de horas (2, 4, 8 o 12) y pulsáis: se abre WhatsApp con Nexo para confirmar, sin gestiones adicionales.</p>
+      <div class="script">
+        <span class="lbl">Guion sugerido</span>
+        <q>Cuando necesitéis más horas, elegís el paquete aquí mismo y os ponemos en contacto por WhatsApp al momento, sin llamadas ni papeleo.</q>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 CALENDARIO -->
+  <section class="screen-block" id="calendario">
+    <div class="phone"><div class="notch"></div><div class="screen">
+      <div class="topb"><div class="logo">NEXO<span>ACADÉMICO</span></div><div class="avatar">JI</div></div>
+      <div class="scr-body">
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <div class="scr-title" style="margin-bottom:0;">Calendario</div>
+          <span class="pill blue">+ Añadir</span>
+        </div>
+        <div class="scr-sub">Agosto 2026</div>
+        <div class="card">
+          <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:4px;font-size:7.5px;color:var(--app-muted);text-align:center;margin-bottom:5px;">
+            <span>L</span><span>M</span><span>X</span><span>J</span><span>V</span><span>S</span><span>D</span>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:4px;">
+            <span></span><span></span><span></span><span></span><span></span><span style="text-align:center;font-size:8px;color:var(--app-muted);padding:5px 0;">1</span><span style="text-align:center;font-size:8px;color:var(--app-muted);padding:5px 0;">2</span>
+            <span style="text-align:center;font-size:8px;color:var(--app-muted);padding:5px 0;">3</span><span style="text-align:center;font-size:8px;color:var(--app-muted);padding:5px 0;">4</span><span style="text-align:center;font-size:8px;color:var(--app-muted);padding:5px 0;">5</span><span style="text-align:center;font-size:8px;color:var(--app-muted);padding:5px 0;">6</span><span style="text-align:center;font-size:8px;color:var(--app-muted);padding:5px 0;">7</span><span style="text-align:center;font-size:8px;color:var(--app-muted);padding:5px 0;">8</span><span style="text-align:center;font-size:8px;color:var(--app-muted);padding:5px 0;">9</span>
+            <span style="text-align:center;font-size:8px;background:var(--app-blue-soft);color:#a9c2f7;border-radius:4px;padding:5px 0;font-weight:700;">10</span><span style="text-align:center;font-size:8px;color:var(--app-muted);padding:5px 0;">11</span><span style="text-align:center;font-size:8px;color:var(--app-muted);padding:5px 0;">12</span><span style="text-align:center;font-size:8px;color:var(--app-muted);padding:5px 0;">13</span><span style="text-align:center;font-size:8px;color:var(--app-muted);padding:5px 0;">14</span><span style="text-align:center;font-size:8px;color:var(--app-muted);padding:5px 0;">15</span><span style="text-align:center;font-size:8px;color:var(--app-muted);padding:5px 0;">16</span>
+          </div>
+          <div style="margin-top:6px;background:var(--app-blue-soft);border-left:2px solid var(--app-blue);border-radius:5px;padding:5px 7px;font-size:8.5px;color:#a9c2f7;font-weight:600;">10 ago · Matemáticas</div>
+        </div>
+      </div>
+    </div></div>
+    <div class="note">
+      <span class="step">Paso 6</span>
+      <h2>Calendario: organiza tu semana</h2>
+      <p>Vuestra agenda personal de clases: de un vistazo veis cómo se reparten las sesiones a lo largo del mes.</p>
+      <p>Con <b>«+ Añadir»</b> también podéis crear vuestros propios recordatorios (exámenes, repasos...) y repetirlos cada semana si hace falta.</p>
+      <div class="script">
+        <span class="lbl">Guion sugerido</span>
+        <q>El calendario es vuestra agenda: veis las clases que ya tenéis puestas y podéis añadir vosotros mismos un examen o un repaso.</q>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 MI PROFESOR -->
+  <section class="screen-block" id="profesor">
+    <div class="phone"><div class="notch"></div><div class="screen">
+      <div class="topb"><div class="logo">NEXO<span>ACADÉMICO</span></div><div class="avatar">JI</div></div>
+      <div class="scr-body">
+        <div class="scr-title">Mi Profesor</div>
+        <div class="scr-sub">Información de tu profesor asignado</div>
+        <div class="card" style="text-align:center;padding:16px 12px;">
+          <div style="width:36px;height:36px;border-radius:10px;background:var(--app-blue-soft);color:#a9c2f7;display:flex;align-items:center;justify-content:center;margin:0 auto 8px;font-weight:700;font-size:12px;">SP</div>
+          <div style="font-weight:700;font-size:11.5px;">Santiago Pita Grisanti</div>
+          <div style="font-size:9px;color:var(--app-muted);margin:2px 0 8px;">Profesor · Valencia</div>
+          <span class="pill blue">Valenciano</span>
+          <div style="display:flex;justify-content:space-around;margin-top:10px;border-top:1px solid var(--app-border);padding-top:8px;font-size:8.5px;color:var(--app-muted);">
+            <div><b style="color:#fff;display:block;font-size:12px;">8</b>sesiones</div>
+            <div><b style="color:#fff;display:block;font-size:12px;">Pres.</b>modalidad</div>
+          </div>
+        </div>
+        <div class="btn ghost">💬 Contactar con Nexo</div>
+      </div>
+    </div></div>
+    <div class="note">
+      <span class="step">Paso 7</span>
+      <h2>Mi Profesor: quién te da clase</h2>
+      <p>La ficha de cada profesor asignado: nombre, asignatura, sesiones realizadas y modalidad (presencial u online).</p>
+      <p>¿Algún problema o queréis un cambio? El botón <b>«Contactar con Nexo»</b> abre WhatsApp directamente con el equipo.</p>
+      <div class="script">
+        <span class="lbl">Guion sugerido</span>
+        <q>Aquí tenéis la ficha de vuestro profesor. Y si algo no cuadra o queréis cambiar, escribidnos desde el propio botón de WhatsApp.</q>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8 MATERIAL -->
+  <section class="screen-block" id="material">
+    <div class="phone"><div class="notch"></div><div class="screen">
+      <div class="topb"><div class="logo">NEXO<span>ACADÉMICO</span></div><div class="avatar">JI</div></div>
+      <div class="scr-body">
+        <div class="scr-title">Material</div>
+        <div class="scr-sub">4 recursos disponibles</div>
+        <div class="row">
+          <div class="card" style="text-align:center;padding:18px 8px;">
+            <div style="width:28px;height:28px;border-radius:8px;background:var(--app-blue-soft);color:#a9c2f7;display:flex;align-items:center;justify-content:center;margin:0 auto 8px;">▢</div>
+            <div style="font-weight:700;font-size:10.5px;">Genérico</div>
+            <div style="font-size:8.5px;color:var(--app-muted);">0 archivos</div>
+          </div>
+          <div class="card" style="text-align:center;padding:18px 8px;border-color:var(--app-orange);">
+            <div style="width:28px;height:28px;border-radius:8px;background:var(--app-orange-soft);color:var(--app-orange);display:flex;align-items:center;justify-content:center;margin:0 auto 8px;">♛</div>
+            <div style="font-weight:700;font-size:10.5px;">Exclusivo</div>
+            <div style="font-size:8.5px;color:var(--app-muted);">4 solo para ti</div>
+          </div>
+        </div>
+      </div>
+    </div></div>
+    <div class="note">
+      <span class="step">Paso 8</span>
+      <h2>Material: tus recursos de estudio</h2>
+      <p><b>Genérico</b>: material común del nivel. <b>Exclusivo</b>: fichas preparadas a medida por vuestro profesor — se reconoce por el icono de la corona.</p>
+      <p>Dentro de cada bloque, el material se organiza por <b>asignatura</b> y, dentro de ella, por <b>tema</b>.</p>
+      <div class="script">
+        <span class="lbl">Guion sugerido</span>
+        <q>La corona naranja significa que ese material lo ha preparado vuestro profesor solo para vosotros. Entráis por asignatura y luego por tema.</q>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9 TAREAS -->
+  <section class="screen-block" id="tareas">
+    <div class="phone"><div class="notch"></div><div class="screen">
+      <div class="topb"><div class="logo">NEXO<span>ACADÉMICO</span></div><div class="avatar">JI</div></div>
+      <div class="scr-body">
+        <div class="scr-title">Tareas</div>
+        <div class="scr-sub">Enviadas por tu profesor</div>
+        <div class="lbl" style="margin-bottom:5px;">⏱ Por entregar</div>
+        <div class="card" style="border-color:var(--app-green);margin-bottom:10px;">
+          <div style="font-size:9px;color:var(--app-green);font-weight:700;margin-bottom:2px;">Valenciano</div>
+          <div style="font-size:10.5px;font-weight:600;">Literatura contemporània</div>
+          <span class="pill" style="background:var(--app-card2);color:var(--app-muted);margin-top:6px;">Pendiente</span>
+        </div>
+        <div class="lbl" style="margin-bottom:5px;">✓ Corregidas</div>
+        <div class="card">
+          <div style="display:flex;justify-content:space-between;">
+            <div><div style="font-size:9px;color:var(--app-green);font-weight:700;">Valenciano</div><div style="font-size:10.5px;font-weight:600;">Ejercicios 1</div></div>
+            <div style="font-weight:700;font-size:15px;">8<span style="font-size:9px;color:var(--app-muted);">/10</span></div>
+          </div>
+        </div>
+      </div>
+    </div></div>
+    <div class="note">
+      <span class="step">Paso 9</span>
+      <h2>Tareas: ejercicios y correcciones</h2>
+      <p>Vuestro profesor os puede mandar tareas para practicar entre clase y clase. Las entregáis aquí y consultáis la <b>corrección</b> sin esperar a la siguiente sesión.</p>
+      <p>Cada tarea abre con su enunciado adjunto y, una vez corregida, la <b>nota</b> que os ha puesto vuestro profesor.</p>
+      <div class="script">
+        <span class="lbl">Guion sugerido</span>
+        <q>Las tareas se corrigen aquí mismo, no hace falta esperar a la próxima clase para saber la nota: entráis y ya la veis.</q>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 TESTS -->
+  <section class="screen-block" id="tests">
+    <div class="phone"><div class="notch"></div><div class="screen">
+      <div class="topb"><div class="logo">NEXO<span>ACADÉMICO</span></div><div class="avatar">JI</div></div>
+      <div class="scr-body">
+        <div class="scr-title">Tests</div>
+        <div class="scr-sub">Autoevaluación · 2 asignaturas</div>
+        <div class="card">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <div style="font-size:11px;font-weight:600;">Valenciano</div>
+            <span class="pill green">1/1</span>
+          </div>
+          <div class="bar" style="margin-top:8px;"><i style="width:100%;background:var(--app-green);"></i></div>
+        </div>
+        <div class="card" style="text-align:center;">
+          <div style="font-weight:700;font-size:26px;color:var(--app-green);">5.5</div>
+          <div style="font-size:8.5px;color:var(--app-muted);margin-bottom:4px;">sobre 10</div>
+          <span class="pill green">Aprobado</span>
+        </div>
+      </div>
+    </div></div>
+    <div class="note">
+      <span class="step">Paso 10</span>
+      <h2>Tests: autoevaluación al momento</h2>
+      <p>Vuestro profesor puede asignaros tests por asignatura. Los hacéis desde el móvil y obtenéis la <b>nota al instante</b>.</p>
+      <p>La corrección marca cada respuesta en <b>verde</b> (correcta) o <b>rojo</b> (incorrecta), para que veáis exactamente en qué habéis fallado.</p>
+      <div class="script">
+        <span class="lbl">Guion sugerido</span>
+        <q>En cuanto termináis el test veis la nota y la corrección completa, pregunta por pregunta, en verde y en rojo.</q>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11 AVISOS -->
+  <section class="screen-block" id="avisos">
+    <div class="phone"><div class="notch"></div><div class="screen">
+      <div class="topb"><div class="logo">NEXO<span>ACADÉMICO</span></div><div class="avatar">JI</div></div>
+      <div class="scr-body">
+        <div class="scr-title">Avisos</div>
+        <div class="scr-sub">Comunicaciones de Nexo Académico</div>
+        <div class="card">
+          <div style="font-weight:700;font-size:10.5px;margin-bottom:3px;">Nuevo test de Valenciano</div>
+          <div style="font-size:9px;color:var(--app-muted);line-height:1.4;">Tu profesor te ha asignado el test «Tipologies Textuals».</div>
+        </div>
+        <div class="card" style="display:flex;justify-content:space-between;align-items:center;">
+          <div style="font-size:10px;font-weight:600;">Avisos al móvil</div>
+          <span class="pill green">Activo</span>
+        </div>
+      </div>
+    </div></div>
+    <div class="note">
+      <span class="step">Paso 11</span>
+      <h2>Avisos: no os perdáis nada</h2>
+      <p>Nexo os avisa cuando hay novedades: una tarea nueva, un test asignado, un cambio de horario...</p>
+      <p>Activando <b>«Avisos al móvil»</b> recibís una notificación en el dispositivo cada vez que vuestro profesor suba algo.</p>
+      <div class="script">
+        <span class="lbl">Guion sugerido</span>
+        <q>Activad los avisos al móvil y os enteraréis al momento de cualquier tarea o test nuevo, sin tener que entrar a mirar cada día.</q>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<p class="footer-note">NEXO ACADÉMICO · app.nexoacademico.com</p>
