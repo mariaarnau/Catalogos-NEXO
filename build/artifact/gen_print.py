@@ -64,8 +64,8 @@ print_css = """
   @media print {
     body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
     .railnav { display: none !important; }
-    .hero { padding: 4mm 0 10mm; }
-    .screen-block { page-break-inside: avoid; break-inside: avoid; page-break-after: always; padding: 4mm 0 6mm; border-bottom: none; }
+    .hero { padding: 0 0 10mm; }
+    .screen-block { page-break-inside: avoid; break-inside: avoid; page-break-after: always; padding: 0 0 6mm; border-bottom: none; }
     .screen-block:last-of-type { page-break-after: auto; }
     main { padding: 0; max-width: 100%; }
     .footer-note { page-break-before: avoid; }
@@ -86,12 +86,31 @@ print_css = """
     .note p { font-size: 12.5px; margin: 0 0 7px; }
     .script { padding: 9px 11px; margin-top: 8px; }
     .script q { font-size: 12px; }
-    .hero { padding: 0 0 6mm; }
     .hero h1 { font-size: 30px; }
     .hero p { font-size: 13.5px; margin-top: 10px; }
   }
+
+  .pdf-head{
+    align-self:stretch; display:flex; align-items:center; justify-content:space-between;
+    background:#0b1220; padding:7px 12px; margin-bottom:16px; border-radius:6px;
+  }
+  .pdf-head img{ height:13px; display:block; }
+  .pdf-head span{
+    font-family:"IBM Plex Mono",monospace; font-size:8px; letter-spacing:.1em; text-transform:uppercase;
+    color:#7f8ba3;
+  }
 </style>
 """
+
+pdf_head = f'<div class="pdf-head"><img src="{logo_uri}"><span>Área del Alumno</span></div>'
+
+# inject a small logo header into the hero and into every step page
+rest = rest.replace('<div class="hero">', '<div class="hero">' + pdf_head, 1)
+rest = re.sub(
+    r'(<section class="screen-block" id="[a-z]+">)',
+    r'\1' + pdf_head.replace("\\", "\\\\"),
+    rest,
+)
 
 html = (
     "<!DOCTYPE html>\n<html lang=\"es\"><head><meta charset=\"UTF-8\">\n"
