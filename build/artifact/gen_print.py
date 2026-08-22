@@ -12,7 +12,8 @@ rest = lines[1]
 
 cover_css = """
 <style>
-  @page { size: A4; margin: 0; }
+  @page { size: A4; margin: 20mm 22mm; }
+  @page :first { margin: 0; }
   @media print { body { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
 
   .cover-page{
