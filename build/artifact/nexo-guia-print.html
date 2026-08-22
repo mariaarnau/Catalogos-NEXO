@@ -1,4 +1,8 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8">
 <title>Así funciona Nexo Académico</title>
+
+</head><body>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&family=Inter:wght@400;500;600;700&display=swap">
 <style>
   :root{
@@ -525,3 +529,39 @@
 </main>
 
 <p class="footer-note">NEXO ACADÉMICO · app.nexoacademico.com</p>
+
+<style>
+  @page { size: A4; margin: 16mm 16mm 18mm; }
+  @media print {
+    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .railnav { display: none !important; }
+    .hero { padding: 4mm 0 10mm; }
+    .screen-block { page-break-inside: avoid; break-inside: avoid; page-break-after: always; padding: 4mm 0 6mm; border-bottom: none; }
+    .screen-block:last-of-type { page-break-after: auto; }
+    main { padding: 0; max-width: 100%; }
+    .footer-note { page-break-before: avoid; }
+  }
+
+  @media print {
+    .phone { width: 210px; padding: 9px; }
+    .phone .notch { width: 66px; height: 14px; top: 9px; }
+    .screen { height: 400px; border-radius: 20px; }
+    .scr-body { padding: 2px 11px 11px; }
+    .scr-title { font-size: 13.5px; margin: 5px 0 2px; }
+    .scr-sub { font-size: 8.5px; margin-bottom: 9px; }
+    .topb { padding: 8px 12px 9px; }
+    .card { padding: 8px 9px; margin-bottom: 6px; border-radius: 9px; }
+    .btn { font-size: 9px; padding: 7px; margin-top: 6px; }
+    .screen-block { gap: 14px; }
+    .note h2 { font-size: 21px; margin-bottom: 7px; }
+    .note p { font-size: 12.5px; margin: 0 0 7px; }
+    .script { padding: 9px 11px; margin-top: 8px; }
+    .script q { font-size: 12px; }
+    .hero { padding: 0 0 6mm; }
+    .hero h1 { font-size: 30px; }
+    .hero p { font-size: 13.5px; margin-top: 10px; }
+  }
+</style>
+
+
+</body></html>
