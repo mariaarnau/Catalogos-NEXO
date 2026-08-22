@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Nexo Académico — Guía del Alumno</title>
+<style>
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background: #f4f3ee;
+    color: #1c2230;
+  }
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    position: relative;
+    page-break-after: always;
+    overflow: hidden;
+    background: #f4f3ee;
+  }
+  .page:last-child { page-break-after: auto; }
+
+  /* ---------- shared header / footer ---------- */
+  .topbar {
+    background: #0b1220;
+    height: 20mm;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 12mm;
+  }
+  .topbar img { height: 8mm; }
+  .topbar .tag {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-style: italic;
+    color: #7f8ba3;
+    font-size: 9pt;
+    letter-spacing: .03em;
+  }
+  .footer {
+    position: absolute;
+    bottom: 6mm;
+    left: 12mm;
+    right: 12mm;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 7.5pt;
+    color: #9aa3b5;
+    border-top: 0.5pt solid #dcdad0;
+    padding-top: 2.5mm;
+  }
+  .footer .brand { font-weight: 700; color: #3b6fe0; letter-spacing: .06em; }
+
+  /* ---------- cover ---------- */
+  .cover {
+    background: radial-gradient(ellipse at 30% 15%, #16233d 0%, #0b1220 55%, #070c17 100%);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 297mm;
+  }
+  .cover img.logo-big { width: 92mm; margin-bottom: 14mm; }
+  .cover .eyebrow {
+    font-size: 10.5pt;
+    letter-spacing: .28em;
+    text-transform: uppercase;
+    color: #6fa0f5;
+    margin-bottom: 6mm;
+  }
+  .cover h1 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: 600;
+    font-size: 30pt;
+    margin: 0 0 6mm;
+    letter-spacing: .01em;
+  }
+  .cover p.sub {
+    font-size: 12.5pt;
+    color: #aab6cc;
+    max-width: 130mm;
+    line-height: 1.6;
+    margin: 0 0 16mm;
+  }
+  .cover .pillrow { display:flex; gap: 6mm; flex-wrap: wrap; justify-content:center; max-width: 150mm; }
+  .cover .pill {
+    border: 0.75pt solid #2c3c5c;
+    color: #9db3dd;
+    background: #101a30;
+    border-radius: 20pt;
+    padding: 3mm 6mm;
+    font-size: 9pt;
+    letter-spacing: .04em;
+  }
+  .cover .footnote {
+    position: absolute;
+    bottom: 14mm;
+    color: #56617a;
+    font-size: 8.5pt;
+    letter-spacing: .05em;
+  }
+
+  /* ---------- content pages ---------- */
+  .content {
+    padding: 9mm 14mm 16mm;
+  }
+  .stepline {
+    display: flex;
+    align-items: center;
+    gap: 4mm;
+    margin: 5mm 0 2.5mm;
+  }
+  .stepnum {
+    flex: none;
+    width: 11mm; height: 11mm;
+    border-radius: 50%;
+    background: #0b1220;
+    color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-family: Georgia, serif;
+    font-size: 12pt;
+    font-weight: 700;
+  }
+  .stepline .kicker {
+    font-size: 8.5pt;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: #3b6fe0;
+    font-weight: 700;
+  }
+  h1.title {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: 600;
+    font-size: 18.5pt;
+    margin: 0 0 2.5mm 15mm;
+    color: #0f1729;
+  }
+  p.intro {
+    font-size: 9.8pt;
+    line-height: 1.45;
+    color: #454f63;
+    margin: 0 0 4mm 15mm;
+    max-width: 168mm;
+  }
+
+  .shot-card {
+    border-radius: 4mm;
+    overflow: hidden;
+    box-shadow: 0 3mm 8mm rgba(11,18,32,.18);
+    border: 0.75pt solid #d9d7cc;
+    margin-bottom: 4mm;
+  }
+  .shot-card img { display:block; width: 100%; height: 66mm; object-fit: cover; object-position: top; }
+  .shot-card.small img { height: 40mm; }
+  .shot-card.contain { background: #0b1220; }
+  .shot-card.contain img { object-fit: contain; object-position: center; }
+  .shot-caption {
+    background: #0b1220;
+    color: #9db3dd;
+    font-size: 7.5pt;
+    letter-spacing: .04em;
+    padding: 2mm 5mm;
+  }
+
+  .points {
+    list-style: none;
+    margin: 0 0 4mm 0;
+    padding: 0;
+    display: grid;
+    gap: 2mm;
+  }
+  .points li {
+    display: flex;
+    gap: 3.5mm;
+    align-items: flex-start;
+    font-size: 9.2pt;
+    line-height: 1.38;
+    color: #2b3348;
+  }
+  .points li .dot {
+    flex: none;
+    width: 5mm; height: 5mm;
+    border-radius: 50%;
+    background: #e7ecf5;
+    color: #3b6fe0;
+    font-weight: 700;
+    font-size: 7.5pt;
+    display: flex; align-items: center; justify-content: center;
+    margin-top: 0.4mm;
+  }
+  .points li b { color: #0f1729; }
+
+  .zoom-row {
+    display: flex;
+    gap: 5mm;
+    align-items: center;
+    background: #fff;
+    border: 0.75pt solid #e2e0d4;
+    border-radius: 4mm;
+    padding: 3.5mm 5mm;
+    margin-bottom: 2mm;
+  }
+  .zoom-row .lupa-wrap {
+    flex: none;
+    width: 46mm;
+    position: relative;
+  }
+  .zoom-row .lupa-frame {
+    border-radius: 3mm;
+    overflow: hidden;
+    border: 2.2pt solid #0b1220;
+    box-shadow: 0 2mm 5mm rgba(11,18,32,.25);
+  }
+  .zoom-row .lupa-frame img { display:block; width: 100%; }
+  .zoom-row .lupa-badge {
+    position: absolute;
+    top: -3.5mm; right: -3.5mm;
+    width: 10mm; height: 10mm;
+    border-radius: 50%;
+    background: #f2a53a;
+    display: flex; align-items:center; justify-content:center;
+    font-size: 10pt;
+    box-shadow: 0 1.5mm 3mm rgba(0,0,0,.25);
+    border: 1.5pt solid #fff;
+  }
+  .zoom-row .zoom-text { font-size: 8.6pt; line-height: 1.42; color: #454f63; }
+  .zoom-row .zoom-text b { color: #0f1729; display:block; font-size: 9.4pt; margin-bottom: 1.2mm;}
+
+  .tag-callout {
+    display: inline-block;
+    background: #eef2fb;
+    color: #2c4a7c;
+    border-radius: 2mm;
+    padding: 1mm 2.5mm;
+    font-size: 8pt;
+    font-weight: 700;
+    letter-spacing: .03em;
+  }
+
+  .two-col { display:flex; gap: 6mm; }
+  .two-col > div { flex: 1; min-width: 0; }
+
+  .arrow-note {
+    display:flex; align-items:center; gap:2.5mm;
+    font-size: 8.6pt; color:#8a6d1f; background:#fdf3dc; border:.75pt solid #f0dfa8;
+    padding:2mm 3.5mm; border-radius:2mm; margin-bottom:5mm; max-width: fit-content;
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ COVER ============ -->
+<div class="page cover">
+  <img class="logo-big" src="img/logo_white.png">
+  <div class="eyebrow">Guía del alumno</div>
+  <h1>Así funciona tu<br>Área de Alumno</h1>
+  <p class="sub">Todo lo que puedes hacer dentro de la aplicación de Nexo Académico,
+  explicado paso a paso: tus clases, tus tareas, tus notas, tu material de estudio
+  y cómo mantener el contacto con tu profesor.</p>
+  <div class="pillrow">
+    <div class="pill">Inicio</div>
+    <div class="pill">Sesiones</div>
+    <div class="pill">Informes</div>
+    <div class="pill">Bonos</div>
+    <div class="pill">Calendario</div>
+    <div class="pill">Mi Profesor</div>
+    <div class="pill">Material</div>
+    <div class="pill">Tareas</div>
+    <div class="pill">Tests</div>
+    <div class="pill">Avisos</div>
+  </div>
+  <div class="footnote">NEXO ACADÉMICO · app.nexoacademico.com</div>
+</div>
+
+
+PAGES_PLACEHOLDER
+</body>
+</html>

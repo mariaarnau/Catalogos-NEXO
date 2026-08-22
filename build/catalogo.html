@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Nexo Académico — Guía del Alumno</title>
+<style>
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background: #f4f3ee;
+    color: #1c2230;
+  }
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    position: relative;
+    page-break-after: always;
+    overflow: hidden;
+    background: #f4f3ee;
+  }
+  .page:last-child { page-break-after: auto; }
+
+  /* ---------- shared header / footer ---------- */
+  .topbar {
+    background: #0b1220;
+    height: 20mm;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 12mm;
+  }
+  .topbar img { height: 8mm; }
+  .topbar .tag {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-style: italic;
+    color: #7f8ba3;
+    font-size: 9pt;
+    letter-spacing: .03em;
+  }
+  .footer {
+    position: absolute;
+    bottom: 6mm;
+    left: 12mm;
+    right: 12mm;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 7.5pt;
+    color: #9aa3b5;
+    border-top: 0.5pt solid #dcdad0;
+    padding-top: 2.5mm;
+  }
+  .footer .brand { font-weight: 700; color: #3b6fe0; letter-spacing: .06em; }
+
+  /* ---------- cover ---------- */
+  .cover {
+    background: radial-gradient(ellipse at 30% 15%, #16233d 0%, #0b1220 55%, #070c17 100%);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 297mm;
+  }
+  .cover img.logo-big { width: 92mm; margin-bottom: 14mm; }
+  .cover .eyebrow {
+    font-size: 10.5pt;
+    letter-spacing: .28em;
+    text-transform: uppercase;
+    color: #6fa0f5;
+    margin-bottom: 6mm;
+  }
+  .cover h1 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: 600;
+    font-size: 30pt;
+    margin: 0 0 6mm;
+    letter-spacing: .01em;
+  }
+  .cover p.sub {
+    font-size: 12.5pt;
+    color: #aab6cc;
+    max-width: 130mm;
+    line-height: 1.6;
+    margin: 0 0 16mm;
+  }
+  .cover .pillrow { display:flex; gap: 6mm; flex-wrap: wrap; justify-content:center; max-width: 150mm; }
+  .cover .pill {
+    border: 0.75pt solid #2c3c5c;
+    color: #9db3dd;
+    background: #101a30;
+    border-radius: 20pt;
+    padding: 3mm 6mm;
+    font-size: 9pt;
+    letter-spacing: .04em;
+  }
+  .cover .footnote {
+    position: absolute;
+    bottom: 14mm;
+    color: #56617a;
+    font-size: 8.5pt;
+    letter-spacing: .05em;
+  }
+
+  /* ---------- content pages ---------- */
+  .content {
+    padding: 9mm 14mm 16mm;
+  }
+  .stepline {
+    display: flex;
+    align-items: center;
+    gap: 4mm;
+    margin: 5mm 0 2.5mm;
+  }
+  .stepnum {
+    flex: none;
+    width: 11mm; height: 11mm;
+    border-radius: 50%;
+    background: #0b1220;
+    color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-family: Georgia, serif;
+    font-size: 12pt;
+    font-weight: 700;
+  }
+  .stepline .kicker {
+    font-size: 8.5pt;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: #3b6fe0;
+    font-weight: 700;
+  }
+  h1.title {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: 600;
+    font-size: 18.5pt;
+    margin: 0 0 2.5mm 15mm;
+    color: #0f1729;
+  }
+  p.intro {
+    font-size: 9.8pt;
+    line-height: 1.45;
+    color: #454f63;
+    margin: 0 0 4mm 15mm;
+    max-width: 168mm;
+  }
+
+  .shot-card {
+    border-radius: 4mm;
+    overflow: hidden;
+    box-shadow: 0 3mm 8mm rgba(11,18,32,.18);
+    border: 0.75pt solid #d9d7cc;
+    margin-bottom: 4mm;
+  }
+  .shot-card img { display:block; width: 100%; height: 66mm; object-fit: cover; object-position: top; }
+  .shot-card.small img { height: 40mm; }
+  .shot-card.contain { background: #0b1220; }
+  .shot-card.contain img { object-fit: contain; object-position: center; }
+  .shot-caption {
+    background: #0b1220;
+    color: #9db3dd;
+    font-size: 7.5pt;
+    letter-spacing: .04em;
+    padding: 2mm 5mm;
+  }
+
+  .points {
+    list-style: none;
+    margin: 0 0 4mm 0;
+    padding: 0;
+    display: grid;
+    gap: 2mm;
+  }
+  .points li {
+    display: flex;
+    gap: 3.5mm;
+    align-items: flex-start;
+    font-size: 9.2pt;
+    line-height: 1.38;
+    color: #2b3348;
+  }
+  .points li .dot {
+    flex: none;
+    width: 5mm; height: 5mm;
+    border-radius: 50%;
+    background: #e7ecf5;
+    color: #3b6fe0;
+    font-weight: 700;
+    font-size: 7.5pt;
+    display: flex; align-items: center; justify-content: center;
+    margin-top: 0.4mm;
+  }
+  .points li b { color: #0f1729; }
+
+  .zoom-row {
+    display: flex;
+    gap: 5mm;
+    align-items: center;
+    background: #fff;
+    border: 0.75pt solid #e2e0d4;
+    border-radius: 4mm;
+    padding: 3.5mm 5mm;
+    margin-bottom: 2mm;
+  }
+  .zoom-row .lupa-wrap {
+    flex: none;
+    width: 46mm;
+    position: relative;
+  }
+  .zoom-row .lupa-frame {
+    border-radius: 3mm;
+    overflow: hidden;
+    border: 2.2pt solid #0b1220;
+    box-shadow: 0 2mm 5mm rgba(11,18,32,.25);
+  }
+  .zoom-row .lupa-frame img { display:block; width: 100%; }
+  .zoom-row .lupa-badge {
+    position: absolute;
+    top: -3.5mm; right: -3.5mm;
+    width: 10mm; height: 10mm;
+    border-radius: 50%;
+    background: #f2a53a;
+    display: flex; align-items:center; justify-content:center;
+    font-size: 10pt;
+    box-shadow: 0 1.5mm 3mm rgba(0,0,0,.25);
+    border: 1.5pt solid #fff;
+  }
+  .zoom-row .zoom-text { font-size: 8.6pt; line-height: 1.42; color: #454f63; }
+  .zoom-row .zoom-text b { color: #0f1729; display:block; font-size: 9.4pt; margin-bottom: 1.2mm;}
+
+  .tag-callout {
+    display: inline-block;
+    background: #eef2fb;
+    color: #2c4a7c;
+    border-radius: 2mm;
+    padding: 1mm 2.5mm;
+    font-size: 8pt;
+    font-weight: 700;
+    letter-spacing: .03em;
+  }
+
+  .two-col { display:flex; gap: 6mm; }
+  .two-col > div { flex: 1; min-width: 0; }
+
+  .arrow-note {
+    display:flex; align-items:center; gap:2.5mm;
+    font-size: 8.6pt; color:#8a6d1f; background:#fdf3dc; border:.75pt solid #f0dfa8;
+    padding:2mm 3.5mm; border-radius:2mm; margin-bottom:5mm; max-width: fit-content;
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ COVER ============ -->
+<div class="page cover">
+  <img class="logo-big" src="img/logo_white.png">
+  <div class="eyebrow">Guía del alumno</div>
+  <h1>Así funciona tu<br>Área de Alumno</h1>
+  <p class="sub">Todo lo que puedes hacer dentro de la aplicación de Nexo Académico,
+  explicado paso a paso: tus clases, tus tareas, tus notas, tu material de estudio
+  y cómo mantener el contacto con tu profesor.</p>
+  <div class="pillrow">
+    <div class="pill">Inicio</div>
+    <div class="pill">Sesiones</div>
+    <div class="pill">Informes</div>
+    <div class="pill">Bonos</div>
+    <div class="pill">Calendario</div>
+    <div class="pill">Mi Profesor</div>
+    <div class="pill">Material</div>
+    <div class="pill">Tareas</div>
+    <div class="pill">Tests</div>
+    <div class="pill">Avisos</div>
+  </div>
+  <div class="footnote">NEXO ACADÉMICO · app.nexoacademico.com</div>
+</div>
+
+
+
+<div class="page">
+  <div class="topbar"><img src="img/logo_white.png"><span class="tag">Área del Alumno</span></div>
+  <div class="content">
+    <div class="stepline"><div class="stepnum">1</div><span class="kicker">Primer acceso</span></div>
+    <h1 class="title">Entra en tu área personal</h1>
+    <p class="intro">El equipo de Nexo Académico te entregará un usuario y una contraseña. Con esos datos accedes cada vez a tu panel, disponible tanto desde el ordenador como desde el móvil.</p>
+    
+    <div class="shot-card contain">
+      <img src="img/login.png">
+      <div class="shot-caption">Pantalla de acceso — pestaña «Soy alumno»</div>
+    </div>
+    
+    <ul class="points">
+      <li><span class="dot">1</span><span>Selecciona siempre la pestaña <b>«Soy alumno»</b> (la de «Soy profesor» es para tus profesores).</span></li>
+<li><span class="dot">2</span><span>Introduce el <b>usuario</b> y la <b>contraseña</b> que te ha facilitado Nexo Académico.</span></li>
+<li><span class="dot">3</span><span>Pulsa <b>Entrar</b> y accederás directamente a tu panel de Inicio.</span></li>
+<li><span class="dot">4</span><span>¿Problemas para entrar? Usa el enlace <b>«Contacta con Nexo»</b> al pie de la pantalla.</span></li>
+    </ul>
+    
+  </div>
+  <div class="footer"><span class="brand">NEXO ACADÉMICO</span><span>Guía del alumno · app.nexoacademico.com</span></div>
+</div>
+
+<div class="page">
+  <div class="topbar"><img src="img/logo_white.png"><span class="tag">Área del Alumno</span></div>
+  <div class="content">
+    <div class="stepline"><div class="stepnum">2</div><span class="kicker">Panel principal</span></div>
+    <h1 class="title">Inicio: tu resumen de un vistazo</h1>
+    <p class="intro">Es la primera pantalla que ves al entrar. Aquí tienes un resumen rápido de tu situación: horas de bono, sesiones del mes, tu próxima clase y accesos directos a lo más importante.</p>
+    
+    <div class="shot-card">
+      <img src="img/inicio.png">
+      <div class="shot-caption">Inicio — panel general del alumno</div>
+    </div>
+    
+    <ul class="points">
+      <li><span class="dot">1</span><span><b>Horas restantes del bono</b>: cuántas horas de clase te quedan disponibles.</span></li>
+<li><span class="dot">2</span><span><b>Sesiones este mes</b>: número de clases y horas ya trabajadas.</span></li>
+<li><span class="dot">3</span><span><b>Próxima clase</b>: fecha y hora de tu siguiente sesión programada.</span></li>
+<li><span class="dot">4</span><span><b>Informes recientes</b>, accesos directos a <b>Material</b> y <b>Tests</b>, y el bloque de <b>Próximas clases</b>.</span></li>
+    </ul>
+    
+        <div class="zoom-row">
+          <div class="lupa-wrap">
+            <div class="lupa-frame"><img src="img/zoom_bono.png"></div>
+            <div class="lupa-badge">🔍</div>
+          </div>
+          <div class="zoom-text"><b>Estado del bono y renovación por WhatsApp</b> Cuando el bono se agota, aparece el aviso en rojo con el botón <b>«Renovar bono»</b>. Al pulsarlo se abre WhatsApp con un mensaje ya preparado para pedir la renovación directamente al equipo de Nexo, sin tener que escribir nada.</div>
+        </div>
+  </div>
+  <div class="footer"><span class="brand">NEXO ACADÉMICO</span><span>Guía del alumno · app.nexoacademico.com</span></div>
+</div>
+
+<div class="page">
+  <div class="topbar"><img src="img/logo_white.png"><span class="tag">Área del Alumno</span></div>
+  <div class="content">
+    <div class="stepline"><div class="stepnum">3</div><span class="kicker">Mi área</span></div>
+    <h1 class="title">Sesiones: el historial de tus clases</h1>
+    <p class="intro">En esta sección se registran automáticamente todas las clases que tu profesor va impartiendo, para que siempre puedas consultar cuándo y con quién has dado cada sesión.</p>
+    
+    <div class="shot-card">
+      <img src="img/sesiones.png">
+      <div class="shot-caption">Sesiones — historial de clases confirmadas</div>
+    </div>
+    
+    <ul class="points">
+      <li><span class="dot">1</span><span>Cada fila muestra la <b>fecha</b>, la <b>asignatura</b> y el <b>profesor</b> que impartió la clase.</span></li>
+<li><span class="dot">2</span><span>La columna <b>Dur.</b> indica la duración de esa sesión en horas.</span></li>
+<li><span class="dot">3</span><span>El <b>estado</b> («Confirmada») indica que la clase ha quedado registrada correctamente.</span></li>
+<li><span class="dot">4</span><span>Es tu comprobante de las horas realmente impartidas frente a las horas de tu bono.</span></li>
+    </ul>
+    
+  </div>
+  <div class="footer"><span class="brand">NEXO ACADÉMICO</span><span>Guía del alumno · app.nexoacademico.com</span></div>
+</div>
+
+<div class="page">
+  <div class="topbar"><img src="img/logo_white.png"><span class="tag">Área del Alumno</span></div>
+  <div class="content">
+    <div class="stepline"><div class="stepnum">4</div><span class="kicker">Mi área</span></div>
+    <h1 class="title">Informes: seguimiento mensual</h1>
+    <p class="intro">Cada mes, el equipo de Nexo Académico elabora un informe de seguimiento con la evolución del alumno: temario trabajado, progreso y observaciones del profesor.</p>
+    
+    <div class="shot-card">
+      <img src="img/informes.png">
+      <div class="shot-caption">Informes — informe mensual disponible para descargar</div>
+    </div>
+    
+    <ul class="points">
+      <li><span class="dot">1</span><span>Los informes aparecen ordenados por fecha, el más reciente arriba del todo.</span></li>
+<li><span class="dot">2</span><span>Pulsa <b>Descargar</b> para guardar el informe en PDF en tu móvil u ordenador.</span></li>
+<li><span class="dot">3</span><span>Es la mejor forma de compartir tu progreso con tu familia.</span></li>
+    </ul>
+    
+  </div>
+  <div class="footer"><span class="brand">NEXO ACADÉMICO</span><span>Guía del alumno · app.nexoacademico.com</span></div>
+</div>
+
+<div class="page">
+  <div class="topbar"><img src="img/logo_white.png"><span class="tag">Área del Alumno</span></div>
+  <div class="content">
+    <div class="stepline"><div class="stepnum">5</div><span class="kicker">Mi área</span></div>
+    <h1 class="title">Bonos: tus horas contratadas</h1>
+    <p class="intro">Aquí controlas todo lo relacionado con tus horas de clase: el bono activo, el historial de bonos anteriores y cómo contratar nuevas horas cuando las necesites.</p>
+    
+    <div class="shot-card">
+      <img src="img/bonos1.png">
+      <div class="shot-caption">Bonos — estado, historial y planes disponibles</div>
+    </div>
+    
+    <ul class="points">
+      <li><span class="dot">1</span><span>Arriba se muestra si tienes un <b>bono activo</b> o si necesitas solicitar uno nuevo.</span></li>
+<li><span class="dot">2</span><span>El <b>historial de bonos</b> guarda todos los bonos que has contratado, con fecha de compra, precio y si están agotados.</span></li>
+<li><span class="dot">3</span><span>Más abajo puedes elegir entre clases <b>Presenciales</b> u <b>Online</b>, con paquetes de 2, 4, 8 o 12 horas.</span></li>
+    </ul>
+    
+        <div class="zoom-row">
+          <div class="lupa-wrap">
+            <div class="lupa-frame"><img src="img/zoom_precio.png"></div>
+            <div class="lupa-badge">🔍</div>
+          </div>
+          <div class="zoom-text"><b>Contratar un bono nuevo</b> Elige el número de horas que necesitas y pulsa sobre el plan: se abrirá <b>WhatsApp</b> con Nexo Académico para confirmar la contratación directamente, sin gestiones adicionales.</div>
+        </div>
+  </div>
+  <div class="footer"><span class="brand">NEXO ACADÉMICO</span><span>Guía del alumno · app.nexoacademico.com</span></div>
+</div>
+
+<div class="page">
+  <div class="topbar"><img src="img/logo_white.png"><span class="tag">Área del Alumno</span></div>
+  <div class="content">
+    <div class="stepline"><div class="stepnum">6</div><span class="kicker">Mi área</span></div>
+    <h1 class="title">Calendario: organiza tu semana</h1>
+    <p class="intro">Tu agenda personal de clases. Te permite ver de un vistazo cómo se reparten tus sesiones a lo largo del mes y añadir tus propias anotaciones (exámenes, repasos, etc.).</p>
+    
+    <div class="shot-card">
+      <img src="img/calendario.png">
+      <div class="shot-caption">Calendario — vista mensual de clases</div>
+    </div>
+    
+    <ul class="points">
+      <li><span class="dot">1</span><span>Cada clase programada aparece marcada en el día correspondiente con su asignatura.</span></li>
+<li><span class="dot">2</span><span>Usa las flechas ‹ › para moverte entre meses.</span></li>
+<li><span class="dot">3</span><span>Con el botón <b>«+ Añadir entrada»</b> puedes crear tú mismo un recordatorio.</span></li>
+    </ul>
+    
+        <div class="zoom-row">
+          <div class="lupa-wrap">
+            <div class="lupa-frame"><img src="img/nueva_entrada.png"></div>
+            <div class="lupa-badge">🔍</div>
+          </div>
+          <div class="zoom-text"><b>Añadir una entrada al calendario</b> Elige profesor, asignatura, hora de inicio y duración, añade notas si quieres y activa <b>«Repetir semanalmente»</b> si es una cita fija cada semana. Pulsa <b>Guardar</b> para confirmarla.</div>
+        </div>
+  </div>
+  <div class="footer"><span class="brand">NEXO ACADÉMICO</span><span>Guía del alumno · app.nexoacademico.com</span></div>
+</div>
+
+<div class="page">
+  <div class="topbar"><img src="img/logo_white.png"><span class="tag">Área del Alumno</span></div>
+  <div class="content">
+    <div class="stepline"><div class="stepnum">7</div><span class="kicker">Mi área</span></div>
+    <h1 class="title">Mi Profesor: quién te da clase</h1>
+    <p class="intro">Un listado con los profesores que tienes asignados, la asignatura que imparten, el número de sesiones realizadas y la modalidad de las clases.</p>
+    
+    <div class="shot-card">
+      <img src="img/miprofesor1.png">
+      <div class="shot-caption">Mi Profesor — ficha de cada profesor asignado</div>
+    </div>
+    
+    <ul class="points">
+      <li><span class="dot">1</span><span>Cada tarjeta muestra el <b>nombre del profesor</b>, su formación y la <b>asignatura</b> que imparte.</span></li>
+<li><span class="dot">2</span><span>Indica el número de <b>sesiones</b> realizadas y la <b>modalidad</b> (presencial u online).</span></li>
+<li><span class="dot">3</span><span>Si tienes varios profesores (por ejemplo, uno de Matemáticas y otro de Valenciano), aparecerán todos aquí.</span></li>
+    </ul>
+    
+        <div class="zoom-row">
+          <div class="lupa-wrap">
+            <div class="lupa-frame"><img src="img/zoom_contactar.png"></div>
+            <div class="lupa-badge">🔍</div>
+          </div>
+          <div class="zoom-text"><b>¿Algún problema o quieres un cambio?</b> Al final de la página tienes el botón <b>«Contactar con Nexo»</b>: te abre WhatsApp directamente para pedir un cambio de profesor o resolver cualquier incidencia con el equipo de Nexo Académico.</div>
+        </div>
+  </div>
+  <div class="footer"><span class="brand">NEXO ACADÉMICO</span><span>Guía del alumno · app.nexoacademico.com</span></div>
+</div>
+
+<div class="page">
+  <div class="topbar"><img src="img/logo_white.png"><span class="tag">Área del Alumno</span></div>
+  <div class="content">
+    <div class="stepline"><div class="stepnum">8</div><span class="kicker">Estudiar</span></div>
+    <h1 class="title">Material: tus recursos de estudio</h1>
+    <p class="intro">Todo el material de estudio que tu profesor prepara para ti, organizado y siempre disponible. Se divide en dos bloques según su origen.</p>
+    
+    <div class="shot-card">
+      <img src="img/material.png">
+      <div class="shot-caption">Material — recursos genéricos y exclusivos</div>
+    </div>
+    
+    <ul class="points">
+      <li><span class="dot">1</span><span><b>Genérico</b>: material común, el mismo que pueden usar otros alumnos del mismo nivel.</span></li>
+<li><span class="dot">2</span><span><b>Exclusivo</b>: fichas y recursos preparados específicamente para ti por tu profesor.</span></li>
+<li><span class="dot">3</span><span>Dentro de cada bloque, el material se organiza por <b>asignatura</b> y, dentro de ella, por <b>tema</b>.</span></li>
+    </ul>
+    
+        <div class="zoom-row">
+          <div class="lupa-wrap">
+            <div class="lupa-frame"><img src="img/zoom_exclusivo.png"></div>
+            <div class="lupa-badge">🔍</div>
+          </div>
+          <div class="zoom-text"><b>Material exclusivo, solo para ti</b> El icono de la corona indica que ese contenido ha sido creado a medida por tu profesor. Pulsa sobre la asignatura y después sobre el tema para ver y descargar los archivos.</div>
+        </div>
+  </div>
+  <div class="footer"><span class="brand">NEXO ACADÉMICO</span><span>Guía del alumno · app.nexoacademico.com</span></div>
+</div>
+
+<div class="page">
+  <div class="topbar"><img src="img/logo_white.png"><span class="tag">Área del Alumno</span></div>
+  <div class="content">
+    <div class="stepline"><div class="stepnum">9</div><span class="kicker">Estudiar</span></div>
+    <h1 class="title">Tareas: ejercicios y correcciones</h1>
+    <p class="intro">Tu profesor puede enviarte tareas para practicar entre clase y clase. Aquí las entregas y consultas la corrección, sin tener que esperar a la siguiente sesión.</p>
+    
+    <div class="shot-card small">
+      <img src="img/tareas.png">
+      <div class="shot-caption">Tareas — por entregar y corregidas</div>
+    </div>
+    
+        <div class="shot-card small">
+          <img src="img/enunciado.png">
+          <div class="shot-caption">Ejemplo de enunciado adjunto, con la marca de agua de Nexo Académico</div>
+        </div>
+    <ul class="points">
+      <li><span class="dot">1</span><span><b>Por entregar</b>: tareas pendientes, agrupadas por asignatura.</span></li>
+<li><span class="dot">2</span><span><b>Corregidas</b>: tareas que tu profesor ya ha revisado, con su nota correspondiente.</span></li>
+<li><span class="dot">3</span><span>Pulsa sobre cualquier tarea para ver el enunciado adjunto y el detalle de la corrección.</span></li>
+    </ul>
+    
+        <div class="zoom-row">
+          <div class="lupa-wrap">
+            <div class="lupa-frame"><img src="img/zoom_nota.png"></div>
+            <div class="lupa-badge">🔍</div>
+          </div>
+          <div class="zoom-text"><b>Detalle de una tarea corregida</b> Dentro de cada tarea puedes pulsar <b>«Ver enunciado adjunto»</b> para descargar el ejercicio, y consultar la <b>nota</b> que te ha puesto tu profesor tras corregirla.</div>
+        </div>
+  </div>
+  <div class="footer"><span class="brand">NEXO ACADÉMICO</span><span>Guía del alumno · app.nexoacademico.com</span></div>
+</div>
+
+<div class="page">
+  <div class="topbar"><img src="img/logo_white.png"><span class="tag">Área del Alumno</span></div>
+  <div class="content">
+    <div class="stepline"><div class="stepnum">10</div><span class="kicker">Estudiar</span></div>
+    <h1 class="title">Tests: autoevaluación al momento</h1>
+    <p class="intro">Tu profesor puede asignarte tests de autoevaluación por asignatura. Los realizas desde el móvil y obtienes el resultado al instante, con la corrección detallada.</p>
+    
+    <div class="shot-card">
+      <img src="img/tests.png">
+      <div class="shot-caption">Tests — organizados por asignatura</div>
+    </div>
+    
+    <ul class="points">
+      <li><span class="dot">1</span><span>Cada asignatura muestra cuántos tests tienes <b>completados</b> sobre el total asignado.</span></li>
+<li><span class="dot">2</span><span>Pulsa sobre un test para responder a todas las preguntas.</span></li>
+<li><span class="dot">3</span><span>Al terminar, obtienes tu <b>nota sobre 10</b> y si el test está aprobado o no.</span></li>
+    </ul>
+    
+        <div class="zoom-row">
+          <div class="lupa-wrap">
+            <div class="lupa-frame"><img src="img/zoom_test.png"></div>
+            <div class="lupa-badge">🔍</div>
+          </div>
+          <div class="zoom-text"><b>Corrección al instante</b> Las respuestas correctas se marcan en <b>verde</b> y las incorrectas en <b>rojo</b>, para que veas exactamente en qué has fallado. Si quieres repetir el test, tu profesor deberá habilitarte de nuevo.</div>
+        </div>
+  </div>
+  <div class="footer"><span class="brand">NEXO ACADÉMICO</span><span>Guía del alumno · app.nexoacademico.com</span></div>
+</div>
+
+<div class="page">
+  <div class="topbar"><img src="img/logo_white.png"><span class="tag">Área del Alumno</span></div>
+  <div class="content">
+    <div class="stepline"><div class="stepnum">11</div><span class="kicker">Avisos</span></div>
+    <h1 class="title">Avisos: no te pierdas nada</h1>
+    <p class="intro">Nexo Académico te avisa cuando hay novedades: una nueva tarea, un test asignado, un cambio de horario... Puedes recibir estos avisos también como notificación en el móvil.</p>
+    <div class="arrow-note">➜ Menú lateral → Avisos → «Avisos al móvil» → Activar</div>
+    <div class="shot-card small">
+      <img src="img/avisos.png">
+      <div class="shot-caption">Avisos — comunicaciones del equipo de Nexo Académico</div>
+    </div>
+    
+        <div class="shot-card small contain">
+          <img src="img/avisos_modal.png">
+          <div class="shot-caption">Confirmación al activar los avisos en el dispositivo</div>
+        </div>
+    <ul class="points">
+      <li><span class="dot">1</span><span>Cada aviso indica qué ha ocurrido (por ejemplo, un nuevo test asignado) y la fecha.</span></li>
+<li><span class="dot">2</span><span>En el menú lateral, <b>«Avisos al móvil»</b> te permite activar las notificaciones en tu dispositivo.</span></li>
+<li><span class="dot">3</span><span>Una vez activadas, recibirás un aviso directamente en el móvil cada vez que tu profesor suba algo nuevo.</span></li>
+    </ul>
+    
+  </div>
+  <div class="footer"><span class="brand">NEXO ACADÉMICO</span><span>Guía del alumno · app.nexoacademico.com</span></div>
+</div>
+</body>
+</html>
