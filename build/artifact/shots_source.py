@@ -6,6 +6,9 @@ with open("nexo-guia.html") as f:
 logo_b64 = open("logo_white_b64.txt").read().strip()
 logo_uri = f"data:image/png;base64,{logo_b64}"
 
+logo_color_b64 = open("logo_color_b64.txt").read().strip()
+logo_color_uri = f"data:image/png;base64,{logo_color_b64}"
+
 lines = body.split("\n", 1)
 title_line = lines[0]
 rest = lines[1]
@@ -41,13 +44,13 @@ cover_css = """
 
   .pdf-head{
     display:flex; align-items:center; justify-content:space-between;
-    background:#0b1220; padding:10px 16px; margin-bottom:20px; border-radius:8px;
+    padding-bottom:16px; margin-bottom:22px; border-bottom:1px solid var(--line);
     width:100%; box-sizing:border-box;
   }
-  .pdf-head img{ height:16px; display:block; }
+  .pdf-head img{ height:22px; display:block; }
   .pdf-head span{
     font-family:"IBM Plex Mono",monospace; font-size:9px; letter-spacing:.1em; text-transform:uppercase;
-    color:#7f8ba3;
+    color:var(--ink-muted);
   }
 </style>
 """
@@ -67,7 +70,7 @@ cover_html = f"""
 </section>
 """
 
-pdf_head = f'<div class="pdf-head"><img src="{logo_uri}"><span>Área del Alumno</span></div>'
+pdf_head = f'<div class="pdf-head"><img src="{logo_color_uri}"><span>Área del Alumno</span></div>'
 rest = rest.replace('<div class="hero">', '<div class="hero">' + pdf_head, 1)
 import re
 rest = re.sub(
