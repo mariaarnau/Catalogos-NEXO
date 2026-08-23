@@ -13,7 +13,7 @@
   --accent: #4a7fd6; --accent-light: #8fb8f2;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
-html{-webkit-text-size-adjust:100%;}
+html{-webkit-text-size-adjust:100%;font-size:15px;}
 body{font-family:'Lora',serif;color:var(--ink);line-height:1.55;background:var(--navy);
   background-image:radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
   background-size:18px 18px;}
@@ -165,6 +165,39 @@ body{padding-bottom:68px;}
   .hero-stats{grid-template-columns:repeat(4,1fr);}
   .stat-row{grid-template-columns:repeat(4,1fr);}
 }
+
+/* ---- Print / PDF: no horizontal scroll, no JS tabs, tighter type ---- */
+@media print{
+  html{font-size:14px;}
+  .topnav,.stickybar{position:static;}
+  body{padding-bottom:0;}
+  .hero{padding:26px 18px 20px;}
+  .hero h1{font-size:1.4rem;}
+  .hero p{font-size:.84rem;}
+  section{padding:20px 0 4px;}
+  h2{font-size:1.18rem;}
+  .sub{font-size:.82rem;margin-bottom:14px;}
+
+  .idx-scroll{flex-wrap:wrap;overflow:visible;padding:12px 18px;}
+
+  .card-grid,.guar-grid{flex-direction:column;}
+  .step-card,.feat-card,.card{break-inside:avoid;}
+
+  .flow-scroll{flex-direction:column;overflow:visible;}
+  .flow-step{flex:1 1 auto;break-inside:avoid;}
+
+  .screens-scroll{flex-direction:column;overflow:visible;align-items:center;}
+  .phone{flex:1 1 auto;width:78%;break-inside:avoid;}
+
+  .pricing-tabs{display:none;}
+  .price-panel{display:block !important;margin-bottom:18px;break-before:page;}
+  .price-panel:first-of-type{break-before:auto;}
+  .price-panel::before{content:attr(data-modo-label);display:block;font-family:'Playfair Display',serif;font-weight:700;font-size:1.05rem;color:var(--blue-light);margin-bottom:12px;}
+  .price-grid{flex-direction:column;}
+  .price-card{break-inside:avoid;}
+
+  .cta-final{break-before:page;}
+}
 </style>
 </head>
 <body>
@@ -264,7 +297,7 @@ body{padding-bottom:68px;}
   <h2>Bonos de horas. Sin permanencia.</h2>
   <p class="sub">Pagáis por adelantado. Sin letra pequeña. Más horas, mejor precio.</p>
   <div class="pricing-tabs"><button class="active" onclick="showModo('online',this)">Online</button><button class="" onclick="showModo('presencial',this)">Presencial</button></div>
-  <div class="price-panel active" id="panel-online"><div class="price-grid"><div class="price-card">
+  <div class="price-panel active" id="panel-online" data-modo-label="Modalidad Online"><div class="price-grid"><div class="price-card">
       <div class="hdr"><span class="hrs">2h</span><span class="mod">ESO · Online</span></div>
       <div class="price-line"><span class="old">46,00 €</span><span class="new">40,00 €</span></div>
       <div class="starnote">★ Precio nuevos alumnos</div>
@@ -284,7 +317,7 @@ body{padding-bottom:68px;}
       <div class="price-line"><span class="new">260,00 €</span></div>
       <span class="disc">-16%</span>
       <ul><li>Informes semanales</li><li>Informe mensual</li><li>Plan de trabajo</li><li>Área privada alumno</li></ul>
-    </div></div><div class="price-note">Pagáis por horas de clase, no por una suscripción. Si un mes necesitáis menos, contratáis menos.</div></div><div class="price-panel " id="panel-presencial"><div class="price-grid"><div class="price-card">
+    </div></div><div class="price-note">Pagáis por horas de clase, no por una suscripción. Si un mes necesitáis menos, contratáis menos.</div></div><div class="price-panel " id="panel-presencial" data-modo-label="Modalidad Presencial"><div class="price-grid"><div class="price-card">
       <div class="hdr"><span class="hrs">2h</span><span class="mod">ESO · Presencial</span></div>
       <div class="price-line"><span class="old">48,00 €</span><span class="new">44,00 €</span></div>
       <div class="starnote">★ Precio nuevos alumnos</div>
