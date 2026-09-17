@@ -225,7 +225,8 @@ PART3 = [
     ("She gave a very ___ account of what had happened.", "DETAIL", "detailed"),
     ("The new regulations will ___ affect how small businesses operate.",
      "SIGNIFICANT", "significantly"),
-    ("His argument was based on a fundamental ___ of the data.", "UNDERSTAND", "misunderstanding"),
+    ("His argument was based on a fundamental ___ of the data, which invalidated his entire conclusion.",
+     "UNDERSTAND", "misunderstanding"),
 ]
 
 assert len(PART3) == 10
@@ -239,8 +240,8 @@ PART4 = [
      "You", "the report today.", "don't have to finish"),
     ("I last saw her three years ago.", "SEEN",
      "I", "three years.", "haven't seen her for"),
-    ("Someone stole my bike while I was at work.", "HAD",
-     "My bike", "I was at work.", "had been stolen while"),
+    ("Someone stole my bike while I was at work.", "STOLEN",
+     "My bike", "I was at work.", "was stolen while"),
     ("She started learning English five years ago and still learns it now.", "FOR",
      "She", "five years.", "has been learning English for"),
     ("I'm sure he didn't know about the meeting.", "HAVE",

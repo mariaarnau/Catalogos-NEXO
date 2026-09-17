@@ -1,0 +1,508 @@
+<title>Nexo English Test</title>
+<meta name="description" content="Prueba interactiva de nivel de inglés (B1–C2) con resultado y recomendación de horas semanales — Nexo Académico.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #04071b; --blue: #154ca9; --blue-light: #6eaef0;
+    --cream: #f4f1e8; --surface: #ffffff; --bg: #f7f5ef;
+    --green: #146b46; --green-light: #2f9e6f;
+    --amber: #a9701e; --amber-light: #d99a3e;
+    --alert: #c1502e;
+    --text: #04071b; --text-dim: rgba(4,7,27,.62); --border: #e6e1d3;
+    --radius: 14px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0a0d1f; --surface: #12162c; --cream: #171b32;
+      --text: #f2f0e8; --text-dim: rgba(242,240,232,.65); --border: #262c4a;
+      --blue-light: #8fc0ff;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0a0d1f; --surface: #12162c; --cream: #171b32;
+    --text: #f2f0e8; --text-dim: rgba(242,240,232,.65); --border: #262c4a;
+    --blue-light: #8fc0ff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font-family: 'Lora', Georgia, serif; line-height: 1.5;
+    padding-inline: 16px;
+  }
+  .wrap { max-width: 640px; margin: 0 auto; padding-block: 22px 60px; }
+  h1, h2, h3, .brand { font-family: 'Playfair Display', Georgia, serif; }
+  .topbar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; }
+  .brand { font-weight: 700; font-size: 1.05rem; letter-spacing: .02em; }
+  .brand span { color: var(--blue); }
+  .badge-top { font-size: .64rem; text-transform: uppercase; letter-spacing: .08em; font-weight: 700;
+    color: var(--blue); background: color-mix(in srgb, var(--blue) 12%, transparent); padding: 4px 10px; border-radius: 20px; }
+
+  .progress-wrap { margin-bottom: 22px; }
+  .progress-label { display: flex; justify-content: space-between; font-size: .74rem; text-transform: uppercase;
+    letter-spacing: .06em; color: var(--text-dim); margin-bottom: 6px; font-weight: 600; }
+  .progress-track { height: 7px; background: var(--cream); border-radius: 4px; overflow: hidden; }
+  .progress-fill { height: 100%; background: linear-gradient(90deg, var(--blue), var(--blue-light)); border-radius: 4px;
+    transition: width .3s ease; }
+
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px 20px; }
+  .step { display: flex; flex-direction: column; gap: 16px; }
+
+  .hero-title { font-size: 1.6rem; font-weight: 700; margin: 0 0 6px; text-wrap: balance; }
+  .lede { color: var(--text-dim); font-size: .95rem; margin: 0; }
+  .info-list { margin: 14px 0 0; padding-left: 18px; font-size: .88rem; color: var(--text-dim); }
+  .info-list li { margin-bottom: 6px; }
+
+  .field label { display: block; font-size: .72rem; text-transform: uppercase; letter-spacing: .05em;
+    color: var(--blue); font-weight: 700; margin-bottom: 6px; }
+  .field input[type=text] {
+    width: 100%; padding: 11px 13px; border-radius: 10px; border: 1.4px solid var(--border);
+    background: var(--bg); color: var(--text); font: inherit; font-size: .95rem;
+  }
+  .field input[type=text]:focus { outline: 2px solid var(--blue); outline-offset: 1px; }
+
+  .part-head { margin-bottom: 4px; }
+  .part-eyebrow { font-size: .7rem; text-transform: uppercase; letter-spacing: .08em; color: var(--blue); font-weight: 700; }
+  .part-title { font-size: 1.25rem; font-weight: 700; margin: 3px 0 6px; }
+  .part-instr { font-size: .86rem; color: var(--text-dim); background: var(--cream); border-radius: 10px; padding: 9px 12px; }
+
+  .qcard { border-bottom: 1px solid var(--border); padding-block: 14px; }
+  .qcard:first-of-type { padding-top: 4px; }
+  .qcard:last-of-type { border-bottom: none; }
+  .qtext { font-size: .94rem; margin-bottom: 9px; }
+  .qn { color: var(--blue); font-weight: 700; margin-right: 3px; }
+  .blank-inline { display: inline-block; min-width: 46px; border-bottom: 1.6px solid var(--text); }
+
+  .opts { display: flex; flex-direction: column; gap: 7px; }
+  .opt { display: flex; align-items: center; gap: 10px; padding: 9px 11px; border: 1.4px solid var(--border);
+    border-radius: 10px; cursor: pointer; font-size: .9rem; transition: border-color .15s, background .15s; }
+  .opt:hover { border-color: var(--blue-light); }
+  .opt input { accent-color: var(--blue); width: 16px; height: 16px; flex-shrink: 0; }
+  .opt.checked { border-color: var(--blue); background: color-mix(in srgb, var(--blue) 8%, var(--surface)); }
+  .oletter { font-weight: 700; color: var(--blue); min-width: 14px; }
+
+  .cloze-text { font-size: .95rem; line-height: 2.1; }
+  .gap-input { width: 92px; padding: 3px 7px; border-radius: 7px; border: 1.4px solid var(--blue-light);
+    background: var(--bg); color: var(--text); font: inherit; font-size: .88rem; text-align: center; margin: 0 2px; }
+  .gap-input:focus { outline: 2px solid var(--blue); }
+
+  .wf-row { display: flex; align-items: center; gap: 12px; padding-block: 12px; border-bottom: 1px solid var(--border); flex-wrap: wrap; }
+  .wf-row:last-of-type { border-bottom: none; }
+  .wf-sentence { flex: 1; min-width: 200px; font-size: .92rem; }
+  .wf-root { font-weight: 700; font-size: .78rem; letter-spacing: .03em; color: var(--amber); white-space: nowrap; }
+  .wf-input { width: 130px; }
+
+  .kwt-card { border: 1px solid var(--border); border-radius: 12px; padding: 13px 15px; }
+  .kwt-orig { font-size: .9rem; margin-bottom: 8px; }
+  .kwt-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; font-size: .9rem; }
+  .key-chip { font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .04em;
+    background: color-mix(in srgb, var(--blue) 14%, transparent); color: var(--blue); padding: 3px 10px; border-radius: 20px; }
+  .kwt-input { flex: 1; min-width: 140px; }
+
+  .nav-row { display: flex; gap: 10px; margin-top: 4px; }
+  button.btn { font: inherit; font-size: .92rem; font-weight: 700; padding: 12px 20px; border-radius: 10px;
+    border: none; cursor: pointer; letter-spacing: .01em; }
+  .btn-primary { background: var(--blue); color: #fff; flex: 1; }
+  .btn-primary:hover { background: color-mix(in srgb, var(--blue) 85%, black); }
+  .btn-ghost { background: transparent; color: var(--text); border: 1.4px solid var(--border); }
+  .btn-ghost:hover { border-color: var(--blue-light); }
+
+  [hidden] { display: none !important; }
+
+  /* Results */
+  .level-card { border-radius: 16px; padding: 28px 24px; text-align: center; color: #fff; }
+  .level-card .eyebrow { font-size: .72rem; text-transform: uppercase; letter-spacing: .12em; opacity: .85; margin-bottom: 8px; font-weight: 700; }
+  .level-card .lvl-big { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 3.2rem; line-height: 1; margin-bottom: 4px; }
+  .level-card .lvl-sub { font-size: 1rem; opacity: .92; margin-bottom: 12px; }
+  .level-card .range-pill { display: inline-block; background: rgba(255,255,255,.18); padding: 5px 14px; border-radius: 20px; font-size: .78rem; font-weight: 600; }
+
+  .stat-row { display: flex; gap: 10px; }
+  .stat-tile { flex: 1; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 13px 10px; text-align: center; }
+  .stat-tile .num { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.4rem; font-variant-numeric: tabular-nums; }
+  .stat-tile .lab { font-size: .66rem; text-transform: uppercase; letter-spacing: .05em; color: var(--text-dim); margin-top: 2px; }
+
+  .hours-card { display: flex; gap: 14px; align-items: center; background: var(--cream); border-radius: 12px; padding: 15px 16px; }
+  .hours-card .ic { font-size: 1.6rem; }
+  .hours-card .lab { font-size: .68rem; text-transform: uppercase; letter-spacing: .05em; color: var(--blue); font-weight: 700; margin-bottom: 3px; }
+  .hours-card .val { font-weight: 700; font-size: .95rem; }
+
+  .breakdown-item { margin-bottom: 12px; }
+  .breakdown-item:last-child { margin-bottom: 0; }
+  .bd-top { display: flex; justify-content: space-between; font-size: .82rem; margin-bottom: 4px; }
+  .bd-top .pct { font-weight: 700; font-variant-numeric: tabular-nums; }
+  .bd-track { height: 8px; background: var(--cream); border-radius: 5px; overflow: hidden; }
+  .bd-fill { height: 100%; border-radius: 5px; background: linear-gradient(90deg, var(--blue), var(--blue-light)); }
+
+  .fb-cols { display: flex; gap: 14px; flex-wrap: wrap; }
+  .fb-col { flex: 1; min-width: 220px; }
+  .fb-col h4 { font-size: .72rem; text-transform: uppercase; letter-spacing: .05em; margin: 0 0 6px; color: var(--green-light); }
+  .fb-col.att h4 { color: var(--amber-light); }
+  .fb-col ul { margin: 0; padding-left: 16px; font-size: .85rem; }
+  .fb-col li { margin-bottom: 4px; }
+
+  .section-title-r { font-size: .78rem; text-transform: uppercase; letter-spacing: .06em; color: var(--blue); font-weight: 700; margin: 4px 0 10px; }
+</style>
+
+<div class="wrap">
+  <div class="topbar">
+    <div class="brand">NEXO <span>ACADÉMICO</span></div>
+    <div class="badge-top">Test de Nivel</div>
+  </div>
+
+  <div class="progress-wrap" id="progressWrap" hidden>
+    <div class="progress-label"><span id="progressLabel">Parte 1 de 5</span><span id="progressPct">0%</span></div>
+    <div class="progress-track"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+  </div>
+
+  <!-- INTRO -->
+  <div class="step card" id="step-intro">
+    <h1 class="hero-title">English Placement Test</h1>
+    <p class="lede">Descubre tu nivel de inglés (B1 · B2 · C1 · C2) según el Marco Común Europeo de Referencia. Al terminar verás tu nivel recomendado y cuántas horas de clase a la semana te convienen.</p>
+    <ul class="info-list">
+      <li>109 preguntas en 5 partes: gramática, vocabulario, huecos, formación de palabras y transformación de frases.</li>
+      <li>Unos 60–75 minutos. Puedes dejar en blanco lo que no sepas y seguir.</li>
+      <li>Corrección automática al instante — no necesitas enviarlo a nadie.</li>
+    </ul>
+    <div class="field">
+      <label for="nameInput">Tu nombre</label>
+      <input type="text" id="nameInput" placeholder="Escribe tu nombre">
+    </div>
+    <div class="nav-row">
+      <button class="btn btn-primary" id="startBtn">Empezar el test</button>
+    </div>
+  </div>
+
+  <!-- PARTS 1-5 (generated) -->
+  <div class="step card" id="step-part" hidden>
+    <div class="part-head">
+      <div class="part-eyebrow" id="partEyebrow"></div>
+      <div class="part-title" id="partTitle"></div>
+      <div class="part-instr" id="partInstr"></div>
+    </div>
+    <div id="partBody"></div>
+    <div class="nav-row">
+      <button class="btn btn-ghost" id="prevBtn">Atrás</button>
+      <button class="btn btn-primary" id="nextBtn">Siguiente</button>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="step" id="step-results" hidden>
+    <div class="level-card" id="levelCard">
+      <div class="eyebrow">Nivel recomendado</div>
+      <div class="lvl-big" id="lvlBig">B2</div>
+      <div class="lvl-sub" id="lvlSub">First (FCE)</div>
+      <div class="range-pill" id="lvlRange">Rango: 65–83 puntos</div>
+    </div>
+
+    <div class="stat-row" style="margin-top:14px;">
+      <div class="stat-tile"><div class="num" id="statCorrect">0/109</div><div class="lab">Correctas</div></div>
+      <div class="stat-tile"><div class="num" id="statPoints">0/117</div><div class="lab">Puntos</div></div>
+      <div class="stat-tile"><div class="num" id="statPct">0%</div><div class="lab">Porcentaje</div></div>
+    </div>
+
+    <div class="hours-card" style="margin-top:14px;">
+      <div class="ic">🗓️</div>
+      <div>
+        <div class="lab">Horas recomendadas a la semana</div>
+        <div class="val" id="hoursVal">—</div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:14px;">
+      <div class="section-title-r">Desglose por parte</div>
+      <div id="breakdownWrap"></div>
+    </div>
+
+    <div class="card" style="margin-top:14px;">
+      <div class="fb-cols">
+        <div class="fb-col">
+          <h4>Puntos fuertes</h4>
+          <ul id="fbStrong"></ul>
+        </div>
+        <div class="fb-col att">
+          <h4>Áreas de mejora</h4>
+          <ul id="fbWeak"></ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav-row" style="margin-top:14px;">
+      <button class="btn btn-ghost" id="restartBtn">Repetir el test</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const DATA = {"part1": [{"q": "I ___ this film before. Let's watch something else.", "opts": ["saw", "have seen", "was seeing", "see"], "correct": 1, "level": "B1"}, {"q": "She ___ TV when the phone rang.", "opts": ["watched", "watches", "was watching", "has watched"], "correct": 2, "level": "B1"}, {"q": "This exercise is ___ than the last one.", "opts": ["more difficult", "difficulter", "most difficult", "as difficult"], "correct": 0, "level": "B1"}, {"q": "If it ___ tomorrow, we'll cancel the picnic.", "opts": ["rains", "will rain", "rained", "is raining"], "correct": 0, "level": "B1"}, {"q": "You ___ smoke in here — it's forbidden.", "opts": ["don't have to", "mustn't", "shouldn't to", "don't must"], "correct": 1, "level": "B1"}, {"q": "Look at those clouds! It ___ rain.", "opts": ["will", "is going to", "is", "would"], "correct": 1, "level": "B1"}, {"q": "The woman ___ lives next door is a doctor.", "opts": ["which", "whose", "who", "whom"], "correct": 2, "level": "B1"}, {"q": "This cheese ___ in France.", "opts": ["makes", "is made", "is making", "made"], "correct": 1, "level": "B1"}, {"q": "There isn't ___ milk left in the fridge.", "opts": ["many", "much", "a few", "several"], "correct": 1, "level": "B1"}, {"q": "I enjoy ___ to music while I work.", "opts": ["listen", "to listen", "listening", "listened"], "correct": 2, "level": "B1"}, {"q": "Can you ___ my cat while I'm on holiday?", "opts": ["look after", "look for", "look at", "look up"], "correct": 0, "level": "B1"}, {"q": "I need to ___ my homework before dinner.", "opts": ["make", "do", "have", "take"], "correct": 1, "level": "B1"}, {"q": "He's very good ___ maths.", "opts": ["in", "at", "for", "with"], "correct": 1, "level": "B1"}, {"q": "The hotel room was extremely small. In other words, it was ___.", "opts": ["spacious", "tiny", "comfortable", "modern"], "correct": 1, "level": "B1"}, {"q": "I usually ___ breakfast at 7 am.", "opts": ["do", "make", "have", "take"], "correct": 2, "level": "B1"}, {"q": "If I ___ you were coming, I would have cooked more food.", "opts": ["knew", "had known", "would know", "know"], "correct": 1, "level": "B2"}, {"q": "She said that she ___ tired.", "opts": ["is", "was", "has been", "be"], "correct": 1, "level": "B2"}, {"q": "He asked me ___.", "opts": ["where did I live", "where I lived", "where I live", "where lived I"], "correct": 1, "level": "B2"}, {"q": "The report ___ by tomorrow morning.", "opts": ["must finish", "must be finished", "must be finishing", "must have finished"], "correct": 1, "level": "B2"}, {"q": "My brother, ___ has just moved to Canada, works as an engineer.", "opts": ["that", "who", "which", "whom"], "correct": 1, "level": "B2"}, {"q": "I ___ play the piano when I was a child, but I've forgotten how now.", "opts": ["use to", "was used to", "used to", "would used to"], "correct": 2, "level": "B2"}, {"q": "She isn't answering her phone. She ___ have already left.", "opts": ["must", "should", "can", "would"], "correct": 0, "level": "B2"}, {"q": "___ the heavy rain, the match continued.", "opts": ["Although", "Despite", "However", "Even though"], "correct": 1, "level": "B2"}, {"q": "I was really ___ by the ending of the film.", "opts": ["impress", "impressive", "impressed", "impression"], "correct": 2, "level": "B2"}, {"q": "Don't forget to ___ the lights when you leave.", "opts": ["turn off", "turn into", "turn up", "turn out"], "correct": 0, "level": "B2"}, {"q": "Can you give me some ___ on how to improve my CV?", "opts": ["advices", "advice", "suggestion", "suggest"], "correct": 1, "level": "B2"}, {"q": "It's important to ___ a good relationship with your colleagues.", "opts": ["do", "make", "maintain", "held"], "correct": 2, "level": "B2"}, {"q": "Many companies are trying to reduce their carbon ___.", "opts": ["footprint", "footstep", "fingerprint", "trace"], "correct": 0, "level": "B2"}, {"q": "I'm not a morning person — it takes me ages to ___.", "opts": ["wake up", "wake on", "get on", "wake off"], "correct": 0, "level": "B2"}, {"q": "He's very ambitious and always likes to ___ risks in business.", "opts": ["take", "do", "make", "have"], "correct": 0, "level": "B2"}, {"q": "___ had I arrived home than the phone started ringing.", "opts": ["No sooner", "Hardly", "Scarcely", "Barely"], "correct": 0, "level": "C1"}, {"q": "___ really annoys me is people who talk during films.", "opts": ["What", "That", "It", "This"], "correct": 0, "level": "C1"}, {"q": "I wish I ___ harder for the exam — I would have passed easily.", "opts": ["studied", "had studied", "would study", "study"], "correct": 1, "level": "C1"}, {"q": "The doctor recommended that he ___ more exercise.", "opts": ["does", "do", "did", "will do"], "correct": 1, "level": "C1"}, {"q": "We ___ our house painted last month.", "opts": ["had", "did", "made", "took"], "correct": 0, "level": "C1"}, {"q": "___ nothing more to say, she left the room.", "opts": ["Having", "Had", "Have", "To have"], "correct": 0, "level": "C1"}, {"q": "The man ___ over there is my uncle.", "opts": ["who standing", "stands", "standing", "stood"], "correct": 2, "level": "C1"}, {"q": "You ___ bought so much food — half of it will go to waste.", "opts": ["didn't need to", "needn't have", "mustn't have", "shouldn't"], "correct": 1, "level": "C1"}, {"q": "You can borrow my car ___ you bring it back before 6 pm.", "opts": ["provided that", "even though", "in case", "despite"], "correct": 0, "level": "C1"}, {"q": "A: I don't think it'll rain. B: I hope ___.", "opts": ["so", "that", "it", "yes"], "correct": 0, "level": "C1"}, {"q": "The government has come under ___ fire for its handling of the crisis.", "opts": ["heavy", "strong", "hard", "big"], "correct": 0, "level": "C1"}, {"q": "Her ___ to detail makes her an excellent editor.", "opts": ["attentive", "attention", "attentively", "attend"], "correct": 1, "level": "C1"}, {"q": "The peace talks suddenly ___ when the delegation walked out of the room.", "opts": ["broke down", "broke up", "broke out", "broke off"], "correct": 3, "level": "C1"}, {"q": "The CEO's speech was full of ___ remarks that many found condescending.", "opts": ["patronizing", "patronal", "patronized", "patron"], "correct": 0, "level": "C1"}, {"q": "After months of hard work, the project finally ___.", "opts": ["paid off", "paid up", "paid out", "paid back"], "correct": 0, "level": "C1"}, {"q": "___ was the flight delayed, but our luggage was also lost.", "opts": ["Not only", "Not never", "No only", "Not just"], "correct": 0, "level": "C2"}, {"q": "___ hard she tried, she couldn't open the jar.", "opts": ["How", "However", "As", "So"], "correct": 1, "level": "C2"}, {"q": "It is essential that the matter ___ investigated immediately.", "opts": ["is", "be", "was", "will be"], "correct": 1, "level": "C2"}, {"q": "___ the CEO to resign, the company's shares would probably fall.", "opts": ["If", "Were", "Should", "Was"], "correct": 1, "level": "C2"}, {"q": "They have introduced a new scheme ___ employees can buy shares in the company.", "opts": ["whereby", "wherein", "whereupon", "whereas"], "correct": 0, "level": "C2"}, {"q": "My grandmother has always been very ___ — she never wastes anything.", "opts": ["economic", "economical", "economics", "economy"], "correct": 1, "level": "C2"}, {"q": "I think you're barking up the wrong ___ if you think he's responsible for this.", "opts": ["tree", "path", "road", "branch"], "correct": 0, "level": "C2"}, {"q": "The negotiations were fraught ___ difficulty from the very beginning.", "opts": ["of", "by", "with", "in"], "correct": 2, "level": "C2"}, {"q": "There was a general feeling of ___ among staff after the announcement.", "opts": ["disgruntlement", "disgruntled", "disgruntle", "disgruntling"], "correct": 0, "level": "C2"}, {"q": "The committee decided to ___ the proposal for further review.", "opts": ["shelve", "shelf", "unshelve", "shell"], "correct": 0, "level": "C2"}, {"q": "She has a good eye for detail, which makes her ___ suited to quality control.", "opts": ["ideal", "ideally", "idea", "idealize"], "correct": 1, "level": "C2"}, {"q": "The minister was accused of trying to ___ public opinion through selective use of statistics.", "opts": ["manipulate", "fabricate", "generate", "stimulate"], "correct": 0, "level": "C2"}, {"q": "The two countries were on the ___ of war after the border incident.", "opts": ["verge", "edge", "border", "brink"], "correct": 3, "level": "C2"}, {"q": "The report's findings were largely ___ by subsequent research.", "opts": ["backed up", "corroborated", "proved", "shown"], "correct": 1, "level": "C2"}, {"q": "Let's not beat around the ___ — sales figures are simply not good enough.", "opts": ["tree", "bush", "field", "corner"], "correct": 1, "level": "C2"}], "part2": [{"level": "B1–B2", "template": "Last summer, my sister and I decided to travel around Portugal for two weeks. We had never been {1} the country before, so we were really excited. On {2} first day, we visited Lisbon and walked {3} the old streets for hours. The weather was so hot {4} we had to stop every few minutes to drink water. {5} of the restaurants we tried were absolutely delicious, especially the fish dishes. By the end of the trip, we {6} visited five different cities. We only had ten days, so we {7} to skip the south of the country. We're already planning {8} go back next year.", "gaps": [{"n": 1, "accepted": ["to"]}, {"n": 2, "accepted": ["our", "the"]}, {"n": 3, "accepted": ["through", "around", "along"]}, {"n": 4, "accepted": ["that"]}, {"n": 5, "accepted": ["most", "many"]}, {"n": 6, "accepted": ["had"]}, {"n": 7, "accepted": ["had"]}, {"n": 8, "accepted": ["to"]}]}, {"level": "C1–C2", "template": "Remote work has transformed the way many of us live and work. {1} has this shift been more visible than in large cities, where office towers now stand half-empty. Some economists argue that, {2} the initial disruption, remote work has ultimately made the workforce more productive. Others, {3}, believe that it has eroded the sense of community that traditionally existed within companies. {4} matter which side of the debate you fall on, it is clear that the traditional nine-to-five office model is unlikely to return in {5} original form. Employees have grown accustomed to the flexibility remote work provides, and few would be willing to give it {6} without a fight. {7} this trend continues, cities may need to rethink {8} they use office space altogether.", "gaps": [{"n": 1, "accepted": ["nowhere"]}, {"n": 2, "accepted": ["despite"]}, {"n": 3, "accepted": ["however"]}, {"n": 4, "accepted": ["no"]}, {"n": 5, "accepted": ["its"]}, {"n": 6, "accepted": ["up"]}, {"n": 7, "accepted": ["if"]}, {"n": 8, "accepted": ["how"]}]}], "part3": [{"sentence": "Her presentation was extremely ___.", "root": "IMPRESS", "answer": "impressive"}, {"sentence": "The company's new policy has led to widespread ___ among employees, many of whom have complained to HR.", "root": "SATISFY", "answer": "dissatisfaction"}, {"sentence": "It's important to remain ___ during a job interview.", "root": "CONFIDENCE", "answer": "confident"}, {"sentence": "The novel's ___ ending surprised every reader.", "root": "EXPECT", "answer": "unexpected"}, {"sentence": "Scientists are still trying to find a ___ explanation for the phenomenon.", "root": "SCIENCE", "answer": "scientific"}, {"sentence": "The company was praised for its ___ approach to recycling.", "root": "INNOVATE", "answer": "innovative"}, {"sentence": "The manager's decision was met with strong ___ from the staff.", "root": "OPPOSE", "answer": "opposition"}, {"sentence": "She gave a very ___ account of what had happened.", "root": "DETAIL", "answer": "detailed"}, {"sentence": "The new regulations will ___ affect how small businesses operate.", "root": "SIGNIFICANT", "answer": "significantly"}, {"sentence": "His argument was based on a fundamental ___ of the data, which invalidated his entire conclusion.", "root": "UNDERSTAND", "answer": "misunderstanding"}], "part4": [{"orig": "It's not necessary for you to finish the report today.", "key": "HAVE", "prefix": "You", "suffix": "the report today.", "variants": ["don't have to finish", "do not have to finish"]}, {"orig": "I last saw her three years ago.", "key": "SEEN", "prefix": "I", "suffix": "three years.", "variants": ["haven't seen her for", "have not seen her for", "haven't seen her in", "have not seen her in"]}, {"orig": "Someone stole my bike while I was at work.", "key": "STOLEN", "prefix": "My bike", "suffix": "I was at work.", "variants": ["was stolen while"]}, {"orig": "She started learning English five years ago and still learns it now.", "key": "FOR", "prefix": "She", "suffix": "five years.", "variants": ["has been learning english for"]}, {"orig": "I'm sure he didn't know about the meeting.", "key": "HAVE", "prefix": "He", "suffix": "about the meeting.", "variants": ["can't have known", "cannot have known", "can not have known"]}, {"orig": "It's possible that they missed the train.", "key": "MIGHT", "prefix": "They", "suffix": "the train.", "variants": ["might have missed"]}, {"orig": "Despite being very tired, she finished the marathon.", "key": "THOUGH", "prefix": "", "suffix": ", she finished the marathon.", "variants": ["tired though she was", "though she was tired"]}, {"orig": "I regret not studying harder at university.", "key": "WISH", "prefix": "I", "suffix": "harder at university.", "variants": ["wish i had studied", "wish i'd studied"]}], "part5": [{"q": "You should always ___ care when crossing a busy road.", "opts": ["do", "take", "make", "have"], "correct": 1}, {"q": "It's easy to ___ mistakes when you're tired.", "opts": ["do", "make", "have", "take"], "correct": 1}, {"q": "He decided to ___ a stand against the new policy.", "opts": ["take", "make", "do", "have"], "correct": 0}, {"q": "Could you ___ me a favour and pick up some milk?", "opts": ["make", "do", "take", "give"], "correct": 1}, {"q": "The new evidence ___ doubt on his account of events.", "opts": ["makes", "puts", "casts", "gives"], "correct": 2}, {"q": "She had to put up with a lot of criticism early in her career. “Put up with” most nearly means:", "opts": ["avoid", "tolerate", "enjoy", "cause"], "correct": 1}, {"q": "The meeting was called off at the last minute. “Called off” most nearly means:", "opts": ["postponed", "cancelled", "started", "shortened"], "correct": 1}, {"q": "He came across an old photograph while cleaning the attic. “Came across” most nearly means:", "opts": ["destroyed", "looked for", "found by chance", "remembered"], "correct": 2}, {"q": "Prices have gone up considerably over the past year. “Gone up” most nearly means:", "opts": ["increased", "decreased", "stabilised", "disappeared"], "correct": 0}, {"q": "They finally managed to sort out the misunderstanding. “Sort out” most nearly means:", "opts": ["create", "resolve", "ignore", "discuss"], "correct": 1}, {"q": "“It's raining cats and dogs outside.” This means:", "opts": ["It's raining very lightly", "It's raining very heavily", "It's about to rain", "Animals are falling from the sky"], "correct": 1}, {"q": "“I think we should let sleeping dogs lie.” This means:", "opts": ["We should wake everyone up", "We should not disturb a situation that could cause problems if brought up", "We should get more sleep", "We should be more honest"], "correct": 1}, {"q": "“She's clearly under the weather today.” This means:", "opts": ["She's outside in the rain", "She's feeling slightly ill", "She's in a bad mood", "She's very busy"], "correct": 1}, {"q": "“That decision really cost him an arm and a leg.” This means:", "opts": ["It caused him a physical injury", "It was very expensive", "It took a long time", "It made him famous"], "correct": 1}, {"q": "“Once in a blue moon, we go out for dinner.” This means:", "opts": ["Very often", "Every month", "Very rarely", "Only at night"], "correct": 2}], "scoring": {"bands": [[0, 46, "Pre-B1", "A2 o inferior — se recomienda una prueba de nivel más básica."], [47, 64, "B1", "Usuario independiente — nivel intermedio."], [65, 83, "B2", "Usuario independiente — nivel intermedio alto."], [84, 101, "C1", "Usuario competente — nivel avanzado."], [102, 117, "C2", "Usuario competente — nivel de maestría."]], "part1_points": 60, "part2_points": 16, "part3_points": 10, "part4_points": 16, "part5_points": 15, "total_points": 117}};
+
+const HOURS_REC = {
+  "Pre-B1": { hours: "4–5 h / semana", note: "Para construir cuanto antes una base sólida de gramática y vocabulario." },
+  "B1":      { hours: "3–4 h / semana", note: "Ritmo constante para consolidar el intermedio y dar el salto a B2." },
+  "B2":      { hours: "2–3 h / semana", note: "Mantener el nivel mientras se amplía vocabulario y fluidez." },
+  "C1":      { hours: "2 h / semana",   note: "Perfeccionamiento y preparación de examen (Advanced)." },
+  "C2":      { hours: "1–2 h / semana", note: "Mantenimiento y matices — ya tienes un dominio muy alto." },
+};
+
+const LEVEL_META = {
+  "Pre-B1": { sub: "Elementary / Pre-Intermediate", color1: "#8a8f9e", color2: "#5b6070" },
+  "B1":      { sub: "Preliminary (PET)",             color1: "#154ca9", color2: "#04071b" },
+  "B2":      { sub: "First (FCE)",                   color1: "#1c66d6", color2: "#154ca9" },
+  "C1":      { sub: "Advanced (CAE)",                color1: "#146b46", color2: "#0d4a30" },
+  "C2":      { sub: "Proficiency (CPE)",              color1: "#a9701e", color2: "#7a5015" },
+};
+
+const PART_LABELS = {
+  1: "Grammar & Vocabulary",
+  2: "Open Cloze",
+  3: "Word Formation",
+  4: "Key Word Transformation",
+  5: "Vocabulary in Use",
+};
+const PART_ES = {
+  1: "Gramática y vocabulario general",
+  2: "Gramática en contexto",
+  3: "Formación de palabras",
+  4: "Transformación de frases (gramática avanzada)",
+  5: "Vocabulario, phrasal verbs e idioms",
+};
+
+let step = "intro"; // intro | 1..5 | results
+const answers = { p1: {}, p2: {}, p3: {}, p4: {}, p5: {} };
+
+function normalize(s) {
+  return (s || "").toLowerCase().trim()
+    .replace(/[’]/g, "'")
+    .replace(/[^a-z0-9' ]/g, "")
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+function blankify(q) { return q.replace(/___/g, '<span class="blank-inline">&nbsp;</span>'); }
+
+function renderMCQ(container, items, answerStore, startNum) {
+  container.innerHTML = "";
+  items.forEach((item, i) => {
+    const num = startNum + i;
+    const div = document.createElement('div');
+    div.className = 'qcard';
+    const letters = ['A', 'B', 'C', 'D'];
+    div.innerHTML = `
+      <div class="qtext"><span class="qn">${num}.</span> ${blankify(item.q)}</div>
+      <div class="opts">
+        ${item.opts.map((opt, oi) => `
+          <label class="opt" data-i="${i}" data-oi="${oi}">
+            <input type="radio" name="mcq_${startNum}_${i}" value="${oi}">
+            <span class="oletter">${letters[oi]}</span><span>${opt}</span>
+          </label>`).join('')}
+      </div>`;
+    container.appendChild(div);
+    div.querySelectorAll('input[type=radio]').forEach(radio => {
+      radio.addEventListener('change', () => {
+        answerStore[i] = parseInt(radio.value, 10);
+        div.querySelectorAll('.opt').forEach(o => o.classList.remove('checked'));
+        radio.closest('.opt').classList.add('checked');
+      });
+    });
+    if (answerStore[i] !== undefined) {
+      const sel = div.querySelector(`input[value="${answerStore[i]}"]`);
+      if (sel) { sel.checked = true; sel.closest('.opt').classList.add('checked'); }
+    }
+  });
+}
+
+function renderPart2(container) {
+  container.innerHTML = "";
+  DATA.part2.forEach((textObj, ti) => {
+    const wrap = document.createElement('div');
+    wrap.className = 'cloze-text';
+    if (ti > 0) wrap.style.marginTop = '18px';
+    const title = document.createElement('div');
+    title.innerHTML = `<b>Texto ${ti + 1}</b><br>`;
+    wrap.appendChild(title);
+    const parts = textObj.template.split(/\{(\d+)\}/);
+    parts.forEach((part, idx) => {
+      if (idx % 2 === 0) {
+        wrap.appendChild(document.createTextNode(part));
+      } else {
+        const n = part;
+        const input = document.createElement('input');
+        input.type = 'text';
+        input.className = 'gap-input';
+        input.placeholder = `(${n})`;
+        const key = ti + '_' + n;
+        if (answers.p2[key]) input.value = answers.p2[key];
+        input.addEventListener('input', () => { answers.p2[key] = input.value; });
+        wrap.appendChild(input);
+      }
+    });
+    container.appendChild(wrap);
+  });
+}
+
+function renderPart3(container) {
+  container.innerHTML = "";
+  DATA.part3.forEach((item, i) => {
+    const row = document.createElement('div');
+    row.className = 'wf-row';
+    row.innerHTML = `
+      <div class="wf-sentence"><span class="qn">${i + 1}.</span> ${blankify(item.sentence)}</div>
+      <div class="wf-root">${item.root}</div>
+      <input type="text" class="field-like wf-input gap-input" placeholder="tu respuesta">`;
+    const input = row.querySelector('input');
+    if (answers.p3[i]) input.value = answers.p3[i];
+    input.addEventListener('input', () => { answers.p3[i] = input.value; });
+    container.appendChild(row);
+  });
+}
+
+function renderPart4(container) {
+  container.innerHTML = "";
+  DATA.part4.forEach((item, i) => {
+    const card = document.createElement('div');
+    card.className = 'kwt-card';
+    if (i > 0) card.style.marginTop = '10px';
+    const gapText = item.prefix ? `${item.prefix} ___ ${item.suffix}` : `___ ${item.suffix}`;
+    card.innerHTML = `
+      <div class="kwt-orig"><span class="qn">${i + 1}.</span> ${item.orig}</div>
+      <div class="kwt-row">
+        <span class="key-chip">${item.key}</span>
+        <span>${item.prefix ? item.prefix : ''}</span>
+        <input type="text" class="gap-input kwt-input" placeholder="completa aquí">
+        <span>${item.suffix}</span>
+      </div>`;
+    const input = card.querySelector('input');
+    if (answers.p4[i]) input.value = answers.p4[i];
+    input.addEventListener('input', () => { answers.p4[i] = input.value; });
+    container.appendChild(card);
+  });
+}
+
+const PART_INSTR = {
+  1: "Elige la opción (A, B, C o D) que complete correctamente cada frase.",
+  2: "Completa cada hueco numerado con UNA sola palabra.",
+  3: "Usa la palabra en mayúsculas para formar la palabra que encaja en el hueco.",
+  4: "Reescribe la frase usando la palabra clave, sin cambiar su significado.",
+  5: "Elige la opción correcta (A, B, C o D).",
+};
+
+function showStep(newStep) {
+  step = newStep;
+  document.getElementById('step-intro').hidden = newStep !== 'intro';
+  document.getElementById('step-part').hidden = !(typeof newStep === 'number');
+  document.getElementById('step-results').hidden = newStep !== 'results';
+  const progressWrap = document.getElementById('progressWrap');
+  progressWrap.hidden = !(typeof newStep === 'number');
+
+  if (typeof newStep === 'number') {
+    document.getElementById('progressLabel').textContent = `Parte ${newStep} de 5`;
+    document.getElementById('progressPct').textContent = Math.round((newStep - 1) / 5 * 100) + '%';
+    document.getElementById('progressFill').style.width = ((newStep - 1) / 5 * 100) + '%';
+    document.getElementById('partEyebrow').textContent = `Parte ${newStep} · ${PART_LABELS[newStep]}`;
+    document.getElementById('partTitle').textContent = newStep === 1 ? "Elige la opción correcta" :
+      newStep === 5 ? "Colocaciones, phrasal verbs e idioms" : PART_LABELS[newStep];
+    document.getElementById('partInstr').textContent = PART_INSTR[newStep];
+    const body = document.getElementById('partBody');
+    if (newStep === 1) renderMCQ(body, DATA.part1, answers.p1, 1);
+    if (newStep === 2) renderPart2(body);
+    if (newStep === 3) renderPart3(body);
+    if (newStep === 4) renderPart4(body);
+    if (newStep === 5) renderMCQ(body, DATA.part5, answers.p5, 1);
+    document.getElementById('prevBtn').style.visibility = newStep === 1 ? 'hidden' : 'visible';
+    document.getElementById('nextBtn').textContent = newStep === 5 ? 'Ver mi resultado' : 'Siguiente';
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }
+  if (newStep === 'results') computeAndRenderResults();
+}
+
+document.getElementById('startBtn').addEventListener('click', () => showStep(1));
+document.getElementById('prevBtn').addEventListener('click', () => { if (step > 1) showStep(step - 1); });
+document.getElementById('nextBtn').addEventListener('click', () => { if (step < 5) showStep(step + 1); else showStep('results'); });
+document.getElementById('restartBtn').addEventListener('click', () => {
+  Object.assign(answers, { p1: {}, p2: {}, p3: {}, p4: {}, p5: {} });
+  document.getElementById('nameInput').value = '';
+  showStep('intro');
+  window.scrollTo({ top: 0, behavior: 'instant' });
+});
+
+function computeAndRenderResults() {
+  let totalPoints = 0;
+  let totalCorrectCount = 0;
+  const blockScores = { B1: 0, B2: 0, C1: 0, C2: 0 };
+
+  const p1Correct = DATA.part1.filter((item, i) => answers.p1[i] === item.correct);
+  p1Correct.forEach(item => blockScores[item.level]++);
+  const p1Score = p1Correct.length;
+  totalPoints += p1Score; totalCorrectCount += p1Score;
+
+  let p2Score = 0, p2Total = 0;
+  DATA.part2.forEach((t, ti) => {
+    t.gaps.forEach(g => {
+      p2Total++;
+      const val = normalize(answers.p2[ti + '_' + g.n]);
+      if (val && g.accepted.includes(val)) p2Score++;
+    });
+  });
+  totalPoints += p2Score; totalCorrectCount += p2Score;
+
+  let p3Score = 0;
+  DATA.part3.forEach((item, i) => {
+    if (normalize(answers.p3[i]) === item.answer) p3Score++;
+  });
+  totalPoints += p3Score; totalCorrectCount += p3Score;
+
+  let p4Correct = 0;
+  DATA.part4.forEach((item, i) => {
+    const val = normalize(answers.p4[i]);
+    if (val && item.variants.includes(val)) p4Correct++;
+  });
+  const p4Score = p4Correct * 2;
+  totalPoints += p4Score; totalCorrectCount += p4Correct;
+
+  const p5Correct = DATA.part5.filter((item, i) => answers.p5[i] === item.correct);
+  const p5Score = p5Correct.length;
+  totalPoints += p5Score; totalCorrectCount += p5Score;
+
+  const totalQuestions = 60 + 16 + 10 + 8 + 15;
+  const band = DATA.scoring.bands.find(b => totalPoints >= b[0] && totalPoints <= b[1]) || DATA.scoring.bands[0];
+  const levelName = band[2];
+  const meta = LEVEL_META[levelName];
+  const hours = HOURS_REC[levelName];
+  const pct = Math.round(totalPoints / DATA.scoring.total_points * 100);
+
+  const levelCard = document.getElementById('levelCard');
+  levelCard.style.background = `linear-gradient(120deg, ${meta.color2}, ${meta.color1})`;
+  document.getElementById('lvlBig').textContent = levelName;
+  document.getElementById('lvlSub').textContent = meta.sub;
+  document.getElementById('lvlRange').textContent = `Rango: ${band[0]}–${band[1]} puntos`;
+  document.getElementById('statCorrect').textContent = `${totalCorrectCount}/${totalQuestions}`;
+  document.getElementById('statPoints').textContent = `${totalPoints}/${DATA.scoring.total_points}`;
+  document.getElementById('statPct').textContent = `${pct}%`;
+  document.getElementById('hoursVal').textContent = `${hours.hours} — ${hours.note}`;
+
+  const parts = [
+    { label: `Parte 1 · ${PART_LABELS[1]}`, got: p1Score, max: DATA.scoring.part1_points, key: 1 },
+    { label: `Parte 2 · ${PART_LABELS[2]}`, got: p2Score, max: DATA.scoring.part2_points, key: 2 },
+    { label: `Parte 3 · ${PART_LABELS[3]}`, got: p3Score, max: DATA.scoring.part3_points, key: 3 },
+    { label: `Parte 4 · ${PART_LABELS[4]}`, got: p4Score, max: DATA.scoring.part4_points, key: 4 },
+    { label: `Parte 5 · ${PART_LABELS[5]}`, got: p5Score, max: DATA.scoring.part5_points, key: 5 },
+  ];
+  const bdWrap = document.getElementById('breakdownWrap');
+  bdWrap.innerHTML = parts.map(p => {
+    const pp = Math.round(p.got / p.max * 100);
+    return `<div class="breakdown-item">
+      <div class="bd-top"><span>${p.label}</span><span class="pct">${p.got}/${p.max}</span></div>
+      <div class="bd-track"><div class="bd-fill" style="width:${pp}%"></div></div>
+    </div>`;
+  }).join('');
+
+  const withPct = parts.map(p => ({ ...p, pp: p.got / p.max }));
+  const sorted = [...withPct].sort((a, b) => b.pp - a.pp);
+  const strong = sorted.slice(0, 2).map(p => PART_ES[p.key]);
+  const weak = sorted.slice(-2).reverse().map(p => PART_ES[p.key]);
+  document.getElementById('fbStrong').innerHTML = strong.map(s => `<li>${s}</li>`).join('');
+  document.getElementById('fbWeak').innerHTML = weak.map(s => `<li>${s}</li>`).join('');
+}
+
+showStep('intro');
+</script>
