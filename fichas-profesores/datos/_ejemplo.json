@@ -1,0 +1,22 @@
+{
+  "nombre": "Nombre Apellido",
+  "titular": "Profesora de Inglés",
+  "edad": 26,
+  "ubicacion": "Valencia",
+  "materias": ["INGLÉS", "LENGUA"],
+  "telefono": "600 000 000",
+  "email": "correo.ejemplo@gmail.com",
+  "situacion_actual": "Ejemplo: cursando el Máster de Profesorado y dando clases particulares.",
+  "estudios": [
+    {"titulo": "Grado en Estudios Ingleses", "detalle": "Universitat de València", "fecha": "2019 – 2023"},
+    {"titulo": "Máster de Profesorado (en curso)", "detalle": "Especialidad Inglés", "fecha": "2025 –"}
+  ],
+  "idiomas": [
+    {"idioma": "Inglés", "nivel": "C1", "certificado": "Cambridge Advanced (CAE)"},
+    {"idioma": "Valenciano", "nivel": "C1", "certificado": "CIEACOVA"}
+  ],
+  "experiencia_docente": [
+    {"titulo": "Clases particulares de Inglés", "detalle": "ESO y Bachillerato", "fecha": "2021 – actualidad"},
+    {"titulo": "Auxiliar de conversación", "detalle": "IES (ejemplo)", "fecha": "2023 – 2024"}
+  ]
+}
