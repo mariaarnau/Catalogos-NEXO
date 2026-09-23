@@ -1,0 +1,44 @@
+{
+  "nombre": "Carmen",
+  "etapa": "universidad",
+  "curso": "",
+  "asignaturas": ["Inglés"],
+  "voz": "tu",
+  "bonos_recomendados": [
+    {"horas": 4, "frecuencia": "1h a la semana"},
+    {"horas": 8, "frecuencia": "2h a la semana"}
+  ],
+  "modalidades_recomendadas": ["online", "casa_alumno"],
+  "informe_ejemplo": {
+    "mes": "Noviembre 2026",
+    "nota": "7,0",
+    "sesiones": 8,
+    "horas": "8h",
+    "destrezas_label": "Destrezas trabajadas",
+    "barras": [["Speaking", 7.0], ["Listening", 6.8], ["Writing", 6.5], ["Grammar", 7.2]],
+    "mayor_progreso": "Speaking — de 6,0 a 7,0, muy buen ritmo este mes",
+    "resumen": "En noviembre, Carmen ha hecho 8 sesiones de Inglés sin faltar a ninguna. Se expresa con más fluidez en conversación y ha mejorado la comprensión oral. El punto de trabajo es la redacción: estructura de párrafos y conectores.",
+    "proxima_sesion": "PRÓXIMA SESIÓN — JUEVES 3",
+    "proxima_sesion_txt": "Writing: estructura de un essay + corrección de conectores.",
+    "horario": "Carmen · Lunes y jueves, 18:00–19:00",
+    "temas": [["Speaking", 2.5], ["Listening", 1.8], ["Grammar", 1.2], ["Writing", 0.5]],
+    "fuertes": ["Mantiene conversaciones con soltura", "Muy buena comprensión en audios reales"],
+    "atencion": ["Writing: le cuesta ordenar las ideas", "Duda con tiempos verbales compuestos"],
+    "casa": ["10 min diarios de listening", "1 párrafo de writing a la semana"],
+    "semanas": [5.8, 6.3, 6.8, 7.2],
+    "metricas": [["76%", "Comprensión"], ["81%", "Fluidez"], ["62%", "Autonomía"]],
+    "evol": [
+      ["Expresión oral", "Octubre: 60%", "Noviembre: 79%", "Responde con más seguridad y menos pausas."],
+      ["Autonomía", "Octubre: 50%", "Noviembre: 62%", "Cada vez necesita menos ayuda para empezar a escribir."]
+    ],
+    "conclusion": "Noviembre cierra con una tendencia muy positiva. El foco de diciembre es consolidar el writing antes del próximo examen.",
+    "cal_mes": [2026, 12],
+    "cal_titulo": "Calendario de preparación — diciembre 2026",
+    "cal_dias_sesion": [0, 3],
+    "cal_examen": 18,
+    "cal_semanas": "3 sem",
+    "cal_semanas_txt": "desde la fecha de este informe hasta el próximo examen",
+    "antes": "Sin refuerzo fijo",
+    "ahora": "Sesiones semanales de Inglés · Bono mensual"
+  }
+}
