@@ -152,7 +152,7 @@ def page_cover(d, t):
   <div class="pill gold">DOCUMENTO PRIVADO · PLAN PERSONALIZADO</div>
   <h1 class="cover-h">Tu plan a medida en<br><em>NEXO Académico</em></h1>
   <p class="cover-sub">{e(t["cover_sub"])}</p>
-  <div class="name-card"><div class="nm">{e(d["nombre"])}</div><div class="cs">{e(sub.upper())}</div></div>
+  <div class="name-card"><div class="nm">{e(d.get("nombre_completo") or d["nombre"])}</div><div class="cs">{e(sub.upper())}</div></div>
   <div class="cover-foot">{e(t["cover_foot"])}</div>
 </section>'''
 
@@ -288,7 +288,7 @@ def phones(d):
     evol = "".join(f'<div class="s-ev"><b>{e(a)}</b><div>{e(b)} <span>▲ {e(c)}</span></div><div>{e(x)}</div></div>'
                    for a, b, c, x in r["evol"])
     p3 = f'''<div class="scr">
-  <div class="s-name l">Comparado con octubre</div><div class="s-sub b">{e(n)} · {e(asig)} — Evolución nota estimada, 4 semanas</div>
+  <div class="s-name l">Comparado con {e(r.get("comparado", "octubre"))}</div><div class="s-sub b">{e(n)} · {e(asig)} — Evolución nota estimada, 4 semanas</div>
   <div class="s-cols">{cols}</div>
   <div class="s-kpis m">{mets}</div>
   {evol}
@@ -635,6 +635,7 @@ h2.c { font-size: 34px; margin: 26px 0 18px; }
 .wk { text-align: center; }
 .wk small { display: block; color: #7d7f8a; font-size: 10px; margin-top: 5px; white-space: nowrap; }
 .stack { display: flex; flex-direction: column-reverse; gap: 2px; height: 150px; justify-content: flex-start; }
+.bdg { display: block; margin: 0 auto 4px; width: max-content; background: #c1502e; color: #fff; font: 700 9px 'Liberation Sans', Arial; letter-spacing: 0.06em; padding: 3px 6px; border-radius: 999px; }
 .stack b small { display: block; font: 700 10px 'Liberation Sans', Arial; color: #e9d18f; }
 .stack b { order: 99; font-size: 13px; color: #e7e7ea; margin-bottom: 3px; }
 .wk.pico .stack b { color: #e9d18f; }
@@ -675,7 +676,7 @@ def main():
     out = ROOT / "output"
     out.mkdir(exist_ok=True)
     # Nombre de archivo: Plan_NEXO_<Nombre>_<Curso>_<Asignaturas> (sin curso, la etapa)
-    partes = [d["nombre"], d["curso"] or tf["nombre"]] + d["asignaturas"]
+    partes = [d.get("nombre_completo") or d["nombre"], d["curso"] or tf["nombre"]] + d["asignaturas"]
     base = out / ("Plan_NEXO_" + "_".join(re.sub(r"[^\wº]+", "_", x).strip("_") for x in partes if x))
     base.with_suffix(".html").write_text(doc, encoding="utf-8")
     subprocess.run(["node", str(ROOT / "render_pdf.js"), str(base.with_suffix(".html")), str(base.with_suffix(".pdf"))], check=True)

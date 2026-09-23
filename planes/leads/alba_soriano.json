@@ -1,0 +1,267 @@
+{
+  "nombre": "Alba",
+  "nombre_completo": "Alba Soriano",
+  "etapa": "bachillerato",
+  "curso": "2º Bachillerato",
+  "asignaturas": [
+    "Matemáticas",
+    "Química"
+  ],
+  "voz": "familia",
+  "bonos_recomendados": [
+    {
+      "horas": 12,
+      "frecuencia": "3h a la semana",
+      "refuerzo": {
+        "horas": 4,
+        "cuando": "en marzo y mayo",
+        "motivo": "meses de exámenes, con semanas de 4h"
+      }
+    }
+  ],
+  "modalidades_recomendadas": [
+    "online",
+    "casa_alumno"
+  ],
+  "ruta": {
+    "etiqueta": "SU HOJA DE RUTA",
+    "pill": "NUEVO · EL CURSO PLANIFICADO HASTA LA PAU",
+    "titulo": "Mes a mes, de octubre a la PAU",
+    "lead": "Alba tiene exámenes en noviembre, marzo y mayo, y la PAU en junio. Así repartimos las horas de Matemáticas y Química para llegar a cada cita con todo trabajado.",
+    "stats": [
+      [
+        "2h → 4h",
+        "por semana: empieza con 2h y sube en exámenes"
+      ],
+      [
+        "4",
+        "citas clave: noviembre, marzo, mayo y la PAU"
+      ],
+      [
+        "112h",
+        "de clase de octubre a la PAU"
+      ],
+      [
+        "50/50",
+        "reparto entre Matemáticas y Química, ajustable"
+      ]
+    ],
+    "cal_titulo": "Horas de clase por mes",
+    "px_por_hora": 7,
+    "semanas": [
+      {
+        "label": "Octubre",
+        "mes": "1er trimestre",
+        "horas": [
+          6,
+          6
+        ],
+        "top": "12h<small>2h/sem + repaso</small>"
+      },
+      {
+        "label": "Noviembre",
+        "mes": "1er trimestre",
+        "horas": [
+          6,
+          6
+        ],
+        "top": "<span class='bdg'>1ª EVAL.</span>12h<small>3h/sem</small>"
+      },
+      {
+        "label": "Diciembre",
+        "mes": "1er trimestre",
+        "horas": [
+          6,
+          6
+        ],
+        "top": "12h<small>3h/sem</small>"
+      },
+      {
+        "label": "Enero",
+        "mes": "2º trimestre",
+        "horas": [
+          6,
+          6
+        ],
+        "top": "12h<small>3h/sem</small>"
+      },
+      {
+        "label": "Febrero",
+        "mes": "2º trimestre",
+        "horas": [
+          6,
+          6
+        ],
+        "top": "12h<small>3h/sem</small>"
+      },
+      {
+        "label": "Marzo",
+        "mes": "2º trimestre",
+        "horas": [
+          8,
+          8
+        ],
+        "top": "<span class='bdg'>2ª EVAL.</span>16h<small>4h/sem</small>"
+      },
+      {
+        "label": "Abril",
+        "mes": "3er trimestre",
+        "horas": [
+          6,
+          6
+        ],
+        "top": "12h<small>3h/sem</small>"
+      },
+      {
+        "label": "Mayo",
+        "mes": "3er trimestre",
+        "horas": [
+          8,
+          8
+        ],
+        "top": "<span class='bdg'>FINALES</span>16h<small>4h/sem</small>"
+      },
+      {
+        "label": "Junio",
+        "mes": "PAU",
+        "horas": [
+          4,
+          4
+        ],
+        "top": "<span class='bdg'>PAU</span>8h<small>2 sem · 4h/sem</small>"
+      }
+    ],
+    "meses": {
+      "1er trimestre": "exámenes en noviembre",
+      "2º trimestre": "exámenes en marzo",
+      "3er trimestre": "finales en mayo",
+      "PAU": "junio"
+    },
+    "nota": "Horas orientativas. Octubre: 2h a la semana más un repaso extra antes de los exámenes de noviembre. De noviembre a mayo, 3h semanales, y 4h en los meses de exámenes (marzo y mayo). En junio, dos semanas intensivas antes de la PAU.",
+    "bloques": [
+      [
+        "1er TRIMESTRE",
+        "1ª evaluación",
+        "2h semanales para asentar bases y repaso extra antes de los exámenes de noviembre."
+      ],
+      [
+        "2º TRIMESTRE",
+        "2ª evaluación",
+        "3h semanales para llevar las dos asignaturas al día; 4h en marzo."
+      ],
+      [
+        "3er TRIMESTRE",
+        "Finales de 2º",
+        "4h semanales en mayo para cerrar el curso con la mejor nota."
+      ],
+      [
+        "JUNIO",
+        "PAU",
+        "Dos semanas intensivas con exámenes de PAU de otros años."
+      ]
+    ]
+  },
+  "informe_ejemplo": {
+    "asignatura": "Química",
+    "mes": "Febrero 2027",
+    "comparado": "enero",
+    "nota": "7,0",
+    "sesiones": 12,
+    "horas": "12h",
+    "destrezas_label": "Asignaturas seguidas",
+    "barras": [
+      [
+        "Matemáticas",
+        7.0
+      ],
+      [
+        "Química",
+        6.8
+      ]
+    ],
+    "mayor_progreso": "Química — de 6,0 a 7,0, muy buen ritmo este mes",
+    "resumen": "En febrero, Alba ha hecho 12 sesiones sin faltar a ninguna. Domina la formulación y ha mejorado mucho con el equilibrio químico. El punto de trabajo son los problemas de ácido-base tipo PAU.",
+    "proxima_sesion": "PRÓXIMA SESIÓN — MARTES 2",
+    "proxima_sesion_txt": "Ácido-base: pH y valoraciones + 3 problemas de PAU.",
+    "horario": "Alba · Martes y jueves, 17:00–18:30",
+    "temas": [
+      [
+        "Equilibrio químico",
+        2.5
+      ],
+      [
+        "Ácido-base",
+        1.8
+      ],
+      [
+        "Cinética",
+        1.2
+      ],
+      [
+        "Formulación",
+        0.5
+      ]
+    ],
+    "fuertes": [
+      "Domina la formulación orgánica",
+      "Buen planteamiento del equilibrio"
+    ],
+    "atencion": [
+      "Ácido-base: duda al calcular el pH",
+      "Se bloquea con problemas largos de PAU"
+    ],
+    "casa": [
+      "1 problema de PAU al día",
+      "Repasar constantes de equilibrio"
+    ],
+    "semanas": [
+      5.8,
+      6.3,
+      6.8,
+      7.2
+    ],
+    "metricas": [
+      [
+        "76%",
+        "Comprensión"
+      ],
+      [
+        "81%",
+        "Constancia"
+      ],
+      [
+        "62%",
+        "Autonomía"
+      ]
+    ],
+    "evol": [
+      [
+        "Resolución de problemas",
+        "Enero: 60%",
+        "Febrero: 79%",
+        "Plantea mejor el enunciado antes de operar."
+      ],
+      [
+        "Autonomía",
+        "Enero: 50%",
+        "Febrero: 62%",
+        "Cada vez necesita menos ayuda para empezar el ejercicio."
+      ]
+    ],
+    "conclusion": "Febrero cierra con una tendencia muy positiva. El foco de marzo es consolidar ácido-base antes de los exámenes de la 2ª evaluación.",
+    "cal_mes": [
+      2027,
+      3
+    ],
+    "cal_titulo": "Calendario de preparación — marzo 2027",
+    "cal_dias_sesion": [
+      1,
+      3
+    ],
+    "cal_examen": 17,
+    "cal_semanas": "3 sem",
+    "cal_semanas_txt": "desde la fecha de este informe hasta los exámenes de la 2ª evaluación",
+    "antes": "Sin refuerzo fijo",
+    "ahora": "Sesiones semanales de Matemáticas y Química · Bono de 12h"
+  }
+}
