@@ -7,9 +7,9 @@
   "materias": ["MATEMÁTICAS", "FÍSICA", "QUÍMICA", "CÁLCULO", "PREPARACIÓN PAU"],
   "telefono": "+34 644 677 204",
   "email": "carlospalenciamartinez11@gmail.com",
-  "situacion_actual": "Estudiante del Grado en Ingeniería Aeroespacial en la Universidad de Valencia y profesor particular autónomo de Física, Química y Matemáticas.",
+  "situacion_actual": "Estudiante del Grado en Ingeniería Aeroespacial en la Universitat Politècnica de València (UPV) y profesor particular autónomo de Física, Química y Matemáticas.",
   "estudios": [
-    {"titulo": "Grado en Ingeniería Aeroespacial", "detalle": "Universidad de Valencia · Matrícula de Honor en Física de 1.º", "fecha": "2024 – actualidad"},
+    {"titulo": "Grado en Ingeniería Aeroespacial", "detalle": "Universitat Politècnica de València (UPV) · Matrícula de Honor en Física de 1.º", "fecha": "2024 – actualidad"},
     {"titulo": "Bachillerato", "detalle": "Leonardo Da Vinci · Nota media 9,9/10", "fecha": "2022 – 2024"}
   ],
   "idiomas": [
