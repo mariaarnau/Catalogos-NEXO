@@ -1,0 +1,45 @@
+{
+  "nombre": "Daniel",
+  "etapa": "universidad",
+  "curso": "ADE",
+  "asignaturas": ["Matemáticas"],
+  "voz": "tu",
+  "bonos_recomendados": [
+    {"horas": 8, "frecuencia": "2h a la semana"},
+    {"horas": 12, "frecuencia": "3h a la semana"}
+  ],
+  "modalidades_recomendadas": ["online", "casa_alumno"],
+  "informe_ejemplo": {
+    "asignatura": "Matemáticas",
+    "mes": "Noviembre 2026",
+    "nota": "7,0",
+    "sesiones": 8,
+    "horas": "8h",
+    "destrezas_label": "Bloques trabajados",
+    "barras": [["Funciones", 7.0], ["Derivadas", 6.8], ["Optimización", 6.4], ["Matrices", 7.2]],
+    "mayor_progreso": "Derivadas — de 6,0 a 7,0, muy buen ritmo este mes",
+    "resumen": "En noviembre, Daniel ha hecho 8 sesiones de Matemáticas sin faltar a ninguna. Domina bien las funciones y ha mejorado mucho con las derivadas. El punto de trabajo son los problemas de optimización aplicados a costes y beneficios.",
+    "proxima_sesion": "PRÓXIMA SESIÓN — MARTES 1",
+    "proxima_sesion_txt": "Optimización: máximos y mínimos + 4 problemas tipo examen.",
+    "horario": "Daniel · Martes y jueves, 18:00–19:00",
+    "temas": [["Funciones", 2.5], ["Derivadas", 1.8], ["Optimización", 1.2], ["Matrices", 0.5]],
+    "fuertes": ["Domina el estudio de funciones", "Buen ritmo calculando derivadas"],
+    "atencion": ["Optimización: le cuesta plantear el problema", "Matrices: duda con el cálculo de inversas"],
+    "casa": ["2 ejercicios diarios de derivadas", "1 problema de optimización al día"],
+    "semanas": [5.8, 6.3, 6.8, 7.2],
+    "metricas": [["76%", "Comprensión"], ["81%", "Constancia"], ["62%", "Autonomía"]],
+    "evol": [
+      ["Resolución de problemas", "Octubre: 60%", "Noviembre: 79%", "Plantea mejor el enunciado antes de empezar a calcular."],
+      ["Autonomía", "Octubre: 50%", "Noviembre: 62%", "Cada vez necesita menos ayuda para arrancar el ejercicio."]
+    ],
+    "conclusion": "Noviembre cierra con una tendencia muy positiva. El foco de diciembre es consolidar la optimización antes del próximo examen.",
+    "cal_mes": [2026, 12],
+    "cal_titulo": "Calendario de preparación — diciembre 2026",
+    "cal_dias_sesion": [1, 3],
+    "cal_examen": 17,
+    "cal_semanas": "3 sem",
+    "cal_semanas_txt": "desde la fecha de este informe hasta el próximo examen",
+    "antes": "Estudio por tu cuenta",
+    "ahora": "Sesiones semanales de Matemáticas · Bono mensual"
+  }
+}
