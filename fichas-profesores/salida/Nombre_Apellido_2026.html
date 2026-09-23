@@ -12,62 +12,60 @@
 }
 * { box-sizing:border-box; margin:0; padding:0; }
 html,body { background:#05080f; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
-body { font-family:var(--sans); color:var(--white); display:flex; justify-content:center; padding:24px 16px; }
-.ficha { width:100%; max-width:720px; border-radius:18px; overflow:hidden; position:relative;
-  background:radial-gradient(circle at 18% 12%, rgba(233,209,143,.07), transparent 38%),
-             linear-gradient(150deg, #070c1b 0%, var(--navy) 55%, var(--blue) 100%);
-  border:1px solid var(--line); padding:32px 36px 26px; }
+body { font-family:var(--sans); color:var(--white); display:flex; justify-content:center; padding:24px 0; }
+/* La ficha es una hoja A4 completa (210 × 297 mm). */
+.ficha { width:210mm; height:297mm; overflow:hidden; position:relative; flex-shrink:0;
+  display:flex; flex-direction:column;
+  background:radial-gradient(circle at 18% 10%, rgba(233,209,143,.08), transparent 36%),
+             linear-gradient(155deg, #070c1b 0%, var(--navy) 52%, var(--blue) 100%);
+  padding:15mm 15mm 11mm; }
 .top { display:flex; justify-content:space-between; align-items:center; }
-.top img { height:44px; }
-.tag { font-size:10px; letter-spacing:.22em; color:var(--gold); font-weight:700; }
-.rule { height:1px; margin:18px 0 26px; background:linear-gradient(90deg, transparent, var(--gold2), transparent); opacity:.55; }
-.head { display:flex; gap:24px; align-items:center; }
-.foto { width:118px; height:118px; border-radius:50%; object-fit:cover; flex-shrink:0;
-  border:3px solid var(--gold2); box-shadow:0 0 0 6px rgba(200,162,74,.12); }
+.top img { height:58px; }
+.tag { font-size:12px; letter-spacing:.24em; color:var(--gold); font-weight:700; }
+.rule { height:1px; margin:22px 0 34px; background:linear-gradient(90deg, transparent, var(--gold2), transparent); opacity:.6; }
+.head { display:flex; gap:32px; align-items:center; }
+.foto { width:168px; height:168px; border-radius:50%; object-fit:cover; flex-shrink:0;
+  border:4px solid var(--gold2); box-shadow:0 0 0 9px rgba(200,162,74,.12); }
 .foto.ini { display:flex; align-items:center; justify-content:center; font-family:var(--serif); font-weight:700;
-  font-size:40px; color:var(--navy); background:linear-gradient(145deg, var(--gold), var(--gold2)); }
-.pill { display:inline-block; font-size:9.5px; letter-spacing:.16em; font-weight:700; color:var(--gold);
-  border:1px solid rgba(233,209,143,.55); border-radius:999px; padding:5px 12px; margin-bottom:10px; }
-h1 { font-family:var(--serif); font-size:31px; line-height:1.1; font-weight:700; }
-.cargo { font-family:var(--serif); font-style:italic; color:var(--gold); font-size:17px; margin-top:5px; }
-.meta { color:var(--muted); font-size:12.5px; margin-top:6px; }
-.chips { margin-top:10px; display:flex; flex-wrap:wrap; gap:6px; }
-.chip { font-size:10.5px; font-weight:700; letter-spacing:.06em; color:var(--navy);
-  background:var(--gold3); border-radius:999px; padding:4px 10px; }
-.contacto { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:10px; margin:24px 0 6px; }
-.ct { background:rgba(12,18,36,.75); border:1px solid rgba(255,255,255,.07); border-radius:12px; padding:10px 14px;
-  display:flex; flex-direction:column; gap:3px; font-size:13px; word-break:break-word; }
-.ct-l { font-size:9px; letter-spacing:.18em; text-transform:uppercase; color:var(--dim); }
-.grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:16px; }
-.sec { background:rgba(12,18,36,.75); border:1px solid rgba(255,255,255,.07); border-radius:14px; padding:16px 18px; }
+  font-size:56px; color:var(--navy); background:linear-gradient(145deg, var(--gold), var(--gold2)); }
+.pill { display:inline-block; font-size:11px; letter-spacing:.18em; font-weight:700; color:var(--gold);
+  border:1px solid rgba(233,209,143,.55); border-radius:999px; padding:6px 14px; margin-bottom:12px; }
+h1 { font-family:var(--serif); font-size:42px; line-height:1.08; font-weight:700; }
+.cargo { font-family:var(--serif); font-style:italic; color:var(--gold); font-size:22px; margin-top:6px; }
+.meta { color:var(--muted); font-size:15px; margin-top:8px; }
+.chips { margin-top:12px; display:flex; flex-wrap:wrap; gap:8px; }
+.chip { font-size:12px; font-weight:700; letter-spacing:.07em; color:var(--navy);
+  background:var(--gold3); border-radius:999px; padding:5px 13px; }
+.contacto { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:14px; margin:34px 0 0; }
+.ct { background:rgba(12,18,36,.75); border:1px solid rgba(255,255,255,.08); border-radius:14px; padding:14px 18px;
+  display:flex; flex-direction:column; gap:5px; font-size:16px; word-break:break-word; }
+.ct-l { font-size:10.5px; letter-spacing:.2em; text-transform:uppercase; color:var(--dim); }
+/* La rejilla absorbe el alto sobrante para que la ficha llene la hoja. */
+.grid { flex:1; display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:18px; }
+.sec { background:rgba(12,18,36,.75); border:1px solid rgba(255,255,255,.08); border-radius:16px; padding:22px 24px; }
 .sec.full { grid-column:1 / -1; }
-.sec-h { display:flex; align-items:baseline; gap:10px; margin-bottom:10px; }
-.num { font-family:var(--serif); color:var(--gold); font-size:12px; }
-h3 { font-family:var(--serif); font-size:16px; font-weight:700; }
-.txt { color:#d6d4cc; font-size:13px; line-height:1.5; }
-.lista { list-style:none; display:flex; flex-direction:column; gap:9px; }
-.lista li { border-left:2px solid var(--gold2); padding-left:10px; }
-.fila { display:flex; justify-content:space-between; gap:8px; }
-.tit { font-size:13px; font-weight:700; color:#f1efe8; }
-.fecha { font-size:11px; color:var(--gold3); white-space:nowrap; }
-.det { font-size:12px; color:var(--muted); margin-top:2px; line-height:1.4; }
-.idiomas { display:flex; flex-direction:column; gap:8px; }
-.idi { display:flex; flex-wrap:wrap; align-items:center; gap:8px; font-size:13px; }
-.idi-n { font-weight:700; min-width:70px; }
-.idi-v { font-family:var(--serif); font-weight:700; color:var(--gold); font-size:15px; }
-.idi-c { font-size:11px; color:var(--muted); border:1px solid rgba(255,255,255,.12); border-radius:6px; padding:2px 7px; }
-.apts { display:flex; flex-wrap:wrap; gap:6px; }
-.apt { font-size:12px; color:#e7e7ea; border:1px solid rgba(233,209,143,.35); border-radius:999px; padding:4px 11px; }
-.foot { display:flex; justify-content:space-between; margin-top:22px; padding-top:14px;
-  border-top:1px solid rgba(255,255,255,.08); font-size:10.5px; color:var(--dim); }
-@media (max-width:560px) {
-  .ficha { padding:24px 18px; }
-  .head { flex-direction:column; text-align:center; }
-  .chips { justify-content:center; }
-  .grid { grid-template-columns:1fr; }
-}
-@page { size:A4; margin:10mm; }
-@media print { html,body { background:none; } body { padding:0; } .ficha { max-width:none; } }
+.sec-h { display:flex; align-items:baseline; gap:12px; margin-bottom:16px; padding-bottom:12px;
+  border-bottom:1px solid rgba(233,209,143,.14); }
+.num { font-family:var(--serif); color:var(--gold); font-size:14px; }
+h3 { font-family:var(--serif); font-size:21px; font-weight:700; }
+.txt { color:#d6d4cc; font-size:16px; line-height:1.55; }
+.lista { list-style:none; display:flex; flex-direction:column; gap:14px; }
+.lista li { border-left:3px solid var(--gold2); padding-left:13px; }
+.fila { display:flex; justify-content:space-between; gap:10px; }
+.tit { font-size:16px; font-weight:700; color:#f1efe8; line-height:1.3; }
+.fecha { font-size:13px; color:var(--gold3); white-space:nowrap; }
+.det { font-size:14.5px; color:var(--muted); margin-top:4px; line-height:1.45; }
+.idiomas { display:flex; flex-direction:column; gap:14px; }
+.idi { display:flex; flex-wrap:wrap; align-items:center; gap:10px; font-size:16px; }
+.idi-n { font-weight:700; min-width:110px; }
+.idi-v { font-family:var(--serif); font-weight:700; color:var(--gold); font-size:19px; }
+.idi-c { font-size:13px; color:var(--muted); border:1px solid rgba(255,255,255,.14); border-radius:7px; padding:3px 9px; }
+.apts { display:flex; flex-wrap:wrap; gap:8px; }
+.apt { font-size:14.5px; color:#e7e7ea; border:1px solid rgba(233,209,143,.35); border-radius:999px; padding:6px 14px; }
+.foot { display:flex; justify-content:space-between; margin-top:20px; padding-top:14px;
+  border-top:1px solid rgba(255,255,255,.08); font-size:12px; color:var(--dim); }
+@page { size:A4; margin:0; }
+@media print { html,body { background:none; } body { padding:0; display:block; } }
 </style></head>
 <body>
 <article class="ficha">
