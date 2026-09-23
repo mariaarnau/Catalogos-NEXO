@@ -127,6 +127,7 @@ body {{ font-family:var(--sans); color:var(--white); display:flex; justify-conte
   background:radial-gradient(circle at 18% 10%, rgba(233,209,143,.08), transparent 36%),
              linear-gradient(155deg, #070c1b 0%, var(--navy) 52%, var(--blue) 100%);
   padding:15mm 15mm 11mm; }}
+.inner {{ display:flex; flex-direction:column; }}
 .top {{ display:flex; justify-content:space-between; align-items:center; }}
 .top img {{ height:58px; }}
 .tag {{ font-size:12px; letter-spacing:.24em; color:var(--gold); font-weight:700; }}
@@ -176,7 +177,7 @@ h3 {{ font-family:var(--serif); font-size:21px; font-weight:700; }}
 @media print {{ html,body {{ background:none; }} body {{ padding:0; display:block; }} }}
 </style></head>
 <body>
-<article class="ficha">
+<article class="ficha"><div class="inner">
   <div class="top"><img src="{data_uri(LOGO)}" alt="Nexo Académico"><span class="tag">FICHA DE PROFESOR</span></div>
   <div class="rule"></div>
   <div class="head">
@@ -192,7 +193,19 @@ h3 {{ font-family:var(--serif); font-size:21px; font-weight:700; }}
   {f'<div class="contacto">{"".join(contacto)}</div>' if contacto else ""}
   <div class="grid">{"".join(secciones)}</div>
   <div class="foot"><span>Nexo Académico · Equipo docente</span><span>nexoacademico.com</span></div>
-</article>
+</div></article>
+<script>
+// Si el contenido no cabe en el A4, se reduce la escala de forma uniforme; si sobra, la rejilla rellena el hueco.
+(function () {{
+  var f = document.querySelector(".ficha"), c = document.querySelector(".inner");
+  var cs = getComputedStyle(f);
+  var H = f.clientHeight - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom);
+  var natural = c.getBoundingClientRect().height;
+  var z = Math.min(1, H / natural);
+  c.style.zoom = z;
+  c.style.minHeight = (H / z) + "px";
+}})();
+</script>
 </body></html>"""
 
 

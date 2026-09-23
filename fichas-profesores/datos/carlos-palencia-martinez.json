@@ -1,0 +1,24 @@
+{
+  "nombre": "Carlos Palencia Martínez",
+  "foto": "../fotos/carlos-palencia-martinez.png",
+  "foto_posicion": "50% 35%",
+  "titular": "Profesor de Física, Química y Matemáticas",
+  "ubicacion": "Albacete · Vehículo propio para clases presenciales",
+  "materias": ["MATEMÁTICAS", "FÍSICA", "QUÍMICA", "CÁLCULO", "PREPARACIÓN PAU"],
+  "telefono": "+34 644 677 204",
+  "email": "carlospalenciamartinez11@gmail.com",
+  "situacion_actual": "Estudiante del Grado en Ingeniería Aeroespacial en la Universidad de Valencia y profesor particular autónomo de Física, Química y Matemáticas.",
+  "estudios": [
+    {"titulo": "Grado en Ingeniería Aeroespacial", "detalle": "Universidad de Valencia · Matrícula de Honor en Física de 1.º", "fecha": "2024 – actualidad"},
+    {"titulo": "Bachillerato", "detalle": "Leonardo Da Vinci · Nota media 9,9/10", "fecha": "2022 – 2024"}
+  ],
+  "idiomas": [
+    {"idioma": "Español", "nivel": "Nativo"},
+    {"idioma": "Inglés", "nivel": "C1", "certificado": "Cambridge"}
+  ],
+  "experiencia_docente": [
+    {"titulo": "Profesor particular · Autónomo", "detalle": "Clases de Física, Química y Matemáticas en inglés a alumnos de Bachillerato."},
+    {"titulo": "Preparación de la PAU", "detalle": "Dominio del temario y técnica de examen, con explicaciones paso a paso."},
+    {"titulo": "Nivel universitario", "detalle": "Física y Matemáticas de primer curso de grado, especialmente cálculo."}
+  ]
+}
