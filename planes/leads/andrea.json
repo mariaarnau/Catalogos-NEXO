@@ -2,29 +2,207 @@
   "nombre": "Andrea",
   "etapa": "universidad",
   "curso": "Matemáticas + ADE · UPV",
-  "asignaturas": ["Álgebra", "Cálculo", "Física"],
+  "asignaturas": [
+    "Álgebra",
+    "Cálculo",
+    "Física"
+  ],
   "voz": "tu",
-  "bonos_recomendados": [{"horas": 12, "frecuencia": "3h a la semana"}],
-  "modalidades_recomendadas": ["online", "casa_alumno"],
+  "bonos_recomendados": [
+    {
+      "horas": 12,
+      "frecuencia": "3h a la semana de base",
+      "refuerzo": {
+        "horas": 4,
+        "cuando": "en octubre y diciembre",
+        "motivo": "meses previos a exámenes, con semanas de 4–5h"
+      }
+    }
+  ],
+  "modalidades_recomendadas": [
+    "online",
+    "casa_alumno"
+  ],
   "ruta": {
     "etiqueta": "TU HOJA DE RUTA",
     "pill": "NUEVO · TU CUATRIMESTRE PLANIFICADO",
-    "titulo": "De octubre a enero, con un plan claro",
-    "lead": "Con el bono de 12h al mes tienes 3 horas de clase cada semana para llevar Álgebra, Cálculo y Física al día y llegar con todo preparado a los exámenes del primer cuatrimestre.",
+    "titulo": "Semana a semana, hasta tus parciales",
+    "lead": "Primeros parciales la última semana de octubre y segundos después de Reyes. Así repartimos Álgebra, Cálculo y Física para llegar a cada examen con todo trabajado.",
     "stats": [
-      ["48h", "de clase de octubre a enero"],
-      ["16h", "para cada asignatura: Álgebra, Cálculo y Física"],
-      ["3h", "cada semana, repartidas entre las tres"],
-      ["4", "informes mensuales con tu evolución"]
+      [
+        "4 sem",
+        "hasta los primeros parciales (26–30 de octubre)"
+      ],
+      [
+        "54h",
+        "de clase de aquí a los segundos parciales"
+      ],
+      [
+        "1–1,5h",
+        "por asignatura y semana, el mínimo recomendado"
+      ],
+      [
+        "5h",
+        "en la semana previa a cada bloque de exámenes"
+      ]
     ],
-    "fases": [
-      ["OCTUBRE", "Diagnóstico y bases", "Evaluación inicial y repaso de lo que más te cuesta de cada asignatura."],
-      ["NOVIEMBRE", "Al día con el temario", "Teoría y problemas al ritmo de tus clases en la UPV, sin acumular temas."],
-      ["DICIEMBRE", "Entregas y pruebas", "Más horas en la asignatura que tengas más cerca, sin coste extra."],
-      ["ENERO", "Recta final", "Repaso completo y problemas tipo examen antes de los exámenes del cuatrimestre."]
+    "semanas": [
+      {
+        "label": "28 sep",
+        "mes": "Octubre",
+        "horas": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "label": "5 oct",
+        "mes": "Octubre",
+        "horas": [
+          1,
+          1.5,
+          1.5
+        ]
+      },
+      {
+        "label": "12 oct",
+        "mes": "Octubre",
+        "horas": [
+          1.5,
+          1.5,
+          1
+        ]
+      },
+      {
+        "label": "19 oct",
+        "mes": "Octubre",
+        "horas": [
+          1.5,
+          2,
+          1.5
+        ]
+      },
+      {
+        "label": "26 oct",
+        "mes": "Octubre",
+        "examen": "Primeros parciales"
+      },
+      {
+        "label": "2 nov",
+        "mes": "Noviembre",
+        "horas": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "label": "9 nov",
+        "mes": "Noviembre",
+        "horas": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "label": "16 nov",
+        "mes": "Noviembre",
+        "horas": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "label": "23 nov",
+        "mes": "Noviembre",
+        "horas": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "label": "30 nov",
+        "mes": "Diciembre",
+        "horas": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "label": "7 dic",
+        "mes": "Diciembre",
+        "horas": [
+          1,
+          1.5,
+          1.5
+        ]
+      },
+      {
+        "label": "14 dic",
+        "mes": "Diciembre",
+        "horas": [
+          1.5,
+          1.5,
+          1
+        ]
+      },
+      {
+        "label": "21 dic",
+        "mes": "Diciembre",
+        "horas": [
+          1.5,
+          2,
+          1.5
+        ]
+      },
+      {
+        "label": "28 dic",
+        "mes": "Enero",
+        "horas": [
+          2,
+          1.5,
+          1.5
+        ]
+      },
+      {
+        "label": "4 ene",
+        "mes": "Enero",
+        "horas": [
+          1.5,
+          2,
+          1.5
+        ]
+      },
+      {
+        "label": "tras Reyes",
+        "mes": "Enero",
+        "examen": "Segundos parciales"
+      }
     ],
-    "semana": [["Álgebra", 1], ["Cálculo", 1], ["Física", 1]],
-    "semana_nota": "Reparto orientativo. Con el bono de 12h puedes mover horas entre asignaturas según tus entregas y exámenes (ajuste de horas entre bloques)."
+    "meses": {
+      "Octubre": "bono 12h + 4h",
+      "Noviembre": "bono 12h",
+      "Diciembre": "bono 12h + 4h",
+      "Enero": "bono 12h · 2h de margen"
+    },
+    "nota": "Horas orientativas por semana (lunes indicado). Nunca menos de 1h por asignatura; en las semanas previas a exámenes subimos a 4–5h y movemos horas hacia la asignatura que tengas más cerca.",
+    "bloques": [
+      [
+        "BLOQUE 1 · 4 SEMANAS",
+        "Hacia los primeros parciales",
+        "Diagnóstico la primera semana y subida progresiva de 3h a 5h semanales hasta la semana de exámenes."
+      ],
+      [
+        "BLOQUE 2 · 10 SEMANAS",
+        "Hacia los segundos parciales",
+        "3h semanales en noviembre para no acumular temario y refuerzo de 4–5h en diciembre y Navidad, antes de los exámenes de después de Reyes."
+      ]
+    ]
   },
   "informe_ejemplo": {
     "asignatura": "Cálculo",
@@ -33,26 +211,100 @@
     "sesiones": 12,
     "horas": "12h",
     "destrezas_label": "Asignaturas seguidas",
-    "barras": [["Álgebra", 6.8], ["Cálculo", 7.0], ["Física", 6.5]],
+    "barras": [
+      [
+        "Álgebra",
+        6.8
+      ],
+      [
+        "Cálculo",
+        7.0
+      ],
+      [
+        "Física",
+        6.5
+      ]
+    ],
     "mayor_progreso": "Cálculo — de 6,0 a 7,0, muy buen ritmo este mes",
     "resumen": "En noviembre, Andrea ha hecho 12 sesiones sin faltar a ninguna. Domina el cálculo de límites y ha mejorado mucho con las derivadas. El punto de trabajo son las integrales y los problemas de física con varias fuerzas.",
     "proxima_sesion": "PRÓXIMA SESIÓN — MARTES 1",
     "proxima_sesion_txt": "Integración por partes + 5 problemas tipo examen.",
     "horario": "Andrea · Lunes, miércoles y jueves, 18:00–19:00",
-    "temas": [["Límites y continuidad", 2.5], ["Derivadas", 1.8], ["Integrales", 1.2], ["Series", 0.5]],
-    "fuertes": ["Domina límites y continuidad", "Buen ritmo resolviendo derivadas"],
-    "atencion": ["Integrales: duda con qué método aplicar", "Series: le cuesta ver la convergencia"],
-    "casa": ["2 integrales diarias de práctica", "Repasar criterios de convergencia"],
-    "semanas": [5.8, 6.3, 6.8, 7.2],
-    "metricas": [["76%", "Comprensión"], ["81%", "Constancia"], ["62%", "Autonomía"]],
+    "temas": [
+      [
+        "Límites y continuidad",
+        2.5
+      ],
+      [
+        "Derivadas",
+        1.8
+      ],
+      [
+        "Integrales",
+        1.2
+      ],
+      [
+        "Series",
+        0.5
+      ]
+    ],
+    "fuertes": [
+      "Domina límites y continuidad",
+      "Buen ritmo resolviendo derivadas"
+    ],
+    "atencion": [
+      "Integrales: duda con qué método aplicar",
+      "Series: le cuesta ver la convergencia"
+    ],
+    "casa": [
+      "2 integrales diarias de práctica",
+      "Repasar criterios de convergencia"
+    ],
+    "semanas": [
+      5.8,
+      6.3,
+      6.8,
+      7.2
+    ],
+    "metricas": [
+      [
+        "76%",
+        "Comprensión"
+      ],
+      [
+        "81%",
+        "Constancia"
+      ],
+      [
+        "62%",
+        "Autonomía"
+      ]
+    ],
     "evol": [
-      ["Resolución de problemas", "Octubre: 60%", "Noviembre: 79%", "Plantea mejor el problema antes de empezar a calcular."],
-      ["Autonomía", "Octubre: 50%", "Noviembre: 62%", "Cada vez necesita menos ayuda para arrancar el ejercicio."]
+      [
+        "Resolución de problemas",
+        "Octubre: 60%",
+        "Noviembre: 79%",
+        "Plantea mejor el problema antes de empezar a calcular."
+      ],
+      [
+        "Autonomía",
+        "Octubre: 50%",
+        "Noviembre: 62%",
+        "Cada vez necesita menos ayuda para arrancar el ejercicio."
+      ]
     ],
     "conclusion": "Noviembre cierra con una tendencia muy positiva. El foco de diciembre es consolidar integrales antes de los exámenes de enero.",
-    "cal_mes": [2026, 12],
+    "cal_mes": [
+      2026,
+      12
+    ],
     "cal_titulo": "Calendario de preparación — diciembre 2026",
-    "cal_dias_sesion": [0, 2, 3],
+    "cal_dias_sesion": [
+      0,
+      2,
+      3
+    ],
     "cal_examen": 17,
     "cal_semanas": "3 sem",
     "cal_semanas_txt": "desde la fecha de este informe hasta el próximo examen",

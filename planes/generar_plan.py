@@ -158,22 +158,50 @@ def page_cover(d, t):
 
 
 def page_ruta(d, t):
+    """Hoja de ruta: calendario semanal de horas por asignatura hasta los exámenes."""
     r = d["ruta"]
+    asigs = d["asignaturas"]
+    num = lambda x: (f"{x:g}").replace(".", ",")
     stats = "".join(f"<div><b>{e(a)}</b><span>{e(b)}</span></div>" for a, b in r["stats"])
-    fases = "".join(f'<div class="fase{" fin" if i == len(r["fases"]) - 1 else ""}"><i></i><small>{e(m)}</small>'
-                    f'<h4>{e(h)}</h4><p>{e(x)}</p></div>' for i, (m, h, x) in enumerate(r["fases"]))
-    total = sum(h for _, h in r["semana"])
-    segs = "".join(f'<div class="seg s{i}" style="flex:{h}"><b>{e(a)}</b><span>{str(h).replace(".", ",")}h</span></div>'
-                   for i, (a, h) in enumerate(r["semana"]))
-    return f'''<section class="page glow">
+    esc = r.get("px_por_hora", 25)
+    # Cabecera de meses: agrupa semanas consecutivas del mismo mes de bono
+    grupos = []
+    for w in r["semanas"]:
+        if grupos and grupos[-1]["mes"] == w["mes"]:
+            grupos[-1]["n"] += 1
+            grupos[-1]["h"] += sum(w.get("horas", []))
+        else:
+            grupos.append({"mes": w["mes"], "n": 1, "h": sum(w.get("horas", []))})
+    meses = ""
+    for g in grupos:
+        info = r["meses"].get(g["mes"], "")
+        meses += (f'<div class="mes" style="grid-column: span {g["n"]}"><b>{e(g["mes"])}</b>'
+                  f'<span>{num(g["h"])}h{" · " + e(info) if info else ""}</span></div>')
+    cols = ""
+    for w in r["semanas"]:
+        if w.get("examen"):
+            cols += (f'<div class="wk ex"><div class="exbox"><span>{e(w["examen"])}</span></div>'
+                     f'<small>{e(w["label"])}</small></div>')
+            continue
+        segs = "".join(f'<i class="c{i}" style="height:{h*esc:.0f}px"></i>' for i, h in enumerate(w["horas"]) if h)
+        tot = sum(w["horas"])
+        cols += (f'<div class="wk{" pico" if tot >= 4.5 else ""}"><div class="stack"><b>{num(tot)}h</b>{segs}</div>'
+                 f'<small>{e(w["label"])}</small></div>')
+    leg = "".join(f'<span><i class="c{i}"></i>{e(a)}</span>' for i, a in enumerate(asigs))
+    bloques = "".join(f'<div class="blq"><small>{e(k)}</small><h4>{e(h)}</h4><p>{e(x)}</p></div>'
+                      for k, h, x in r["bloques"])
+    return f'''<section class="page glow ruta">
   <div class="hdr"><img class="logo-sm" src="{LOGO_URI}"><span class="hdr-r">{e(r["etiqueta"])}</span></div><div class="rule"></div>
   <div class="pill gold">{e(r["pill"])}</div>
   <h2>{e(r["titulo"])}</h2>
   <p class="lead">{e(r["lead"])}</p>
   <div class="bigstats">{stats}</div>
-  <div class="timeline">{fases}</div>
-  <div class="semana"><div class="sem-h"><b>Tu semana tipo</b><span>{str(total).replace(".", ",")}h a la semana</span></div>
-    <div class="segs">{segs}</div><p>{e(r["semana_nota"])}</p></div>
+  <div class="cal">
+    <div class="cal-h"><b>Tus semanas hasta los exámenes</b><div class="leg">{leg}</div></div>
+    <div class="grid" style="grid-template-columns: repeat({len(r["semanas"])}, 1fr)">{meses}{cols}</div>
+    <p class="cal-n">{e(r["nota"])}</p>
+  </div>
+  <div class="bloques">{bloques}</div>
   {footer()}
 </section>'''
 
@@ -363,6 +391,11 @@ def page_bono(d, t):
   <div class="rp">{eur(c["precio"], 0)}</div>
   <div class="rh">{eur(c["hora"])}/hora</div>
   <div class="rs">Ahorro de {eur(c["ahorro"], 0)} (−{c["pct"]}%) frente a la tarifa base de {eur(c["base"])}/h</div></div>'''
+        if b.get("refuerzo"):
+            rf = b["refuerzo"]
+            precios = " · ".join(f"{eur(calc(d, rf['horas'], m)['precio'], 0)} {mod_corto(m, t)}" for m in mods)
+            rows += (f'<div class="rref"><b>+ Refuerzo de {rf["horas"]}h {e(rf["cuando"])}</b>'
+                     f'<span>{e(rf["motivo"])}</span><em>Bono de {rf["horas"]}h: {e(precios)}</em></div>')
         feats = "".join(f"<li>{e(f)}</li>" for f in FEATURES[h])
         cards += f'''<div class="rcard"><div class="rtop"><b>{h}h</b><span>al mes · {e(b["frecuencia"])}</span></div>
   {rows}<ul class="checks sm">{feats}</ul></div>'''
@@ -386,6 +419,13 @@ def page_resumen(d, t):
                          for m in d["modalidades_recomendadas"])
         rows += f'''<div class="srow"><div class="av w">{e(n[0])}</div>
   <div class="st"><b>{e(n)} — Bono de {h}h</b><small>{e(" · ".join(x for x in [b["frecuencia"], lista_asig(d["asignaturas"]) or d["curso"]] if x))}</small></div>
+  <div class="sps">{prices}</div></div>'''
+        if b.get("refuerzo"):
+            rf = b["refuerzo"]
+            prices = "".join(f'<div class="sp"><small>{e(mod_corto(m, t).capitalize())}</small><b>+{eur(calc(d, rf["horas"], m)["precio"], 0)}</b></div>'
+                             for m in d["modalidades_recomendadas"])
+            rows += f'''<div class="srow ref"><div class="av w">+</div>
+  <div class="st"><b>Refuerzo de {rf["horas"]}h</b><small>{e(rf["cuando"])} · {e(rf["motivo"])}</small></div>
   <div class="sps">{prices}</div></div>'''
     ms = " o ".join(mod_corto(m, t) for m in d["modalidades_recomendadas"])
     ubic = f", {d['ubicacion']}" if d.get("ubicacion") else ""
@@ -552,6 +592,11 @@ h2.c { font-size: 34px; margin: 26px 0 18px; }
 .rm { color: #e7e7ea; font-size: 14px; font-weight: 700; align-self: center; }
 .rp { color: #e9d18f; font: 700 26px 'Liberation Serif', serif; text-align: right; grid-row: span 2; align-self: center; }
 .rh { color: #a49f8e; font-size: 12.5px; }
+.rref { border-top: 1px dashed rgba(233,209,143,0.4); padding: 10px 0 2px; }
+.rref b { display: block; font: 700 14px 'Liberation Sans', Arial; color: #e9d18f; }
+.rref span { display: block; color: #a49f8e; font-size: 12.5px; margin-top: 2px; }
+.rref em { display: block; font-style: normal; color: #e7e7ea; font-size: 13px; margin-top: 4px; }
+.srow.ref { border-style: dashed; border-color: rgba(233,209,143,0.4); }
 .rs { grid-column: 1 / -1; color: #7fcfa0; font-size: 12px; margin-top: 4px; }
 .srow { display: flex; align-items: center; gap: 16px; border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; padding: 16px 30px; margin-top: 16px; background: linear-gradient(90deg, rgba(8,12,26,0.8), rgba(16,33,74,0.8)); }
 .srows { margin-top: 30px; }
@@ -571,26 +616,40 @@ h2.c { font-size: 34px; margin: 26px 0 18px; }
 .bigstats > div { border: 1px solid rgba(233,209,143,0.35); border-radius: 14px; padding: 16px 16px 14px; background: linear-gradient(160deg, rgba(233,209,143,0.08), rgba(12,18,36,0.6)); }
 .bigstats b { display: block; color: #e9d18f; font-size: 34px; line-height: 1.05; }
 .bigstats span { display: block; color: #a49f8e; font-size: 12.5px; line-height: 1.25; margin-top: 6px; }
-.timeline { display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; margin-top: 30px; position: relative; }
-.timeline::before { content: ""; position: absolute; left: 6px; right: 6px; top: 6px; height: 2px; background: linear-gradient(90deg, #3a7bd5, #e9d18f); }
-.fase { position: relative; padding-top: 24px; }
-.fase i { position: absolute; top: 0; left: 0; width: 14px; height: 14px; border-radius: 50%; background: #3a7bd5; box-shadow: 0 0 0 4px rgba(58,123,213,0.25); }
-.fase.fin i { background: #e9d18f; box-shadow: 0 0 0 4px rgba(233,209,143,0.25); }
-.fase small { color: #8fb8ec; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; }
-.fase.fin small { color: #e9d18f; }
-.fase h4 { font-size: 16.5px; margin: 6px 0 6px; }
-.fase p { color: #a49f8e; font-size: 12.5px; line-height: 1.3; }
-.semana { margin-top: 30px; border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; padding: 18px 22px; background: rgba(12,18,36,0.6); }
-.sem-h { display: flex; justify-content: space-between; align-items: baseline; }
-.sem-h b { font-size: 17px; } .sem-h span { color: #e9d18f; font-size: 13px; font-weight: 700; }
-.segs { display: flex; gap: 6px; margin: 12px 0 10px; }
-.seg { border-radius: 10px; padding: 11px 14px; display: flex; justify-content: space-between; align-items: center; color: #0a1226; }
-.seg b { font: 700 15px 'Liberation Sans', Arial; } .seg span { font-size: 13px; font-weight: 700; }
-.seg.s0 { background: linear-gradient(90deg,#e8cf8e,#c9a24b); }
-.seg.s1 { background: linear-gradient(90deg,#8fb8ec,#5b8ee0); }
-.seg.s2 { background: linear-gradient(90deg,#cfd8e8,#9fb0cc); }
-.seg.s3 { background: linear-gradient(90deg,#7fcfa0,#3f9e6f); }
-.semana p { color: #8a8a93; font-size: 12.5px; }
+.ruta .rule { margin: 18px 0 26px; }
+.ruta h2 { margin-top: 16px; }
+.ruta .bigstats { margin-top: 20px; }
+.ruta .bigstats > div { padding: 12px 14px 11px; }
+.ruta .bigstats b { font-size: 28px; }
+.cal { margin-top: 18px; border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; padding: 16px 18px 12px; background: rgba(12,18,36,0.6); }
+.cal-h { display: flex; justify-content: space-between; align-items: center; }
+.cal-h b { font-size: 16px; }
+.leg { display: flex; gap: 14px; color: #a49f8e; font-size: 12px; }
+.leg i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 5px; vertical-align: -1px; }
+.grid { display: grid; column-gap: 5px; margin-top: 12px; align-items: end; }
+.mes { border-top: 2px solid rgba(143,184,236,0.6); padding-top: 5px; margin: 0 2px 8px; align-self: start; }
+.mes b { display: block; font: 700 11px 'Liberation Sans', Arial; letter-spacing: 0.1em; color: #8fb8ec; text-transform: uppercase; }
+.mes span { color: #e9d18f; font-size: 11.5px; font-weight: 700; }
+.wk { text-align: center; }
+.wk small { display: block; color: #7d7f8a; font-size: 10px; margin-top: 5px; white-space: nowrap; }
+.stack { display: flex; flex-direction: column-reverse; gap: 2px; height: 150px; justify-content: flex-start; }
+.stack b { order: 99; font-size: 13px; color: #e7e7ea; margin-bottom: 3px; }
+.wk.pico .stack b { color: #e9d18f; }
+.stack i { display: block; border-radius: 3px; }
+.c0 { background: linear-gradient(90deg,#e8cf8e,#c9a24b); }
+.c1 { background: linear-gradient(90deg,#8fb8ec,#5b8ee0); }
+.c2 { background: linear-gradient(90deg,#cfd8e8,#9fb0cc); }
+.c3 { background: linear-gradient(90deg,#7fcfa0,#3f9e6f); }
+.exbox { height: 150px; border-radius: 6px; background: repeating-linear-gradient(135deg, rgba(193,80,46,0.35) 0 6px, rgba(193,80,46,0.18) 6px 12px); border: 1px solid rgba(225,110,70,0.7); display: flex; align-items: center; justify-content: center; }
+.exbox span { writing-mode: vertical-rl; transform: rotate(180deg); color: #ffd9c7; font-size: 11.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+.wk.ex small { color: #f0a283; font-weight: 700; }
+.cal-n { color: #8a8a93; font-size: 12px; margin-top: 10px; line-height: 1.3; }
+.bloques { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 14px; }
+.blq { border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 12px 16px; background: rgba(12,18,36,0.6); }
+.blq small { color: #8fb8ec; font-size: 10.5px; font-weight: 700; letter-spacing: 0.12em; }
+.blq h4 { font-size: 15.5px; margin: 3px 0 4px; }
+.blq p { color: #a49f8e; font-size: 12.5px; line-height: 1.3; }
+.ruta .foot { margin-top: 18px; }
 """
 
 
