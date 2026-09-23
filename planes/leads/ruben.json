@@ -1,0 +1,46 @@
+{
+  "nombre": "Rubén",
+  "etapa": "eso",
+  "curso": "1º ESO",
+  "asignaturas": [],
+  "voz": "familia",
+  "ubicacion": "tanto en Vinalesa como en Burjassot",
+  "bonos_recomendados": [
+    {"horas": 12, "frecuencia": "3h a la semana"},
+    {"horas": 8, "frecuencia": "2h a la semana"}
+  ],
+  "modalidades_recomendadas": ["casa_alumno"],
+  "informe_ejemplo": {
+    "asignatura": "Matemáticas",
+    "mes": "Noviembre 2026",
+    "nota": "7,0",
+    "sesiones": 12,
+    "horas": "12h",
+    "destrezas_label": "Asignaturas seguidas",
+    "barras": [["Matemáticas", 7.0], ["Lengua", 6.8]],
+    "mayor_progreso": "Matemáticas — de 6,0 a 7,0, muy buen ritmo este mes",
+    "resumen": "En noviembre, Rubén ha hecho 12 sesiones sin faltar a ninguna. Domina bien las operaciones con números enteros y ha mejorado mucho con las fracciones. El punto de trabajo son los problemas: entender el enunciado antes de operar.",
+    "proxima_sesion": "PRÓXIMA SESIÓN — MARTES 1",
+    "proxima_sesion_txt": "Repaso de fracciones + 5 problemas tipo examen.",
+    "horario": "Rubén · Lunes, miércoles y jueves, 17:00–18:00",
+    "temas": [["Números enteros", 2.5], ["Fracciones", 1.8], ["Potencias", 1.2], ["Problemas", 0.5]],
+    "fuertes": ["Domina las operaciones con enteros", "Resuelve los ejercicios con mucho orden"],
+    "atencion": ["Problemas: le cuesta plantearlos", "Se precipita en los exámenes"],
+    "casa": ["10 min diarios de cálculo", "Repasar las reglas de las fracciones"],
+    "semanas": [5.8, 6.3, 6.8, 7.2],
+    "metricas": [["76%", "Comprensión"], ["81%", "Motivación"], ["62%", "Autonomía"]],
+    "evol": [
+      ["Resolución de problemas", "Octubre: 60%", "Noviembre: 79%", "Mejora en cómo plantea el enunciado antes de operar."],
+      ["Autonomía", "Octubre: 50%", "Noviembre: 62%", "Cada vez necesita menos ayuda para empezar el ejercicio."]
+    ],
+    "conclusion": "Noviembre cierra con una tendencia muy positiva. El foco de diciembre es consolidar los problemas antes del examen trimestral.",
+    "cal_mes": [2026, 12],
+    "cal_titulo": "Calendario de preparación — diciembre 2026",
+    "cal_dias_sesion": [0, 2, 3],
+    "cal_examen": 17,
+    "cal_semanas": "3 sem",
+    "cal_semanas_txt": "desde la fecha de este informe hasta el examen trimestral",
+    "antes": "Sin refuerzo fijo",
+    "ahora": "3 sesiones semanales en su casa · Bono mensual de 12h"
+  }
+}

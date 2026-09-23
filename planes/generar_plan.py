@@ -63,19 +63,29 @@ def pct(ahorro, total):
 
 
 def lista_asig(a):
+    if not a:
+        return ""
     return a[0] if len(a) == 1 else ", ".join(a[:-1]) + " y " + a[-1]
 
 
 def textos(d):
     n, asig = d["nombre"], lista_asig(d["asignaturas"])
     una = len(d["asignaturas"]) == 1
+    esp = asig or TARIFAS[d["etapa"]]["nombre"]  # especialidad del profesor si no hay asignaturas
+    solo_casa = d["modalidades_recomendadas"] == ["casa_alumno"]
+    if asig:
+        con_tu, con_su = f"con clases de {asig}", f"con clases de {asig}"
+    elif solo_casa:
+        con_tu, con_su = "con el profesor en tu propia casa", "con el profesor en su propia casa"
+    else:
+        con_tu, con_su = "con clases a tu medida", "con clases a su medida"
     if d["voz"] == "tu":
         return dict(
-            cover_sub=f"Un acompañamiento diseñado específicamente para ti, {n}, con clases de {asig}.",
+            cover_sub=f"Un acompañamiento diseñado específicamente para ti, {n}, {con_tu}.",
             cover_foot="CURSO 2026–2027 — CONDICIONES VÁLIDAS PARA ESTE PLAN",
             p2_title=f"Así te acompañamos cada mes, {n}",
-            p2_sub=f"Un profesor especializado en {asig}, con sesiones centradas en {'tu asignatura' if una else 'tus asignaturas'} y ajuste continuo según lo que necesites reforzar.",
-            c1=f"Tienes tu profesor de referencia asignado, especializado en {asig}, con horario fijo cada semana.",
+            p2_sub=f"Un profesor especializado en {esp}, con sesiones centradas en {'tu asignatura' if una else 'tus asignaturas'} y ajuste continuo según lo que necesites reforzar.",
+            c1=f"Tienes tu profesor de referencia asignado, especializado en {esp}, con horario fijo cada semana.",
             c2t="Enfoque a tus exámenes",
             c2="Cada sesión se centra en lo que tienes más cerca: trabajos, entregas o el próximo examen.",
             c3="Si necesitas reforzar un bloque concreto antes de un examen, el enfoque de las sesiones se adapta sin coste extra.",
@@ -89,17 +99,17 @@ def textos(d):
             su_casa="en tu casa",
             p8_badge=f"BONOS RECOMENDADOS PARA {n.upper()}",
             p9_sub="Tus bonos recomendados, de un vistazo.",
-            p9_l1=f"El bono cubre tus clases mensuales de {asig}",
+            p9_l1="El bono cubre tus clases mensuales" + (f" de {asig}" if asig else ""),
             p9_l2="Sin permanencia: si un mes necesitas menos horas, se ajusta el bono contratado.",
-            quote=f"Un plan a medida para acompañarte en {asig}",
+            quote="Un plan a medida para acompañarte" + (f" en {asig}" if asig else ""),
             p10_sub="Escríbenos para confirmar tu bono de cada mes o cualquier ajuste de horas.",
         )
     return dict(
-        cover_sub=f"Un acompañamiento diseñado específicamente para {n}, con clases de {asig}.",
+        cover_sub=f"Un acompañamiento diseñado específicamente para {n}, {con_su}.",
         cover_foot="CURSO 2026–2027 — CONDICIONES VÁLIDAS PARA ESTA FAMILIA",
         p2_title=f"Así acompañamos a {n} cada mes",
-        p2_sub=f"Un profesor especializado en {asig}, con sesiones centradas en {'su asignatura' if una else 'sus asignaturas'} y ajuste continuo según lo que necesite reforzar.",
-        c1=f"{n} tiene su profesor de referencia asignado, especializado en {asig}, con horario fijo cada semana.",
+        p2_sub=f"Un profesor especializado en {esp}, con sesiones centradas en {'su asignatura' if una else 'sus asignaturas'} y ajuste continuo según lo que necesite reforzar.",
+        c1=f"{n} tiene su profesor de referencia asignado, especializado en {esp}, con horario fijo cada semana.",
         c2t="Enfoque a sus exámenes",
         c2="Cada sesión se centra en lo que tiene más cerca: trabajos, entregas o el próximo examen.",
         c3="Si necesita reforzar un bloque concreto antes de un examen, el enfoque de las sesiones se adapta sin coste extra.",
@@ -113,9 +123,9 @@ def textos(d):
         su_casa="en su casa",
         p8_badge=f"BONOS RECOMENDADOS DE {n.upper()}",
         p9_sub=f"Los bonos recomendados de {n}, de un vistazo.",
-        p9_l1=f"El bono cubre las clases mensuales de {n} de {asig}",
+        p9_l1=f"El bono cubre las clases mensuales de {n}" + (f" de {asig}" if asig else ""),
         p9_l2="Sin permanencia: si un mes necesita menos horas, se ajusta el bono contratado.",
-        quote=f"Un plan a medida para acompañar a {n} en {asig}",
+        quote=f"Un plan a medida para acompañar a {n}" + (f" en {asig}" if asig else ""),
         p10_sub=f"Escríbenos para confirmar el bono de cada mes o cualquier ajuste de horas de {n}.",
     )
 
@@ -197,7 +207,7 @@ def page_informe(d, t):
 
 def phones(d):
     r, n = d["informe_ejemplo"], d["nombre"]
-    asig = lista_asig(d["asignaturas"])
+    asig = r.get("asignatura") or lista_asig(d["asignaturas"])
     # 1. Portada
     p1 = f'''<div class="scr">
   <div class="s-eyebrow">INFORME DE SEGUIMIENTO MENSUAL</div>
@@ -304,13 +314,19 @@ def page_bono(d, t):
     bonos, mods = d["bonos_recomendados"], d["modalidades_recomendadas"]
     hs = " u ".join(f"{b['horas']}h" for b in bonos) if len(bonos) > 1 else f"{bonos[0]['horas']}h"
     ms = " o ".join(mod_corto(m, t) for m in mods)
-    title = f"Bono{'s' if len(bonos) > 1 else ''} de {hs}, {ms}"
+    title = f"Bono{'s' if len(bonos) > 1 else ''} de {hs}{',' if len(mods) > 1 else ''} {ms}"
     title = title[0].upper() + title[1:]
     verbo = "haces" if d["voz"] == "tu" else "hace"
     frases = ", o ".join(f"el bono de {b['horas']}h al mes si {verbo} {b['frecuencia']}" if i == 0
                          else f"el de {b['horas']}h si {verbo} {b['frecuencia']}" for i, b in enumerate(bonos))
-    lead = f"{t['p8_para']} {frases}. Puedes elegir entre clases {ms}." if d["voz"] == "tu" \
-        else f"{t['p8_para']} {frases}. Podéis elegir entre clases {ms}."
+    ubic = f", {d['ubicacion']}" if d.get("ubicacion") else ""
+    if len(mods) == 1:
+        extra = f"con el profesor dando la clase {ms}{ubic}" if mods[0] != "online" else "con clases online"
+        lead = f"{t['p8_para']} {frases}, {extra}."
+    elif d["voz"] == "tu":
+        lead = f"{t['p8_para']} {frases}. Puedes elegir entre clases {ms}{ubic}."
+    else:
+        lead = f"{t['p8_para']} {frases}. Podéis elegir entre clases {ms}{ubic}."
     cards = ""
     for b in bonos:
         h = b["horas"]
@@ -326,7 +342,7 @@ def page_bono(d, t):
   {rows}<ul class="checks sm">{feats}</ul></div>'''
     return f'''<section class="page">
   <div class="hdr"><span class="hdr-l">PLAN PERSONALIZADO · {e(n.upper())}</span></div><div class="rule"></div>
-  <div class="who"><div class="av">{e(n[0])}</div><div><div class="wn">{e(n)}</div><div class="ws">{e((d["curso"] + " · " if d["curso"] else "") + lista_asig(d["asignaturas"]).upper())}</div></div></div>
+  <div class="who"><div class="av">{e(n[0])}</div><div><div class="wn">{e(n)}</div><div class="ws">{e(" · ".join(x for x in [d["curso"], lista_asig(d["asignaturas"])] if x).upper())}</div></div></div>
   <div class="pill gold">{e(t["p8_pill"])}</div>
   <h2>{e(title)}</h2>
   <p class="lead">{e(lead)} Sin permanencia.</p>
@@ -343,17 +359,20 @@ def page_resumen(d, t):
         prices = "".join(f'<div class="sp"><small>{e(mod_corto(m, t).capitalize())}</small><b>{eur(calc(d, h, m)["precio"], 0)}</b></div>'
                          for m in d["modalidades_recomendadas"])
         rows += f'''<div class="srow"><div class="av w">{e(n[0])}</div>
-  <div class="st"><b>{e(n)} — Bono de {h}h</b><small>{e(b["frecuencia"])} · {e(lista_asig(d["asignaturas"]))}</small></div>
+  <div class="st"><b>{e(n)} — Bono de {h}h</b><small>{e(" · ".join(x for x in [b["frecuencia"], lista_asig(d["asignaturas"]) or d["curso"]] if x))}</small></div>
   <div class="sps">{prices}</div></div>'''
     ms = " o ".join(mod_corto(m, t) for m in d["modalidades_recomendadas"])
+    ubic = f", {d['ubicacion']}" if d.get("ubicacion") else ""
+    q_end = ("con el profesor en " + ("tu" if d["voz"] == "tu" else "su") + " propia casa") \
+        if d["modalidades_recomendadas"] == ["casa_alumno"] else ms
     return f'''<section class="page">
   <div class="hdr"><img class="logo-sm" src="{LOGO_URI}"><span class="hdr-r">RESUMEN DEL PLAN</span></div><div class="rule"></div>
   <div class="pill gold">RESUMEN MENSUAL</div>
   <h2>Tu plan, de un vistazo</h2>
   <p class="lead">{e(t["p9_sub"])}</p>
   <div class="srows">{rows}</div>
-  <ul class="dash"><li>{e(t["p9_l1"])}, {e(ms)}.</li><li>{e(t["p9_l2"])}</li></ul>
-  <div class="quote"><span>"</span><em>{e(t["quote"])}, {e(ms)}.</em></div>
+  <ul class="dash"><li>{e(t["p9_l1"])}, {e(ms)}{e(ubic)}.</li><li>{e(t["p9_l2"])}</li></ul>
+  <div class="quote"><span>"</span><em>{e(t["quote"])}, {e(q_end)}.</em></div>
   {footer()}
 </section>'''
 
