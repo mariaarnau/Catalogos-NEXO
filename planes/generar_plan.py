@@ -561,7 +561,9 @@ def main():
     doc = f'<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><title>Plan NEXO — {e(d["nombre"])}</title><style>{CSS}</style></head><body>{"".join(pages)}</body></html>'
     out = ROOT / "output"
     out.mkdir(exist_ok=True)
-    base = out / f"Plan_NEXO_{d['nombre'].replace(' ', '_')}"
+    # Nombre de archivo: Plan_NEXO_<Nombre>_<Curso>_<Asignaturas> (sin curso, la etapa)
+    partes = [d["nombre"], d["curso"] or tf["nombre"]] + d["asignaturas"]
+    base = out / ("Plan_NEXO_" + "_".join(x.strip().replace(" ", "_") for x in partes if x))
     base.with_suffix(".html").write_text(doc, encoding="utf-8")
     subprocess.run(["node", str(ROOT / "render_pdf.js"), str(base.with_suffix(".html")), str(base.with_suffix(".pdf"))], check=True)
     print(base.with_suffix(".pdf"))
