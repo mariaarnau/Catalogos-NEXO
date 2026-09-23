@@ -53,7 +53,8 @@ def seccion(num, titulo, cuerpo, full=False):
 
 def render(d, foto_uri):
     nombre = d["nombre"]
-    foto = (f'<img class="foto" src="{foto_uri}" alt="{e(nombre)}">' if foto_uri
+    pos = f' style="object-position:{e(d["foto_posicion"])}"' if d.get("foto_posicion") else ""
+    foto = (f'<img class="foto" src="{foto_uri}" alt="{e(nombre)}"{pos}>' if foto_uri
             else f'<div class="foto ini">{e(iniciales(nombre))}</div>')
 
     meta = []
@@ -86,7 +87,8 @@ def render(d, foto_uri):
             + (f'<span class="idi-c">{e(i["certificado"])}</span>' if i.get("certificado") else "")
             + "</div>"
             for i in d["idiomas"])
-        secciones.append(seccion(n, "Idiomas y certificados", f'<div class="idiomas">{filas}</div>'))
+        titulo_idi = "Idiomas y certificados" if any(i.get("certificado") for i in d["idiomas"]) else "Idiomas"
+        secciones.append(seccion(n, titulo_idi, f'<div class="idiomas">{filas}</div>'))
         n += 1
     if d.get("experiencia_docente"):
         secciones.append(seccion(n, "Experiencia docente", bloque_lista(d["experiencia_docente"])))

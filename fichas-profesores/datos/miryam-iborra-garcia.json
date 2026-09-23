@@ -1,0 +1,24 @@
+{
+  "nombre": "Miryam Iborra García",
+  "foto": "../fotos/miryam-iborra-garcia.jpg",
+  "foto_posicion": "50% 22%",
+  "titular": "Profesora de apoyo escolar",
+  "edad": 19,
+  "ubicacion": "Valencia",
+  "materias": ["APOYO ESCOLAR"],
+  "telefono": "644 86 14 29",
+  "email": "miryamiborra@gmail.com",
+  "situacion_actual": "Estudiante de 2.º curso del Grado en Enfermería en la Universidad de Valencia.",
+  "estudios": [
+    {"titulo": "Grado en Enfermería", "detalle": "Universidad de Valencia", "fecha": "2.º curso"},
+    {"titulo": "Monitora de Actividades de Tiempo Libre", "detalle": "Colegio El Armelar", "fecha": "2024"}
+  ],
+  "idiomas": [
+    {"idioma": "Castellano", "nivel": "Nativo"},
+    {"idioma": "Valenciano", "nivel": "C1"},
+    {"idioma": "Inglés", "nivel": "B1"}
+  ],
+  "experiencia_docente": [
+    {"titulo": "Clases particulares / Apoyo escolar", "detalle": "Apoyo académico y seguimiento de tareas, ayuda en la organización y adquisición de hábitos de estudio."}
+  ]
+}
