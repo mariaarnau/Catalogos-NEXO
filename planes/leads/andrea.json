@@ -1,0 +1,62 @@
+{
+  "nombre": "Andrea",
+  "etapa": "universidad",
+  "curso": "Matemáticas + ADE · UPV",
+  "asignaturas": ["Álgebra", "Cálculo", "Física"],
+  "voz": "tu",
+  "bonos_recomendados": [{"horas": 12, "frecuencia": "3h a la semana"}],
+  "modalidades_recomendadas": ["online", "casa_alumno"],
+  "ruta": {
+    "etiqueta": "TU HOJA DE RUTA",
+    "pill": "NUEVO · TU CUATRIMESTRE PLANIFICADO",
+    "titulo": "De octubre a enero, con un plan claro",
+    "lead": "Con el bono de 12h al mes tienes 3 horas de clase cada semana para llevar Álgebra, Cálculo y Física al día y llegar con todo preparado a los exámenes del primer cuatrimestre.",
+    "stats": [
+      ["48h", "de clase de octubre a enero"],
+      ["16h", "para cada asignatura: Álgebra, Cálculo y Física"],
+      ["3h", "cada semana, repartidas entre las tres"],
+      ["4", "informes mensuales con tu evolución"]
+    ],
+    "fases": [
+      ["OCTUBRE", "Diagnóstico y bases", "Evaluación inicial y repaso de lo que más te cuesta de cada asignatura."],
+      ["NOVIEMBRE", "Al día con el temario", "Teoría y problemas al ritmo de tus clases en la UPV, sin acumular temas."],
+      ["DICIEMBRE", "Entregas y pruebas", "Más horas en la asignatura que tengas más cerca, sin coste extra."],
+      ["ENERO", "Recta final", "Repaso completo y problemas tipo examen antes de los exámenes del cuatrimestre."]
+    ],
+    "semana": [["Álgebra", 1], ["Cálculo", 1], ["Física", 1]],
+    "semana_nota": "Reparto orientativo. Con el bono de 12h puedes mover horas entre asignaturas según tus entregas y exámenes (ajuste de horas entre bloques)."
+  },
+  "informe_ejemplo": {
+    "asignatura": "Cálculo",
+    "mes": "Noviembre 2026",
+    "nota": "7,0",
+    "sesiones": 12,
+    "horas": "12h",
+    "destrezas_label": "Asignaturas seguidas",
+    "barras": [["Álgebra", 6.8], ["Cálculo", 7.0], ["Física", 6.5]],
+    "mayor_progreso": "Cálculo — de 6,0 a 7,0, muy buen ritmo este mes",
+    "resumen": "En noviembre, Andrea ha hecho 12 sesiones sin faltar a ninguna. Domina el cálculo de límites y ha mejorado mucho con las derivadas. El punto de trabajo son las integrales y los problemas de física con varias fuerzas.",
+    "proxima_sesion": "PRÓXIMA SESIÓN — MARTES 1",
+    "proxima_sesion_txt": "Integración por partes + 5 problemas tipo examen.",
+    "horario": "Andrea · Lunes, miércoles y jueves, 18:00–19:00",
+    "temas": [["Límites y continuidad", 2.5], ["Derivadas", 1.8], ["Integrales", 1.2], ["Series", 0.5]],
+    "fuertes": ["Domina límites y continuidad", "Buen ritmo resolviendo derivadas"],
+    "atencion": ["Integrales: duda con qué método aplicar", "Series: le cuesta ver la convergencia"],
+    "casa": ["2 integrales diarias de práctica", "Repasar criterios de convergencia"],
+    "semanas": [5.8, 6.3, 6.8, 7.2],
+    "metricas": [["76%", "Comprensión"], ["81%", "Constancia"], ["62%", "Autonomía"]],
+    "evol": [
+      ["Resolución de problemas", "Octubre: 60%", "Noviembre: 79%", "Plantea mejor el problema antes de empezar a calcular."],
+      ["Autonomía", "Octubre: 50%", "Noviembre: 62%", "Cada vez necesita menos ayuda para arrancar el ejercicio."]
+    ],
+    "conclusion": "Noviembre cierra con una tendencia muy positiva. El foco de diciembre es consolidar integrales antes de los exámenes de enero.",
+    "cal_mes": [2026, 12],
+    "cal_titulo": "Calendario de preparación — diciembre 2026",
+    "cal_dias_sesion": [0, 2, 3],
+    "cal_examen": 17,
+    "cal_semanas": "3 sem",
+    "cal_semanas_txt": "desde la fecha de este informe hasta el próximo examen",
+    "antes": "Estudio por tu cuenta",
+    "ahora": "3 sesiones semanales · Bono mensual de 12h"
+  }
+}

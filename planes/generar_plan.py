@@ -8,6 +8,7 @@ import base64
 import calendar
 import html
 import json
+import re
 import subprocess
 import sys
 from decimal import Decimal, ROUND_HALF_UP
@@ -71,6 +72,7 @@ def lista_asig(a):
 def textos(d):
     n, asig = d["nombre"], lista_asig(d["asignaturas"])
     una = len(d["asignaturas"]) == 1
+    pl = len(d["bonos_recomendados"]) > 1
     esp = asig or TARIFAS[d["etapa"]]["nombre"]  # especialidad del profesor si no hay asignaturas
     solo_casa = d["modalidades_recomendadas"] == ["casa_alumno"]
     if asig:
@@ -97,8 +99,8 @@ def textos(d):
             p8_pill="TU BONO MENSUAL",
             p8_para="Te recomendamos",
             su_casa="en tu casa",
-            p8_badge=f"BONOS RECOMENDADOS PARA {n.upper()}",
-            p9_sub="Tus bonos recomendados, de un vistazo.",
+            p8_badge=(f"BONOS RECOMENDADOS PARA {n.upper()}" if pl else f"BONO RECOMENDADO PARA {n.upper()}"),
+            p9_sub=("Tus bonos recomendados" if pl else "Tu bono recomendado") + ", de un vistazo.",
             p9_l1="El bono cubre tus clases mensuales" + (f" de {asig}" if asig else ""),
             p9_l2="Sin permanencia: si un mes necesitas menos horas, se ajusta el bono contratado.",
             quote="Un plan a medida para acompañarte" + (f" en {asig}" if asig else ""),
@@ -121,8 +123,8 @@ def textos(d):
         p8_pill="SU BONO MENSUAL",
         p8_para=f"Para {n} te recomendamos",
         su_casa="en su casa",
-        p8_badge=f"BONOS RECOMENDADOS DE {n.upper()}",
-        p9_sub=f"Los bonos recomendados de {n}, de un vistazo.",
+        p8_badge=(f"BONOS RECOMENDADOS DE {n.upper()}" if pl else f"BONO RECOMENDADO DE {n.upper()}"),
+        p9_sub=(f"Los bonos recomendados de {n}" if pl else f"El bono recomendado de {n}") + ", de un vistazo.",
         p9_l1=f"El bono cubre las clases mensuales de {n}" + (f" de {asig}" if asig else ""),
         p9_l2="Sin permanencia: si un mes necesita menos horas, se ajusta el bono contratado.",
         quote=f"Un plan a medida para acompañar a {n}" + (f" en {asig}" if asig else ""),
@@ -152,6 +154,27 @@ def page_cover(d, t):
   <p class="cover-sub">{e(t["cover_sub"])}</p>
   <div class="name-card"><div class="nm">{e(d["nombre"])}</div><div class="cs">{e(sub.upper())}</div></div>
   <div class="cover-foot">{e(t["cover_foot"])}</div>
+</section>'''
+
+
+def page_ruta(d, t):
+    r = d["ruta"]
+    stats = "".join(f"<div><b>{e(a)}</b><span>{e(b)}</span></div>" for a, b in r["stats"])
+    fases = "".join(f'<div class="fase{" fin" if i == len(r["fases"]) - 1 else ""}"><i></i><small>{e(m)}</small>'
+                    f'<h4>{e(h)}</h4><p>{e(x)}</p></div>' for i, (m, h, x) in enumerate(r["fases"]))
+    total = sum(h for _, h in r["semana"])
+    segs = "".join(f'<div class="seg s{i}" style="flex:{h}"><b>{e(a)}</b><span>{str(h).replace(".", ",")}h</span></div>'
+                   for i, (a, h) in enumerate(r["semana"]))
+    return f'''<section class="page glow">
+  <div class="hdr"><img class="logo-sm" src="{LOGO_URI}"><span class="hdr-r">{e(r["etiqueta"])}</span></div><div class="rule"></div>
+  <div class="pill gold">{e(r["pill"])}</div>
+  <h2>{e(r["titulo"])}</h2>
+  <p class="lead">{e(r["lead"])}</p>
+  <div class="bigstats">{stats}</div>
+  <div class="timeline">{fases}</div>
+  <div class="semana"><div class="sem-h"><b>Tu semana tipo</b><span>{str(total).replace(".", ",")}h a la semana</span></div>
+    <div class="segs">{segs}</div><p>{e(r["semana_nota"])}</p></div>
+  {footer()}
 </section>'''
 
 
@@ -317,8 +340,11 @@ def page_bono(d, t):
     title = f"Bono{'s' if len(bonos) > 1 else ''} de {hs}{',' if len(mods) > 1 else ''} {ms}"
     title = title[0].upper() + title[1:]
     verbo = "haces" if d["voz"] == "tu" else "hace"
-    frases = ", o ".join(f"el bono de {b['horas']}h al mes si {verbo} {b['frecuencia']}" if i == 0
-                         else f"el de {b['horas']}h si {verbo} {b['frecuencia']}" for i, b in enumerate(bonos))
+    if len(bonos) == 1:
+        frases = f"el bono de {bonos[0]['horas']}h al mes ({bonos[0]['frecuencia']})"
+    else:
+        frases = ", o ".join(f"el bono de {b['horas']}h al mes si {verbo} {b['frecuencia']}" if i == 0
+                             else f"el de {b['horas']}h si {verbo} {b['frecuencia']}" for i, b in enumerate(bonos))
     ubic = f", {d['ubicacion']}" if d.get("ubicacion") else ""
     if len(mods) == 1:
         extra = f"con el profesor dando la clase {ms}{ubic}" if mods[0] != "online" else "con clases online"
@@ -541,6 +567,30 @@ h2.c { font-size: 34px; margin: 26px 0 18px; }
 .quote em { font: italic 16.5px 'Liberation Serif', serif; }
 .wa { display: inline-block; margin-top: 36px; padding: 15px 36px; border-radius: 999px; background: linear-gradient(90deg,#e8cf8e,#c9a24b); color: #0a1226; font-weight: 700; font-size: 16px; text-decoration: none; }
 .contact { display: flex; gap: 32px; margin-top: 30px; color: #a49f8e; font-size: 14px; }
+.bigstats { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; margin-top: 28px; }
+.bigstats > div { border: 1px solid rgba(233,209,143,0.35); border-radius: 14px; padding: 16px 16px 14px; background: linear-gradient(160deg, rgba(233,209,143,0.08), rgba(12,18,36,0.6)); }
+.bigstats b { display: block; color: #e9d18f; font-size: 34px; line-height: 1.05; }
+.bigstats span { display: block; color: #a49f8e; font-size: 12.5px; line-height: 1.25; margin-top: 6px; }
+.timeline { display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; margin-top: 30px; position: relative; }
+.timeline::before { content: ""; position: absolute; left: 6px; right: 6px; top: 6px; height: 2px; background: linear-gradient(90deg, #3a7bd5, #e9d18f); }
+.fase { position: relative; padding-top: 24px; }
+.fase i { position: absolute; top: 0; left: 0; width: 14px; height: 14px; border-radius: 50%; background: #3a7bd5; box-shadow: 0 0 0 4px rgba(58,123,213,0.25); }
+.fase.fin i { background: #e9d18f; box-shadow: 0 0 0 4px rgba(233,209,143,0.25); }
+.fase small { color: #8fb8ec; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; }
+.fase.fin small { color: #e9d18f; }
+.fase h4 { font-size: 16.5px; margin: 6px 0 6px; }
+.fase p { color: #a49f8e; font-size: 12.5px; line-height: 1.3; }
+.semana { margin-top: 30px; border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; padding: 18px 22px; background: rgba(12,18,36,0.6); }
+.sem-h { display: flex; justify-content: space-between; align-items: baseline; }
+.sem-h b { font-size: 17px; } .sem-h span { color: #e9d18f; font-size: 13px; font-weight: 700; }
+.segs { display: flex; gap: 6px; margin: 12px 0 10px; }
+.seg { border-radius: 10px; padding: 11px 14px; display: flex; justify-content: space-between; align-items: center; color: #0a1226; }
+.seg b { font: 700 15px 'Liberation Sans', Arial; } .seg span { font-size: 13px; font-weight: 700; }
+.seg.s0 { background: linear-gradient(90deg,#e8cf8e,#c9a24b); }
+.seg.s1 { background: linear-gradient(90deg,#8fb8ec,#5b8ee0); }
+.seg.s2 { background: linear-gradient(90deg,#cfd8e8,#9fb0cc); }
+.seg.s3 { background: linear-gradient(90deg,#7fcfa0,#3f9e6f); }
+.semana p { color: #8a8a93; font-size: 12.5px; }
 """
 
 
@@ -553,7 +603,8 @@ def main():
     tf = TARIFAS[d["etapa"]]
     for m in d["modalidades_recomendadas"]:
         assert m in tf["precios"], f"La etapa {d['etapa']} no tiene modalidad {m}"
-    pages = [page_cover(d, t), page_proceso(d, t), page_informe(d, t), page_phones(d, t)]
+    pages = [page_cover(d, t)] + ([page_ruta(d, t)] if d.get("ruta") else []) \
+        + [page_proceso(d, t), page_informe(d, t), page_phones(d, t)]
     for m in ("online", "casa_profesor", "casa_alumno"):
         if m in tf["precios"]:
             pages.append(page_tarifas(d, t, m))
@@ -563,7 +614,7 @@ def main():
     out.mkdir(exist_ok=True)
     # Nombre de archivo: Plan_NEXO_<Nombre>_<Curso>_<Asignaturas> (sin curso, la etapa)
     partes = [d["nombre"], d["curso"] or tf["nombre"]] + d["asignaturas"]
-    base = out / ("Plan_NEXO_" + "_".join(x.strip().replace(" ", "_") for x in partes if x))
+    base = out / ("Plan_NEXO_" + "_".join(re.sub(r"[^\wº]+", "_", x).strip("_") for x in partes if x))
     base.with_suffix(".html").write_text(doc, encoding="utf-8")
     subprocess.run(["node", str(ROOT / "render_pdf.js"), str(base.with_suffix(".html")), str(base.with_suffix(".pdf"))], check=True)
     print(base.with_suffix(".pdf"))
