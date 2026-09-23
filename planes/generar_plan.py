@@ -175,8 +175,9 @@ def page_ruta(d, t):
     meses = ""
     for g in grupos:
         info = r["meses"].get(g["mes"], "")
+        txt = e(info) if r.get("ocultar_total") else f'{num(g["h"])}h{" · " + e(info) if info else ""}'
         meses += (f'<div class="mes" style="grid-column: span {g["n"]}"><b>{e(g["mes"])}</b>'
-                  f'<span>{num(g["h"])}h{" · " + e(info) if info else ""}</span></div>')
+                  f'<span>{txt}</span></div>')
     cols = ""
     for w in r["semanas"]:
         if w.get("examen"):
@@ -185,9 +186,10 @@ def page_ruta(d, t):
             continue
         segs = "".join(f'<i class="c{i}" style="height:{h*esc:.0f}px"></i>' for i, h in enumerate(w["horas"]) if h)
         tot = sum(w["horas"])
-        cols += (f'<div class="wk{" pico" if tot >= 4.5 else ""}"><div class="stack"><b>{num(tot)}h</b>{segs}</div>'
+        top = w.get("top") or f"{num(tot)}h"
+        cols += (f'<div class="wk{" pico" if tot >= 4.5 else ""}"><div class="stack"><b>{top}</b>{segs}</div>'
                  f'<small>{e(w["label"])}</small></div>')
-    leg = "".join(f'<span><i class="c{i}"></i>{e(a)}</span>' for i, a in enumerate(asigs))
+    leg = "".join(f'<span><i class="c{i}"></i>{e(a)}</span>' for i, a in enumerate(r.get("leyenda") or asigs))
     bloques = "".join(f'<div class="blq"><small>{e(k)}</small><h4>{e(h)}</h4><p>{e(x)}</p></div>'
                       for k, h, x in r["bloques"])
     return f'''<section class="page glow ruta">
@@ -197,11 +199,11 @@ def page_ruta(d, t):
   <p class="lead">{e(r["lead"])}</p>
   <div class="bigstats">{stats}</div>
   <div class="cal">
-    <div class="cal-h"><b>Tus semanas hasta los exámenes</b><div class="leg">{leg}</div></div>
+    <div class="cal-h"><b>{e(r.get("cal_titulo", "Tus semanas hasta los exámenes"))}</b><div class="leg">{leg}</div></div>
     <div class="grid" style="grid-template-columns: repeat({len(r["semanas"])}, 1fr)">{meses}{cols}</div>
     <p class="cal-n">{e(r["nota"])}</p>
   </div>
-  <div class="bloques">{bloques}</div>
+  <div class="bloques" style="grid-template-columns: repeat({min(len(r["bloques"]), 4)}, 1fr)">{bloques}</div>
   {footer()}
 </section>'''
 
@@ -633,6 +635,7 @@ h2.c { font-size: 34px; margin: 26px 0 18px; }
 .wk { text-align: center; }
 .wk small { display: block; color: #7d7f8a; font-size: 10px; margin-top: 5px; white-space: nowrap; }
 .stack { display: flex; flex-direction: column-reverse; gap: 2px; height: 150px; justify-content: flex-start; }
+.stack b small { display: block; font: 700 10px 'Liberation Sans', Arial; color: #e9d18f; }
 .stack b { order: 99; font-size: 13px; color: #e7e7ea; margin-bottom: 3px; }
 .wk.pico .stack b { color: #e9d18f; }
 .stack i { display: block; border-radius: 3px; }

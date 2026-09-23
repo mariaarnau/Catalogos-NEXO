@@ -2,13 +2,24 @@
   "nombre": "Daniel",
   "etapa": "universidad",
   "curso": "ADE",
-  "asignaturas": ["Matemáticas"],
+  "asignaturas": [
+    "Matemáticas"
+  ],
   "voz": "tu",
   "bonos_recomendados": [
-    {"horas": 8, "frecuencia": "2h a la semana"},
-    {"horas": 12, "frecuencia": "3h a la semana"}
+    {
+      "horas": 8,
+      "frecuencia": "2h a la semana"
+    },
+    {
+      "horas": 12,
+      "frecuencia": "3h a la semana"
+    }
   ],
-  "modalidades_recomendadas": ["online", "casa_alumno"],
+  "modalidades_recomendadas": [
+    "online",
+    "casa_alumno"
+  ],
   "informe_ejemplo": {
     "asignatura": "Matemáticas",
     "mes": "Noviembre 2026",
@@ -16,30 +27,308 @@
     "sesiones": 8,
     "horas": "8h",
     "destrezas_label": "Bloques trabajados",
-    "barras": [["Funciones", 7.0], ["Derivadas", 6.8], ["Optimización", 6.4], ["Matrices", 7.2]],
+    "barras": [
+      [
+        "Funciones",
+        7.0
+      ],
+      [
+        "Derivadas",
+        6.8
+      ],
+      [
+        "Optimización",
+        6.4
+      ],
+      [
+        "Matrices",
+        7.2
+      ]
+    ],
     "mayor_progreso": "Derivadas — de 6,0 a 7,0, muy buen ritmo este mes",
     "resumen": "En noviembre, Daniel ha hecho 8 sesiones de Matemáticas sin faltar a ninguna. Domina bien las funciones y ha mejorado mucho con las derivadas. El punto de trabajo son los problemas de optimización aplicados a costes y beneficios.",
     "proxima_sesion": "PRÓXIMA SESIÓN — MARTES 1",
     "proxima_sesion_txt": "Optimización: máximos y mínimos + 4 problemas tipo examen.",
     "horario": "Daniel · Martes y jueves, 18:00–19:00",
-    "temas": [["Funciones", 2.5], ["Derivadas", 1.8], ["Optimización", 1.2], ["Matrices", 0.5]],
-    "fuertes": ["Domina el estudio de funciones", "Buen ritmo calculando derivadas"],
-    "atencion": ["Optimización: le cuesta plantear el problema", "Matrices: duda con el cálculo de inversas"],
-    "casa": ["2 ejercicios diarios de derivadas", "1 problema de optimización al día"],
-    "semanas": [5.8, 6.3, 6.8, 7.2],
-    "metricas": [["76%", "Comprensión"], ["81%", "Constancia"], ["62%", "Autonomía"]],
+    "temas": [
+      [
+        "Funciones",
+        2.5
+      ],
+      [
+        "Derivadas",
+        1.8
+      ],
+      [
+        "Optimización",
+        1.2
+      ],
+      [
+        "Matrices",
+        0.5
+      ]
+    ],
+    "fuertes": [
+      "Domina el estudio de funciones",
+      "Buen ritmo calculando derivadas"
+    ],
+    "atencion": [
+      "Optimización: le cuesta plantear el problema",
+      "Matrices: duda con el cálculo de inversas"
+    ],
+    "casa": [
+      "2 ejercicios diarios de derivadas",
+      "1 problema de optimización al día"
+    ],
+    "semanas": [
+      5.8,
+      6.3,
+      6.8,
+      7.2
+    ],
+    "metricas": [
+      [
+        "76%",
+        "Comprensión"
+      ],
+      [
+        "81%",
+        "Constancia"
+      ],
+      [
+        "62%",
+        "Autonomía"
+      ]
+    ],
     "evol": [
-      ["Resolución de problemas", "Octubre: 60%", "Noviembre: 79%", "Plantea mejor el enunciado antes de empezar a calcular."],
-      ["Autonomía", "Octubre: 50%", "Noviembre: 62%", "Cada vez necesita menos ayuda para arrancar el ejercicio."]
+      [
+        "Resolución de problemas",
+        "Octubre: 60%",
+        "Noviembre: 79%",
+        "Plantea mejor el enunciado antes de empezar a calcular."
+      ],
+      [
+        "Autonomía",
+        "Octubre: 50%",
+        "Noviembre: 62%",
+        "Cada vez necesita menos ayuda para arrancar el ejercicio."
+      ]
     ],
     "conclusion": "Noviembre cierra con una tendencia muy positiva. El foco de diciembre es consolidar la optimización antes del próximo examen.",
-    "cal_mes": [2026, 12],
+    "cal_mes": [
+      2026,
+      12
+    ],
     "cal_titulo": "Calendario de preparación — diciembre 2026",
-    "cal_dias_sesion": [1, 3],
+    "cal_dias_sesion": [
+      1,
+      3
+    ],
     "cal_examen": 17,
     "cal_semanas": "3 sem",
     "cal_semanas_txt": "desde la fecha de este informe hasta el próximo examen",
     "antes": "Estudio por tu cuenta",
     "ahora": "Sesiones semanales de Matemáticas · Bono mensual"
+  },
+  "ruta": {
+    "etiqueta": "TU HOJA DE RUTA",
+    "pill": "NUEVO · TU PLAN HASTA ENERO",
+    "titulo": "Mes a mes, hasta tu examen de enero",
+    "lead": "Tu examen de Matemáticas es la segunda semana de enero. Así repartimos el temario por bloques y las horas de cada semana para llegar con todo trabajado.",
+    "stats": [
+      [
+        "15 sem",
+        "hasta el examen (semana del 11 de enero)"
+      ],
+      [
+        "4",
+        "bloques: bases, derivadas, álgebra y repaso final"
+      ],
+      [
+        "32h",
+        "de clase con el bono de 8h"
+      ],
+      [
+        "48h",
+        "de clase con el bono de 12h"
+      ]
+    ],
+    "cal_titulo": "Tus semanas hasta el examen",
+    "leyenda": [
+      "Con el bono de 8h",
+      "Extra con el bono de 12h"
+    ],
+    "ocultar_total": true,
+    "semanas": [
+      {
+        "label": "28 sep",
+        "mes": "Octubre",
+        "horas": [
+          1.5,
+          0.5
+        ],
+        "top": "2h<small>1,5h</small>"
+      },
+      {
+        "label": "5 oct",
+        "mes": "Octubre",
+        "horas": [
+          1.5,
+          0.5
+        ],
+        "top": "2h<small>1,5h</small>"
+      },
+      {
+        "label": "12 oct",
+        "mes": "Octubre",
+        "horas": [
+          1.5,
+          0.5
+        ],
+        "top": "2h<small>1,5h</small>"
+      },
+      {
+        "label": "19 oct",
+        "mes": "Octubre",
+        "horas": [
+          1.5,
+          1.5
+        ],
+        "top": "3h<small>1,5h</small>"
+      },
+      {
+        "label": "26 oct",
+        "mes": "Octubre",
+        "horas": [
+          2,
+          1
+        ],
+        "top": "3h<small>2h</small>"
+      },
+      {
+        "label": "2 nov",
+        "mes": "Noviembre",
+        "horas": [
+          2,
+          1
+        ],
+        "top": "3h<small>2h</small>"
+      },
+      {
+        "label": "9 nov",
+        "mes": "Noviembre",
+        "horas": [
+          2,
+          1
+        ],
+        "top": "3h<small>2h</small>"
+      },
+      {
+        "label": "16 nov",
+        "mes": "Noviembre",
+        "horas": [
+          2,
+          1
+        ],
+        "top": "3h<small>2h</small>"
+      },
+      {
+        "label": "23 nov",
+        "mes": "Noviembre",
+        "horas": [
+          2,
+          1
+        ],
+        "top": "3h<small>2h</small>"
+      },
+      {
+        "label": "30 nov",
+        "mes": "Diciembre",
+        "horas": [
+          2,
+          1
+        ],
+        "top": "3h<small>2h</small>"
+      },
+      {
+        "label": "7 dic",
+        "mes": "Diciembre",
+        "horas": [
+          2,
+          1
+        ],
+        "top": "3h<small>2h</small>"
+      },
+      {
+        "label": "14 dic",
+        "mes": "Diciembre",
+        "horas": [
+          2,
+          1
+        ],
+        "top": "3h<small>2h</small>"
+      },
+      {
+        "label": "21 dic",
+        "mes": "Diciembre",
+        "horas": [
+          2,
+          1
+        ],
+        "top": "3h<small>2h</small>"
+      },
+      {
+        "label": "28 dic",
+        "mes": "Enero",
+        "horas": [
+          3,
+          2
+        ],
+        "top": "5h<small>3h</small>"
+      },
+      {
+        "label": "4 ene",
+        "mes": "Enero",
+        "horas": [
+          3,
+          2
+        ],
+        "top": "5h<small>3h</small>"
+      },
+      {
+        "label": "11 ene",
+        "mes": "Enero",
+        "examen": "Examen de enero"
+      }
+    ],
+    "meses": {
+      "Octubre": "Bases",
+      "Noviembre": "Derivadas",
+      "Diciembre": "Álgebra",
+      "Enero": "Repaso final"
+    },
+    "nota": "Arriba de cada barra, horas de la semana con el bono de 12h y, en dorado, con el de 8h. Cada mes suma exactamente el bono: en enero se incluyen 2h de repaso exprés la semana del examen. En Navidad subimos el ritmo para llegar al examen con simulacros hechos.",
+    "bloques": [
+      [
+        "OCTUBRE",
+        "Bases",
+        "Diagnóstico inicial, funciones, límites y continuidad."
+      ],
+      [
+        "NOVIEMBRE",
+        "Derivadas",
+        "Derivadas y optimización aplicada: costes, ingresos y beneficio."
+      ],
+      [
+        "DICIEMBRE",
+        "Álgebra",
+        "Matrices, determinantes y sistemas de ecuaciones."
+      ],
+      [
+        "NAVIDAD · ENERO",
+        "Repaso final",
+        "Exámenes de otros años y simulacros antes del examen."
+      ]
+    ]
   }
 }
