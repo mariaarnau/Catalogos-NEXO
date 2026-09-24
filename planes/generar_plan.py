@@ -725,7 +725,7 @@ h2.c { font-size: 34px; margin: 26px 0 18px; }
 .wa { display: inline-block; margin-top: 36px; padding: 15px 36px; border-radius: 999px; background: linear-gradient(90deg,#e8cf8e,#c9a24b); color: #0a1226; font-weight: 700; font-size: 16px; text-decoration: none; }
 .contact { display: flex; gap: 32px; margin-top: 30px; color: #a49f8e; font-size: 14px; }
 .bigstats { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; margin-top: 28px; }
-.bigstats > div { border: 1px solid rgba(233,209,143,0.35); border-radius: 14px; padding: 16px 16px 14px; background: linear-gradient(160deg, rgba(233,209,143,0.08), rgba(12,18,36,0.6)); }
+.bigstats > div { border: 1px solid #5d5438; border-radius: 14px; padding: 16px 16px 14px; background: linear-gradient(160deg, #1c1e24, #0e1528); }
 .bigstats b { display: block; color: #e9d18f; font-size: 34px; line-height: 1.05; }
 .bigstats span { display: block; color: #a49f8e; font-size: 12.5px; line-height: 1.25; margin-top: 6px; }
 .ruta .rule { margin: 18px 0 26px; }
@@ -801,26 +801,26 @@ h2.c { font-size: 34px; margin: 26px 0 18px; }
 .camino h2 { font-size: 36px; margin-top: 22px; }
 .road { margin-top: 44px; }
 .cfases { display: grid; gap: 8px; }
-.cf { border-radius: 14px; padding: 14px 16px; min-height: 74px; border: 1px solid rgba(255,255,255,0.10); }
+.cf { border-radius: 14px; padding: 14px 16px; min-height: 74px; border: 1px solid #2a3350; }
 .cf small { display: block; font-size: 10.5px; font-weight: 700; letter-spacing: 0.14em; color: #8fb8ec; }
 .cf b { display: block; font: 700 17px 'Liberation Serif', serif; margin-top: 6px; }
-.f0 { background: linear-gradient(160deg, rgba(58,123,213,0.28), rgba(58,123,213,0.08)); }
-.f1 { background: linear-gradient(160deg, rgba(90,140,220,0.26), rgba(143,184,236,0.08)); }
-.f2 { background: linear-gradient(160deg, rgba(180,170,140,0.24), rgba(233,209,143,0.08)); }
-.f3 { background: linear-gradient(160deg, rgba(233,209,143,0.42), rgba(201,162,75,0.14)); border-color: rgba(233,209,143,0.55); }
+.f0 { background: linear-gradient(160deg, #15305e, #0f1c3a); }
+.f1 { background: linear-gradient(160deg, #1a3360, #121f3e); }
+.f2 { background: linear-gradient(160deg, #2c3140, #181f33); }
+.f3 { background: linear-gradient(160deg, #5a4e30, #2c2a2a); border-color: #9c8550; }
 .f3 small { color: #e9d18f; }
 .track { position: relative; height: 92px; margin: 6px 0 0; }
-.line { position: absolute; left: 0; right: 0; top: 30px; height: 6px; border-radius: 6px; background: linear-gradient(90deg, #3a7bd5 0%, #8fb8ec 45%, #e9d18f 85%, #c9a24b 100%); box-shadow: 0 0 18px rgba(143,184,236,0.25); }
+.line { position: absolute; left: 0; right: 0; top: 30px; height: 6px; border-radius: 6px; background: linear-gradient(90deg, #3a7bd5 0%, #8fb8ec 45%, #e9d18f 85%, #c9a24b 100%); }
 .hito { position: absolute; top: 20px; transform: translateX(-50%); text-align: center; width: 120px; }
 .hito i { display: block; width: 26px; height: 26px; margin: 0 auto; border-radius: 50%; background: #0a1226; border: 4px solid #8fb8ec; }
 .hito span { display: block; margin-top: 10px; font-size: 12.5px; font-weight: 700; color: #e7e7ea; }
 .hito.meta { top: 12px; }
-.hito.meta i { width: 42px; height: 42px; border: 0; background: radial-gradient(circle at 35% 35%, #f6e2a6, #c9a24b); box-shadow: 0 0 0 6px rgba(233,209,143,0.18), 0 0 24px rgba(233,209,143,0.45); }
+.hito.meta i { width: 44px; height: 44px; border: 6px solid #3d3826; background: linear-gradient(135deg, #f6e2a6, #c9a24b); }
 .hito.meta span { color: #e9d18f; font: 700 16px 'Liberation Serif', serif; margin-top: 8px; }
 .mlab { display: grid; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 10px; }
 .mlab span { text-align: center; color: #7d7f8a; font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; }
 .ccards { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; margin-top: 40px; }
-.cc { border-radius: 14px; padding: 18px 18px 20px; border: 1px solid rgba(255,255,255,0.10); }
+.cc { border-radius: 14px; padding: 18px 18px 20px; border: 1px solid #2a3350; }
 .cc em { font: italic 700 14px 'Liberation Serif', serif; color: #e9d18f; }
 .cc b { display: block; font: 700 17px 'Liberation Serif', serif; margin: 8px 0 6px; }
 .cc p { color: #a49f8e; font-size: 13px; line-height: 1.35; }
