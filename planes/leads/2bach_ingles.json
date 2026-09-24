@@ -1,0 +1,197 @@
+{
+  "nombre": "",
+  "etapa": "bachillerato",
+  "curso": "2º Bachillerato",
+  "asignaturas": [
+    "Inglés"
+  ],
+  "voz": "familia",
+  "presencial_label": "en vuestra casa",
+  "bonos_recomendados": [
+    {
+      "horas": 8,
+      "frecuencia": "2h a la semana"
+    },
+    {
+      "horas": 12,
+      "frecuencia": "3h a la semana"
+    }
+  ],
+  "modalidades_recomendadas": [
+    "casa_alumno",
+    "casa_profesor"
+  ],
+  "camino": {
+    "etiqueta": "HOJA DE RUTA",
+    "pill": "EL CURSO DE UN VISTAZO",
+    "titulo": "El camino hasta la PAU",
+    "lead": "Un curso organizado en cuatro etapas, cada una con su objetivo, para llegar a junio con el inglés preparado.",
+    "meses": [
+      "Oct",
+      "Nov",
+      "Dic",
+      "Ene",
+      "Feb",
+      "Mar",
+      "Abr",
+      "May",
+      "Jun"
+    ],
+    "fases": [
+      {
+        "span": 3,
+        "etiqueta": "1ER TRIMESTRE",
+        "nombre": "Bases sólidas",
+        "foco": "Gramática, vocabulario y estructura del writing para la 1ª evaluación."
+      },
+      {
+        "span": 3,
+        "etiqueta": "2º TRIMESTRE",
+        "nombre": "Formato PAU",
+        "foco": "Reading y opinion essay con el formato del examen de la PAU."
+      },
+      {
+        "span": 2,
+        "etiqueta": "3ER TRIMESTRE",
+        "nombre": "Finales de 2º",
+        "foco": "Exámenes de otros años y repaso para cerrar el curso."
+      },
+      {
+        "span": 1,
+        "etiqueta": "JUNIO",
+        "nombre": "PAU",
+        "foco": "Simulacros cronometrados y últimos ajustes antes del examen."
+      }
+    ],
+    "hitos": [
+      {
+        "nombre": "1ª evaluación",
+        "pos": 2.75
+      },
+      {
+        "nombre": "2ª evaluación",
+        "pos": 6
+      },
+      {
+        "nombre": "Finales",
+        "pos": 8
+      },
+      {
+        "nombre": "PAU",
+        "pos": 9,
+        "meta": true
+      }
+    ]
+  },
+  "informe_ejemplo": {
+    "asignatura": "Inglés",
+    "mes": "Febrero 2027",
+    "comparado": "enero",
+    "nota": "7,0",
+    "sesiones": 8,
+    "horas": "8h",
+    "destrezas_label": "Destrezas trabajadas",
+    "barras": [
+      [
+        "Reading",
+        7.0
+      ],
+      [
+        "Writing",
+        6.5
+      ],
+      [
+        "Grammar",
+        6.8
+      ],
+      [
+        "Vocabulary",
+        7.2
+      ]
+    ],
+    "mayor_progreso": "Writing — de 5,5 a 6,5, muy buen ritmo este mes",
+    "resumen": "En febrero se han hecho 8 sesiones de Inglés sin faltar a ninguna. Mejora clara en reading y en el uso de conectores. El punto de trabajo es el opinion essay: estructura y gestión del tiempo.",
+    "proxima_sesion": "PRÓXIMA SESIÓN — MARTES 2",
+    "proxima_sesion_txt": "Opinion essay cronometrado + corrección en clase.",
+    "horario": "Martes y jueves, 17:00–18:00",
+    "temas": [
+      [
+        "Writing",
+        2.5
+      ],
+      [
+        "Reading",
+        1.8
+      ],
+      [
+        "Grammar",
+        1.2
+      ],
+      [
+        "Vocabulary",
+        0.5
+      ]
+    ],
+    "fuertes": [
+      "Buena comprensión en textos largos",
+      "Vocabulario variado"
+    ],
+    "atencion": [
+      "Writing: estructura de los párrafos",
+      "Tiempos verbales compuestos"
+    ],
+    "casa": [
+      "1 reading de PAU a la semana",
+      "Lista de conectores para el essay"
+    ],
+    "semanas": [
+      5.8,
+      6.3,
+      6.8,
+      7.2
+    ],
+    "metricas": [
+      [
+        "76%",
+        "Comprensión"
+      ],
+      [
+        "81%",
+        "Constancia"
+      ],
+      [
+        "62%",
+        "Autonomía"
+      ]
+    ],
+    "evol": [
+      [
+        "Writing",
+        "Enero: 60%",
+        "Febrero: 79%",
+        "Ordena mejor las ideas antes de escribir."
+      ],
+      [
+        "Autonomía",
+        "Enero: 50%",
+        "Febrero: 62%",
+        "Cada vez necesita menos ayuda para empezar el texto."
+      ]
+    ],
+    "conclusion": "Febrero cierra con una tendencia muy positiva. El foco de marzo es el writing antes de los exámenes de la 2ª evaluación.",
+    "cal_mes": [
+      2027,
+      3
+    ],
+    "cal_titulo": "Calendario de preparación — marzo 2027",
+    "cal_dias_sesion": [
+      1,
+      3
+    ],
+    "cal_examen": 17,
+    "cal_semanas": "3 sem",
+    "cal_semanas_txt": "desde la fecha de este informe hasta los exámenes de la 2ª evaluación",
+    "antes": "Sin refuerzo fijo",
+    "ahora": "Sesiones semanales de Inglés · Bono mensual"
+  }
+}

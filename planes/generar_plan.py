@@ -71,7 +71,7 @@ def lista_asig(a):
 
 
 def textos(d):
-    n, asig = d["nombre"], lista_asig(d["asignaturas"])
+    n, asig = d["nombre"] or "vuestro hijo o hija", lista_asig(d["asignaturas"])
     una = len(d["asignaturas"]) == 1
     pl = len(d["bonos_recomendados"]) > 1
     esp = asig or TARIFAS[d["etapa"]]["nombre"]  # especialidad del profesor si no hay asignaturas
@@ -107,7 +107,7 @@ def textos(d):
             quote="Un plan a medida para acompañarte" + (f" en {asig}" if asig else ""),
             p10_sub="Escríbenos para confirmar tu bono de cada mes o cualquier ajuste de horas.",
         )
-    return dict(
+    fam = dict(
         cover_sub=f"Un acompañamiento diseñado específicamente para {n}, {con_su}.",
         cover_foot="CURSO 2026–2027 — CONDICIONES VÁLIDAS PARA ESTA FAMILIA",
         p2_title=f"Así acompañamos a {n} cada mes",
@@ -131,6 +131,15 @@ def textos(d):
         quote=f"Un plan a medida para acompañar a {n}" + (f" en {asig}" if asig else ""),
         p10_sub=f"Escríbenos para confirmar el bono de cada mes o cualquier ajuste de horas de {n}.",
     )
+    if not d["nombre"]:  # lead sin nombre: textos genéricos para la familia
+        fam.update(
+            c1=cap(fam["c1"]), p3_sub=cap(fam["p3_sub"]), p8_para="Os recomendamos",
+            p8_badge="BONOS RECOMENDADOS" if pl else "BONO RECOMENDADO",
+            p9_sub=("Los bonos recomendados" if pl else "El bono recomendado") + ", de un vistazo.",
+            p9_l1="El bono cubre las clases mensuales" + (f" de {asig}" if asig else ""),
+            p10_sub="Escríbenos para confirmar el bono de cada mes o cualquier ajuste de horas.",
+        )
+    return fam
 
 
 def cap(x):
@@ -157,7 +166,7 @@ def page_cover(d, t):
   <div class="pill gold">DOCUMENTO PRIVADO · PLAN PERSONALIZADO</div>
   <h1 class="cover-h">Tu plan a medida en<br><em>NEXO Académico</em></h1>
   <p class="cover-sub">{e(t["cover_sub"])}</p>
-  <div class="name-card"><div class="nm">{e(d.get("nombre_completo") or d["nombre"])}</div><div class="cs">{e(sub.upper())}</div></div>
+  <div class="name-card"><div class="nm">{e(d.get("nombre_completo") or d["nombre"] or d["curso"])}</div><div class="cs">{e((sub if d["nombre"] else lista_asig(d["asignaturas"])).upper())}</div></div>
   <div class="cover-foot">{e(t["cover_foot"])}</div>
 </section>'''
 
@@ -275,6 +284,36 @@ def page_calendario(d, t):
 </section>'''
 
 
+def page_camino(d, t):
+    """Vista general limpia del curso: fases e hitos, sin horas."""
+    c = d["camino"]
+    meses = c["meses"]
+    nm = len(meses)
+    fases = "".join(f'<div class="cf f{i}" style="grid-column: span {f["span"]}"><small>{e(f["etiqueta"])}</small><b>{e(f["nombre"])}</b></div>'
+                    for i, f in enumerate(c["fases"]))
+    hitos = ""
+    for h in c["hitos"]:
+        pos = (h["pos"] - 0.5) / nm * 100
+        hitos += (f'<div class="hito{" meta" if h.get("meta") else ""}" style="left:{pos:.2f}%">'
+                  f'<i></i><span>{e(h["nombre"])}</span></div>')
+    mlab = "".join(f"<span>{e(m)}</span>" for m in meses)
+    cards = "".join(f'<div class="cc f{i}"><em>{i + 1:02d}</em><b>{e(f["nombre"])}</b><p>{e(f["foco"])}</p></div>'
+                    for i, f in enumerate(c["fases"]))
+    return f'''<section class="page glow camino">
+  <div class="hdr"><img class="logo-sm" src="{LOGO_URI}"><span class="hdr-r">{e(c["etiqueta"])}</span></div><div class="rule"></div>
+  <div class="pill gold">{e(c["pill"])}</div>
+  <h2>{e(c["titulo"])}</h2>
+  <p class="lead">{e(c["lead"])}</p>
+  <div class="road">
+    <div class="cfases" style="grid-template-columns: repeat({nm}, minmax(0,1fr))">{fases}</div>
+    <div class="track"><div class="line"></div>{hitos}</div>
+    <div class="mlab" style="grid-template-columns: repeat({nm}, minmax(0,1fr))">{mlab}</div>
+  </div>
+  <div class="ccards">{cards}</div>
+  {footer()}
+</section>'''
+
+
 def page_proceso(d, t):
     return f'''<section class="page">
   <div class="hdr"><img class="logo-sm" src="{LOGO_URI}"><span class="hdr-r">CÓMO TRABAJAMOS</span></div><div class="rule"></div>
@@ -308,7 +347,7 @@ def page_informe(d, t):
     return f'''<section class="page">
   <div class="hdr"><span class="hdr-l">LOS INFORMES</span></div><div class="rule"></div>
   <div class="pill gold">SEGUIMIENTO INCLUIDO</div>
-  <h2>Un informe real para {e(d["nombre"])}</h2>
+  <h2>{e("Un informe real para " + d["nombre"] if d["nombre"] else "Un informe real, cada mes")}</h2>
   <p class="lead">{e(t["p3_sub"])}</p>
   <ul class="checks">{checks}</ul>
   <div class="panel">
@@ -326,7 +365,7 @@ def page_informe(d, t):
 
 
 def phones(d):
-    r, n = d["informe_ejemplo"], d["nombre"]
+    r, n = d["informe_ejemplo"], d["nombre"] or d["curso"]
     asig = r.get("asignatura") or lista_asig(d["asignaturas"])
     # 1. Portada
     p1 = f'''<div class="scr">
@@ -430,13 +469,16 @@ def calc(d, h, mod):
 
 
 def page_bono(d, t):
-    n = d["nombre"]
+    n = d["nombre"] or d["curso"]
+    anon = not d["nombre"]
     bonos, mods = d["bonos_recomendados"], d["modalidades_recomendadas"]
     hs = " u ".join(f"{b['horas']}h" for b in bonos) if len(bonos) > 1 else f"{bonos[0]['horas']}h"
     ms = " o ".join(mod_corto(m, t) for m in mods)
     title = f"Bono{'s' if len(bonos) > 1 else ''} de {hs}{',' if len(mods) > 1 else ''} {ms}"
     title = title[0].upper() + title[1:]
     verbo = "haces" if d["voz"] == "tu" else "hace"
+    if not d["nombre"] and d["voz"] != "tu":
+        verbo = "son"
     if len(bonos) == 1:
         frases = f"el bono de {bonos[0]['horas']}h al mes ({bonos[0]['frecuencia']})"
     else:
@@ -470,7 +512,7 @@ def page_bono(d, t):
   {rows}<ul class="checks sm">{feats}</ul></div>'''
     return f'''<section class="page">
   <div class="hdr"><span class="hdr-l">PLAN PERSONALIZADO · {e(n.upper())}</span></div><div class="rule"></div>
-  <div class="who"><div class="av">{e(n[0])}</div><div><div class="wn">{e(n)}</div><div class="ws">{e(" · ".join(x for x in [d["curso"], lista_asig(d["asignaturas"])] if x).upper())}</div></div></div>
+  <div class="who"><div class="av">{e(n.split()[0] if anon else n[0])}</div><div><div class="wn">{e(n)}</div><div class="ws">{e(" · ".join(x for x in [None if anon else d["curso"], lista_asig(d["asignaturas"])] if x).upper())}</div></div></div>
   <div class="pill gold">{e(t["p8_pill"])}</div>
   <h2>{e(title)}</h2>
   <p class="lead">{e(lead)} Sin permanencia.</p>
@@ -480,14 +522,15 @@ def page_bono(d, t):
 
 
 def page_resumen(d, t):
-    n = d["nombre"]
+    n = d["nombre"] or d["curso"]
+    anon = not d["nombre"]
     rows = ""
     for b in d["bonos_recomendados"]:
         h = b["horas"]
         prices = "".join(f'<div class="sp"><small>{e(cap(mod_corto(m, t)))}</small><b>{eur(calc(d, h, m)["precio"], 0)}</b></div>'
                          for m in d["modalidades_recomendadas"])
-        rows += f'''<div class="srow"><div class="av w">{e(n[0])}</div>
-  <div class="st"><b>{e(n)} — Bono de {h}h</b><small>{e(" · ".join(x for x in [b["frecuencia"], lista_asig(d["asignaturas"]) or d["curso"]] if x))}</small></div>
+        rows += f'''<div class="srow"><div class="av w">{e(n.split()[0] if anon else n[0])}</div>
+  <div class="st"><b>{e(("" if anon else n + " — ") + f"Bono de {h}h")}</b><small>{e(" · ".join(x for x in [b["frecuencia"], lista_asig(d["asignaturas"]) or d["curso"]] if x))}</small></div>
   <div class="sps">{prices}</div></div>'''
         if b.get("refuerzo"):
             rf = b["refuerzo"]
@@ -755,6 +798,33 @@ h2.c { font-size: 34px; margin: 26px 0 18px; }
 .rs-r span { color: #a49f8e; font-size: 11.5px; line-height: 1.25; }
 .legend + .rs-r { margin-top: 12px; }
 .calp .foot { margin-top: 18px; }
+.camino h2 { font-size: 36px; margin-top: 22px; }
+.road { margin-top: 44px; }
+.cfases { display: grid; gap: 8px; }
+.cf { border-radius: 14px; padding: 14px 16px; min-height: 74px; border: 1px solid rgba(255,255,255,0.10); }
+.cf small { display: block; font-size: 10.5px; font-weight: 700; letter-spacing: 0.14em; color: #8fb8ec; }
+.cf b { display: block; font: 700 17px 'Liberation Serif', serif; margin-top: 6px; }
+.f0 { background: linear-gradient(160deg, rgba(58,123,213,0.28), rgba(58,123,213,0.08)); }
+.f1 { background: linear-gradient(160deg, rgba(90,140,220,0.26), rgba(143,184,236,0.08)); }
+.f2 { background: linear-gradient(160deg, rgba(180,170,140,0.24), rgba(233,209,143,0.08)); }
+.f3 { background: linear-gradient(160deg, rgba(233,209,143,0.42), rgba(201,162,75,0.14)); border-color: rgba(233,209,143,0.55); }
+.f3 small { color: #e9d18f; }
+.track { position: relative; height: 92px; margin: 6px 0 0; }
+.line { position: absolute; left: 0; right: 0; top: 30px; height: 6px; border-radius: 6px; background: linear-gradient(90deg, #3a7bd5 0%, #8fb8ec 45%, #e9d18f 85%, #c9a24b 100%); box-shadow: 0 0 18px rgba(143,184,236,0.25); }
+.hito { position: absolute; top: 20px; transform: translateX(-50%); text-align: center; width: 120px; }
+.hito i { display: block; width: 26px; height: 26px; margin: 0 auto; border-radius: 50%; background: #0a1226; border: 4px solid #8fb8ec; }
+.hito span { display: block; margin-top: 10px; font-size: 12.5px; font-weight: 700; color: #e7e7ea; }
+.hito.meta { top: 12px; }
+.hito.meta i { width: 42px; height: 42px; border: 0; background: radial-gradient(circle at 35% 35%, #f6e2a6, #c9a24b); box-shadow: 0 0 0 6px rgba(233,209,143,0.18), 0 0 24px rgba(233,209,143,0.45); }
+.hito.meta span { color: #e9d18f; font: 700 16px 'Liberation Serif', serif; margin-top: 8px; }
+.mlab { display: grid; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 10px; }
+.mlab span { text-align: center; color: #7d7f8a; font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; }
+.ccards { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; margin-top: 40px; }
+.cc { border-radius: 14px; padding: 18px 18px 20px; border: 1px solid rgba(255,255,255,0.10); }
+.cc em { font: italic 700 14px 'Liberation Serif', serif; color: #e9d18f; }
+.cc b { display: block; font: 700 17px 'Liberation Serif', serif; margin: 8px 0 6px; }
+.cc p { color: #a49f8e; font-size: 13px; line-height: 1.35; }
+.camino .foot { margin-top: 40px; }
 """
 
 
@@ -767,14 +837,15 @@ def main():
     tf = TARIFAS[d["etapa"]]
     for m in d["modalidades_recomendadas"]:
         assert m in tf["precios"], f"La etapa {d['etapa']} no tiene modalidad {m}"
-    pages = [page_cover(d, t)] + ([page_calendario(d, t)] if d.get("calendario") else []) \
+    pages = [page_cover(d, t)] + ([page_camino(d, t)] if d.get("camino") else []) \
+        + ([page_calendario(d, t)] if d.get("calendario") else []) \
         + ([page_ruta(d, t)] if d.get("ruta") else []) \
         + [page_proceso(d, t), page_informe(d, t), page_phones(d, t)]
     for m in ("online", "casa_profesor", "casa_alumno"):
         if m in tf["precios"]:
             pages.append(page_tarifas(d, t, m))
     pages += [page_bono(d, t), page_resumen(d, t), page_cierre(d, t)]
-    doc = f'<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><title>Plan NEXO — {e(d["nombre"])}</title><style>{CSS}</style></head><body>{"".join(pages)}</body></html>'
+    doc = f'<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><title>Plan NEXO — {e(d["nombre"] or d["curso"])}</title><style>{CSS}</style></head><body>{"".join(pages)}</body></html>'
     out = ROOT / "output"
     out.mkdir(exist_ok=True)
     # Nombre de archivo: Plan_NEXO_<Nombre>_<Curso>_<Asignaturas> (sin curso, la etapa)
