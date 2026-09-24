@@ -1,0 +1,393 @@
+{
+  "nombre": "Alejandro",
+  "etapa": "universidad",
+  "curso": "Ingeniería Eléctrica · UPV",
+  "asignaturas": [
+    "Electrostática"
+  ],
+  "voz": "tu",
+  "presencial_label": "presencial (tu casa o la UPV)",
+  "bonos_recomendados": [
+    {
+      "horas": 12,
+      "frecuencia": "3h a la semana"
+    }
+  ],
+  "modalidades_recomendadas": [
+    "online",
+    "casa_alumno"
+  ],
+  "calendario": {
+    "etiqueta": "TU CALENDARIO",
+    "pill": "NUEVO · TU CALENDARIO HASTA ENERO",
+    "titulo": "Tu calendario, de hoy a los parciales",
+    "lead": "Cada clase marcada en su día, con los primeros parciales a finales de octubre y el segundo hacia el 8 de enero. Los festivos ya están descontados.",
+    "hoy": "2026-09-24",
+    "hasta": "2027-01-08",
+    "meses": [
+      [
+        2026,
+        9
+      ],
+      [
+        2026,
+        10
+      ],
+      [
+        2026,
+        11
+      ],
+      [
+        2026,
+        12
+      ],
+      [
+        2027,
+        1
+      ]
+    ],
+    "sesiones": {
+      "2026-10-01": 1.5,
+      "2026-10-06": 1.5,
+      "2026-10-08": 1.5,
+      "2026-10-13": 1.5,
+      "2026-10-15": 1.5,
+      "2026-10-19": 1.5,
+      "2026-10-21": 1.5,
+      "2026-10-23": 1.5,
+      "2026-11-03": 1.5,
+      "2026-11-05": 1.5,
+      "2026-11-10": 1.5,
+      "2026-11-12": 1.5,
+      "2026-11-17": 1.5,
+      "2026-11-19": 1.5,
+      "2026-11-24": 1.5,
+      "2026-11-26": 1.5,
+      "2026-12-01": 1.5,
+      "2026-12-03": 1.5,
+      "2026-12-07": 1.5,
+      "2026-12-10": 1.5,
+      "2026-12-15": 1.5,
+      "2026-12-17": 1.5,
+      "2026-12-21": 1.5,
+      "2026-12-22": 1.5,
+      "2026-12-28": 2,
+      "2026-12-29": 2,
+      "2026-12-30": 2,
+      "2027-01-04": 2,
+      "2027-01-05": 2,
+      "2027-01-07": 2
+    },
+    "examenes": {
+      "2027-01-08": "PARCIAL"
+    },
+    "semanas_examen": [
+      [
+        "2026-10-26",
+        "2026-10-30"
+      ]
+    ],
+    "festivos": [
+      "2026-10-09",
+      "2026-10-12",
+      "2026-12-08",
+      "2026-12-25",
+      "2027-01-01",
+      "2027-01-06"
+    ],
+    "mes_top": {
+      "2026-09": "Hoy empezamos",
+      "2026-10": "Bono 12h",
+      "2026-11": "Bono 12h",
+      "2026-12": "Bono 12h + Navidad",
+      "2027-01": "Bono 12h · 28 dic–7 ene"
+    },
+    "mes_info": {
+      "2026-09": "Primera clase: jueves 1 de octubre.",
+      "2026-10": "Bloque 1 · parciales la semana del 26.",
+      "2026-11": "Bloque 2 · 3h semanales, martes y jueves.",
+      "2026-12": "Del 28 al 30: Navidad intensiva (2h).",
+      "2027-01": "Recta final · parcial hacia el 8."
+    },
+    "resumen": [
+      [
+        "48h",
+        "de clase de octubre al parcial de enero"
+      ],
+      [
+        "2",
+        "citas: parciales de octubre y de enero"
+      ]
+    ]
+  },
+  "ruta": {
+    "etiqueta": "TU HOJA DE RUTA",
+    "pill": "SEMANA A SEMANA",
+    "titulo": "Cuántas horas, cada semana",
+    "lead": "12h al mes con tu bono, repartidas según lo cerca que esté cada examen: subimos antes de los parciales de octubre y en Navidad, antes del de enero.",
+    "stats": [
+      [
+        "4 sem",
+        "hasta los primeros parciales (finales de octubre)"
+      ],
+      [
+        "15 sem",
+        "hasta el segundo parcial (hacia el 8 de enero)"
+      ],
+      [
+        "48h",
+        "de clase en total, 12h cada mes"
+      ],
+      [
+        "6h",
+        "por semana en Navidad, la recta final"
+      ]
+    ],
+    "cal_titulo": "Horas de Electrostática por semana",
+    "leyenda": [
+      "Electrostática"
+    ],
+    "semanas": [
+      {
+        "label": "28 sep",
+        "mes": "Octubre",
+        "horas": [
+          1.5
+        ]
+      },
+      {
+        "label": "5 oct",
+        "mes": "Octubre",
+        "horas": [
+          3
+        ]
+      },
+      {
+        "label": "12 oct",
+        "mes": "Octubre",
+        "horas": [
+          3
+        ]
+      },
+      {
+        "label": "19 oct",
+        "mes": "Octubre",
+        "horas": [
+          4.5
+        ]
+      },
+      {
+        "label": "26 oct",
+        "mes": "Octubre",
+        "examen": "Primeros parciales"
+      },
+      {
+        "label": "2 nov",
+        "mes": "Noviembre",
+        "horas": [
+          3
+        ]
+      },
+      {
+        "label": "9 nov",
+        "mes": "Noviembre",
+        "horas": [
+          3
+        ]
+      },
+      {
+        "label": "16 nov",
+        "mes": "Noviembre",
+        "horas": [
+          3
+        ]
+      },
+      {
+        "label": "23 nov",
+        "mes": "Noviembre",
+        "horas": [
+          3
+        ]
+      },
+      {
+        "label": "30 nov",
+        "mes": "Diciembre",
+        "horas": [
+          3
+        ]
+      },
+      {
+        "label": "7 dic",
+        "mes": "Diciembre",
+        "horas": [
+          3
+        ]
+      },
+      {
+        "label": "14 dic",
+        "mes": "Diciembre",
+        "horas": [
+          3
+        ]
+      },
+      {
+        "label": "21 dic",
+        "mes": "Diciembre",
+        "horas": [
+          3
+        ]
+      },
+      {
+        "label": "28 dic",
+        "mes": "Enero",
+        "horas": [
+          6
+        ]
+      },
+      {
+        "label": "4 ene",
+        "mes": "Enero",
+        "horas": [
+          6
+        ],
+        "top": "<span class='bdg'>PARCIAL 8 ENE</span>6h"
+      }
+    ],
+    "meses": {
+      "Octubre": "bono 12h",
+      "Noviembre": "bono 12h",
+      "Diciembre": "bono 12h",
+      "Enero": "bono 12h"
+    },
+    "nota": "Cada mes suma exactamente tu bono de 12h. El bono de enero cubre la Navidad intensiva: del 28 de diciembre al 7 de enero, 3 clases de 2h por semana.",
+    "bloques": [
+      [
+        "BLOQUE 1 · OCTUBRE",
+        "Campo y potencial",
+        "Ley de Coulomb, campo eléctrico, ley de Gauss y potencial, hasta los primeros parciales."
+      ],
+      [
+        "BLOQUE 2 · NOV–DIC",
+        "Conductores y condensadores",
+        "Conductores en equilibrio, condensadores, dieléctricos y energía electrostática."
+      ],
+      [
+        "RECTA FINAL · NAVIDAD",
+        "Problemas tipo examen",
+        "6h semanales del 28 de diciembre al 7 de enero con exámenes de otros años."
+      ]
+    ]
+  },
+  "informe_ejemplo": {
+    "asignatura": "Electrostática",
+    "mes": "Noviembre 2026",
+    "comparado": "octubre",
+    "nota": "7,0",
+    "sesiones": 8,
+    "horas": "12h",
+    "destrezas_label": "Bloques trabajados",
+    "barras": [
+      [
+        "Coulomb y campo",
+        7.2
+      ],
+      [
+        "Ley de Gauss",
+        6.8
+      ],
+      [
+        "Potencial",
+        6.5
+      ],
+      [
+        "Condensadores",
+        7.0
+      ]
+    ],
+    "mayor_progreso": "Ley de Gauss — de 6,0 a 7,0, muy buen ritmo este mes",
+    "resumen": "En noviembre, Alejandro ha hecho 8 sesiones de Electrostática sin faltar a ninguna. Domina el cálculo de campos con Coulomb y ha mejorado mucho aplicando la ley de Gauss. El punto de trabajo son los problemas de potencial con distribuciones continuas.",
+    "proxima_sesion": "PRÓXIMA SESIÓN — MARTES 1",
+    "proxima_sesion_txt": "Condensadores en serie y paralelo + 4 problemas tipo examen.",
+    "horario": "Alejandro · Martes y jueves, 17:00–18:30",
+    "temas": [
+      [
+        "Ley de Gauss",
+        2.5
+      ],
+      [
+        "Potencial eléctrico",
+        1.8
+      ],
+      [
+        "Condensadores",
+        1.2
+      ],
+      [
+        "Dieléctricos",
+        0.5
+      ]
+    ],
+    "fuertes": [
+      "Domina el campo de cargas puntuales",
+      "Elige bien la superficie gaussiana"
+    ],
+    "atencion": [
+      "Potencial: le cuesta integrar distribuciones",
+      "Dieléctricos: duda con el vector D"
+    ],
+    "casa": [
+      "2 problemas de Gauss al día",
+      "Repasar condensadores en serie y paralelo"
+    ],
+    "semanas": [
+      5.8,
+      6.3,
+      6.8,
+      7.2
+    ],
+    "metricas": [
+      [
+        "76%",
+        "Comprensión"
+      ],
+      [
+        "81%",
+        "Constancia"
+      ],
+      [
+        "62%",
+        "Autonomía"
+      ]
+    ],
+    "evol": [
+      [
+        "Resolución de problemas",
+        "Octubre: 60%",
+        "Noviembre: 79%",
+        "Plantea mejor la simetría antes de calcular."
+      ],
+      [
+        "Autonomía",
+        "Octubre: 50%",
+        "Noviembre: 62%",
+        "Cada vez necesita menos ayuda para arrancar el problema."
+      ]
+    ],
+    "conclusion": "Noviembre cierra con una tendencia muy positiva. El foco de diciembre es consolidar condensadores antes del parcial de enero.",
+    "cal_mes": [
+      2027,
+      1
+    ],
+    "cal_titulo": "Calendario de preparación — enero 2027",
+    "cal_dias_sesion": [
+      0,
+      1,
+      3
+    ],
+    "cal_examen": 8,
+    "cal_semanas": "6 sem",
+    "cal_semanas_txt": "desde la fecha de este informe hasta el parcial de enero",
+    "antes": "Estudio por tu cuenta",
+    "ahora": "2 clases semanales de Electrostática · Bono de 12h"
+  }
+}

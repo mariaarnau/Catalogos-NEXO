@@ -6,6 +6,7 @@ Salida: planes/output/Plan_NEXO_<Nombre>.html y .pdf
 """
 import base64
 import calendar
+import datetime as dt
 import html
 import json
 import re
@@ -98,7 +99,7 @@ def textos(d):
             pagais="Pagas por adelantado. Sin letra pequeña. Más horas, mejor precio.",
             p8_pill="TU BONO MENSUAL",
             p8_para="Te recomendamos",
-            su_casa="en tu casa",
+            su_casa=d.get("presencial_label", "en tu casa"),
             p8_badge=(f"BONOS RECOMENDADOS PARA {n.upper()}" if pl else f"BONO RECOMENDADO PARA {n.upper()}"),
             p9_sub=("Tus bonos recomendados" if pl else "Tu bono recomendado") + ", de un vistazo.",
             p9_l1="El bono cubre tus clases mensuales" + (f" de {asig}" if asig else ""),
@@ -122,7 +123,7 @@ def textos(d):
         pagais="Pagáis por adelantado. Sin letra pequeña. Más horas, mejor precio.",
         p8_pill="SU BONO MENSUAL",
         p8_para=f"Para {n} te recomendamos",
-        su_casa="en su casa",
+        su_casa=d.get("presencial_label", "en su casa"),
         p8_badge=(f"BONOS RECOMENDADOS DE {n.upper()}" if pl else f"BONO RECOMENDADO DE {n.upper()}"),
         p9_sub=(f"Los bonos recomendados de {n}" if pl else f"El bono recomendado de {n}") + ", de un vistazo.",
         p9_l1=f"El bono cubre las clases mensuales de {n}" + (f" de {asig}" if asig else ""),
@@ -130,6 +131,10 @@ def textos(d):
         quote=f"Un plan a medida para acompañar a {n}" + (f" en {asig}" if asig else ""),
         p10_sub=f"Escríbenos para confirmar el bono de cada mes o cualquier ajuste de horas de {n}.",
     )
+
+
+def cap(x):
+    return x[:1].upper() + x[1:]
 
 
 def mod_corto(m, t):
@@ -200,10 +205,72 @@ def page_ruta(d, t):
   <div class="bigstats">{stats}</div>
   <div class="cal">
     <div class="cal-h"><b>{e(r.get("cal_titulo", "Tus semanas hasta los exámenes"))}</b><div class="leg">{leg}</div></div>
-    <div class="grid" style="grid-template-columns: repeat({len(r["semanas"])}, 1fr)">{meses}{cols}</div>
+    <div class="grid" style="grid-template-columns: repeat({len(r["semanas"])}, minmax(0, 1fr))">{meses}{cols}</div>
     <p class="cal-n">{e(r["nota"])}</p>
   </div>
   <div class="bloques" style="grid-template-columns: repeat({min(len(r["bloques"]), 4)}, 1fr)">{bloques}</div>
+  {footer()}
+</section>'''
+
+
+MESES_ES = ["", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto",
+            "Septiembre", "Octubre", "Noviembre", "Diciembre"]
+
+
+def page_calendario(d, t):
+    """Calendario mensual real: clases, exámenes, festivos y hoy."""
+    c = d["calendario"]
+    hoy, hasta = dt.date.fromisoformat(c["hoy"]), dt.date.fromisoformat(c["hasta"])
+    ses = {dt.date.fromisoformat(k): v for k, v in c["sesiones"].items()}
+    exa = {dt.date.fromisoformat(k): v for k, v in c["examenes"].items()}
+    fest = {dt.date.fromisoformat(k) for k in c["festivos"]}
+    sem_ex = set()
+    for a, b in c.get("semanas_examen", []):
+        x = dt.date.fromisoformat(a)
+        while x <= dt.date.fromisoformat(b):
+            sem_ex.add(x)
+            x += dt.timedelta(days=1)
+    num = lambda x: (f"{x:g}").replace(".", ",")
+    meses = ""
+    for y, m in c["meses"]:
+        cells = "".join(f"<span class='dh'>{x}</span>" for x in "LMXJVSD")
+        horas_mes = 0
+        for wk in calendar.Calendar(0).monthdatescalendar(y, m):
+            for x in wk:
+                if x.month != m:
+                    cells += "<span class='dd o'></span>"
+                    continue
+                cls, sub = ["dd"], ""
+                if x < hoy or x > hasta:
+                    cls.append("off")
+                if x in sem_ex:
+                    cls.append("sx")
+                if x in fest:
+                    cls.append("fe")
+                if x in ses:
+                    horas_mes += ses[x]
+                    cls.append("in" if ses[x] >= 2 else "se")
+                    sub = f"<small>{num(ses[x])}h</small>"
+                if x in exa:
+                    cls.append("ex")
+                    sub = f"<small>{e(exa[x])}</small>"
+                if x == hoy:
+                    cls.append("hoy")
+                    sub = sub or "<small>HOY</small>"
+                cells += f"<span class='{' '.join(cls)}'><b>{x.day}</b>{sub}</span>"
+        info = c.get("mes_info", {}).get(f"{y}-{m:02d}", "")
+        meses += (f'<div class="mc"><div class="mc-h"><b>{MESES_ES[m]}</b><span>{e(c.get("mes_top", {}).get(f"{y}-{m:02d}", f"{num(horas_mes)}h de clase"))}</span></div>'
+                  f'<div class="mc-g">{cells}</div><div class="mc-i">{e(info)}</div></div>')
+    leg = [("se", "Clase (1–1,5h)"), ("in", "Clase intensiva (2h)"), ("ex", "Examen"),
+           ("sx", "Semana de parciales"), ("fe", "Festivo"), ("hoy", "Hoy")]
+    legend = "".join(f"<div><span class='dd {k}'></span>{e(v)}</div>" for k, v in leg)
+    resumen = "".join(f"<div class='rs-r'><b>{e(a)}</b><span>{e(b)}</span></div>" for a, b in c["resumen"])
+    return f'''<section class="page glow calp">
+  <div class="hdr"><img class="logo-sm" src="{LOGO_URI}"><span class="hdr-r">{e(c["etiqueta"])}</span></div><div class="rule"></div>
+  <div class="pill gold">{e(c["pill"])}</div>
+  <h2>{e(c["titulo"])}</h2>
+  <p class="lead">{e(c["lead"])}</p>
+  <div class="mgrid">{meses}<div class="mc side"><div class="mc-h"><b>Leyenda</b></div><div class="legend">{legend}</div>{resumen}</div></div>
   {footer()}
 </section>'''
 
@@ -389,7 +456,7 @@ def page_bono(d, t):
         rows = ""
         for m in mods:
             c = calc(d, h, m)
-            rows += f'''<div class="rrow"><div class="rm">{e(mod_corto(m, t).capitalize())}</div>
+            rows += f'''<div class="rrow"><div class="rm">{e(cap(mod_corto(m, t)))}</div>
   <div class="rp">{eur(c["precio"], 0)}</div>
   <div class="rh">{eur(c["hora"])}/hora</div>
   <div class="rs">Ahorro de {eur(c["ahorro"], 0)} (−{c["pct"]}%) frente a la tarifa base de {eur(c["base"])}/h</div></div>'''
@@ -417,14 +484,14 @@ def page_resumen(d, t):
     rows = ""
     for b in d["bonos_recomendados"]:
         h = b["horas"]
-        prices = "".join(f'<div class="sp"><small>{e(mod_corto(m, t).capitalize())}</small><b>{eur(calc(d, h, m)["precio"], 0)}</b></div>'
+        prices = "".join(f'<div class="sp"><small>{e(cap(mod_corto(m, t)))}</small><b>{eur(calc(d, h, m)["precio"], 0)}</b></div>'
                          for m in d["modalidades_recomendadas"])
         rows += f'''<div class="srow"><div class="av w">{e(n[0])}</div>
   <div class="st"><b>{e(n)} — Bono de {h}h</b><small>{e(" · ".join(x for x in [b["frecuencia"], lista_asig(d["asignaturas"]) or d["curso"]] if x))}</small></div>
   <div class="sps">{prices}</div></div>'''
         if b.get("refuerzo"):
             rf = b["refuerzo"]
-            prices = "".join(f'<div class="sp"><small>{e(mod_corto(m, t).capitalize())}</small><b>+{eur(calc(d, rf["horas"], m)["precio"], 0)}</b></div>'
+            prices = "".join(f'<div class="sp"><small>{e(cap(mod_corto(m, t)))}</small><b>+{eur(calc(d, rf["horas"], m)["precio"], 0)}</b></div>'
                              for m in d["modalidades_recomendadas"])
             rows += f'''<div class="srow ref"><div class="av w">+</div>
   <div class="st"><b>Refuerzo de {rf["horas"]}h</b><small>{e(rf["cuando"])} · {e(rf["motivo"])}</small></div>
@@ -635,7 +702,7 @@ h2.c { font-size: 34px; margin: 26px 0 18px; }
 .wk { text-align: center; }
 .wk small { display: block; color: #7d7f8a; font-size: 10px; margin-top: 5px; white-space: nowrap; }
 .stack { display: flex; flex-direction: column-reverse; gap: 2px; height: 150px; justify-content: flex-start; }
-.bdg { display: block; margin: 0 auto 4px; width: max-content; background: #c1502e; color: #fff; font: 700 9px 'Liberation Sans', Arial; letter-spacing: 0.06em; padding: 3px 6px; border-radius: 999px; }
+.bdg { display: block; margin: 0 auto 4px; width: max-content; max-width: 100%; white-space: normal; line-height: 1.2; background: #c1502e; color: #fff; font: 700 9px 'Liberation Sans', Arial; letter-spacing: 0.06em; padding: 3px 6px; border-radius: 999px; }
 .stack b small { display: block; font: 700 10px 'Liberation Sans', Arial; color: #e9d18f; }
 .stack b { order: 99; font-size: 13px; color: #e7e7ea; margin-bottom: 3px; }
 .wk.pico .stack b { color: #e9d18f; }
@@ -654,6 +721,40 @@ h2.c { font-size: 34px; margin: 26px 0 18px; }
 .blq h4 { font-size: 15.5px; margin: 3px 0 4px; }
 .blq p { color: #a49f8e; font-size: 12.5px; line-height: 1.3; }
 .ruta .foot { margin-top: 18px; }
+.calp .rule { margin: 18px 0 24px; }
+.calp h2 { margin-top: 16px; }
+.mgrid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin-top: 20px; }
+.mc { border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; padding: 12px 12px 10px; background: rgba(12,18,36,0.65); }
+.mc-h { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
+.mc-h b { font-size: 16px; } .mc-h span { color: #e9d18f; font-size: 11.5px; font-weight: 700; }
+.mc-g { display: grid; grid-template-columns: repeat(7,1fr); gap: 3px; }
+.dh { text-align: center; color: #6c6f7c; font-size: 9.5px; font-weight: 700; padding-bottom: 2px; }
+.dd { height: 31px; border-radius: 6px; background: rgba(255,255,255,0.04); display: flex; flex-direction: column; align-items: center; justify-content: center; line-height: 1; }
+.dd b { font: 400 11.5px 'Liberation Sans', Arial; color: #c9c9cf; }
+.dd small { font-size: 7.5px; font-weight: 700; margin-top: 2px; letter-spacing: 0.02em; }
+.dd.o { background: none; }
+.dd.off { opacity: 0.3; }
+.dd.fe { background: repeating-linear-gradient(135deg, rgba(255,255,255,0.10) 0 3px, transparent 3px 6px); }
+.dd.fe b { color: #7d7f8a; }
+.dd.sx { background: rgba(193,80,46,0.22); box-shadow: inset 0 0 0 1px rgba(225,110,70,0.55); }
+.dd.se { background: linear-gradient(160deg,#6fa0ea,#3d72cf); }
+.dd.se b, .dd.se small { color: #fff; }
+.dd.in { background: linear-gradient(160deg,#f0d68c,#c9a24b); }
+.dd.in b, .dd.in small { color: #0a1226; font-weight: 700; }
+.dd.ex { background: #c1502e; box-shadow: 0 0 0 2px rgba(193,80,46,0.35); }
+.dd.ex b, .dd.ex small { color: #fff; font-weight: 700; }
+.dd.hoy { box-shadow: 0 0 0 2px #e9d18f; }
+.dd.hoy small { color: #e9d18f; }
+.mc-i { color: #8a8a93; font-size: 11px; margin-top: 8px; min-height: 13px; }
+.mc.side { display: flex; flex-direction: column; }
+.legend { display: grid; grid-template-columns: 1fr 1fr; gap: 7px 8px; }
+.legend div { display: flex; align-items: center; gap: 7px; color: #a49f8e; font-size: 11px; }
+.legend .dd { width: 18px; height: 18px; flex: none; border-radius: 4px; }
+.rs-r { display: flex; align-items: baseline; gap: 8px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 7px; margin-top: 8px; }
+.rs-r b { color: #e9d18f; font: 700 19px 'Liberation Serif', serif; min-width: 54px; }
+.rs-r span { color: #a49f8e; font-size: 11.5px; line-height: 1.25; }
+.legend + .rs-r { margin-top: 12px; }
+.calp .foot { margin-top: 18px; }
 """
 
 
@@ -666,7 +767,8 @@ def main():
     tf = TARIFAS[d["etapa"]]
     for m in d["modalidades_recomendadas"]:
         assert m in tf["precios"], f"La etapa {d['etapa']} no tiene modalidad {m}"
-    pages = [page_cover(d, t)] + ([page_ruta(d, t)] if d.get("ruta") else []) \
+    pages = [page_cover(d, t)] + ([page_calendario(d, t)] if d.get("calendario") else []) \
+        + ([page_ruta(d, t)] if d.get("ruta") else []) \
         + [page_proceso(d, t), page_informe(d, t), page_phones(d, t)]
     for m in ("online", "casa_profesor", "casa_alumno"):
         if m in tf["precios"]:
