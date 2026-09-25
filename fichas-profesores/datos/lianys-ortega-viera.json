@@ -1,0 +1,28 @@
+{
+  "nombre": "Lianys Ortega Viera",
+  "foto": "../fotos/lianys-ortega-viera.jpg",
+  "foto_posicion": "50% 45%",
+  "titular": "Doctora e Ingeniera Química",
+  "edad": 43,
+  "materias": ["QUÍMICA", "MATEMÁTICAS"],
+  "telefono": "+34 743 035 926",
+  "email": "lianysortega@gmail.com",
+  "estudios": [
+    {"titulo": "Doctorado en Ciencias Técnicas", "detalle": "Premio a la Mejor Tesis Doctoral en el área Científico-Técnica (Grupo La Rábida, 2018)", "fecha": "2017"},
+    {"titulo": "Máster en Ingeniería Ambiental", "fecha": "2009"},
+    {"titulo": "Ingeniería Química", "fecha": "2006"}
+  ],
+  "experiencia_docente": [
+    {"titulo": "Profesora universitaria de Ingeniería Química", "detalle": "Impartición de asignaturas clave de la carrera, tutoría de estudiantes y dirección de tesis."},
+    {"titulo": "Decana, vicedecana y jefa de departamento", "detalle": "Facultad de Ingeniería Química: planes de estudio, calidad docente y un equipo de 50 profesionales."}
+  ],
+  "aptitudes": [
+    "Dominio avanzado de la química",
+    "Base matemática sólida",
+    "Explicación clara de conceptos complejos",
+    "Tutoría y seguimiento del alumno",
+    "Diseño de planes de estudio",
+    "Investigación científica",
+    "Liderazgo y organización"
+  ]
+}
