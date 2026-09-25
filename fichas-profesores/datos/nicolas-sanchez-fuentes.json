@@ -1,0 +1,20 @@
+{
+  "nombre": "Nicolás Sánchez Fuentes",
+  "foto": "../fotos/nicolas-sanchez-fuentes.jpg",
+  "titular": "Profesor particular",
+  "ubicacion": "Valencia · Carnet de coche",
+  "telefono": "+34 611 423 249",
+  "email": "nico.correomovil@gmail.com",
+  "situacion_actual": "Estudiante de Ingeniería Agroalimentaria (desde 2025). Actualmente forma parte del equipo de Operaciones de InnovaPhysics, un proyecto académico científico.",
+  "estudios": [
+    {"titulo": "Ingeniería Agroalimentaria", "fecha": "2025 – actualidad"},
+    {"titulo": "Bachillerato", "detalle": "IES Francesc Ferrer i Guàrdia", "fecha": "2022 – 2024"}
+  ],
+  "idiomas": [
+    {"idioma": "Valenciano", "nivel": "C1"},
+    {"idioma": "Inglés", "nivel": "C1"}
+  ],
+  "experiencia_docente": [
+    {"titulo": "Profesor particular", "fecha": "2022"}
+  ]
+}
