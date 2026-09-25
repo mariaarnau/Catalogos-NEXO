@@ -468,6 +468,14 @@ def calc(d, h, mod):
     return dict(precio=p, hora=p / h, base=b, ahorro=ref - p, pct=pct(ref - p, ref))
 
 
+def precio_bloque(d, c, h):
+    # Por defecto, total del bono en grande; con "destacar": "hora", el precio por hora
+    if d.get("destacar") == "hora":
+        return (f'<div class="rp hora">{eur(c["hora"])}<small>/hora</small></div>'
+                f'<div class="rh">{eur(c["precio"], 0)} al mes · bono de {h}h</div>')
+    return f'<div class="rp">{eur(c["precio"], 0)}</div><div class="rh">{eur(c["hora"])}/hora</div>'
+
+
 def page_bono(d, t):
     n = d["nombre"] or d["curso"]
     anon = not d["nombre"]
@@ -492,6 +500,8 @@ def page_bono(d, t):
         lead = f"{t['p8_para']} {frases}. Puedes elegir entre clases {ms}{ubic}."
     else:
         lead = f"{t['p8_para']} {frases}. Podéis elegir entre clases {ms}{ubic}."
+    if d.get("frase_bono"):
+        lead += " " + d["frase_bono"]
     cards = ""
     for b in bonos:
         h = b["horas"]
@@ -499,8 +509,7 @@ def page_bono(d, t):
         for m in mods:
             c = calc(d, h, m)
             rows += f'''<div class="rrow"><div class="rm">{e(cap(mod_corto(m, t)))}</div>
-  <div class="rp">{eur(c["precio"], 0)}</div>
-  <div class="rh">{eur(c["hora"])}/hora</div>
+  {precio_bloque(d, c, h)}
   <div class="rs">Ahorro de {eur(c["ahorro"], 0)} (−{c["pct"]}%) frente a la tarifa base de {eur(c["base"])}/h</div></div>'''
         if b.get("refuerzo"):
             rf = b["refuerzo"]
@@ -516,7 +525,8 @@ def page_bono(d, t):
   <div class="pill gold">{e(t["p8_pill"])}</div>
   <h2>{e(title)}</h2>
   <p class="lead">{e(lead)} Sin permanencia.</p>
-  <div class="rwrap"><div class="rbadge">{e(t["p8_badge"])}</div><div class="rgrid">{cards}</div></div>
+  <div class="rwrap"><div class="rbadge">{e(d.get("badge_bono") or t["p8_badge"])}</div><div class="rgrid">{cards}</div></div>
+  {f'<p class="nota-bono">{e(d["nota_bono"])}</p>' if d.get("nota_bono") else ""}
   {footer()}
 </section>'''
 
@@ -527,7 +537,9 @@ def page_resumen(d, t):
     rows = ""
     for b in d["bonos_recomendados"]:
         h = b["horas"]
-        prices = "".join(f'<div class="sp"><small>{e(cap(mod_corto(m, t)))}</small><b>{eur(calc(d, h, m)["precio"], 0)}</b></div>'
+        prices = "".join(f'<div class="sp"><small>{e(cap(mod_corto(m, t)))}</small><b>{eur(calc(d, h, m)["hora"])}<i>/h</i></b><em>{eur(calc(d, h, m)["precio"], 0)} al mes</em></div>'
+                         if d.get("destacar") == "hora" else
+                         f'<div class="sp"><small>{e(cap(mod_corto(m, t)))}</small><b>{eur(calc(d, h, m)["precio"], 0)}</b></div>'
                          for m in d["modalidades_recomendadas"])
         rows += f'''<div class="srow"><div class="av w">{e(n.split()[0] if anon else n[0])}</div>
   <div class="st"><b>{e(("" if anon else n + " — ") + f"Bono de {h}h")}</b><small>{e(" · ".join(x for x in [b["frecuencia"], lista_asig(d["asignaturas"]) or d["curso"]] if x))}</small></div>
@@ -709,6 +721,11 @@ h2.c { font-size: 34px; margin: 26px 0 18px; }
 .rref span { display: block; color: #a49f8e; font-size: 12.5px; margin-top: 2px; }
 .rref em { display: block; font-style: normal; color: #e7e7ea; font-size: 13px; margin-top: 4px; }
 .srow.ref { border-style: dashed; border-color: rgba(233,209,143,0.4); }
+.rp.hora { font-size: 30px; }
+.rp.hora small { font: 400 13px 'Liberation Sans', Arial; color: #a49f8e; margin-left: 3px; }
+.sp b i { font: 400 12px 'Liberation Sans', Arial; font-style: normal; color: #a49f8e; margin-left: 2px; }
+.sp em { display: block; font-style: normal; color: #7d7f8a; font-size: 11.5px; margin-top: 2px; }
+.nota-bono { color: #7d7f8a; font-size: 11.5px; margin-top: 12px; }
 .rs { grid-column: 1 / -1; color: #7fcfa0; font-size: 12px; margin-top: 4px; }
 .srow { display: flex; align-items: center; gap: 16px; border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; padding: 16px 30px; margin-top: 16px; background: linear-gradient(90deg, rgba(8,12,26,0.8), rgba(16,33,74,0.8)); }
 .srows { margin-top: 30px; }

@@ -1,0 +1,198 @@
+{
+  "nombre": "Paula Andrea",
+  "nombre_completo": "Paula Andrea González García",
+  "etapa": "universidad",
+  "curso": "Grado Superior · Programación web",
+  "asignaturas": [
+    "Programación"
+  ],
+  "voz": "tu",
+  "bonos_recomendados": [
+    {
+      "horas": 12,
+      "frecuencia": "3h a la semana"
+    }
+  ],
+  "modalidades_recomendadas": [
+    "online",
+    "casa_alumno"
+  ],
+  "presencial_label": "presencial",
+  "destacar": "hora",
+  "badge_bono": "EL MEJOR PRECIO POR HORA",
+  "frase_bono": "Es el bono con el precio por hora más bajo.",
+  "nota_bono": "Precio por hora más bajo de todos los bonos a tarifa estándar (2h, 4h, 8h y 12h). La oferta de bienvenida de 2h para nuevos alumnos es una promoción puntual.",
+  "camino": {
+    "etiqueta": "TU HOJA DE RUTA",
+    "pill": "TU CURSO DE UN VISTAZO",
+    "titulo": "Tu camino en Programación",
+    "lead": "Un curso organizado en cuatro etapas, cada una con su objetivo, para llegar a junio programando con soltura.",
+    "meses": [
+      "Oct",
+      "Nov",
+      "Dic",
+      "Ene",
+      "Feb",
+      "Mar",
+      "Abr",
+      "May",
+      "Jun"
+    ],
+    "fases": [
+      {
+        "span": 3,
+        "etiqueta": "1ER TRIMESTRE",
+        "nombre": "Fundamentos",
+        "foco": "Variables, estructuras de control, funciones y lógica de programación."
+      },
+      {
+        "span": 3,
+        "etiqueta": "2º TRIMESTRE",
+        "nombre": "Orientación a objetos",
+        "foco": "Clases, herencia, colecciones y buenas prácticas de código."
+      },
+      {
+        "span": 2,
+        "etiqueta": "3ER TRIMESTRE",
+        "nombre": "Proyecto",
+        "foco": "Ficheros, bases de datos y un proyecto completo de principio a fin."
+      },
+      {
+        "span": 1,
+        "etiqueta": "JUNIO",
+        "nombre": "Final",
+        "foco": "Repaso y ejercicios tipo examen para cerrar el curso."
+      }
+    ],
+    "hitos": [
+      {
+        "nombre": "1ª evaluación",
+        "pos": 2.8
+      },
+      {
+        "nombre": "2ª evaluación",
+        "pos": 6
+      },
+      {
+        "nombre": "3ª evaluación",
+        "pos": 8.2
+      },
+      {
+        "nombre": "Final",
+        "pos": 9,
+        "meta": true
+      }
+    ]
+  },
+  "informe_ejemplo": {
+    "asignatura": "Programación",
+    "mes": "Noviembre 2026",
+    "comparado": "octubre",
+    "nota": "7,0",
+    "sesiones": 8,
+    "horas": "12h",
+    "destrezas_label": "Bloques trabajados",
+    "barras": [
+      [
+        "Estructuras de control",
+        7.2
+      ],
+      [
+        "Funciones",
+        6.8
+      ],
+      [
+        "Arrays",
+        6.5
+      ],
+      [
+        "Depuración",
+        7.0
+      ]
+    ],
+    "mayor_progreso": "Funciones — de 6,0 a 7,0, muy buen ritmo este mes",
+    "resumen": "En noviembre, Paula Andrea ha hecho 8 sesiones de Programación sin faltar a ninguna. Domina las estructuras de control y ha mejorado mucho con las funciones. El punto de trabajo son los arrays y recorrer estructuras de datos.",
+    "proxima_sesion": "PRÓXIMA SESIÓN — MARTES 1",
+    "proxima_sesion_txt": "Arrays bidimensionales + 3 ejercicios tipo examen.",
+    "horario": "Paula Andrea · Martes y jueves, 17:00–18:30",
+    "temas": [
+      [
+        "Funciones",
+        2.5
+      ],
+      [
+        "Arrays",
+        1.8
+      ],
+      [
+        "Bucles",
+        1.2
+      ],
+      [
+        "Depuración",
+        0.5
+      ]
+    ],
+    "fuertes": [
+      "Domina condicionales y bucles",
+      "Código limpio y bien ordenado"
+    ],
+    "atencion": [
+      "Arrays: le cuesta recorrerlos",
+      "Depuración: usar mejor el debugger"
+    ],
+    "casa": [
+      "1 ejercicio de arrays al día",
+      "Repasar paso de parámetros"
+    ],
+    "semanas": [
+      5.8,
+      6.3,
+      6.8,
+      7.2
+    ],
+    "metricas": [
+      [
+        "76%",
+        "Comprensión"
+      ],
+      [
+        "81%",
+        "Constancia"
+      ],
+      [
+        "62%",
+        "Autonomía"
+      ]
+    ],
+    "evol": [
+      [
+        "Resolución de problemas",
+        "Octubre: 60%",
+        "Noviembre: 79%",
+        "Divide mejor el problema antes de programar."
+      ],
+      [
+        "Autonomía",
+        "Octubre: 50%",
+        "Noviembre: 62%",
+        "Cada vez necesita menos ayuda para empezar el ejercicio."
+      ]
+    ],
+    "conclusion": "Noviembre cierra con una tendencia muy positiva. El foco de diciembre es consolidar arrays antes de la 1ª evaluación.",
+    "cal_mes": [
+      2026,
+      12
+    ],
+    "cal_titulo": "Calendario de preparación — diciembre 2026",
+    "cal_dias_sesion": [
+      1,
+      3
+    ],
+    "cal_examen": 17,
+    "cal_semanas": "3 sem",
+    "cal_semanas_txt": "desde la fecha de este informe hasta la 1ª evaluación",
+    "antes": "Estudio por tu cuenta",
+    "ahora": "2 clases semanales de Programación · Bono de 12h"
+  }
+}
