@@ -1,0 +1,207 @@
+{
+  "nombre": "Felipe",
+  "etapa": "eso",
+  "curso": "4º ESO",
+  "asignaturas": [
+    "Repaso general"
+  ],
+  "voz": "familia",
+  "profesor": "Santi",
+  "presencial_label": "en vuestra casa",
+  "cover_card_sub": "4º ESO · Profesor: Santi",
+  "bonos_recomendados": [
+    {
+      "horas": 16,
+      "frecuencia": "cada 2 semanas"
+    }
+  ],
+  "modalidades_recomendadas": [
+    "casa_alumno"
+  ],
+  "tarifas_mostrar": [
+    "casa_alumno"
+  ],
+  "textos": {
+    "cover_sub": "Un acompañamiento diseñado específicamente para Felipe, con repaso general de todas sus asignaturas.",
+    "p2_sub": "Santi será su profesor de referencia, con sesiones de repaso de todas sus asignaturas y ajuste continuo según lo que necesite reforzar.",
+    "c1": "Felipe tiene a Santi como profesor de referencia, con horario fijo cada semana en vuestra casa.",
+    "p10_sub": "Escríbenos para confirmar la renovación de cada bono o cualquier ajuste de horas de Felipe."
+  },
+  "ciclos": {
+    "etiqueta": "SU CALENDARIO",
+    "pill": "SU PRIMER MES",
+    "titulo": "Octubre, bono a bono",
+    "lead": "Cada dos semanas, un bono de 16h con Santi. Así se ve su primer mes: sin permanencia, renovando cada quincena.",
+    "subtitulo": "Un bono de 16h cada 2 semanas",
+    "mes": [
+      2026,
+      10
+    ],
+    "ciclos": [
+      {
+        "nombre": "Bono 1",
+        "desde": "2026-10-01",
+        "hasta": "2026-10-14",
+        "inicio": "Inicio · Bono 1",
+        "texto": "Del 1 al 14 de octubre · 16h"
+      },
+      {
+        "nombre": "Bono 2",
+        "desde": "2026-10-15",
+        "hasta": "2026-10-28",
+        "inicio": "Renovación · Bono 2",
+        "texto": "Del 15 al 28 de octubre · 16h"
+      },
+      {
+        "nombre": "Bono 3",
+        "desde": "2026-10-29",
+        "hasta": "2026-11-11",
+        "inicio": "Renovación · Bono 3",
+        "texto": "Del 29 de octubre al 11 de noviembre · 16h"
+      }
+    ],
+    "festivos": {
+      "2026-10-09": "Festivo",
+      "2026-10-12": "Festivo"
+    }
+  },
+  "bono_especial": {
+    "horas": 16,
+    "precio": 325,
+    "extra": 19,
+    "ejemplo_horas": 18,
+    "escenarios": [
+      8,
+      10,
+      12
+    ],
+    "who": "4º ESO · Repaso general · Profesor: Santi",
+    "pill": "SU BONO QUINCENAL",
+    "titulo": "Bono de 16h cada 2 semanas",
+    "badge": "BONO EXCLUSIVO PARA FELIPE",
+    "lead": "Pensado para Felipe: 16 horas de clase presencial cada dos semanas con Santi, en vuestra casa. Si alguna quincena hace falta más, cada hora extra cuesta 19 €. Se renueva cada dos semanas, sin permanencia.",
+    "ahorro_titulo": "Cuantas más horas, más ahorráis",
+    "ahorro_lead": "Comparado con la tarifa base presencial de 4º ESO (24 €/h). Con 12 horas a la semana, el ahorro llega a casi 200 € cada 4 semanas.",
+    "ahorro_nota": "Cálculo frente a la tarifa base presencial de 24 €/h. 4 semanas = 2 bonos de 16h. Las horas que pasen de 16 en cada quincena se cobran a 19 € la hora.",
+    "resumen": [
+      "Profesor de referencia: Santi, presencial en vuestra casa.",
+      "Repaso general de todas las asignaturas de 4º ESO.",
+      "Se renueva cada 2 semanas, sin permanencia.",
+      "Hasta 198 € de ahorro cada 4 semanas frente a la tarifa base (con 12h semanales)."
+    ],
+    "quote": "Un plan a medida para que Felipe llegue a cada examen con todo trabajado."
+  },
+  "informe_ejemplo": {
+    "asignatura": "Matemáticas",
+    "mes": "Noviembre 2026",
+    "comparado": "octubre",
+    "nota": "7,0",
+    "sesiones": 16,
+    "horas": "32h",
+    "destrezas_label": "Asignaturas seguidas",
+    "barras": [
+      [
+        "Matemáticas",
+        7.0
+      ],
+      [
+        "Física y Química",
+        6.8
+      ],
+      [
+        "Inglés",
+        7.2
+      ],
+      [
+        "Lengua",
+        6.5
+      ]
+    ],
+    "mayor_progreso": "Matemáticas — de 6,0 a 7,0, muy buen ritmo este mes",
+    "resumen": "En noviembre, Felipe ha hecho 16 sesiones con Santi sin faltar a ninguna. Ha mejorado mucho en Matemáticas y lleva Inglés al día. El punto de trabajo es Lengua: comentario de texto y sintaxis.",
+    "proxima_sesion": "PRÓXIMA SESIÓN — MARTES 1",
+    "proxima_sesion_txt": "Matemáticas: sistemas de ecuaciones + repaso de Física.",
+    "horario": "Felipe · con Santi · lunes a jueves, 17:00–19:00",
+    "temas": [
+      [
+        "Ecuaciones",
+        2.5
+      ],
+      [
+        "Funciones",
+        1.8
+      ],
+      [
+        "Estadística",
+        1.2
+      ],
+      [
+        "Problemas",
+        0.5
+      ]
+    ],
+    "fuertes": [
+      "Muy constante con los deberes",
+      "Resuelve ecuaciones con soltura"
+    ],
+    "atencion": [
+      "Problemas: le cuesta plantearlos",
+      "Repasar antes de cada examen"
+    ],
+    "casa": [
+      "15 min diarios de ejercicios",
+      "Esquema de cada tema nuevo"
+    ],
+    "semanas": [
+      5.8,
+      6.3,
+      6.8,
+      7.2
+    ],
+    "metricas": [
+      [
+        "76%",
+        "Comprensión"
+      ],
+      [
+        "81%",
+        "Constancia"
+      ],
+      [
+        "62%",
+        "Autonomía"
+      ]
+    ],
+    "evol": [
+      [
+        "Resolución de problemas",
+        "Octubre: 60%",
+        "Noviembre: 79%",
+        "Plantea mejor el enunciado antes de operar."
+      ],
+      [
+        "Autonomía",
+        "Octubre: 50%",
+        "Noviembre: 62%",
+        "Cada vez necesita menos ayuda para empezar."
+      ]
+    ],
+    "conclusion": "Noviembre cierra con una tendencia muy positiva. El foco de diciembre es preparar los exámenes de la 1ª evaluación.",
+    "cal_mes": [
+      2026,
+      12
+    ],
+    "cal_titulo": "Calendario de preparación — diciembre 2026",
+    "cal_dias_sesion": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "cal_examen": 16,
+    "cal_semanas": "3 sem",
+    "cal_semanas_txt": "desde la fecha de este informe hasta los exámenes de la 1ª evaluación",
+    "antes": "Sin refuerzo fijo",
+    "ahora": "Bono quincenal de 16h con Santi"
+  }
+}
