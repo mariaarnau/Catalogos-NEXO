@@ -1,0 +1,203 @@
+{
+  "nombre": "Celia",
+  "etapa": "eso",
+  "curso": "1º ESO",
+  "asignaturas": [
+    "Repaso general"
+  ],
+  "voz": "familia",
+  "bonos_recomendados": [
+    {
+      "horas": 12,
+      "frecuencia": "unas 3h a la semana"
+    }
+  ],
+  "modalidades_recomendadas": [
+    "casa_alumno"
+  ],
+  "tarifas_mostrar": [
+    "casa_alumno"
+  ],
+  "destacar": "hora",
+  "textos": {
+    "cover_sub": "Un acompañamiento diseñado específicamente para Celia, con repaso general de todas sus asignaturas.",
+    "p2_sub": "Un profesor de referencia para todas sus asignaturas, con sesiones de repaso general y ajuste continuo según lo que necesite reforzar.",
+    "c1": "Celia tiene su profesor de referencia asignado, con horario fijo cada semana en casa.",
+    "p9_l1": "El bono cubre el repaso general de todas sus asignaturas",
+    "quote": "Un plan a medida para acompañar a Celia en todas sus asignaturas"
+  },
+  "camino": {
+    "etiqueta": "HOJA DE RUTA",
+    "pill": "SU CURSO DE UN VISTAZO",
+    "titulo": "Su primer año en la ESO",
+    "lead": "Un curso organizado en cuatro etapas, cada una con su objetivo, para que Celia llegue a junio con todo aprobado y buenos hábitos de estudio.",
+    "meses": [
+      "Oct",
+      "Nov",
+      "Dic",
+      "Ene",
+      "Feb",
+      "Mar",
+      "Abr",
+      "May",
+      "Jun"
+    ],
+    "fases": [
+      {
+        "span": 3,
+        "etiqueta": "1ER TRIMESTRE",
+        "nombre": "Adaptación",
+        "foco": "Organización, técnicas de estudio y bases de cada asignatura."
+      },
+      {
+        "span": 3,
+        "etiqueta": "2º TRIMESTRE",
+        "nombre": "Ritmo constante",
+        "foco": "Repaso semanal de todas las asignaturas para no acumular temario."
+      },
+      {
+        "span": 2,
+        "etiqueta": "3ER TRIMESTRE",
+        "nombre": "Refuerzo",
+        "foco": "Más peso en lo que más cuesta antes de los exámenes finales."
+      },
+      {
+        "span": 1,
+        "etiqueta": "JUNIO",
+        "nombre": "Final",
+        "foco": "Repaso final para cerrar 1º de ESO con buenas notas."
+      }
+    ],
+    "hitos": [
+      {
+        "nombre": "1ª evaluación",
+        "pos": 3
+      },
+      {
+        "nombre": "2ª evaluación",
+        "pos": 6
+      },
+      {
+        "nombre": "3ª evaluación",
+        "pos": 8.1
+      },
+      {
+        "nombre": "Final",
+        "pos": 9,
+        "meta": true
+      }
+    ]
+  },
+  "informe_ejemplo": {
+    "asignatura": "Matemáticas",
+    "mes": "Noviembre 2026",
+    "comparado": "octubre",
+    "nota": "7,0",
+    "sesiones": 12,
+    "horas": "12h",
+    "destrezas_label": "Asignaturas seguidas",
+    "barras": [
+      [
+        "Matemáticas",
+        7.0
+      ],
+      [
+        "Lengua",
+        6.8
+      ],
+      [
+        "Inglés",
+        7.2
+      ],
+      [
+        "Biología y Geología",
+        6.5
+      ]
+    ],
+    "mayor_progreso": "Matemáticas — de 6,0 a 7,0, muy buen ritmo este mes",
+    "resumen": "En noviembre, Celia ha hecho 12 sesiones sin faltar a ninguna. Se organiza mejor con los deberes y ha mejorado mucho en Matemáticas. El punto de trabajo es Biología: estudiar con esquemas.",
+    "proxima_sesion": "PRÓXIMA SESIÓN — MARTES 1",
+    "proxima_sesion_txt": "Fracciones + esquema del tema de Biología.",
+    "horario": "Celia · lunes, miércoles y jueves, 17:00–18:00",
+    "temas": [
+      [
+        "Fracciones",
+        2.5
+      ],
+      [
+        "Números enteros",
+        1.8
+      ],
+      [
+        "Potencias",
+        1.2
+      ],
+      [
+        "Problemas",
+        0.5
+      ]
+    ],
+    "fuertes": [
+      "Muy constante con los deberes",
+      "Buena base en operaciones"
+    ],
+    "atencion": [
+      "Problemas: le cuesta plantearlos",
+      "Estudiar con esquemas"
+    ],
+    "casa": [
+      "15 min diarios de repaso",
+      "Agenda con las fechas de exámenes"
+    ],
+    "semanas": [
+      5.8,
+      6.3,
+      6.8,
+      7.2
+    ],
+    "metricas": [
+      [
+        "76%",
+        "Comprensión"
+      ],
+      [
+        "81%",
+        "Constancia"
+      ],
+      [
+        "62%",
+        "Autonomía"
+      ]
+    ],
+    "evol": [
+      [
+        "Organización",
+        "Octubre: 60%",
+        "Noviembre: 79%",
+        "Apunta los deberes y planifica mejor la semana."
+      ],
+      [
+        "Autonomía",
+        "Octubre: 50%",
+        "Noviembre: 62%",
+        "Cada vez necesita menos ayuda para empezar."
+      ]
+    ],
+    "conclusion": "Noviembre cierra con una tendencia muy positiva. El foco de diciembre es preparar los exámenes de la 1ª evaluación.",
+    "cal_mes": [
+      2026,
+      12
+    ],
+    "cal_titulo": "Calendario de preparación — diciembre 2026",
+    "cal_dias_sesion": [
+      0,
+      2,
+      3
+    ],
+    "cal_examen": 16,
+    "cal_semanas": "3 sem",
+    "cal_semanas_txt": "desde la fecha de este informe hasta los exámenes de la 1ª evaluación",
+    "antes": "Sin refuerzo fijo",
+    "ahora": "Repaso general semanal · Bono de 12h"
+  }
+}
