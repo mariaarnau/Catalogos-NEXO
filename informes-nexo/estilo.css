@@ -59,3 +59,11 @@ h3 small { font-family:'Liberation Sans',sans-serif; font-weight:400; color:var(
 .pr { padding:9px 12px; margin-bottom:8px } .pr h4 { font-size:10pt; color:#fff; display:flex; align-items:center; gap:8px }
 .pr em { font-style:normal; font-size:6.6pt; letter-spacing:.1em; border:1px solid; border-radius:10px; padding:1px 8px }
 .pr p { font-size:9pt; color:#cfcbbd; margin-top:3px }
+.hb i.x { background:repeating-linear-gradient(135deg,rgba(255,255,255,.16) 0 3px,transparent 3px 7px); border:1px dashed rgba(255,255,255,.25) }
+.refc ol { margin:4px 0 0 16px; font-size:7.4pt; color:var(--mut); line-height:1.4 } .refc li { margin:2px 0 }
+.page { overflow:visible }
+.temas .tema { grid-template-columns:1fr 34px; gap:3px 8px; padding:4px 0 } .temas .tema span { grid-column:1/-1; font-size:9.4pt } .temas .tema .barra { grid-column:1 }
+.cols { height:96px; gap:5px } .hb { height:54px } .col b { font-size:8pt } .col span { font-size:6.8pt }
+.dos > .card { margin-bottom:10px } .dos .card .nota { font-size:7.2pt; line-height:1.35 }
+.evg.dosc { display:grid; grid-template-columns:1fr 1fr; gap:10px; align-items:start } .evg.dosc .ev { margin-bottom:0 } .evg.dosc .ev .txt { font-size:9pt }
+.card { margin-bottom:8px } .bl { margin-bottom:8px } .dos > .card { margin-bottom:8px }

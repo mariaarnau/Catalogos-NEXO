@@ -91,15 +91,21 @@ def construir(d):
     tot_ses = sum(a["sesiones"] for a in asigs)
     tot_prev = sum(a.get("sesiones_previstas", a["sesiones"]) for a in asigs)
     tot_h = sum(a["horas"] for a in asigs)
-    auto = [x for a in asigs for x in a.get("autonomia_por_sesion", [])]
+    auto = [(x["v"] if isinstance(x, dict) else x) for a in asigs for x in a.get("autonomia_por_sesion", [])]
+    auto = [v for v in auto if v is not None]
     paginas = []
+    kp = d.get("kpis_portada")
+    kp_portada = "".join(kpi(v, l) for v, l in kp) if kp else (
+        kpi(tot_ses, 'SESIONES') + kpi(horas(tot_h), 'DEDICADAS')
+        + kpi(len(asigs), 'ASIGNATURA' + ('S' if len(asigs) > 1 else ''))
+        + kpi(f'{tot_ses}/{tot_prev}', 'ASISTENCIA') + kpi(hm(tot_h/tot_ses), 'DURACIÓN MEDIA'))
 
     # 1 · Portada / resumen
     paginas.append(pag(f"""
 <div class="pill">INFORME DE SEGUIMIENTO MENSUAL</div>
 <h1>{e(d['alumno'])}</h1>
 <p class="sub">{e(nombres)} · {mes_txt}</p>
-<div class="kpis">{kpi(tot_ses,'SESIONES')}{kpi(horas(tot_h),'DEDICADAS')}{kpi(len(asigs),'ASIGNATURA' + ('S' if len(asigs)>1 else ''))}{kpi(f'{tot_ses}/{tot_prev}','ASISTENCIA')}{kpi(hm(tot_h/tot_ses),'DURACIÓN MEDIA')}</div>
+<div class="kpis">{kp_portada}</div>
 <div class="card destaque"><small>MAYOR PROGRESO DEL MES</small><p>{e(d['progreso_destacado'])}</p></div>
 <h2>Resumen del mes</h2><p class="txt">{e(d['resumen'])}</p>""", logo=logo))
 
@@ -111,24 +117,35 @@ def construir(d):
             for t in a["temas"])
         graf = ""
         if a.get("autonomia_por_sesion"):
-            barras = "".join(
-                f'<div class="col"><b>{v}%</b><div class="hb"><i style="height:{v}%;opacity:{0.35+0.65*v/100:.2f}"></i></div><span>S{n}</span></div>'
-                for n, v in enumerate(a["autonomia_por_sesion"], 1))
-            graf = f'<div class="card"><h3>Evolución de autonomía en el mes <small>(% resuelto solo por sesión)</small></h3><div class="cols">{barras}</div><p class="nota">Dorado más intenso = mayor autonomía · % = ejercicios resueltos sin ayuda</p></div>'
+            def barra(n, x):
+                v, et = (x["v"], x.get("e", f"S{n}")) if isinstance(x, dict) else (x, f"S{n}")
+                if v is None:
+                    return f'<div class="col"><b>—</b><div class="hb"><i class="x" style="height:100%"></i></div><span>{e(et)}</span></div>'
+                return f'<div class="col"><b>{v}%</b><div class="hb"><i style="height:{v}%;opacity:{0.35+0.65*v/100:.2f}"></i></div><span>{e(et)}</span></div>'
+            barras = "".join(barra(n, x) for n, x in enumerate(a["autonomia_por_sesion"], 1))
+            sub = a.get("autonomia_sub", "% resuelto solo por sesión")
+            nota_g = a.get("autonomia_nota", "Dorado más intenso = mayor autonomía · % = ejercicios resueltos sin ayuda")
+            graf = f'<div class="card"><h3>Evolución de autonomía en el mes <small>({e(sub)})</small></h3><div class="cols">{barras}</div><p class="nota">{e(nota_g)}</p></div>'
         ref = ""
         if a.get("refuerzo"):
             ref = f'<div class="bl ref"><h4>REFUERZO RECOMENDADO</h4><p class="nota">El profesor irá marcando las tareas necesarias en cada sesión.</p><ul>{lista(a["refuerzo"], "›")}</ul></div>'
+        fila = (f'<div class="dos"><div class="card temas">{temas}</div>{graf}</div>' if graf
+                else f'<div class="card temas">{temas}</div>')
         paginas.append(pag(f"""
 <div class="pill">{e(a['nombre']).upper()}</div>
 <h1>{e(a['nombre'])}</h1><p class="sub">{e(a['profesor'])} · {e(a['horario'])}</p>
 <div class="kpis k3">{kpi(horas(a['horas']),'HORAS DEDICADAS')}{kpi(a['sesiones'],'SESIONES TRABAJADAS')}{kpi(hm(a['horas']/a['sesiones']),'MEDIA POR SESIÓN')}</div>
-<div class="card temas">{temas}</div>
+{fila}
 <div class="dos">{bloque('PUNTOS FUERTES', a.get('puntos_fuertes'), 'ok')}{bloque('A TENER EN CUENTA', a.get('a_tener_en_cuenta'), 'aten')}</div>
-{bloque('PUNTOS A MEJORAR', a.get('puntos_a_mejorar'), 'mej', True)}{ref}{graf}""", logo=logo))
+{bloque('PUNTOS A MEJORAR', a.get('puntos_a_mejorar'), 'mej', True)}{ref}""", logo=logo))
 
     # 3 · Conclusiones + evolución
     kc = kpi(f"{round(sum(auto)/len(auto))}%", "AUTONOMÍA MEDIA") if auto else ""
     n_temas = d.get("temas_trabajados") or sum(len(a["temas"]) for a in asigs)
+    kc2 = d.get("kpis_conclusion")
+    kp_concl = "".join(kpi(v, l) for v, l in kc2) if kc2 else (
+        kc + kpi(horas(tot_h), 'TOTAL DEDICADAS') + kpi(f'{tot_ses}/{tot_prev}', 'SESIONES SIN FALTAR')
+        + kpi(n_temas, 'TEMAS TRABAJADOS'))
     evo = ""
     for x in d["evolucion"]:
         s, col = TENDENCIA[x["tendencia"]]
@@ -136,11 +153,11 @@ def construir(d):
     paginas.append(pag(f"""
 <div class="pill">CONCLUSIONES · {mes_txt.upper()}</div>
 <h1>Cómo ha ido {MESES[mes]}</h1>
-<div class="kpis">{kc}{kpi(horas(tot_h),'TOTAL DEDICADAS')}{kpi(f'{tot_ses}/{tot_prev}','SESIONES SIN FALTAR')}{kpi(n_temas,'TEMAS TRABAJADOS')}</div>
+<div class="kpis">{kp_concl}</div>
 <p class="txt">{e(d['conclusion'])}</p>
 <div class="pill" style="margin-top:22px">EVOLUCIÓN DENTRO DEL MES</div>
 <h2>Cómo ha evolucionado a lo largo de {MESES[mes]}</h2>
-<p class="nota">{e(d['evolucion_intro'])}</p>{evo}""", logo=logo))
+<p class="nota">{e(d['evolucion_intro'])}</p><div class="evg{' dosc' if len(d['evolucion'])>2 else ''}">{evo}</div>""", logo=logo))
 
     # 4 · Próximo mes + propuesta
     ex = d["examenes"]
@@ -152,6 +169,12 @@ def construir(d):
 <p class="dias"><b>{dias} días</b> desde la fecha de este informe hasta el examen</p>
 <h3>Calendario de preparación — {sig_txt} {sig_anio}</h3>
 {calendario(sig_anio, sig_mes, d['sesiones_proximo_mes'], ex, informe)}<p class="txt">{e(d['texto_examen'])}</p></div>"""
+        if dias < 0:
+            fx = dt.date.fromisoformat(x["fecha"])
+            bloque_ex = f'<div class="card"><p class="txt"><b>Examen de {e(x["asignatura"])} ({e(x["tema"])}) — {fx.day} de {MESES[fx.month]}</b></p><p class="txt">{e(d["texto_examen"])}</p></div>'
+    bc = d.get("base_cientifica")
+    base = (f'<div class="card refc"><h3>Base científica de las recomendaciones</h3><p class="nota">{e(bc["texto"])}</p>'
+            f'<ol>{"".join(f"<li>{e(r)}</li>" for r in bc["referencias"])}</ol></div>') if bc else ""
     prop = "".join(
         f'<div class="pr"><h4>{e(p["asignatura"])} <em style="color:{ACCION.get(p["accion"], "#e9d18f")};border-color:{ACCION.get(p["accion"], "#e9d18f")}">{e(p["accion"])}</em></h4><p>{e(p["texto"])}</p></div>'
         for p in d["propuesta"])
@@ -161,7 +184,7 @@ def construir(d):
 <div class="pill" style="margin-top:20px">PROPUESTA DE ORGANIZACIÓN</div>
 <div class="dos"><div class="card"><h3>Organización de {MESES[mes]}</h3>{''.join(f'<p class="txt">{e(o)}</p>' for o in d['organizacion_actual'])}</div>
 <div class="card"><h3>Propuesta para {sig_txt}</h3>{prop}</div></div>
-<p class="nota" style="margin-top:14px">Nexo Académico · Informe generado el {fecha_larga(d['fecha_informe'])}</p>""", logo=logo))
+{base}<p class="nota" style="margin-top:14px">Nexo Académico · Informe generado el {fecha_larga(d['fecha_informe'])}</p>""", logo=logo))
 
     css = (AQUI / "estilo.css").read_text()
     return f"<!doctype html><html lang='es'><meta charset='utf-8'><style>{css}</style><body>{''.join(paginas)}</body></html>"
@@ -177,3 +200,11 @@ if __name__ == "__main__":
                     f"--print-to-pdf={salida}", h.resolve().as_uri()], check=True, capture_output=True)
     h.unlink()
     print("PDF generado:", salida)
+    try:
+        import pymupdf
+        n = len(pymupdf.open(salida))
+        esperadas = 3 + len(datos["asignaturas"])
+        if n != esperadas:
+            print(f"AVISO: {n} páginas en vez de {esperadas}: hay contenido desbordado. Revisar el PDF.")
+    except ImportError:
+        pass
