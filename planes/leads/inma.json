@@ -1,0 +1,237 @@
+{
+  "nombre": "Inma",
+  "etapa": "bachillerato",
+  "curso": "2º Bachillerato",
+  "asignaturas": [
+    "Física"
+  ],
+  "voz": "familia",
+  "bonos_recomendados": [
+    {
+      "horas": 12,
+      "frecuencia": "3h a la semana"
+    }
+  ],
+  "modalidades_recomendadas": [
+    "casa_alumno",
+    "casa_profesor"
+  ],
+  "frase_bono": "En casa del profesor, el mismo bono sale 15 € más barato al mes.",
+  "trayectoria": {
+    "etiqueta": "SU HOJA DE RUTA",
+    "pill": "EL CURSO, EN UNA GRÁFICA",
+    "titulo": "Su trayectoria hacia la PAU",
+    "lead": "Como en un problema de física: una curva que no deja de subir. Cada tramo es un bloque del temario de Física de 2º y cada punto, un examen clave.",
+    "meses": [
+      "Oct",
+      "Nov",
+      "Dic",
+      "Ene",
+      "Feb",
+      "Mar",
+      "Abr",
+      "May",
+      "Jun"
+    ],
+    "colores": [
+      "#5b8ee0",
+      "#8fb8ec",
+      "#7fcfa0",
+      "#b39ddb",
+      "#e9d18f"
+    ],
+    "tramos": [
+      [
+        0,
+        2
+      ],
+      [
+        2,
+        5
+      ],
+      [
+        5,
+        7
+      ],
+      [
+        7,
+        7.7
+      ],
+      [
+        7.7,
+        8
+      ]
+    ],
+    "bloques": [
+      {
+        "span": 2,
+        "simbolo": "g",
+        "nombre": "Gravitación",
+        "foco": "Campo gravitatorio, órbitas y satélites.",
+        "fondo": "#12234a",
+        "borde": "#5b8ee0"
+      },
+      {
+        "span": 3,
+        "simbolo": "E·B",
+        "nombre": "Electromagnetismo",
+        "foco": "Campo eléctrico, magnético e inducción.",
+        "fondo": "#16284a",
+        "borde": "#8fb8ec"
+      },
+      {
+        "span": 2,
+        "simbolo": "λ",
+        "nombre": "Ondas y óptica",
+        "foco": "Movimiento ondulatorio, sonido, luz y óptica geométrica.",
+        "fondo": "#13302a",
+        "borde": "#7fcfa0"
+      },
+      {
+        "span": 1,
+        "simbolo": "h",
+        "nombre": "Moderna",
+        "foco": "Relatividad, física cuántica y física nuclear.",
+        "fondo": "#241f3d",
+        "borde": "#b39ddb"
+      },
+      {
+        "span": 1,
+        "simbolo": "★",
+        "nombre": "PAU",
+        "fondo": "#3a3322",
+        "borde": "#e9d18f"
+      }
+    ],
+    "hitos": [
+      {
+        "nombre": "1ª evaluación",
+        "pos": 2
+      },
+      {
+        "nombre": "2ª evaluación",
+        "pos": 5
+      },
+      {
+        "nombre": "Finales",
+        "pos": 7
+      },
+      {
+        "nombre": "PAU",
+        "pos": 8,
+        "meta": true
+      }
+    ]
+  },
+  "informe_ejemplo": {
+    "asignatura": "Física",
+    "mes": "Febrero 2027",
+    "comparado": "enero",
+    "nota": "7,0",
+    "sesiones": 8,
+    "horas": "12h",
+    "destrezas_label": "Bloques trabajados",
+    "barras": [
+      [
+        "Gravitación",
+        7.2
+      ],
+      [
+        "Campo eléctrico",
+        6.8
+      ],
+      [
+        "Campo magnético",
+        6.5
+      ],
+      [
+        "Inducción",
+        7.0
+      ]
+    ],
+    "mayor_progreso": "Campo eléctrico — de 6,0 a 7,0, muy buen ritmo este mes",
+    "resumen": "En febrero, Inma ha hecho 8 sesiones de Física sin faltar a ninguna. Domina la gravitación y ha mejorado mucho en campo eléctrico. El punto de trabajo es la inducción electromagnética con problemas tipo PAU.",
+    "proxima_sesion": "PRÓXIMA SESIÓN — MARTES 2",
+    "proxima_sesion_txt": "Inducción: ley de Faraday-Lenz + 3 problemas de PAU.",
+    "horario": "Inma · martes y jueves, 17:00–18:30",
+    "temas": [
+      [
+        "Campo magnético",
+        2.5
+      ],
+      [
+        "Inducción",
+        1.8
+      ],
+      [
+        "Campo eléctrico",
+        1.2
+      ],
+      [
+        "Problemas PAU",
+        0.5
+      ]
+    ],
+    "fuertes": [
+      "Domina las leyes de Kepler",
+      "Buen planteamiento de los problemas"
+    ],
+    "atencion": [
+      "Inducción: signo de la fem (Lenz)",
+      "Unidades y cifras en el resultado"
+    ],
+    "casa": [
+      "1 problema de PAU al día",
+      "Formulario del tema al día"
+    ],
+    "semanas": [
+      5.8,
+      6.3,
+      6.8,
+      7.2
+    ],
+    "metricas": [
+      [
+        "76%",
+        "Comprensión"
+      ],
+      [
+        "81%",
+        "Constancia"
+      ],
+      [
+        "62%",
+        "Autonomía"
+      ]
+    ],
+    "evol": [
+      [
+        "Resolución de problemas",
+        "Enero: 60%",
+        "Febrero: 79%",
+        "Plantea mejor el esquema antes de calcular."
+      ],
+      [
+        "Autonomía",
+        "Enero: 50%",
+        "Febrero: 62%",
+        "Cada vez necesita menos ayuda para empezar."
+      ]
+    ],
+    "conclusion": "Febrero cierra con una tendencia muy positiva. El foco de marzo es la inducción antes de los exámenes de la 2ª evaluación.",
+    "cal_mes": [
+      2027,
+      3
+    ],
+    "cal_titulo": "Calendario de preparación — marzo 2027",
+    "cal_dias_sesion": [
+      1,
+      3
+    ],
+    "cal_examen": 17,
+    "cal_semanas": "3 sem",
+    "cal_semanas_txt": "desde la fecha de este informe hasta los exámenes de la 2ª evaluación",
+    "antes": "Sin refuerzo fijo",
+    "ahora": "Clases semanales de Física · Bono de 12h"
+  }
+}

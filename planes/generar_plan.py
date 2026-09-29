@@ -386,6 +386,59 @@ def page_mes(d, t):
 </section>'''
 
 
+def page_trayectoria(d, t):
+    """Curva de 'preparación' creciente de octubre a la PAU, estilo gráfica de física."""
+    c = d["trayectoria"]
+    meses = c["meses"]
+    n = len(meses)
+    W, H, x0, x1, yb, yt = 832, 262, 34, 800, 232, 34
+    X = lambda i: x0 + (x1 - x0) * i / (n - 1)
+    Y = lambda i: yb - (yb - yt) * (i / (n - 1)) ** 1.45
+    cols = c["colores"]
+    # tramos de la curva coloreados por bloque
+    segs, fill = "", []
+    for k, (a, b) in enumerate(c["tramos"]):
+        pts = [(X(a + (b - a) * j / 40), Y(a + (b - a) * j / 40)) for j in range(41)]
+        segs += f'<polyline points="{" ".join(f"{x:.1f},{y:.1f}" for x, y in pts)}" fill="none" stroke="{cols[k]}" stroke-width="6" stroke-linecap="round"/>'
+    pts = [(X((n - 1) * j / 120), Y((n - 1) * j / 120)) for j in range(121)]
+    area = f"M{x0},{yb} " + " ".join(f"L{x:.1f},{y:.1f}" for x, y in pts) + f" L{x1},{yb} Z"
+    grid = "".join(f'<line x1="{X(i):.1f}" y1="{yt - 10}" x2="{X(i):.1f}" y2="{yb}" stroke="#172243" stroke-width="1"/>' for i in range(n))
+    grid += "".join(f'<line x1="{x0}" y1="{y}" x2="{x1}" y2="{y}" stroke="#172243" stroke-width="1"/>' for y in range(yt, yb + 1, 50))
+    hitos = ""
+    for h in c["hitos"]:
+        x, y = X(h["pos"]), Y(h["pos"])
+        if h.get("meta"):
+            hitos += (f'<circle cx="{x:.1f}" cy="{y:.1f}" r="22" fill="#3d3826"/><circle cx="{x:.1f}" cy="{y:.1f}" r="15" fill="url(#oro)"/>'
+                      f'<text x="{x - 30:.1f}" y="{y + 5:.1f}" text-anchor="end" class="tm">{e(h["nombre"])}</text>')
+        else:
+            hitos += (f'<circle cx="{x:.1f}" cy="{y:.1f}" r="9" fill="#0a1226" stroke="#e7e7ea" stroke-width="3"/>'
+                      f'<text x="{x:.1f}" y="{y - 18:.1f}" text-anchor="middle" class="th2">{e(h["nombre"])}</text>')
+    svg = f'''<svg viewBox="0 0 {W} {H}" width="{W}" height="{H}" class="tsvg">
+  <defs><linearGradient id="oro" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6e2a6"/><stop offset="1" stop-color="#c9a24b"/></linearGradient>
+  <linearGradient id="area" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#15294f"/><stop offset="1" stop-color="#0c1428"/></linearGradient></defs>
+  {grid}<path d="{area}" fill="url(#area)"/>{segs}{hitos}
+  <text x="{x0}" y="{yt - 16}" class="ax">PREPARACIÓN</text>
+  <text x="{x1}" y="{yb + 22}" text-anchor="end" class="ax">TIEMPO →</text>
+</svg>'''
+    bandas = "".join(f'<div class="tb" style="grid-column: span {b["span"]}; background:{b["fondo"]}; border-color:{b["borde"]}">'
+                     f'<em style="color:{b["borde"]}">{e(b["simbolo"])}</em><b>{e(b["nombre"])}</b></div>' for b in c["bloques"])
+    mlab = "".join(f"<span>{e(m)}</span>" for m in meses)
+    cards = "".join(f'<div class="tcd"><em style="color:{b["borde"]}">{e(b["simbolo"])}</em><b>{e(b["nombre"])}</b><p>{e(b["foco"])}</p></div>'
+                    for b in c["bloques"] if b.get("foco"))
+    return f'''<section class="page glow tray">
+  <div class="hdr"><img class="logo-sm" src="{LOGO_URI}"><span class="hdr-r">{e(c["etiqueta"])}</span></div><div class="rule"></div>
+  <div class="pill gold">{e(c["pill"])}</div>
+  <h2>{e(c["titulo"])}</h2>
+  <p class="lead">{e(c["lead"])}</p>
+  <div class="tbox">{svg}
+    <div class="tbands" style="grid-template-columns: repeat({n}, minmax(0,1fr))">{bandas}</div>
+    <div class="mlab" style="grid-template-columns: repeat({n}, minmax(0,1fr))">{mlab}</div>
+  </div>
+  <div class="tcards">{cards}</div>
+  {footer()}
+</section>'''
+
+
 def page_quincenal(d, t):
     b = d["bono_especial"]
     base = TARIFAS[d["etapa"]]["base"]["casa_alumno"]
@@ -1028,6 +1081,24 @@ h2.c { font-size: 34px; margin: 26px 0 18px; }
 .bd.s2 { background: linear-gradient(160deg, #3a4660, #283247); border-color: #5a6a8c; } .bd.s2 em { color: #dfe6f3; }
 .bd.s3 { background: linear-gradient(160deg, #1f4a37, #163528); border-color: #3f8a64; } .bd.s3 em { color: #b5ecc9; }
 .bd.s4 { background: linear-gradient(160deg, #e8cf8e, #c9a24b); border-color: #e9d18f; } .bd.s4 b, .bd.s4 em { color: #0a1226; }
+.tray h2 { margin-top: 16px; }
+.tray .rule { margin: 18px 0 24px; }
+.tbox { margin-top: 18px; border: 1px solid #2a3350; border-radius: 16px; padding: 14px 0 12px; background: #0b1326; }
+.tsvg { display: block; margin: 0 auto; overflow: visible; }
+.tsvg .ax { fill: #56607a; font: 700 10px 'Liberation Sans', Arial; letter-spacing: 0.14em; }
+.tsvg .th2 { fill: #e7e7ea; font: 700 12px 'Liberation Sans', Arial; }
+.tsvg .tm { fill: #e9d18f; font: 700 20px 'Liberation Serif', serif; }
+.tbands { display: grid; gap: 6px; padding: 8px 16px 0; }
+.tb { border: 1px solid; border-radius: 10px; padding: 7px 7px; display: flex; align-items: baseline; gap: 5px; min-width: 0; }
+.tb em { font: italic 700 16px 'Liberation Serif', serif; }
+.tb b { font: 700 11px 'Liberation Sans', Arial; color: #e7e7ea; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tbox .mlab { margin: 8px 16px 0; }
+.tcards { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; margin-top: 16px; }
+.tcd { border: 1px solid #2a3350; border-radius: 12px; padding: 12px 14px; background: #0e1629; }
+.tcd em { font: italic 700 22px 'Liberation Serif', serif; }
+.tcd b { display: block; font: 700 14.5px 'Liberation Serif', serif; margin: 4px 0 3px; }
+.tcd p { color: #a49f8e; font-size: 12px; line-height: 1.3; }
+.tray .foot { margin-top: 18px; }
 .bd em .hh2 { text-transform: none; font-size: 10px; }
 .mleg { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-top: 16px; }
 .ml { display: flex; align-items: center; gap: 8px; border: 1px solid #2a3350; border-radius: 12px; padding: 10px 12px; background: #0e1629; }
@@ -1080,7 +1151,8 @@ def main():
     tf = TARIFAS[d["etapa"]]
     for m in d["modalidades_recomendadas"]:
         assert m in tf["precios"], f"La etapa {d['etapa']} no tiene modalidad {m}"
-    pages = [page_cover(d, t)] + ([page_mes(d, t)] if d.get("mes_ejemplo") else []) \
+    pages = [page_cover(d, t)] + ([page_trayectoria(d, t)] if d.get("trayectoria") else []) \
+        + ([page_mes(d, t)] if d.get("mes_ejemplo") else []) \
         + ([page_ciclos(d, t)] if d.get("ciclos") else []) \
         + ([page_camino(d, t)] if d.get("camino") else []) \
         + ([page_calendario(d, t)] if d.get("calendario") else []) \
