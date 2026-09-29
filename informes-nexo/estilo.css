@@ -67,3 +67,23 @@ h3 small { font-family:'Liberation Sans',sans-serif; font-weight:400; color:var(
 .dos > .card { margin-bottom:10px } .dos .card .nota { font-size:7.2pt; line-height:1.35 }
 .evg.dosc { display:grid; grid-template-columns:1fr 1fr; gap:10px; align-items:start } .evg.dosc .ev { margin-bottom:0 } .evg.dosc .ev .txt { font-size:9pt }
 .card { margin-bottom:8px } .bl { margin-bottom:8px } .dos > .card { margin-bottom:8px }
+
+.rs { border-left:3px solid var(--c); padding:2px 0 2px 16px; margin:0 0 18px }
+.rs h4 { font-size:7.6pt; letter-spacing:.14em; color:var(--c); margin-bottom:7px }
+.rs p { color:#d8d4c6; line-height:1.7; margin:0 0 9px }
+.cover { display:flex; flex-direction:column; align-items:center; text-align:center; padding:15mm 15mm 13mm;
+  background: radial-gradient(circle at 14% 6%, rgba(233,209,143,.11), rgba(233,209,143,0) 38%), radial-gradient(circle at 92% 100%, #152b60 0%, rgba(21,43,96,0) 58%), linear-gradient(180deg,#0a0d18,#0a1226) }
+.clogo { height:58px; margin:6mm 0 9mm }
+.ct { font-size:29pt; line-height:1.18; margin:8px 0 12mm } .ct i { color:var(--gold); font-weight:400 }
+.ficha { width:100%; border:1px solid var(--line); border-radius:16px; background:var(--card); padding:16px 20px 14px; margin-bottom:9mm }
+.fnom { font-size:23pt; color:var(--gold); margin:0 0 2px } .ccurso { color:var(--mut); letter-spacing:.12em; font-size:8.6pt; text-transform:uppercase; margin-bottom:4px }
+.fgrid { display:grid; grid-template-columns:1fr 1fr; gap:12px 20px; text-align:left; margin-top:12px; padding-top:12px; border-top:1px solid var(--line) }
+.fgrid small { display:block; font-size:6.8pt; letter-spacing:.13em; color:var(--mut); font-weight:700; margin-bottom:2px }
+.fgrid b { font-size:10.4pt; color:#fff; font-weight:700 }
+.cgraf { display:grid; grid-template-columns:1fr 1fr; gap:12px; width:100%; text-align:left }
+.cc { border:1px solid var(--line); border-radius:14px; background:var(--card); padding:13px 14px 10px }
+.cch { display:flex; justify-content:space-between; align-items:baseline } .cch b { font-family:'Liberation Serif',Georgia,serif; font-size:14pt }
+.cch span { font-size:7.6pt; color:var(--mut) } .ccs { font-size:7.6pt; color:var(--mut); margin:1px 0 4px }
+.cc .ax { fill:#a49f8e; font:8.4px 'Liberation Sans',sans-serif } .cc .gl { stroke:rgba(255,255,255,.09); stroke-width:1 }
+.ccl { font-size:8.2pt; font-weight:700; text-align:center; margin-top:2px }
+.cpie { position:absolute; left:0; right:0; bottom:10mm; font-size:6.8pt; letter-spacing:.16em; color:var(--dim) }

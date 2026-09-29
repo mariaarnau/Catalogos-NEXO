@@ -79,6 +79,82 @@ def calendario(anio, mes, sesiones, examenes, hoy):
             '&nbsp; <b class="l3"></b> Fecha de este informe</p>')
 
 
+NIVELES = ["No entendido", "Con dificultad", "Bien", "Con soltura"]
+COLORES = {"blue": "#8fb8ec", "green": "#7fcfa0", "gold": "#e9d18f", "purple": "#c3a6ec"}
+
+
+def curva(pts, ymin, ymax):
+    """Curva suave (Catmull-Rom a Bézier) por los puntos, sin salirse del rango vertical."""
+    if len(pts) < 2:
+        return ""
+    r = lambda v: min(max(v, ymin), ymax)
+    t = f"M{pts[0][0]:.1f},{pts[0][1]:.1f}"
+    for i in range(len(pts) - 1):
+        p0, p1, p2 = pts[i - 1] if i else pts[i], pts[i], pts[i + 1]
+        p3 = pts[i + 2] if i + 2 < len(pts) else pts[i + 1]
+        t += (f" C{p1[0]+(p2[0]-p0[0])/6:.1f},{r(p1[1]+(p2[1]-p0[1])/6):.1f}"
+              f" {p2[0]-(p3[0]-p1[0])/6:.1f},{r(p2[1]-(p3[1]-p1[1])/6):.1f} {p2[0]:.1f},{p2[1]:.1f}")
+    return t
+
+
+def grafica_comprension(items, color, uid, w=330, h=262):
+    L, R, T, B = 88, 14, 48, 34
+    ancho, n = w - L - R, len(items)
+    x = lambda i: L + ancho * (i + 0.5) / n
+    y = lambda v: T + (h - T - B) * (1 - v / 3)
+    o = [f'<defs><linearGradient id="a{uid}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="{color}" stop-opacity=".38"/>'
+         f'<stop offset="1" stop-color="{color}" stop-opacity="0"/></linearGradient>'
+         f'<pattern id="h{uid}" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">'
+         f'<line x1="0" y1="0" x2="0" y2="6" stroke="rgba(255,255,255,.16)" stroke-width="2"/></pattern></defs>']
+    k = 0
+    while k < n and items[k]["v"] is None:
+        k += 1
+    if k:
+        o.append(f'<rect x="{L}" y="{T-30}" width="{ancho*k/n:.1f}" height="{h-T-B+30}" rx="4" fill="url(#h{uid})" stroke="rgba(255,255,255,.18)" stroke-dasharray="3 3"/>'
+                 f'<text x="{L+ancho*k/n/2:.1f}" y="{T-13}" text-anchor="middle" class="ax">Iniciación · sin valorar</text>')
+    for v, nom in enumerate(NIVELES):
+        o.append(f'<line x1="{L}" x2="{w-R}" y1="{y(v):.1f}" y2="{y(v):.1f}" class="gl"/>'
+                 f'<text x="{L-8}" y="{y(v)+3:.1f}" text-anchor="end" class="ax">{nom}</text>')
+    pts = [(x(i), y(it["v"])) for i, it in enumerate(items) if it["v"] is not None]
+    c = curva(pts, y(3), y(0))
+    if c:
+        o.append(f'<path d="{c} L{pts[-1][0]:.1f},{y(0):.1f} L{pts[0][0]:.1f},{y(0):.1f} Z" fill="url(#a{uid})"/>'
+                 f'<path d="{c}" fill="none" stroke="{color}" stroke-width="9" stroke-opacity=".14" stroke-linecap="round"/>'
+                 f'<path d="{c}" fill="none" stroke="{color}" stroke-width="2.6" stroke-linecap="round"/>')
+    for px, py in pts:
+        o.append(f'<circle cx="{px:.1f}" cy="{py:.1f}" r="5.5" fill="#0a1226" stroke="{color}" stroke-width="2.5"/>')
+    for i, it in enumerate(items):
+        o.append(f'<text x="{x(i):.1f}" y="{h-B+17}" text-anchor="middle" class="ax">{e(it["e"])}</text>')
+    return f'<svg viewBox="0 0 {w} {h}" width="100%">{"".join(o)}</svg>'
+
+
+def portada(d, logo, mes_txt, tot_ses, tot_h):
+    profes = list(dict.fromkeys(a.get("profesor_completo", a["profesor"]) for a in d["asignaturas"]))
+    curso = f'<p class="ccurso">{e(d["curso"])}</p>' if d.get("curso") else ""
+    tarjetas = ""
+    for n, a in enumerate(d["asignaturas"]):
+        items = a.get("comprension_por_sesion")
+        if not items:
+            continue
+        col = COLORES.get(a.get("color", "blue"), "#8fb8ec")
+        lectura = " → ".join(NIVELES[i["v"]] for i in items if i["v"] is not None)
+        tarjetas += (f'<div class="cc"><div class="cch"><b style="color:{col}">{e(a["nombre"])}</b>'
+                     f'<span>{horas(a["horas"])} · {a["sesiones"]} sesiones</span></div>'
+                     f'<p class="ccs">Comprensión del tema, sesión a sesión</p>'
+                     f'{grafica_comprension(items, col, n)}<p class="ccl" style="color:{col}">{e(lectura)}</p></div>')
+    return f"""<section class="page cover"><img class="clogo" src="{logo}">
+<div class="pill">DOCUMENTO PRIVADO · INFORME MENSUAL</div>
+<h1 class="ct">Informe de seguimiento<br><i>{e(mes_txt)}</i></h1>
+<div class="ficha"><h2 class="fnom">{e(d['alumno'])}</h2>{curso}
+<div class="fgrid">
+<div><small>PROFESOR</small><b>{e(' · '.join(profes))}</b></div>
+<div><small>ASIGNATURAS</small><b>{e(' · '.join(a['nombre'] for a in d['asignaturas']))}</b></div>
+<div><small>PERIODO</small><b>{e(mes_txt)}</b></div>
+<div><small>SESIONES Y HORAS</small><b>{tot_ses} sesiones · {horas(tot_h)}</b></div></div></div>
+<div class="cgraf">{tarjetas}</div>
+<p class="cpie">NEXO ACADÉMICO · INFORME GENERADO EL {e(fecha_larga(d['fecha_informe']).upper())}</p></section>"""
+
+
 def construir(d):
     logo = "data:image/png;base64," + base64.b64encode((AQUI / "assets/logo_nexo.png").read_bytes()).decode()
     mes, anio = d["mes"], d["anio"]
@@ -100,14 +176,22 @@ def construir(d):
         + kpi(len(asigs), 'ASIGNATURA' + ('S' if len(asigs) > 1 else ''))
         + kpi(f'{tot_ses}/{tot_prev}', 'ASISTENCIA') + kpi(hm(tot_h/tot_ses), 'DURACIÓN MEDIA'))
 
-    # 1 · Portada / resumen
+    paginas.append(portada(d, logo, mes_txt, tot_ses, tot_h))
+
+    # 1 · Resumen
+    if d.get("resumen_parrafos"):
+        resumen_html = "".join(
+            f'<div class="rs" style="--c:{COLORES.get(g.get("color", "gold"))}"><h4>{e(g["titulo"]).upper()}</h4>'
+            + "".join(f"<p>{e(t)}</p>" for t in g["parrafos"]) + "</div>" for g in d["resumen_parrafos"])
+    else:
+        resumen_html = f'<p class="txt">{e(d["resumen"])}</p>'
     paginas.append(pag(f"""
 <div class="pill">INFORME DE SEGUIMIENTO MENSUAL</div>
 <h1>{e(d['alumno'])}</h1>
 <p class="sub">{e(nombres)} · {mes_txt}</p>
 <div class="kpis">{kp_portada}</div>
 <div class="card destaque"><small>MAYOR PROGRESO DEL MES</small><p>{e(d['progreso_destacado'])}</p></div>
-<h2>Resumen del mes</h2><p class="txt">{e(d['resumen'])}</p>""", logo=logo))
+<h2>Resumen del mes</h2>{resumen_html}""", logo=logo))
 
     # 2 · Una página por asignatura
     for a in asigs:
@@ -203,7 +287,7 @@ if __name__ == "__main__":
     try:
         import pymupdf
         n = len(pymupdf.open(salida))
-        esperadas = 3 + len(datos["asignaturas"])
+        esperadas = 4 + len(datos["asignaturas"])
         if n != esperadas:
             print(f"AVISO: {n} páginas en vez de {esperadas}: hay contenido desbordado. Revisar el PDF.")
     except ImportError:
