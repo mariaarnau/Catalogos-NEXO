@@ -1,0 +1,50 @@
+{
+  "alumno": "Juan Iborra Lopetegui",
+  "curso": "4º ESO",
+  "mes": 8, "anio": 2026,
+  "fecha_informe": "2026-09-01",
+  "hay_mes_anterior": false,
+  "temas_trabajados": 3,
+  "progreso_destacado": "Comprensión lectora — de nivel literal a nivel crítico en textos de literatura, con el análisis literario ya resuelto de forma autónoma",
+  "resumen": "En agosto, Juan ha dado 8 sesiones de Valenciano con Santiago, 15 horas en total y sin faltar a ninguna. El trabajo se ha repartido en tres bloques: sintaxi avançada —el que más horas ha ocupado—, literatura valenciana contemporània y lèxic i ortografia valenciana. El dato más claro del mes está en la comprensión lectora: ha pasado de un nivel literal a principios de mes a un nivel crítico en las últimas sesiones, y el análisis literario, que al empezar un texto nuevo le costaba, ya lo resuelve de forma autónoma. El punto a vigilar es la autonomía al aplicar la sintaxi: cuando el tema es nuevo entiende bien la teoría pero todavía necesita apoyo para resolver los ejercicios solo, aunque en las sesiones finales del mes ya lo ha hecho sin ayuda.",
+  "asignaturas": [
+    {
+      "nombre": "Valenciano", "profesor": "Santiago M.", "horario": "Lunes y miércoles",
+      "sesiones": 8, "sesiones_previstas": 8, "horas": 15,
+      "temas": [ {"nombre": "Sintaxi i lèxic", "horas": 11}, {"nombre": "Literatura valenciana contemporània", "horas": 4} ],
+      "puntos_fuertes": [
+        "La comprensión lectora ha crecido durante el mes: de identificar la información explícita a valorar y argumentar sobre el texto (nivel crítico), y el análisis literario ya lo resuelve de forma autónoma",
+        "Muy implicado en la mayoría de las sesiones, con buen dominio del vocabulario y la ortografía en su producción escrita"
+      ],
+      "a_tener_en_cuenta": [
+        "El rendimiento depende de si el tema es nuevo: arranca un bloque con dificultad y lo remonta en las sesiones siguientes; la sesión de literatura del 19 de agosto fue la más floja, con algo de distracción"
+      ],
+      "puntos_a_mejorar": [
+        "Autonomía al aplicar la sintaxi: entiende bien la teoría pero, cuando el tema es nuevo, todavía necesita ayuda constante para resolver los ejercicios solo"
+      ],
+      "refuerzo": [
+        "Centrar el refuerzo en la sintaxi avançada — es donde entiende la teoría pero todavía necesita más apoyo para aplicarla de forma autónoma",
+        "Los tests dinámicos de la App de Nexo, filtrados por «Sintaxi avançada», son un buen apoyo para ganar soltura"
+      ],
+      "autonomia_por_sesion": [55, 25, 25, 55, 90, 25, 90, 90]
+    }
+  ],
+  "conclusion": "Agosto cierra con un mes de trabajo sólido y una asistencia perfecta: 8 de 8 sesiones, sin faltar ninguna. La gran nota positiva es la comprensión lectora, que ha subido de nivel literal a nivel crítico, y una implicación en clase alta casi siempre. Donde hay más margen es en la autonomía al aplicar la sintaxi con temas nuevos: entiende bien la teoría, pero todavía se apoya bastante en el profesor hasta que coge soltura. La diferencia entre unas sesiones y otras no es de actitud, sino de lo nuevo o exigente que resulte el contenido.",
+  "evolucion_intro": "Al ser el primer informe de Juan, todavía no hay un mes anterior con el que comparar; esta sección resume su evolución dentro de agosto.",
+  "evolucion": [
+    {"titulo": "Comprensión lectora", "etiqueta": "Nivel alcanzado", "tendencia": "sube", "estado": "de literal a crítico",
+     "texto": "A lo largo de las tres sesiones de lectura pasó de identificar solo la información explícita (literal) a deducir lo implícito (inferencial) y, al final, a valorar y argumentar sobre el texto (crítico). El análisis literario terminó resolviéndolo de forma autónoma."},
+    {"titulo": "Autonomía en sintaxi", "etiqueta": "Aplicación", "tendencia": "irregular", "estado": "irregular según el tema",
+     "texto": "Con cada tema nuevo arranca necesitando ayuda constante y va ganando soltura sesión a sesión: en las últimas del mes ya resolvió los ejercicios sin ayuda. Es lo esperable al empezar contenidos exigentes, no una señal de que algo vaya mal."}
+  ],
+  "examenes": [
+    {"asignatura": "Valenciano", "tema": "literatura valenciana contemporània", "fecha": "2026-09-18", "fuente": "Santiago, el profesor, en la sesión del 19 de agosto"}
+  ],
+  "sesiones_proximo_mes": ["2026-09-02","2026-09-07","2026-09-09","2026-09-14","2026-09-16"],
+  "texto_examen": "Con la propuesta de septiembre (2 sesiones/semana), a Juan le quedan unas 5 sesiones de Valenciano antes del examen — cerca de 10 horas de preparación repartidas en 2-3 semanas, tiempo suficiente para consolidar la literatura valenciana contemporània si mantiene el ritmo de trabajo actual.",
+  "organizacion_actual": ["Valenciano — 2 sesiones/semana, 2h (lunes y miércoles)"],
+  "propuesta": [
+    {"asignatura": "Valenciano", "accion": "MANTENER", "texto": "Mantener 2 sesiones/semana y enfocar el contenido en literatura y análisis literario de cara al examen del 18 de septiembre"},
+    {"asignatura": "Comprensión lectora", "accion": "CONSOLIDAR", "texto": "Seguir con textos de literatura para afianzar el análisis literario, que este mes ya ha resuelto de forma autónoma"}
+  ]
+}
