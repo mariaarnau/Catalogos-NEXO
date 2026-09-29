@@ -348,6 +348,44 @@ def page_ciclos(d, t):
 </section>'''
 
 
+def page_mes(d, t):
+    """Mes de ejemplo a pantalla completa: cada clase en su día, coloreada por asignatura."""
+    c = d["mes_ejemplo"]
+    y, m = c["mes"]
+    ses = {dt.date.fromisoformat(k): v for k, v in c["sesiones"].items()}
+    fest = {dt.date.fromisoformat(k): v for k, v in c.get("festivos", {}).items()}
+    etq = c["etiquetas"]
+    num = lambda x: (f"{x:g}").replace(".", ",")
+    cells = "".join(f"<span class='bh'>{x}</span>" for x in ["Lun", "Mar", "Mié", "Jue", "Vie", "Sáb", "Dom"])
+    for wk in calendar.Calendar(0).monthdatescalendar(y, m):
+        for x in wk:
+            cls, tag = ["bd"], ""
+            if x.month != m:
+                cls.append("fuera")
+            if x in fest:
+                cls.append("fest")
+                tag = f"<em>{e(fest[x])}</em>"
+            if x in ses and x.month == m:
+                i, h = ses[x]
+                cls.append(f"s{i}")
+                tag = f"<em>{e(etq[i])}<br><span class='hh2'>{num(h)} h</span></em>"
+            cells += f"<div class='{' '.join(cls)}'><b>{x.day}</b>{tag}</div>"
+    tot = {}
+    for i, h in ses.values():
+        tot[i] = tot.get(i, 0) + h
+    leg = "".join(f'<div class="ml"><i class="s{i}"></i><b>{e(a)}</b><span>{num(tot.get(i, 0))}h</span></div>' for i, a in enumerate(etq))
+    total = sum(tot.values())
+    return f'''<section class="page glow ciclos">
+  <div class="hdr"><img class="logo-sm" src="{LOGO_URI}"><span class="hdr-r">{e(c["etiqueta"])}</span></div><div class="rule"></div>
+  <div class="pill gold">{e(c["pill"])}</div>
+  <h2>{e(c["titulo"])}</h2>
+  <p class="lead">{e(c["lead"])}</p>
+  <div class="bigcal"><div class="bc-h"><b>{MESES_ES[m]} {y}</b><span>{num(total)}h de clase · {len(ses)} sesiones</span></div><div class="bc-g">{cells}</div></div>
+  <div class="mleg">{leg}</div>
+  {footer()}
+</section>'''
+
+
 def page_quincenal(d, t):
     b = d["bono_especial"]
     base = TARIFAS[d["etapa"]]["base"]["casa_alumno"]
@@ -985,6 +1023,18 @@ h2.c { font-size: 34px; margin: 26px 0 18px; }
 .kl b { display: block; font: 700 15px 'Liberation Serif', serif; }
 .kl span { color: #a49f8e; font-size: 12px; line-height: 1.3; }
 .ciclos .foot { margin-top: 20px; }
+.bd.s0 { background: linear-gradient(160deg, #5a4e30, #3a3322); border-color: #9c8550; } .bd.s0 em { color: #f1dca0; }
+.bd.s1 { background: linear-gradient(160deg, #1d3d74, #152c56); border-color: #2e5596; } .bd.s1 em { color: #b9d2f5; }
+.bd.s2 { background: linear-gradient(160deg, #3a4660, #283247); border-color: #5a6a8c; } .bd.s2 em { color: #dfe6f3; }
+.bd.s3 { background: linear-gradient(160deg, #1f4a37, #163528); border-color: #3f8a64; } .bd.s3 em { color: #b5ecc9; }
+.bd.s4 { background: linear-gradient(160deg, #e8cf8e, #c9a24b); border-color: #e9d18f; } .bd.s4 b, .bd.s4 em { color: #0a1226; }
+.bd em .hh2 { text-transform: none; font-size: 10px; }
+.mleg { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-top: 16px; }
+.ml { display: flex; align-items: center; gap: 8px; border: 1px solid #2a3350; border-radius: 12px; padding: 10px 12px; background: #0e1629; }
+.ml i { flex: none; width: 14px; height: 14px; border-radius: 4px; }
+.ml i.s0 { background: #b8964c; } .ml i.s1 { background: #2e5ea8; } .ml i.s2 { background: #6a7a9c; } .ml i.s3 { background: #3f8a64; } .ml i.s4 { background: #e9d18f; }
+.ml b { font: 700 13.5px 'Liberation Serif', serif; flex: 1; }
+.ml span { color: #e9d18f; font-size: 12.5px; font-weight: 700; }
 .rwrap.q { padding: 34px 30px 26px; }
 .qhero { display: grid; grid-template-columns: 1.1fr 1fr 1fr; gap: 16px; }
 .qhero > div { border: 1px solid #2a3350; border-radius: 12px; padding: 16px 18px; background: #0e1629; }
@@ -1030,7 +1080,8 @@ def main():
     tf = TARIFAS[d["etapa"]]
     for m in d["modalidades_recomendadas"]:
         assert m in tf["precios"], f"La etapa {d['etapa']} no tiene modalidad {m}"
-    pages = [page_cover(d, t)] + ([page_ciclos(d, t)] if d.get("ciclos") else []) \
+    pages = [page_cover(d, t)] + ([page_mes(d, t)] if d.get("mes_ejemplo") else []) \
+        + ([page_ciclos(d, t)] if d.get("ciclos") else []) \
         + ([page_camino(d, t)] if d.get("camino") else []) \
         + ([page_calendario(d, t)] if d.get("calendario") else []) \
         + ([page_ruta(d, t)] if d.get("ruta") else []) \

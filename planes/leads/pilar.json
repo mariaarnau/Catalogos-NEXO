@@ -1,0 +1,241 @@
+{
+  "nombre": "Pilar",
+  "etapa": "bachillerato",
+  "curso": "2º Bachillerato",
+  "asignaturas": [
+    "Castellano",
+    "Valenciano",
+    "Inglés",
+    "Historia"
+  ],
+  "voz": "familia",
+  "cover_card_sub": "2º Bachillerato · Artes escénicas y música",
+  "bonos_recomendados": [
+    {
+      "horas": 12,
+      "frecuencia": "5 clases de 2h–2h30"
+    }
+  ],
+  "modalidades_recomendadas": [
+    "casa_alumno",
+    "casa_profesor"
+  ],
+  "textos": {
+    "cover_sub": "Un acompañamiento diseñado específicamente para Pilar, con clases de Castellano, Valenciano, Inglés e Historia para preparar la PAU."
+  },
+  "mes_ejemplo": {
+    "etiqueta": "SU CALENDARIO",
+    "pill": "UN MES DE EJEMPLO",
+    "titulo": "Así sería su octubre",
+    "lead": "Clases largas, de 2h a 2h30, para trabajar a fondo cada asignatura. Una semana para cada una y una sesión de práctica PAU para cerrar el mes.",
+    "mes": [
+      2026,
+      10
+    ],
+    "etiquetas": [
+      "Castellano",
+      "Valenciano",
+      "Inglés",
+      "Historia",
+      "Práctica PAU"
+    ],
+    "sesiones": {
+      "2026-10-06": [
+        0,
+        2.5
+      ],
+      "2026-10-13": [
+        1,
+        2.5
+      ],
+      "2026-10-20": [
+        2,
+        2.5
+      ],
+      "2026-10-27": [
+        3,
+        2.5
+      ],
+      "2026-10-29": [
+        4,
+        2
+      ]
+    },
+    "festivos": {
+      "2026-10-09": "Festivo",
+      "2026-10-12": "Festivo"
+    }
+  },
+  "camino": {
+    "etiqueta": "HOJA DE RUTA",
+    "pill": "EL CURSO DE UN VISTAZO",
+    "titulo": "El camino hasta la PAU",
+    "lead": "Un curso organizado en cuatro etapas, cada una con su objetivo, para llegar a junio con las cuatro asignaturas preparadas.",
+    "meses": [
+      "Oct",
+      "Nov",
+      "Dic",
+      "Ene",
+      "Feb",
+      "Mar",
+      "Abr",
+      "May",
+      "Jun"
+    ],
+    "fases": [
+      {
+        "span": 3,
+        "etiqueta": "1ER TRIMESTRE",
+        "nombre": "Bases sólidas",
+        "foco": "Comentario de texto, gramática y temario de Historia al día."
+      },
+      {
+        "span": 3,
+        "etiqueta": "2º TRIMESTRE",
+        "nombre": "Formato PAU",
+        "foco": "Comentarios, redacciones y temas con el formato del examen de la PAU."
+      },
+      {
+        "span": 2,
+        "etiqueta": "3ER TRIMESTRE",
+        "nombre": "Finales de 2º",
+        "foco": "Exámenes de otros años y repaso para cerrar el curso."
+      },
+      {
+        "span": 1,
+        "etiqueta": "JUNIO",
+        "nombre": "PAU",
+        "foco": "Simulacros cronometrados y últimos ajustes antes del examen."
+      }
+    ],
+    "hitos": [
+      {
+        "nombre": "1ª evaluación",
+        "pos": 2.75
+      },
+      {
+        "nombre": "2ª evaluación",
+        "pos": 6
+      },
+      {
+        "nombre": "Finales",
+        "pos": 8
+      },
+      {
+        "nombre": "PAU",
+        "pos": 9,
+        "meta": true
+      }
+    ]
+  },
+  "informe_ejemplo": {
+    "asignatura": "Historia",
+    "mes": "Febrero 2027",
+    "comparado": "enero",
+    "nota": "7,0",
+    "sesiones": 5,
+    "horas": "12h",
+    "destrezas_label": "Asignaturas seguidas",
+    "barras": [
+      [
+        "Castellano",
+        7.0
+      ],
+      [
+        "Valenciano",
+        6.8
+      ],
+      [
+        "Inglés",
+        7.2
+      ],
+      [
+        "Historia",
+        6.5
+      ]
+    ],
+    "mayor_progreso": "Historia — de 5,5 a 6,5, muy buen ritmo este mes",
+    "resumen": "En febrero, Pilar ha hecho 5 sesiones sin faltar a ninguna. Mejora clara en el comentario de texto en castellano y en valenciano. El punto de trabajo es Historia: desarrollar los temas con el formato de la PAU.",
+    "proxima_sesion": "PRÓXIMA SESIÓN — MARTES 2",
+    "proxima_sesion_txt": "Historia: tema de la Restauración + comentario de fuente.",
+    "horario": "Pilar · martes, 17:00–19:30",
+    "temas": [
+      [
+        "Restauración",
+        2.5
+      ],
+      [
+        "II República",
+        1.8
+      ],
+      [
+        "Comentario de fuentes",
+        1.2
+      ],
+      [
+        "Cronología",
+        0.5
+      ]
+    ],
+    "fuertes": [
+      "Redacta con orden y claridad",
+      "Buena memoria para fechas"
+    ],
+    "atencion": [
+      "Desarrollar los temas en el tiempo del examen",
+      "Relacionar causas y consecuencias"
+    ],
+    "casa": [
+      "1 tema de Historia a la semana",
+      "Esquema de cada tema nuevo"
+    ],
+    "semanas": [
+      5.8,
+      6.3,
+      6.8,
+      7.2
+    ],
+    "metricas": [
+      [
+        "76%",
+        "Comprensión"
+      ],
+      [
+        "81%",
+        "Constancia"
+      ],
+      [
+        "62%",
+        "Autonomía"
+      ]
+    ],
+    "evol": [
+      [
+        "Comentario de texto",
+        "Enero: 60%",
+        "Febrero: 79%",
+        "Estructura mejor la introducción y la conclusión."
+      ],
+      [
+        "Autonomía",
+        "Enero: 50%",
+        "Febrero: 62%",
+        "Cada vez necesita menos ayuda para empezar."
+      ]
+    ],
+    "conclusion": "Febrero cierra con una tendencia muy positiva. El foco de marzo es Historia antes de los exámenes de la 2ª evaluación.",
+    "cal_mes": [
+      2027,
+      3
+    ],
+    "cal_titulo": "Calendario de preparación — marzo 2027",
+    "cal_dias_sesion": [
+      1
+    ],
+    "cal_examen": 17,
+    "cal_semanas": "3 sem",
+    "cal_semanas_txt": "desde la fecha de este informe hasta los exámenes de la 2ª evaluación",
+    "antes": "Sin refuerzo fijo",
+    "ahora": "Clases largas semanales · Bono de 12h"
+  }
+}
