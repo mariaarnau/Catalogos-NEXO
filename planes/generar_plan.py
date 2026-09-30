@@ -445,7 +445,7 @@ def page_semana(d, t):
     h0, h1 = c["hora_ini"], c["hora_fin"]
     dias = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes"]
     asig = c["asignaturas"]
-    alto = 58  # px por hora
+    alto = c.get("alto", 58)  # px por hora
     hh = lambda x: f"{int(x)}:{int(round((x - int(x)) * 60)):02d}"
     horas = "".join(f'<div class="sh" style="top:{(h - h0) * alto}px">{h}:00</div>' for h in range(h0, h1 + 1))
     cols = ""
@@ -454,16 +454,17 @@ def page_semana(d, t):
         for (dd, ini, fin, a) in c["bloques"]:
             if dd != di:
                 continue
-            bl += (f'<div class="sb a{a}" style="top:{(ini - h0) * alto + 3}px; height:{(fin - ini) * alto - 6}px">'
+            bl += (f'<div class="sb a{a}{" mini" if fin - ini < 1 else ""}" style="top:{(ini - h0) * alto + 3}px; height:{(fin - ini) * alto - 6}px">'
                    f'<b>{e(asig[a])}</b><span>{hh(ini)} – {hh(fin)}</span></div>')
-        cols += f'<div class="sd"><div class="sdh">{dia}</div><div class="sdb" style="height:{(h1 - h0) * alto}px">{bl}</div></div>'
+        cols += f'<div class="sd"><div class="sdh">{dia}</div><div class="sdb" style="height:{(h1 - h0) * alto}px; background: repeating-linear-gradient(180deg, #0e1629 0 {alto - 1}px, #172243 {alto - 1}px {alto}px)">{bl}</div></div>'
     tot = {}
     for (_, ini, fin, a) in c["bloques"]:
         tot[a] = tot.get(a, 0) + (fin - ini)
     num = lambda x: (f"{x:g}").replace(".", ",")
     filas = ""
     for bono in c["repartos"]:
-        celdas = "".join(f'<div class="rpc a{i}" style="flex:{h}"><b>{e(asig[i])}</b><span>{num(h)}h</span></div>' for i, h in enumerate(bono["horas"]))
+        cortas = c.get("asig_cortas", asig)
+        celdas = "".join(f'<div class="rpc a{i}" style="flex:{h}"><b>{e(cortas[i])}</b><span>{num(h)}h</span></div>' for i, h in enumerate(bono["horas"]) if h)
         filas += f'<div class="rpf"><em>{e(bono["nombre"])}</em><div class="rpb">{celdas}</div></div>'
     return f'''<section class="page glow semp">
   <div class="hdr"><img class="logo-sm" src="{LOGO_URI}"><span class="hdr-r">{e(c["etiqueta"])}</span></div><div class="rule"></div>
@@ -477,19 +478,27 @@ def page_semana(d, t):
 </section>'''
 
 
+def periodo(c):
+    # Textos del periodo del bono (por defecto, semanal)
+    return {"corto": "/semana", "largo": "a la semana", "cada": "cada semana", "cap": "Cada semana",
+            "renov": "renovación semanal", "n4": 4, **c.get("periodo", {})}
+
+
 def page_bonos_esp(d, t):
     c = d["bonos_especiales"]
     base = c["base"]
+    P = periodo(c)
     cards = ""
     for b in c["bonos"]:
         ph = b["precio"] / b["horas"]
         top = f'<div class="bx-top">{e(b["etiqueta"])}</div>' if b.get("etiqueta") else ""
         cards += f'''<div class="bx{" star" if b.get("destacado") else ""}">{top}
-  <div class="bx-h"><b>{b["horas"]}h</b><span>a la semana</span></div>
-  <div class="bx-p">{eur(b["precio"], 0)}<small>/semana</small></div>
+  <div class="bx-h"><b>{b["horas"]}h</b><span>{P["largo"]}</span></div>
+  <div class="bx-p">{eur(b["precio"], 0)}<small>{P["corto"]}</small></div>
   <div class="bx-hora"><b>{eur(ph)}</b><span>por hora</span><em>−{pct(base - ph, base)}%</em></div>
-  <div class="bx-hora ex"><b>{eur(b["extra"], 0)}</b><span>cada hora extra</span><em>−{pct(base - b["extra"], base)}%</em></div>
-  <div class="bx-ah">Ahorráis <b>{eur(b["horas"] * base - b["precio"], 0)}</b> cada semana frente a la tarifa base</div>
+  {f'<div class="bx-hora ex"><b>{eur(b["extra"], 0)}</b><span>cada hora extra</span><em>−{pct(base - b["extra"], base)}%</em></div>' if b.get("extra") else ""}
+  {"".join(f'<div class="bx-ref"><span>{e(lab)}</span><s>{eur(v, 0)}</s></div>' for lab, v in b.get("referencias", []))}
+  <div class="bx-ah">Ahorráis <b>{eur(b["horas"] * base - b["precio"], 0)}</b> {P["cada"]} frente a la tarifa base</div>
 </div>'''
     ej = "".join(f"<li>{x}</li>" for x in c["ejemplos"])
     n = d["nombre"]
@@ -500,7 +509,7 @@ def page_bonos_esp(d, t):
   <h2>{e(c["titulo"])}</h2>
   <p class="lead">{e(c["lead"])}</p>
   <div class="bxs">{cards}</div>
-  <div class="base-l">Tarifa base online de Bachillerato: <b>{eur(base)}/h</b></div>
+  <div class="base-l">{e(c.get("base_txt", "Tarifa base online de Bachillerato"))}: <b>{eur(base)}/h</b></div>
   <ul class="dash ej">{ej}</ul>
   {footer()}
 </section>'''
@@ -508,45 +517,52 @@ def page_bonos_esp(d, t):
 
 def page_ahorro_esp(d, t):
     c = d["bonos_especiales"]
+    P = periodo(c)
     base = c["base"]
     mx = max(b["horas"] for b in c["bonos"]) * base
     filas = ""
     for b in c["bonos"]:
         ref = b["horas"] * base
         filas += f'''<div class="esc{" top" if b.get("destacado") else ""}">
-  <div class="eh"><b>{b["horas"]}h</b><span>a la semana</span></div>
+  <div class="eh"><b>{b["horas"]}h</b><span>{P["largo"]}</span></div>
   <div class="eb">
     <div class="ebr"><span>Tarifa base</span><div><i class="base" style="width:{ref / mx * 100:.1f}%"></i></div><em>{eur(ref, 0)}</em></div>
     <div class="ebr"><span>Con el bono</span><div><i class="bono" style="width:{b["precio"] / mx * 100:.1f}%"></i></div><em>{eur(b["precio"], 0)}</em></div>
   </div>
-  <div class="ea"><b>{eur((ref - b["precio"]) * 4, 0)}</b><span>de ahorro cada 4 semanas</span><small>{eur(ref - b["precio"], 0)} por semana</small></div>
+  <div class="ea"><b>{eur((ref - b["precio"]) * P["n4"], 0)}</b><span>de ahorro cada 4 semanas</span><small>{eur(ref - b["precio"], 0)} {P["cada"]}</small></div>
 </div>'''
     cmp_rows = ""
-    for h, a, b2 in c["comparativa"]:
+    for h, a, b2 in c.get("comparativa", []):
         mejor = "b" if b2 < a else "a"
         cmp_rows += (f'<div class="cr"><span>{h}h</span><em class="{"w" if mejor == "a" else ""}">{eur(a, 0)}</em>'
                      f'<em class="{"w" if mejor == "b" else ""}">{eur(b2, 0)}</em></div>')
+    cmpbox = ""
+    if cmp_rows:
+        cmpbox = ('<div class="cmpbox"><div class="cmp-h"><b>¿Qué bono os conviene?</b><span>Coste semanal según las horas que haga</span></div>'
+                  f'<div class="cr hd"><span>Horas</span><em>Bono 15h</em><em>Bono 20h</em></div>{cmp_rows}'
+                  f'<p>{e(c["comparativa_nota"])}</p></div>')
+    nota = f'<p class="nota-bono">{e(c["ahorro_nota"])}</p>' if c.get("ahorro_nota") else ""
     return f'''<section class="page glow">
   <div class="hdr"><img class="logo-sm" src="{LOGO_URI}"><span class="hdr-r">LO QUE AHORRÁIS</span></div><div class="rule"></div>
   <div class="pill gold">EL DESCUENTO, EN NÚMEROS</div>
   <h2>{e(c["ahorro_titulo"])}</h2>
   <p class="lead">{e(c["ahorro_lead"])}</p>
   <div class="escs">{filas}</div>
-  <div class="cmpbox"><div class="cmp-h"><b>¿Qué bono os conviene?</b><span>Coste semanal según las horas que haga</span></div>
-    <div class="cr hd"><span>Horas</span><em>Bono 15h</em><em>Bono 20h</em></div>{cmp_rows}
-    <p>{e(c["comparativa_nota"])}</p></div>
+  {cmpbox}
+  {nota}
   {footer()}
 </section>'''
 
 
 def page_resumen_esp2(d, t):
     c = d["bonos_especiales"]
+    P = periodo(c)
     n = d["nombre"]
     rows = ""
     for b in c["bonos"]:
         rows += f'''<div class="srow{" ref" if not b.get("destacado") else ""}"><div class="av w">{b["horas"]}</div>
-  <div class="st"><b>Bono de {b["horas"]}h semanales</b><small>Online · renovación semanal · hora extra a {eur(b["extra"], 0)}</small></div>
-  <div class="sps"><div class="sp"><small>Cada semana</small><b>{eur(b["precio"], 0)}</b></div><div class="sp"><small>Por hora</small><b>{eur(b["precio"] / b["horas"])}</b></div></div></div>'''
+  <div class="st"><b>Bono de {b["horas"]}h {P["cada"] if P["cada"] != "cada semana" else "semanales"}</b><small>{e(c.get("modalidad_txt", "Online"))} · {P["renov"]}{f" · hora extra a {eur(b['extra'], 0)}" if b.get("extra") else ""}</small></div>
+  <div class="sps"><div class="sp"><small>{P["cap"]}</small><b>{eur(b["precio"], 0)}</b></div><div class="sp"><small>Por hora</small><b>{eur(b["precio"] / b["horas"])}</b></div></div></div>'''
     lis = "".join(f"<li>{e(x)}</li>" for x in c["resumen"])
     return f'''<section class="page">
   <div class="hdr"><img class="logo-sm" src="{LOGO_URI}"><span class="hdr-r">RESUMEN DEL PLAN</span></div><div class="rule"></div>
@@ -1216,12 +1232,18 @@ h2.c { font-size: 34px; margin: 26px 0 18px; }
 .a1 { background: linear-gradient(160deg, #1d3d74, #152c56); border-color: #2e5596; color: #b9d2f5; }
 .a2 { background: linear-gradient(160deg, #3a3060, #282046); border-color: #6a5aa8; color: #d6cdf5; }
 .a3 { background: linear-gradient(160deg, #1f4a37, #163528); border-color: #3f8a64; color: #b5ecc9; }
+.sb.mini { padding: 5px 9px; }
+.sb.mini b { font-size: 12.5px; white-space: nowrap; }
+.sb.mini span { font-size: 10px; }
+.a4 { background: linear-gradient(160deg, #5c2f3c, #3e2029); border-color: #a85a70; color: #f5c9d5; }
+.bx-ref { display: flex; justify-content: space-between; color: #7d7f8a; font-size: 13px; padding: 3px 0; }
+.bx-ref s { color: #a49f8e; }
 .extra-t { display: flex; gap: 12px; align-items: center; margin-top: 14px; border: 1px dashed #9c8550; border-radius: 12px; padding: 11px 16px; background: #14161f; }
 .extra-t i { flex: none; width: 14px; height: 14px; border-radius: 50%; background: linear-gradient(135deg, #f6e2a6, #c9a24b); }
 .extra-t b { display: block; font: 700 14.5px 'Liberation Serif', serif; color: #e9d18f; }
 .extra-t span { color: #a49f8e; font-size: 12.5px; }
 .rps { margin-top: 12px; display: grid; gap: 8px; }
-.rpf { display: grid; grid-template-columns: 92px 1fr; align-items: center; gap: 10px; }
+.rpf { display: grid; grid-template-columns: 130px 1fr; align-items: center; gap: 10px; }
 .rpf em { font-style: normal; color: #e7e7ea; font: 700 13px 'Liberation Sans', Arial; }
 .rpb { display: flex; gap: 4px; }
 .rpc { border-radius: 8px; padding: 6px 10px; border: 1px solid; display: flex; justify-content: space-between; align-items: center; min-width: 0; }

@@ -1,0 +1,292 @@
+{
+  "nombre": "Alejandro",
+  "etapa": "eso",
+  "curso": "1º ESO",
+  "asignaturas": [
+    "Repaso general"
+  ],
+  "voz": "familia",
+  "cover_card_sub": "1º ESO · Torrente · Clases en casa",
+  "bonos_recomendados": [
+    {
+      "horas": 12,
+      "frecuencia": "cada 2 semanas"
+    }
+  ],
+  "modalidades_recomendadas": [
+    "casa_alumno"
+  ],
+  "tarifas_mostrar": [
+    "casa_alumno"
+  ],
+  "textos": {
+    "cover_sub": "Un acompañamiento diseñado específicamente para Alejandro, con repaso general de todas sus asignaturas de 1º de ESO.",
+    "p2_sub": "Un profesor de referencia para todas sus asignaturas: Matemáticas, Inglés, Castellano, Valenciano y comprensión lectora.",
+    "c1": "Alejandro tiene su profesor de referencia asignado, con clase cada tarde de lunes a viernes en vuestra casa.",
+    "p10_sub": "Escríbenos para confirmar la renovación de cada bono o cualquier ajuste de horas de Alejandro."
+  },
+  "semana": {
+    "etiqueta": "SU SEMANA",
+    "pill": "ORGANIZACIÓN SEMANAL",
+    "titulo": "Su semana tipo, de lunes a viernes",
+    "lead": "Una clase cada tarde, de 1h o 1h30, en vuestra casa. Con el bono de 12h, los martes y jueves la clase se alarga media hora para trabajar la comprensión lectora.",
+    "hora_ini": 17,
+    "hora_fin": 19,
+    "asignaturas": [
+      "Matemáticas",
+      "Inglés",
+      "Castellano",
+      "Valenciano",
+      "Comprensión lectora"
+    ],
+    "bloques": [
+      [
+        0,
+        17,
+        18,
+        0
+      ],
+      [
+        1,
+        17,
+        18,
+        1
+      ],
+      [
+        1,
+        18,
+        18.5,
+        4
+      ],
+      [
+        2,
+        17,
+        18,
+        2
+      ],
+      [
+        3,
+        17,
+        18,
+        0
+      ],
+      [
+        3,
+        18,
+        18.5,
+        4
+      ],
+      [
+        4,
+        17,
+        18,
+        3
+      ]
+    ],
+    "extra_titulo": "Resto de asignaturas",
+    "extra_texto": "Ciencias y Geografía e Historia: dudas, deberes y exámenes cuando toque, dentro de las mismas clases.",
+    "repartos": [
+      {
+        "nombre": "Bono 10h · 5h/sem",
+        "horas": [
+          2,
+          1,
+          1,
+          1,
+          0
+        ]
+      },
+      {
+        "nombre": "Bono 12h · 6h/sem",
+        "horas": [
+          2,
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    ],
+    "alto": 100,
+    "asig_cortas": [
+      "Matemáticas",
+      "Inglés",
+      "Castellano",
+      "Valenciano",
+      "Lectura"
+    ]
+  },
+  "bonos_especiales": {
+    "base": 24,
+    "base_txt": "Tarifa base presencial de 1º ESO",
+    "modalidad_txt": "Presencial en casa",
+    "periodo": {
+      "corto": "/2 semanas",
+      "largo": "cada 2 semanas",
+      "cada": "cada 2 semanas",
+      "cap": "Cada 2 semanas",
+      "renov": "renovación cada 2 semanas",
+      "n4": 2
+    },
+    "who": "1º ESO · Torrente · Repaso general",
+    "pill": "SUS BONOS QUINCENALES",
+    "titulo": "Dos bonos especiales, a elegir",
+    "lead": "Clases presenciales en vuestra casa, de lunes a viernes, con un bono que se renueva cada dos semanas y sin permanencia. En los dos, la hora sale a 19 € en lugar de 24 €.",
+    "bonos": [
+      {
+        "horas": 10,
+        "precio": 190,
+        "referencias": [
+          [
+            "Tarifa base (10 × 24 €)",
+            240
+          ]
+        ]
+      },
+      {
+        "horas": 12,
+        "precio": 228,
+        "destacado": true,
+        "etiqueta": "EL QUE MÁS AHORRA",
+        "referencias": [
+          [
+            "Tarifa base (12 × 24 €)",
+            288
+          ],
+          [
+            "Bono estándar de 12h",
+            270
+          ]
+        ]
+      }
+    ],
+    "ejemplos": [
+      "Bono de 10h: 1 hora cada día, de lunes a viernes, durante dos semanas → <b>190 €</b>",
+      "Bono de 12h: 1h o 1h30 cada día, durante dos semanas → <b>228 €</b>, 60 € menos que a tarifa base"
+    ],
+    "ahorro_titulo": "Lo que ahorráis",
+    "ahorro_lead": "Comparado con la tarifa base presencial de 1º ESO (24 €/h). En los dos bonos, cada hora sale a 19 €: un 21% menos.",
+    "ahorro_nota": "4 semanas = 2 bonos. Cálculo frente a la tarifa base presencial de 24 €/h.",
+    "resumen": [
+      "Clases presenciales en vuestra casa, en Torrente, de lunes a viernes.",
+      "Matemáticas, Inglés, Castellano, Valenciano y comprensión lectora.",
+      "El resto de asignaturas, con dudas y exámenes cuando toque.",
+      "Renovación cada 2 semanas, sin permanencia."
+    ],
+    "quote": "Un plan a medida para que Alejandro lleve 1º de ESO al día, tarde a tarde."
+  },
+  "informe_ejemplo": {
+    "asignatura": "Matemáticas",
+    "mes": "Noviembre 2026",
+    "comparado": "octubre",
+    "nota": "7,0",
+    "sesiones": 20,
+    "horas": "24h",
+    "destrezas_label": "Asignaturas seguidas",
+    "barras": [
+      [
+        "Matemáticas",
+        7.0
+      ],
+      [
+        "Inglés",
+        7.2
+      ],
+      [
+        "Castellano",
+        6.8
+      ],
+      [
+        "Valenciano",
+        6.5
+      ]
+    ],
+    "mayor_progreso": "Matemáticas — de 6,0 a 7,0, muy buen ritmo este mes",
+    "resumen": "En noviembre, Alejandro ha hecho 20 clases sin faltar a ninguna. Lleva los deberes al día y ha mejorado mucho en Matemáticas. El punto de trabajo es la comprensión lectora: entender bien los enunciados.",
+    "proxima_sesion": "PRÓXIMA SESIÓN — LUNES 30",
+    "proxima_sesion_txt": "Fracciones + repaso para el examen de Matemáticas.",
+    "horario": "Alejandro · lunes a viernes, 17:00–18:00",
+    "temas": [
+      [
+        "Fracciones",
+        2.5
+      ],
+      [
+        "Números enteros",
+        1.8
+      ],
+      [
+        "Potencias",
+        1.2
+      ],
+      [
+        "Problemas",
+        0.5
+      ]
+    ],
+    "fuertes": [
+      "Muy constante con los deberes",
+      "Buena base en operaciones"
+    ],
+    "atencion": [
+      "Leer bien los enunciados",
+      "Estudiar con esquemas"
+    ],
+    "casa": [
+      "15 min de lectura cada día",
+      "Agenda con las fechas de exámenes"
+    ],
+    "semanas": [
+      5.8,
+      6.3,
+      6.8,
+      7.2
+    ],
+    "metricas": [
+      [
+        "76%",
+        "Comprensión"
+      ],
+      [
+        "81%",
+        "Constancia"
+      ],
+      [
+        "62%",
+        "Autonomía"
+      ]
+    ],
+    "evol": [
+      [
+        "Comprensión lectora",
+        "Octubre: 60%",
+        "Noviembre: 79%",
+        "Entiende mejor los enunciados antes de responder."
+      ],
+      [
+        "Autonomía",
+        "Octubre: 50%",
+        "Noviembre: 62%",
+        "Cada vez necesita menos ayuda para empezar."
+      ]
+    ],
+    "conclusion": "Noviembre cierra con una tendencia muy positiva. El foco de diciembre es preparar los exámenes de la 1ª evaluación.",
+    "cal_mes": [
+      2026,
+      12
+    ],
+    "cal_titulo": "Calendario de preparación — diciembre 2026",
+    "cal_dias_sesion": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "cal_examen": 16,
+    "cal_semanas": "3 sem",
+    "cal_semanas_txt": "desde la fecha de este informe hasta los exámenes de la 1ª evaluación",
+    "antes": "Sin refuerzo fijo",
+    "ahora": "Una clase cada tarde · Bono quincenal"
+  }
+}
