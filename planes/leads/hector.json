@@ -1,0 +1,315 @@
+{
+  "nombre": "Héctor",
+  "etapa": "bachillerato",
+  "curso": "American School of Valencia",
+  "asignaturas": [
+    "Matemáticas",
+    "Física",
+    "Química",
+    "Biología"
+  ],
+  "voz": "familia",
+  "cover_card_sub": "American School of Valencia · Clases online",
+  "bonos_recomendados": [
+    {
+      "horas": 20,
+      "frecuencia": "cada semana"
+    }
+  ],
+  "modalidades_recomendadas": [
+    "online"
+  ],
+  "tarifas_mostrar": [
+    "online"
+  ],
+  "textos": {
+    "cover_sub": "Un plan de mañanas diseñado específicamente para Héctor, con repaso de Matemáticas, Física, Química y Biología.",
+    "c1": "Héctor tiene su profesor de referencia asignado, con clases online cada mañana de lunes a viernes.",
+    "p10_sub": "Escríbenos para confirmar el bono de cada semana o cualquier ajuste de horas de Héctor."
+  },
+  "semana": {
+    "etiqueta": "SU SEMANA",
+    "pill": "ORGANIZACIÓN DE MAÑANAS",
+    "titulo": "Su semana tipo, de 9:00 a 13:00",
+    "lead": "Cuatro horas cada mañana, de lunes a viernes. Matemáticas, Física y Química llevan más horas; Biología, algo menos. El reparto se ajusta cada semana según sus exámenes.",
+    "hora_ini": 9,
+    "hora_fin": 13,
+    "asignaturas": [
+      "Matemáticas",
+      "Física",
+      "Química",
+      "Biología"
+    ],
+    "bloques": [
+      [
+        0,
+        9,
+        11,
+        0
+      ],
+      [
+        0,
+        11,
+        13,
+        1
+      ],
+      [
+        1,
+        9,
+        11,
+        2
+      ],
+      [
+        1,
+        11,
+        13,
+        3
+      ],
+      [
+        2,
+        9,
+        11,
+        0
+      ],
+      [
+        2,
+        11,
+        13,
+        1
+      ],
+      [
+        3,
+        9,
+        11,
+        2
+      ],
+      [
+        3,
+        11,
+        13,
+        0
+      ],
+      [
+        4,
+        9,
+        10,
+        1
+      ],
+      [
+        4,
+        10,
+        11,
+        2
+      ],
+      [
+        4,
+        11,
+        13,
+        3
+      ]
+    ],
+    "extra_titulo": "Alguna tarde puntual: sesión práctica",
+    "extra_texto": "Antes de un examen, una clase extra de tarde centrada en la práctica: exámenes de otros años y ejercicios tipo.",
+    "repartos": [
+      {
+        "nombre": "Bono 20h",
+        "horas": [
+          6,
+          5,
+          5,
+          4
+        ]
+      },
+      {
+        "nombre": "Bono 15h",
+        "horas": [
+          4,
+          4,
+          4,
+          3
+        ]
+      }
+    ]
+  },
+  "bonos_especiales": {
+    "base": 24,
+    "who": "American School of Valencia · Matemáticas, Física, Química y Biología",
+    "pill": "SUS BONOS SEMANALES",
+    "titulo": "Dos bonos especiales, a elegir",
+    "lead": "Clases online por las mañanas con un bono que se renueva cada semana, sin permanencia. Si una semana hacen falta más horas, la hora extra sale todavía más barata.",
+    "bonos": [
+      {
+        "horas": 15,
+        "precio": 280,
+        "extra": 17
+      },
+      {
+        "horas": 20,
+        "precio": 340,
+        "extra": 16,
+        "destacado": true,
+        "etiqueta": "EL MÁS ECONÓMICO POR HORA"
+      }
+    ],
+    "ejemplos": [
+      "Ejemplo con el bono de 20h: si una semana hace 22h → 340 € + 2 × 16 € = <b>372 €</b>",
+      "Ejemplo con el bono de 15h: si una semana hace 17h → 280 € + 2 × 17 € = <b>314 €</b>"
+    ],
+    "ahorro_titulo": "Lo que ahorráis cada semana",
+    "ahorro_lead": "Comparado con la tarifa base online de Bachillerato (24 €/h). Con el bono de 20h, cada hora sale a 17 €: un 29% menos.",
+    "comparativa": [
+      [
+        15,
+        280,
+        340
+      ],
+      [
+        17,
+        314,
+        340
+      ],
+      [
+        18,
+        331,
+        340
+      ],
+      [
+        19,
+        348,
+        340
+      ],
+      [
+        20,
+        365,
+        340
+      ],
+      [
+        22,
+        399,
+        372
+      ]
+    ],
+    "comparativa_nota": "En verde, la opción más barata. A partir de 19h semanales compensa el bono de 20h.",
+    "resumen": [
+      "Clases online por las mañanas, de lunes a viernes, de 9:00 a 13:00.",
+      "Matemáticas, Física y Química con más horas; Biología, algo menos.",
+      "Sesiones prácticas de tarde puntuales antes de los exámenes.",
+      "Renovación semanal, sin permanencia."
+    ],
+    "quote": "Un plan a medida para que Héctor llegue a cada examen con las cuatro asignaturas al día."
+  },
+  "informe_ejemplo": {
+    "asignatura": "Matemáticas",
+    "mes": "Noviembre 2026",
+    "comparado": "octubre",
+    "nota": "7,0",
+    "sesiones": 40,
+    "horas": "80h",
+    "destrezas_label": "Asignaturas seguidas",
+    "barras": [
+      [
+        "Matemáticas",
+        7.0
+      ],
+      [
+        "Física",
+        6.8
+      ],
+      [
+        "Química",
+        7.2
+      ],
+      [
+        "Biología",
+        6.5
+      ]
+    ],
+    "mayor_progreso": "Matemáticas — de 6,0 a 7,0, muy buen ritmo este mes",
+    "resumen": "En noviembre, Héctor ha hecho 40 sesiones de mañana sin faltar a ninguna. Ha mejorado mucho en Matemáticas y lleva Química al día. El punto de trabajo es Física: problemas de dinámica y energía.",
+    "proxima_sesion": "PRÓXIMA SESIÓN — MARTES 1",
+    "proxima_sesion_txt": "Física: dinámica + Química: estequiometría.",
+    "horario": "Héctor · lunes a viernes, 9:00–13:00",
+    "temas": [
+      [
+        "Funciones",
+        2.5
+      ],
+      [
+        "Derivadas",
+        1.8
+      ],
+      [
+        "Trigonometría",
+        1.2
+      ],
+      [
+        "Problemas",
+        0.5
+      ]
+    ],
+    "fuertes": [
+      "Muy constante por las mañanas",
+      "Buen cálculo y orden"
+    ],
+    "atencion": [
+      "Física: plantear los problemas",
+      "Biología: estudiar con esquemas"
+    ],
+    "casa": [
+      "Repaso de 20 min por la tarde",
+      "Formulario de Física al día"
+    ],
+    "semanas": [
+      5.8,
+      6.3,
+      6.8,
+      7.2
+    ],
+    "metricas": [
+      [
+        "76%",
+        "Comprensión"
+      ],
+      [
+        "81%",
+        "Constancia"
+      ],
+      [
+        "62%",
+        "Autonomía"
+      ]
+    ],
+    "evol": [
+      [
+        "Resolución de problemas",
+        "Octubre: 60%",
+        "Noviembre: 79%",
+        "Plantea mejor el enunciado antes de operar."
+      ],
+      [
+        "Autonomía",
+        "Octubre: 50%",
+        "Noviembre: 62%",
+        "Cada vez necesita menos ayuda para empezar."
+      ]
+    ],
+    "conclusion": "Noviembre cierra con una tendencia muy positiva. El foco de diciembre es Física antes de los exámenes.",
+    "cal_mes": [
+      2026,
+      12
+    ],
+    "cal_titulo": "Calendario de preparación — diciembre 2026",
+    "cal_dias_sesion": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "cal_examen": 16,
+    "cal_semanas": "3 sem",
+    "cal_semanas_txt": "desde la fecha de este informe hasta los próximos exámenes",
+    "antes": "Sin refuerzo fijo",
+    "ahora": "Mañanas de lunes a viernes · Bono semanal"
+  }
+}

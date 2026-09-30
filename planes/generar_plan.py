@@ -439,6 +439,127 @@ def page_trayectoria(d, t):
 </section>'''
 
 
+def page_semana(d, t):
+    """Horario semanal tipo (mañanas) con bloques por asignatura."""
+    c = d["semana"]
+    h0, h1 = c["hora_ini"], c["hora_fin"]
+    dias = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes"]
+    asig = c["asignaturas"]
+    alto = 58  # px por hora
+    hh = lambda x: f"{int(x)}:{int(round((x - int(x)) * 60)):02d}"
+    horas = "".join(f'<div class="sh" style="top:{(h - h0) * alto}px">{h}:00</div>' for h in range(h0, h1 + 1))
+    cols = ""
+    for di, dia in enumerate(dias):
+        bl = ""
+        for (dd, ini, fin, a) in c["bloques"]:
+            if dd != di:
+                continue
+            bl += (f'<div class="sb a{a}" style="top:{(ini - h0) * alto + 3}px; height:{(fin - ini) * alto - 6}px">'
+                   f'<b>{e(asig[a])}</b><span>{hh(ini)} – {hh(fin)}</span></div>')
+        cols += f'<div class="sd"><div class="sdh">{dia}</div><div class="sdb" style="height:{(h1 - h0) * alto}px">{bl}</div></div>'
+    tot = {}
+    for (_, ini, fin, a) in c["bloques"]:
+        tot[a] = tot.get(a, 0) + (fin - ini)
+    num = lambda x: (f"{x:g}").replace(".", ",")
+    filas = ""
+    for bono in c["repartos"]:
+        celdas = "".join(f'<div class="rpc a{i}" style="flex:{h}"><b>{e(asig[i])}</b><span>{num(h)}h</span></div>' for i, h in enumerate(bono["horas"]))
+        filas += f'<div class="rpf"><em>{e(bono["nombre"])}</em><div class="rpb">{celdas}</div></div>'
+    return f'''<section class="page glow semp">
+  <div class="hdr"><img class="logo-sm" src="{LOGO_URI}"><span class="hdr-r">{e(c["etiqueta"])}</span></div><div class="rule"></div>
+  <div class="pill gold">{e(c["pill"])}</div>
+  <h2>{e(c["titulo"])}</h2>
+  <p class="lead">{e(c["lead"])}</p>
+  <div class="sgrid"><div class="shs" style="height:{(h1 - h0) * alto}px">{horas}</div>{cols}</div>
+  <div class="extra-t"><i></i><div><b>{e(c["extra_titulo"])}</b><span>{e(c["extra_texto"])}</span></div></div>
+  <div class="rps">{filas}</div>
+  {footer()}
+</section>'''
+
+
+def page_bonos_esp(d, t):
+    c = d["bonos_especiales"]
+    base = c["base"]
+    cards = ""
+    for b in c["bonos"]:
+        ph = b["precio"] / b["horas"]
+        top = f'<div class="bx-top">{e(b["etiqueta"])}</div>' if b.get("etiqueta") else ""
+        cards += f'''<div class="bx{" star" if b.get("destacado") else ""}">{top}
+  <div class="bx-h"><b>{b["horas"]}h</b><span>a la semana</span></div>
+  <div class="bx-p">{eur(b["precio"], 0)}<small>/semana</small></div>
+  <div class="bx-hora"><b>{eur(ph)}</b><span>por hora</span><em>−{pct(base - ph, base)}%</em></div>
+  <div class="bx-hora ex"><b>{eur(b["extra"], 0)}</b><span>cada hora extra</span><em>−{pct(base - b["extra"], base)}%</em></div>
+  <div class="bx-ah">Ahorráis <b>{eur(b["horas"] * base - b["precio"], 0)}</b> cada semana frente a la tarifa base</div>
+</div>'''
+    ej = "".join(f"<li>{x}</li>" for x in c["ejemplos"])
+    n = d["nombre"]
+    return f'''<section class="page">
+  <div class="hdr"><span class="hdr-l">PLAN PERSONALIZADO · {e(n.upper())}</span></div><div class="rule"></div>
+  <div class="who"><div class="av">{e(n[0])}</div><div><div class="wn">{e(n)}</div><div class="ws">{e(c["who"].upper())}</div></div></div>
+  <div class="pill gold">{e(c["pill"])}</div>
+  <h2>{e(c["titulo"])}</h2>
+  <p class="lead">{e(c["lead"])}</p>
+  <div class="bxs">{cards}</div>
+  <div class="base-l">Tarifa base online de Bachillerato: <b>{eur(base)}/h</b></div>
+  <ul class="dash ej">{ej}</ul>
+  {footer()}
+</section>'''
+
+
+def page_ahorro_esp(d, t):
+    c = d["bonos_especiales"]
+    base = c["base"]
+    mx = max(b["horas"] for b in c["bonos"]) * base
+    filas = ""
+    for b in c["bonos"]:
+        ref = b["horas"] * base
+        filas += f'''<div class="esc{" top" if b.get("destacado") else ""}">
+  <div class="eh"><b>{b["horas"]}h</b><span>a la semana</span></div>
+  <div class="eb">
+    <div class="ebr"><span>Tarifa base</span><div><i class="base" style="width:{ref / mx * 100:.1f}%"></i></div><em>{eur(ref, 0)}</em></div>
+    <div class="ebr"><span>Con el bono</span><div><i class="bono" style="width:{b["precio"] / mx * 100:.1f}%"></i></div><em>{eur(b["precio"], 0)}</em></div>
+  </div>
+  <div class="ea"><b>{eur((ref - b["precio"]) * 4, 0)}</b><span>de ahorro cada 4 semanas</span><small>{eur(ref - b["precio"], 0)} por semana</small></div>
+</div>'''
+    cmp_rows = ""
+    for h, a, b2 in c["comparativa"]:
+        mejor = "b" if b2 < a else "a"
+        cmp_rows += (f'<div class="cr"><span>{h}h</span><em class="{"w" if mejor == "a" else ""}">{eur(a, 0)}</em>'
+                     f'<em class="{"w" if mejor == "b" else ""}">{eur(b2, 0)}</em></div>')
+    return f'''<section class="page glow">
+  <div class="hdr"><img class="logo-sm" src="{LOGO_URI}"><span class="hdr-r">LO QUE AHORRÁIS</span></div><div class="rule"></div>
+  <div class="pill gold">EL DESCUENTO, EN NÚMEROS</div>
+  <h2>{e(c["ahorro_titulo"])}</h2>
+  <p class="lead">{e(c["ahorro_lead"])}</p>
+  <div class="escs">{filas}</div>
+  <div class="cmpbox"><div class="cmp-h"><b>¿Qué bono os conviene?</b><span>Coste semanal según las horas que haga</span></div>
+    <div class="cr hd"><span>Horas</span><em>Bono 15h</em><em>Bono 20h</em></div>{cmp_rows}
+    <p>{e(c["comparativa_nota"])}</p></div>
+  {footer()}
+</section>'''
+
+
+def page_resumen_esp2(d, t):
+    c = d["bonos_especiales"]
+    n = d["nombre"]
+    rows = ""
+    for b in c["bonos"]:
+        rows += f'''<div class="srow{" ref" if not b.get("destacado") else ""}"><div class="av w">{b["horas"]}</div>
+  <div class="st"><b>Bono de {b["horas"]}h semanales</b><small>Online · renovación semanal · hora extra a {eur(b["extra"], 0)}</small></div>
+  <div class="sps"><div class="sp"><small>Cada semana</small><b>{eur(b["precio"], 0)}</b></div><div class="sp"><small>Por hora</small><b>{eur(b["precio"] / b["horas"])}</b></div></div></div>'''
+    lis = "".join(f"<li>{e(x)}</li>" for x in c["resumen"])
+    return f'''<section class="page">
+  <div class="hdr"><img class="logo-sm" src="{LOGO_URI}"><span class="hdr-r">RESUMEN DEL PLAN</span></div><div class="rule"></div>
+  <div class="pill gold">RESUMEN</div>
+  <h2>Su plan, de un vistazo</h2>
+  <p class="lead">Los dos bonos de {e(n)}, de un vistazo.</p>
+  <div class="srows">{rows}</div>
+  <ul class="dash">{lis}</ul>
+  <div class="quote"><span>"</span><em>{e(c["quote"])}</em></div>
+  {footer()}
+</section>'''
+
+
 def page_quincenal(d, t):
     b = d["bono_especial"]
     base = TARIFAS[d["etapa"]]["base"]["casa_alumno"]
@@ -1081,6 +1202,58 @@ h2.c { font-size: 34px; margin: 26px 0 18px; }
 .bd.s2 { background: linear-gradient(160deg, #3a4660, #283247); border-color: #5a6a8c; } .bd.s2 em { color: #dfe6f3; }
 .bd.s3 { background: linear-gradient(160deg, #1f4a37, #163528); border-color: #3f8a64; } .bd.s3 em { color: #b5ecc9; }
 .bd.s4 { background: linear-gradient(160deg, #e8cf8e, #c9a24b); border-color: #e9d18f; } .bd.s4 b, .bd.s4 em { color: #0a1226; }
+.semp h2 { margin-top: 16px; }
+.semp .rule { margin: 18px 0 24px; }
+.sgrid { display: grid; grid-template-columns: 46px repeat(5, 1fr); gap: 8px; margin-top: 20px; }
+.shs { position: relative; margin-top: 32px; }
+.sh { position: absolute; right: 4px; transform: translateY(-50%); color: #7d7f8a; font-size: 11px; font-weight: 700; }
+.sdh { height: 26px; margin-bottom: 6px; text-align: center; font: 700 14px 'Liberation Serif', serif; color: #e7e7ea; border-bottom: 2px solid #2a3350; }
+.sdb { position: relative; border-radius: 10px; background: repeating-linear-gradient(180deg, #0e1629 0 57px, #172243 57px 58px); border: 1px solid #1d2744; }
+.sb { position: absolute; left: 4px; right: 4px; border-radius: 9px; padding: 8px 10px; border: 1px solid; }
+.sb b { display: block; font: 700 14px 'Liberation Serif', serif; }
+.sb span { font-size: 11px; font-weight: 700; opacity: 0.85; }
+.a0 { background: linear-gradient(160deg, #5a4e30, #3a3322); border-color: #9c8550; color: #f1dca0; }
+.a1 { background: linear-gradient(160deg, #1d3d74, #152c56); border-color: #2e5596; color: #b9d2f5; }
+.a2 { background: linear-gradient(160deg, #3a3060, #282046); border-color: #6a5aa8; color: #d6cdf5; }
+.a3 { background: linear-gradient(160deg, #1f4a37, #163528); border-color: #3f8a64; color: #b5ecc9; }
+.extra-t { display: flex; gap: 12px; align-items: center; margin-top: 14px; border: 1px dashed #9c8550; border-radius: 12px; padding: 11px 16px; background: #14161f; }
+.extra-t i { flex: none; width: 14px; height: 14px; border-radius: 50%; background: linear-gradient(135deg, #f6e2a6, #c9a24b); }
+.extra-t b { display: block; font: 700 14.5px 'Liberation Serif', serif; color: #e9d18f; }
+.extra-t span { color: #a49f8e; font-size: 12.5px; }
+.rps { margin-top: 12px; display: grid; gap: 8px; }
+.rpf { display: grid; grid-template-columns: 92px 1fr; align-items: center; gap: 10px; }
+.rpf em { font-style: normal; color: #e7e7ea; font: 700 13px 'Liberation Sans', Arial; }
+.rpb { display: flex; gap: 4px; }
+.rpc { border-radius: 8px; padding: 6px 10px; border: 1px solid; display: flex; justify-content: space-between; align-items: center; min-width: 0; }
+.rpc b { font: 700 12px 'Liberation Sans', Arial; white-space: nowrap; overflow: hidden; }
+.rpc span { font-size: 12px; font-weight: 700; margin-left: 6px; }
+.semp .foot { margin-top: 16px; }
+.bxs { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 30px; }
+.bx { position: relative; border: 1px solid #2a3350; border-radius: 16px; padding: 24px 24px 20px; background: #0e1629; }
+.bx.star { border-color: #c9a24b; background: linear-gradient(160deg, #2a2618, #0e1629); }
+.bx-top { position: absolute; top: -12px; left: 22px; background: #c9a24b; color: #0a1226; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; padding: 5px 12px; border-radius: 999px; }
+.bx-h { display: flex; align-items: baseline; gap: 8px; }
+.bx-h b { font: 700 40px 'Liberation Serif', serif; }
+.bx-h span { color: #a49f8e; font-size: 14px; }
+.bx-p { font: 700 30px 'Liberation Serif', serif; color: #e7e7ea; margin: 4px 0 14px; }
+.bx-p small { font: 400 13px 'Liberation Sans', Arial; color: #a49f8e; margin-left: 4px; }
+.bx-hora { display: grid; grid-template-columns: auto 1fr auto; align-items: baseline; gap: 10px; padding: 10px 0; border-top: 1px solid #1d2744; }
+.bx-hora b { font: 700 32px 'Liberation Serif', serif; color: #e9d18f; }
+.bx-hora.ex b { font-size: 22px; color: #8fb8ec; }
+.bx-hora span { color: #a49f8e; font-size: 13px; }
+.bx-hora em { font-style: normal; background: #1f4a37; color: #7fcfa0; font-weight: 700; font-size: 15px; padding: 4px 10px; border-radius: 999px; }
+.bx-ah { margin-top: 8px; color: #a49f8e; font-size: 13px; } .bx-ah b { color: #7fcfa0; }
+.base-l { margin-top: 14px; color: #7d7f8a; font-size: 12.5px; } .base-l b { color: #e7e7ea; }
+.dash.ej { margin-top: 14px; } .dash.ej li { font-size: 14px; } .dash.ej b { color: #e9d18f; }
+.cmpbox { margin-top: 18px; border: 1px solid #2a3350; border-radius: 14px; padding: 14px 20px 12px; background: #0e1629; }
+.cmp-h { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; }
+.cmp-h b { font: 700 16px 'Liberation Serif', serif; } .cmp-h span { color: #7d7f8a; font-size: 12px; }
+.cr { display: grid; grid-template-columns: 1fr 1fr 1fr; padding: 4px 0; border-top: 1px solid #1d2744; font-size: 13px; }
+.cr span { color: #a49f8e; font-weight: 700; }
+.cr em { font-style: normal; text-align: center; color: #7d7f8a; }
+.cr em.w { color: #7fcfa0; font-weight: 700; }
+.cr.hd { border-top: 0; } .cr.hd em { color: #8fb8ec; font-weight: 700; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; }
+.cmpbox p { color: #7d7f8a; font-size: 11.5px; margin-top: 6px; }
 .tray h2 { margin-top: 16px; }
 .tray .rule { margin: 18px 0 24px; }
 .tbox { margin-top: 18px; border: 1px solid #2a3350; border-radius: 16px; padding: 14px 0 12px; background: #0b1326; }
@@ -1151,7 +1324,8 @@ def main():
     tf = TARIFAS[d["etapa"]]
     for m in d["modalidades_recomendadas"]:
         assert m in tf["precios"], f"La etapa {d['etapa']} no tiene modalidad {m}"
-    pages = [page_cover(d, t)] + ([page_trayectoria(d, t)] if d.get("trayectoria") else []) \
+    pages = [page_cover(d, t)] + ([page_semana(d, t)] if d.get("semana") else []) \
+        + ([page_trayectoria(d, t)] if d.get("trayectoria") else []) \
         + ([page_mes(d, t)] if d.get("mes_ejemplo") else []) \
         + ([page_ciclos(d, t)] if d.get("ciclos") else []) \
         + ([page_camino(d, t)] if d.get("camino") else []) \
@@ -1161,7 +1335,9 @@ def main():
     for m in d.get("tarifas_mostrar") or ("online", "casa_profesor", "casa_alumno"):
         if m in tf["precios"]:
             pages.append(page_tarifas(d, t, m))
-    if d.get("bono_especial"):
+    if d.get("bonos_especiales"):
+        pages += [page_bonos_esp(d, t), page_ahorro_esp(d, t), page_resumen_esp2(d, t), page_cierre(d, t)]
+    elif d.get("bono_especial"):
         pages += [page_quincenal(d, t), page_ahorro(d, t), page_resumen_esp(d, t), page_cierre(d, t)]
     else:
         pages += [page_bono(d, t), page_resumen(d, t), page_cierre(d, t)]
