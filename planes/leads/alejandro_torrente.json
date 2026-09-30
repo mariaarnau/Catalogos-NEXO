@@ -131,11 +131,11 @@
     "who": "1º ESO · Torrente · Repaso general",
     "pill": "SUS BONOS QUINCENALES",
     "titulo": "Dos bonos especiales, a elegir",
-    "lead": "Clases presenciales en vuestra casa, de lunes a viernes, con un bono que se renueva cada dos semanas y sin permanencia. En los dos, la hora sale a 19 € en lugar de 24 €.",
+    "lead": "Clases presenciales en vuestra casa, de lunes a viernes, con un bono que se renueva cada dos semanas y sin permanencia. La hora sale a 20,50 € con el bono de 10h y a 20 € con el de 12h, en lugar de 24 €.",
     "bonos": [
       {
         "horas": 10,
-        "precio": 190,
+        "precio": 205,
         "referencias": [
           [
             "Tarifa base (10 × 24 €)",
@@ -145,7 +145,7 @@
       },
       {
         "horas": 12,
-        "precio": 228,
+        "precio": 240,
         "destacado": true,
         "etiqueta": "EL QUE MÁS AHORRA",
         "referencias": [
@@ -161,11 +161,11 @@
       }
     ],
     "ejemplos": [
-      "Bono de 10h: 1 hora cada día, de lunes a viernes, durante dos semanas → <b>190 €</b>",
-      "Bono de 12h: 1h o 1h30 cada día, durante dos semanas → <b>228 €</b>, 60 € menos que a tarifa base"
+      "Bono de 10h: 1 hora cada día, de lunes a viernes, durante dos semanas → <b>205 €</b>, 35 € menos que a tarifa base",
+      "Bono de 12h: 1h o 1h30 cada día, durante dos semanas → <b>240 €</b>, 48 € menos que a tarifa base"
     ],
     "ahorro_titulo": "Lo que ahorráis",
-    "ahorro_lead": "Comparado con la tarifa base presencial de 1º ESO (24 €/h). En los dos bonos, cada hora sale a 19 €: un 21% menos.",
+    "ahorro_lead": "Comparado con la tarifa base presencial de 1º ESO (24 €/h). Con el bono de 12h, cada hora sale a 20 €: un 17% menos.",
     "ahorro_nota": "4 semanas = 2 bonos. Cálculo frente a la tarifa base presencial de 24 €/h.",
     "resumen": [
       "Clases presenciales en vuestra casa, en Torrente, de lunes a viernes.",
