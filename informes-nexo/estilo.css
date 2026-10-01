@@ -87,3 +87,16 @@ h3 small { font-family:'Liberation Sans',sans-serif; font-weight:400; color:var(
 .cc .ax { fill:#a49f8e; font:8.4px 'Liberation Sans',sans-serif } .cc .gl { stroke:rgba(255,255,255,.09); stroke-width:1 }
 .ccl { font-size:8.2pt; font-weight:700; text-align:center; margin-top:2px }
 .cpie { position:absolute; left:0; right:0; bottom:10mm; font-size:6.8pt; letter-spacing:.16em; color:var(--dim) }
+
+.cal td.ext { background:rgba(143,184,236,.2); border:1px solid var(--blue); color:var(--blue); font-weight:700 }
+.cal td.fes { color:#6c6f7c; text-decoration:line-through; border:1px dashed rgba(255,255,255,.18) }
+.l4 { background:var(--blue) } .l5 { border:1px dashed var(--dim) }
+.pe { display:grid; gap:6px; margin-top:6px } .pe div { display:grid; grid-template-columns:110px 1fr; gap:10px; font-size:9.4pt }
+.pe b { color:var(--gold); font-size:8.6pt } .pe span { color:#d8d4c6 }
+.sem { display:grid; grid-template-columns:repeat(5,1fr); gap:8px } .sd h5 { font-size:7.4pt; letter-spacing:.12em; color:var(--mut); margin-bottom:5px; text-transform:uppercase }
+.sb { border-left:3px solid var(--c); background:rgba(255,255,255,.04); border-radius:0 6px 6px 0; padding:4px 7px; margin-bottom:5px }
+.sb b { display:block; font-size:8.4pt; color:var(--c) } .sb span { font-size:7.4pt; color:var(--mut) }
+
+.c4 .clogo { height:46px; margin:2mm 0 5mm } .c4 .ct { font-size:25pt; margin:6px 0 6mm } .c4 .ficha { margin-bottom:5mm; padding:12px 20px 10px }
+.c4 .fnom { font-size:20pt } .c4 .fgrid { margin-top:9px; padding-top:9px; gap:9px 20px } .c4 .cc { padding:10px 12px 6px } .c4 .cch b { font-size:12.5pt } .c4 .ccl { margin-top:0 }
+.rsw.cmp .rs { margin-bottom:10px } .rsw.cmp .rs p { line-height:1.5; margin-bottom:5px; font-size:9.8pt } .rsw.cmp .rs h4 { margin-bottom:4px }

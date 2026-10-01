@@ -17,7 +17,8 @@ MESES = ["", "enero", "febrero", "marzo", "abril", "mayo", "junio", "julio",
 TENDENCIA = {"sube": ("▲", "#7fcfa0"), "baja": ("▼", "#e58a7b"),
              "estable": ("■", "#8fb8ec"), "irregular": ("●", "#e9d18f")}
 ACCION = {"MANTENER": "#8fb8ec", "CONSOLIDAR": "#7fcfa0", "REFORZAR": "#e9d18f",
-          "AUMENTAR": "#e9d18f", "REDUCIR": "#a49f8e", "AÑADIR": "#c3a6ec"}
+          "AUMENTAR": "#e9d18f", "REDUCIR": "#a49f8e", "AÑADIR": "#c3a6ec", "AVANZAR": "#7fcfa0"}
+EJEMPLO = False
 
 e = lambda s: html.escape(str(s))
 
@@ -54,15 +55,19 @@ def bloque(titulo, items, cls, numerar=False):
     return f'<div class="bl {cls}"><h4>{titulo}</h4><ul>{lis}</ul></div>'
 
 
-def pag(cuerpo, cabecera="INFORME DE SEGUIMIENTO", logo=""):
-    return f"""<section class="page"><header><img src="{logo}"><em>{cabecera}</em></header>
+def pag(cuerpo, cabecera=None, logo=""):
+    cab = cabecera or ("INFORME DE SEGUIMIENTO · EJEMPLO" if EJEMPLO else "INFORME DE SEGUIMIENTO")
+    pie = "Nexo Académico · Informe de ejemplo · Datos ficticios" if EJEMPLO else "Nexo Académico · Informe personalizado"
+    return f"""<section class="page"><header><img src="{logo}"><em>{cab}</em></header>
 <div class="rule"></div>{cuerpo}
-<footer><span>Nexo Académico · Informe personalizado</span><span>nexoacademico.com</span></footer></section>"""
+<footer><span>{pie}</span><span>nexoacademico.com</span></footer></section>"""
 
 
-def calendario(anio, mes, sesiones, examenes, hoy):
+def calendario(anio, mes, sesiones, examenes, hoy, extra=(), festivos=()):
     ses = {dt.date.fromisoformat(s) for s in sesiones}
     exa = {dt.date.fromisoformat(x["fecha"]) for x in examenes}
+    ext = {dt.date.fromisoformat(x) for x in extra}
+    fes = {dt.date.fromisoformat(x) for x in festivos}
     filas = "".join(f"<th>{d}</th>" for d in "LMXJVSD")
     celdas = ""
     for sem in calendar.Calendar(0).monthdatescalendar(anio, mes):
@@ -71,12 +76,15 @@ def calendario(anio, mes, sesiones, examenes, hoy):
             if d.month != mes:
                 celdas += "<td></td>"
                 continue
-            c = "exa" if d in exa else "ses" if d in ses else "hoy" if d == hoy else ""
+            c = "exa" if d in exa else "ext" if d in ext else "fes" if d in fes else "ses" if d in ses else "hoy" if d == hoy else ""
             celdas += f'<td class="{c}">{d.day}</td>'
         celdas += "</tr>"
     return (f'<table class="cal"><tr>{filas}</tr>{celdas}</table>'
-            '<p class="leyenda"><b class="l1"></b> Sesión &nbsp; <b class="l2"></b> Examen '
-            '&nbsp; <b class="l3"></b> Fecha de este informe</p>')
+            '<p class="leyenda"><b class="l1"></b> Sesión &nbsp; '
+            + ('<b class="l4"></b> Sesión extra de tarde &nbsp; ' if ext else '')
+            + '<b class="l2"></b> Examen &nbsp; '
+            + ('<b class="l5"></b> Festivo &nbsp; ' if fes else '')
+            + '<b class="l3"></b> Fecha de este informe</p>')
 
 
 NIVELES = ["No entendido", "Con dificultad", "Bien", "Con soltura"]
@@ -100,6 +108,10 @@ def curva(pts, ymin, ymax):
 def grafica_comprension(items, color, uid, w=330, h=262):
     L, R, T, B = 88, 14, 48, 34
     ancho, n = w - L - R, len(items)
+    k = 0
+    while k < n and items[k]["v"] is None:
+        k += 1
+    T = 48 if k else 30
     x = lambda i: L + ancho * (i + 0.5) / n
     y = lambda v: T + (h - T - B) * (1 - v / 3)
     o = [f'<defs><linearGradient id="a{uid}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="{color}" stop-opacity=".38"/>'
@@ -132,18 +144,21 @@ def portada(d, logo, mes_txt, tot_ses, tot_h):
     profes = list(dict.fromkeys(a.get("profesor_completo", a["profesor"]) for a in d["asignaturas"]))
     curso = f'<p class="ccurso">{e(d["curso"])}</p>' if d.get("curso") else ""
     tarjetas = ""
+    alto = 262 if len(d["asignaturas"]) <= 2 else 176
     for n, a in enumerate(d["asignaturas"]):
         items = a.get("comprension_por_sesion")
         if not items:
             continue
         col = COLORES.get(a.get("color", "blue"), "#8fb8ec")
-        lectura = " → ".join(NIVELES[i["v"]] for i in items if i["v"] is not None)
+        val = [i["v"] for i in items if i["v"] is not None]
+        lectura = (" → ".join(NIVELES[v] for v in val) if len(val) <= 4
+                   else f"«Bien» o mejor en {sum(v >= 2 for v in val)} de {len(val)} sesiones")
         tarjetas += (f'<div class="cc"><div class="cch"><b style="color:{col}">{e(a["nombre"])}</b>'
                      f'<span>{horas(a["horas"])} · {a["sesiones"]} sesiones</span></div>'
-                     f'<p class="ccs">Comprensión del tema, sesión a sesión</p>'
-                     f'{grafica_comprension(items, col, n)}<p class="ccl" style="color:{col}">{e(lectura)}</p></div>')
-    return f"""<section class="page cover"><img class="clogo" src="{logo}">
-<div class="pill">DOCUMENTO PRIVADO · INFORME MENSUAL</div>
+                     f'<p class="ccs">{e(d.get("comprension_sub", "Comprensión del tema, sesión a sesión"))}</p>'
+                     f'{grafica_comprension(items, col, n, h=alto)}<p class="ccl" style="color:{col}">{e(lectura)}</p></div>')
+    return f"""<section class="page cover{' c4' if len(d['asignaturas']) > 2 else ''}"><img class="clogo" src="{logo}">
+<div class="pill">{"INFORME DE EJEMPLO · DATOS FICTICIOS" if d.get("ejemplo") else "DOCUMENTO PRIVADO · INFORME MENSUAL"}</div>
 <h1 class="ct">Informe de seguimiento<br><i>{e(mes_txt)}</i></h1>
 <div class="ficha"><h2 class="fnom">{e(d['alumno'])}</h2>{curso}
 <div class="fgrid">
@@ -156,6 +171,8 @@ def portada(d, logo, mes_txt, tot_ses, tot_h):
 
 
 def construir(d):
+    global EJEMPLO
+    EJEMPLO = bool(d.get("ejemplo"))
     logo = "data:image/png;base64," + base64.b64encode((AQUI / "assets/logo_nexo.png").read_bytes()).decode()
     mes, anio = d["mes"], d["anio"]
     mes_txt = f"{MESES[mes].capitalize()} {anio}"
@@ -180,9 +197,9 @@ def construir(d):
 
     # 1 · Resumen
     if d.get("resumen_parrafos"):
-        resumen_html = "".join(
+        resumen_html = '<div class="rsw%s">' % (" cmp" if len(d["resumen_parrafos"]) > 4 else "") + "".join(
             f'<div class="rs" style="--c:{COLORES.get(g.get("color", "gold"))}"><h4>{e(g["titulo"]).upper()}</h4>'
-            + "".join(f"<p>{e(t)}</p>" for t in g["parrafos"]) + "</div>" for g in d["resumen_parrafos"])
+            + "".join(f"<p>{e(t)}</p>" for t in g["parrafos"]) + "</div>" for g in d["resumen_parrafos"]) + "</div>"
     else:
         resumen_html = f'<p class="txt">{e(d["resumen"])}</p>'
     paginas.append(pag(f"""
@@ -245,16 +262,21 @@ def construir(d):
 
     # 4 · Próximo mes + propuesta
     ex = d["examenes"]
-    bloque_ex = ""
+    bloque_ex, dias = "", None
     if ex:
         x = ex[0]
-        dias = (dt.date.fromisoformat(x["fecha"]) - informe).days
-        bloque_ex = f"""<div class="card"><p class="txt"><b>Examen de {e(x['asignatura'])} ({e(x['tema'])}) el {dt.date.fromisoformat(x['fecha']).day} de {MESES[dt.date.fromisoformat(x['fecha']).month]}</b> — indicado por {e(x['fuente'])}.</p>
+        fx = dt.date.fromisoformat(x["fecha"])
+        dias = (fx - informe).days
+        if dias >= 0:
+            plan = ""
+            if d.get("plan_examen"):
+                plan = '<h3 style="margin-top:12px">Plan de preparación</h3><div class="pe">' + "".join(
+                    f"<div><b>{e(c)}</b><span>{e(t)}</span></div>" for c, t in d["plan_examen"]) + "</div>"
+            bloque_ex = f"""<div class="card"><p class="txt"><b>Examen de {e(x['asignatura'])} ({e(x['tema'])}) el {fx.day} de {MESES[fx.month]}</b> — indicado por {e(x['fuente'])}.</p>
 <p class="dias"><b>{dias} días</b> desde la fecha de este informe hasta el examen</p>
 <h3>Calendario de preparación — {sig_txt} {sig_anio}</h3>
-{calendario(sig_anio, sig_mes, d['sesiones_proximo_mes'], ex, informe)}<p class="txt">{e(d['texto_examen'])}</p></div>"""
-        if dias < 0:
-            fx = dt.date.fromisoformat(x["fecha"])
+{calendario(sig_anio, sig_mes, d['sesiones_proximo_mes'], ex, informe, d.get('sesiones_extra', []), d.get('festivos', []))}<p class="txt">{e(d['texto_examen'])}</p>{plan}</div>"""
+        else:
             bloque_ex = f'<div class="card"><p class="txt"><b>Examen de {e(x["asignatura"])} ({e(x["tema"])}) — {fx.day} de {MESES[fx.month]}</b></p><p class="txt">{e(d["texto_examen"])}</p></div>'
     bc = d.get("base_cientifica")
     base = (f'<div class="card refc"><h3>Base científica de las recomendaciones</h3><p class="nota">{e(bc["texto"])}</p>'
@@ -262,13 +284,29 @@ def construir(d):
     prop = "".join(
         f'<div class="pr"><h4>{e(p["asignatura"])} <em style="color:{ACCION.get(p["accion"], "#e9d18f")};border-color:{ACCION.get(p["accion"], "#e9d18f")}">{e(p["accion"])}</em></h4><p>{e(p["texto"])}</p></div>'
         for p in d["propuesta"])
-    paginas.append(pag(f"""
+    semana = ""
+    if d.get("semana_tipo"):
+        cols = "".join(
+            f'<div class="sd"><h5>{e(dia)}</h5>' + "".join(
+                f'<div class="sb" style="--c:{COLORES.get(c, "#e9d18f")}"><b>{e(a)}</b><span>{e(hh)}</span></div>' for a, hh, c in bl) + "</div>"
+            for dia, bl in d["semana_tipo"].items())
+        semana = f'<div class="card"><h3>Semana tipo</h3><div class="sem">{cols}</div></div>'
+    org = f"""<div class="dos"><div class="card"><h3>Organización de {MESES[mes]}</h3>{''.join(f'<p class="txt">{e(o)}</p>' for o in d['organizacion_actual'])}</div>
+<div class="card"><h3>Propuesta para {sig_txt}</h3>{prop}</div></div>"""
+    cierre = f'<p class="nota" style="margin-top:14px">Nexo Académico · Informe generado el {fecha_larga(d["fecha_informe"])}</p>'
+    if dias is not None and dias >= 0:
+        paginas.append(pag(f"""
+<div class="pill">DE CARA A {sig_txt.upper()}</div>
+<h1>Qué tener en cuenta el mes que viene</h1>{bloque_ex}{semana}""", logo=logo))
+        paginas.append(pag(f"""
+<div class="pill">PROPUESTA DE ORGANIZACIÓN</div>
+<h1>Cómo organizamos {sig_txt}</h1>{org}{base}{cierre}""", logo=logo))
+    else:
+        paginas.append(pag(f"""
 <div class="pill">DE CARA A {sig_txt.upper()}</div>
 <h1>Qué tener en cuenta el mes que viene</h1>{bloque_ex}
 <div class="pill" style="margin-top:20px">PROPUESTA DE ORGANIZACIÓN</div>
-<div class="dos"><div class="card"><h3>Organización de {MESES[mes]}</h3>{''.join(f'<p class="txt">{e(o)}</p>' for o in d['organizacion_actual'])}</div>
-<div class="card"><h3>Propuesta para {sig_txt}</h3>{prop}</div></div>
-{base}<p class="nota" style="margin-top:14px">Nexo Académico · Informe generado el {fecha_larga(d['fecha_informe'])}</p>""", logo=logo))
+{org}{semana}{base}{cierre}""", logo=logo))
 
     css = (AQUI / "estilo.css").read_text()
     return f"<!doctype html><html lang='es'><meta charset='utf-8'><style>{css}</style><body>{''.join(paginas)}</body></html>"
@@ -279,7 +317,9 @@ if __name__ == "__main__":
     salida = Path(sys.argv[2] if len(sys.argv) > 2 else
                   f"Informe {datos['alumno']} - {MESES[datos['mes']]} {datos['anio']}.pdf")
     h = salida.with_suffix(".html")
-    h.write_text(construir(datos))
+    contenido = construir(datos)
+    esperadas = contenido.count('<section class="page')
+    h.write_text(contenido)
     subprocess.run([CHROME, "--headless", "--no-sandbox", "--disable-gpu", "--no-pdf-header-footer",
                     f"--print-to-pdf={salida}", h.resolve().as_uri()], check=True, capture_output=True)
     h.unlink()
@@ -287,7 +327,6 @@ if __name__ == "__main__":
     try:
         import pymupdf
         n = len(pymupdf.open(salida))
-        esperadas = 4 + len(datos["asignaturas"])
         if n != esperadas:
             print(f"AVISO: {n} páginas en vez de {esperadas}: hay contenido desbordado. Revisar el PDF.")
     except ImportError:

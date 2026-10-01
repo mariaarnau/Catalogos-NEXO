@@ -1,0 +1,671 @@
+{
+  "ejemplo": true,
+  "alumno": "Héctor",
+  "curso": "1º Bachillerato · American School of Valencia · Clases online",
+  "profesor_completo": "Profesor de referencia asignado por Nexo",
+  "mes": 9,
+  "anio": 2026,
+  "fecha_informe": "2026-10-01",
+  "hay_mes_anterior": false,
+  "comprension_sub": "Comprensión del tema, sesión a sesión (días de septiembre)",
+  "progreso_destacado": "Matemáticas — en álgebra pasó de ayuda puntual (14 sep) a resolver solo en las tres sesiones siguientes (16, 17 y 21 sep)",
+  "resumen_parrafos": [
+    {
+      "titulo": "El mes en general",
+      "color": "gold",
+      "parrafos": [
+        "En septiembre, Héctor ha completado 39 sesiones en 18 días de clase, 72 horas en total y sin faltar a ninguna: 22 h de Matemáticas, 19 h de Física, 17 h de Química y 14 h de Biología.",
+        "Es su primer mes con Nexo, así que este informe recoge su punto de partida. Lo más sólido es la constancia (asistencia completa y «muy implicado» en 29 de las 39 sesiones) y la autonomía en Química y Matemáticas. El punto a vigilar es Física, que además tiene examen el 15 de octubre."
+      ]
+    },
+    {
+      "titulo": "Matemáticas",
+      "color": "blue",
+      "parrafos": [
+        "Dominó pronto los números reales, las potencias y los radicales, y en álgebra pasó de ayuda puntual a resolver solo en las tres sesiones siguientes.",
+        "Al empezar trigonometría (23 sep) bajó el rendimiento, como ocurre con cada contenido nuevo, y a final de mes ya remontaba: el 30 resolvió solo."
+      ]
+    },
+    {
+      "titulo": "Física",
+      "color": "purple",
+      "parrafos": [
+        "Es la asignatura con menos autonomía (50 % de media) y la que más sesiones concentra «con dificultad» (6 de 11).",
+        "Cada vez que llega un tema nuevo —MRUA, tiro parabólico, leyes de Newton— necesita ayuda constante y después va afianzando. Es el foco de octubre por el examen del día 15."
+      ]
+    },
+    {
+      "titulo": "Química",
+      "color": "green",
+      "parrafos": [
+        "La formulación inorgánica quedó consolidada y las disoluciones las resolvió solo y con soltura en las dos últimas sesiones.",
+        "El tramo más exigente fue el mol y los gases ideales (17 y 18 sep)."
+      ]
+    },
+    {
+      "titulo": "Biología",
+      "color": "gold",
+      "parrafos": [
+        "Empezó muy bien (bioelementos y agua, resueltos solo), pero la autonomía bajó del 90 % de la semana 1 al 55 % de las semanas 3 y 4 al llegar los lípidos y las proteínas, con mucho vocabulario y estructuras.",
+        "Es una asignatura de memoria: se trabaja mejor con esquemas propios y autotest que releyendo."
+      ]
+    }
+  ],
+  "asignaturas": [
+    {
+      "nombre": "Matemáticas",
+      "color": "blue",
+      "profesor": "Profesor de referencia",
+      "profesor_completo": "Profesor de referencia asignado por Nexo",
+      "horario": "Lunes y miércoles (2 h) · jueves (2 h)",
+      "sesiones": 11,
+      "horas": 22,
+      "temas": [
+        {
+          "nombre": "Números reales, potencias y radicales",
+          "horas": 6
+        },
+        {
+          "nombre": "Álgebra: polinomios, ecuaciones y sistemas",
+          "horas": 8
+        },
+        {
+          "nombre": "Trigonometría",
+          "horas": 8
+        }
+      ],
+      "puntos_fuertes": [
+        "Números reales, potencias y radicales dominados pronto: el 10 de septiembre ya los resolvía solo y con soltura",
+        "Álgebra: tras necesitar ayuda puntual el 14 de septiembre, resolvió solo en las tres sesiones siguientes (16, 17 y 21)",
+        "Muy implicado en 10 de las 11 sesiones"
+      ],
+      "a_tener_en_cuenta": [
+        "Cada tema nuevo baja el rendimiento: al empezar trigonometría (23 sep) la comprensión fue «con dificultad» y necesitó ayuda constante",
+        "Se recupera rápido: el 28 de septiembre volvió a «bien» y el 30 resolvió solo"
+      ],
+      "puntos_a_mejorar": [
+        "Autonomía al empezar contenido nuevo: la primera sesión de cada tema todavía requiere apoyo",
+        "Trigonometría: elegir la razón o identidad adecuada antes de operar"
+      ],
+      "refuerzo": [
+        "Repaso de 20 minutos por la tarde de las razones e identidades trigonométricas, tapando la fórmula e intentando recordarla",
+        "Al empezar cada tema, mirar primero un ejemplo resuelto y después hacer los ejercicios solo",
+        "Los tests dinámicos de la App de Nexo, filtrados por «Trigonometría»"
+      ],
+      "autonomia_por_sesion": [
+        {
+          "e": "7–11 sep",
+          "v": 67
+        },
+        {
+          "e": "14–18 sep",
+          "v": 78
+        },
+        {
+          "e": "21–25 sep",
+          "v": 57
+        },
+        {
+          "e": "28–30 sep",
+          "v": 73
+        }
+      ],
+      "autonomia_sub": "media por semana",
+      "autonomia_nota": "Media de la semana · Escala a partir de la respuesta del profesor: ayuda constante 25 % · ayuda puntual 55 % · resuelve solo 90 %",
+      "comprension_por_sesion": [
+        {
+          "e": "7",
+          "v": 2
+        },
+        {
+          "e": "9",
+          "v": 2
+        },
+        {
+          "e": "10",
+          "v": 3
+        },
+        {
+          "e": "14",
+          "v": 2
+        },
+        {
+          "e": "16",
+          "v": 3
+        },
+        {
+          "e": "17",
+          "v": 3
+        },
+        {
+          "e": "21",
+          "v": 2
+        },
+        {
+          "e": "23",
+          "v": 1
+        },
+        {
+          "e": "24",
+          "v": 1
+        },
+        {
+          "e": "28",
+          "v": 2
+        },
+        {
+          "e": "30",
+          "v": 2
+        }
+      ]
+    },
+    {
+      "nombre": "Física",
+      "color": "purple",
+      "profesor": "Profesor de referencia",
+      "profesor_completo": "Profesor de referencia asignado por Nexo",
+      "horario": "Lunes y miércoles (2 h) · viernes (1 h)",
+      "sesiones": 11,
+      "horas": 19,
+      "temas": [
+        {
+          "nombre": "Cinemática: MRU y MRUA",
+          "horas": 7
+        },
+        {
+          "nombre": "Cinemática: tiro parabólico y movimiento circular",
+          "horas": 5
+        },
+        {
+          "nombre": "Dinámica: leyes de Newton y rozamiento",
+          "horas": 7
+        }
+      ],
+      "puntos_fuertes": [
+        "Cuando el planteamiento está claro, resuelve con orden: el 21 de septiembre resolvió solo los ejercicios de tiro parabólico",
+        "Muy implicado en 7 de las 11 sesiones"
+      ],
+      "a_tener_en_cuenta": [
+        "Los tres miércoles de las semanas 1 a 3 (9, 16 y 23 sep) necesitó ayuda constante, coincidiendo con contenido nuevo: MRUA, tiro parabólico y leyes de Newton",
+        "Examen de Física el 15 de octubre (cinemática y dinámica): es la asignatura prioritaria de octubre"
+      ],
+      "puntos_a_mejorar": [
+        "Planteamiento de los problemas: identificar datos e incógnita y hacer el esquema (diagrama de fuerzas) antes de operar",
+        "Comprensión: «con dificultad» en 6 de las 11 sesiones",
+        "Autonomía: 50 % de media, la más baja de las cuatro asignaturas"
+      ],
+      "refuerzo": [
+        "Tres pasos fijos antes de cada problema: datos, incógnita y esquema",
+        "Formulario de Física al día: repaso de 20 minutos por la tarde",
+        "Dos problemas diarios mezclando cinemática y dinámica, en vez de bloques de un solo tipo",
+        "Los tests dinámicos de la App de Nexo, filtrados por «Cinemática» y «Dinámica»"
+      ],
+      "autonomia_por_sesion": [
+        {
+          "e": "7–11 sep",
+          "v": 45
+        },
+        {
+          "e": "14–18 sep",
+          "v": 45
+        },
+        {
+          "e": "21–25 sep",
+          "v": 57
+        },
+        {
+          "e": "28–30 sep",
+          "v": 55
+        }
+      ],
+      "autonomia_sub": "media por semana",
+      "autonomia_nota": "Media de la semana · Escala a partir de la respuesta del profesor: ayuda constante 25 % · ayuda puntual 55 % · resuelve solo 90 %",
+      "comprension_por_sesion": [
+        {
+          "e": "7",
+          "v": 2
+        },
+        {
+          "e": "9",
+          "v": 1
+        },
+        {
+          "e": "11",
+          "v": 1
+        },
+        {
+          "e": "14",
+          "v": 2
+        },
+        {
+          "e": "16",
+          "v": 1
+        },
+        {
+          "e": "18",
+          "v": 1
+        },
+        {
+          "e": "21",
+          "v": 2
+        },
+        {
+          "e": "23",
+          "v": 1
+        },
+        {
+          "e": "25",
+          "v": 2
+        },
+        {
+          "e": "28",
+          "v": 2
+        },
+        {
+          "e": "30",
+          "v": 1
+        }
+      ]
+    },
+    {
+      "nombre": "Química",
+      "color": "green",
+      "profesor": "Profesor de referencia",
+      "profesor_completo": "Profesor de referencia asignado por Nexo",
+      "horario": "Martes y jueves (2 h) · viernes (1 h)",
+      "sesiones": 10,
+      "horas": 17,
+      "temas": [
+        {
+          "nombre": "Formulación y nomenclatura inorgánica",
+          "horas": 7
+        },
+        {
+          "nombre": "El mol, masas y gases ideales",
+          "horas": 5
+        },
+        {
+          "nombre": "Disoluciones y concentración",
+          "horas": 5
+        }
+      ],
+      "puntos_fuertes": [
+        "Formulación inorgánica consolidada: de ayuda puntual (8 sep) a resolver solo en las tres sesiones siguientes (10, 11 y 15)",
+        "Disoluciones resueltas solo y con soltura en las dos últimas sesiones (25 y 29 sep)",
+        "Muy implicado en 9 de las 10 sesiones"
+      ],
+      "a_tener_en_cuenta": [
+        "El mol y los gases ideales fueron el tramo más exigente: ayuda puntual el 17 y comprensión «con dificultad» el 18 (sesión de 1 h)"
+      ],
+      "puntos_a_mejorar": [
+        "Conversión entre moles, gramos y litros: es la base de la estequiometría que viene en octubre",
+        "Plantear los cálculos de concentración (molaridad) sin ayuda desde el primer ejercicio"
+      ],
+      "refuerzo": [
+        "Diez minutos diarios de ejercicios cortos de mol, gramos y litros",
+        "Repasar la formulación cinco minutos al día, sin mirar los apuntes",
+        "Los tests dinámicos de la App de Nexo, filtrados por «El mol»"
+      ],
+      "autonomia_por_sesion": [
+        {
+          "e": "7–11 sep",
+          "v": 78
+        },
+        {
+          "e": "14–18 sep",
+          "v": 67
+        },
+        {
+          "e": "21–25 sep",
+          "v": 67
+        },
+        {
+          "e": "28–30 sep",
+          "v": 90
+        }
+      ],
+      "autonomia_sub": "media por semana",
+      "autonomia_nota": "Media de la semana · Escala a partir de la respuesta del profesor: ayuda constante 25 % · ayuda puntual 55 % · resuelve solo 90 %",
+      "comprension_por_sesion": [
+        {
+          "e": "8",
+          "v": 2
+        },
+        {
+          "e": "10",
+          "v": 3
+        },
+        {
+          "e": "11",
+          "v": 2
+        },
+        {
+          "e": "15",
+          "v": 3
+        },
+        {
+          "e": "17",
+          "v": 2
+        },
+        {
+          "e": "18",
+          "v": 1
+        },
+        {
+          "e": "22",
+          "v": 2
+        },
+        {
+          "e": "24",
+          "v": 2
+        },
+        {
+          "e": "25",
+          "v": 3
+        },
+        {
+          "e": "29",
+          "v": 3
+        }
+      ]
+    },
+    {
+      "nombre": "Biología",
+      "color": "gold",
+      "profesor": "Profesor de referencia",
+      "profesor_completo": "Profesor de referencia asignado por Nexo",
+      "horario": "Martes y viernes (2 h)",
+      "sesiones": 7,
+      "horas": 14,
+      "temas": [
+        {
+          "nombre": "Bioelementos, agua y sales minerales",
+          "horas": 4
+        },
+        {
+          "nombre": "Glúcidos y lípidos",
+          "horas": 6
+        },
+        {
+          "nombre": "Proteínas y ácidos nucleicos",
+          "horas": 4
+        }
+      ],
+      "puntos_fuertes": [
+        "Bioelementos y agua: «bien» y «con soltura», resolviendo solo (8 y 11 sep)",
+        "Proteínas y ácidos nucleicos: el 29 de septiembre volvió a «bien» y a «muy implicado»"
+      ],
+      "a_tener_en_cuenta": [
+        "Lípidos y proteínas, con mucho vocabulario y estructuras, son lo más exigente: comprensión «con dificultad» el 18 y el 25 de septiembre",
+        "La autonomía bajó del 90 % (semana 1) al 55 % (semanas 3 y 4) a medida que el contenido se vuelve más denso"
+      ],
+      "puntos_a_mejorar": [
+        "Retener vocabulario y estructuras: estudiar con esquemas y autotest en vez de releer",
+        "Implicación «normal» en 4 de las 7 sesiones (en Matemáticas y Química fue «muy implicado» casi siempre)"
+      ],
+      "refuerzo": [
+        "Un esquema propio de cada biomolécula (glúcidos, lípidos, proteínas) en una sola hoja",
+        "Autotest: tapar el esquema y reconstruirlo de memoria, repitiéndolo a los 2-3 días",
+        "Los tests dinámicos de la App de Nexo, filtrados por «Biomoléculas»"
+      ],
+      "autonomia_por_sesion": [
+        {
+          "e": "7–11 sep",
+          "v": 90
+        },
+        {
+          "e": "14–18 sep",
+          "v": 73
+        },
+        {
+          "e": "21–25 sep",
+          "v": 55
+        },
+        {
+          "e": "28–30 sep",
+          "v": 55
+        }
+      ],
+      "autonomia_sub": "media por semana",
+      "autonomia_nota": "Media de la semana · Escala a partir de la respuesta del profesor: ayuda constante 25 % · ayuda puntual 55 % · resuelve solo 90 %",
+      "comprension_por_sesion": [
+        {
+          "e": "8",
+          "v": 2
+        },
+        {
+          "e": "11",
+          "v": 3
+        },
+        {
+          "e": "15",
+          "v": 2
+        },
+        {
+          "e": "18",
+          "v": 1
+        },
+        {
+          "e": "22",
+          "v": 2
+        },
+        {
+          "e": "25",
+          "v": 1
+        },
+        {
+          "e": "29",
+          "v": 2
+        }
+      ]
+    }
+  ],
+  "kpis_conclusion": [
+    [
+      "64 %",
+      "AUTONOMÍA MEDIA"
+    ],
+    [
+      "72h",
+      "TOTAL DEDICADAS"
+    ],
+    [
+      "39/39",
+      "SESIONES SIN FALTAR"
+    ],
+    [
+      "12",
+      "TEMAS TRABAJADOS"
+    ]
+  ],
+  "temas_trabajados": 12,
+  "conclusion": "Septiembre cierra con un mes muy constante: 39 sesiones, 72 horas y asistencia completa. Química (73 % de autonomía media) y Matemáticas (68 %) avanzan con buena soltura. Física (50 %) y Biología (70 %) necesitan más apoyo: Física, por el examen del 15 de octubre y porque cada tema nuevo arranca con ayuda constante; Biología, porque la autonomía baja a medida que sube el vocabulario. Al ser el primer informe, es una foto de partida: desde el próximo mes se podrá comparar con septiembre.",
+  "evolucion_intro": "Al ser el primer informe de Héctor, todavía no hay un mes anterior con el que comparar. Desde el próximo informe esta sección comparará mes a mes; por ahora resume su evolución semana a semana durante septiembre.",
+  "evolucion": [
+    {
+      "titulo": "Matemáticas",
+      "etiqueta": "Autonomía semanal",
+      "tendencia": "irregular",
+      "estado": "sólida, con bajón en trigonometría",
+      "texto": "Media semanal: 67 % → 78 % → 57 % → 73 %. La semana 3 baja al empezar trigonometría (25 % el 23 de septiembre) y la 4 vuelve a subir: el patrón se repite con cada tema nuevo y se recupera en pocos días."
+    },
+    {
+      "titulo": "Física",
+      "etiqueta": "Autonomía semanal",
+      "tendencia": "sube",
+      "estado": "mejora leve desde la semana 3",
+      "texto": "Media semanal: 45 % → 45 % → 57 % → 55 %. Es la media más baja de las cuatro. El 21 de septiembre resolvió solo el tiro parabólico y en la última semana no hubo ninguna sesión de ayuda constante, aunque con solo cuatro semanas de datos conviene confirmarlo en octubre."
+    },
+    {
+      "titulo": "Química",
+      "etiqueta": "Autonomía semanal",
+      "tendencia": "sube",
+      "estado": "de 78 % a 90 %",
+      "texto": "Media semanal: 78 % → 67 % → 67 % → 90 %. Bajó con el mol y los gases (semanas 2 y 3) y cerró septiembre resolviendo solo y con soltura las disoluciones."
+    },
+    {
+      "titulo": "Biología",
+      "etiqueta": "Autonomía semanal",
+      "tendencia": "baja",
+      "estado": "de 90 % a 55 %",
+      "texto": "Media semanal: 90 % → 73 % → 55 % → 55 %. Con bioelementos y agua resolvía solo; con lípidos y proteínas necesita ayuda puntual y la comprensión fue «con dificultad» el 18 y el 25 de septiembre."
+    }
+  ],
+  "examenes": [
+    {
+      "asignatura": "Física",
+      "tema": "cinemática y dinámica",
+      "fecha": "2026-10-15",
+      "fuente": "Héctor, en la sesión de Física del 28 de septiembre"
+    }
+  ],
+  "sesiones_proximo_mes": [
+    "2026-10-02",
+    "2026-10-05",
+    "2026-10-06",
+    "2026-10-07",
+    "2026-10-08",
+    "2026-10-13",
+    "2026-10-14",
+    "2026-10-16",
+    "2026-10-19",
+    "2026-10-20",
+    "2026-10-21",
+    "2026-10-22",
+    "2026-10-23",
+    "2026-10-26",
+    "2026-10-27",
+    "2026-10-28",
+    "2026-10-29",
+    "2026-10-30"
+  ],
+  "sesiones_extra": [
+    "2026-10-13"
+  ],
+  "festivos": [
+    "2026-10-09",
+    "2026-10-12"
+  ],
+  "texto_examen": "Antes del examen Héctor tiene 6 sesiones de Física, 10 horas en total: 8 h de mañana (una de ellas cedida por Matemáticas el 8 de octubre) y 2 h de tarde el martes 13. El viernes 9 y el lunes 12 son festivos y no hay clase. El examen cubre los tres bloques trabajados en septiembre: MRU y MRUA, tiro parabólico y movimiento circular, y leyes de Newton.",
+  "plan_examen": [
+    [
+      "2–8 de octubre",
+      "Repasar cinemática con problemas mezclados (MRU, MRUA, tiro parabólico). El jueves 8, la hora de 12:00 a 13:00 de Matemáticas pasa a Física."
+    ],
+    [
+      "13–14 de octubre",
+      "Martes 13 por la tarde (2 h): sesión práctica con exámenes de otros años. Miércoles 14: dinámica —diagrama de fuerzas, rozamiento y planos inclinados— y repaso del formulario."
+    ],
+    [
+      "Jueves 15",
+      "Examen de Física."
+    ]
+  ],
+  "organizacion_actual": [
+    "Jornada: lunes a viernes, de 9:00 a 13:00, online · bono de 20 h semanales",
+    "Matemáticas — 22 h en 11 sesiones",
+    "Física — 19 h en 11 sesiones",
+    "Química — 17 h en 10 sesiones",
+    "Biología — 14 h en 7 sesiones",
+    "Total: 72 h en 39 sesiones, repartidas en 18 días de clase"
+  ],
+  "semana_tipo": {
+    "Lunes": [
+      [
+        "Matemáticas",
+        "9:00 – 11:00",
+        "blue"
+      ],
+      [
+        "Física",
+        "11:00 – 13:00",
+        "purple"
+      ]
+    ],
+    "Martes": [
+      [
+        "Química",
+        "9:00 – 11:00",
+        "green"
+      ],
+      [
+        "Biología",
+        "11:00 – 13:00",
+        "gold"
+      ]
+    ],
+    "Miércoles": [
+      [
+        "Matemáticas",
+        "9:00 – 11:00",
+        "blue"
+      ],
+      [
+        "Física",
+        "11:00 – 13:00",
+        "purple"
+      ]
+    ],
+    "Jueves": [
+      [
+        "Química",
+        "9:00 – 11:00",
+        "green"
+      ],
+      [
+        "Matemáticas",
+        "11:00 – 13:00",
+        "blue"
+      ]
+    ],
+    "Viernes": [
+      [
+        "Física",
+        "9:00 – 10:00",
+        "purple"
+      ],
+      [
+        "Química",
+        "10:00 – 11:00",
+        "green"
+      ],
+      [
+        "Biología",
+        "11:00 – 13:00",
+        "gold"
+      ]
+    ]
+  },
+  "propuesta": [
+    {
+      "asignatura": "Física",
+      "accion": "REFORZAR",
+      "texto": "Prioridad hasta el examen del 15 de octubre: 1 h más el jueves 8 (cedida por Matemáticas) y sesión práctica de tarde el martes 13. Después del examen, entrar en trabajo y energía."
+    },
+    {
+      "asignatura": "Matemáticas",
+      "accion": "MANTENER",
+      "texto": "Mantener las 6 h semanales (1 h menos solo el 8 de octubre) para consolidar trigonometría y empezar vectores y geometría analítica."
+    },
+    {
+      "asignatura": "Química",
+      "accion": "AVANZAR",
+      "texto": "Pasar a la estequiometría de las reacciones y al rendimiento, apoyándose en lo que ya domina: formulación y disoluciones."
+    },
+    {
+      "asignatura": "Biología",
+      "accion": "REFORZAR",
+      "texto": "Pasar de leer a recordar: esquema propio de cada biomolécula y autotest. Continuar con la estructura de la célula y sus orgánulos."
+    }
+  ],
+  "base_cientifica": {
+    "texto": "Las recomendaciones se apoyan en técnicas con evidencia sólida: la práctica espaciada y la autoevaluación (recuperar en lugar de releer) mejoran la retención a largo plazo; mezclar tipos de problemas en el repaso mejora el aprendizaje en matemáticas; y los ejemplos resueltos ayudan al empezar contenido nuevo.",
+    "referencias": [
+      "Dunlosky, J., Rawson, K. A., Marsh, E. J., Nathan, M. J., & Willingham, D. T. (2013). Improving students' learning with effective learning techniques. Psychological Science in the Public Interest, 14(1), 4–58.",
+      "Cepeda, N. J., Pashler, H., Vul, E., Wixted, J. T., & Rohrer, D. (2006). Distributed practice in verbal recall tasks: A review and quantitative synthesis. Psychological Bulletin, 132(3), 354–380.",
+      "Roediger, H. L., & Karpicke, J. D. (2006). Test-enhanced learning: Taking memory tests improves long-term retention. Psychological Science, 17(3), 249–255.",
+      "Rohrer, D., & Taylor, K. (2007). The shuffling of mathematics problems improves learning. Instructional Science, 35(6), 481–498.",
+      "Sweller, J., & Cooper, G. A. (1985). The use of worked examples as a substitute for problem solving in learning algebra. Cognition and Instruction, 2(1), 59–89."
+    ]
+  }
+}
