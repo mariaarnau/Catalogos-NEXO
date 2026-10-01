@@ -7,7 +7,7 @@ fecha,cod_profesor,curso,modalidad,horas,tarifa
 2026-09-13,PRO_26_007,ESO,Presencial,2,12
 2026-09-15,PRO_26_004,Bachillerato,Presencial,2,14
 2026-09-15,PRO_26_014,Bachillerato,Presencial,1,14
-2026-09-15,PRO_26_017,Bachillerato,Presencial,1.5,14
+2026-09-15,PRO_26_016,Bachillerato,Presencial,1.5,14
 2026-09-17,PRO_26_007,ESO,Presencial,2,12
 2026-09-17,PRO_26_007,Primaria,Presencial,1,10
 2026-09-17,PRO_26_019,ESO,Presencial,2,12
@@ -45,6 +45,5 @@ fecha,cod_profesor,curso,modalidad,horas,tarifa
 2026-09-30,PRO_26_011,Universidad,Presencial,1.5,15
 2026-09-30,PRO_26_019,Universidad,Presencial,1.5,15
 2026-09-29,PRO_26_014,Bachillerato,Presencial,1,14
-2026-09-15,PRO_26_017,Primaria,Presencial,1.5,10
 2026-09-17,PRO_26_017,Primaria,Presencial,1.5,10
 2026-09-21,PRO_26_017,Primaria,Presencial,1.5,10
