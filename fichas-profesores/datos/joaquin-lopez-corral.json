@@ -1,0 +1,28 @@
+{
+  "nombre": "Joaquín López Corral",
+  "foto": "../fotos/joaquin-lopez-corral.jpg",
+  "foto_posicion": "50% 35%",
+  "titular": "Profesor de Física y Química y Matemáticas",
+  "edad": 27,
+  "ubicacion": "Valencia",
+  "materias": ["FÍSICA Y QUÍMICA", "MATEMÁTICAS", "ESO", "BACHILLERATO"],
+  "telefono": "601 107 128",
+  "email": "joaakk@gmail.com",
+  "situacion_actual": "Profesor de Física y Química con plaza por oposición (2025) en el IES Camp de Morvedre, donde imparte clase desde 2026.",
+  "estudios": [
+    {"titulo": "Grado en Química", "detalle": "Universitat de València", "fecha": "2016 – 2020"},
+    {"titulo": "Máster en Profesor de Educación Secundaria", "detalle": "Universitat de València", "fecha": "2020 – 2021"},
+    {"titulo": "Oposiciones de Física y Química", "detalle": "Aprobadas y con plaza · Comunitat Valenciana", "fecha": "2025"}
+  ],
+  "idiomas": [
+    {"idioma": "Castellano", "nivel": "Nativo"},
+    {"idioma": "Valenciano", "nivel": "C1"},
+    {"idioma": "Inglés", "nivel": "B1"}
+  ],
+  "experiencia_docente": [
+    {"titulo": "Profesor de Física y Química · IES Camp de Morvedre", "detalle": "2.º, 3.º y 4.º de ESO. Destino obtenido por oposición.", "fecha": "2026 – actualidad"},
+    {"titulo": "Profesor de Física y Química · IES Altos Hornos", "detalle": "3.º y 4.º de ESO y 1.º de Bachillerato; Química en 2.º de Bachillerato.", "fecha": "2025 – 2026"},
+    {"titulo": "Profesor de Física y Química y Matemáticas · Colegio Luz Casanova", "detalle": "Física y Química en 2.º, 3.º y 4.º de ESO; Matemáticas en 3.º y 4.º de ESO.", "fecha": "2021 – 2025"},
+    {"titulo": "Clases particulares", "detalle": "Física y Química en toda la ESO y Bachillerato; Matemáticas hasta 4.º de ESO.", "fecha": "10 años"}
+  ]
+}
