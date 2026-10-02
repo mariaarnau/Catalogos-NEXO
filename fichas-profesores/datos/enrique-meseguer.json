@@ -1,0 +1,33 @@
+{
+  "nombre": "Enrique Meseguer Fernández de Sevilla",
+  "foto": "../fotos/enrique-meseguer.png",
+  "foto_posicion": "50% 40%",
+  "titular": "Ingeniero Multimedia y programador",
+  "edad": 25,
+  "ubicacion": "Valencia",
+  "materias": ["PROGRAMACIÓN", "C++", "PYTHON"],
+  "telefono": "+34 648 790 665",
+  "email": "eiwa5000@gmail.com",
+  "situacion_actual": "Recién titulado del Máster Universitario en Artes Visuales y Multimedia por la Universitat Politècnica de València (2026), con nota final de 9,5.",
+  "estudios": [
+    {"titulo": "Máster en Artes Visuales y Multimedia", "detalle": "Universitat Politècnica de València · Nota 9,5 · TFM calificado con 10", "fecha": "2024 – 2026"},
+    {"titulo": "Grado en Ingeniería Multimedia", "detalle": "Universitat de València (ETSE) · Nota 8,26", "fecha": "2018 – 2022"}
+  ],
+  "idiomas": [
+    {"idioma": "Español", "nivel": "Nativo"},
+    {"idioma": "Inglés", "nivel": "C1"},
+    {"idioma": "Alemán", "nivel": "A2"}
+  ],
+  "aptitudes": [
+    "Afinidad por la enseñanza",
+    "Amable y paciente",
+    "Buenas dotes de comunicación",
+    "Resolución de problemas",
+    "Pensamiento creativo",
+    "Responsabilidad",
+    "Programación en C++, C#, Python y Java",
+    "Desarrollo web (HTML, CSS, JavaScript)",
+    "Desarrollo de videojuegos (Godot, Unity)",
+    "Modelado 3D y edición de vídeo"
+  ]
+}
