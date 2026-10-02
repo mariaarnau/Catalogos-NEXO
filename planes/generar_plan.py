@@ -576,6 +576,63 @@ def page_resumen_esp2(d, t):
 </section>'''
 
 
+def page_pasos(d, t):
+    """Recomendación en dos pasos: bono de prueba y después bono mensual a elegir."""
+    c = d["pasos"]
+    base = c["base"]
+    n = d["nombre"]
+    p1 = c["prueba"]
+    ph1 = p1["precio"] / p1["horas"]
+    cards = ""
+    for b in c["opciones"]:
+        ph = b["precio"] / b["horas"]
+        top = f'<div class="bx-top">{e(b["etiqueta"])}</div>' if b.get("etiqueta") else ""
+        cards += f'''<div class="bx{" star" if b.get("destacado") else ""}">{top}
+  <div class="bx-h"><b>{b["horas"]}h</b><span>al mes · {e(b["frecuencia"])}</span></div>
+  <div class="bx-p">{eur(b["precio"], 0)}<small>/mes</small></div>
+  <div class="bx-hora"><b>{eur(ph)}</b><span>por hora</span><em>−{pct(base - ph, base)}%</em></div>
+  <div class="bx-ref"><span>Tarifa base ({b["horas"]} × {eur(base, 0)})</span><s>{eur(b["horas"] * base, 0)}</s></div>
+  <div class="bx-ah">Ahorráis <b>{eur(b["horas"] * base - b["precio"], 0)}</b> al mes frente a la tarifa base</div>
+</div>'''
+    return f'''<section class="page pasosp">
+  <div class="hdr"><span class="hdr-l">PLAN PERSONALIZADO · {e(n.upper())}</span></div><div class="rule"></div>
+  <div class="who"><div class="av">{e(n[0])}</div><div><div class="wn">{e(n)}</div><div class="ws">{e(c["who"].upper())}</div></div></div>
+  <h2>{e(c["titulo"])}</h2>
+  <p class="lead">{e(c["lead"])}</p>
+  <div class="paso1">
+    <div class="pnum">1</div>
+    <div class="p1t"><small>PASO 1 · PARA EMPEZAR</small><b>Bono de prueba de {p1["horas"]}h</b><span>{e(p1["texto"])}</span></div>
+    <div class="p1p"><s>{eur(p1["tachado"], 0)}</s><b>{eur(p1["precio"], 0)}</b><span>{eur(ph1)}/h · precio nuevos alumnos</span></div>
+  </div>
+  <div class="paso2h"><div class="pnum s">2</div><div><small>PASO 2 · DESPUÉS</small><b>{e(c["paso2_titulo"])}</b></div></div>
+  <div class="bxs">{cards}</div>
+  <div class="base-l">{e(c["base_txt"])}: <b>{eur(base)}/h</b></div>
+  {footer()}
+</section>'''
+
+
+def page_resumen_pasos(d, t):
+    c = d["pasos"]
+    n = d["nombre"]
+    p1 = c["prueba"]
+    rows = (f'''<div class="srow"><div class="av w">1</div><div class="st"><b>Paso 1 — Bono de prueba de {p1["horas"]}h</b><small>{e(c["modalidad_txt"])} · para empezar</small></div>
+  <div class="sps"><div class="sp"><small>Una vez</small><b>{eur(p1["precio"], 0)}</b></div></div></div>''')
+    for b in c["opciones"]:
+        rows += f'''<div class="srow ref"><div class="av w">2</div><div class="st"><b>Paso 2 — Bono de {b["horas"]}h al mes</b><small>{e(c["modalidad_txt"])} · {e(b["frecuencia"])}</small></div>
+  <div class="sps"><div class="sp"><small>Al mes</small><b>{eur(b["precio"], 0)}</b></div><div class="sp"><small>Por hora</small><b>{eur(b["precio"] / b["horas"])}</b></div></div></div>'''
+    lis = "".join(f"<li>{e(x)}</li>" for x in c["resumen"])
+    return f'''<section class="page">
+  <div class="hdr"><img class="logo-sm" src="{LOGO_URI}"><span class="hdr-r">RESUMEN DEL PLAN</span></div><div class="rule"></div>
+  <div class="pill gold">RESUMEN</div>
+  <h2>Su plan, de un vistazo</h2>
+  <p class="lead">El plan de {e(n)}, paso a paso.</p>
+  <div class="srows">{rows}</div>
+  <ul class="dash">{lis}</ul>
+  <div class="quote"><span>"</span><em>{e(c["quote"])}</em></div>
+  {footer()}
+</section>'''
+
+
 def page_quincenal(d, t):
     b = d["bono_especial"]
     base = TARIFAS[d["etapa"]]["base"]["casa_alumno"]
@@ -1238,6 +1295,22 @@ h2.c { font-size: 34px; margin: 26px 0 18px; }
 .a4 { background: linear-gradient(160deg, #5c2f3c, #3e2029); border-color: #a85a70; color: #f5c9d5; }
 .bx-ref { display: flex; justify-content: space-between; color: #7d7f8a; font-size: 13px; padding: 3px 0; }
 .bx-ref s { color: #a49f8e; }
+.pasosp .who { margin-bottom: 10px; }
+.pasosp h2 { margin-top: 10px; }
+.paso1 { display: grid; grid-template-columns: 56px 1fr auto; gap: 18px; align-items: center; margin-top: 22px; border: 1px solid #c9a24b; border-radius: 16px; padding: 18px 24px; background: linear-gradient(160deg, #2a2618, #0e1629); }
+.pnum { width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font: italic 700 24px 'Liberation Serif', serif; background: linear-gradient(135deg, #f6e2a6, #c9a24b); color: #0a1226; }
+.pnum.s { width: 40px; height: 40px; font-size: 20px; background: #1a2d52; color: #8fb8ec; }
+.p1t small, .paso2h small { display: block; font-size: 10.5px; font-weight: 700; letter-spacing: 0.14em; color: #e9d18f; }
+.p1t b { display: block; font: 700 22px 'Liberation Serif', serif; margin: 3px 0 4px; }
+.p1t span { color: #a49f8e; font-size: 13px; line-height: 1.35; }
+.p1p { text-align: right; }
+.p1p s { display: block; color: #7d7f8a; font-size: 14px; }
+.p1p b { display: block; font: 700 40px 'Liberation Serif', serif; color: #e9d18f; line-height: 1.05; }
+.p1p span { color: #a49f8e; font-size: 12px; }
+.paso2h { display: flex; gap: 14px; align-items: center; margin-top: 26px; }
+.paso2h small { color: #8fb8ec; }
+.paso2h b { font: 700 19px 'Liberation Serif', serif; }
+.pasosp .bxs { margin-top: 22px; }
 .extra-t { display: flex; gap: 12px; align-items: center; margin-top: 14px; border: 1px dashed #9c8550; border-radius: 12px; padding: 11px 16px; background: #14161f; }
 .extra-t i { flex: none; width: 14px; height: 14px; border-radius: 50%; background: linear-gradient(135deg, #f6e2a6, #c9a24b); }
 .extra-t b { display: block; font: 700 14.5px 'Liberation Serif', serif; color: #e9d18f; }
@@ -1357,7 +1430,9 @@ def main():
     for m in d.get("tarifas_mostrar") or ("online", "casa_profesor", "casa_alumno"):
         if m in tf["precios"]:
             pages.append(page_tarifas(d, t, m))
-    if d.get("bonos_especiales"):
+    if d.get("pasos"):
+        pages += [page_pasos(d, t), page_resumen_pasos(d, t), page_cierre(d, t)]
+    elif d.get("bonos_especiales"):
         pages += [page_bonos_esp(d, t), page_ahorro_esp(d, t), page_resumen_esp2(d, t), page_cierre(d, t)]
     elif d.get("bono_especial"):
         pages += [page_quincenal(d, t), page_ahorro(d, t), page_resumen_esp(d, t), page_cierre(d, t)]
