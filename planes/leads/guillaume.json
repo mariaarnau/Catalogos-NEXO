@@ -1,12 +1,12 @@
 {
   "nombre": "Guillaume",
-  "etapa": "primaria",
-  "curso": "Primaria",
+  "etapa": "eso",
+  "curso": "2º ESO",
   "asignaturas": [
     "Repaso general"
   ],
   "voz": "familia",
-  "cover_card_sub": "Primaria · Clases en casa",
+  "cover_card_sub": "2º ESO · Clases en casa",
   "bonos_recomendados": [
     {
       "horas": 12,
@@ -29,13 +29,13 @@
     "etiqueta": "SU SEMANA",
     "pill": "ORGANIZACIÓN SEMANAL",
     "titulo": "Tres tardes a la semana",
-    "lead": "Lunes, miércoles y jueves, de 17:00 a 18:00, en vuestra casa. Siempre el mismo día y a la misma hora: la rutina le ayuda a centrarse.",
+    "lead": "Lunes, miércoles y viernes, de 17:00 a 18:00, en vuestra casa. Siempre el mismo día y a la misma hora: la rutina le ayuda a centrarse.",
     "hora_ini": 17,
     "hora_fin": 18,
     "alto": 150,
     "asignaturas": [
       "Matemáticas",
-      "Lengua y lectura",
+      "Lengua",
       "Inglés y deberes"
     ],
     "bloques": [
@@ -52,7 +52,7 @@
         1
       ],
       [
-        3,
+        4,
         17,
         18,
         2
@@ -72,8 +72,8 @@
     ]
   },
   "bonos_especiales": {
-    "base": 22,
-    "base_txt": "Tarifa base presencial de Primaria",
+    "base": 24,
+    "base_txt": "Tarifa base presencial de 2º ESO",
     "modalidad_txt": "Presencial en casa",
     "periodo": {
       "corto": "/mes",
@@ -84,45 +84,45 @@
       "n4": 1,
       "ahorro4": "de ahorro al mes"
     },
-    "who": "Primaria · Repaso general · Clases en casa",
+    "who": "2º ESO · Repaso general · Clases en casa",
     "pill": "SU BONO MENSUAL",
     "titulo": "Dos bonos, a elegir",
     "lead": "Clases presenciales en vuestra casa, sin permanencia. El bono de 12h encaja con sus tres clases semanales; el de 16h deja margen para alguna clase extra antes de un examen y sale más barato por hora.",
     "bonos": [
       {
         "horas": 12,
-        "precio": 250,
+        "precio": 270,
         "destacado": true,
         "etiqueta": "SE AJUSTA A SUS 3 CLASES",
         "referencias": [
           [
-            "Tarifa base (12 × 22 €)",
-            264
+            "Tarifa base (12 × 24 €)",
+            288
           ]
         ]
       },
       {
         "horas": 16,
-        "precio": 315,
+        "precio": 325,
         "etiqueta": "MEJOR PRECIO POR HORA",
         "referencias": [
           [
-            "Tarifa base (16 × 22 €)",
-            352
+            "Tarifa base (16 × 24 €)",
+            384
           ]
         ]
       }
     ],
     "ejemplos": [
-      "Bono de 12h: tres clases de 1h a la semana durante el mes → <b>250 €</b>",
-      "Bono de 16h: tres clases semanales y horas extra para repasar antes de los exámenes → <b>315 €</b>"
+      "Bono de 12h: tres clases de 1h a la semana durante el mes → <b>270 €</b>",
+      "Bono de 16h: tres clases semanales y horas extra para repasar antes de los exámenes → <b>325 €</b>"
     ],
     "ahorro_titulo": "Lo que ahorráis",
-    "ahorro_lead": "Comparado con la tarifa base presencial de Primaria (22 €/h). Con el bono de 16h, cada hora sale a 19,69 €.",
-    "ahorro_nota": "Cálculo frente a la tarifa base presencial de Primaria de 22 €/h.",
+    "ahorro_lead": "Comparado con la tarifa base presencial de 2º ESO (24 €/h). Con el bono de 16h, cada hora sale a 20,31 €.",
+    "ahorro_nota": "Cálculo frente a la tarifa base presencial de 2º ESO de 24 €/h.",
     "resumen": [
-      "Tres clases a la semana en vuestra casa: lunes, miércoles y jueves, de 17:00 a 18:00.",
-      "Repaso general: Matemáticas, Lengua, lectura e Inglés.",
+      "Tres clases a la semana en vuestra casa: lunes, miércoles y viernes, de 17:00 a 18:00.",
+      "Repaso general de 2º ESO: Matemáticas, Lengua e Inglés, y deberes del resto de asignaturas.",
       "Sesiones cortas y estructuradas, adaptadas a su ritmo.",
       "Sin permanencia: cada mes se puede ajustar el bono."
     ],
@@ -150,40 +150,40 @@
         7.2
       ]
     ],
-    "mayor_progreso": "Matemáticas — las sumas llevando pasaron de necesitar ayuda a resolverse solo",
-    "resumen": "En noviembre, Guillaume ha hecho 12 clases sin faltar a ninguna. En Matemáticas ya resuelve solo las sumas llevando. En Lengua lee con más seguridad y entiende mejor lo que lee. Diciembre: seguir con la misma rutina y reforzar las restas.",
+    "mayor_progreso": "Matemáticas — las ecuaciones de primer grado pasaron de necesitar ayuda a resolverse solo",
+    "resumen": "En noviembre, Guillaume ha hecho 12 clases sin faltar a ninguna. En Matemáticas ya resuelve solo las ecuaciones de primer grado. En Lengua comprende mejor los textos y organiza mejor sus respuestas. Diciembre: seguir con la misma rutina y reforzar los problemas.",
     "proxima_sesion": "PRÓXIMA CLASE — LUNES 30",
-    "proxima_sesion_txt": "Restas llevando con material manipulativo.",
-    "horario": "Lunes, miércoles y jueves, 17:00–18:00",
+    "proxima_sesion_txt": "Problemas con ecuaciones, paso a paso.",
+    "horario": "Lunes, miércoles y viernes, 17:00–18:00",
     "temas": [
       [
-        "Sumas llevando",
+        "Ecuaciones",
         2.5
       ],
       [
-        "Restas",
+        "Fracciones",
         1.8
       ],
       [
-        "Problemas",
+        "Proporcionalidad",
         1.2
       ],
       [
-        "Cálculo mental",
+        "Problemas",
         0.5
       ]
     ],
     "fuertes": [
       "Muy participativo en clase",
-      "Sumas llevando consolidadas"
+      "Ecuaciones de primer grado consolidadas"
     ],
     "atencion": [
-      "Restas: le cuesta llevar",
+      "Problemas: plantear la ecuación",
       "Mantener la atención al final"
     ],
     "casa": [
-      "10 minutos de lectura al día",
-      "Juego de cálculo mental"
+      "15 minutos de repaso al día",
+      "Agenda con las fechas de exámenes"
     ],
     "semanas": [
       5.8,
@@ -219,7 +219,7 @@
         "Empieza solo las tareas más a menudo."
       ]
     ],
-    "conclusion": "Noviembre cierra con una tendencia muy positiva. En diciembre seguimos con la misma rutina y reforzamos las restas.",
+    "conclusion": "Noviembre cierra con una tendencia muy positiva. En diciembre seguimos con la misma rutina y reforzamos los problemas.",
     "cal_mes": [
       2026,
       12
@@ -228,7 +228,7 @@
     "cal_dias_sesion": [
       0,
       2,
-      3
+      4
     ],
     "cal_examen": 16,
     "cal_semanas": "3 sem",
