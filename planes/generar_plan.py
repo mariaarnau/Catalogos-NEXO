@@ -481,7 +481,7 @@ def page_semana(d, t):
 def periodo(c):
     # Textos del periodo del bono (por defecto, semanal)
     return {"corto": "/semana", "largo": "a la semana", "cada": "cada semana", "cap": "Cada semana",
-            "renov": "renovación semanal", "n4": 4, **c.get("periodo", {})}
+            "renov": "renovación semanal", "n4": 4, "ahorro4": "de ahorro cada 4 semanas", **c.get("periodo", {})}
 
 
 def page_bonos_esp(d, t):
@@ -529,7 +529,7 @@ def page_ahorro_esp(d, t):
     <div class="ebr"><span>Tarifa base</span><div><i class="base" style="width:{ref / mx * 100:.1f}%"></i></div><em>{eur(ref, 0)}</em></div>
     <div class="ebr"><span>Con el bono</span><div><i class="bono" style="width:{b["precio"] / mx * 100:.1f}%"></i></div><em>{eur(b["precio"], 0)}</em></div>
   </div>
-  <div class="ea"><b>{eur((ref - b["precio"]) * P["n4"], 0)}</b><span>de ahorro cada 4 semanas</span><small>{eur(ref - b["precio"], 0)} {P["cada"]}</small></div>
+  <div class="ea"><b>{eur((ref - b["precio"]) * P["n4"], 0)}</b><span>{P["ahorro4"]}</span>{"" if P["n4"] == 1 else f'<small>{eur(ref - b["precio"], 0)} {P["cada"]}</small>'}</div>
 </div>'''
     cmp_rows = ""
     for h, a, b2 in c.get("comparativa", []):
@@ -1142,8 +1142,8 @@ h2.c { font-size: 34px; margin: 26px 0 18px; }
 .ph-wrap { text-align: center; }
 .ph-wrap h5 { font: 700 14.5px 'Liberation Sans', Arial; margin-top: 12px; }
 .ph-wrap p { color: #8a8a93; font-size: 12.5px; line-height: 1.2; margin-top: 3px; }
-.phone { position: relative; height: 415px; background: #1d2747; border-radius: 26px; padding: 11px 10px 12px; }
-.notch { position: absolute; top: 11px; left: 50%; transform: translateX(-50%); width: 64px; height: 6px; background: #1d2747; border-radius: 0 0 6px 6px; z-index: 2; }
+.phone { position: relative; height: 415px; background: #f4f1e8; border: 1px solid #d9d4c4; border-radius: 26px; padding: 11px 10px 12px; }
+.notch { position: absolute; top: 11px; left: 50%; transform: translateX(-50%); width: 64px; height: 6px; background: #f4f1e8; border-radius: 0 0 6px 6px; z-index: 2; }
 .scr.dk { background: linear-gradient(170deg, #0d1222, #0b1530 60%, #10204a); color: #e7e7ea; padding: 14px 8px 8px; }
 .rs-logo { display: block; width: 46px; margin: 4px auto 6px; }
 .rs-pill { width: max-content; margin: 0 auto; border: 0.6px solid #c9a24b; color: #e9d18f; border-radius: 99px; padding: 1.5px 5px; font-size: 4.3px; font-weight: 700; letter-spacing: 0.05em; }

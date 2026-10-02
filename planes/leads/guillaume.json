@@ -1,0 +1,239 @@
+{
+  "nombre": "Guillaume",
+  "etapa": "primaria",
+  "curso": "Primaria",
+  "asignaturas": [
+    "Repaso general"
+  ],
+  "voz": "familia",
+  "cover_card_sub": "Primaria · Clases en casa",
+  "bonos_recomendados": [
+    {
+      "horas": 12,
+      "frecuencia": "3 clases a la semana"
+    }
+  ],
+  "modalidades_recomendadas": [
+    "casa_alumno"
+  ],
+  "tarifas_mostrar": [
+    "casa_alumno"
+  ],
+  "textos": {
+    "cover_sub": "Un acompañamiento diseñado específicamente para Guillaume, con repaso general y clases adaptadas a su ritmo.",
+    "p2_sub": "Un profesor de referencia para todas sus asignaturas, con sesiones cortas y bien estructuradas, adaptadas a su ritmo y a su atención.",
+    "c1": "Guillaume tiene su profesor de referencia asignado, con tres clases fijas cada semana en vuestra casa.",
+    "p10_sub": "Escríbenos para confirmar el bono de cada mes o cualquier ajuste de horas de Guillaume."
+  },
+  "semana": {
+    "etiqueta": "SU SEMANA",
+    "pill": "ORGANIZACIÓN SEMANAL",
+    "titulo": "Tres tardes a la semana",
+    "lead": "Lunes, miércoles y jueves, de 17:00 a 18:00, en vuestra casa. Siempre el mismo día y a la misma hora: la rutina le ayuda a centrarse.",
+    "hora_ini": 17,
+    "hora_fin": 18,
+    "alto": 150,
+    "asignaturas": [
+      "Matemáticas",
+      "Lengua y lectura",
+      "Inglés y deberes"
+    ],
+    "bloques": [
+      [
+        0,
+        17,
+        18,
+        0
+      ],
+      [
+        2,
+        17,
+        18,
+        1
+      ],
+      [
+        3,
+        17,
+        18,
+        2
+      ]
+    ],
+    "extra_titulo": "Así es cada clase de una hora",
+    "extra_texto": "Bloques cortos de unos 20 minutos con una pausa entre ellos, y los últimos minutos para repasar lo aprendido y organizar los deberes.",
+    "repartos": [
+      {
+        "nombre": "Cada semana · 3h",
+        "horas": [
+          1,
+          1,
+          1
+        ]
+      }
+    ]
+  },
+  "bonos_especiales": {
+    "base": 22,
+    "base_txt": "Tarifa base presencial de Primaria",
+    "modalidad_txt": "Presencial en casa",
+    "periodo": {
+      "corto": "/mes",
+      "largo": "al mes",
+      "cada": "al mes",
+      "cap": "Al mes",
+      "renov": "renovación mensual",
+      "n4": 1,
+      "ahorro4": "de ahorro al mes"
+    },
+    "who": "Primaria · Repaso general · Clases en casa",
+    "pill": "SU BONO MENSUAL",
+    "titulo": "Dos bonos, a elegir",
+    "lead": "Clases presenciales en vuestra casa, sin permanencia. El bono de 12h encaja con sus tres clases semanales; el de 16h deja margen para alguna clase extra antes de un examen y sale más barato por hora.",
+    "bonos": [
+      {
+        "horas": 12,
+        "precio": 250,
+        "destacado": true,
+        "etiqueta": "SE AJUSTA A SUS 3 CLASES",
+        "referencias": [
+          [
+            "Tarifa base (12 × 22 €)",
+            264
+          ]
+        ]
+      },
+      {
+        "horas": 16,
+        "precio": 315,
+        "etiqueta": "MEJOR PRECIO POR HORA",
+        "referencias": [
+          [
+            "Tarifa base (16 × 22 €)",
+            352
+          ]
+        ]
+      }
+    ],
+    "ejemplos": [
+      "Bono de 12h: tres clases de 1h a la semana durante el mes → <b>250 €</b>",
+      "Bono de 16h: tres clases semanales y horas extra para repasar antes de los exámenes → <b>315 €</b>"
+    ],
+    "ahorro_titulo": "Lo que ahorráis",
+    "ahorro_lead": "Comparado con la tarifa base presencial de Primaria (22 €/h). Con el bono de 16h, cada hora sale a 19,69 €.",
+    "ahorro_nota": "Cálculo frente a la tarifa base presencial de Primaria de 22 €/h.",
+    "resumen": [
+      "Tres clases a la semana en vuestra casa: lunes, miércoles y jueves, de 17:00 a 18:00.",
+      "Repaso general: Matemáticas, Lengua, lectura e Inglés.",
+      "Sesiones cortas y estructuradas, adaptadas a su ritmo.",
+      "Sin permanencia: cada mes se puede ajustar el bono."
+    ],
+    "quote": "Un plan a medida para que Guillaume aprenda con calma, constancia y confianza."
+  },
+  "informe_ejemplo": {
+    "asignatura": "Matemáticas",
+    "mes": "Noviembre 2026",
+    "comparado": "octubre",
+    "nota": "7,0",
+    "sesiones": 12,
+    "horas": "12h",
+    "destrezas_label": "Asignaturas seguidas",
+    "barras": [
+      [
+        "Matemáticas",
+        7.0
+      ],
+      [
+        "Lengua",
+        6.8
+      ],
+      [
+        "Inglés",
+        7.2
+      ]
+    ],
+    "mayor_progreso": "Matemáticas — las sumas llevando pasaron de necesitar ayuda a resolverse solo",
+    "resumen": "En noviembre, Guillaume ha hecho 12 clases sin faltar a ninguna. En Matemáticas ya resuelve solo las sumas llevando. En Lengua lee con más seguridad y entiende mejor lo que lee. Diciembre: seguir con la misma rutina y reforzar las restas.",
+    "proxima_sesion": "PRÓXIMA CLASE — LUNES 30",
+    "proxima_sesion_txt": "Restas llevando con material manipulativo.",
+    "horario": "Lunes, miércoles y jueves, 17:00–18:00",
+    "temas": [
+      [
+        "Sumas llevando",
+        2.5
+      ],
+      [
+        "Restas",
+        1.8
+      ],
+      [
+        "Problemas",
+        1.2
+      ],
+      [
+        "Cálculo mental",
+        0.5
+      ]
+    ],
+    "fuertes": [
+      "Muy participativo en clase",
+      "Sumas llevando consolidadas"
+    ],
+    "atencion": [
+      "Restas: le cuesta llevar",
+      "Mantener la atención al final"
+    ],
+    "casa": [
+      "10 minutos de lectura al día",
+      "Juego de cálculo mental"
+    ],
+    "semanas": [
+      5.8,
+      6.3,
+      6.8,
+      7.2
+    ],
+    "metricas": [
+      [
+        "76%",
+        "Comprensión"
+      ],
+      [
+        "81%",
+        "Constancia"
+      ],
+      [
+        "62%",
+        "Autonomía"
+      ]
+    ],
+    "evol": [
+      [
+        "Atención",
+        "Octubre: 60%",
+        "Noviembre: 79%",
+        "Aguanta mejor los bloques de trabajo."
+      ],
+      [
+        "Autonomía",
+        "Octubre: 50%",
+        "Noviembre: 62%",
+        "Empieza solo las tareas más a menudo."
+      ]
+    ],
+    "conclusion": "Noviembre cierra con una tendencia muy positiva. En diciembre seguimos con la misma rutina y reforzamos las restas.",
+    "cal_mes": [
+      2026,
+      12
+    ],
+    "cal_titulo": "Calendario — diciembre 2026",
+    "cal_dias_sesion": [
+      0,
+      2,
+      3
+    ],
+    "cal_examen": 16,
+    "cal_semanas": "3 sem",
+    "cal_semanas_txt": "hasta los exámenes de la 1ª evaluación",
+    "antes": "Sin refuerzo fijo",
+    "ahora": "Tres clases semanales en casa"
+  }
+}
