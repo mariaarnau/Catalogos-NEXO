@@ -831,13 +831,105 @@ def phones(d):
                    f'<h5>{e(a)}</h5><p>{e(b)}</p></div>' for s, (a, b) in zip([p1, p2, p3, p4], caps))
 
 
+def phones_real(d):
+    """Pantallas de móvil con el formato real de los informes mensuales de NEXO."""
+    r = dict(d["informe_ejemplo"])
+    r.setdefault("asignatura", lista_asig(d["asignaturas"]) or r["barras"][0][0])
+    n = d.get("nombre_completo") or d["nombre"] or d["curso"]
+    prof = d.get("profesor_completo") or d.get("profesor") or "Profesor de referencia"
+    subs = [b[0] for b in r["barras"]]
+    mes = r["mes"]
+    mi = next((i for i, m in enumerate(MESES_ES) if m and mes.lower().startswith(m.lower())), 11)
+    sig = MESES_ES[mi % 12 + 1].lower()
+    abbr = MESES_ES[mi][:3].lower()
+    niveles = ["No entendido", "Con dificultad", "Bien", "Con soltura"]
+    patrones = [[1, 2, 2, 3], [2, 1, 2, 2]]
+    cols = ["#8fb8ec", "#7fcfa0"]
+
+    def chart(i):
+        pts = patrones[i % 2]
+        W, H, x0, x1, yt, yb = 150, 70, 30, 144, 6, 58
+        X = lambda k: x0 + (x1 - x0) * k / 3
+        Y = lambda v: yb - (yb - yt) * v / 3
+        grid = "".join(f'<line x1="{x0}" y1="{Y(v):.1f}" x2="{x1}" y2="{Y(v):.1f}" stroke="#1d2744" stroke-width="0.6"/>'
+                       f'<text x="{x0 - 2}" y="{Y(v) + 1.5:.1f}" text-anchor="end" class="rk">{niveles[v]}</text>' for v in range(4))
+        poly = " ".join(f"{X(k):.1f},{Y(v):.1f}" for k, v in enumerate(pts))
+        area = f"{X(0):.1f},{yb} " + poly + f" {X(3):.1f},{yb}"
+        dots = "".join(f'<circle cx="{X(k):.1f}" cy="{Y(v):.1f}" r="2.2" fill="#0b1226" stroke="{cols[i % 2]}" stroke-width="1.2"/>' for k, v in enumerate(pts))
+        fechas = "".join(f'<text x="{X(k):.1f}" y="{yb + 8}" text-anchor="middle" class="rk">{dd} {abbr}</text>' for k, dd in enumerate([3, 10, 17, 24]))
+        tr = " → ".join(niveles[v] for v in pts[-3:])
+        return (f'<div class="rc"><div class="rc-h"><b style="color:{cols[i % 2]}">{e(subs[i])}</b></div>'
+                f'<svg viewBox="0 0 {W} {H}" class="rsvg">{grid}<polygon points="{area}" fill="#13244a"/>'
+                f'<polyline points="{poly}" fill="none" stroke="{cols[i % 2]}" stroke-width="1.6"/>{dots}{fechas}</svg>'
+                f'<div class="rc-t" style="color:{cols[i % 2]}">{e(tr)}</div></div>')
+
+    charts = "".join(chart(i) for i in range(min(2, len(subs))))
+    multi = r.get("destrezas_label", "").lower().startswith("asignaturas")
+    asig_txt = " · ".join(subs) if multi else (lista_asig(d["asignaturas"]) or " · ".join(subs))
+    kpi_lab = "ASIGNATURAS" if multi else "BLOQUES"
+    s1 = f'''<div class="scr dk">
+  <img class="rs-logo" src="{LOGO_URI}">
+  <div class="rs-pill">DOCUMENTO PRIVADO · INFORME MENSUAL</div>
+  <div class="rs-t">Informe de seguimiento</div><div class="rs-m">{e(mes)}</div>
+  <div class="rs-card"><div class="rs-n">{e(n)}</div>
+    <div class="rs-g"><div><small>PROFESOR</small>{e(prof)}</div><div><small>ASIGNATURAS</small>{e(asig_txt)}</div>
+    <div><small>PERIODO</small>{e(mes)}</div><div><small>SESIONES Y HORAS</small>{r["sesiones"]} sesiones · {e(r["horas"])}</div></div></div>
+  <div class="rs-charts">{charts}</div>
+</div>'''
+    frases = [x.strip() for x in r["resumen"].replace(". ", ".|").split("|") if x.strip()]
+    secc = f'<div class="rs-sec g"><small>EL MES EN GENERAL</small><p>{e(frases[0])}</p></div>'
+    for i, sub in enumerate(subs[:2]):
+        txt = frases[i + 1] if i + 1 < len(frases) else ""
+        if txt:
+            secc += f'<div class="rs-sec" style="border-color:{cols[i % 2]}"><small style="color:{cols[i % 2]}">{e(sub.upper())}</small><p>{e(txt)}</p></div>'
+    s2 = f'''<div class="scr dk">
+  <div class="rs-pill l">INFORME DE SEGUIMIENTO MENSUAL</div>
+  <div class="rs-n l">{e(n)}</div><div class="rs-sub">{e(asig_txt)} · {e(mes)}</div>
+  <div class="rs-k"><div><b>{r["sesiones"]}</b>SESIONES</div><div><b>{e(r["horas"])}</b>DEDICADAS</div><div><b>{len(subs)}</b>{kpi_lab}</div></div>
+  <div class="rs-hl"><small>MAYOR PROGRESO DEL MES</small>{e(r["mayor_progreso"])}</div>
+  <div class="rs-h2">Resumen del mes</div>{secc}
+  <div class="rs-sec" style="border-color:#7d7f8a"><small style="color:#a49f8e">CONCLUSIÓN</small><p>{e(r["conclusion"])}</p></div>
+</div>'''
+    auto = [25, 55, 55, 90]
+    barras = "".join(f'<div class="ra"><em>{v}%</em><i style="height:{v * 0.5:.0f}px"></i><span>{dd} {abbr}</span></div>'
+                     for v, dd in zip(auto, [3, 10, 17, 24]))
+    li = lambda xs: "".join(f"<div>— {e(x)}</div>" for x in xs)
+    hsub = sum(h for _, h in r["temas"])
+    s3 = f'''<div class="scr dk">
+  <div class="rs-pill l">{e(r["asignatura"].upper())}</div>
+  <div class="rs-n l">{e(r["asignatura"])}</div>
+  <div class="rs-k"><div><b>{(f"{hsub:g}").replace(".", ",")}h</b>HORAS</div><div><b>4</b>SESIONES</div></div>
+  <div class="rs-box"><b>Evolución de autonomía en el mes</b><div class="ras">{barras}</div></div>
+  <div class="rs-b g"><small>PUNTOS FUERTES</small>{li(r["fuertes"])}</div>
+  <div class="rs-b a"><small>A TENER EN CUENTA</small>{li(r["atencion"])}</div>
+  <div class="rs-b b"><small>REFUERZO RECOMENDADO</small>{li(r["casa"])}</div>
+</div>'''
+    props = ""
+    for i, sub in enumerate(subs[:2]):
+        chip, txt = ("CONSOLIDAR", r["conclusion"]) if i == 0 else ("REFORZAR", r["atencion"][0])
+        props += f'<div class="rs-pr"><b>{e(sub)}</b><span class="{"c" if i == 0 else "r"}">{chip}</span><p>{e(txt)}</p></div>'
+    s4 = f'''<div class="scr dk">
+  <div class="rs-pill l">DE CARA A {e(sig.upper())}</div>
+  <div class="rs-n l sm">Qué tener en cuenta el mes que viene</div>
+  <div class="rs-box"><b>Organización del mes</b><p>{e(r["horario"])}</p></div>
+  <div class="rs-box"><b>Propuesta para {e(sig)}</b>{props}</div>
+  <div class="rs-box"><b>Base científica de las recomendaciones</b><p>Las recomendaciones de refuerzo se apoyan en técnicas con evidencia sólida: práctica espaciada, autoevaluación y ejemplos resueltos.</p></div>
+</div>'''
+    caps = [("Portada del informe", "Comprensión de cada asignatura, sesión a sesión."),
+            ("Resumen del mes", "Mayor progreso y resumen separado por asignatura."),
+            ("Detalle por asignatura", "Autonomía por sesión, puntos fuertes y refuerzo."),
+            ("Propuesta para el mes siguiente", "Organización y foco de cada asignatura.")]
+    return "".join(f'<div class="ph-wrap"><div class="phone"><div class="notch"></div>{x}</div>'
+                   f'<h5>{e(a)}</h5><p>{e(b)}</p></div>' for x, (a, b) in zip([s1, s2, s3, s4], caps))
+
+
 def page_phones(d, t):
     return f'''<section class="page">
   <div class="hdr"><span class="hdr-l">LOS INFORMES</span></div><div class="rule"></div>
   <div class="pill gold">{e(t["p4_pill"])}</div>
   <h2>El informe, capturado desde el móvil</h2>
   <p class="lead">{e(t["p4_sub"])}</p>
-  <div class="phones">{phones(d)}</div>
+  <div class="phones">{phones_real(d)}</div>
   {footer()}
 </section>'''
 
@@ -1052,6 +1144,51 @@ h2.c { font-size: 34px; margin: 26px 0 18px; }
 .ph-wrap p { color: #8a8a93; font-size: 12.5px; line-height: 1.2; margin-top: 3px; }
 .phone { position: relative; height: 415px; background: #1d2747; border-radius: 26px; padding: 11px 10px 12px; }
 .notch { position: absolute; top: 11px; left: 50%; transform: translateX(-50%); width: 64px; height: 6px; background: #1d2747; border-radius: 0 0 6px 6px; z-index: 2; }
+.scr.dk { background: linear-gradient(170deg, #0d1222, #0b1530 60%, #10204a); color: #e7e7ea; padding: 14px 8px 8px; }
+.rs-logo { display: block; width: 46px; margin: 4px auto 6px; }
+.rs-pill { width: max-content; margin: 0 auto; border: 0.6px solid #c9a24b; color: #e9d18f; border-radius: 99px; padding: 1.5px 5px; font-size: 4.3px; font-weight: 700; letter-spacing: 0.05em; }
+.rs-pill.l { margin: 0; }
+.rs-t { text-align: center; font: 700 10.5px 'Liberation Serif', serif; margin-top: 6px; }
+.rs-m { text-align: center; font: italic 9.5px 'Liberation Serif', serif; color: #e9d18f; }
+.rs-card { margin-top: 7px; border: 0.6px solid #2a3350; border-radius: 6px; padding: 6px 7px; background: #0c1428; }
+.rs-n { text-align: center; font: 700 9px 'Liberation Serif', serif; color: #e9d18f; padding-bottom: 4px; border-bottom: 0.6px solid #2a3350; }
+.rs-n.l { text-align: left; color: #fff; font-size: 13px; border: 0; padding: 0; margin-top: 5px; }
+.rs-n.sm { font-size: 11px; }
+.rs-g { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 6px; margin-top: 4px; font-size: 5px; font-weight: 700; }
+.rs-g small { display: block; font-size: 3.8px; color: #7d7f8a; letter-spacing: 0.06em; }
+.rs-charts { display: grid; gap: 5px; margin-top: 6px; }
+.rc { border: 0.6px solid #2a3350; border-radius: 6px; padding: 4px 5px 3px; background: #0c1428; }
+.rc-h b { font: 700 7px 'Liberation Serif', serif; }
+.rsvg { display: block; width: 100%; height: auto; }
+.rsvg .rk { fill: #7d7f8a; font-size: 4px; font-family: 'Liberation Sans', Arial; }
+.rc-t { text-align: center; font-size: 4.5px; font-weight: 700; }
+.rs-sub { color: #a49f8e; font-size: 5.8px; margin-top: 1px; }
+.rs-k { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; margin-top: 5px; }
+.rs-k div { border: 0.6px solid #2a3350; border-radius: 4px; padding: 4px 5px; font-size: 4.3px; color: #7d7f8a; font-weight: 700; }
+.rs-k b { display: block; font: 700 9.5px 'Liberation Serif', serif; color: #e9d18f; }
+.rs-hl { margin-top: 6px; border-radius: 5px; padding: 6px 7px; background: linear-gradient(120deg, #13285a, #1d3d74); border: 0.6px solid #2e5596; font: 700 6.8px 'Liberation Serif', serif; line-height: 1.3; }
+.rs-hl small { display: block; font: 700 3.8px 'Liberation Sans', Arial; color: #8fb8ec; letter-spacing: 0.06em; margin-bottom: 2px; }
+.rs-h2 { font: 700 9.5px 'Liberation Serif', serif; margin: 8px 0 4px; }
+.rs-sec { border-left: 1.2px solid #c9a24b; padding: 1px 0 1px 6px; margin: 5px 0 8px; }
+.rs-sec small { display: block; font-size: 4.5px; font-weight: 700; color: #e9d18f; letter-spacing: 0.06em; margin-bottom: 1.5px; }
+.rs-sec p { font-size: 6.2px; line-height: 1.5; color: #c9c9cf; }
+.rs-box { margin-top: 7px; border: 0.6px solid #2a3350; border-radius: 5px; padding: 5px 6px; background: #0c1428; }
+.rs-box b { font: 700 7.2px 'Liberation Serif', serif; }
+.rs-box p { font-size: 6px; color: #c9c9cf; margin-top: 2px; line-height: 1.4; }
+.ras { display: flex; gap: 4px; align-items: flex-end; height: 62px; margin-top: 3px; }
+.ra { flex: 1; text-align: center; font-size: 3.8px; color: #7d7f8a; }
+.ra em { display: block; font-style: normal; color: #e9d18f; font-weight: 700; font-size: 4.2px; }
+.ra i { display: block; margin: 1px 0; border-radius: 1.5px; background: linear-gradient(180deg, #e9d18f, #9c8550); }
+.rs-b { margin-top: 6px; border-left: 1.2px solid; border-radius: 3px; padding: 5px 6px; background: #0c1428; font-size: 5.8px; color: #c9c9cf; line-height: 1.4; }
+.rs-b small { display: block; font-size: 4.5px; font-weight: 700; letter-spacing: 0.06em; margin-bottom: 1px; }
+.rs-b.g { border-color: #7fcfa0; } .rs-b.g small { color: #7fcfa0; }
+.rs-b.a { border-color: #e9d18f; } .rs-b.a small { color: #e9d18f; }
+.rs-b.b { border-color: #8fb8ec; } .rs-b.b small { color: #8fb8ec; }
+.rs-pr { margin-top: 4px; border: 0.6px solid #2a3350; border-radius: 4px; padding: 4px 5px; }
+.rs-pr b { font: 700 6.6px 'Liberation Sans', Arial; }
+.rs-pr span { margin-left: 3px; font-size: 3.6px; font-weight: 700; padding: 1px 3px; border-radius: 99px; border: 0.5px solid; }
+.rs-pr span.c { color: #7fcfa0; } .rs-pr span.r { color: #e9d18f; }
+.rs-pr p { font-size: 5.8px; color: #c9c9cf; margin-top: 2px; line-height: 1.4; }
 .scr { background: #fff; color: #0a1226; height: 100%; border-radius: 16px; padding: 16px 10px 10px; font-size: 7px; line-height: 1.35; overflow: hidden; text-align: left; }
 .s-eyebrow { text-align: center; color: #3565b8; font-size: 6.2px; letter-spacing: 0.06em; }
 .s-name { text-align: center; font: 700 12.5px 'Liberation Serif', serif; margin-top: 5px; }
