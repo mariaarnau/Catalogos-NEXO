@@ -1,0 +1,253 @@
+{
+  "nombre": "Marta",
+  "etapa": "eso",
+  "curso": "3º ESO",
+  "asignaturas": [
+    "Matemáticas",
+    "Física y Química",
+    "Inglés"
+  ],
+  "voz": "familia",
+  "cover_pill": "PLAN DE EJEMPLO",
+  "cover_card_sub": "3º ESO · 3 horas a la semana · Clases en casa",
+  "presencial_label": "en su casa",
+  "bonos_recomendados": [
+    {
+      "horas": 12,
+      "frecuencia": "3h a la semana"
+    }
+  ],
+  "modalidades_recomendadas": [
+    "casa_alumno"
+  ],
+  "textos": {
+    "cover_sub": "Un plan de ejemplo para Marta, con clases de Matemáticas, Física y Química e Inglés, tres horas a la semana.",
+    "c1": "Marta tiene su profesor de referencia asignado, con tres clases fijas cada semana en vuestra casa.",
+    "p10_sub": "Escríbenos para elegir cómo queréis empezar: suscripción semanal o bono de 12h."
+  },
+  "semana": {
+    "etiqueta": "SU SEMANA",
+    "pill": "ORGANIZACIÓN SEMANAL",
+    "titulo": "Tres tardes a la semana",
+    "lead": "Lunes, miércoles y viernes, de 17:00 a 18:00, en vuestra casa. Una asignatura por día, siempre a la misma hora: así Marta sabe qué toca y llega con la tarea preparada.",
+    "hora_ini": 17,
+    "hora_fin": 18,
+    "alto": 150,
+    "asignaturas": [
+      "Matemáticas",
+      "Física y Química",
+      "Inglés"
+    ],
+    "bloques": [
+      [
+        0,
+        17,
+        18,
+        0
+      ],
+      [
+        2,
+        17,
+        18,
+        1
+      ],
+      [
+        4,
+        17,
+        18,
+        2
+      ]
+    ],
+    "extra_titulo": "Un horario que se adapta",
+    "extra_texto": "Los días y las horas los organizan el profesor y la familia: si se acerca un examen, se cambia el orden sin problema.",
+    "repartos": [
+      {
+        "nombre": "Cada semana · 3h",
+        "horas": [
+          1,
+          1,
+          1
+        ]
+      }
+    ]
+  },
+  "opciones_comp": {
+    "etiqueta": "DOS FORMAS DE PAGAR",
+    "pill": "ELEGID VUESTRA OPCIÓN",
+    "titulo": "Mismas clases, dos formas de pagar",
+    "lead": "Marta tendría las mismas clases en las dos opciones. Cambia solo cómo pagáis y cómo se usan las horas: elegid la que mejor encaje con vuestro día a día.",
+    "opciones": [
+      {
+        "letra": "A",
+        "nombre": "Suscripción semanal",
+        "detalle": "3 horas a la semana",
+        "hora": 20,
+        "paga": "60 €",
+        "paga_txt": "cada semana",
+        "como": [
+          "Tenéis 3 horas cada semana, de lunes a domingo, y se usan dentro de esa misma semana.",
+          "Un pago pequeño por adelantado, hasta el domingo a las 21:00, para la semana siguiente.",
+          "Sin permanencia: la dejáis cuando queráis."
+        ],
+        "encaja": "Si queréis un ritmo constante, con las mismas clases cada semana, pagando poco cada vez y sin soltar un bono entero de golpe."
+      },
+      {
+        "letra": "B",
+        "nombre": "Bono de 12 horas",
+        "detalle": "Un solo pago",
+        "hora": 22.5,
+        "paga": "270 €",
+        "paga_txt": "una sola vez",
+        "como": [
+          "Las horas no caducan: las usáis al ritmo que queráis.",
+          "Sin mínimo de horas a la semana: más clases antes de un examen y menos en un parón.",
+          "Se paga una vez y ya está."
+        ],
+        "encaja": "Si necesitáis máxima flexibilidad: semanas con más o menos clases, exámenes, vacaciones o parones."
+      }
+    ],
+    "incluye": "Las dos opciones incluyen lo mismo: app, informes mensuales y seguimiento de cada clase.",
+    "mas_horas_t": "¿Más horas a la semana? Sale más barata la hora",
+    "mas_horas": "Con la suscripción, cuantas más horas a la semana, menor es el precio por hora: hasta 18,50 €/h con 6 horas semanales.",
+    "recomendacion": {
+      "pill": "PARA MARTA",
+      "titulo": "Para Marta, la suscripción semanal",
+      "lead": "Marta quiere 3 horas a la semana, siempre en los mismos días: el ritmo constante que mejor funciona para aprender. Para ese caso, la suscripción os sale más a cuenta.",
+      "razones": [
+        [
+          "Más barata cada hora",
+          "20 € la hora",
+          "2,50 € menos por hora que con el bono de 12h"
+        ],
+        [
+          "Un pago pequeño",
+          "60 € a la semana",
+          "Sin soltar 270 € de golpe: pagáis cada semana lo que usáis"
+        ],
+        [
+          "Ritmo constante",
+          "3 h fijas",
+          "Mismos días y misma hora: se crea el hábito y se nota en las notas"
+        ]
+      ],
+      "hora_a": 20,
+      "hora_b": 22.5,
+      "ahorro_txt": "Ahorráis 30 € por cada 12 horas de clase frente al bono: 7,50 € menos cada semana.",
+      "cuando_bono_t": "¿Cuándo os recomendaríamos el bono?",
+      "cuando_bono": "Si Marta va a tener semanas sin clase (viajes, parones) o si queréis concentrar las horas antes de los exámenes: el bono de 12h no caduca y no tiene mínimo semanal.",
+      "pasos": [
+        "Elegís la suscripción de 3h a la semana.",
+        "Pagáis hasta el domingo a las 21:00 para la semana siguiente.",
+        "Marta empieza el lunes con su profesor."
+      ]
+    }
+  },
+  "informe_ejemplo": {
+    "asignatura": "Matemáticas",
+    "mes": "Noviembre 2026",
+    "comparado": "octubre",
+    "nota": "7,0",
+    "sesiones": 12,
+    "horas": "12h",
+    "destrezas_label": "Asignaturas seguidas",
+    "barras": [
+      [
+        "Matemáticas",
+        7.0
+      ],
+      [
+        "Física y Química",
+        6.8
+      ],
+      [
+        "Inglés",
+        7.2
+      ]
+    ],
+    "mayor_progreso": "Matemáticas — las ecuaciones de segundo grado pasaron de necesitar ayuda a resolverse solas",
+    "resumen": "En noviembre, Marta ha hecho 12 sesiones sin faltar a ninguna. Ya resuelve sola las ecuaciones de segundo grado. En Física y Química entiende mejor las unidades. En Inglés gana confianza al hablar. Diciembre: preparar los exámenes de la 1ª evaluación.",
+    "proxima_sesion": "PRÓXIMA SESIÓN — LUNES 30",
+    "proxima_sesion_txt": "Problemas con ecuaciones + repaso de unidades.",
+    "horario": "Marta · lunes, miércoles y viernes, 17:00–18:00",
+    "temas": [
+      [
+        "Ecuaciones",
+        2.5
+      ],
+      [
+        "Funciones",
+        1.8
+      ],
+      [
+        "Unidades",
+        1.2
+      ],
+      [
+        "Problemas",
+        0.5
+      ]
+    ],
+    "fuertes": [
+      "Muy constante con las tareas",
+      "Ecuaciones de 2º grado consolidadas"
+    ],
+    "atencion": [
+      "Física: cambios de unidades",
+      "Plantear los problemas con calma"
+    ],
+    "casa": [
+      "10 minutos de repaso al día",
+      "Agenda con las fechas de exámenes"
+    ],
+    "semanas": [
+      5.8,
+      6.3,
+      6.8,
+      7.2
+    ],
+    "metricas": [
+      [
+        "76%",
+        "Comprensión"
+      ],
+      [
+        "81%",
+        "Constancia"
+      ],
+      [
+        "62%",
+        "Autonomía"
+      ]
+    ],
+    "evol": [
+      [
+        "Resolución de problemas",
+        "Octubre: 60%",
+        "Noviembre: 79%",
+        "Plantea mejor el enunciado antes de operar."
+      ],
+      [
+        "Autonomía",
+        "Octubre: 50%",
+        "Noviembre: 62%",
+        "Cada vez necesita menos ayuda para empezar."
+      ]
+    ],
+    "conclusion": "Noviembre cierra con una tendencia muy positiva. El foco de diciembre es preparar los exámenes de la 1ª evaluación.",
+    "cal_mes": [
+      2026,
+      12
+    ],
+    "cal_titulo": "Calendario — diciembre 2026",
+    "cal_dias_sesion": [
+      0,
+      2,
+      4
+    ],
+    "cal_examen": 16,
+    "cal_semanas": "3 sem",
+    "cal_semanas_txt": "hasta los exámenes de la 1ª evaluación",
+    "antes": "Sin refuerzo fijo",
+    "ahora": "Tres clases semanales en casa"
+  }
+}

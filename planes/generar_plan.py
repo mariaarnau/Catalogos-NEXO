@@ -163,7 +163,7 @@ def page_cover(d, t):
     sub = d["curso"] or " · ".join(d["asignaturas"])
     return f'''<section class="page cover glow">
   <img class="logo-lg" src="{LOGO_URI}">
-  <div class="pill gold">DOCUMENTO PRIVADO · PLAN PERSONALIZADO</div>
+  <div class="pill gold">{e(d.get("cover_pill", "DOCUMENTO PRIVADO · PLAN PERSONALIZADO"))}</div>
   <h1 class="cover-h">Tu plan a medida en<br><em>NEXO Académico</em></h1>
   <p class="cover-sub">{e(t["cover_sub"])}</p>
   <div class="name-card"><div class="nm">{e(d.get("nombre_completo") or d["nombre"] or d["curso"])}</div><div class="cs">{e((d.get("cover_card_sub") or (sub if d["nombre"] else lista_asig(d["asignaturas"]))).upper())}</div></div>
@@ -629,6 +629,53 @@ def page_resumen_pasos(d, t):
   <div class="srows">{rows}</div>
   <ul class="dash">{lis}</ul>
   <div class="quote"><span>"</span><em>{e(c["quote"])}</em></div>
+  {footer()}
+</section>'''
+
+
+def page_opciones(d, t):
+    """Dos formas de pagar comparadas (suscripción semanal vs bono)."""
+    c = d["opciones_comp"]
+    cards = ""
+    for o in c["opciones"]:
+        como = "".join(f"<li>{e(x)}</li>" for x in o["como"])
+        cards += f'''<div class="oc{" b" if o["letra"] == "B" else ""}">
+  <div class="oc-t"><span>{e(o["letra"])}</span><div><b>{e(o["nombre"])}</b><small>{e(o["detalle"])}</small></div></div>
+  <div class="oc-h">{eur(o["hora"])}<small>/hora</small></div>
+  <div class="oc-p"><b>{e(o["paga"])}</b> {e(o["paga_txt"])}</div>
+  <div class="oc-s">Cómo funcionan las horas</div><ul class="oc-l">{como}</ul>
+  <div class="oc-s">Encaja mejor si…</div><p class="oc-e">{e(o["encaja"])}</p>
+</div>'''
+    return f'''<section class="page glow ocp">
+  <div class="hdr"><img class="logo-sm" src="{LOGO_URI}"><span class="hdr-r">{e(c["etiqueta"])}</span></div><div class="rule"></div>
+  <div class="pill gold">{e(c["pill"])}</div>
+  <h2>{e(c["titulo"])}</h2>
+  <p class="lead">{e(c["lead"])}</p>
+  <div class="ocs">{cards}</div>
+  <div class="oc-inc"><i>✓</i><span>{e(c["incluye"])}</span></div>
+  <div class="oc-mas"><b>{e(c["mas_horas_t"])}</b><span>{e(c["mas_horas"])}</span></div>
+  {footer()}
+</section>'''
+
+
+def page_recomendacion(d, t):
+    c = d["opciones_comp"]["recomendacion"]
+    razones = "".join(f'<div class="rz"><b>{e(a)}</b><strong>{e(b)}</strong><span>{e(x)}</span></div>' for a, b, x in c["razones"])
+    a, b2 = c["hora_a"], c["hora_b"]
+    pasos = "".join(f'<div class="rp2"><em>{i + 1}</em><span>{e(x)}</span></div>' for i, x in enumerate(c["pasos"]))
+    return f'''<section class="page">
+  <div class="hdr"><img class="logo-sm" src="{LOGO_URI}"><span class="hdr-r">NUESTRA RECOMENDACIÓN</span></div><div class="rule"></div>
+  <div class="pill gold">{e(c["pill"])}</div>
+  <h2>{e(c["titulo"])}</h2>
+  <p class="lead">{e(c["lead"])}</p>
+  <div class="rzs">{razones}</div>
+  <div class="cmpx">
+    <div class="cx"><span>Suscripción semanal</span><div><i class="bono" style="width:{a / b2 * 100:.1f}%"></i></div><em>{eur(a)}/h</em></div>
+    <div class="cx"><span>Bono de 12h</span><div><i class="base" style="width:100%"></i></div><em>{eur(b2)}/h</em></div>
+    <p>{e(c["ahorro_txt"])}</p>
+  </div>
+  <div class="oc-mas alt"><b>{e(c["cuando_bono_t"])}</b><span>{e(c["cuando_bono"])}</span></div>
+  <div class="rps2">{pasos}</div>
   {footer()}
 </section>'''
 
@@ -1432,6 +1479,47 @@ h2.c { font-size: 34px; margin: 26px 0 18px; }
 .a4 { background: linear-gradient(160deg, #5c2f3c, #3e2029); border-color: #a85a70; color: #f5c9d5; }
 .bx-ref { display: flex; justify-content: space-between; color: #7d7f8a; font-size: 13px; padding: 3px 0; }
 .bx-ref s { color: #a49f8e; }
+.ocp h2 { margin-top: 14px; }
+.ocp .rule { margin: 18px 0 24px; }
+.ocs { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 22px; }
+.oc { border: 1px solid #2a3350; border-radius: 16px; padding: 20px 22px 18px; background: #0e1629; }
+.oc.b { border-color: #3a5a96; background: linear-gradient(160deg, #15264a, #0e1629); }
+.oc:not(.b) { border-color: #9c8550; background: linear-gradient(160deg, #2a2618, #0e1629); }
+.oc-t { display: flex; gap: 12px; align-items: center; }
+.oc-t span { width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font: italic 700 18px 'Liberation Serif', serif; background: linear-gradient(135deg, #f6e2a6, #c9a24b); color: #0a1226; }
+.oc.b .oc-t span { background: #3a7bd5; color: #fff; }
+.oc-t b { display: block; font: 700 18px 'Liberation Serif', serif; }
+.oc-t small { color: #a49f8e; font-size: 12.5px; }
+.oc-h { margin: 14px 0 2px; font: 700 40px 'Liberation Serif', serif; color: #e9d18f; line-height: 1; }
+.oc.b .oc-h { color: #8fb8ec; }
+.oc-h small { font: 400 14px 'Liberation Sans', Arial; color: #a49f8e; margin-left: 4px; }
+.oc-p { color: #a49f8e; font-size: 14px; padding-bottom: 12px; border-bottom: 1px solid #1d2744; }
+.oc-p b { color: #fff; font: 700 20px 'Liberation Serif', serif; }
+.oc-s { margin: 12px 0 5px; font-size: 10.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #7d7f8a; }
+.oc-l { list-style: none; } .oc-l li { color: #c9c9cf; font-size: 13px; line-height: 1.35; margin: 3px 0; }
+.oc-l li::before { content: "✓"; color: #7fcfa0; margin-right: 7px; }
+.oc-e { color: #c9c9cf; font-size: 13px; line-height: 1.4; }
+.oc-inc { margin-top: 14px; display: flex; gap: 10px; align-items: center; border: 1px solid #2a3350; border-radius: 12px; padding: 10px 16px; background: #0b1326; }
+.oc-inc i { font-style: normal; color: #7fcfa0; font-weight: 700; } .oc-inc span { color: #c9c9cf; font-size: 13px; }
+.oc-mas { margin-top: 10px; border: 1px dashed #9c8550; border-radius: 12px; padding: 10px 16px; background: #14161f; }
+.oc-mas b { display: block; font: 700 14px 'Liberation Serif', serif; color: #e9d18f; } .oc-mas span { color: #a49f8e; font-size: 12.5px; }
+.oc-mas.alt { border-color: #3a5a96; } .oc-mas.alt b { color: #8fb8ec; }
+.rzs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 22px; }
+.rz { border: 1px solid #2a3350; border-radius: 14px; padding: 16px 18px; background: #0e1629; }
+.rz b { display: block; font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: #8fb8ec; }
+.rz strong { display: block; margin: 6px 0 4px; font: 700 24px 'Liberation Serif', serif; color: #e9d18f; }
+.rz span { color: #a49f8e; font-size: 12.5px; line-height: 1.35; }
+.cmpx { margin-top: 16px; border: 1px solid #2a3350; border-radius: 14px; padding: 14px 20px 10px; background: #0e1629; }
+.cx { display: grid; grid-template-columns: 150px 1fr 80px; gap: 12px; align-items: center; margin: 7px 0; }
+.cx span { color: #e7e7ea; font-size: 13.5px; font-weight: 700; }
+.cx div { height: 14px; border-radius: 8px; background: #141d35; overflow: hidden; } .cx i { display: block; height: 100%; border-radius: 8px; }
+.cx i.bono { background: linear-gradient(90deg, #c9a24b, #e9d18f); } .cx i.base { background: #56709e; }
+.cx em { font-style: normal; text-align: right; color: #e7e7ea; font-weight: 700; font-size: 13.5px; }
+.cmpx p { color: #7fcfa0; font-size: 13px; font-weight: 700; margin-top: 6px; }
+.rps2 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 14px; }
+.rp2 { display: flex; gap: 10px; align-items: center; border: 1px solid #2a3350; border-radius: 12px; padding: 10px 14px; background: #0b1326; }
+.rp2 em { flex: none; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font: italic 700 14px 'Liberation Serif', serif; background: #1a2d52; color: #8fb8ec; }
+.rp2 span { color: #c9c9cf; font-size: 12.5px; line-height: 1.3; }
 .pasosp .who { margin-bottom: 10px; }
 .pasosp h2 { margin-top: 10px; }
 .paso1 { display: grid; grid-template-columns: 56px 1fr auto; gap: 18px; align-items: center; margin-top: 22px; border: 1px solid #c9a24b; border-radius: 16px; padding: 18px 24px; background: linear-gradient(160deg, #2a2618, #0e1629); }
@@ -1564,10 +1652,12 @@ def main():
         + ([page_calendario(d, t)] if d.get("calendario") else []) \
         + ([page_ruta(d, t)] if d.get("ruta") else []) \
         + [page_proceso(d, t), page_informe(d, t), page_phones(d, t)]
-    for m in d.get("tarifas_mostrar") or ("online", "casa_profesor", "casa_alumno"):
+    for m in ([] if d.get("opciones_comp") else (d.get("tarifas_mostrar") or ("online", "casa_profesor", "casa_alumno"))):
         if m in tf["precios"]:
             pages.append(page_tarifas(d, t, m))
-    if d.get("pasos"):
+    if d.get("opciones_comp"):
+        pages += [page_opciones(d, t), page_recomendacion(d, t), page_cierre(d, t)]
+    elif d.get("pasos"):
         pages += [page_pasos(d, t), page_resumen_pasos(d, t), page_cierre(d, t)]
     elif d.get("bonos_especiales"):
         pages += [page_bonos_esp(d, t), page_ahorro_esp(d, t), page_resumen_esp2(d, t), page_cierre(d, t)]
