@@ -15,11 +15,11 @@
     }
   ],
   "modalidades_recomendadas": [
-    "online",
     "casa_alumno"
   ],
   "textos": {
-    "cover_sub": "Un acompañamiento diseñado específicamente para Hadil, con clases de Inglés y Matemáticas aplicadas a las Ciencias Sociales de 1º de Bachillerato."
+    "cover_sub": "Un acompañamiento diseñado específicamente para Hadil, con clases de Inglés y Matemáticas aplicadas a las Ciencias Sociales de 1º de Bachillerato.",
+    "p10_sub": "Escríbenos para reservar el bono de prueba o para cualquier ajuste de horas de Hadil."
   },
   "informe_ejemplo": {
     "asignatura": "Matemáticas CCSS",
@@ -123,5 +123,38 @@
     "cal_semanas_txt": "hasta los exámenes de la 1ª evaluación",
     "antes": "Sin refuerzo fijo",
     "ahora": "Clases semanales de Inglés y Matemáticas · Bono de 12h"
+  },
+  "presencial_label": "en su casa",
+  "pasos": {
+    "base": 25,
+    "base_txt": "Tarifa base presencial de Bachillerato",
+    "modalidad_txt": "Presencial en su casa",
+    "who": "1º Bachillerato CCSS · Inglés y Matemáticas CCSS · Presencial en su casa",
+    "titulo": "Su plan, en dos pasos",
+    "lead": "Primero, un bono de prueba para conocer a Hadil y ver su nivel en Inglés y Matemáticas CCSS. Después, el bono mensual de 12h: unas 3 horas a la semana, para llevar las dos asignaturas al día.",
+    "prueba": {
+      "horas": 2,
+      "precio": 46,
+      "tachado": 50,
+      "texto": "Dos horas en vuestra casa, en Orriols, para conocer a Hadil, ver cómo lleva Inglés y Matemáticas CCSS y dejar fijado su plan de trabajo. Recomendado al 100%."
+    },
+    "paso2_titulo": "Después, su bono mensual",
+    "nota": "El de 12h es el bono con el precio por hora más bajo frente a los de 4h y 8h.",
+    "opciones": [
+      {
+        "horas": 12,
+        "precio": 285,
+        "frecuencia": "3h a la semana",
+        "destacado": true,
+        "etiqueta": "MEJOR PRECIO POR HORA"
+      }
+    ],
+    "resumen": [
+      "Clases presenciales en vuestra casa, en Orriols.",
+      "Inglés y Matemáticas aplicadas a las CCSS de 1º de Bachillerato.",
+      "Se empieza con el bono de prueba de 2h y después, el bono mensual de 12h.",
+      "Sin permanencia: cada mes se puede ajustar el bono."
+    ],
+    "quote": "Un plan a medida para que Hadil lleve Inglés y Matemáticas CCSS al día desde 1º de Bachillerato."
   }
 }
