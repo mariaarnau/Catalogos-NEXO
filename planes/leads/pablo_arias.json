@@ -1,0 +1,229 @@
+{
+  "nombre": "Pablo",
+  "nombre_completo": "Pablo Arias",
+  "etapa": "bachillerato",
+  "curso": "2º Bachillerato",
+  "asignaturas": [
+    "Matemáticas aplicadas"
+  ],
+  "voz": "familia",
+  "presencial_label": "en su casa",
+  "cover_card_sub": "2º Bachillerato · Matemáticas aplicadas · PAU",
+  "bonos_recomendados": [
+    {
+      "horas": 12,
+      "frecuencia": "3h a la semana"
+    }
+  ],
+  "modalidades_recomendadas": [
+    "casa_alumno"
+  ],
+  "tarifas_mostrar": [
+    "casa_alumno"
+  ],
+  "textos": {
+    "cover_sub": "Un acompañamiento diseñado específicamente para Pablo, con clases de Matemáticas aplicadas a las Ciencias Sociales para preparar la PAU.",
+    "p10_sub": "Escríbenos para reservar el bono de prueba o para cualquier ajuste de horas de Pablo."
+  },
+  "camino": {
+    "etiqueta": "HOJA DE RUTA",
+    "pill": "EL CURSO DE UN VISTAZO",
+    "titulo": "El camino hasta la PAU",
+    "lead": "Un curso organizado en cuatro etapas, una por bloque del examen de Matemáticas aplicadas, para llegar a junio con todo preparado.",
+    "meses": [
+      "Oct",
+      "Nov",
+      "Dic",
+      "Ene",
+      "Feb",
+      "Mar",
+      "Abr",
+      "May",
+      "Jun"
+    ],
+    "fases": [
+      {
+        "span": 3,
+        "etiqueta": "1ER TRIMESTRE",
+        "nombre": "Álgebra",
+        "foco": "Matrices, sistemas de ecuaciones y programación lineal."
+      },
+      {
+        "span": 3,
+        "etiqueta": "2º TRIMESTRE",
+        "nombre": "Análisis",
+        "foco": "Funciones, límites, derivadas y aplicaciones."
+      },
+      {
+        "span": 2,
+        "etiqueta": "3ER TRIMESTRE",
+        "nombre": "Estadística",
+        "foco": "Integrales, probabilidad, inferencia y exámenes de otros años."
+      },
+      {
+        "span": 1,
+        "etiqueta": "JUNIO",
+        "nombre": "PAU",
+        "foco": "Simulacros cronometrados y últimos ajustes antes del examen."
+      }
+    ],
+    "hitos": [
+      {
+        "nombre": "1ª evaluación",
+        "pos": 2.75
+      },
+      {
+        "nombre": "2ª evaluación",
+        "pos": 6
+      },
+      {
+        "nombre": "Finales",
+        "pos": 8
+      },
+      {
+        "nombre": "PAU",
+        "pos": 9,
+        "meta": true
+      }
+    ]
+  },
+  "pasos": {
+    "base": 25,
+    "base_txt": "Tarifa base presencial de Bachillerato",
+    "modalidad_txt": "Presencial en su casa",
+    "who": "2º Bachillerato · Matemáticas aplicadas · Presencial en su casa",
+    "titulo": "Su plan, en dos pasos",
+    "lead": "Primero, un bono de prueba para conocer a Pablo y ver su nivel. Después, el bono mensual que mejor encaje con las horas que necesite para llegar a la PAU.",
+    "prueba": {
+      "horas": 2,
+      "precio": 46,
+      "tachado": 50,
+      "texto": "Dos horas en vuestra casa para conocer a Pablo, ver cómo lleva Matemáticas aplicadas y dejar fijado su plan hasta la PAU. Recomendado al 100%."
+    },
+    "paso2_titulo": "Después, elegid su bono mensual",
+    "opciones": [
+      {
+        "horas": 8,
+        "precio": 195,
+        "frecuencia": "2h a la semana"
+      },
+      {
+        "horas": 12,
+        "precio": 285,
+        "frecuencia": "3h a la semana",
+        "destacado": true,
+        "etiqueta": "MEJOR PRECIO POR HORA"
+      }
+    ],
+    "resumen": [
+      "Clases presenciales de Matemáticas aplicadas en vuestra casa.",
+      "Se empieza con el bono de prueba de 2h y después se elige el de 8h o el de 12h.",
+      "Preparación de la PAU durante todo el curso, con simulacros en junio.",
+      "Sin permanencia: cada mes se puede ajustar el bono."
+    ],
+    "quote": "Un plan a medida para que Pablo llegue a la PAU con Matemáticas aplicadas preparadas."
+  },
+  "informe_ejemplo": {
+    "asignatura": "Matemáticas aplicadas",
+    "mes": "Febrero 2027",
+    "comparado": "enero",
+    "nota": "7,0",
+    "sesiones": 8,
+    "horas": "12h",
+    "destrezas_label": "Bloques trabajados",
+    "barras": [
+      [
+        "Álgebra",
+        7.0
+      ],
+      [
+        "Análisis",
+        6.8
+      ]
+    ],
+    "mayor_progreso": "Análisis — las derivadas pasaron de necesitar ayuda a resolverse solas",
+    "resumen": "En febrero, Pablo ha hecho 8 sesiones sin faltar a ninguna. En Álgebra domina matrices y programación lineal. En Análisis ya deriva con soltura y empieza con las aplicaciones. El punto de trabajo es la representación de funciones y los problemas tipo PAU.",
+    "proxima_sesion": "PRÓXIMA SESIÓN — MARTES 2",
+    "proxima_sesion_txt": "Optimización con derivadas + 2 problemas de PAU.",
+    "horario": "Pablo · martes y jueves, 17:00–18:30",
+    "temas": [
+      [
+        "Derivadas",
+        2.5
+      ],
+      [
+        "Funciones",
+        1.8
+      ],
+      [
+        "Programación lineal",
+        1.2
+      ],
+      [
+        "Problemas PAU",
+        0.5
+      ]
+    ],
+    "fuertes": [
+      "Matrices y sistemas consolidados",
+      "Constante con los ejercicios"
+    ],
+    "atencion": [
+      "Representar funciones",
+      "Plantear problemas de optimización"
+    ],
+    "casa": [
+      "1 problema de PAU al día",
+      "Formulario al día"
+    ],
+    "semanas": [
+      5.8,
+      6.3,
+      6.8,
+      7.2
+    ],
+    "metricas": [
+      [
+        "76%",
+        "Comprensión"
+      ],
+      [
+        "81%",
+        "Constancia"
+      ],
+      [
+        "62%",
+        "Autonomía"
+      ]
+    ],
+    "evol": [
+      [
+        "Resolución de problemas",
+        "Enero: 60%",
+        "Febrero: 79%",
+        "Plantea mejor el enunciado antes de operar."
+      ],
+      [
+        "Autonomía",
+        "Enero: 50%",
+        "Febrero: 62%",
+        "Cada vez necesita menos ayuda para empezar."
+      ]
+    ],
+    "conclusion": "Febrero cierra con una tendencia muy positiva. El foco de marzo es la optimización antes de los exámenes de la 2ª evaluación.",
+    "cal_mes": [
+      2027,
+      3
+    ],
+    "cal_titulo": "Calendario — marzo 2027",
+    "cal_dias_sesion": [
+      1,
+      3
+    ],
+    "cal_examen": 17,
+    "cal_semanas": "3 sem",
+    "cal_semanas_txt": "hasta los exámenes de la 2ª evaluación",
+    "antes": "Sin refuerzo fijo",
+    "ahora": "Clases semanales en casa · Bono mensual"
+  }
+}
