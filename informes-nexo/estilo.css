@@ -101,3 +101,16 @@ h3 small { font-family:'Liberation Sans',sans-serif; font-weight:400; color:var(
 .c4 .fnom { font-size:20pt } .c4 .fgrid { margin-top:9px; padding-top:9px; gap:9px 20px } .c4 .cc { padding:10px 12px 6px } .c4 .cch b { font-size:12.5pt } .c4 .ccl { margin-top:0 }
 .rsw.cmp .rs { margin-bottom:10px } .rsw.cmp .rs p { line-height:1.5; margin-bottom:5px; font-size:9.8pt } .rsw.cmp .rs h4 { margin-bottom:4px }
 .cc.wide { grid-column:1/-1 }
+
+.temas .tema { grid-template-columns:1fr minmax(34px,auto) } .temas .tema b { white-space:nowrap }
+.temas .tema.sinbar span { grid-column:1 } .temas .tema.sinbar b { color:var(--gold); font-family:'Liberation Serif',serif; font-size:11pt }
+.cmpx h1 { font-size:21pt; margin-bottom:2px } .cmpx .sub { margin-bottom:8px }
+.cmpx .kpis { margin:4px 0 8px } .cmpx .kpi { padding:7px 10px } .cmpx .kpi b { font-size:15pt }
+.cmpx .destaque p { font-size:11pt } .cmpx .card { padding:9px 12px; margin-bottom:7px }
+.cmpx h2 { font-size:14pt; margin:8px 0 6px }
+.cmpx .rs { margin-bottom:8px } .cmpx .rs p { font-size:9.4pt; line-height:1.45; margin-bottom:4px } .cmpx .rs h4 { margin-bottom:4px }
+.cmpx .bl { padding:8px 12px; margin-bottom:7px } .cmpx .bl li { font-size:9pt; margin:2px 0 }
+.cmpx .cols { height:84px } .cmpx .hb { height:44px }
+.cmpx .bl.ref .nota { display:none }
+.page.cmpx { padding-top:10mm } .cmpx .rule { margin:6px 0 10px } .cmpx .pill { margin-bottom:6px }
+.cmpx .rsw .rs { margin-bottom:6px } .cmpx .temas .tema { padding:2px 0 } .cmpx .bl h4 { margin-bottom:3px }

@@ -57,10 +57,10 @@ def bloque(titulo, items, cls, numerar=False):
     return f'<div class="bl {cls}"><h4>{titulo}</h4><ul>{lis}</ul></div>'
 
 
-def pag(cuerpo, cabecera=None, logo=""):
+def pag(cuerpo, cabecera=None, logo="", clase=""):
     cab = cabecera or ("INFORME DE SEGUIMIENTO · EJEMPLO" if EJEMPLO else "INFORME DE SEGUIMIENTO")
     pie = "Nexo Académico · Informe de ejemplo · Datos ficticios" if EJEMPLO else "Nexo Académico · Informe personalizado"
-    return f"""<section class="page"><header><img src="{logo}"><em>{cab}</em></header>
+    return f"""<section class="page{" " + clase if clase else ""}"><header><img src="{logo}"><em>{cab}</em></header>
 <div class="rule"></div>{cuerpo}
 <footer><span>{pie}</span><span>nexoacademico.com</span></footer></section>"""
 
@@ -82,7 +82,7 @@ def calendario(anio, mes, sesiones, examenes, hoy, extra=(), festivos=()):
             celdas += f'<td class="{c}">{d.day}</td>'
         celdas += "</tr>"
     return (f'<table class="cal"><tr>{filas}</tr>{celdas}</table>'
-            '<p class="leyenda"><b class="l1"></b> Sesión &nbsp; '
+            '<p class="leyenda">' + ('<b class="l1"></b> Sesión &nbsp; ' if ses else '')
             + ('<b class="l4"></b> Sesión extra de tarde &nbsp; ' if ext else '')
             + '<b class="l2"></b> Examen &nbsp; '
             + ('<b class="l5"></b> Festivo &nbsp; ' if fes else '')
@@ -107,7 +107,9 @@ def curva(pts, ymin, ymax):
     return t
 
 
-def grafica_comprension(items, color, uid, w=330, h=262):
+def grafica_comprension(items, color, uid, w=330, h=262, niveles=None):
+    niveles = niveles or NIVELES
+    top = len(niveles) - 1
     L, R, T, B = 88, 14, 48, 34
     ancho, n = w - L - R, len(items)
     k = 0
@@ -115,22 +117,19 @@ def grafica_comprension(items, color, uid, w=330, h=262):
         k += 1
     T = 48 if k else 30
     x = lambda i: L + ancho * (i + 0.5) / n
-    y = lambda v: T + (h - T - B) * (1 - v / 3)
+    y = lambda v: T + (h - T - B) * (1 - v / top)
     o = [f'<defs><linearGradient id="a{uid}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="{color}" stop-opacity=".38"/>'
          f'<stop offset="1" stop-color="{color}" stop-opacity="0"/></linearGradient>'
          f'<pattern id="h{uid}" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">'
          f'<line x1="0" y1="0" x2="0" y2="6" stroke="rgba(255,255,255,.16)" stroke-width="2"/></pattern></defs>']
-    k = 0
-    while k < n and items[k]["v"] is None:
-        k += 1
     if k:
         o.append(f'<rect x="{L}" y="{T-30}" width="{ancho*k/n:.1f}" height="{h-T-B+30}" rx="4" fill="url(#h{uid})" stroke="rgba(255,255,255,.18)" stroke-dasharray="3 3"/>'
                  f'<text x="{L+ancho*k/n/2:.1f}" y="{T-13}" text-anchor="middle" class="ax">{"Iniciación · sin valorar" if k >= 3 else "Sin valorar"}</text>')
-    for v, nom in enumerate(NIVELES):
+    for v, nom in enumerate(niveles):
         o.append(f'<line x1="{L}" x2="{w-R}" y1="{y(v):.1f}" y2="{y(v):.1f}" class="gl"/>'
-                 f'<text x="{L-8}" y="{y(v)+3:.1f}" text-anchor="end" class="ax">{nom}</text>')
+                 f'<text x="{L-8}" y="{y(v)+3:.1f}" text-anchor="end" class="ax">{e(nom)}</text>')
     pts = [(x(i), y(it["v"])) for i, it in enumerate(items) if it["v"] is not None]
-    c = curva(pts, y(3), y(0))
+    c = curva(pts, y(top), y(0))
     if c:
         o.append(f'<path d="{c} L{pts[-1][0]:.1f},{y(0):.1f} L{pts[0][0]:.1f},{y(0):.1f} Z" fill="url(#a{uid})"/>'
                  f'<path d="{c}" fill="none" stroke="{color}" stroke-width="9" stroke-opacity=".14" stroke-linecap="round"/>'
@@ -145,22 +144,27 @@ def grafica_comprension(items, color, uid, w=330, h=262):
 def portada(d, logo, mes_txt, tot_ses, tot_h):
     profes = [d["profesor_completo"]] if d.get("profesor_completo") else list(dict.fromkeys(a.get("profesor_completo", a["profesor"]) for a in d["asignaturas"]))
     curso = f'<p class="ccurso">{e(d["curso"])}</p>' if d.get("curso") else ""
+    cards = d.get("graficas_portada")
+    if not cards:
+        cards = [{"titulo": a["nombre"], "color": a.get("color", "blue"), "items": a["comprension_por_sesion"],
+                  "meta": f'{horas(a["horas"])} · {a["sesiones"]} sesiones', "lectura": a.get("lectura_portada"),
+                  "sub": d.get("comprension_sub", "Comprensión del tema, sesión a sesión")}
+                 for a in d["asignaturas"] if a.get("comprension_por_sesion")]
+    nc = len(cards)
+    alto = 262 if nc <= 2 else (176 if nc == 4 else 190)
     tarjetas = ""
-    alto = 262 if len(d["asignaturas"]) <= 2 else (176 if len(d["asignaturas"]) == 4 else 190)
-    for n, a in enumerate(d["asignaturas"]):
-        items = a.get("comprension_por_sesion")
-        if not items:
-            continue
-        col = COLORES.get(a.get("color", "blue"), "#8fb8ec")
+    for n, c in enumerate(cards):
+        col = COLORES.get(c.get("color", "blue"), "#8fb8ec")
+        items = c["items"]
         val = [i["v"] for i in items if i["v"] is not None]
-        lectura = a.get("lectura_portada") or (" → ".join(NIVELES[v] for v in val) if len(val) <= 4
+        lectura = c.get("lectura") or (" → ".join(NIVELES[v] for v in val) if len(val) <= 4
                    else f"«Bien» o mejor en {sum(v >= 2 for v in val)} de {len(val)} sesiones")
-        ancha = len(d["asignaturas"]) % 2 == 1 and len(d["asignaturas"]) > 1 and n == len(d["asignaturas"]) - 1
-        tarjetas += (f'<div class="cc{" wide" if ancha else ""}"><div class="cch"><b style="color:{col}">{e(a["nombre"])}</b>'
-                     f'<span>{horas(a["horas"])} · {a["sesiones"]} sesiones</span></div>'
-                     f'<p class="ccs">{e(d.get("comprension_sub", "Comprensión del tema, sesión a sesión"))}</p>'
-                     f'{grafica_comprension(items, col, n, w=680 if ancha else 330, h=alto)}<p class="ccl" style="color:{col}">{e(lectura)}</p></div>')
-    return f"""<section class="page cover{' c4' if len(d['asignaturas']) > 2 else ''}"><img class="clogo" src="{logo}">
+        ancha = nc % 2 == 1 and n == nc - 1
+        tarjetas += (f'<div class="cc{" wide" if ancha else ""}"><div class="cch"><b style="color:{col}">{e(c["titulo"])}</b>'
+                     f'<span>{e(c.get("meta", ""))}</span></div>'
+                     f'<p class="ccs">{e(c.get("sub", "Comprensión del tema, sesión a sesión"))}</p>'
+                     f'{grafica_comprension(items, col, n, w=680 if ancha else 330, h=alto, niveles=c.get("niveles"))}<p class="ccl" style="color:{col}">{e(lectura)}</p></div>')
+    return f"""<section class="page cover{' c4' if nc > 2 else ''}"><img class="clogo" src="{logo}">
 <div class="pill">{"INFORME DE EJEMPLO · DATOS FICTICIOS" if d.get("ejemplo") else "DOCUMENTO PRIVADO · INFORME MENSUAL"}</div>
 <h1 class="ct">Informe de seguimiento<br><i>{e(mes_txt)}</i></h1>
 <div class="ficha"><h2 class="fnom">{e(d['alumno'])}</h2>{curso}
@@ -168,9 +172,58 @@ def portada(d, logo, mes_txt, tot_ses, tot_h):
 <div><small>PROFESOR</small><b>{e(' · '.join(profes))}</b></div>
 <div><small>ASIGNATURAS</small><b>{e(' · '.join(a['nombre'] for a in d['asignaturas']))}</b></div>
 <div><small>PERIODO</small><b>{e(mes_txt)}</b></div>
-<div><small>SESIONES Y HORAS</small><b>{tot_ses} sesiones · {horas(tot_h)}</b></div></div></div>
+<div><small>SESIONES Y HORAS</small><b>{tot_ses} sesiones · {d.get('horas_texto') or horas(tot_h)}</b></div></div></div>
 <div class="cgraf">{tarjetas}</div>
 <p class="cpie">NEXO ACADÉMICO · INFORME GENERADO EL {e(fecha_larga(d['fecha_informe']).upper())}</p></section>"""
+
+
+def html_temas(a):
+    hs = [t["horas"] for t in a["temas"] if t.get("horas")]
+    maxh = max(hs) if hs else 0
+    filas = ""
+    for t in a["temas"]:
+        h = t.get("horas")
+        det = t.get("detalle") or (horas(h) if h else "")
+        if h:
+            filas += f'<div class="tema"><span>{e(t["nombre"])}</span><div class="barra"><i style="width:{h/maxh*100:.0f}%"></i></div><b>{e(det)}</b></div>'
+        else:
+            filas += f'<div class="tema sinbar"><span>{e(t["nombre"])}</span><b>{e(det)}</b></div>'
+    return filas
+
+
+def html_autonomia(a):
+    if not a.get("autonomia_por_sesion"):
+        return ""
+
+    def barra(n, x):
+        v, et = (x["v"], x.get("e", f"S{n}")) if isinstance(x, dict) else (x, f"S{n}")
+        txt = x.get("t", f"{v}%") if isinstance(x, dict) else f"{v}%"
+        if v is None:
+            return f'<div class="col"><b>—</b><div class="hb"><i class="x" style="height:100%"></i></div><span>{e(et)}</span></div>'
+        return f'<div class="col"><b>{e(txt)}</b><div class="hb"><i style="height:{v}%;opacity:{0.35+0.65*v/100:.2f}"></i></div><span>{e(et)}</span></div>'
+    barras = "".join(barra(n, x) for n, x in enumerate(a["autonomia_por_sesion"], 1))
+    sub = a.get("autonomia_sub", "% resuelto solo por sesión")
+    nota_g = a.get("autonomia_nota", "Dorado más intenso = mayor autonomía · % = ejercicios resueltos sin ayuda")
+    return f'<div class="card"><h3>Evolución de autonomía en el mes <small>({e(sub)})</small></h3><div class="cols">{barras}</div><p class="nota">{e(nota_g)}</p></div>'
+
+
+def html_detalle(a):
+    ref = ""
+    if a.get("refuerzo"):
+        ref = f'<div class="bl ref"><h4>REFUERZO RECOMENDADO</h4><p class="nota">El profesor irá marcando las tareas necesarias en cada sesión.</p><ul>{lista(a["refuerzo"], "›")}</ul></div>'
+    graf = html_autonomia(a)
+    fila = (f'<div class="dos"><div class="card temas">{html_temas(a)}</div>{graf}</div>' if graf
+            else f'<div class="card temas">{html_temas(a)}</div>')
+    return (f'{fila}\n<div class="dos">{bloque("PUNTOS FUERTES", a.get("puntos_fuertes"), "ok")}{bloque("A TENER EN CUENTA", a.get("a_tener_en_cuenta"), "aten")}</div>\n'
+            f'{bloque("PUNTOS A MEJORAR", a.get("puntos_a_mejorar"), "mej", True)}{ref}')
+
+
+def html_evolucion(d):
+    evo = ""
+    for x in d["evolucion"]:
+        sim, col = TENDENCIA[x["tendencia"]]
+        evo += f'<div class="card ev"><h3>{e(x["titulo"])}</h3><p class="est">{e(x["etiqueta"])} <b style="color:{col}">{sim} {e(x["estado"])}</b></p><p class="txt">{e(x["texto"])}</p></div>'
+    return evo
 
 
 def construir(d):
@@ -186,7 +239,9 @@ def construir(d):
     nombres = " · ".join(a["nombre"] for a in asigs)
     tot_ses = d.get("sesiones_totales") or sum(a["sesiones"] for a in asigs)
     tot_prev = sum(a.get("sesiones_previstas", a["sesiones"]) for a in asigs)
-    tot_h = sum(a["horas"] for a in asigs)
+    tot_h = d.get("horas_totales") or sum(a["horas"] for a in asigs)
+    compacto = d.get("formato") == "compacto"
+    fusion = compacto and len(asigs) == 1
     auto = [(x["v"] if isinstance(x, dict) else x) for a in asigs for x in a.get("autonomia_por_sesion", [])]
     auto = [v for v in auto if v is not None]
     paginas = []
@@ -203,19 +258,27 @@ def construir(d):
         return (f'<div class="rs" style="--c:{COLORES.get(g.get("color", "gold"))}"><h4>{e(g["titulo"]).upper()}</h4>'
                 + "".join(f"<p>{e(t)}</p>" for t in g["parrafos"]) + "</div>")
     grupos = d.get("resumen_parrafos")
-    dos_paginas = bool(grupos) and bool(d.get("resumen_dos_paginas")) and len(grupos) > 1
+    dos_paginas = bool(grupos) and bool(d.get("resumen_dos_paginas")) and len(grupos) > 1 and not compacto
     if grupos:
         a_pag1 = grupos[:1] if dos_paginas else grupos
         resumen_html = '<div class="rsw%s">' % (" cmp" if len(grupos) > 4 and not dos_paginas else "") + "".join(grupo(g) for g in a_pag1) + "</div>"
     else:
         resumen_html = f'<p class="txt">{e(d["resumen"])}</p>'
-    paginas.append(pag(f"""
+    cabecera_res = f"""
 <div class="pill">INFORME DE SEGUIMIENTO MENSUAL</div>
 <h1>{e(d['alumno'])}</h1>
 <p class="sub">{e(nombres)} · {mes_txt}</p>
 <div class="kpis">{kp_portada}</div>
 <div class="card destaque"><small>{e(d.get("etiqueta_progreso", "MAYOR PROGRESO DEL MES"))}</small><p>{e(d['progreso_destacado'])}</p></div>
-<h2>Resumen del mes</h2>{resumen_html}""", logo=logo))
+<h2>Resumen del mes</h2>{resumen_html}"""
+    if fusion:
+        paginas.append(pag(cabecera_res + html_detalle(asigs[0]), logo=logo, clase="cmpx"))
+    elif compacto:
+        evo_c = (f'<div class="pill" style="margin-top:6px">EVOLUCIÓN DENTRO DEL MES</div><p class="nota">{e(d["evolucion_intro"])}</p>'
+                 f'<div class="evg{" dosc" if len(d["evolucion"]) > 2 else ""}">{html_evolucion(d)}</div>')
+        paginas.append(pag(cabecera_res + evo_c, logo=logo, clase="cmpx"))
+    else:
+        paginas.append(pag(cabecera_res, logo=logo))
     if dos_paginas:
         paginas.append(pag(f"""
 <div class="pill">RESUMEN DEL MES</div>
@@ -223,55 +286,32 @@ def construir(d):
 <div class="rsw" style="margin-top:14px">{"".join(grupo(g) for g in grupos[1:])}</div>""", logo=logo))
 
     # 2 · Una página por asignatura
-    for a in asigs:
-        maxh = max(t["horas"] for t in a["temas"])
-        temas = "".join(
-            f'<div class="tema"><span>{e(t["nombre"])}</span><div class="barra"><i style="width:{t["horas"]/maxh*100:.0f}%"></i></div><b>{horas(t["horas"])}</b></div>'
-            for t in a["temas"])
-        graf = ""
-        if a.get("autonomia_por_sesion"):
-            def barra(n, x):
-                v, et = (x["v"], x.get("e", f"S{n}")) if isinstance(x, dict) else (x, f"S{n}")
-                txt = x.get("t", f"{v}%") if isinstance(x, dict) else f"{v}%"
-                if v is None:
-                    return f'<div class="col"><b>—</b><div class="hb"><i class="x" style="height:100%"></i></div><span>{e(et)}</span></div>'
-                return f'<div class="col"><b>{e(txt)}</b><div class="hb"><i style="height:{v}%;opacity:{0.35+0.65*v/100:.2f}"></i></div><span>{e(et)}</span></div>'
-            barras = "".join(barra(n, x) for n, x in enumerate(a["autonomia_por_sesion"], 1))
-            sub = a.get("autonomia_sub", "% resuelto solo por sesión")
-            nota_g = a.get("autonomia_nota", "Dorado más intenso = mayor autonomía · % = ejercicios resueltos sin ayuda")
-            graf = f'<div class="card"><h3>Evolución de autonomía en el mes <small>({e(sub)})</small></h3><div class="cols">{barras}</div><p class="nota">{e(nota_g)}</p></div>'
-        ref = ""
-        if a.get("refuerzo"):
-            ref = f'<div class="bl ref"><h4>REFUERZO RECOMENDADO</h4><p class="nota">El profesor irá marcando las tareas necesarias en cada sesión.</p><ul>{lista(a["refuerzo"], "›")}</ul></div>'
-        fila = (f'<div class="dos"><div class="card temas">{temas}</div>{graf}</div>' if graf
-                else f'<div class="card temas">{temas}</div>')
+    for a in ([] if fusion else asigs):
+        kps = a.get("kpis")
+        kp_a = "".join(kpi(v, l) for v, l in kps) if kps else (
+            kpi(horas(a['horas']), 'HORAS DEDICADAS') + kpi(a['sesiones'], 'SESIONES TRABAJADAS') + kpi(hm(a['horas']/a['sesiones']), 'MEDIA POR SESIÓN'))
         paginas.append(pag(f"""
 <div class="pill">{e(a['nombre']).upper()}</div>
 <h1>{e(a['nombre'])}</h1><p class="sub">{e(a['profesor'])} · {e(a['horario'])}</p>
-<div class="kpis k3">{kpi(horas(a['horas']),'HORAS DEDICADAS')}{kpi(a['sesiones'],'SESIONES TRABAJADAS')}{kpi(hm(a['horas']/a['sesiones']),'MEDIA POR SESIÓN')}</div>
-{fila}
-<div class="dos">{bloque('PUNTOS FUERTES', a.get('puntos_fuertes'), 'ok')}{bloque('A TENER EN CUENTA', a.get('a_tener_en_cuenta'), 'aten')}</div>
-{bloque('PUNTOS A MEJORAR', a.get('puntos_a_mejorar'), 'mej', True)}{ref}""", logo=logo))
+<div class="kpis k3">{kp_a}</div>
+{html_detalle(a)}""", logo=logo))
 
     # 3 · Conclusiones + evolución
-    kc = kpi(f"{round(sum(auto)/len(auto))}%", "AUTONOMÍA MEDIA") if auto else ""
-    n_temas = d.get("temas_trabajados") or sum(len(a["temas"]) for a in asigs)
-    kc2 = d.get("kpis_conclusion")
-    kp_concl = "".join(kpi(v, l) for v, l in kc2) if kc2 else (
-        kc + kpi(horas(tot_h), 'TOTAL DEDICADAS') + kpi(f'{tot_ses}/{tot_prev}', 'SESIONES SIN FALTAR')
-        + kpi(n_temas, 'TEMAS TRABAJADOS'))
-    evo = ""
-    for x in d["evolucion"]:
-        s, col = TENDENCIA[x["tendencia"]]
-        evo += f'<div class="card ev"><h3>{e(x["titulo"])}</h3><p class="est">{e(x["etiqueta"])} <b style="color:{col}">{s} {e(x["estado"])}</b></p><p class="txt">{e(x["texto"])}</p></div>'
-    paginas.append(pag(f"""
+    if not compacto:
+        kc = kpi(f"{round(sum(auto)/len(auto))}%", "AUTONOMÍA MEDIA") if auto else ""
+        n_temas = d.get("temas_trabajados") or sum(len(a["temas"]) for a in asigs)
+        kc2 = d.get("kpis_conclusion")
+        kp_concl = "".join(kpi(v, l) for v, l in kc2) if kc2 else (
+            kc + kpi(horas(tot_h), 'TOTAL DEDICADAS') + kpi(f'{tot_ses}/{tot_prev}', 'SESIONES SIN FALTAR')
+            + kpi(n_temas, 'TEMAS TRABAJADOS'))
+        paginas.append(pag(f"""
 <div class="pill">CONCLUSIONES · {mes_txt.upper()}</div>
 <h1>Cómo ha ido {MESES[mes]}</h1>
 <div class="kpis">{kp_concl}</div>
 <p class="txt">{e(d['conclusion'])}</p>
 <div class="pill" style="margin-top:22px">EVOLUCIÓN DENTRO DEL MES</div>
 <h2>Cómo ha evolucionado a lo largo de {MESES[mes]}</h2>
-<p class="nota">{e(d['evolucion_intro'])}</p><div class="evg{' dosc' if len(d['evolucion'])>2 else ''}">{evo}</div>""", logo=logo))
+<p class="nota">{e(d['evolucion_intro'])}</p><div class="evg{' dosc' if len(d['evolucion'])>2 else ''}">{html_evolucion(d)}</div>""", logo=logo))
 
     # 4 · Próximo mes + propuesta
     ex = d["examenes"]
@@ -281,14 +321,16 @@ def construir(d):
         fx = dt.date.fromisoformat(x["fecha"])
         dias = (fx - informe).days
         if dias >= 0:
+            cal_html = "" if d.get("sin_calendario") else (
+                f"<h3>Calendario de preparación — {sig_txt} {sig_anio}</h3>"
+                + calendario(sig_anio, sig_mes, d['sesiones_proximo_mes'], ex, informe, d.get('sesiones_extra', []), d.get('festivos', [])))
             plan = ""
             if d.get("plan_examen"):
                 plan = '<h3 style="margin-top:12px">Plan de preparación</h3><div class="pe">' + "".join(
                     f"<div><b>{e(c)}</b><span>{e(t)}</span></div>" for c, t in d["plan_examen"]) + "</div>"
             bloque_ex = f"""<div class="card"><p class="txt"><b>Examen de {e(x['asignatura'])} ({e(x['tema'])}) el {fx.day} de {MESES[fx.month]}</b> — indicado por {e(x['fuente'])}.</p>
 <p class="dias"><b>{dias} días</b> desde la fecha de este informe hasta el examen</p>
-<h3>Calendario de preparación — {sig_txt} {sig_anio}</h3>
-{calendario(sig_anio, sig_mes, d['sesiones_proximo_mes'], ex, informe, d.get('sesiones_extra', []), d.get('festivos', []))}<p class="txt">{e(d['texto_examen'])}</p>{plan}</div>"""
+{cal_html}<p class="txt">{e(d['texto_examen'])}</p>{plan}</div>"""
         else:
             bloque_ex = f'<div class="card"><p class="txt"><b>Examen de {e(x["asignatura"])} ({e(x["tema"])}) — {fx.day} de {MESES[fx.month]}</b></p><p class="txt">{e(d["texto_examen"])}</p></div>'
     if not ex and d.get("nota_proximo_mes"):
@@ -312,7 +354,7 @@ def construir(d):
     org = f"""<div class="dos"><div><div class="card"><h3>Organización de {MESES[mes]}</h3>{''.join(f'<p class="txt">{e(o)}</p>' for o in d['organizacion_actual'])}</div>{extra_org}</div>
 <div class="card"><h3>Propuesta para {sig_txt}</h3>{prop}</div></div>"""
     cierre = f'<p class="nota" style="margin-top:14px">Nexo Académico · Informe generado el {fecha_larga(d["fecha_informe"])}</p>'
-    if dias is not None and dias >= 0:
+    if dias is not None and dias >= 0 and not compacto:
         paginas.append(pag(f"""
 <div class="pill">DE CARA A {sig_txt.upper()}</div>
 <h1>Qué tener en cuenta el mes que viene</h1>{bloque_ex}{semana}""", logo=logo))
