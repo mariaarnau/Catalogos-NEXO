@@ -1,0 +1,215 @@
+{
+  "nombre": "Laura",
+  "etapa": "eso",
+  "curso": "2º ESO",
+  "asignaturas": [
+    "Matemáticas",
+    "Inglés"
+  ],
+  "voz": "familia",
+  "presencial_label": "en su casa",
+  "cover_card_sub": "2º ESO · Benicalap · Clases en casa",
+  "bonos_recomendados": [
+    {
+      "horas": 16,
+      "frecuencia": "4h a la semana"
+    }
+  ],
+  "modalidades_recomendadas": [
+    "casa_alumno"
+  ],
+  "tarifas_mostrar": [
+    "casa_alumno"
+  ],
+  "textos": {
+    "cover_sub": "Un acompañamiento diseñado específicamente para Laura, con clases de Matemáticas e Inglés adaptadas a su ritmo.",
+    "p2_sub": "Un profesor de referencia para Matemáticas e Inglés, con sesiones cortas y bien estructuradas, adaptadas a su ritmo y a su atención.",
+    "c1": "Laura tiene su profesor de referencia asignado, con dos tardes fijas cada semana en vuestra casa, en Benicalap.",
+    "p10_sub": "Escríbenos para reservar el bono de prueba o para cualquier ajuste de horas de Laura."
+  },
+  "semana": {
+    "etiqueta": "SU SEMANA",
+    "pill": "ORGANIZACIÓN SEMANAL",
+    "titulo": "Lunes y miércoles, de 17:00 a 19:00",
+    "lead": "Dos tardes a la semana en vuestra casa. Cada tarde, una hora de Matemáticas y otra de Inglés: siempre el mismo orden y a la misma hora, para que la rutina le ayude a centrarse.",
+    "hora_ini": 17,
+    "hora_fin": 19,
+    "alto": 100,
+    "asignaturas": [
+      "Matemáticas",
+      "Inglés"
+    ],
+    "bloques": [
+      [
+        0,
+        17,
+        18,
+        0
+      ],
+      [
+        0,
+        18,
+        19,
+        1
+      ],
+      [
+        2,
+        17,
+        18,
+        0
+      ],
+      [
+        2,
+        18,
+        19,
+        1
+      ]
+    ],
+    "extra_titulo": "Bloques cortos y una pausa entre medias",
+    "extra_texto": "Cada hora se divide en bloques breves, con una pausa corta al cambiar de asignatura y unos minutos finales para organizar los deberes.",
+    "repartos": [
+      {
+        "nombre": "Cada semana · 4h",
+        "horas": [
+          2,
+          2
+        ]
+      }
+    ]
+  },
+  "pasos": {
+    "base": 24,
+    "base_txt": "Tarifa base presencial de 2º ESO",
+    "modalidad_txt": "Presencial en su casa",
+    "nota": "Bono reservado para alumnos que necesitan más de 3 horas a la semana.",
+    "who": "2º ESO · Matemáticas e Inglés · Presencial en su casa",
+    "titulo": "Su plan, en dos pasos",
+    "lead": "Primero, un bono de prueba para conocer a Laura y ver su nivel. Después, como queréis más de 3 horas a la semana, os ofrecemos el bono de 16h: el más económico.",
+    "prueba": {
+      "horas": 2,
+      "precio": 44,
+      "tachado": 48,
+      "texto": "Dos horas en vuestra casa para conocer a Laura, ver cómo lleva Matemáticas e Inglés y dejar fijado su plan de trabajo. Recomendado al 100%."
+    },
+    "paso2_titulo": "Después, su bono mensual",
+    "opciones": [
+      {
+        "horas": 16,
+        "precio": 325,
+        "frecuencia": "4h a la semana",
+        "destacado": true,
+        "etiqueta": "EL MÁS ECONÓMICO · MÁS DE 3H A LA SEMANA"
+      }
+    ],
+    "resumen": [
+      "Clases presenciales en vuestra casa, en Benicalap: lunes y miércoles, de 17:00 a 19:00.",
+      "Matemáticas e Inglés, con bloques cortos y bien estructurados.",
+      "Se empieza con el bono de prueba de 2h y después, el bono mensual de 16h.",
+      "Sin permanencia: cada mes se puede ajustar el bono."
+    ],
+    "quote": "Un plan a medida para que Laura lleve Matemáticas e Inglés al día, con calma y constancia."
+  },
+  "informe_ejemplo": {
+    "asignatura": "Matemáticas",
+    "mes": "Noviembre 2026",
+    "comparado": "octubre",
+    "nota": "7,0",
+    "sesiones": 8,
+    "horas": "16h",
+    "destrezas_label": "Asignaturas seguidas",
+    "barras": [
+      [
+        "Matemáticas",
+        7.0
+      ],
+      [
+        "Inglés",
+        6.8
+      ]
+    ],
+    "mayor_progreso": "Matemáticas — las ecuaciones de primer grado pasaron de necesitar ayuda a resolverse solas",
+    "resumen": "En noviembre, Laura ha hecho 8 tardes de clase sin faltar a ninguna. En Matemáticas ya resuelve sola las ecuaciones de primer grado. En Inglés entiende mejor los textos y amplía vocabulario. Diciembre: misma rutina y refuerzo de los tiempos verbales.",
+    "proxima_sesion": "PRÓXIMA CLASE — LUNES 30",
+    "proxima_sesion_txt": "Problemas con ecuaciones + past simple.",
+    "horario": "Lunes y miércoles, 17:00–19:00 · en casa",
+    "temas": [
+      [
+        "Ecuaciones",
+        2.5
+      ],
+      [
+        "Fracciones",
+        1.8
+      ],
+      [
+        "Proporcionalidad",
+        1.2
+      ],
+      [
+        "Problemas",
+        0.5
+      ]
+    ],
+    "fuertes": [
+      "Muy constante con la rutina",
+      "Ecuaciones de primer grado consolidadas"
+    ],
+    "atencion": [
+      "Inglés: tiempos verbales",
+      "Mantener la atención en la 2ª hora"
+    ],
+    "casa": [
+      "15 minutos de repaso al día",
+      "Lista de verbos irregulares"
+    ],
+    "semanas": [
+      5.8,
+      6.3,
+      6.8,
+      7.2
+    ],
+    "metricas": [
+      [
+        "76%",
+        "Comprensión"
+      ],
+      [
+        "81%",
+        "Constancia"
+      ],
+      [
+        "62%",
+        "Autonomía"
+      ]
+    ],
+    "evol": [
+      [
+        "Atención",
+        "Octubre: 60%",
+        "Noviembre: 79%",
+        "Aguanta mejor los bloques de trabajo."
+      ],
+      [
+        "Autonomía",
+        "Octubre: 50%",
+        "Noviembre: 62%",
+        "Empieza sola las tareas más a menudo."
+      ]
+    ],
+    "conclusion": "Noviembre cierra con una tendencia muy positiva. En diciembre seguimos con la misma rutina y reforzamos los tiempos verbales en Inglés.",
+    "cal_mes": [
+      2026,
+      12
+    ],
+    "cal_titulo": "Calendario — diciembre 2026",
+    "cal_dias_sesion": [
+      0,
+      2
+    ],
+    "cal_examen": 16,
+    "cal_semanas": "3 sem",
+    "cal_semanas_txt": "hasta los exámenes de la 1ª evaluación",
+    "antes": "Sin refuerzo fijo",
+    "ahora": "Dos tardes semanales en casa"
+  }
+}
