@@ -1,0 +1,231 @@
+{
+  "nombre": "Lluïsa",
+  "nombre_completo": "Lluïsa Chavete y Ortiz",
+  "etapa": "bachillerato",
+  "curso": "2º Bachillerato",
+  "asignaturas": [
+    "Física y Química de 1º",
+    "Química de 2º"
+  ],
+  "voz": "familia",
+  "cover_card_sub": "2º Bachillerato · Clases online",
+  "bonos_recomendados": [
+    {
+      "horas": 12,
+      "frecuencia": "2 clases a la semana"
+    }
+  ],
+  "modalidades_recomendadas": [
+    "online"
+  ],
+  "tarifas_mostrar": [
+    "online"
+  ],
+  "textos": {
+    "cover_sub": "Un acompañamiento diseñado específicamente para Lluïsa: recuperar la Física y Química de 1º y preparar la Química de 2º para la PAU.",
+    "p2_sub": "Un profesor especializado en Física y Química, con dos clases online a la semana: una para recuperar la de 1º y otra para la Química de 2º.",
+    "c1": "Lluïsa tiene su profesor de referencia asignado, con dos clases online fijas cada semana.",
+    "p10_sub": "Escríbenos para empezar con el bono de prueba o para cualquier ajuste de horas de Lluïsa."
+  },
+  "camino": {
+    "etiqueta": "HOJA DE RUTA",
+    "pill": "EL CURSO DE UN VISTAZO",
+    "titulo": "Recuperar 1º y llegar a la PAU",
+    "lead": "Dos clases online a la semana, de 1h o 1h30: una de Física y Química de 1º y otra de Química de 2º. Así se reparte el curso.",
+    "meses": [
+      "Oct",
+      "Nov",
+      "Dic",
+      "Ene",
+      "Feb",
+      "Mar",
+      "Abr",
+      "May",
+      "Jun"
+    ],
+    "fases": [
+      {
+        "span": 3,
+        "etiqueta": "1ER TRIMESTRE",
+        "nombre": "Recuperar 1º",
+        "foco": "Física y Química de 1º al día para la recuperación, sin descuidar la Química de 2º."
+      },
+      {
+        "span": 3,
+        "etiqueta": "2º TRIMESTRE",
+        "nombre": "Química de 2º",
+        "foco": "Más peso en la Química de 2º: formulación, cálculos y problemas tipo PAU."
+      },
+      {
+        "span": 2,
+        "etiqueta": "3ER TRIMESTRE",
+        "nombre": "Finales de 2º",
+        "foco": "Exámenes de otros años y repaso para cerrar el curso."
+      },
+      {
+        "span": 1,
+        "etiqueta": "JUNIO",
+        "nombre": "PAU",
+        "foco": "Simulacros de Química cronometrados antes del examen."
+      }
+    ],
+    "hitos": [
+      {
+        "nombre": "1ª evaluación",
+        "pos": 2.75
+      },
+      {
+        "nombre": "Recuperación de 1º",
+        "pos": 4.5
+      },
+      {
+        "nombre": "Finales",
+        "pos": 8
+      },
+      {
+        "nombre": "PAU",
+        "pos": 9,
+        "meta": true
+      }
+    ]
+  },
+  "pasos": {
+    "base": 24,
+    "base_txt": "Tarifa base online de Bachillerato",
+    "modalidad_txt": "Online",
+    "who": "2º Bachillerato · Física y Química de 1º · Química de 2º · Online",
+    "titulo": "Su plan, en dos pasos",
+    "lead": "Primero, un bono de prueba para conocer a Lluïsa y ver su nivel. Después, el bono mensual: con dos clases a la semana, el de 8h (clases de 1h) o el de 12h (clases de 1h30).",
+    "prueba": {
+      "horas": 2,
+      "precio": 42,
+      "tachado": 48,
+      "texto": "Dos horas online para conocer a Lluïsa, ver qué le falta de la Física y Química de 1º y cómo lleva la Química de 2º, y dejar fijado su plan. Recomendado al 100%."
+    },
+    "paso2_titulo": "Elegid su bono mensual",
+    "opciones": [
+      {
+        "horas": 8,
+        "precio": 185,
+        "frecuencia": "2 clases de 1h a la semana"
+      },
+      {
+        "horas": 12,
+        "precio": 270,
+        "frecuencia": "2 clases de 1h30 a la semana",
+        "destacado": true,
+        "etiqueta": "RECOMENDADO · MEJOR PRECIO POR HORA"
+      }
+    ],
+    "resumen": [
+      "Clases online con un profesor de referencia de Física y Química.",
+      "Dos clases a la semana: una para recuperar la de 1º y otra para la Química de 2º.",
+      "Se empieza con el bono de prueba de 2h y después se elige el bono mensual.",
+      "Sin permanencia: cada mes se puede ajustar el bono."
+    ],
+    "quote": "Un plan a medida para que Lluïsa recupere 1º y llegue a la PAU con la Química preparada."
+  },
+  "informe_ejemplo": {
+    "asignatura": "Química de 2º",
+    "mes": "Noviembre 2026",
+    "comparado": "octubre",
+    "nota": "7,0",
+    "sesiones": 8,
+    "horas": "12h",
+    "destrezas_label": "Asignaturas seguidas",
+    "barras": [
+      [
+        "FyQ de 1º",
+        6.8
+      ],
+      [
+        "Química de 2º",
+        7.0
+      ]
+    ],
+    "mayor_progreso": "Física y Química de 1º — la estequiometría pasó de necesitar ayuda a resolverse sola",
+    "resumen": "En noviembre, Lluïsa ha hecho 8 clases online sin faltar a ninguna. En Física y Química de 1º ya resuelve sola los problemas de estequiometría. En Química de 2º domina la formulación y mejora en cinética. Diciembre: preparar la recuperación de 1º sin perder el ritmo en 2º.",
+    "proxima_sesion": "PRÓXIMA CLASE — MARTES 1",
+    "proxima_sesion_txt": "Equilibrio químico + 2 problemas de PAU.",
+    "horario": "Martes y jueves, 17:00–18:30 · online",
+    "temas": [
+      [
+        "Cinética",
+        2.5
+      ],
+      [
+        "Equilibrio",
+        1.8
+      ],
+      [
+        "Formulación",
+        1.2
+      ],
+      [
+        "Problemas PAU",
+        0.5
+      ]
+    ],
+    "fuertes": [
+      "Formulación muy segura",
+      "Constante con los ejercicios"
+    ],
+    "atencion": [
+      "Equilibrio: plantear la constante",
+      "Repasar unidades en los cálculos"
+    ],
+    "casa": [
+      "1 problema de PAU a la semana",
+      "Fichas de formulación"
+    ],
+    "semanas": [
+      5.8,
+      6.3,
+      6.8,
+      7.2
+    ],
+    "metricas": [
+      [
+        "76%",
+        "Comprensión"
+      ],
+      [
+        "81%",
+        "Constancia"
+      ],
+      [
+        "62%",
+        "Autonomía"
+      ]
+    ],
+    "evol": [
+      [
+        "Resolución de problemas",
+        "Octubre: 60%",
+        "Noviembre: 79%",
+        "Plantea mejor los datos antes de calcular."
+      ],
+      [
+        "Autonomía",
+        "Octubre: 50%",
+        "Noviembre: 62%",
+        "Cada vez necesita menos ayuda para empezar."
+      ]
+    ],
+    "conclusion": "Noviembre cierra con una tendencia muy positiva. En diciembre preparamos la recuperación de 1º sin perder el ritmo en Química de 2º.",
+    "cal_mes": [
+      2026,
+      12
+    ],
+    "cal_titulo": "Calendario — diciembre 2026",
+    "cal_dias_sesion": [
+      1,
+      3
+    ],
+    "cal_examen": 16,
+    "cal_semanas": "3 sem",
+    "cal_semanas_txt": "hasta los exámenes de la 1ª evaluación",
+    "antes": "Sin refuerzo fijo",
+    "ahora": "Dos clases online a la semana"
+  }
+}
