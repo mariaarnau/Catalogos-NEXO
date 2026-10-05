@@ -1,0 +1,207 @@
+{
+  "nombre": "Lucía",
+  "etapa": "universidad",
+  "curso": "Grado Medio · Operaciones de Laboratorio",
+  "asignaturas": [
+    "Química"
+  ],
+  "voz": "familia",
+  "presencial_label": "en su casa",
+  "cover_card_sub": "Grado Medio · Operaciones de Laboratorio · La Pobla de Farnals",
+  "bonos_recomendados": [
+    {
+      "horas": 12,
+      "frecuencia": "2 clases de 1h30 a la semana"
+    }
+  ],
+  "modalidades_recomendadas": [
+    "casa_alumno"
+  ],
+  "textos": {
+    "cover_sub": "Un acompañamiento diseñado específicamente para Lucía, con clases de Química desde la base para su ciclo de Operaciones de Laboratorio.",
+    "p2_sub": "Un profesor especializado en Química, con sesiones que empiezan por la base que no vio en 4º de ESO y ajuste continuo según lo que necesite reforzar.",
+    "c1": "Lucía tiene su profesor de referencia asignado, con dos clases fijas cada semana en su casa, en La Pobla de Farnals.",
+    "p10_sub": "Escríbenos para reservar el bono de prueba o para cualquier ajuste de horas de Lucía."
+  },
+  "semana": {
+    "etiqueta": "SU SEMANA",
+    "pill": "ORGANIZACIÓN SEMANAL",
+    "titulo": "Dos tardes a la semana",
+    "lead": "Martes y jueves, de 17:00 a 18:30, en su casa de La Pobla de Farnals. Una tarde para entender la teoría y otra para practicar problemas y cálculos.",
+    "hora_ini": 17,
+    "hora_fin": 19,
+    "alto": 100,
+    "asignaturas": [
+      "Química · teoría y conceptos",
+      "Química · problemas y cálculos"
+    ],
+    "asig_cortas": [
+      "Teoría y conceptos",
+      "Problemas y cálculos"
+    ],
+    "bloques": [
+      [
+        1,
+        17,
+        18.5,
+        0
+      ],
+      [
+        3,
+        17,
+        18.5,
+        1
+      ]
+    ],
+    "extra_titulo": "Desde la base",
+    "extra_texto": "Lo que no vio en 4º de ESO (formulación, el mol, disoluciones) se trabaja desde el principio, al ritmo del módulo del ciclo.",
+    "repartos": [
+      {
+        "nombre": "Cada semana · 3h",
+        "horas": [
+          1.5,
+          1.5
+        ]
+      }
+    ]
+  },
+  "pasos": {
+    "base": 27.5,
+    "base_txt": "Tarifa base presencial en casa (Universidad)",
+    "modalidad_txt": "Presencial en su casa",
+    "nota": "El de 12h es el bono con el precio por hora más bajo frente a los de 4h y 8h.",
+    "who": "Grado Medio · Operaciones de Laboratorio · Química · Presencial en su casa",
+    "titulo": "Su plan, en dos pasos",
+    "lead": "Primero, un bono de prueba en su casa para conocer a Lucía y ver desde dónde partimos. Después, el bono mensual de 12h: dos clases de 1h30 a la semana.",
+    "prueba": {
+      "horas": 2,
+      "precio": 49,
+      "tachado": 55,
+      "texto": "Dos horas en su casa para conocer a Lucía, ver qué le falta de la base de Química y dejar fijado su plan de trabajo. Recomendado al 100%."
+    },
+    "paso2_titulo": "Después, su bono mensual",
+    "opciones": [
+      {
+        "horas": 12,
+        "precio": 300,
+        "frecuencia": "2 clases de 1h30 a la semana",
+        "destacado": true,
+        "etiqueta": "MEJOR PRECIO POR HORA"
+      }
+    ],
+    "resumen": [
+      "Clases presenciales en su casa, en La Pobla de Farnals.",
+      "Química desde la base, al ritmo de su ciclo de Operaciones de Laboratorio.",
+      "Se empieza con el bono de prueba de 2h y después, el bono mensual de 12h.",
+      "Sin permanencia: cada mes se puede ajustar el bono."
+    ],
+    "quote": "Un plan a medida para que Lucía entienda la Química desde la base y la lleve al día."
+  },
+  "informe_ejemplo": {
+    "asignatura": "Química",
+    "mes": "Noviembre 2026",
+    "comparado": "octubre",
+    "nota": "7,0",
+    "sesiones": 8,
+    "horas": "12h",
+    "destrezas_label": "Bloques trabajados",
+    "barras": [
+      [
+        "Formulación",
+        7.0
+      ],
+      [
+        "Mol y estequiometría",
+        6.5
+      ],
+      [
+        "Disoluciones",
+        6.8
+      ]
+    ],
+    "mayor_progreso": "Química — la formulación inorgánica pasó de necesitar ayuda a resolverse sola",
+    "resumen": "En noviembre, Lucía ha hecho 8 clases sin faltar a ninguna. Ya formula sola los compuestos inorgánicos básicos. Con el mol y la estequiometría todavía necesita apoyo en los cálculos. Diciembre: reforzar cálculos y disoluciones antes de los exámenes del módulo.",
+    "proxima_sesion": "PRÓXIMA CLASE — MARTES 1",
+    "proxima_sesion_txt": "Disoluciones: concentración molar con ejemplos de laboratorio.",
+    "horario": "Martes y jueves, 17:00–18:30 · en su casa",
+    "temas": [
+      [
+        "Formulación",
+        2.5
+      ],
+      [
+        "El mol",
+        1.8
+      ],
+      [
+        "Disoluciones",
+        1.2
+      ],
+      [
+        "Problemas",
+        0.5
+      ]
+    ],
+    "fuertes": [
+      "Formulación inorgánica consolidada",
+      "Muy ordenada en el laboratorio"
+    ],
+    "atencion": [
+      "Cálculos con el mol",
+      "Cambios de unidades"
+    ],
+    "casa": [
+      "5 ejercicios de formulación a la semana",
+      "Repasar factores de conversión"
+    ],
+    "semanas": [
+      5.8,
+      6.3,
+      6.8,
+      7.2
+    ],
+    "metricas": [
+      [
+        "76%",
+        "Comprensión"
+      ],
+      [
+        "81%",
+        "Constancia"
+      ],
+      [
+        "62%",
+        "Autonomía"
+      ]
+    ],
+    "evol": [
+      [
+        "Resolución de problemas",
+        "Octubre: 60%",
+        "Noviembre: 79%",
+        "Plantea mejor los datos antes de calcular."
+      ],
+      [
+        "Autonomía",
+        "Octubre: 50%",
+        "Noviembre: 62%",
+        "Cada vez necesita menos ayuda para empezar."
+      ]
+    ],
+    "conclusion": "Noviembre cierra con una tendencia muy positiva. En diciembre reforzamos cálculos y disoluciones antes de los exámenes del módulo.",
+    "cal_mes": [
+      2026,
+      12
+    ],
+    "cal_titulo": "Calendario — diciembre 2026",
+    "cal_dias_sesion": [
+      1,
+      3
+    ],
+    "cal_examen": 16,
+    "cal_semanas": "3 sem",
+    "cal_semanas_txt": "hasta los exámenes del módulo",
+    "antes": "Sin refuerzo fijo",
+    "ahora": "Dos clases semanales en casa"
+  }
+}
