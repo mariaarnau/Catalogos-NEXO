@@ -100,3 +100,4 @@ h3 small { font-family:'Liberation Sans',sans-serif; font-weight:400; color:var(
 .c4 .clogo { height:46px; margin:2mm 0 5mm } .c4 .ct { font-size:25pt; margin:6px 0 6mm } .c4 .ficha { margin-bottom:5mm; padding:12px 20px 10px }
 .c4 .fnom { font-size:20pt } .c4 .fgrid { margin-top:9px; padding-top:9px; gap:9px 20px } .c4 .cc { padding:10px 12px 6px } .c4 .cch b { font-size:12.5pt } .c4 .ccl { margin-top:0 }
 .rsw.cmp .rs { margin-bottom:10px } .rsw.cmp .rs p { line-height:1.5; margin-bottom:5px; font-size:9.8pt } .rsw.cmp .rs h4 { margin-bottom:4px }
+.cc.wide { grid-column:1/-1 }
