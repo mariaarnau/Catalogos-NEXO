@@ -1,0 +1,165 @@
+{
+  "nombre": "Alicia",
+  "etapa": "eso",
+  "curso": "4º ESO",
+  "asignaturas": [
+    "Matemáticas"
+  ],
+  "voz": "familia",
+  "presencial_label": "en su casa",
+  "cover_card_sub": "4º ESO · Matemáticas · Clases en casa",
+  "bonos_recomendados": [
+    {
+      "horas": 12,
+      "frecuencia": "3h a la semana"
+    }
+  ],
+  "modalidades_recomendadas": [
+    "casa_alumno"
+  ],
+  "tarifas_mostrar": [
+    "casa_alumno"
+  ],
+  "textos": {
+    "c1": "Alicia tiene su profesor de referencia asignado, especializado en Matemáticas, con horario fijo cada semana en vuestra casa.",
+    "p10_sub": "Escríbenos para reservar el bono de prueba o para cualquier ajuste de horas de Alicia."
+  },
+  "pasos": {
+    "base": 24,
+    "base_txt": "Tarifa base presencial de 4º ESO",
+    "modalidad_txt": "Presencial en su casa",
+    "who": "4º ESO · Matemáticas · Presencial en su casa",
+    "titulo": "Su plan, en dos pasos",
+    "lead": "Primero, un bono de prueba para conocer a Alicia y ver su nivel en Matemáticas. Después, el bono mensual de 12h: unas 3 horas a la semana.",
+    "prueba": {
+      "horas": 2,
+      "precio": 44,
+      "tachado": 48,
+      "texto": "Dos horas en vuestra casa para conocer a Alicia, ver qué le cuesta más de Matemáticas y dejar fijado su plan de trabajo. Recomendado al 100%."
+    },
+    "paso2_titulo": "Después, su bono mensual",
+    "nota": "El de 12h es el bono con el precio por hora más bajo frente a los de 4h y 8h.",
+    "opciones": [
+      {
+        "horas": 12,
+        "precio": 270,
+        "frecuencia": "3h a la semana",
+        "destacado": true,
+        "etiqueta": "MEJOR PRECIO POR HORA"
+      }
+    ],
+    "resumen": [
+      "Clases presenciales de Matemáticas en vuestra casa.",
+      "Se empieza con el bono de prueba de 2h y después, el bono mensual de 12h.",
+      "Sin permanencia: cada mes se puede ajustar el bono."
+    ],
+    "quote": "Un plan a medida para que Alicia llegue a cada examen de Matemáticas de 4º con todo trabajado."
+  },
+  "informe_ejemplo": {
+    "asignatura": "Matemáticas",
+    "mes": "Noviembre 2026",
+    "comparado": "octubre",
+    "nota": "7,0",
+    "sesiones": 8,
+    "horas": "12h",
+    "destrezas_label": "Bloques trabajados",
+    "barras": [
+      [
+        "Ecuaciones",
+        7.0
+      ],
+      [
+        "Sistemas",
+        6.5
+      ],
+      [
+        "Funciones",
+        6.8
+      ]
+    ],
+    "mayor_progreso": "Matemáticas — las ecuaciones de segundo grado pasaron de necesitar ayuda a resolverse solas",
+    "resumen": "En noviembre, Alicia ha hecho 8 clases sin faltar a ninguna. Ya resuelve sola las ecuaciones de segundo grado. Con los sistemas todavía necesita apoyo al plantear los problemas. Diciembre: reforzar sistemas y funciones antes de los exámenes de la 1ª evaluación.",
+    "proxima_sesion": "PRÓXIMA CLASE — MARTES 1",
+    "proxima_sesion_txt": "Sistemas de ecuaciones: problemas paso a paso.",
+    "horario": "Martes y jueves, 17:00–18:30 · en casa",
+    "temas": [
+      [
+        "Ecuaciones",
+        2.5
+      ],
+      [
+        "Sistemas",
+        1.8
+      ],
+      [
+        "Funciones",
+        1.2
+      ],
+      [
+        "Problemas",
+        0.5
+      ]
+    ],
+    "fuertes": [
+      "Ecuaciones de 2º grado consolidadas",
+      "Muy ordenada en los cálculos"
+    ],
+    "atencion": [
+      "Sistemas: plantear el problema",
+      "Funciones: leer bien las gráficas"
+    ],
+    "casa": [
+      "3 problemas de sistemas a la semana",
+      "Repasar fórmulas del tema"
+    ],
+    "semanas": [
+      5.8,
+      6.3,
+      6.8,
+      7.2
+    ],
+    "metricas": [
+      [
+        "76%",
+        "Comprensión"
+      ],
+      [
+        "81%",
+        "Constancia"
+      ],
+      [
+        "62%",
+        "Autonomía"
+      ]
+    ],
+    "evol": [
+      [
+        "Resolución de problemas",
+        "Octubre: 60%",
+        "Noviembre: 79%",
+        "Plantea mejor el enunciado antes de operar."
+      ],
+      [
+        "Autonomía",
+        "Octubre: 50%",
+        "Noviembre: 62%",
+        "Cada vez necesita menos ayuda para empezar."
+      ]
+    ],
+    "conclusion": "Noviembre cierra con una tendencia muy positiva. En diciembre reforzamos sistemas y funciones antes de los exámenes de la 1ª evaluación.",
+    "cal_mes": [
+      2026,
+      12
+    ],
+    "cal_titulo": "Calendario — diciembre 2026",
+    "cal_dias_sesion": [
+      1,
+      3
+    ],
+    "cal_examen": 16,
+    "cal_semanas": "3 sem",
+    "cal_semanas_txt": "hasta los exámenes de la 1ª evaluación",
+    "antes": "Sin refuerzo fijo",
+    "ahora": "Clases semanales en casa · Bono de 12h"
+  }
+}
