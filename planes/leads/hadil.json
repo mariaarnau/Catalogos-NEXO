@@ -1,0 +1,127 @@
+{
+  "nombre": "Hadil",
+  "etapa": "bachillerato",
+  "curso": "1º Bachillerato CCSS",
+  "asignaturas": [
+    "Inglés",
+    "Matemáticas CCSS"
+  ],
+  "voz": "familia",
+  "cover_card_sub": "1º Bachillerato CCSS · Orriols",
+  "bonos_recomendados": [
+    {
+      "horas": 12,
+      "frecuencia": "3h a la semana"
+    }
+  ],
+  "modalidades_recomendadas": [
+    "online",
+    "casa_alumno"
+  ],
+  "textos": {
+    "cover_sub": "Un acompañamiento diseñado específicamente para Hadil, con clases de Inglés y Matemáticas aplicadas a las Ciencias Sociales de 1º de Bachillerato."
+  },
+  "informe_ejemplo": {
+    "asignatura": "Matemáticas CCSS",
+    "mes": "Noviembre 2026",
+    "comparado": "octubre",
+    "nota": "7,0",
+    "sesiones": 8,
+    "horas": "12h",
+    "destrezas_label": "Asignaturas seguidas",
+    "barras": [
+      [
+        "Inglés",
+        7.0
+      ],
+      [
+        "Matemáticas CCSS",
+        6.8
+      ]
+    ],
+    "mayor_progreso": "Matemáticas CCSS — la interpretación de funciones pasó de necesitar ayuda a resolverse sola",
+    "resumen": "En noviembre, Hadil ha hecho 8 sesiones sin faltar a ninguna. En Inglés gana fluidez y vocabulario. En Matemáticas CCSS ya interpreta bien las funciones y empieza a manejar la estadística. El punto de trabajo son los problemas con porcentajes y tablas de datos.",
+    "proxima_sesion": "PRÓXIMA SESIÓN — MARTES 1",
+    "proxima_sesion_txt": "Matemáticas CCSS: estadística + Inglés: writing.",
+    "horario": "Hadil · martes y jueves, 17:00–18:30",
+    "temas": [
+      [
+        "Funciones",
+        2.5
+      ],
+      [
+        "Estadística",
+        1.8
+      ],
+      [
+        "Porcentajes",
+        1.2
+      ],
+      [
+        "Writing",
+        0.5
+      ]
+    ],
+    "fuertes": [
+      "Constante con los ejercicios",
+      "Buena base de vocabulario"
+    ],
+    "atencion": [
+      "Problemas con tablas de datos",
+      "Writing: estructura de los párrafos"
+    ],
+    "casa": [
+      "1 ejercicio de estadística al día",
+      "10 min diarios de listening"
+    ],
+    "semanas": [
+      5.8,
+      6.3,
+      6.8,
+      7.2
+    ],
+    "metricas": [
+      [
+        "76%",
+        "Comprensión"
+      ],
+      [
+        "81%",
+        "Constancia"
+      ],
+      [
+        "62%",
+        "Autonomía"
+      ]
+    ],
+    "evol": [
+      [
+        "Resolución de problemas",
+        "Octubre: 60%",
+        "Noviembre: 79%",
+        "Plantea mejor el enunciado antes de operar."
+      ],
+      [
+        "Autonomía",
+        "Octubre: 50%",
+        "Noviembre: 62%",
+        "Cada vez necesita menos ayuda para empezar."
+      ]
+    ],
+    "conclusion": "Noviembre cierra con una tendencia muy positiva. El foco de diciembre es la estadística y el writing antes de los exámenes de la 1ª evaluación.",
+    "cal_mes": [
+      2026,
+      12
+    ],
+    "cal_titulo": "Calendario — diciembre 2026",
+    "cal_dias_sesion": [
+      1,
+      3
+    ],
+    "cal_examen": 16,
+    "cal_semanas": "3 sem",
+    "cal_semanas_txt": "hasta los exámenes de la 1ª evaluación",
+    "antes": "Sin refuerzo fijo",
+    "ahora": "Clases semanales de Inglés y Matemáticas · Bono de 12h"
+  }
+}
