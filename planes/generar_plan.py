@@ -680,6 +680,29 @@ def page_recomendacion(d, t):
 </section>'''
 
 
+def page_precios(d, t):
+    """Opciones de pago en limpio: precio por hora y lo que se paga a la semana."""
+    c = d["precios_comp"]
+    cards = ""
+    for o in c["opciones"]:
+        top = f'<div class="pr-top">{e(o["etiqueta"])}</div>' if o.get("etiqueta") else ""
+        cards += f'''<div class="pr{" rec" if o.get("etiqueta") else ""}">{top}
+  <div class="pr-n">{e(o["nombre"])}</div>
+  <div class="pr-h">{eur(o["hora"])}<small>/hora</small></div>
+  <div class="pr-s"><b>{eur(o["semana"], 0 if o["semana"] == int(o["semana"]) else 2)}</b><span>a la semana</span></div>
+  <div class="pr-p">{e(o["pago"])}</div>
+</div>'''
+    return f'''<section class="page glow prp">
+  <div class="hdr"><img class="logo-sm" src="{LOGO_URI}"><span class="hdr-r">{e(c["etiqueta"])}</span></div><div class="rule"></div>
+  <div class="pill gold">{e(c["pill"])}</div>
+  <h2>{e(c["titulo"])}</h2>
+  <p class="lead">{e(c["lead"])}</p>
+  <div class="prs">{cards}</div>
+  <p class="pr-foot">{e(c["pie"])}</p>
+  {footer()}
+</section>'''
+
+
 def page_quincenal(d, t):
     b = d["bono_especial"]
     base = TARIFAS[d["etapa"]]["base"]["casa_alumno"]
@@ -1479,6 +1502,20 @@ h2.c { font-size: 34px; margin: 26px 0 18px; }
 .a4 { background: linear-gradient(160deg, #5c2f3c, #3e2029); border-color: #a85a70; color: #f5c9d5; }
 .bx-ref { display: flex; justify-content: space-between; color: #7d7f8a; font-size: 13px; padding: 3px 0; }
 .bx-ref s { color: #a49f8e; }
+.prp h2 { margin-top: 14px; }
+.prp .rule { margin: 18px 0 24px; }
+.prs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 44px; }
+.pr { position: relative; border: 1px solid #2a3350; border-radius: 18px; padding: 34px 20px 26px; text-align: center; background: #0e1629; }
+.pr.rec { border-color: #c9a24b; background: linear-gradient(160deg, #2a2618, #0e1629); }
+.pr-top { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #c9a24b; color: #0a1226; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; padding: 5px 14px; border-radius: 999px; white-space: nowrap; }
+.pr-n { font: 700 18px 'Liberation Serif', serif; color: #e7e7ea; }
+.pr-h { margin-top: 20px; font: 700 50px 'Liberation Serif', serif; color: #e9d18f; line-height: 1; }
+.pr-h small { display: block; margin-top: 4px; font: 400 14px 'Liberation Sans', Arial; color: #a49f8e; }
+.pr-s { margin: 24px 0 0; padding-top: 20px; border-top: 1px solid #1d2744; }
+.pr-s b { display: block; font: 700 34px 'Liberation Serif', serif; color: #fff; line-height: 1; }
+.pr-s span { color: #a49f8e; font-size: 14px; }
+.pr-p { margin-top: 16px; color: #7d7f8a; font-size: 13px; }
+.pr-foot { margin-top: 30px; text-align: center; color: #a49f8e; font-size: 14px; }
 .ocp h2 { margin-top: 14px; }
 .ocp .rule { margin: 18px 0 24px; }
 .ocs { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 22px; }
@@ -1652,10 +1689,12 @@ def main():
         + ([page_calendario(d, t)] if d.get("calendario") else []) \
         + ([page_ruta(d, t)] if d.get("ruta") else []) \
         + [page_proceso(d, t), page_informe(d, t), page_phones(d, t)]
-    for m in ([] if d.get("opciones_comp") else (d.get("tarifas_mostrar") or ("online", "casa_profesor", "casa_alumno"))):
+    for m in ([] if (d.get("opciones_comp") or d.get("precios_comp")) else (d.get("tarifas_mostrar") or ("online", "casa_profesor", "casa_alumno"))):
         if m in tf["precios"]:
             pages.append(page_tarifas(d, t, m))
-    if d.get("opciones_comp"):
+    if d.get("precios_comp"):
+        pages += [page_precios(d, t), page_cierre(d, t)]
+    elif d.get("opciones_comp"):
         pages += [page_opciones(d, t), page_recomendacion(d, t), page_cierre(d, t)]
     elif d.get("pasos"):
         pages += [page_pasos(d, t), page_resumen_pasos(d, t), page_cierre(d, t)]
