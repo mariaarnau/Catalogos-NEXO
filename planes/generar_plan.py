@@ -689,8 +689,9 @@ def page_dos_tarifas(d, t):
         cols += f'''<div class="dt {k}">
   <div class="dt-n">{e(o["nombre"])}</div><div class="dt-s">{e(o["sub"])}</div>
   <div class="dt-d">desde</div>
-  <div class="dt-h">{eur(o["desde"])}<small>/hora</small></div>
+  <div class="dt-h">{e(o.get("desde_txt") or eur(o["desde"]))}<small>/hora</small></div>
   <ul class="dt-l">{li}</ul>
+  {f'<div class="dt-a"><i>⏱</i><span>{e(o["asignacion"])}</span></div>' if o.get("asignacion") else ""}
   <div class="dt-q">{e(o["para"])}</div>
 </div>'''
     return f'''<section class="page glow dtp">
@@ -1542,6 +1543,8 @@ h2.c { font-size: 34px; margin: 26px 0 18px; }
 .dt-l li::before { margin-right: 10px; font-weight: 700; }
 .dt-l li.si::before { content: "✓"; color: #7fcfa0; } .dt-l li.no::before { content: "✕"; color: #f0a283; }
 .dt-l li.no { color: #a49f8e; }
+.dt-a { margin-top: 12px; display: flex; gap: 10px; align-items: center; color: #e7e7ea; font-size: 14px; }
+.dt-a i { font-style: normal; color: #e9d18f; }
 .dt-q { margin-top: 14px; padding: 10px 14px; border-radius: 10px; background: #0b1326; color: #c9c9cf; font-size: 13.5px; }
 .dt-next { margin-top: 18px; display: flex; gap: 12px; align-items: center; justify-content: center; color: #a49f8e; font-size: 14.5px; }
 .dt-next i { font-style: normal; color: #e9d18f; font-weight: 700; }

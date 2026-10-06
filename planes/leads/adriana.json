@@ -96,7 +96,9 @@
           "Las horas no usadas se pierden"
         ]
       ],
-      "para": "Si no os importan los informes ni la app."
+      "para": "Si no os importan los informes ni la app.",
+      "desde_txt": "≈ 16 €",
+      "asignacion": "Profesor entre 48 horas y 1 semana"
     },
     "premium": {
       "nombre": "Tarifa premium",
@@ -124,7 +126,9 @@
           "Sin riesgo de perder horas"
         ]
       ],
-      "para": "Si queréis flexibilidad y tranquilidad."
+      "para": "Si queréis flexibilidad y tranquilidad.",
+      "desde_txt": "≈ 22 €",
+      "asignacion": "Profesor en 24–48 horas"
     },
     "siguiente": "Elegís una y os enviamos las condiciones y el presupuesto."
   },
