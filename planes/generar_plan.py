@@ -680,6 +680,24 @@ def page_recomendacion(d, t):
 </section>'''
 
 
+def page_premium_venta(d, t):
+    """Oferta premium como primera opción: precio 'desde', beneficios y aviso discreto de suscripción."""
+    c = d["premium_venta"]
+    cards = "".join(f'<div class="pv"><em>{i + 1}</em><b>{e(a)}</b><span>{e(b)}</span></div>' for i, (a, b) in enumerate(c["beneficios"]))
+    return f'''<section class="page glow pvp">
+  <div class="hdr"><img class="logo-sm" src="{LOGO_URI}"><span class="hdr-r">{e(c["etiqueta"])}</span></div><div class="rule"></div>
+  <div class="pill gold">{e(c["pill"])}</div>
+  <h2>{e(c["titulo"])}</h2>
+  <div class="pv-hero">
+    <div class="pv-p"><small>DESDE</small><b>{e(c["desde"])}<i>/hora</i></b><span>{e(c["desde_sub"])}</span></div>
+    <div class="pv-r"><small>PARA {e(c["horas_sem"])} A LA SEMANA</small><b>{e(c["recomendado"])}</b><span>{e(c["recomendado_sub"])}</span></div>
+  </div>
+  <div class="pvs">{cards}</div>
+  <div class="pv-eco"><span>{e(c["economico"])}</span></div>
+  {footer()}
+</section>'''
+
+
 def page_dos_tarifas(d, t):
     """Fase 1: tarifa estándar vs premium, en frases cortas y con precio 'desde'."""
     c = d["dos_tarifas"]
@@ -1526,6 +1544,24 @@ h2.c { font-size: 34px; margin: 26px 0 18px; }
 .a4 { background: linear-gradient(160deg, #5c2f3c, #3e2029); border-color: #a85a70; color: #f5c9d5; }
 .bx-ref { display: flex; justify-content: space-between; color: #7d7f8a; font-size: 13px; padding: 3px 0; }
 .bx-ref s { color: #a49f8e; }
+.pvp h2 { margin-top: 14px; }
+.pvp .rule { margin: 18px 0 24px; }
+.pv-hero { display: grid; grid-template-columns: 1.15fr 1fr; gap: 18px; margin-top: 22px; }
+.pv-p { border: 1px solid #c9a24b; border-radius: 18px; padding: 20px 26px; background: linear-gradient(160deg, #2a2618, #0e1629); }
+.pv-p small, .pv-r small { display: block; color: #7d7f8a; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; }
+.pv-p b { display: block; font: 700 56px 'Liberation Serif', serif; color: #e9d18f; line-height: 1.05; }
+.pv-p b i { font: 400 16px 'Liberation Sans', Arial; font-style: normal; color: #a49f8e; margin-left: 4px; }
+.pv-p span { color: #c9c9cf; font-size: 14px; }
+.pv-r { border: 1px solid #2a3350; border-radius: 18px; padding: 20px 24px; background: #0e1629; }
+.pv-r b { display: block; margin-top: 6px; font: 700 26px 'Liberation Serif', serif; color: #fff; }
+.pv-r span { color: #a49f8e; font-size: 13.5px; }
+.pvs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 18px; }
+.pv { border: 1px solid #2a3350; border-radius: 14px; padding: 16px 18px; background: #0e1629; }
+.pv em { display: flex; width: 26px; height: 26px; border-radius: 50%; align-items: center; justify-content: center; font: italic 700 14px 'Liberation Serif', serif; background: linear-gradient(135deg, #f6e2a6, #c9a24b); color: #0a1226; }
+.pv b { display: block; margin: 10px 0 4px; font: 700 16px 'Liberation Serif', serif; }
+.pv span { color: #a49f8e; font-size: 13px; line-height: 1.35; }
+.pv-eco { margin-top: 18px; text-align: center; border-top: 1px solid #1d2744; padding-top: 14px; }
+.pv-eco span { color: #7d7f8a; font-size: 13px; }
 .dtp h2 { margin-top: 14px; }
 .dtp .rule { margin: 18px 0 24px; }
 .dts { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 26px; }
@@ -1736,10 +1772,12 @@ def main():
         + ([page_ruta(d, t)] if d.get("ruta") else []) \
         + ([] if d.get("omitir_proceso") else [page_proceso(d, t)]) \
         + ([] if d.get("omitir_informe") else [page_informe(d, t)]) + [page_phones(d, t)]
-    for m in ([] if (d.get("opciones_comp") or d.get("precios_comp") or d.get("dos_tarifas")) else (d.get("tarifas_mostrar") or ("online", "casa_profesor", "casa_alumno"))):
+    for m in ([] if (d.get("opciones_comp") or d.get("precios_comp") or d.get("dos_tarifas") or d.get("premium_venta")) else (d.get("tarifas_mostrar") or ("online", "casa_profesor", "casa_alumno"))):
         if m in tf["precios"]:
             pages.append(page_tarifas(d, t, m))
-    if d.get("dos_tarifas"):
+    if d.get("premium_venta"):
+        pages += [page_premium_venta(d, t), page_cierre(d, t)]
+    elif d.get("dos_tarifas"):
         pages += [page_dos_tarifas(d, t), page_cierre(d, t)]
     elif d.get("precios_comp"):
         pages += [page_precios(d, t), page_cierre(d, t)]

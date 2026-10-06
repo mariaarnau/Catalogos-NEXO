@@ -1,0 +1,203 @@
+{
+  "nombre": "Elvira",
+  "etapa": "eso",
+  "curso": "",
+  "asignaturas": [],
+  "voz": "familia",
+  "cover_pill": "PLAN PERSONALIZADO",
+  "cover_card_sub": "Clases en casa · 3 horas a la semana",
+  "presencial_label": "en su casa",
+  "bonos_recomendados": [
+    {
+      "horas": 12,
+      "frecuencia": "3h a la semana"
+    }
+  ],
+  "modalidades_recomendadas": [
+    "casa_alumno"
+  ],
+  "omitir_proceso": true,
+  "omitir_informe": true,
+  "textos": {
+    "cover_sub": "Un plan a medida para Elvira: clases de repaso en casa, con un profesor que se desplaza a vuestro domicilio.",
+    "p4_pill": "ASÍ LO VERÉIS VOSOTROS",
+    "p4_sub": "Así son los informes que recibiréis cada mes en vuestra área privada.",
+    "p10_sub": "Escríbenos y reservamos las clases de Elvira: tendréis profesor en 24–48 horas."
+  },
+  "semana": {
+    "etiqueta": "SU SEMANA",
+    "pill": "VUESTRA ORGANIZACIÓN",
+    "titulo": "Dos tardes a la semana",
+    "lead": "Martes y jueves, de 17:00 a 18:30, en vuestra casa. 3 horas a la semana, siempre a la misma hora.",
+    "hora_ini": 17,
+    "hora_fin": 19,
+    "alto": 100,
+    "asignaturas": [
+      "Clase de repaso"
+    ],
+    "bloques": [
+      [
+        1,
+        17,
+        18.5,
+        0
+      ],
+      [
+        3,
+        17,
+        18.5,
+        0
+      ]
+    ],
+    "extra_titulo": "Días y horas flexibles",
+    "extra_texto": "Los organizáis con el profesor.",
+    "repartos": [
+      {
+        "nombre": "Cada semana · 3h",
+        "horas": [
+          3
+        ]
+      }
+    ]
+  },
+  "informe_ejemplo": {
+    "asignatura": "Matemáticas",
+    "mes": "Noviembre 2026",
+    "comparado": "octubre",
+    "nota": "7,0",
+    "sesiones": 8,
+    "horas": "12h",
+    "destrezas_label": "Asignaturas seguidas",
+    "barras": [
+      [
+        "Matemáticas",
+        7.0
+      ],
+      [
+        "Lengua",
+        6.8
+      ]
+    ],
+    "mayor_progreso": "Matemáticas — las ecuaciones de primer grado pasaron de necesitar ayuda a resolverse solas",
+    "resumen": "En noviembre, Elvira ha hecho 12 clases sin faltar a ninguna. Ya resuelve sola las ecuaciones de primer grado. En Lengua comprende mejor los textos. Diciembre: preparar los exámenes de la 1ª evaluación.",
+    "proxima_sesion": "PRÓXIMA CLASE — LUNES 30",
+    "proxima_sesion_txt": "Problemas con ecuaciones + comprensión lectora.",
+    "horario": "Elvira · martes y jueves, 17:00–18:30",
+    "temas": [
+      [
+        "Ecuaciones",
+        2.5
+      ],
+      [
+        "Fracciones",
+        1.8
+      ],
+      [
+        "Proporcionalidad",
+        1.2
+      ],
+      [
+        "Problemas",
+        0.5
+      ]
+    ],
+    "fuertes": [
+      "Muy constante con las tareas",
+      "Ecuaciones de primer grado consolidadas"
+    ],
+    "atencion": [
+      "Plantear los problemas con calma",
+      "Estudiar con esquemas"
+    ],
+    "casa": [
+      "15 minutos de repaso al día",
+      "Agenda con las fechas de exámenes"
+    ],
+    "semanas": [
+      5.8,
+      6.3,
+      6.8,
+      7.2
+    ],
+    "metricas": [
+      [
+        "76%",
+        "Comprensión"
+      ],
+      [
+        "81%",
+        "Constancia"
+      ],
+      [
+        "62%",
+        "Autonomía"
+      ]
+    ],
+    "evol": [
+      [
+        "Resolución de problemas",
+        "Octubre: 60%",
+        "Noviembre: 79%",
+        "Plantea mejor el enunciado antes de operar."
+      ],
+      [
+        "Autonomía",
+        "Octubre: 50%",
+        "Noviembre: 62%",
+        "Cada vez necesita menos ayuda para empezar."
+      ]
+    ],
+    "conclusion": "Noviembre cierra con una tendencia muy positiva. El foco de diciembre es preparar los exámenes de la 1ª evaluación.",
+    "cal_mes": [
+      2026,
+      12
+    ],
+    "cal_titulo": "Calendario — diciembre 2026",
+    "cal_dias_sesion": [
+      1,
+      3
+    ],
+    "cal_examen": 16,
+    "cal_semanas": "3 sem",
+    "cal_semanas_txt": "hasta los exámenes de la 1ª evaluación",
+    "antes": "Sin refuerzo fijo",
+    "ahora": "Tres clases semanales en casa"
+  },
+  "premium_venta": {
+    "etiqueta": "VUESTRA PROPUESTA",
+    "pill": "TARIFA PREMIUM",
+    "titulo": "Clases en casa, con total flexibilidad",
+    "desde": "22,50 €",
+    "desde_sub": "El profesor se desplaza a vuestra casa",
+    "horas_sem": "3 H",
+    "recomendado": "Bono de 12 horas",
+    "recomendado_sub": "270 € · el mes entero de clases",
+    "beneficios": [
+      [
+        "Pagáis solo las horas de clase",
+        "Solo se descuentan las horas que se dan."
+      ],
+      [
+        "Las horas no caducan",
+        "Úsalas cuando queráis: exámenes, semanas sueltas, parones."
+      ],
+      [
+        "Sin mínimos ni permanencia",
+        "Ni horas mínimas a la semana ni compromiso."
+      ],
+      [
+        "Profesor en 24–48 horas",
+        "Os lo asignamos y se desplaza a vuestra casa."
+      ],
+      [
+        "Área privada del alumno",
+        "Subid material y tenedlo todo en un solo sitio."
+      ],
+      [
+        "Informes cada mes",
+        "Seguimiento de la evolución para planificar mejor."
+      ]
+    ],
+    "economico": "¿Buscáis algo más económico? Tenemos suscripciones desde ≈ 16 €/hora. Hablad con Nexo Académico."
+  }
+}
