@@ -51,6 +51,73 @@ FEATURES = {2: ["Evaluación inicial", "Sustitución garantizada"],
             12: ["Plan de trabajo", "Ajuste de horas entre bloques", "Área privada alumno"]}
 
 e = html.escape
+# Idioma del documento: "es" (por defecto) o "ru". tr() traduce los textos fijos de la interfaz.
+LANG = "es"
+RU = {
+ "Nexo Académico · Plan personalizado": "Nexo Académico · Индивидуальный план",
+ "DOCUMENTO PRIVADO · PLAN PERSONALIZADO": "ЛИЧНЫЙ ДОКУМЕНТ · ИНДИВИДУАЛЬНЫЙ ПЛАН",
+ "PLAN PERSONALIZADO": "ИНДИВИДУАЛЬНЫЙ ПЛАН",
+ "Tu plan a medida en": "Ваш индивидуальный план в",
+ "Lunes": "Понедельник",
+ "Martes": "Вторник",
+ "Miércoles": "Среда",
+ "Jueves": "Четверг",
+ "Viernes": "Пятница",
+ "h": "ч",
+ "DESDE": "ОТ",
+ "hora": "час",
+ "No entendido": "Не понято",
+ "Con dificultad": "С трудом",
+ "Bien": "Хорошо",
+ "Con soltura": "Свободно",
+ "DOCUMENTO PRIVADO · INFORME MENSUAL": "ЛИЧНЫЙ ДОКУМЕНТ · ЕЖЕМЕСЯЧНЫЙ ОТЧЁТ",
+ "Informe de seguimiento": "Отчёт об успеваемости",
+ "PROFESOR": "ПРЕПОДАВАТЕЛЬ",
+ "ASIGNATURAS": "ПРЕДМЕТЫ",
+ "PERIODO": "ПЕРИОД",
+ "SESIONES Y HORAS": "ЗАНЯТИЯ И ЧАСЫ",
+ "sesiones": "занятий",
+ "EL MES EN GENERAL": "МЕСЯЦ В ЦЕЛОМ",
+ "INFORME DE SEGUIMIENTO MENSUAL": "ЕЖЕМЕСЯЧНЫЙ ОТЧЁТ ОБ УСПЕВАЕМОСТИ",
+ "SESIONES": "ЗАНЯТИЯ",
+ "DEDICADAS": "ЧАСОВ",
+ "BLOQUES": "БЛОКИ",
+ "HORAS": "ЧАСЫ",
+ "MAYOR PROGRESO DEL MES": "ГЛАВНЫЙ ПРОГРЕСС МЕСЯЦА",
+ "Resumen del mes": "Итоги месяца",
+ "CONCLUSIÓN": "ВЫВОД",
+ "Evolución de autonomía en el mes": "Динамика самостоятельности за месяц",
+ "PUNTOS FUERTES": "СИЛЬНЫЕ СТОРОНЫ",
+ "A TENER EN CUENTA": "НА ЧТО ОБРАТИТЬ ВНИМАНИЕ",
+ "REFUERZO RECOMENDADO": "РЕКОМЕНДУЕМАЯ ПРАКТИКА",
+ "CONSOLIDAR": "ЗАКРЕПИТЬ",
+ "REFORZAR": "УСИЛИТЬ",
+ "DE CARA A": "ПЛАНЫ НА",
+ "Propuesta para": "Предложения на",
+ "Qué tener en cuenta el mes que viene": "На что обратить внимание в следующем месяце",
+ "Organización del mes": "Организация месяца",
+ "Base científica de las recomendaciones": "Научная основа рекомендаций",
+ "Las recomendaciones de refuerzo se apoyan en técnicas con evidencia sólida: práctica espaciada, autoevaluación y ejemplos resueltos.": "Рекомендации основаны на методиках с доказанной эффективностью: интервальное повторение, самопроверка и разобранные примеры.",
+ "Profesor de referencia": "Основной преподаватель",
+ "Portada del informe": "Обложка отчёта",
+ "Comprensión de cada asignatura, sesión a sesión.": "Понимание каждого предмета, занятие за занятием.",
+ "Mayor progreso y resumen separado por asignatura.": "Главный прогресс и итоги по каждому предмету.",
+ "Detalle por asignatura": "Подробно по предмету",
+ "Autonomía por sesión, puntos fuertes y refuerzo.": "Самостоятельность по занятиям, сильные стороны и практика.",
+ "Propuesta para el mes siguiente": "План на следующий месяц",
+ "Organización y foco de cada asignatura.": "Организация и фокус по каждому предмету.",
+ "LOS INFORMES": "ОТЧЁТЫ",
+ "El informe, capturado desde el móvil": "Отчёт на экране телефона",
+ "PLAN VÁLIDO CURSO 2026–2027": "ПЛАН ДЕЙСТВИТЕЛЕН НА 2026–2027 УЧЕБНЫЙ ГОД",
+ "¿Confirmamos el mes?": "Начнём занятия?",
+ "💬 Escríbenos por WhatsApp": "💬 Напишите нам в WhatsApp"
+}
+
+
+def tr(x):
+    return RU.get(x, x) if LANG == "ru" else x
+
+
 
 
 def eur(x, dec=2):
@@ -156,15 +223,15 @@ def header(label, logo=True):
 
 
 def footer(txt="Nexo Académico · Plan personalizado"):
-    return f'<div class="foot"><span>{e(txt)}</span><span>nexoacademico.com</span></div>'
+    return f'<div class="foot"><span>{e(tr(txt))}</span><span>nexoacademico.com</span></div>'
 
 
 def page_cover(d, t):
     sub = d["curso"] or " · ".join(d["asignaturas"])
     return f'''<section class="page cover glow">
   <img class="logo-lg" src="{LOGO_URI}">
-  <div class="pill gold">{e(d.get("cover_pill", "DOCUMENTO PRIVADO · PLAN PERSONALIZADO"))}</div>
-  <h1 class="cover-h">Tu plan a medida en<br><em>NEXO Académico</em></h1>
+  <div class="pill gold">{e(tr(d.get("cover_pill", "DOCUMENTO PRIVADO · PLAN PERSONALIZADO")))}</div>
+  <h1 class="cover-h">{e(tr("Tu plan a medida en"))}<br><em>NEXO Académico</em></h1>
   <p class="cover-sub">{e(t["cover_sub"])}</p>
   <div class="name-card"><div class="nm">{e(d.get("nombre_completo") or d["nombre"] or d["curso"])}</div><div class="cs">{e((d.get("cover_card_sub") or (sub if d["nombre"] else lista_asig(d["asignaturas"]))).upper())}</div></div>
   <div class="cover-foot">{e(t["cover_foot"])}</div>
@@ -443,7 +510,7 @@ def page_semana(d, t):
     """Horario semanal tipo (mañanas) con bloques por asignatura."""
     c = d["semana"]
     h0, h1 = c["hora_ini"], c["hora_fin"]
-    dias = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes"]
+    dias = [tr(x) for x in ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes"]]
     asig = c["asignaturas"]
     alto = c.get("alto", 58)  # px por hora
     hh = lambda x: f"{int(x)}:{int(round((x - int(x)) * 60)):02d}"
@@ -464,7 +531,7 @@ def page_semana(d, t):
     filas = ""
     for bono in c["repartos"]:
         cortas = c.get("asig_cortas", asig)
-        celdas = "".join(f'<div class="rpc a{i}" style="flex:{h}"><b>{e(cortas[i])}</b><span>{num(h)}h</span></div>' for i, h in enumerate(bono["horas"]) if h)
+        celdas = "".join(f'<div class="rpc a{i}" style="flex:{h}"><b>{e(cortas[i])}</b><span>{num(h)}{" " if LANG == "ru" else ""}{tr("h")}</span></div>' for i, h in enumerate(bono["horas"]) if h)
         filas += f'<div class="rpf"><em>{e(bono["nombre"])}</em><div class="rpb">{celdas}</div></div>'
     return f'''<section class="page glow semp">
   <div class="hdr"><img class="logo-sm" src="{LOGO_URI}"><span class="hdr-r">{e(c["etiqueta"])}</span></div><div class="rule"></div>
@@ -689,8 +756,8 @@ def page_premium_venta(d, t):
   <div class="pill gold">{e(c["pill"])}</div>
   <h2>{e(c["titulo"])}</h2>
   <div class="pv-hero">
-    <div class="pv-p"><small>DESDE</small><b>{e(c["desde"])}<i>/hora</i></b><span>{e(c["desde_sub"])}</span></div>
-    <div class="pv-r"><small>PARA {e(c["horas_sem"])} A LA SEMANA</small><b>{e(c["recomendado"])}</b><span>{e(c["recomendado_sub"])}</span></div>
+    <div class="pv-p"><small>{e(tr("DESDE"))}</small><b>{e(c["desde"])}<i>/{e(tr("hora"))}</i></b><span>{e(c["desde_sub"])}</span></div>
+    <div class="pv-r"><small>{e(c.get("para_txt") or "PARA " + c["horas_sem"] + " A LA SEMANA")}</small><b>{e(c["recomendado"])}</b><span>{e(c["recomendado_sub"])}</span></div>
   </div>
   <div class="pvs">{cards}</div>
   <div class="pv-eco"><span>{e(c["economico"])}</span></div>
@@ -948,13 +1015,13 @@ def phones_real(d):
     r = dict(d["informe_ejemplo"])
     r.setdefault("asignatura", lista_asig(d["asignaturas"]) or r["barras"][0][0])
     n = d.get("nombre_completo") or d["nombre"] or d["curso"]
-    prof = d.get("profesor_completo") or d.get("profesor") or "Profesor de referencia"
+    prof = d.get("profesor_completo") or d.get("profesor") or tr("Profesor de referencia")
     subs = [b[0] for b in r["barras"]]
     mes = r["mes"]
     mi = next((i for i, m in enumerate(MESES_ES) if m and mes.lower().startswith(m.lower())), 11)
-    sig = MESES_ES[mi % 12 + 1].lower()
-    abbr = MESES_ES[mi][:3].lower()
-    niveles = ["No entendido", "Con dificultad", "Bien", "Con soltura"]
+    sig = r.get("sig") or MESES_ES[mi % 12 + 1].lower()
+    abbr = r.get("abbr") or MESES_ES[mi][:3].lower()
+    niveles = [tr(x) for x in ["No entendido", "Con dificultad", "Bien", "Con soltura"]]
     patrones = [[1, 2, 2, 3], [2, 1, 2, 2]]
     cols = ["#8fb8ec", "#7fcfa0"]
 
@@ -978,29 +1045,29 @@ def phones_real(d):
     charts = "".join(chart(i) for i in range(min(2, len(subs))))
     multi = r.get("destrezas_label", "").lower().startswith("asignaturas")
     asig_txt = " · ".join(subs) if multi else (lista_asig(d["asignaturas"]) or " · ".join(subs))
-    kpi_lab = "ASIGNATURAS" if multi else "BLOQUES"
+    kpi_lab = tr("ASIGNATURAS") if multi else tr("BLOQUES")
     s1 = f'''<div class="scr dk">
   <img class="rs-logo" src="{LOGO_URI}">
-  <div class="rs-pill">DOCUMENTO PRIVADO · INFORME MENSUAL</div>
-  <div class="rs-t">Informe de seguimiento</div><div class="rs-m">{e(mes)}</div>
+  <div class="rs-pill">{e(tr("DOCUMENTO PRIVADO · INFORME MENSUAL"))}</div>
+  <div class="rs-t">{e(tr("Informe de seguimiento"))}</div><div class="rs-m">{e(mes)}</div>
   <div class="rs-card"><div class="rs-n">{e(n)}</div>
-    <div class="rs-g"><div><small>PROFESOR</small>{e(prof)}</div><div><small>ASIGNATURAS</small>{e(asig_txt)}</div>
-    <div><small>PERIODO</small>{e(mes)}</div><div><small>SESIONES Y HORAS</small>{r["sesiones"]} sesiones · {e(r["horas"])}</div></div></div>
+    <div class="rs-g"><div><small>{e(tr("PROFESOR"))}</small>{e(prof)}</div><div><small>{e(tr("ASIGNATURAS"))}</small>{e(asig_txt)}</div>
+    <div><small>{e(tr("PERIODO"))}</small>{e(mes)}</div><div><small>{e(tr("SESIONES Y HORAS"))}</small>{r["sesiones"]} {e(tr("sesiones"))} · {e(r["horas"])}</div></div></div>
   <div class="rs-charts">{charts}</div>
 </div>'''
     frases = [x.strip() for x in r["resumen"].replace(". ", ".|").split("|") if x.strip()]
-    secc = f'<div class="rs-sec g"><small>EL MES EN GENERAL</small><p>{e(frases[0])}</p></div>'
+    secc = f'<div class="rs-sec g"><small>{e(tr("EL MES EN GENERAL"))}</small><p>{e(frases[0])}</p></div>'
     for i, sub in enumerate(subs[:2]):
         txt = frases[i + 1] if i + 1 < len(frases) else ""
         if txt:
             secc += f'<div class="rs-sec" style="border-color:{cols[i % 2]}"><small style="color:{cols[i % 2]}">{e(sub.upper())}</small><p>{e(txt)}</p></div>'
     s2 = f'''<div class="scr dk">
-  <div class="rs-pill l">INFORME DE SEGUIMIENTO MENSUAL</div>
+  <div class="rs-pill l">{e(tr("INFORME DE SEGUIMIENTO MENSUAL"))}</div>
   <div class="rs-n l">{e(n)}</div><div class="rs-sub">{e(asig_txt)} · {e(mes)}</div>
-  <div class="rs-k"><div><b>{r["sesiones"]}</b>SESIONES</div><div><b>{e(r["horas"])}</b>DEDICADAS</div><div><b>{len(subs)}</b>{kpi_lab}</div></div>
-  <div class="rs-hl"><small>MAYOR PROGRESO DEL MES</small>{e(r["mayor_progreso"])}</div>
-  <div class="rs-h2">Resumen del mes</div>{secc}
-  <div class="rs-sec" style="border-color:#7d7f8a"><small style="color:#a49f8e">CONCLUSIÓN</small><p>{e(r["conclusion"])}</p></div>
+  <div class="rs-k"><div><b>{r["sesiones"]}</b>{e(tr("SESIONES"))}</div><div><b>{e(r["horas"])}</b>{e(tr("DEDICADAS"))}</div><div><b>{len(subs)}</b>{kpi_lab}</div></div>
+  <div class="rs-hl"><small>{e(tr("MAYOR PROGRESO DEL MES"))}</small>{e(r["mayor_progreso"])}</div>
+  <div class="rs-h2">{e(tr("Resumen del mes"))}</div>{secc}
+  <div class="rs-sec" style="border-color:#7d7f8a"><small style="color:#a49f8e">{e(tr("CONCLUSIÓN"))}</small><p>{e(r["conclusion"])}</p></div>
 </div>'''
     auto = [25, 55, 55, 90]
     barras = "".join(f'<div class="ra"><em>{v}%</em><i style="height:{v * 0.5:.0f}px"></i><span>{dd} {abbr}</span></div>'
@@ -1010,36 +1077,36 @@ def phones_real(d):
     s3 = f'''<div class="scr dk">
   <div class="rs-pill l">{e(r["asignatura"].upper())}</div>
   <div class="rs-n l">{e(r["asignatura"])}</div>
-  <div class="rs-k"><div><b>{(f"{hsub:g}").replace(".", ",")}h</b>HORAS</div><div><b>4</b>SESIONES</div></div>
-  <div class="rs-box"><b>Evolución de autonomía en el mes</b><div class="ras">{barras}</div></div>
-  <div class="rs-b g"><small>PUNTOS FUERTES</small>{li(r["fuertes"])}</div>
-  <div class="rs-b a"><small>A TENER EN CUENTA</small>{li(r["atencion"])}</div>
-  <div class="rs-b b"><small>REFUERZO RECOMENDADO</small>{li(r["casa"])}</div>
+  <div class="rs-k"><div><b>{(f"{hsub:g}").replace(".", ",")}{e(tr("h"))}</b>{e(tr("HORAS"))}</div><div><b>4</b>{e(tr("SESIONES"))}</div></div>
+  <div class="rs-box"><b>{e(tr("Evolución de autonomía en el mes"))}</b><div class="ras">{barras}</div></div>
+  <div class="rs-b g"><small>{e(tr("PUNTOS FUERTES"))}</small>{li(r["fuertes"])}</div>
+  <div class="rs-b a"><small>{e(tr("A TENER EN CUENTA"))}</small>{li(r["atencion"])}</div>
+  <div class="rs-b b"><small>{e(tr("REFUERZO RECOMENDADO"))}</small>{li(r["casa"])}</div>
 </div>'''
     props = ""
     for i, sub in enumerate(subs[:2]):
-        chip, txt = ("CONSOLIDAR", r["conclusion"]) if i == 0 else ("REFORZAR", r["atencion"][0])
+        chip, txt = (tr("CONSOLIDAR"), r["conclusion"]) if i == 0 else (tr("REFORZAR"), r["atencion"][0])
         props += f'<div class="rs-pr"><b>{e(sub)}</b><span class="{"c" if i == 0 else "r"}">{chip}</span><p>{e(txt)}</p></div>'
     s4 = f'''<div class="scr dk">
-  <div class="rs-pill l">DE CARA A {e(sig.upper())}</div>
-  <div class="rs-n l sm">Qué tener en cuenta el mes que viene</div>
-  <div class="rs-box"><b>Organización del mes</b><p>{e(r["horario"])}</p></div>
-  <div class="rs-box"><b>Propuesta para {e(sig)}</b>{props}</div>
-  <div class="rs-box"><b>Base científica de las recomendaciones</b><p>Las recomendaciones de refuerzo se apoyan en técnicas con evidencia sólida: práctica espaciada, autoevaluación y ejemplos resueltos.</p></div>
+  <div class="rs-pill l">{e(tr("DE CARA A"))} {e(sig.upper())}</div>
+  <div class="rs-n l sm">{e(tr("Qué tener en cuenta el mes que viene"))}</div>
+  <div class="rs-box"><b>{e(tr("Organización del mes"))}</b><p>{e(r["horario"])}</p></div>
+  <div class="rs-box"><b>{e(tr("Propuesta para"))} {e(sig)}</b>{props}</div>
+  <div class="rs-box"><b>{e(tr("Base científica de las recomendaciones"))}</b><p>{e(tr("Las recomendaciones de refuerzo se apoyan en técnicas con evidencia sólida: práctica espaciada, autoevaluación y ejemplos resueltos."))}</p></div>
 </div>'''
-    caps = [("Portada del informe", "Comprensión de cada asignatura, sesión a sesión."),
+    caps = [(tr(a), tr(b)) for a, b in [("Portada del informe", "Comprensión de cada asignatura, sesión a sesión."),
             ("Resumen del mes", "Mayor progreso y resumen separado por asignatura."),
             ("Detalle por asignatura", "Autonomía por sesión, puntos fuertes y refuerzo."),
-            ("Propuesta para el mes siguiente", "Organización y foco de cada asignatura.")]
+            ("Propuesta para el mes siguiente", "Organización y foco de cada asignatura.")]]
     return "".join(f'<div class="ph-wrap"><div class="phone"><div class="notch"></div>{x}</div>'
                    f'<h5>{e(a)}</h5><p>{e(b)}</p></div>' for x, (a, b) in zip([s1, s2, s3, s4], caps))
 
 
 def page_phones(d, t):
     return f'''<section class="page">
-  <div class="hdr"><span class="hdr-l">LOS INFORMES</span></div><div class="rule"></div>
+  <div class="hdr"><span class="hdr-l">{e(tr("LOS INFORMES"))}</span></div><div class="rule"></div>
   <div class="pill gold">{e(t["p4_pill"])}</div>
-  <h2>El informe, capturado desde el móvil</h2>
+  <h2>{e(tr("El informe, capturado desde el móvil"))}</h2>
   <p class="lead">{e(t["p4_sub"])}</p>
   <div class="phones">{phones_real(d)}</div>
   {footer()}
@@ -1178,10 +1245,10 @@ def page_resumen(d, t):
 def page_cierre(d, t):
     return f'''<section class="page cover">
   <img class="logo-md" src="{LOGO_URI}">
-  <div class="pill gold">PLAN VÁLIDO CURSO 2026–2027</div>
-  <h2 class="c">¿Confirmamos el mes?</h2>
+  <div class="pill gold">{e(tr("PLAN VÁLIDO CURSO 2026–2027"))}</div>
+  <h2 class="c">{e(tr("¿Confirmamos el mes?"))}</h2>
   <p class="cover-sub">{e(t["p10_sub"])}</p>
-  <a class="wa" href="https://wa.me/34699529399">💬 Escríbenos por WhatsApp</a>
+  <a class="wa" href="https://wa.me/34699529399">{e(tr("💬 Escríbenos por WhatsApp"))}</a>
   <div class="contact"><span>🌐 nexoacademico.com</span><span>📞 699 52 93 99</span><span>✉️ nexoacademicopremium@gmail.com</span></div>
 </section>'''
 
@@ -1757,6 +1824,8 @@ def main():
     global LOGO_URI
     src = Path(sys.argv[1])
     d = json.loads(src.read_text(encoding="utf-8"))
+    global LANG
+    LANG = d.get("idioma", "es")
     LOGO_URI = "data:image/png;base64," + base64.b64encode(LOGO.read_bytes()).decode()
     t = textos(d)
     t.update(d.get("textos", {}))  # ajustes de texto específicos del lead
@@ -1791,12 +1860,12 @@ def main():
         pages += [page_quincenal(d, t), page_ahorro(d, t), page_resumen_esp(d, t), page_cierre(d, t)]
     else:
         pages += [page_bono(d, t), page_resumen(d, t), page_cierre(d, t)]
-    doc = f'<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><title>Plan NEXO — {e(d["nombre"] or d["curso"])}</title><style>{CSS}</style></head><body>{"".join(pages)}</body></html>'
+    doc = f'<!DOCTYPE html><html lang="{LANG}"><head><meta charset="utf-8"><title>Plan NEXO — {e(d["nombre"] or d["curso"])}</title><style>{CSS}</style></head><body>{"".join(pages)}</body></html>'
     out = ROOT / "output"
     out.mkdir(exist_ok=True)
     # Nombre de archivo: Plan_NEXO_<Nombre>_<Curso>_<Asignaturas> (sin curso, la etapa)
     partes = [d.get("nombre_completo") or d["nombre"], d["curso"] or tf["nombre"]] + d["asignaturas"]
-    base = out / ("Plan_NEXO_" + "_".join(re.sub(r"[^\wº]+", "_", x).strip("_") for x in partes if x))
+    base = out / (d.get("archivo") or "Plan_NEXO_" + "_".join(re.sub(r"[^\wº]+", "_", x).strip("_") for x in partes if x))
     base.with_suffix(".html").write_text(doc, encoding="utf-8")
     subprocess.run(["node", str(ROOT / "render_pdf.js"), str(base.with_suffix(".html")), str(base.with_suffix(".pdf"))], check=True)
     print(base.with_suffix(".pdf"))
