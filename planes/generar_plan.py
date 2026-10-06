@@ -228,12 +228,18 @@ def footer(txt="Nexo Académico · Plan personalizado"):
 
 def page_cover(d, t):
     sub = d["curso"] or " · ".join(d["asignaturas"])
+    if d.get("hijos"):
+        cards_cover = '<div class="name-cards">' + "".join(
+            f'<div class="name-card"><div class="nm">{e(h["nombre"])}</div><div class="cs">{e(h["curso"].upper())}</div></div>' for h in d["hijos"]) + '</div>'
+    else:
+        cards_cover = (f'<div class="name-card"><div class="nm">{e(d.get("nombre_completo") or d["nombre"] or d["curso"])}</div>'
+                       f'<div class="cs">{e((d.get("cover_card_sub") or (sub if d["nombre"] else lista_asig(d["asignaturas"]))).upper())}</div></div>')
     return f'''<section class="page cover glow">
   <img class="logo-lg" src="{LOGO_URI}">
   <div class="pill gold">{e(tr(d.get("cover_pill", "DOCUMENTO PRIVADO · PLAN PERSONALIZADO")))}</div>
-  <h1 class="cover-h">{e(tr("Tu plan a medida en"))}<br><em>NEXO Académico</em></h1>
+  <h1 class="cover-h">{e(d.get("cover_title") or tr("Tu plan a medida en"))}<br><em>NEXO Académico</em></h1>
   <p class="cover-sub">{e(t["cover_sub"])}</p>
-  <div class="name-card"><div class="nm">{e(d.get("nombre_completo") or d["nombre"] or d["curso"])}</div><div class="cs">{e((d.get("cover_card_sub") or (sub if d["nombre"] else lista_asig(d["asignaturas"]))).upper())}</div></div>
+  {cards_cover}
   <div class="cover-foot">{e(t["cover_foot"])}</div>
 </section>'''
 
@@ -747,6 +753,45 @@ def page_recomendacion(d, t):
 </section>'''
 
 
+def page_precio_familia(d, t):
+    """Precio familiar destacado: una sola cuota semanal y precio por hora para cada hermano."""
+    c = d["familia_precio"]
+    nueva = c["hora_nueva"]
+    antes = "".join(
+        f'<div class="fa"><span>{e(a["nombre"])}</span><s>{eur(a["hora"])}/h</s><i>→</i><b>{eur(nueva, 0)}/h</b><em>−{pct(a["hora"] - nueva, a["hora"])}%</em></div>'
+        for a in c["antes"])
+    return f'''<section class="page glow fap">
+  <div class="hdr"><img class="logo-sm" src="{LOGO_URI}"><span class="hdr-r">{e(c["etiqueta"])}</span></div><div class="rule"></div>
+  <div class="pill gold">{e(c["pill"])}</div>
+  <h2>{e(c["titulo"])}</h2>
+  <div class="fa-hero">
+    <div class="fa-h"><small>{e(c["hora_label"])}</small><b>{eur(nueva, 0)}<i>/hora</i></b><span>{e(c["hora_sub"])}</span></div>
+    <div class="fa-s"><small>{e(c["semana_label"])}</small><b>{eur(c["semana"], 0)}</b><span>{e(c["semana_sub"])}</span></div>
+  </div>
+  <div class="fa-c"><div class="fa-t">{e(c["comparativa_titulo"])}</div>{antes}</div>
+  <div class="fa-ah"><b>{eur(c["ahorro_semana"], 0)}</b><span>{e(c["ahorro_txt"])}</span></div>
+  {footer()}
+</section>'''
+
+
+def page_resumen_familia(d, t):
+    c = d["familia_precio"]
+    rows = "".join(
+        f'<div class="srow"><div class="av w">{e(h["nombre"][0])}</div><div class="st"><b>{e(h["nombre"])} — {e(h["curso"])}</b><small>{e(h["clases"])}</small></div>'
+        f'<div class="sps"><div class="sp"><small>Horas a la semana</small><b>{e(h["horas"])}</b></div></div></div>' for h in d["hijos"])
+    return f'''<section class="page">
+  <div class="hdr"><img class="logo-sm" src="{LOGO_URI}"><span class="hdr-r">RESUMEN DEL PLAN FAMILIAR</span></div><div class="rule"></div>
+  <div class="pill gold">RESUMEN SEMANAL</div>
+  <h2>Vuestro plan familiar, de un vistazo</h2>
+  <p class="lead">{e(c["resumen_lead"])}</p>
+  <div class="srows">{rows}
+    <div class="srow tot"><div class="av w">Σ</div><div class="st"><b>Total plan familiar a la semana</b><small>{e(c["resumen_total_sub"])}</small></div>
+      <div class="sps"><div class="sp"><small>Cada semana</small><b>{eur(c["semana"], 0)}</b></div><div class="sp"><small>Cada uno</small><b>{eur(c["hora_nueva"], 0)}/h</b></div></div></div>
+  </div>
+  {footer()}
+</section>'''
+
+
 def page_premium_venta(d, t):
     """Oferta premium como primera opción: precio 'desde', beneficios y aviso discreto de suscripción."""
     c = d["premium_venta"]
@@ -930,7 +975,7 @@ def page_informe(d, t):
     return f'''<section class="page">
   <div class="hdr"><span class="hdr-l">LOS INFORMES</span></div><div class="rule"></div>
   <div class="pill gold">SEGUIMIENTO INCLUIDO</div>
-  <h2>{e("Un informe real para " + d["nombre"] if d["nombre"] else "Un informe real, cada mes")}</h2>
+  <h2>{e(t.get("informe_h2") or ("Un informe real para " + d["nombre"] if d["nombre"] else "Un informe real, cada mes"))}</h2>
   <p class="lead">{e(t["p3_sub"])}</p>
   <ul class="checks">{checks}</ul>
   <div class="panel">
@@ -1014,7 +1059,7 @@ def phones_real(d):
     """Pantallas de móvil con el formato real de los informes mensuales de NEXO."""
     r = dict(d["informe_ejemplo"])
     r.setdefault("asignatura", lista_asig(d["asignaturas"]) or r["barras"][0][0])
-    n = d.get("nombre_completo") or d["nombre"] or d["curso"]
+    n = d.get("alumno_informe") or d.get("nombre_completo") or d["nombre"] or d["curso"]
     prof = d.get("profesor_completo") or d.get("profesor") or tr("Profesor de referencia")
     subs = [b[0] for b in r["barras"]]
     mes = r["mes"]
@@ -1611,6 +1656,26 @@ h2.c { font-size: 34px; margin: 26px 0 18px; }
 .a4 { background: linear-gradient(160deg, #5c2f3c, #3e2029); border-color: #a85a70; color: #f5c9d5; }
 .bx-ref { display: flex; justify-content: space-between; color: #7d7f8a; font-size: 13px; padding: 3px 0; }
 .bx-ref s { color: #a49f8e; }
+.name-cards { display: flex; gap: 18px; margin-top: 42px; justify-content: center; }
+.name-cards .name-card { margin-top: 0; }
+.srow.tot { border-color: #c9a24b; background: linear-gradient(90deg, #2a2618, #10214a); }
+.fap h2 { margin-top: 14px; }
+.fap .rule { margin: 18px 0 24px; }
+.fa-hero { display: grid; grid-template-columns: 1.25fr 1fr; gap: 18px; margin-top: 22px; }
+.fa-h { border: 1px solid #c9a24b; border-radius: 20px; padding: 24px 28px; background: linear-gradient(160deg, #3a3322, #12182c); }
+.fa-h small, .fa-s small { display: block; color: #a49f8e; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; }
+.fa-h b { display: block; font: 700 84px 'Liberation Serif', serif; color: #e9d18f; line-height: 1.05; }
+.fa-h b i { font: 400 20px 'Liberation Sans', Arial; font-style: normal; color: #a49f8e; margin-left: 6px; }
+.fa-h span, .fa-s span { color: #c9c9cf; font-size: 14px; }
+.fa-s { border: 1px solid #2a3350; border-radius: 20px; padding: 24px 26px; background: #0e1629; }
+.fa-s b { display: block; margin-top: 8px; font: 700 52px 'Liberation Serif', serif; color: #fff; line-height: 1.05; }
+.fa-c { margin-top: 18px; border: 1px solid #2a3350; border-radius: 16px; padding: 16px 22px; background: #0e1629; }
+.fa-t { color: #7d7f8a; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 8px; }
+.fa { display: grid; grid-template-columns: 1fr auto 24px auto 64px; gap: 14px; align-items: center; padding: 9px 0; border-top: 1px solid #1d2744; }
+.fa span { color: #e7e7ea; font: 700 17px 'Liberation Serif', serif; } .fa s { color: #7d7f8a; font-size: 15px; } .fa i { font-style: normal; color: #56607a; text-align: center; }
+.fa b { color: #e9d18f; font: 700 20px 'Liberation Serif', serif; } .fa em { font-style: normal; background: #1f4a37; color: #7fcfa0; font-weight: 700; font-size: 13px; padding: 3px 9px; border-radius: 999px; text-align: center; }
+.fa-ah { margin-top: 14px; display: flex; gap: 14px; align-items: baseline; justify-content: center; }
+.fa-ah b { font: 700 32px 'Liberation Serif', serif; color: #7fcfa0; } .fa-ah span { color: #c9c9cf; font-size: 15px; }
 .pvp h2 { margin-top: 14px; }
 .pvp .rule { margin: 18px 0 24px; }
 .pv-hero { display: grid; grid-template-columns: 1.15fr 1fr; gap: 18px; margin-top: 22px; }
@@ -1844,7 +1909,9 @@ def main():
     for m in ([] if (d.get("opciones_comp") or d.get("precios_comp") or d.get("dos_tarifas") or d.get("premium_venta")) else (d.get("tarifas_mostrar") or ("online", "casa_profesor", "casa_alumno"))):
         if m in tf["precios"]:
             pages.append(page_tarifas(d, t, m))
-    if d.get("premium_venta"):
+    if d.get("familia_precio"):
+        pages += [page_precio_familia(d, t), page_resumen_familia(d, t), page_cierre(d, t)]
+    elif d.get("premium_venta"):
         pages += [page_premium_venta(d, t), page_cierre(d, t)]
     elif d.get("dos_tarifas"):
         pages += [page_dos_tarifas(d, t), page_cierre(d, t)]

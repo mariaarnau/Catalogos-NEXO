@@ -1,0 +1,224 @@
+{
+  "nombre": "Pier Antonio y Anna Chiara",
+  "alumno_informe": "Pier Antonio",
+  "etapa": "primaria",
+  "curso": "Primaria",
+  "asignaturas": [],
+  "voz": "familia",
+  "archivo": "Plan_NEXO_Pier_y_Anna",
+  "hijos": [
+    {
+      "nombre": "Pier Antonio",
+      "curso": "4º Primaria",
+      "clases": "Lunes y jueves · 1h30 cada día",
+      "horas": "3h"
+    },
+    {
+      "nombre": "Anna Chiara",
+      "curso": "1º Primaria",
+      "clases": "Lunes, junto a su hermano · 1h30",
+      "horas": "1,5h"
+    }
+  ],
+  "cover_pill": "DOCUMENTO PRIVADO · PLAN PERSONALIZADO",
+  "modalidades_recomendadas": [
+    "casa_alumno"
+  ],
+  "tarifas_mostrar": [],
+  "presencial_label": "en casa",
+  "bonos_recomendados": [
+    {
+      "horas": 8,
+      "frecuencia": "semanal"
+    }
+  ],
+  "textos": {
+    "cover_sub": "Un acompañamiento diseñado específicamente para Pier Antonio y Anna Chiara, con seguimiento cercano para los dos hermanos.",
+    "p2_title": "Así seguimos a Pier Antonio y Anna Chiara cada mes",
+    "p2_sub": "Sin burocracia. El profesor registra las sesiones, nuestro equipo analiza los datos y os llega el seguimiento sin que tengáis que pedirlo.",
+    "c1": "Pier Antonio y Anna Chiara tienen su profesor de referencia asignado, con horario fijo cada semana.",
+    "c2t": "Registro y análisis",
+    "c2": "Cada sesión se registra: qué se trabajó, cómo respondió el alumno y qué quedó pendiente.",
+    "c3": "Recibís evolución real, no solo «va bien»: datos concretos por asignatura.",
+    "p3_sub": "Pier Antonio y Anna Chiara tienen cada uno su propio informe de seguimiento dentro del plan, sin coste adicional. Esto es lo que incluye cada mes:",
+    "informe_h2": "Un informe real para cada hermano",
+    "p4_pill": "ASÍ LO VERÉIS VOSOTROS",
+    "p4_sub": "Cuatro pantallas de ejemplo del informe que recibiréis en el área privada de cada hermano.",
+    "p10_sub": "Escribidnos para confirmar el plan semanal o cualquier ajuste de horas de Pier Antonio y Anna Chiara.",
+    "gestiones": "GESTIONES A CARGO VUESTRO"
+  },
+  "semana": {
+    "etiqueta": "SU SEMANA",
+    "pill": "VUESTRA ORGANIZACIÓN",
+    "titulo": "Dos tardes a la semana",
+    "lead": "Lunes y jueves, de 17:00 a 18:30, en vuestra casa. El lunes, la clase es para los dos hermanos a la vez.",
+    "hora_ini": 17,
+    "hora_fin": 19,
+    "alto": 100,
+    "asignaturas": [
+      "Pier Antonio + Anna Chiara",
+      "Pier Antonio"
+    ],
+    "asig_cortas": [
+      "Lunes · los dos",
+      "Jueves · Pier Antonio"
+    ],
+    "bloques": [
+      [
+        0,
+        17,
+        18.5,
+        0
+      ],
+      [
+        3,
+        17,
+        18.5,
+        1
+      ]
+    ],
+    "extra_titulo": "72 € a la semana · 16 € la hora cada uno",
+    "extra_texto": "Un precio familiar: 3 horas de clase para dos hermanos.",
+    "repartos": [
+      {
+        "nombre": "Cada semana · 3h",
+        "horas": [
+          1.5,
+          1.5
+        ]
+      }
+    ]
+  },
+  "familia_precio": {
+    "etiqueta": "PRECIO FAMILIAR",
+    "pill": "VUESTRO PRECIO",
+    "titulo": "Un precio especial para los dos",
+    "hora_label": "CADA HERMANO PAGA",
+    "hora_nueva": 16,
+    "hora_sub": "por hora de clase, cada uno",
+    "semana_label": "TODO EL PLAN",
+    "semana": 72,
+    "semana_sub": "a la semana · 3 horas de clase",
+    "comparativa_titulo": "Antes, con los bonos individuales",
+    "antes": [
+      {
+        "nombre": "Pier Antonio",
+        "hora": 21.25
+      },
+      {
+        "nombre": "Anna Chiara",
+        "hora": 21.5
+      }
+    ],
+    "ahorro_semana": 24,
+    "ahorro_txt": "menos cada semana por las mismas horas de clase.",
+    "resumen_lead": "Un único pago semanal para los dos hermanos.",
+    "resumen_total_sub": "3 horas de clase: lunes juntos y jueves Pier Antonio"
+  },
+  "informe_ejemplo": {
+    "asignatura": "Matemáticas",
+    "mes": "Noviembre 2026",
+    "comparado": "octubre",
+    "nota": "7,4",
+    "sesiones": 8,
+    "horas": "12h",
+    "destrezas_label": "Asignaturas seguidas",
+    "barras": [
+      [
+        "Matemáticas",
+        7.4
+      ],
+      [
+        "Lengua",
+        7.6
+      ],
+      [
+        "Comprensión lectora",
+        8.0
+      ]
+    ],
+    "mayor_progreso": "Matemáticas — de 6,2 a 7,4, va muy bien este mes",
+    "resumen": "En noviembre, Pier Antonio ha dado 8 sesiones entre Matemáticas y Lengua, sin faltar a ninguna. Domina bien las multiplicaciones y ha mejorado mucho en comprensión lectora. El punto de trabajo son las fracciones, donde todavía necesita repaso.",
+    "horario": "Pier Antonio · lunes y jueves, 17:00–18:30",
+    "temas": [
+      [
+        "Multiplicaciones",
+        2.0
+      ],
+      [
+        "Fracciones",
+        2.5
+      ],
+      [
+        "Comprensión lectora",
+        2.0
+      ],
+      [
+        "Problemas",
+        1.5
+      ]
+    ],
+    "fuertes": [
+      "Domina bien las multiplicaciones",
+      "Muy resolutivo con ejercicios cortos y guiados"
+    ],
+    "atencion": [
+      "Fracciones: simplificar y comparar",
+      "Se bloquea con problemas de varios pasos"
+    ],
+    "casa": [
+      "10 min diarios de fracciones sencillas",
+      "Repasar comprensión lectora jugando"
+    ],
+    "semanas": [
+      5.8,
+      6.3,
+      6.8,
+      7.2
+    ],
+    "metricas": [
+      [
+        "76%",
+        "Comprensión"
+      ],
+      [
+        "81%",
+        "Motivación"
+      ],
+      [
+        "62%",
+        "Autonomía"
+      ]
+    ],
+    "evol": [
+      [
+        "Resolución de problemas",
+        "Octubre: 68%",
+        "Noviembre: 79%",
+        "Mejora en cómo plantea el enunciado antes de operar."
+      ],
+      [
+        "Autonomía",
+        "Octubre: 50%",
+        "Noviembre: 62%",
+        "Cada vez necesita menos ayuda."
+      ]
+    ],
+    "conclusion": "Noviembre cierra con una tendencia muy positiva. El foco de diciembre es consolidar las fracciones antes del control.",
+    "cal_mes": [
+      2026,
+      12
+    ],
+    "cal_titulo": "Calendario — diciembre 2026",
+    "cal_dias_sesion": [
+      0,
+      3
+    ],
+    "cal_examen": 23,
+    "cal_semanas": "2 sem",
+    "cal_semanas_txt": "hasta el próximo control de Matemáticas",
+    "antes": "Sin refuerzo fijo",
+    "ahora": "Lunes y jueves en casa"
+  },
+  "cover_title": "Vuestro plan a medida en"
+}
