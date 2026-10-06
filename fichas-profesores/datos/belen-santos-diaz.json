@@ -1,0 +1,25 @@
+{
+  "nombre": "Belén Santos Díaz",
+  "foto": "../fotos/belen-santos-diaz.jpg",
+  "foto_posicion": "50% 40%",
+  "titular": "Profesora de Inglés",
+  "ubicacion": "Valencia",
+  "materias": ["INGLÉS", "PREPARACIÓN PAU"],
+  "telefono": "652 764 392",
+  "email": "evabelensantos@gmail.com",
+  "situacion_actual": "Estudiante del Grado en Estudios Ingleses en la Universitat de València (desde 2025). Da clases particulares de inglés y clases de preparación para la PAU.",
+  "estudios": [
+    {"titulo": "Grado en Estudios Ingleses", "detalle": "Universitat de València", "fecha": "2025 – actualidad"},
+    {"titulo": "Bachillerato de Humanidades y Ciencias Sociales", "detalle": "Colegio Camarena Canet", "fecha": "2023 – 2025"}
+  ],
+  "idiomas": [
+    {"idioma": "Español", "nivel": "Nativo"},
+    {"idioma": "Inglés", "nivel": "C2", "certificado": "Cambridge CPE Proficiency"},
+    {"idioma": "Valenciano", "nivel": "C1"},
+    {"idioma": "Alemán", "nivel": "B1"}
+  ],
+  "experiencia_docente": [
+    {"titulo": "Clases particulares de inglés", "fecha": "2024 – actualidad"},
+    {"titulo": "Clases de preparación para la PAU", "fecha": "2025 – actualidad"}
+  ]
+}
