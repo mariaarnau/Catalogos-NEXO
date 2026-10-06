@@ -1906,7 +1906,7 @@ def main():
         + ([page_ruta(d, t)] if d.get("ruta") else []) \
         + ([] if d.get("omitir_proceso") else [page_proceso(d, t)]) \
         + ([] if d.get("omitir_informe") else [page_informe(d, t)]) + [page_phones(d, t)]
-    for m in ([] if (d.get("opciones_comp") or d.get("precios_comp") or d.get("dos_tarifas") or d.get("premium_venta")) else (d.get("tarifas_mostrar") or ("online", "casa_profesor", "casa_alumno"))):
+    for m in ([] if (d.get("opciones_comp") or d.get("precios_comp") or d.get("dos_tarifas") or d.get("premium_venta")) else (d["tarifas_mostrar"] if "tarifas_mostrar" in d else ("online", "casa_profesor", "casa_alumno"))):
         if m in tf["precios"]:
             pages.append(page_tarifas(d, t, m))
     if d.get("familia_precio"):
