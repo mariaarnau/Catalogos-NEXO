@@ -1,0 +1,36 @@
+{
+  "nombre": "Keylie Alvarado",
+  "foto": "../fotos/keylie-alvarado.jpg",
+  "foto_posicion": "50% 35%",
+  "titular": "Profesora de clases de repaso",
+  "edad": 17,
+  "ubicacion": "Catarroja (Valencia)",
+  "materias": ["CLASES DE REPASO"],
+  "telefono": "+34 610 37 12 81",
+  "email": "keylieaac@gmail.com",
+  "estudios": [
+    {"titulo": "Educación Secundaria Obligatoria (ESO)", "detalle": "IES Baltasar Porcel", "fecha": "2020 – 2024"},
+    {"titulo": "Curso de francés de recepción e integración", "detalle": "SCAI/EPASC", "fecha": "2024 – 2026"}
+  ],
+  "idiomas": [
+    {"idioma": "Español", "nivel": "Nativo"},
+    {"idioma": "Inglés", "nivel": "B2"},
+    {"idioma": "Francés", "nivel": "B2"},
+    {"idioma": "Catalán", "nivel": "B1"},
+    {"idioma": "Alemán", "nivel": "Básico"}
+  ],
+  "experiencia_docente": [
+    {"titulo": "Clases de repaso", "detalle": "Refuerzo y seguimiento de tareas y contenidos escolares."}
+  ],
+  "aptitudes": [
+    "Paciencia",
+    "Explicaciones claras",
+    "Adaptación al ritmo del alumno",
+    "Trato cercano y amable",
+    "Organización",
+    "Responsabilidad",
+    "Puntualidad",
+    "Atención al detalle",
+    "Aprendizaje rápido"
+  ]
+}
