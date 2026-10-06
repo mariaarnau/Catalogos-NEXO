@@ -1,0 +1,232 @@
+{
+  "nombre": "Raquel",
+  "nombre_completo": "Raquel Moreno",
+  "etapa": "bachillerato",
+  "curso": "1º Bachillerato",
+  "asignaturas": [
+    "Matemáticas aplicadas a las CCSS",
+    "Lengua castellana y literatura"
+  ],
+  "voz": "familia",
+  "archivo": "Plan_NEXO_Raquel_Moreno_1Bach",
+  "presencial_label": "en su casa",
+  "cover_card_sub": "1º Bachillerato · Matemáticas CCSS y Lengua",
+  "bonos_recomendados": [
+    {
+      "horas": 12,
+      "frecuencia": "3h a la semana"
+    }
+  ],
+  "modalidades_recomendadas": [
+    "casa_alumno"
+  ],
+  "tarifas_mostrar": [
+    "casa_alumno"
+  ],
+  "textos": {
+    "cover_sub": "Un acompañamiento diseñado específicamente para Raquel, con clases de Matemáticas aplicadas a las CCSS y Lengua castellana y literatura.",
+    "p2_sub": "Un profesor de referencia para Matemáticas CCSS y Lengua, con sesiones centradas en lo que Raquel necesita reforzar.",
+    "c1": "Raquel tiene su profesor de referencia asignado, con horario fijo cada semana en vuestra casa.",
+    "p10_sub": "Escribidnos para reservar el bono de prueba de Raquel y empezar cuanto antes."
+  },
+  "camino": {
+    "etiqueta": "HOJA DE RUTA",
+    "pill": "EL CURSO DE UN VISTAZO",
+    "titulo": "El camino hasta la PAU",
+    "lead": "1º de Bachillerato es la base de la PAU. Así organizamos el curso para que Raquel llegue a 2º con las dos asignaturas fuertes.",
+    "meses": [
+      "Oct",
+      "Nov",
+      "Dic",
+      "Ene",
+      "Feb",
+      "Mar",
+      "Abr",
+      "May",
+      "Jun"
+    ],
+    "fases": [
+      {
+        "span": 3,
+        "etiqueta": "1ER TRIMESTRE",
+        "nombre": "Bases sólidas",
+        "foco": "Funciones y estadística en Matemáticas; comentario de texto en Lengua."
+      },
+      {
+        "span": 3,
+        "etiqueta": "2º TRIMESTRE",
+        "nombre": "Ritmo constante",
+        "foco": "Problemas de Matemáticas y literatura al día, sin acumular temario."
+      },
+      {
+        "span": 2,
+        "etiqueta": "3ER TRIMESTRE",
+        "nombre": "Cierre de 1º",
+        "foco": "Repaso de todo el curso para aprobar con nota."
+      },
+      {
+        "span": 1,
+        "etiqueta": "JUNIO",
+        "nombre": "Rumbo a 2º",
+        "foco": "Repaso de verano para empezar la PAU con ventaja."
+      }
+    ],
+    "hitos": [
+      {
+        "nombre": "1ª evaluación",
+        "pos": 2.75
+      },
+      {
+        "nombre": "2ª evaluación",
+        "pos": 6
+      },
+      {
+        "nombre": "Finales",
+        "pos": 8
+      },
+      {
+        "nombre": "PAU",
+        "pos": 9,
+        "meta": true
+      }
+    ]
+  },
+  "pasos": {
+    "base": 25,
+    "base_txt": "Tarifa base presencial de Bachillerato",
+    "modalidad_txt": "Presencial en su casa",
+    "nota": "Con 5 o 6 h a la semana, la hora baja a ≈ 21–22 €.",
+    "who": "1º Bachillerato · Matemáticas CCSS y Lengua · Presencial en su casa",
+    "titulo": "Su plan, en dos pasos",
+    "lead": "Primero, un bono de prueba para conocer a Raquel. Después, el bono mensual: el de 12h o el nuevo de 16h, pensado para 4 horas a la semana.",
+    "prueba": {
+      "horas": 2,
+      "precio": 46,
+      "tachado": 50,
+      "texto": "Dos horas en vuestra casa para conocer a Raquel, ver cómo lleva Matemáticas CCSS y Lengua y dejar fijado su plan. Recomendado al 100%."
+    },
+    "paso2_titulo": "Después, elegid su bono mensual",
+    "opciones": [
+      {
+        "horas": 12,
+        "precio": 285,
+        "frecuencia": "3h a la semana"
+      },
+      {
+        "horas": 16,
+        "precio": 360,
+        "frecuencia": "4h a la semana",
+        "destacado": true,
+        "etiqueta": "NUEVO · MÁS DE 3H A LA SEMANA"
+      }
+    ],
+    "resumen": [
+      "Clases presenciales en vuestra casa: Matemáticas CCSS y Lengua.",
+      "Se empieza con el bono de prueba de 2h y después se elige el de 12h o el de 16h.",
+      "Con 5 o 6 h a la semana, la hora baja a ≈ 21–22 €.",
+      "Sin permanencia: cada mes se puede ajustar el bono."
+    ],
+    "quote": "Un plan a medida para que Raquel afiance Matemáticas CCSS y Lengua en 1º de Bachillerato."
+  },
+  "informe_ejemplo": {
+    "asignatura": "Matemáticas CCSS",
+    "mes": "Noviembre 2026",
+    "comparado": "octubre",
+    "nota": "7,0",
+    "sesiones": 12,
+    "horas": "16h",
+    "destrezas_label": "Asignaturas seguidas",
+    "barras": [
+      [
+        "Matemáticas CCSS",
+        6.8
+      ],
+      [
+        "Lengua",
+        7.2
+      ]
+    ],
+    "mayor_progreso": "Matemáticas CCSS — la interpretación de funciones pasó de necesitar ayuda a resolverse sola",
+    "resumen": "En noviembre, Raquel ha hecho 12 sesiones sin faltar a ninguna. Ya interpreta bien las funciones y empieza a manejar la estadística. En Lengua mejora el comentario de texto. El punto de trabajo son los problemas con porcentajes y tablas de datos.",
+    "horario": "Raquel · martes y jueves, 17:00–19:00",
+    "temas": [
+      [
+        "Funciones",
+        2.5
+      ],
+      [
+        "Estadística",
+        1.8
+      ],
+      [
+        "Comentario de texto",
+        1.2
+      ],
+      [
+        "Porcentajes",
+        0.5
+      ]
+    ],
+    "fuertes": [
+      "Constante con los ejercicios",
+      "Buen comentario de texto"
+    ],
+    "atencion": [
+      "Problemas con tablas de datos",
+      "Ortografía en los escritos"
+    ],
+    "casa": [
+      "1 ejercicio de estadística al día",
+      "Leer 15 min diarios"
+    ],
+    "semanas": [
+      5.8,
+      6.3,
+      6.8,
+      7.2
+    ],
+    "metricas": [
+      [
+        "76%",
+        "Comprensión"
+      ],
+      [
+        "81%",
+        "Constancia"
+      ],
+      [
+        "62%",
+        "Autonomía"
+      ]
+    ],
+    "evol": [
+      [
+        "Resolución de problemas",
+        "Octubre: 60%",
+        "Noviembre: 79%",
+        "Plantea mejor el enunciado."
+      ],
+      [
+        "Autonomía",
+        "Octubre: 50%",
+        "Noviembre: 62%",
+        "Cada vez necesita menos ayuda."
+      ]
+    ],
+    "conclusion": "Noviembre cierra con una tendencia muy positiva. El foco de diciembre es la estadística y el comentario de texto antes de la 1ª evaluación.",
+    "cal_mes": [
+      2026,
+      12
+    ],
+    "cal_titulo": "Calendario — diciembre 2026",
+    "cal_dias_sesion": [
+      1,
+      3
+    ],
+    "cal_examen": 16,
+    "cal_semanas": "3 sem",
+    "cal_semanas_txt": "hasta la 1ª evaluación",
+    "antes": "Sin refuerzo fijo",
+    "ahora": "Clases semanales en casa"
+  }
+}
