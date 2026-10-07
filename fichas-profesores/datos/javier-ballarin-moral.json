@@ -1,0 +1,22 @@
+{
+  "nombre": "Javier Ballarín Moral",
+  "foto": "../fotos/javier-ballarin-moral.png",
+  "foto_posicion": "50% 30%",
+  "titular": "Ingeniero Electrónico de Telecomunicación",
+  "ubicacion": "Valencia",
+  "materias": ["ELECTRÓNICA", "TELECOMUNICACIONES", "PROGRAMACIÓN"],
+  "telefono": "+34 628 35 84 29",
+  "email": "jballarinmoral@gmail.com",
+  "situacion_actual": "Ingeniero de Validación en Power Electronics (desde junio de 2025): diseño de planes de prueba para módulos de hardware y software del sector de automoción y automatización de tests con Python.",
+  "estudios": [
+    {"titulo": "Grado en Ingeniería Electrónica de Telecomunicación", "detalle": "Universitat de València", "fecha": "2024"},
+    {"titulo": "CFGS en Desarrollo de Aplicaciones Multiplataforma", "detalle": "AulaCampus", "fecha": "2018"}
+  ],
+  "idiomas": [
+    {"idioma": "Español", "nivel": "Nativo"},
+    {"idioma": "Inglés", "nivel": "Fluido"}
+  ],
+  "experiencia_docente": [
+    {"titulo": "Formación de técnicos de nueva incorporación · Indra", "detalle": "Formación a técnicos recién contratados para su incorporación y dominio del sistema.", "fecha": "2018 – 2019"}
+  ]
+}
