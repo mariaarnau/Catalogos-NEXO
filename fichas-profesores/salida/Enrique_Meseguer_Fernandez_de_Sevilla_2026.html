@@ -19,7 +19,7 @@ body { font-family:var(--sans); color:var(--white); display:flex; justify-conten
   background:radial-gradient(circle at 18% 10%, rgba(233,209,143,.08), transparent 36%),
              linear-gradient(155deg, #070c1b 0%, var(--navy) 52%, var(--blue) 100%);
   padding:15mm 15mm 11mm; }
-.inner { display:flex; flex-direction:column; }
+.inner { display:flex; flex-direction:column; flex-shrink:0; }
 .top { display:flex; justify-content:space-between; align-items:center; }
 .top img { height:58px; }
 .tag { font-size:12px; letter-spacing:.24em; color:var(--gold); font-weight:700; }
@@ -89,11 +89,20 @@ h3 { font-family:var(--serif); font-size:21px; font-weight:700; }
 <script>
 // Si el contenido no cabe en el A4, se reduce la escala de forma uniforme; si sobra, la rejilla rellena el hueco.
 (function () {
-  var f = document.querySelector(".ficha"), c = document.querySelector(".inner");
+  // Busca la mayor escala con la que el contenido cabe en la hoja. Al reducir, el texto se
+  // recoloca más ancho y ocupa menos alto, así que se mide para cada escala probada.
+  var f = document.querySelector(".ficha"), c = document.querySelector(".inner"), g = document.querySelector(".grid");
   var cs = getComputedStyle(f);
   var H = f.clientHeight - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom);
-  var natural = c.getBoundingClientRect().height;
-  var z = Math.min(1, H / natural);
+  g.style.flex = "none";
+  function alto(z) { c.style.zoom = z; return c.getBoundingClientRect().height; }
+  var z = 1;
+  if (alto(1) > H) {
+    var lo = 0.4, hi = 1;
+    for (var i = 0; i < 14; i++) { var m = (lo + hi) / 2; if (alto(m) <= H) lo = m; else hi = m; }
+    z = lo;
+  }
+  g.style.flex = "";
   c.style.zoom = z;
   c.style.minHeight = (H / z) + "px";
 })();

@@ -17,6 +17,30 @@ BASE = Path(__file__).resolve().parent
 LOGO = BASE / "assets" / "logo_nexo.png"
 
 
+# Textos fijos de la ficha por idioma ("idioma_ficha" en el JSON; por defecto, español).
+TEXTOS = {
+    "es": {"lang": "es", "tag": "FICHA DE PROFESOR", "pill": "EQUIPO DOCENTE NEXO", "tel": "Teléfono",
+           "email": "Email", "situacion": "Situación actual", "formacion": "Formación", "idiomas": "Idiomas",
+           "idiomas_cert": "Idiomas y certificados", "experiencia": "Experiencia docente", "aptitudes": "Aptitudes",
+           "pie": "Nexo Académico · Equipo docente", "titulo": "Ficha profesor"},
+    "ru": {"lang": "ru", "tag": "КАРТОЧКА ПРЕПОДАВАТЕЛЯ", "pill": "КОМАНДА ПРЕПОДАВАТЕЛЕЙ NEXO", "tel": "Телефон",
+           "email": "Email", "situacion": "Текущая деятельность", "formacion": "Образование", "idiomas": "Языки",
+           "idiomas_cert": "Языки и сертификаты", "experiencia": "Педагогический опыт", "aptitudes": "Качества",
+           "pie": "Nexo Académico · Команда преподавателей", "titulo": "Карточка преподавателя"},
+}
+
+
+def edad_txt(edad, lang):
+    if lang != "ru":
+        return f"{edad} años"
+    n = int(edad)
+    if n % 10 == 1 and n % 100 != 11:
+        return f"{n} год"
+    if 2 <= n % 10 <= 4 and not 12 <= n % 100 <= 14:
+        return f"{n} года"
+    return f"{n} лет"
+
+
 def data_uri(path):
     mime = mimetypes.guess_type(str(path))[0] or "image/png"
     return f"data:{mime};base64,{base64.b64encode(Path(path).read_bytes()).decode()}"
@@ -55,13 +79,14 @@ def seccion(num, titulo, cuerpo, full=False):
 
 def render(d, foto_uri):
     nombre = d["nombre"]
+    t = TEXTOS[d.get("idioma_ficha", "es")]
     pos = f' style="object-position:{e(d["foto_posicion"])}"' if d.get("foto_posicion") else ""
     foto = (f'<img class="foto" src="{foto_uri}" alt="{e(nombre)}"{pos}>' if foto_uri
             else f'<div class="foto ini">{e(iniciales(nombre))}</div>')
 
     meta = []
     if d.get("edad"):
-        meta.append(f'{e(d["edad"])} años')
+        meta.append(e(edad_txt(d["edad"], t["lang"])))
     if d.get("ubicacion"):
         meta.append(e(d["ubicacion"]))
     meta_html = " · ".join(meta)
@@ -70,17 +95,17 @@ def render(d, foto_uri):
 
     contacto = []
     if d.get("telefono"):
-        contacto.append(f'<div class="ct"><span class="ct-l">Teléfono</span><span>{e(d["telefono"])}</span></div>')
+        contacto.append(f'<div class="ct"><span class="ct-l">{t["tel"]}</span><span>{e(d["telefono"])}</span></div>')
     if d.get("email"):
-        contacto.append(f'<div class="ct"><span class="ct-l">Email</span><span>{e(d["email"])}</span></div>')
+        contacto.append(f'<div class="ct"><span class="ct-l">{t["email"]}</span><span>{e(d["email"])}</span></div>')
 
     secciones = []
     n = 1
     if d.get("situacion_actual"):
-        secciones.append(seccion(n, "Situación actual", f'<p class="txt">{e(d["situacion_actual"])}</p>', full=True))
+        secciones.append(seccion(n, t["situacion"], f'<p class="txt">{e(d["situacion_actual"])}</p>', full=True))
         n += 1
     if d.get("estudios"):
-        secciones.append(seccion(n, "Formación", bloque_lista(d["estudios"])))
+        secciones.append(seccion(n, t["formacion"], bloque_lista(d["estudios"])))
         n += 1
     if d.get("idiomas"):
         filas = "".join(
@@ -89,15 +114,17 @@ def render(d, foto_uri):
             + (f'<span class="idi-c">{e(i["certificado"])}</span>' if i.get("certificado") else "")
             + "</div>"
             for i in d["idiomas"])
-        titulo_idi = "Idiomas y certificados" if any(i.get("certificado") for i in d["idiomas"]) else "Idiomas"
+        titulo_idi = t["idiomas_cert"] if any(i.get("certificado") for i in d["idiomas"]) else t["idiomas"]
         secciones.append(seccion(n, titulo_idi, f'<div class="idiomas">{filas}</div>'))
         n += 1
     if d.get("experiencia_docente"):
-        secciones.append(seccion(n, "Experiencia docente", bloque_lista(d["experiencia_docente"])))
+        # Con 3 o más entradas, la experiencia ocupa todo el ancho para no alargar la ficha.
+        larga = len(d["experiencia_docente"]) >= 3
+        secciones.append(seccion(n, t["experiencia"], bloque_lista(d["experiencia_docente"]), full=larga))
         n += 1
     if d.get("aptitudes"):
         chips = "".join(f'<span class="apt">{e(a)}</span>' for a in d["aptitudes"])
-        secciones.append(seccion(n, "Aptitudes", f'<div class="apts">{chips}</div>'))
+        secciones.append(seccion(n, t["aptitudes"], f'<div class="apts">{chips}</div>'))
         n += 1
 
     # En la rejilla de dos columnas, una sección suelta al final ocupa todo el ancho.
@@ -107,9 +134,9 @@ def render(d, foto_uri):
         secciones[i] = secciones[i].replace('class="sec"', 'class="sec full"', 1)
 
     return f"""<!DOCTYPE html>
-<html lang="es"><head><meta charset="utf-8">
+<html lang="{t["lang"]}"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ficha profesor · {e(nombre)}</title>
+<title>{t["titulo"]} · {e(nombre)}</title>
 <style>
 :root {{
   --navy:#091225; --navy2:#0c1224; --blue:#14285a; --card:#0b1428;
@@ -127,7 +154,7 @@ body {{ font-family:var(--sans); color:var(--white); display:flex; justify-conte
   background:radial-gradient(circle at 18% 10%, rgba(233,209,143,.08), transparent 36%),
              linear-gradient(155deg, #070c1b 0%, var(--navy) 52%, var(--blue) 100%);
   padding:15mm 15mm 11mm; }}
-.inner {{ display:flex; flex-direction:column; }}
+.inner {{ display:flex; flex-direction:column; flex-shrink:0; }}
 .top {{ display:flex; justify-content:space-between; align-items:center; }}
 .top img {{ height:58px; }}
 .tag {{ font-size:12px; letter-spacing:.24em; color:var(--gold); font-weight:700; }}
@@ -178,12 +205,12 @@ h3 {{ font-family:var(--serif); font-size:21px; font-weight:700; }}
 </style></head>
 <body>
 <article class="ficha"><div class="inner">
-  <div class="top"><img src="{data_uri(LOGO)}" alt="Nexo Académico"><span class="tag">FICHA DE PROFESOR</span></div>
+  <div class="top"><img src="{data_uri(LOGO)}" alt="Nexo Académico"><span class="tag">{t["tag"]}</span></div>
   <div class="rule"></div>
   <div class="head">
     {foto}
     <div>
-      <span class="pill">EQUIPO DOCENTE NEXO</span>
+      <span class="pill">{t["pill"]}</span>
       <h1>{e(nombre)}</h1>
       {f'<div class="cargo">{e(d["titular"])}</div>' if d.get("titular") else ""}
       {f'<div class="meta">{meta_html}</div>' if meta_html else ""}
@@ -192,16 +219,25 @@ h3 {{ font-family:var(--serif); font-size:21px; font-weight:700; }}
   </div>
   {f'<div class="contacto">{"".join(contacto)}</div>' if contacto else ""}
   <div class="grid">{"".join(secciones)}</div>
-  <div class="foot"><span>Nexo Académico · Equipo docente</span><span>nexoacademico.com</span></div>
+  <div class="foot"><span>{t["pie"]}</span><span>nexoacademico.com</span></div>
 </div></article>
 <script>
 // Si el contenido no cabe en el A4, se reduce la escala de forma uniforme; si sobra, la rejilla rellena el hueco.
 (function () {{
-  var f = document.querySelector(".ficha"), c = document.querySelector(".inner");
+  // Busca la mayor escala con la que el contenido cabe en la hoja. Al reducir, el texto se
+  // recoloca más ancho y ocupa menos alto, así que se mide para cada escala probada.
+  var f = document.querySelector(".ficha"), c = document.querySelector(".inner"), g = document.querySelector(".grid");
   var cs = getComputedStyle(f);
   var H = f.clientHeight - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom);
-  var natural = c.getBoundingClientRect().height;
-  var z = Math.min(1, H / natural);
+  g.style.flex = "none";
+  function alto(z) {{ c.style.zoom = z; return c.getBoundingClientRect().height; }}
+  var z = 1;
+  if (alto(1) > H) {{
+    var lo = 0.4, hi = 1;
+    for (var i = 0; i < 14; i++) {{ var m = (lo + hi) / 2; if (alto(m) <= H) lo = m; else hi = m; }}
+    z = lo;
+  }}
+  g.style.flex = "";
   c.style.zoom = z;
   c.style.minHeight = (H / z) + "px";
 }})();
