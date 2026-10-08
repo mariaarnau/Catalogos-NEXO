@@ -156,14 +156,15 @@
     "resumen": [
       "Primero, examen de nivelación en la app de Nexo.",
       "Clases online de inglés con un profesor nativo (C2), asignado en 24–48 horas.",
-      "Después, bono de prueba de 2h y bono de 12h.",
+      "Primero el bono de prueba de 2h y, después, el bono de 12h.",
       "Presencial en casa: unos 2 € más por hora."
     ],
     "quote": "Un plan a medida para que Noah llegue al A2 de Cambridge con todo preparado.",
     "nivel": {
       "titulo": "Examen de nivelación Nexo",
       "texto": "Noah hace una prueba de nivel en nuestra app. Así sabemos desde dónde parte y el profesor llega a la primera clase con el plan ya pensado."
-    }
+    },
+    "sin_mes": true
   },
   "informe_ejemplo": {
     "asignatura": "Inglés",

@@ -661,11 +661,11 @@ def page_pasos(d, t):
         ph = b["precio"] / b["horas"]
         top = f'<div class="bx-top">{e(b["etiqueta"])}</div>' if b.get("etiqueta") else ""
         cards += f'''<div class="bx{" star" if b.get("destacado") else ""}">{top}
-  <div class="bx-h"><b>{b["horas"]}h</b><span>al mes · {e(b["frecuencia"])}</span></div>
-  <div class="bx-p">{eur(b["precio"], 0)}<small>/mes</small></div>
+  <div class="bx-h"><b>{b["horas"]}h</b><span>{"bono de horas" if c.get("sin_mes") else "al mes · " + e(b["frecuencia"])}</span></div>
+  <div class="bx-p">{eur(b["precio"], 0)}{"" if c.get("sin_mes") else "<small>/mes</small>"}</div>
   <div class="bx-hora"><b>{eur(ph)}</b><span>por hora</span><em>−{pct(base - ph, base)}%</em></div>
   <div class="bx-ref"><span>Tarifa base ({b["horas"]} × {eur(base, 0 if base == int(base) else 2)})</span><s>{eur(b["horas"] * base, 0)}</s></div>
-  <div class="bx-ah">Ahorráis <b>{eur(b["horas"] * base - b["precio"], 0)}</b> al mes frente a la tarifa base</div>
+  <div class="bx-ah">Ahorráis <b>{eur(b["horas"] * base - b["precio"], 0)}</b>{"" if c.get("sin_mes") else " al mes"} frente a la tarifa base</div>
 </div>'''
     nv = c.get("nivel")
     k1 = 2 if nv else 1
@@ -698,8 +698,8 @@ def page_resumen_pasos(d, t):
     rows += (f'''<div class="srow"><div class="av w">{k1}</div><div class="st"><b>Paso {k1} — Bono de prueba de {p1["horas"]}h</b><small>{e(c["modalidad_txt"])} · para empezar</small></div>
   <div class="sps"><div class="sp"><small>Una vez</small><b>{eur(p1["precio"], 0)}</b></div></div></div>''')
     for b in c["opciones"]:
-        rows += f'''<div class="srow ref"><div class="av w">{k1 + 1}</div><div class="st"><b>Paso {k1 + 1} — Bono de {b["horas"]}h al mes</b><small>{e(c["modalidad_txt"])} · {e(b["frecuencia"])}</small></div>
-  <div class="sps"><div class="sp"><small>Al mes</small><b>{eur(b["precio"], 0)}</b></div><div class="sp"><small>Por hora</small><b>{eur(b["precio"] / b["horas"])}</b></div></div></div>'''
+        rows += f'''<div class="srow ref"><div class="av w">{k1 + 1}</div><div class="st"><b>Paso {k1 + 1} — Bono de {b["horas"]}h{"" if c.get("sin_mes") else " al mes"}</b><small>{e(c["modalidad_txt"])}{"" if c.get("sin_mes") else " · " + e(b["frecuencia"])}</small></div>
+  <div class="sps"><div class="sp"><small>{"Bono" if c.get("sin_mes") else "Al mes"}</small><b>{eur(b["precio"], 0)}</b></div><div class="sp"><small>Por hora</small><b>{eur(b["precio"] / b["horas"])}</b></div></div></div>'''
     lis = "".join(f"<li>{e(x)}</li>" for x in c["resumen"])
     return f'''<section class="page">
   <div class="hdr"><img class="logo-sm" src="{LOGO_URI}"><span class="hdr-r">RESUMEN DEL PLAN</span></div><div class="rule"></div>
