@@ -1,0 +1,233 @@
+{
+  "nombre": "Pedro",
+  "etapa": "universidad",
+  "curso": "Ingeniería Eléctrica",
+  "asignaturas": [
+    "Física 1"
+  ],
+  "voz": "tu",
+  "archivo": "Plan_NEXO_Pedro_Garcia_IngElectrica_Fisica1",
+  "cover_card_sub": "Ingeniería Eléctrica · Física 1 · Clases online",
+  "omitir_proceso": true,
+  "omitir_informe": true,
+  "omitir_phones": true,
+  "presencial_label": "online",
+  "bonos_recomendados": [
+    {
+      "horas": 12,
+      "frecuencia": "3h a la semana"
+    }
+  ],
+  "modalidades_recomendadas": [
+    "online"
+  ],
+  "tarifas_mostrar": [
+    "online",
+    "casa_alumno"
+  ],
+  "textos": {
+    "cover_sub": "Un plan a medida para Pedro: sacar Física 1 de Ingeniería Eléctrica con un ritmo de 3–4 horas a la semana.",
+    "p10_sub": "Escríbenos para reservar tu bono de prueba y empezar cuanto antes."
+  },
+  "trayectoria": {
+    "etiqueta": "HOJA DE RUTA",
+    "pill": "FÍSICA 1 · INGENIERÍA ELÉCTRICA",
+    "titulo": "Física 1, de hoy al examen",
+    "lead": "Física 1 es una asignatura potente: pide 3–4 horas a la semana. Así la trabajamos, etapa a etapa (fechas orientativas; las ajustamos a tus parciales).",
+    "meses": [
+      "Oct",
+      "Nov",
+      "Dic",
+      "Ene"
+    ],
+    "colores": [
+      "#5b8ee0",
+      "#8fb8ec",
+      "#7fcfa0",
+      "#e9d18f"
+    ],
+    "tramos": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        2.7
+      ],
+      [
+        2.7,
+        3
+      ]
+    ],
+    "bloques": [
+      {
+        "span": 1,
+        "simbolo": "v·a",
+        "nombre": "Cinemática",
+        "foco": "Movimiento y vectores: la base de todo lo demás.",
+        "fondo": "#12234a",
+        "borde": "#5b8ee0"
+      },
+      {
+        "span": 1,
+        "simbolo": "F=ma",
+        "nombre": "Dinámica",
+        "foco": "Leyes de Newton, trabajo y energía.",
+        "fondo": "#16284a",
+        "borde": "#8fb8ec"
+      },
+      {
+        "span": 1,
+        "simbolo": "✓",
+        "nombre": "Problemas tipo",
+        "foco": "Problemas de examen cronometrados y corregidos.",
+        "fondo": "#13302a",
+        "borde": "#7fcfa0"
+      },
+      {
+        "span": 1,
+        "simbolo": "★",
+        "nombre": "Examen",
+        "foco": "Repaso final y últimos ajustes.",
+        "fondo": "#3a3322",
+        "borde": "#e9d18f"
+      }
+    ],
+    "hitos": [
+      {
+        "nombre": "Parciales",
+        "pos": 1
+      },
+      {
+        "nombre": "Examen",
+        "pos": 3,
+        "meta": true
+      }
+    ]
+  },
+  "pasos": {
+    "base": 25,
+    "base_txt": "",
+    "modalidad_txt": "Online",
+    "nota": "",
+    "who": "Ingeniería Eléctrica · Física 1 · Clases online",
+    "titulo": "Tu plan, en dos pasos",
+    "lead": "Física 1 con un profesor especializado, asignado en 24–48 horas, a un ritmo de 3–4 horas a la semana.",
+    "prueba": {
+      "horas": 2,
+      "precio": 44,
+      "tachado": 50,
+      "texto": "Dos horas online para conocer al profesor, ver en qué punto estás en Física 1 y dejar fijado tu plan hasta el examen. Recomendado al 100%.",
+      "alt": "¿Te juntas con un amigo? Por cada amigo extra, el precio por hora baja bastante."
+    },
+    "paso2_titulo": "Después, tu bono de 12 horas",
+    "opciones": [
+      {
+        "horas": 12,
+        "precio": 285,
+        "frecuencia": "3–4h a la semana",
+        "destacado": true,
+        "etiqueta": "MEJOR PRECIO POR HORA"
+      }
+    ],
+    "resumen": [
+      "Clases online de Física 1 con un profesor especializado, asignado en 24–48 horas.",
+      "Primero, bono de prueba de 2h y, después, bono de 12h.",
+      "Ritmo recomendado: 3–4 horas a la semana.",
+      "Con un amigo, el precio por hora baja bastante."
+    ],
+    "quote": "Un plan a medida para que Pedro saque Física 1 con soltura.",
+    "sin_mes": true
+  },
+  "informe_ejemplo": {
+    "asignatura": "Inglés",
+    "mes": "Noviembre 2026",
+    "comparado": "octubre",
+    "nota": "7,0",
+    "sesiones": 8,
+    "horas": "12h",
+    "destrezas_label": "Destrezas trabajadas",
+    "barras": [
+      [
+        "Reading",
+        7.0
+      ],
+      [
+        "Writing",
+        6.5
+      ]
+    ],
+    "mayor_progreso": "Writing",
+    "resumen": "Ejemplo.",
+    "horario": "Noah",
+    "temas": [
+      [
+        "Reading",
+        1.0
+      ]
+    ],
+    "fuertes": [
+      "a"
+    ],
+    "atencion": [
+      "b"
+    ],
+    "casa": [
+      "c"
+    ],
+    "semanas": [
+      5.8,
+      6.3,
+      6.8,
+      7.2
+    ],
+    "metricas": [
+      [
+        "76%",
+        "Comprensión"
+      ],
+      [
+        "81%",
+        "Constancia"
+      ],
+      [
+        "62%",
+        "Autonomía"
+      ]
+    ],
+    "evol": [
+      [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      [
+        "a",
+        "b",
+        "c",
+        "d"
+      ]
+    ],
+    "conclusion": "x",
+    "cal_mes": [
+      2026,
+      12
+    ],
+    "cal_titulo": "x",
+    "cal_dias_sesion": [
+      1
+    ],
+    "cal_examen": 16,
+    "cal_semanas": "3 sem",
+    "cal_semanas_txt": "x",
+    "antes": "x",
+    "ahora": "x"
+  },
+  "nombre_completo": "Pedro García"
+}
