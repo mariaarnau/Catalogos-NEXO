@@ -135,7 +135,7 @@
     "modalidad_txt": "Online",
     "nota": "¿Preferís clases presenciales en casa? Son unos 2,67 € más por hora (22,50 €/h en el bono de 12h).",
     "who": "4º ESO · Cambridge A2 · Clases online",
-    "titulo": "Su plan, en dos pasos",
+    "titulo": "Su plan, en tres pasos",
     "lead": "Con un profesor nativo con nivel C2 de inglés, asignado en 24–48 horas.",
     "prueba": {
       "horas": 2,
@@ -154,12 +154,16 @@
       }
     ],
     "resumen": [
-      "Clases online de inglés con un profesor nativo (C2).",
-      "Profesor asignado en 24–48 horas.",
-      "Se empieza con el bono de prueba de 2h y después, el bono de 12h.",
+      "Primero, examen de nivelación en la app de Nexo.",
+      "Clases online de inglés con un profesor nativo (C2), asignado en 24–48 horas.",
+      "Después, bono de prueba de 2h y bono de 12h.",
       "Presencial en casa: unos 2,67 € más por hora."
     ],
-    "quote": "Un plan a medida para que Noah llegue al A2 de Cambridge con todo preparado."
+    "quote": "Un plan a medida para que Noah llegue al A2 de Cambridge con todo preparado.",
+    "nivel": {
+      "titulo": "Examen de nivelación Nexo",
+      "texto": "Noah hace una prueba de nivel en nuestra app. Así sabemos desde dónde parte y el profesor llega a la primera clase con el plan ya pensado."
+    }
   },
   "informe_ejemplo": {
     "asignatura": "Inglés",

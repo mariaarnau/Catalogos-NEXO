@@ -667,17 +667,21 @@ def page_pasos(d, t):
   <div class="bx-ref"><span>Tarifa base ({b["horas"]} × {eur(base, 0 if base == int(base) else 2)})</span><s>{eur(b["horas"] * base, 0)}</s></div>
   <div class="bx-ah">Ahorráis <b>{eur(b["horas"] * base - b["precio"], 0)}</b> al mes frente a la tarifa base</div>
 </div>'''
+    nv = c.get("nivel")
+    k1 = 2 if nv else 1
+    niv = (f'''<div class="niv"><div class="pnum">1</div><div class="p1t"><small>PASO 1 · PRIMERO DE TODO</small><b>{e(nv["titulo"])}</b><span>{e(nv["texto"])}</span></div></div>''' if nv else "")
     return f'''<section class="page pasosp">
   <div class="hdr"><span class="hdr-l">PLAN PERSONALIZADO · {e(n.upper())}</span></div><div class="rule"></div>
   <div class="who"><div class="av">{e(n[0])}</div><div><div class="wn">{e(n)}</div><div class="ws">{e(c["who"].upper())}</div></div></div>
   <h2>{e(c["titulo"])}</h2>
   <p class="lead">{e(c["lead"])}</p>
+  {niv}
   <div class="paso1">
-    <div class="pnum">1</div>
-    <div class="p1t"><small>PASO 1 · PARA EMPEZAR</small><b>Bono de prueba de {p1["horas"]}h</b><span>{e(p1["texto"])}</span></div>
+    <div class="pnum">{k1}</div>
+    <div class="p1t"><small>PASO {k1} · {"DESPUÉS" if niv else "PARA EMPEZAR"}</small><b>Bono de prueba de {p1["horas"]}h</b><span>{e(p1["texto"])}</span></div>
     <div class="p1p"><s>{eur(p1["tachado"], 0)}</s><b>{eur(p1["precio"], 0)}</b><span>{eur(ph1)}/h · precio nuevos alumnos</span></div>
   </div>
-  <div class="paso2h"><div class="pnum s">2</div><div><small>PASO 2 · DESPUÉS</small><b>{e(c["paso2_titulo"])}</b></div></div>
+  <div class="paso2h"><div class="pnum s">{k1 + 1}</div><div><small>PASO {k1 + 1} · DESPUÉS</small><b>{e(c["paso2_titulo"])}</b></div></div>
   <div class="bxs"{' style="grid-template-columns: 1fr; max-width: 520px"' if len(c["opciones"]) == 1 else ""}>{cards}</div>
   <div class="base-l">{e(c["base_txt"])}: <b>{eur(base)}/h</b>{f" · {e(c['nota'])}" if c.get("nota") else ""}</div>
   {footer()}
@@ -688,10 +692,13 @@ def page_resumen_pasos(d, t):
     c = d["pasos"]
     n = d["nombre"]
     p1 = c["prueba"]
-    rows = (f'''<div class="srow"><div class="av w">1</div><div class="st"><b>Paso 1 — Bono de prueba de {p1["horas"]}h</b><small>{e(c["modalidad_txt"])} · para empezar</small></div>
+    nv = c.get("nivel")
+    k1 = 2 if nv else 1
+    rows = (f'''<div class="srow"><div class="av w">1</div><div class="st"><b>Paso 1 — {e(nv["titulo"])}</b><small>En la app de Nexo · antes de empezar</small></div></div>''' if nv else "")
+    rows += (f'''<div class="srow"><div class="av w">{k1}</div><div class="st"><b>Paso {k1} — Bono de prueba de {p1["horas"]}h</b><small>{e(c["modalidad_txt"])} · para empezar</small></div>
   <div class="sps"><div class="sp"><small>Una vez</small><b>{eur(p1["precio"], 0)}</b></div></div></div>''')
     for b in c["opciones"]:
-        rows += f'''<div class="srow ref"><div class="av w">2</div><div class="st"><b>Paso 2 — Bono de {b["horas"]}h al mes</b><small>{e(c["modalidad_txt"])} · {e(b["frecuencia"])}</small></div>
+        rows += f'''<div class="srow ref"><div class="av w">{k1 + 1}</div><div class="st"><b>Paso {k1 + 1} — Bono de {b["horas"]}h al mes</b><small>{e(c["modalidad_txt"])} · {e(b["frecuencia"])}</small></div>
   <div class="sps"><div class="sp"><small>Al mes</small><b>{eur(b["precio"], 0)}</b></div><div class="sp"><small>Por hora</small><b>{eur(b["precio"] / b["horas"])}</b></div></div></div>'''
     lis = "".join(f"<li>{e(x)}</li>" for x in c["resumen"])
     return f'''<section class="page">
@@ -1773,6 +1780,8 @@ h2.c { font-size: 34px; margin: 26px 0 18px; }
 .rp2 span { color: #c9c9cf; font-size: 12.5px; line-height: 1.3; }
 .pasosp .who { margin-bottom: 10px; }
 .pasosp h2 { margin-top: 10px; }
+.niv { display: grid; grid-template-columns: 56px 1fr; gap: 18px; align-items: center; margin-top: 22px; border: 1px solid #2c3d63; border-radius: 16px; padding: 14px 24px; background: #0f1a33; }
+.niv + .paso1 { margin-top: 14px; }
 .paso1 { display: grid; grid-template-columns: 56px 1fr auto; gap: 18px; align-items: center; margin-top: 22px; border: 1px solid #c9a24b; border-radius: 16px; padding: 18px 24px; background: linear-gradient(160deg, #2a2618, #0e1629); }
 .pnum { width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font: italic 700 24px 'Liberation Serif', serif; background: linear-gradient(135deg, #f6e2a6, #c9a24b); color: #0a1226; }
 .pnum.s { width: 40px; height: 40px; font-size: 20px; background: #1a2d52; color: #8fb8ec; }
