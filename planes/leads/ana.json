@@ -1,0 +1,254 @@
+{
+  "nombre": "Ana",
+  "etapa": "bachillerato",
+  "curso": "2º Bachillerato",
+  "asignaturas": [
+    "Matemáticas aplicadas a las CCSS"
+  ],
+  "voz": "familia",
+  "archivo": "Plan_NEXO_Ana_2Bach_Matematicas_aplicadas_CCSS",
+  "cover_card_sub": "2º Bachillerato · Matemáticas CCSS · PAU",
+  "omitir_proceso": true,
+  "omitir_informe": true,
+  "omitir_phones": true,
+  "presencial_label": "online",
+  "bonos_recomendados": [
+    {
+      "horas": 12,
+      "frecuencia": "3h a la semana"
+    }
+  ],
+  "modalidades_recomendadas": [
+    "online"
+  ],
+  "tarifas_mostrar": [
+    "online",
+    "casa_alumno"
+  ],
+  "textos": {
+    "cover_sub": "Un plan a medida para Ana: Matemáticas aplicadas a las Ciencias Sociales de 2º de Bachillerato, con la PAU de junio como meta.",
+    "p10_sub": "Escribidnos para reservar el bono de prueba de Ana y empezar cuanto antes."
+  },
+  "trayectoria": {
+    "etiqueta": "HOJA DE RUTA",
+    "pill": "2º BACHILLERATO · PAU DE JUNIO",
+    "titulo": "Del primer día a la PAU",
+    "lead": "Un curso en cuatro etapas, una por bloque del examen de Matemáticas CCSS, para llegar a junio con todo preparado.",
+    "meses": [
+      "Oct",
+      "Nov",
+      "Dic",
+      "Ene",
+      "Feb",
+      "Mar",
+      "Abr",
+      "May",
+      "Jun"
+    ],
+    "colores": [
+      "#5b8ee0",
+      "#8fb8ec",
+      "#7fcfa0",
+      "#e9d18f"
+    ],
+    "tramos": [
+      [
+        0,
+        3
+      ],
+      [
+        3,
+        5.5
+      ],
+      [
+        5.5,
+        7
+      ],
+      [
+        7,
+        8
+      ]
+    ],
+    "bloques": [
+      {
+        "span": 3,
+        "simbolo": "[ ]",
+        "nombre": "Álgebra",
+        "foco": "Matrices, sistemas de ecuaciones y programación lineal.",
+        "fondo": "#12234a",
+        "borde": "#5b8ee0"
+      },
+      {
+        "span": 3,
+        "simbolo": "f(x)",
+        "nombre": "Análisis",
+        "foco": "Funciones, límites, derivadas y sus aplicaciones.",
+        "fondo": "#16284a",
+        "borde": "#8fb8ec"
+      },
+      {
+        "span": 2,
+        "simbolo": "σ",
+        "nombre": "Estadística",
+        "foco": "Probabilidad, inferencia y exámenes de otros años.",
+        "fondo": "#13302a",
+        "borde": "#7fcfa0"
+      },
+      {
+        "span": 1,
+        "simbolo": "★",
+        "nombre": "PAU",
+        "foco": "Simulacros cronometrados y últimos ajustes.",
+        "fondo": "#3a3322",
+        "borde": "#e9d18f"
+      }
+    ],
+    "hitos": [
+      {
+        "nombre": "1ª evaluación",
+        "pos": 2.5
+      },
+      {
+        "nombre": "2ª evaluación",
+        "pos": 5.5
+      },
+      {
+        "nombre": "Finales",
+        "pos": 7
+      },
+      {
+        "nombre": "PAU",
+        "pos": 8,
+        "meta": true
+      }
+    ]
+  },
+  "pasos": {
+    "base": 24,
+    "base_txt": "",
+    "modalidad_txt": "Online",
+    "nota": "",
+    "who": "2º Bachillerato · Matemáticas CCSS · Clases online",
+    "titulo": "Su plan, en tres pasos",
+    "lead": "Matemáticas CCSS con un profesor especializado en la PAU, asignado en 24–48 horas.",
+    "prueba": {
+      "horas": 2,
+      "precio": 42,
+      "tachado": 48,
+      "texto": "Dos horas online para conocer al profesor y dejar fijado el plan de Ana hasta la PAU. Recomendado al 100%.",
+      "alt": "¿Presencial en casa? El bono de 2h sale a 46 € (23 €/h)."
+    },
+    "paso2_titulo": "Después, su bono de 12 horas",
+    "opciones": [
+      {
+        "horas": 12,
+        "precio": 270,
+        "frecuencia": "3h a la semana",
+        "destacado": true,
+        "etiqueta": "MEJOR PRECIO POR HORA",
+        "alt": {
+          "txt": "Si preferís clases presenciales",
+          "hora": "23,75 €/h",
+          "bono": "bono de 12h: 285 €"
+        }
+      }
+    ],
+    "resumen": [
+      "Primero, toma de contacto y evaluación inicial.",
+      "Clases online de Matemáticas CCSS con un profesor especializado, asignado en 24–48 horas.",
+      "Después, bono de prueba de 2h y bono de 12h.",
+      "Presencial en casa: bono de 12h a 285 € (23,75 €/h)."
+    ],
+    "quote": "Un plan a medida para que Ana llegue a la PAU con las Matemáticas CCSS preparadas.",
+    "nivel": {
+      "titulo": "Toma de contacto y evaluación inicial",
+      "texto": "Vemos el nivel de Ana y qué bloques de la PAU necesita reforzar."
+    },
+    "sin_mes": true
+  },
+  "informe_ejemplo": {
+    "asignatura": "Inglés",
+    "mes": "Noviembre 2026",
+    "comparado": "octubre",
+    "nota": "7,0",
+    "sesiones": 8,
+    "horas": "12h",
+    "destrezas_label": "Destrezas trabajadas",
+    "barras": [
+      [
+        "Reading",
+        7.0
+      ],
+      [
+        "Writing",
+        6.5
+      ]
+    ],
+    "mayor_progreso": "Writing",
+    "resumen": "Ejemplo.",
+    "horario": "Noah",
+    "temas": [
+      [
+        "Reading",
+        1.0
+      ]
+    ],
+    "fuertes": [
+      "a"
+    ],
+    "atencion": [
+      "b"
+    ],
+    "casa": [
+      "c"
+    ],
+    "semanas": [
+      5.8,
+      6.3,
+      6.8,
+      7.2
+    ],
+    "metricas": [
+      [
+        "76%",
+        "Comprensión"
+      ],
+      [
+        "81%",
+        "Constancia"
+      ],
+      [
+        "62%",
+        "Autonomía"
+      ]
+    ],
+    "evol": [
+      [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      [
+        "a",
+        "b",
+        "c",
+        "d"
+      ]
+    ],
+    "conclusion": "x",
+    "cal_mes": [
+      2026,
+      12
+    ],
+    "cal_titulo": "x",
+    "cal_dias_sesion": [
+      1
+    ],
+    "cal_examen": 16,
+    "cal_semanas": "3 sem",
+    "cal_semanas_txt": "x",
+    "antes": "x",
+    "ahora": "x"
+  }
+}

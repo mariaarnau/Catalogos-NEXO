@@ -657,8 +657,13 @@ def page_pasos(d, t):
     p1 = c["prueba"]
     ph1 = p1["precio"] / p1["horas"]
     cards = ""
+    side = ""
     for b in c["opciones"]:
         ph = b["precio"] / b["horas"]
+        alt = (f'<div class="bx-alt"><small>{e(b["alt"]["txt"])}</small><b>{e(b["alt"]["hora"])}</b><span>{e(b["alt"]["bono"])}</span></div>' if b.get("alt") else "")
+        if len(c["opciones"]) == 1 and alt:
+            side = alt.replace("bx-alt", "bx-side")
+            alt = ""
         top = f'<div class="bx-top">{e(b["etiqueta"])}</div>' if b.get("etiqueta") else ""
         cards += f'''<div class="bx{" star" if b.get("destacado") else ""}">{top}
   <div class="bx-h"><b>{b["horas"]}h</b><span>{"bono de horas" if c.get("sin_mes") else "al mes · " + e(b["frecuencia"])}</span></div>
@@ -667,6 +672,8 @@ def page_pasos(d, t):
   <div class="bx-ref"><span>Tarifa base ({b["horas"]} × {eur(base, 0 if base == int(base) else 2)})</span><s>{eur(b["horas"] * base, 0)}</s></div>
   <div class="bx-ah">Ahorráis <b>{eur(b["horas"] * base - b["precio"], 0)}</b>{"" if c.get("sin_mes") else " al mes"} frente a la tarifa base</div>
 </div>'''
+    nota_t = f" · {e(c['nota'])}" if c.get("nota") else ""
+    basel = f'<div class="base-l">{e(c["base_txt"])}: <b>{eur(base)}/h</b>{nota_t}</div>' if c.get("base_txt") else ""
     nv = c.get("nivel")
     k1 = 2 if nv else 1
     niv = (f'''<div class="niv"><div class="pnum">1</div><div class="p1t"><small>PASO 1 · PRIMERO DE TODO</small><b>{e(nv["titulo"])}</b><span>{e(nv["texto"])}</span></div></div>''' if nv else "")
@@ -679,11 +686,11 @@ def page_pasos(d, t):
   <div class="paso1">
     <div class="pnum">{k1}</div>
     <div class="p1t"><small>PASO {k1} · {"DESPUÉS" if niv else "PARA EMPEZAR"}</small><b>Bono de prueba de {p1["horas"]}h</b><span>{e(p1["texto"])}</span></div>
-    <div class="p1p"><s>{eur(p1["tachado"], 0)}</s><b>{eur(p1["precio"], 0)}</b><span>{eur(ph1)}/h · precio nuevos alumnos</span></div>
+    <div class="p1p"><s>{eur(p1["tachado"], 0)}</s><b>{eur(p1["precio"], 0)}</b><span>{eur(ph1)}/h · precio nuevos alumnos</span>{f'<em class="p1alt">{e(p1["alt"])}</em>' if p1.get("alt") else ""}</div>
   </div>
   <div class="paso2h"><div class="pnum s">{k1 + 1}</div><div><small>PASO {k1 + 1} · DESPUÉS</small><b>{e(c["paso2_titulo"])}</b></div></div>
-  <div class="bxs"{' style="grid-template-columns: 1fr; max-width: 520px"' if len(c["opciones"]) == 1 else ""}>{cards}</div>
-  <div class="base-l">{e(c["base_txt"])}: <b>{eur(base)}/h</b>{f" · {e(c['nota'])}" if c.get("nota") else ""}</div>
+  <div class="bxs"{(' style="grid-template-columns: 520px 1fr; align-items: end"' if side else ' style="grid-template-columns: 1fr; max-width: 520px"') if len(c["opciones"]) == 1 else ""}>{cards}{side}</div>
+  {basel}
   {footer()}
 </section>'''
 
@@ -1822,6 +1829,9 @@ h2.c { font-size: 34px; margin: 26px 0 18px; }
 .bx-hora.ex b { font-size: 22px; color: #8fb8ec; }
 .bx-hora span { color: #a49f8e; font-size: 13px; }
 .bx-hora em { font-style: normal; background: #1f4a37; color: #7fcfa0; font-weight: 700; font-size: 15px; padding: 4px 10px; border-radius: 999px; }
+.bx-alt { margin-top: 2px; text-align: right; color: #8a8d9a; font-size: 12px; } .bx-alt small { display: block; } .bx-alt b { color: #a9b4d0; font-weight: 700; font-size: 13px; margin-right: 6px; }
+.bx-side { text-align: right; padding: 0 8px 14px; color: #a49f8e; font-size: 13px; } .bx-side small { display: block; } .bx-side b { display: block; font: 700 26px 'Liberation Serif', serif; color: #a9b4d0; margin: 2px 0; }
+.p1alt { display: block; margin-top: 6px; font-style: normal; color: #7d7f8a; font-size: 11px; }
 .bx-ah { margin-top: 8px; color: #a49f8e; font-size: 13px; } .bx-ah b { color: #7fcfa0; }
 .base-l { margin-top: 14px; color: #7d7f8a; font-size: 12.5px; } .base-l b { color: #e7e7ea; }
 .dash.ej { margin-top: 14px; } .dash.ej li { font-size: 14px; } .dash.ej b { color: #e9d18f; }
