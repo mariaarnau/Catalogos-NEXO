@@ -1,0 +1,33 @@
+{
+  "nombre": "Lucas Lazcano",
+  "foto": "../fotos/lucas-lazcano.png",
+  "foto_posicion": "50% 28%",
+  "titular": "Ingeniero Industrial · Profesor universitario",
+  "edad": 25,
+  "materias": ["MECÁNICA DE FLUIDOS", "FÍSICA", "QUÍMICA", "MATEMÁTICAS", "NIVEL UNIVERSITARIO"],
+  "telefono": "613 594 636",
+  "email": "lucaslazcano70@gmail.com",
+  "situacion_actual": "Profesor de Nexo Académico desde hace tiempo. Ingeniero Industrial titulado en abril de 2026, compagina las clases con su trabajo como analista funcional en el diseño de procesos digitales.",
+  "estudios": [
+    {"titulo": "Ingeniería Industrial", "detalle": "Universidad Tecnológica Nacional · Nota media 7,98 · Titulado en abril de 2026", "fecha": "2020 – 2026"}
+  ],
+  "idiomas": [
+    {"idioma": "Español", "nivel": "Nativo"},
+    {"idioma": "Inglés", "nivel": "Intermedio"}
+  ],
+  "experiencia_docente": [
+    {"titulo": "Profesor en Nexo Académico", "detalle": "Clases particulares de nivel universitario en Física, Química, Matemáticas y Mecánica de Fluidos."},
+    {"titulo": "Mecánica de Fluidos", "detalle": "Para grados de Ingeniería Industrial y carreras afines."},
+    {"titulo": "Física y Química universitarias", "detalle": "Para Ingeniería Industrial y para carreras de Química."},
+    {"titulo": "Matemáticas", "detalle": "Cálculo y matemáticas aplicadas a la ingeniería y a las ciencias."}
+  ],
+  "aptitudes": [
+    "Sólida base científica: física, química y matemáticas",
+    "Pensamiento analítico y resolución de problemas",
+    "Explicaciones claras, ordenadas y paso a paso",
+    "Experiencia en la industria: calidad, logística y mejora de procesos",
+    "Análisis de datos (SQL, R, hojas de cálculo)",
+    "Método y organización",
+    "Documentación y material de estudio claro"
+  ]
+}
