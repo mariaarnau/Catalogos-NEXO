@@ -1,0 +1,249 @@
+{
+  "nombre": "Noah",
+  "etapa": "eso",
+  "curso": "4º ESO",
+  "asignaturas": [
+    "Inglés · Cambridge A2"
+  ],
+  "voz": "familia",
+  "archivo": "Plan_NEXO_Noah_4ESO_Cambridge_A2",
+  "cover_card_sub": "4º ESO · Cambridge A2 · Clases online",
+  "omitir_proceso": true,
+  "omitir_informe": true,
+  "omitir_phones": true,
+  "presencial_label": "online",
+  "bonos_recomendados": [
+    {
+      "horas": 12,
+      "frecuencia": "3h a la semana"
+    }
+  ],
+  "modalidades_recomendadas": [
+    "online"
+  ],
+  "tarifas_mostrar": [
+    "online",
+    "casa_alumno"
+  ],
+  "tarifas_override": {
+    "online": {
+      "base": 21,
+      "precios": {
+        "2": 39,
+        "4": 82,
+        "8": 160,
+        "12": 238
+      }
+    }
+  },
+  "textos": {
+    "cover_sub": "Un plan a medida para Noah: prepararse el examen A2 de Cambridge de mayo con un profesor nativo.",
+    "p10_sub": "Escribidnos para reservar el bono de prueba de Noah y empezar cuanto antes."
+  },
+  "trayectoria": {
+    "etiqueta": "HOJA DE RUTA",
+    "pill": "CAMBRIDGE A2 · MAYO",
+    "titulo": "Del primer día al examen de mayo",
+    "lead": "El examen A2 de Cambridge es en mayo: quedan unas 30 semanas. Así lo preparamos, etapa a etapa.",
+    "meses": [
+      "Oct",
+      "Nov",
+      "Dic",
+      "Ene",
+      "Feb",
+      "Mar",
+      "Abr",
+      "May"
+    ],
+    "colores": [
+      "#5b8ee0",
+      "#8fb8ec",
+      "#7fcfa0",
+      "#e9d18f"
+    ],
+    "tramos": [
+      [
+        0,
+        3
+      ],
+      [
+        3,
+        5
+      ],
+      [
+        5,
+        6.6
+      ],
+      [
+        6.6,
+        7
+      ]
+    ],
+    "bloques": [
+      {
+        "span": 3,
+        "simbolo": "Aa",
+        "nombre": "Bases",
+        "foco": "Gramática y vocabulario de nivel A2.",
+        "fondo": "#12234a",
+        "borde": "#5b8ee0"
+      },
+      {
+        "span": 2,
+        "simbolo": "R·W·L·S",
+        "nombre": "Las 4 destrezas",
+        "foco": "Reading, Writing, Listening y Speaking, con práctica cada semana.",
+        "fondo": "#16284a",
+        "borde": "#8fb8ec"
+      },
+      {
+        "span": 2,
+        "simbolo": "✓",
+        "nombre": "Simulacros",
+        "foco": "Exámenes de prueba cronometrados y corrección detallada.",
+        "fondo": "#13302a",
+        "borde": "#7fcfa0"
+      },
+      {
+        "span": 1,
+        "simbolo": "★",
+        "nombre": "A2",
+        "foco": "Últimos ajustes y práctica oral antes del examen.",
+        "fondo": "#3a3322",
+        "borde": "#e9d18f"
+      }
+    ],
+    "hitos": [
+      {
+        "nombre": "1er simulacro",
+        "pos": 4.5
+      },
+      {
+        "nombre": "2º simulacro",
+        "pos": 6
+      },
+      {
+        "nombre": "A2",
+        "pos": 7,
+        "meta": true
+      }
+    ]
+  },
+  "pasos": {
+    "base": 21,
+    "base_txt": "Tarifa base online de ESO",
+    "modalidad_txt": "Online",
+    "nota": "¿Preferís clases presenciales en casa? Son unos 2,67 € más por hora (22,50 €/h en el bono de 12h).",
+    "who": "4º ESO · Cambridge A2 · Clases online",
+    "titulo": "Su plan, en dos pasos",
+    "lead": "Con un profesor nativo con nivel C2 de inglés, asignado en 24–48 horas.",
+    "prueba": {
+      "horas": 2,
+      "precio": 39,
+      "tachado": 42,
+      "texto": "Dos horas online para conocer al profesor, ver el nivel de Noah y dejar fijado su plan hacia el A2. Recomendado al 100%."
+    },
+    "paso2_titulo": "Después, su bono de 12 horas",
+    "opciones": [
+      {
+        "horas": 12,
+        "precio": 238,
+        "frecuencia": "3h a la semana",
+        "destacado": true,
+        "etiqueta": "MEJOR PRECIO POR HORA"
+      }
+    ],
+    "resumen": [
+      "Clases online de inglés con un profesor nativo (C2).",
+      "Profesor asignado en 24–48 horas.",
+      "Se empieza con el bono de prueba de 2h y después, el bono de 12h.",
+      "Presencial en casa: unos 2,67 € más por hora."
+    ],
+    "quote": "Un plan a medida para que Noah llegue al A2 de Cambridge con todo preparado."
+  },
+  "informe_ejemplo": {
+    "asignatura": "Inglés",
+    "mes": "Noviembre 2026",
+    "comparado": "octubre",
+    "nota": "7,0",
+    "sesiones": 8,
+    "horas": "12h",
+    "destrezas_label": "Destrezas trabajadas",
+    "barras": [
+      [
+        "Reading",
+        7.0
+      ],
+      [
+        "Writing",
+        6.5
+      ]
+    ],
+    "mayor_progreso": "Writing",
+    "resumen": "Ejemplo.",
+    "horario": "Noah",
+    "temas": [
+      [
+        "Reading",
+        1.0
+      ]
+    ],
+    "fuertes": [
+      "a"
+    ],
+    "atencion": [
+      "b"
+    ],
+    "casa": [
+      "c"
+    ],
+    "semanas": [
+      5.8,
+      6.3,
+      6.8,
+      7.2
+    ],
+    "metricas": [
+      [
+        "76%",
+        "Comprensión"
+      ],
+      [
+        "81%",
+        "Constancia"
+      ],
+      [
+        "62%",
+        "Autonomía"
+      ]
+    ],
+    "evol": [
+      [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      [
+        "a",
+        "b",
+        "c",
+        "d"
+      ]
+    ],
+    "conclusion": "x",
+    "cal_mes": [
+      2026,
+      12
+    ],
+    "cal_titulo": "x",
+    "cal_dias_sesion": [
+      1
+    ],
+    "cal_examen": 16,
+    "cal_semanas": "3 sem",
+    "cal_semanas_txt": "x",
+    "antes": "x",
+    "ahora": "x"
+  }
+}

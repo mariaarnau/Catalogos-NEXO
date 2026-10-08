@@ -1892,6 +1892,9 @@ def main():
     global LANG
     LANG = d.get("idioma", "es")
     LOGO_URI = "data:image/png;base64," + base64.b64encode(LOGO.read_bytes()).decode()
+    for modo, ov in d.get("tarifas_override", {}).items():  # precios propios de este lead
+        TARIFAS[d["etapa"]]["precios"][modo] = {int(k): v for k, v in ov["precios"].items()}
+        TARIFAS[d["etapa"]]["base"][modo] = ov["base"]
     t = textos(d)
     t.update(d.get("textos", {}))  # ajustes de texto específicos del lead
     tf = TARIFAS[d["etapa"]]
@@ -1905,7 +1908,7 @@ def main():
         + ([page_calendario(d, t)] if d.get("calendario") else []) \
         + ([page_ruta(d, t)] if d.get("ruta") else []) \
         + ([] if d.get("omitir_proceso") else [page_proceso(d, t)]) \
-        + ([] if d.get("omitir_informe") else [page_informe(d, t)]) + [page_phones(d, t)]
+        + ([] if d.get("omitir_informe") else [page_informe(d, t)]) + ([] if d.get("omitir_phones") else [page_phones(d, t)])
     for m in ([] if (d.get("opciones_comp") or d.get("precios_comp") or d.get("dos_tarifas") or d.get("premium_venta")) else (d["tarifas_mostrar"] if "tarifas_mostrar" in d else ("online", "casa_profesor", "casa_alumno"))):
         if m in tf["precios"]:
             pages.append(page_tarifas(d, t, m))
