@@ -345,6 +345,10 @@ def page_calendario(d, t):
                   f'<div class="mc-g">{cells}</div><div class="mc-i">{e(info)}</div></div>')
     leg = [("se", "Clase (1–1,5h)"), ("in", "Clase intensiva (2h)"), ("ex", "Examen"),
            ("sx", "Semana de parciales"), ("fe", "Festivo"), ("hoy", "Hoy")]
+    if c.get("leyenda_filtrar"):
+        pres = {"se": any(v < 2 for v in ses.values()), "in": any(v >= 2 for v in ses.values()), "ex": bool(exa),
+                "sx": bool(sem_ex), "fe": any(hoy <= f <= hasta for f in fest), "hoy": True}
+        leg = [x for x in leg if pres[x[0]]]
     legend = "".join(f"<div><span class='dd {k}'></span>{e(v)}</div>" for k, v in leg)
     resumen = "".join(f"<div class='rs-r'><b>{e(a)}</b><span>{e(b)}</span></div>" for a, b in c["resumen"])
     return f'''<section class="page glow calp">
