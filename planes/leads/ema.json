@@ -47,7 +47,7 @@
       {
         "horas": 12,
         "precio": 285,
-        "frecuencia": "clases en días alternos",
+        "frecuencia": "horas a tu ritmo",
         "destacado": true,
         "etiqueta": "MEJOR PRECIO POR HORA"
       }
@@ -55,7 +55,7 @@
     "resumen": [
       "Clases online de Física I (cinemática del punto y del sólido rígido) con un profesor especializado, asignado en 24–48 horas.",
       "Primero, bono de prueba de 2h y, después, bono de 12h.",
-      "Calendario pensado para llegar al examen del 30 de octubre."
+      "Calendario orientativo: el profesor ajusta las horas tras la primera clase."
     ],
     "quote": "Un plan a medida para que Ema llegue al examen de Física I con la cinemática dominada.",
     "sin_mes": true
@@ -148,8 +148,8 @@
   "calendario": {
     "etiqueta": "TU CALENDARIO",
     "pill": "FÍSICA I · EXAMEN 30 DE OCTUBRE",
-    "titulo": "Tu calendario, de hoy al examen",
-    "lead": "Cada clase marcada en su día, hasta el examen del 30 de octubre. Quedan 18 días: empezamos esta semana.",
+    "titulo": "Tu calendario orientativo, de hoy al examen",
+    "lead": "Una propuesta de clases hasta el examen del 30 de octubre. Es orientativo: tras la primera clase, tu profesor decide cuántas horas hacen falta y las ajusta contigo.",
     "hoy": "2026-10-12",
     "hasta": "2026-10-30",
     "meses": [
@@ -173,23 +173,19 @@
     "festivos": [],
     "leyenda_filtrar": true,
     "mes_top": {
-      "2026-10": "14h de clase"
+      "2026-10": "Orientativo"
     },
     "mes_info": {
       "2026-10": "Primero cinemática del punto; después, cinemática del sólido rígido y problemas de examen."
     },
     "resumen": [
       [
-        "14h",
-        "de clase hasta el examen: 2h de prueba + 12h"
-      ],
-      [
-        "7",
-        "clases de 2h, en días alternos"
-      ],
-      [
         "18 días",
         "de hoy al examen del 30 de octubre"
+      ],
+      [
+        "Tras la 1ª clase",
+        "tu profesor ajusta las horas según tu nivel"
       ]
     ]
   }
