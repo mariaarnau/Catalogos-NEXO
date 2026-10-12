@@ -1,0 +1,154 @@
+{
+  "nombre": "Berenice",
+  "etapa": "eso",
+  "curso": "3º ESO",
+  "asignaturas": [
+    "Química"
+  ],
+  "voz": "familia",
+  "archivo": "Plan_NEXO_Berenice_3ESO_Quimica",
+  "cover_card_sub": "3º ESO · Química · Presencial en Valencia centro",
+  "omitir_proceso": true,
+  "omitir_informe": true,
+  "omitir_phones": true,
+  "presencial_label": "en su casa",
+  "bonos_recomendados": [
+    {
+      "horas": 12,
+      "frecuencia": "3h a la semana"
+    }
+  ],
+  "modalidades_recomendadas": [
+    "casa_alumno"
+  ],
+  "tarifas_mostrar": [
+    "casa_alumno"
+  ],
+  "textos": {
+    "cover_sub": "Un plan a medida para Berenice: clases presenciales de Química de 3º de ESO en su casa, en Valencia centro.",
+    "p10_sub": "Escribidnos para reservar el bono de prueba de Berenice y empezar cuanto antes."
+  },
+  "pasos": {
+    "base": 24,
+    "base_txt": "",
+    "modalidad_txt": "Presencial en su casa",
+    "nota": "",
+    "who": "3º ESO · Química · Presencial en Valencia centro",
+    "titulo": "Su plan, en dos pasos",
+    "lead": "Clases presenciales de Química en su casa, con un profesor especializado asignado esta misma semana.",
+    "prueba": {
+      "horas": 2,
+      "precio": 44,
+      "tachado": 48,
+      "texto": "Dos horas presenciales en vuestra casa para conocer al profesor, ver cómo lleva Berenice la Química y dejar fijado su plan. Recomendado al 100%."
+    },
+    "paso2_titulo": "Después, su bono de 12 horas",
+    "opciones": [
+      {
+        "horas": 12,
+        "precio": 270,
+        "frecuencia": "",
+        "destacado": true,
+        "etiqueta": "RECOMENDADO · MEJOR PRECIO POR HORA",
+        "alt": {
+          "oro": true,
+          "txt": "TU MEJOR OPCIÓN",
+          "hora": "22,50 €/h",
+          "bono": "el mejor precio por hora del curso"
+        }
+      }
+    ],
+    "resumen": [
+      "Clases presenciales de Química en vuestra casa, en Valencia centro.",
+      "Primero, bono de prueba de 2h y, después, bono de 12h.",
+      "El bono de 12h es el que sale más económico por hora durante el curso: 22,50 €/h."
+    ],
+    "quote": "Un plan a medida para que Berenice mejore en Química con un profesor a su lado.",
+    "sin_mes": true
+  },
+  "informe_ejemplo": {
+    "asignatura": "Inglés",
+    "mes": "Noviembre 2026",
+    "comparado": "octubre",
+    "nota": "7,0",
+    "sesiones": 8,
+    "horas": "12h",
+    "destrezas_label": "Destrezas trabajadas",
+    "barras": [
+      [
+        "Reading",
+        7.0
+      ],
+      [
+        "Writing",
+        6.5
+      ]
+    ],
+    "mayor_progreso": "Writing",
+    "resumen": "Ejemplo.",
+    "horario": "Noah",
+    "temas": [
+      [
+        "Reading",
+        1.0
+      ]
+    ],
+    "fuertes": [
+      "a"
+    ],
+    "atencion": [
+      "b"
+    ],
+    "casa": [
+      "c"
+    ],
+    "semanas": [
+      5.8,
+      6.3,
+      6.8,
+      7.2
+    ],
+    "metricas": [
+      [
+        "76%",
+        "Comprensión"
+      ],
+      [
+        "81%",
+        "Constancia"
+      ],
+      [
+        "62%",
+        "Autonomía"
+      ]
+    ],
+    "evol": [
+      [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      [
+        "a",
+        "b",
+        "c",
+        "d"
+      ]
+    ],
+    "conclusion": "x",
+    "cal_mes": [
+      2026,
+      12
+    ],
+    "cal_titulo": "x",
+    "cal_dias_sesion": [
+      1
+    ],
+    "cal_examen": 16,
+    "cal_semanas": "3 sem",
+    "cal_semanas_txt": "x",
+    "antes": "x",
+    "ahora": "x"
+  }
+}
