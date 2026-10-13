@@ -670,7 +670,7 @@ def page_pasos(d, t):
             alt = ""
         top = f'<div class="bx-top">{e(b["etiqueta"])}</div>' if b.get("etiqueta") else ""
         cards += f'''<div class="bx{" star" if b.get("destacado") else ""}">{top}
-  <div class="bx-h"><b>{b["horas"]}h</b><span>{"bono de horas" if c.get("sin_mes") else "al mes · " + e(b["frecuencia"])}</span></div>
+  <div class="bx-h"><b>{b["horas"]}h</b><span>{(b.get("lbl") or "bono de horas") if c.get("sin_mes") else "al mes · " + e(b["frecuencia"])}</span></div>
   <div class="bx-p">{eur(b["precio"], 0)}{"" if c.get("sin_mes") else "<small>/mes</small>"}</div>
   <div class="bx-hora"><b>{eur(ph)}</b><span>por hora</span><em>−{pct(base - ph, base)}%</em></div>
   <div class="bx-ref"><span>Tarifa base ({b["horas"]} × {eur(base, 0 if base == int(base) else 2)})</span><s>{eur(b["horas"] * base, 0)}</s></div>
@@ -690,7 +690,7 @@ def page_pasos(d, t):
   <div class="paso1">
     <div class="pnum">{k1}</div>
     <div class="p1t"><small>PASO {k1} · {"DESPUÉS" if niv else "PARA EMPEZAR"}</small><b>Bono de prueba de {p1["horas"]}h</b><span>{e(p1["texto"])}</span></div>
-    <div class="p1p"><s>{eur(p1["tachado"], 0)}</s><b>{eur(p1["precio"], 0)}</b><span>{eur(ph1)}/h · precio nuevos alumnos</span>{f'<em class="p1alt">{e(p1["alt"])}</em>' if p1.get("alt") else ""}</div>
+    <div class="p1p"><s>{eur(p1["tachado"], 0)}</s><b>{eur(p1["precio"], 0)}</b><span>{e(p1["sub"]) if p1.get("sub") else eur(ph1) + "/h · precio nuevos alumnos"}</span>{f'<em class="p1alt">{e(p1["alt"])}</em>' if p1.get("alt") else ""}</div>
   </div>
   <div class="paso2h"><div class="pnum s">{k1 + 1}</div><div><small>PASO {k1 + 1} · DESPUÉS</small><b>{e(c["paso2_titulo"])}</b></div></div>
   <div class="bxs"{(' style="grid-template-columns: 520px 1fr; align-items: end"' if side else ' style="grid-template-columns: 1fr; max-width: 520px"') if len(c["opciones"]) == 1 else ""}>{cards}{side}</div>
