@@ -690,7 +690,7 @@ def page_pasos(d, t):
   <div class="paso1">
     <div class="pnum">{k1}</div>
     <div class="p1t"><small>PASO {k1} · {"DESPUÉS" if niv else "PARA EMPEZAR"}</small><b>Bono de prueba de {p1["horas"]}h</b><span>{e(p1["texto"])}</span></div>
-    <div class="p1p"><s>{eur(p1["tachado"], 0)}</s><b>{eur(p1["precio"], 0)}</b><span>{e(p1["sub"]) if p1.get("sub") else eur(ph1) + "/h · precio nuevos alumnos"}</span>{f'<em class="p1alt">{e(p1["alt"])}</em>' if p1.get("alt") else ""}</div>
+    <div class="p1p"><s>{eur(p1["tachado"], 0)}</s><b>{eur(p1["precio"], 0 if p1["precio"] == int(p1["precio"]) else 2)}</b><span>{e(p1["sub"]) if p1.get("sub") else eur(ph1) + "/h · precio nuevos alumnos"}</span>{f'<em class="p1alt">{e(p1["alt"])}</em>' if p1.get("alt") else ""}</div>
   </div>
   <div class="paso2h"><div class="pnum s">{k1 + 1}</div><div><small>PASO {k1 + 1} · DESPUÉS</small><b>{e(c["paso2_titulo"])}</b></div></div>
   <div class="bxs"{(' style="grid-template-columns: 520px 1fr; align-items: end"' if side else ' style="grid-template-columns: 1fr; max-width: 520px"') if len(c["opciones"]) == 1 else ""}>{cards}{side}</div>
@@ -707,7 +707,7 @@ def page_resumen_pasos(d, t):
     k1 = 2 if nv else 1
     rows = (f'''<div class="srow"><div class="av w">1</div><div class="st"><b>Paso 1 — {e(nv["titulo"])}</b><small>En la app de Nexo · antes de empezar</small></div></div>''' if nv else "")
     rows += (f'''<div class="srow"><div class="av w">{k1}</div><div class="st"><b>Paso {k1} — Bono de prueba de {p1["horas"]}h</b><small>{e(c["modalidad_txt"])} · para empezar</small></div>
-  <div class="sps"><div class="sp"><small>Una vez</small><b>{eur(p1["precio"], 0)}</b></div></div></div>''')
+  <div class="sps"><div class="sp"><small>Una vez</small><b>{eur(p1["precio"], 0 if p1["precio"] == int(p1["precio"]) else 2)}</b></div></div></div>''')
     for b in c["opciones"]:
         rows += f'''<div class="srow ref"><div class="av w">{k1 + 1}</div><div class="st"><b>Paso {k1 + 1} — Bono de {b["horas"]}h{"" if c.get("sin_mes") else " al mes"}</b><small>{e(c["modalidad_txt"])}{"" if c.get("sin_mes") else " · " + e(b["frecuencia"])}</small></div>
   <div class="sps"><div class="sp"><small>{"Bono" if c.get("sin_mes") else "Al mes"}</small><b>{eur(b["precio"], 0)}</b></div><div class="sp"><small>Por hora</small><b>{eur(b["precio"] / b["horas"])}</b></div></div></div>'''
