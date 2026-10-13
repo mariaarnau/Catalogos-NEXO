@@ -43,10 +43,11 @@
     "lead": "Las dos hermanas en la misma clase: un 30% menos por alumna. Primero una prueba y después el bono de 12 horas.",
     "prueba": {
       "horas": 2,
-      "precio": 32.2,
+      "precio": 32,
       "tachado": 46,
-      "texto": "Dos horas presenciales en vuestra casa, las dos juntas, para conocer al profesor y dejar fijado el plan. 32,20 € cada hermana (64,40 € las dos), con el 30% de clase conjunta.",
-      "sub": "16,10 €/h cada hermana · −30% clase conjunta"
+      "texto": "Dos horas presenciales en vuestra casa, las dos juntas, para conocer al profesor y dejar fijado el plan. 32 € cada una, con el 30% de clase conjunta.",
+      "sub": "16 €/h cada una · −30% clase conjunta",
+      "lbl": "Cada una"
     },
     "paso2_titulo": "Después, su bono de 12 horas",
     "opciones": [
@@ -67,7 +68,7 @@
     ],
     "resumen": [
       "Clases presenciales de Matemáticas I en vuestra casa, en Valencia, con las dos hermanas en la misma clase.",
-      "Primero, bono de prueba de 2h (32,20 € cada hermana) y, después, bono de 12h (200 € cada hermana).",
+      "Primero, bono de prueba de 2h (32 € cada una) y, después, bono de 12h (200 € cada una).",
       "Un 30% menos por alumna: la hora sale a unos 16,67 € cada una, frente a 23,75 € individual."
     ],
     "quote": "Un plan a medida para que Helena y Mariola lleguen a junio con Matemáticas I preparadas.",
