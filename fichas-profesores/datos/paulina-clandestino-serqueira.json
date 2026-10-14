@@ -1,0 +1,86 @@
+{
+  "nombre": "Paulina Clandestino Serqueira",
+  "foto": "../fotos/paulina-clandestino-serqueira.png",
+  "foto_posicion": "50% 30%",
+  "titular": "Profesora de Física y Matemáticas",
+  "ubicacion": "Valencia",
+  "materias": [
+    "FÍSICA I",
+    "FÍSICA",
+    "MATEMÁTICAS"
+  ],
+  "telefono": "+34 672 69 82 67",
+  "email": "paulina.clandestino@gmail.com",
+  "situacion_actual": "Profesora en el Centro de Orientación Educativa JM de Valencia, donde imparte Física I. Más de 35 años de experiencia docente con niños, jóvenes, adultos y otros profesores.",
+  "estudios": [
+    {
+      "titulo": "Profesora de Enseñanza Media en Matemática y Física",
+      "detalle": "Licenciada en Educación · Pontificia Universidad Católica de Chile"
+    },
+    {
+      "titulo": "Diplomado en Física Experimental",
+      "detalle": "Universidad de Santiago de Chile",
+      "fecha": "1987 – 1988"
+    },
+    {
+      "titulo": "Formación continua en didáctica de la Física",
+      "detalle": "Astronomía, robótica educativa y Física del Desorden",
+      "fecha": "2012 – 2019"
+    }
+  ],
+  "idiomas": [
+    {
+      "idioma": "Español",
+      "nivel": "Nativo"
+    },
+    {
+      "idioma": "Inglés",
+      "nivel": "Medio"
+    },
+    {
+      "idioma": "Italiano",
+      "nivel": "Básico"
+    }
+  ],
+  "experiencia_docente": [
+    {
+      "titulo": "Centro de Orientación Educativa JM · Valencia",
+      "detalle": "Clases de Física I.",
+      "fecha": "Actualidad"
+    },
+    {
+      "titulo": "Coordinadora del Dpto. de Física · Instituto Hebreo",
+      "detalle": "Profesora de Física de Secundaria, coordinación del profesorado y material docente.",
+      "fecha": "2017 – 2025"
+    },
+    {
+      "titulo": "Profesora titular de Física · The Southern Cross School",
+      "detalle": "Enseñanza media, talleres de preparación universitaria y feria científica.",
+      "fecha": "2011 – 2015"
+    },
+    {
+      "titulo": "Formación de profesores · Ministerio de Educación",
+      "detalle": "Cursos para profesores de Matemática y material didáctico para adultos.",
+      "fecha": "2009 – 2011"
+    },
+    {
+      "titulo": "Jefa del Área de Ciencias · Colegio Altamira",
+      "detalle": "Profesora titular de Matemática y Física; feria científica anual.",
+      "fecha": "1999 – 2009"
+    },
+    {
+      "titulo": "Matemática y Física en colegios y universidad",
+      "detalle": "Varios colegios, un preuniversitario y ayudantías de cátedra y laboratorio.",
+      "fecha": "1985 – 2004"
+    }
+  ],
+  "aptitudes": [
+    "Vocación por enseñar Física",
+    "Clases cercanas y conectadas con la realidad",
+    "Estilo empático y exigente",
+    "Despierta la curiosidad y el pensamiento crítico",
+    "Experiencia con todas las edades",
+    "Elaboración de material didáctico",
+    "Liderazgo de equipos docentes"
+  ]
+}

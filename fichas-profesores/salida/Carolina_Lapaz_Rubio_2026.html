@@ -65,6 +65,14 @@ h3 { font-family:var(--serif); font-size:21px; font-weight:700; }
 .apt { font-size:14.5px; color:#e7e7ea; border:1px solid rgba(233,209,143,.35); border-radius:999px; padding:6px 14px; }
 .foot { display:flex; justify-content:space-between; margin-top:20px; padding-top:14px;
   border-top:1px solid rgba(255,255,255,.08); font-size:12px; color:var(--dim); }
+.compact .rule { margin:14px 0 20px; }
+.compact .contacto { margin-top:22px; gap:10px; }
+.compact .ct { padding:9px 14px; }
+.compact .grid { gap:10px; margin-top:12px; }
+.compact .sec { padding:14px 18px; }
+.compact .sec-h { margin-bottom:10px; padding-bottom:8px; }
+.compact .lista { gap:9px; }
+.compact .foot { margin-top:12px; padding-top:10px; }
 @page { size:A4; margin:0; }
 @media print { html,body { background:none; } body { padding:0; display:block; } }
 </style></head>
@@ -97,6 +105,7 @@ h3 { font-family:var(--serif); font-size:21px; font-weight:700; }
   g.style.flex = "none";
   function alto(z) { c.style.zoom = z; return c.getBoundingClientRect().height; }
   var z = 1;
+  if (alto(1) > H) { f.classList.add("compact"); }  // primero se compactan márgenes
   if (alto(1) > H) {
     var lo = 0.4, hi = 1;
     for (var i = 0; i < 14; i++) { var m = (lo + hi) / 2; if (alto(m) <= H) lo = m; else hi = m; }
