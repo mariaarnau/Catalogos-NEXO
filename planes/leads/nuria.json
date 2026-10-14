@@ -1,0 +1,268 @@
+{
+  "nombre": "Nuria",
+  "etapa": "universidad",
+  "curso": "Valencià C1 · Examen oral",
+  "asignaturas": [
+    "Valenciano C1 (oral)"
+  ],
+  "voz": "tu",
+  "archivo": "Plan_NEXO_Nuria_Valenciano_C1_oral",
+  "presencial_label": "online",
+  "cover_card_sub": "Valenciano C1 · Examen oral · CIEACOVA / JQCV",
+  "bonos_recomendados": [
+    {
+      "horas": 12,
+      "frecuencia": ""
+    }
+  ],
+  "modalidades_recomendadas": [
+    "online",
+    "casa_alumno"
+  ],
+  "tarifas_mostrar": [
+    "online",
+    "casa_profesor",
+    "casa_alumno"
+  ],
+  "textos": {
+    "cover_sub": "Un plan a medida para Nuria: preparar la parte oral del C1 de valenciano (CIEACOVA o JQCV), con clases online o presenciales.",
+    "p10_sub": "Escríbenos para reservar tu bono de prueba y empezar cuanto antes."
+  },
+  "trayectoria": {
+    "etiqueta": "HOJA DE RUTA",
+    "pill": "VALENCIANO C1 · PARTE ORAL",
+    "titulo": "Tu preparación del oral, paso a paso",
+    "lead": "Con la parte escrita ya aprobada, nos centramos en el oral. Calendario orientativo: apuntamos a la convocatoria de enero y, si hiciera falta, a la de junio.",
+    "meses": [
+      "Oct",
+      "Nov",
+      "Dic",
+      "Ene",
+      "Feb",
+      "Mar",
+      "Abr",
+      "May",
+      "Jun"
+    ],
+    "colores": [
+      "#5b8ee0",
+      "#8fb8ec",
+      "#7fcfa0",
+      "#e9d18f"
+    ],
+    "tramos": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        4,
+        8
+      ]
+    ],
+    "bloques": [
+      {
+        "span": 1,
+        "simbolo": "Aa",
+        "nombre": "Inicio",
+        "foco": "Analizamos tu oral de prueba y fijamos en qué mejorar.",
+        "fondo": "#12234a",
+        "borde": "#5b8ee0"
+      },
+      {
+        "span": 2,
+        "simbolo": "“ ”",
+        "nombre": "Expresión oral",
+        "foco": "Exposición, argumentación y conversación con vocabulario C1.",
+        "fondo": "#16284a",
+        "borde": "#8fb8ec"
+      },
+      {
+        "span": 1,
+        "simbolo": "✓",
+        "nombre": "Enero",
+        "foco": "Simulacros orales cronometrados antes del examen, con corrección detallada.",
+        "fondo": "#13302a",
+        "borde": "#7fcfa0"
+      },
+      {
+        "span": 5,
+        "simbolo": "★",
+        "nombre": "Hasta junio",
+        "foco": "Si hace falta, refuerzo y simulacros para la convocatoria de junio (o JQCV en octubre).",
+        "fondo": "#3a3322",
+        "borde": "#e9d18f"
+      }
+    ],
+    "hitos": [
+      {
+        "nombre": "Oral de prueba",
+        "pos": 0.4
+      },
+      {
+        "nombre": "Examen enero",
+        "pos": 3.3
+      },
+      {
+        "nombre": "Examen junio",
+        "pos": 8,
+        "meta": true
+      }
+    ]
+  },
+  "dos_opciones": {
+    "etiqueta": "TUS OPCIONES",
+    "pill": "RECOMENDACIÓN",
+    "titulo": "Dos formas de prepararte",
+    "lead": "En las dos empiezas con un bono de prueba de 2 horas y después pasas al bono de 12 horas.",
+    "pie": "Tu horario: mañanas hasta las 12:00 o tardes desde las 19:00. Sin permanencia: pagas por adelantado el bono de horas.",
+    "opciones": [
+      {
+        "letra": "OPCIÓN 1",
+        "nombre": "Online",
+        "sub": "(o también en casa del profesor)",
+        "destacado": true,
+        "prueba": {
+          "horas": 2,
+          "precio": 44,
+          "tachado": 50
+        },
+        "bono": {
+          "horas": 12,
+          "precio": 285,
+          "base": 25
+        }
+      },
+      {
+        "letra": "OPCIÓN 2",
+        "nombre": "Presencial en tu casa",
+        "sub": "El profesor va a tu domicilio",
+        "prueba": {
+          "horas": 2,
+          "precio": 49,
+          "tachado": 55
+        },
+        "bono": {
+          "horas": 12,
+          "precio": 300,
+          "base": 27.5
+        }
+      }
+    ]
+  },
+  "informe_ejemplo": {
+    "asignatura": "Valencià C1 · Oral",
+    "mes": "Noviembre 2026",
+    "comparado": "octubre",
+    "nota": "7,0",
+    "sesiones": 8,
+    "horas": "12h",
+    "destrezas_label": "Bloques trabajados",
+    "barras": [
+      [
+        "Exposición",
+        7.0
+      ],
+      [
+        "Conversa",
+        6.5
+      ],
+      [
+        "Pronunciació",
+        6.8
+      ]
+    ],
+    "mayor_progreso": "Valencià oral — la exposición ya se sostiene sin guion",
+    "resumen": "En noviembre, Nuria ha hecho 8 clases sin faltar a ninguna. Ya mantiene la exposición con fluidez y vocabulario del nivel C1. En la conversación todavía necesita ganar agilidad al replicar. Diciembre: simulacros orales cronometrados antes del examen de enero.",
+    "proxima_sesion": "PRÓXIMA CLASE — MARTES 1",
+    "proxima_sesion_txt": "Simulacro de exposición: tema y argumentación en 5 minutos.",
+    "horario": "Martes y jueves, 19:00–20:00",
+    "temas": [
+      [
+        "Exposición",
+        2.5
+      ],
+      [
+        "Conversa",
+        1.8
+      ],
+      [
+        "Pronunciació",
+        1.2
+      ],
+      [
+        "Vocabulari",
+        0.5
+      ]
+    ],
+    "fuertes": [
+      "Exposición clara y bien estructurada",
+      "Buen vocabulario formal"
+    ],
+    "atencion": [
+      "Conversa: replicar con agilidad",
+      "Pronunciación: algunos sonidos"
+    ],
+    "casa": [
+      "Grabarse 5 min hablando cada semana",
+      "Leer en voz alta un texto de actualidad"
+    ],
+    "semanas": [
+      5.8,
+      6.3,
+      6.8,
+      7.2
+    ],
+    "metricas": [
+      [
+        "76%",
+        "Comprensión"
+      ],
+      [
+        "81%",
+        "Constancia"
+      ],
+      [
+        "62%",
+        "Autonomía"
+      ]
+    ],
+    "evol": [
+      [
+        "Fluidez oral",
+        "Octubre: 60%",
+        "Noviembre: 79%",
+        "Habla con menos pausas y más seguridad."
+      ],
+      [
+        "Autonomía",
+        "Octubre: 50%",
+        "Noviembre: 62%",
+        "Cada vez necesita menos ayuda para estructurar la exposición."
+      ]
+    ],
+    "conclusion": "Noviembre cierra con una tendencia muy positiva. En diciembre hacemos simulacros orales antes del examen de enero.",
+    "cal_mes": [
+      2026,
+      12
+    ],
+    "cal_titulo": "Calendario de preparación — diciembre 2026",
+    "cal_dias_sesion": [
+      1,
+      3
+    ],
+    "cal_examen": 16,
+    "cal_semanas": "3 sem",
+    "cal_semanas_txt": "hasta los exámenes de la 1ª evaluación",
+    "antes": "Sin refuerzo fijo",
+    "ahora": "Clases semanales en casa · Bono de 12h"
+  }
+}

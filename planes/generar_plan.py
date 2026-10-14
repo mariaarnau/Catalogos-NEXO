@@ -852,6 +852,34 @@ def page_dos_tarifas(d, t):
 </section>'''
 
 
+def page_dos_opciones(d, t):
+    """Dos opciones de modalidad, cada una con bono de prueba y bono de 12h."""
+    c = d["dos_opciones"]
+    cards = ""
+    for o in c["opciones"]:
+        pr, bo = o["prueba"], o["bono"]
+        ph = bo["precio"] / bo["horas"]
+        cards += f'''<div class="do{" rec" if o.get("destacado") else ""}">
+  <div class="do-l">{e(o["letra"])}</div>
+  <div class="do-n">{e(o["nombre"])}</div><div class="do-s">{e(o["sub"])}</div>
+  <div class="do-st"><i>1</i><div><small>PASO 1 · BONO DE PRUEBA</small><b>{pr["horas"]} horas</b></div>
+    <div class="do-pp"><s>{eur(pr["tachado"], 0)}</s><b>{eur(pr["precio"], 0)}</b></div></div>
+  <div class="do-st g"><i>2</i><div><small>PASO 2 · DESPUÉS</small><b>Bono de {bo["horas"]} horas</b></div>
+    <div class="do-pp"><b>{eur(bo["precio"], 0)}</b></div></div>
+  <div class="do-h"><b>{eur(ph)}</b><span>por hora en el bono de {bo["horas"]}h</span></div>
+  <div class="do-a">Frente a {eur(bo["horas"] * bo["base"], 0)} a tarifa base: ahorras {eur(bo["horas"] * bo["base"] - bo["precio"], 0)}</div>
+</div>'''
+    return f'''<section class="page glow dop">
+  <div class="hdr"><img class="logo-sm" src="{LOGO_URI}"><span class="hdr-r">{e(c["etiqueta"])}</span></div><div class="rule"></div>
+  <div class="pill gold">{e(c["pill"])}</div>
+  <h2>{e(c["titulo"])}</h2>
+  <p class="lead">{e(c["lead"])}</p>
+  <div class="dos">{cards}</div>
+  <p class="pr-foot">{e(c["pie"])}</p>
+  {footer()}
+</section>'''
+
+
 def page_precios(d, t):
     """Opciones de pago en limpio: precio por hora y lo que se paga a la semana."""
     c = d["precios_comp"]
@@ -1837,6 +1865,20 @@ h2.c { font-size: 34px; margin: 26px 0 18px; }
 .bx-side { text-align: right; padding: 0 8px 14px; color: #a49f8e; font-size: 13px; } .bx-side small { display: block; } .bx-side b { display: block; font: 700 26px 'Liberation Serif', serif; color: #a9b4d0; margin: 2px 0; }
 .bx-side.oro { text-align: center; align-self: center; padding: 0 0 0 24px; font-size: 14px; } .bx-side.oro b { font-size: 50px; color: #e9d18f; line-height: 1.05; } .bx-side.oro small { color: #e9d18f; font-weight: 700; letter-spacing: .12em; font-size: 11px; }
 .p1lbl { display: block; font-style: normal; color: #e9d18f; font-size: 13px; font-weight: 700; letter-spacing: .16em; margin-bottom: 2px; }
+.dos { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 24px; }
+.do { position: relative; border: 1px solid #2a3350; border-radius: 18px; padding: 24px 26px 22px; background: #0e1629; }
+.do.rec { border-color: #c9a24b; background: linear-gradient(160deg, #2a2618, #0e1629); }
+.do-l { font: italic 700 15px 'Liberation Serif', serif; color: #e9d18f; letter-spacing: .1em; }
+.do-n { font: 700 24px 'Liberation Serif', serif; margin-top: 4px; }
+.do-s { color: #a49f8e; font-size: 12.5px; margin-top: 3px; min-height: 17px; }
+.do-st { display: grid; grid-template-columns: 34px 1fr auto; gap: 12px; align-items: center; padding: 16px 0 0; margin-top: 16px; border-top: 1px solid #1d2744; }
+.do-st i { width: 34px; height: 34px; border-radius: 50%; background: #1a2d52; color: #8fb8ec; font: italic 700 17px 'Liberation Serif', serif; display: flex; align-items: center; justify-content: center; }
+.do-st small { display: block; font-size: 9.5px; font-weight: 700; letter-spacing: .14em; color: #8fb8ec; }
+.do-st b { font: 700 17px 'Liberation Serif', serif; }
+.do-pp { text-align: right; } .do-pp s { display: block; color: #7d7f8a; font-size: 12px; }
+.do-pp b { font: 700 28px 'Liberation Serif', serif; color: #e9d18f; }
+.do-h { margin-top: 18px; padding-top: 14px; border-top: 1px solid #1d2744; } .do-h b { font: 700 34px 'Liberation Serif', serif; color: #e9d18f; margin-right: 8px; } .do-h span { color: #a49f8e; font-size: 12.5px; }
+.do-a { margin-top: 8px; color: #7fcfa0; font-size: 12.5px; }
 .p1alt { display: block; margin-top: 6px; font-style: normal; color: #7d7f8a; font-size: 11px; }
 .bx-ah { margin-top: 8px; color: #a49f8e; font-size: 13px; } .bx-ah b { color: #7fcfa0; }
 .base-l { margin-top: 14px; color: #7d7f8a; font-size: 12.5px; } .base-l b { color: #e7e7ea; }
@@ -1947,6 +1989,8 @@ def main():
         pages += [page_precios(d, t), page_cierre(d, t)]
     elif d.get("opciones_comp"):
         pages += [page_opciones(d, t), page_recomendacion(d, t), page_cierre(d, t)]
+    elif d.get("dos_opciones"):
+        pages += [page_dos_opciones(d, t), page_cierre(d, t)]
     elif d.get("pasos"):
         pages += [page_pasos(d, t), page_resumen_pasos(d, t), page_cierre(d, t)]
     elif d.get("bonos_especiales"):
