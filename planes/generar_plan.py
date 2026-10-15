@@ -682,8 +682,8 @@ def page_pasos(d, t):
     k1 = 2 if nv else 1
     niv = (f'''<div class="niv"><div class="pnum">1</div><div class="p1t"><small>PASO 1 · PRIMERO DE TODO</small><b>{e(nv["titulo"])}</b><span>{e(nv["texto"])}</span></div></div>''' if nv else "")
     return f'''<section class="page pasosp">
-  <div class="hdr"><span class="hdr-l">PLAN PERSONALIZADO · {e(n.upper())}</span></div><div class="rule"></div>
-  <div class="who"><div class="av">{e(n[0])}</div><div><div class="wn">{e(n)}</div><div class="ws">{e(c["who"].upper())}</div></div></div>
+  <div class="hdr"><span class="hdr-l">PLAN PERSONALIZADO{" · " + e(n.upper()) if n else ""}</span></div><div class="rule"></div>
+  <div class="who"><div class="av">{e(n[:1] or "★")}</div><div><div class="wn">{e(n or "Tu plan")}</div><div class="ws">{e(c["who"].upper())}</div></div></div>
   <h2>{e(c["titulo"])}</h2>
   <p class="lead">{e(c["lead"])}</p>
   {niv}
@@ -716,7 +716,7 @@ def page_resumen_pasos(d, t):
   <div class="hdr"><img class="logo-sm" src="{LOGO_URI}"><span class="hdr-r">RESUMEN DEL PLAN</span></div><div class="rule"></div>
   <div class="pill gold">RESUMEN</div>
   <h2>Su plan, de un vistazo</h2>
-  <p class="lead">El plan de {e(n)}, paso a paso.</p>
+  <p class="lead">{e("El plan de " + n if n else "Tu plan")}, paso a paso.</p>
   <div class="srows">{rows}</div>
   <ul class="dash">{lis}</ul>
   <div class="quote"><span>"</span><em>{e(c["quote"])}</em></div>
