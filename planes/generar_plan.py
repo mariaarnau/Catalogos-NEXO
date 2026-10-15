@@ -511,7 +511,7 @@ def page_trayectoria(d, t):
     <div class="tbands" style="grid-template-columns: repeat({n}, minmax(0,1fr))">{bandas}</div>
     <div class="mlab" style="grid-template-columns: repeat({n}, minmax(0,1fr))">{mlab}</div>
   </div>
-  <div class="tcards">{cards}</div>
+  <div class="tcards" style="grid-template-columns: repeat({len(c["bloques"])}, 1fr)">{cards}</div>
   {footer()}
 </section>'''
 
