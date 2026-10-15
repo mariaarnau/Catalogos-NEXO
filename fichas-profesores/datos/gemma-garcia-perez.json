@@ -1,0 +1,31 @@
+{
+  "nombre": "Gemma García Pérez",
+  "foto": "../fotos/gemma-garcia-perez.jpg",
+  "foto_posicion": "50% 35%",
+  "titular": "Profesora particular de Bachillerato",
+  "ubicacion": "Valencia · Presencial y online",
+  "materias": ["MATEMÁTICAS", "QUÍMICA", "BIOLOGÍA", "INGLÉS", "BACHILLERATO"],
+  "telefono": "698 39 30 31",
+  "email": "gemmagemmica@gmail.com",
+  "situacion_actual": "Estudiante de 3.º curso del Grado en Farmacia en la Universitat de València, con interés en la enseñanza y el apoyo académico a estudiantes de Bachillerato.",
+  "estudios": [
+    {"titulo": "Grado en Farmacia", "detalle": "Universitat de València · Cursando 3.º", "fecha": "Actualidad"}
+  ],
+  "experiencia_docente": [
+    {"titulo": "Matemáticas", "detalle": "Explicación de conceptos, resolución de ejercicios y refuerzo académico."},
+    {"titulo": "Química", "detalle": "Comprensión de los fundamentos teóricos y práctica de problemas."},
+    {"titulo": "Biología", "detalle": "Explicación de contenidos, repaso y preparación de exámenes."},
+    {"titulo": "Inglés", "detalle": "Refuerzo de gramática, vocabulario y comprensión, adaptado al nivel del estudiante."}
+  ],
+  "aptitudes": [
+    "Clases adaptadas al nivel y ritmo de cada alumno",
+    "Explicaciones claras, paso a paso",
+    "Refuerzo de lo visto en el centro educativo",
+    "Preparación de exámenes y repaso",
+    "Organización del estudio",
+    "Comunicación clara y efectiva",
+    "Paciencia y adaptación al alumno",
+    "Responsabilidad y compromiso",
+    "Motivación por enseñar"
+  ]
+}

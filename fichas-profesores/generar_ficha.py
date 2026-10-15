@@ -127,11 +127,19 @@ def render(d, foto_uri):
         secciones.append(seccion(n, t["aptitudes"], f'<div class="apts">{chips}</div>'))
         n += 1
 
-    # En la rejilla de dos columnas, una sección suelta al final ocupa todo el ancho.
-    resto = [x for x in secciones if 'class="sec full"' not in x]
-    if len(resto) % 2:
-        i = secciones.index(resto[-1])
-        secciones[i] = secciones[i].replace('class="sec"', 'class="sec full"', 1)
+    # En la rejilla de dos columnas, una sección que queda sola en su fila ocupa todo el ancho:
+    # en cada tramo de secciones consecutivas de media anchura, si el tramo es impar, la última se ensancha.
+    i = 0
+    while i < len(secciones):
+        if 'class="sec full"' in secciones[i]:
+            i += 1
+            continue
+        j = i
+        while j < len(secciones) and 'class="sec full"' not in secciones[j]:
+            j += 1
+        if (j - i) % 2:
+            secciones[j - 1] = secciones[j - 1].replace('class="sec"', 'class="sec full"', 1)
+        i = j
 
     return f"""<!DOCTYPE html>
 <html lang="{t["lang"]}"><head><meta charset="utf-8">
