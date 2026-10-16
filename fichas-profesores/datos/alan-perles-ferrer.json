@@ -1,0 +1,31 @@
+{
+  "nombre": "Alan Perles Ferrer",
+  "foto": "../fotos/alan-perles-ferrer.jpg",
+  "foto_posicion": "50% 40%",
+  "titular": "Graduado en Ciencias Ambientales",
+  "ubicacion": "Valencia",
+  "materias": ["CIENCIAS", "CIENCIAS AMBIENTALES", "BACHILLERATO"],
+  "telefono": "692 72 19 44",
+  "email": "alanperlesferrer@gmail.com",
+  "situacion_actual": "Graduado en Ciencias Ambientales por la Universitat de València (2026). Ha completado unas prácticas como técnico ambiental en control de vertidos y calidad del agua (mayo – agosto de 2026).",
+  "estudios": [
+    {"titulo": "Grado en Ciencias Ambientales", "detalle": "Universitat de València · TFG sobre el uso de aguas regeneradas en cultivos de cítricos", "fecha": "2026"},
+    {"titulo": "Base científica amplia", "detalle": "Microbiología, ecología, edafología, meteorología, hidrología, geografía física y química ambiental."}
+  ],
+  "idiomas": [
+    {"idioma": "Español", "nivel": "Nativo"},
+    {"idioma": "Valenciano", "nivel": "Nativo"},
+    {"idioma": "Inglés", "nivel": "Medio-alto"},
+    {"idioma": "Alemán", "nivel": "Medio"}
+  ],
+  "aptitudes": [
+    "Formación científica transversal",
+    "Perfil analítico y orientado al detalle",
+    "Análisis y tratamiento de datos",
+    "Modelización estadística y Excel avanzado",
+    "Trabajo de campo y toma de muestras",
+    "Elaboración de informes técnicos",
+    "Sistemas de Información Geográfica (QGIS)",
+    "Rigor y método científico"
+  ]
+}
