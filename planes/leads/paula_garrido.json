@@ -1,0 +1,251 @@
+{
+  "nombre": "Paula",
+  "etapa": "universidad",
+  "curso": "Ingeniería de Telecomunicaciones · UPV",
+  "asignaturas": [
+    "Física 1",
+    "Teoría de circuitos"
+  ],
+  "voz": "tu",
+  "archivo": "Plan_NEXO_Paula_Garrido_Telecom_Fisica1_Circuitos",
+  "cover_card_sub": "Ing. Telecomunicaciones · UPV · Física 1 y Teoría de circuitos",
+  "presencial_label": "online",
+  "bonos_recomendados": [
+    {
+      "horas": 12,
+      "frecuencia": "3h a la semana"
+    }
+  ],
+  "modalidades_recomendadas": [
+    "online"
+  ],
+  "tarifas_mostrar": [
+    "online",
+    "casa_alumno"
+  ],
+  "textos": {
+    "cover_sub": "Un plan a medida para Paula: Física 1 y Teoría de circuitos en Ingeniería de Telecomunicaciones (UPV), con el examen del 2 de noviembre como primera meta.",
+    "p2_title": "Así te acompañamos cada mes, Paula",
+    "p2_sub": "Un profesor especializado en Física 1 y Teoría de circuitos, con sesiones centradas en tus asignaturas y ajuste continuo según lo que necesites reforzar.",
+    "c1": "Tienes tu profesor de referencia asignado, especializado en Física 1 y Teoría de circuitos, con horario fijo cada semana.",
+    "p3_sub": "Tienes tu propio informe de seguimiento dentro del plan, sin coste adicional. Esto es lo que incluye cada mes:",
+    "informe_h2": "Un informe real para ti, Paula",
+    "p4_pill": "ASÍ LO VERÁS TÚ",
+    "p4_sub": "Cuatro pantallas de ejemplo del informe que recibirás en tu área privada.",
+    "p10_sub": "Escríbenos para confirmar tu bono y empezar este mismo fin de semana.",
+    "gestiones": "GESTIONES A TU CARGO"
+  },
+  "trayectoria": {
+    "etiqueta": "HOJA DE RUTA",
+    "pill": "FÍSICA 1 · TEORÍA DE CIRCUITOS",
+    "titulo": "Tu planificación, de hoy a enero",
+    "lead": "Primero, el examen del 2 de noviembre; después, el siguiente bloque y el examen de enero. Fechas orientativas: las ajustamos a las tuyas.",
+    "meses": [
+      "Oct",
+      "Nov",
+      "Dic",
+      "Ene"
+    ],
+    "colores": [
+      "#5b8ee0",
+      "#7fcfa0",
+      "#e9d18f"
+    ],
+    "tramos": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        2.5
+      ],
+      [
+        2.5,
+        3
+      ]
+    ],
+    "bloques": [
+      {
+        "span": 1,
+        "simbolo": "2/11",
+        "nombre": "Hasta el 2 de nov.",
+        "foco": "Repaso intensivo de Física 1 y Teoría de circuitos para el examen.",
+        "fondo": "#12234a",
+        "borde": "#5b8ee0"
+      },
+      {
+        "span": 2,
+        "simbolo": "Ω",
+        "nombre": "Nov y dic",
+        "foco": "Siguientes bloques: más Física 1 y análisis de circuitos, con ejercicios tipo examen.",
+        "fondo": "#13302a",
+        "borde": "#7fcfa0"
+      },
+      {
+        "span": 1,
+        "simbolo": "★",
+        "nombre": "Enero",
+        "foco": "Repaso general y simulacros para el examen de enero.",
+        "fondo": "#3a3322",
+        "borde": "#e9d18f"
+      }
+    ],
+    "hitos": [
+      {
+        "nombre": "Examen 2 nov",
+        "pos": 0.6
+      },
+      {
+        "nombre": "Examen de enero",
+        "pos": 3,
+        "meta": true
+      }
+    ]
+  },
+  "pasos": {
+    "base": 25,
+    "base_txt": "",
+    "modalidad_txt": "Online",
+    "nota": "",
+    "who": "Ing. Telecomunicaciones · Física 1 y Teoría de circuitos · Online",
+    "titulo": "Tu plan, en dos pasos",
+    "lead": "Tu profesor ya está asignado. Elige empezar con el bono de prueba o directamente con el de 12 horas.",
+    "prueba": {
+      "horas": 2,
+      "precio": 44,
+      "tachado": 50,
+      "texto": "Dos horas online para conocer al profesor, ver en qué punto estás en Física 1 y Teoría de circuitos y dejar fijado tu plan hasta el examen del 2 de noviembre. Recomendado al 100%."
+    },
+    "paso2_titulo": "Después, tu bono de 12 horas",
+    "opciones": [
+      {
+        "horas": 12,
+        "precio": 285,
+        "frecuencia": "",
+        "destacado": true,
+        "etiqueta": "RECOMENDADO · MEJOR PRECIO POR HORA",
+        "alt": {
+          "oro": true,
+          "txt": "TU MEJOR OPCIÓN",
+          "hora": "23,75 €/h",
+          "bono": "el mejor precio por hora del curso"
+        }
+      }
+    ],
+    "resumen": [
+      "Clases online de Física 1 y Teoría de circuitos con tu profesor ya asignado.",
+      "Primero, bono de prueba de 2h (44 €) y, después, bono de 12h (285 €); también puedes empezar directamente con el de 12h.",
+      "El bono de 12h es el que sale más económico por hora: 23,75 €/h."
+    ],
+    "quote": "Un plan a medida para que Paula llegue al examen del 2 de noviembre y al de enero con Física 1 y Teoría de circuitos bajo control.",
+    "sin_mes": true
+  },
+  "informe_ejemplo": {
+    "asignatura": "Física 1 y Teoría de circuitos",
+    "mes": "Noviembre 2026",
+    "comparado": "octubre",
+    "nota": "7,0",
+    "sesiones": 8,
+    "horas": "12h",
+    "destrezas_label": "Destrezas trabajadas",
+    "barras": [
+      [
+        "Física 1",
+        7.0
+      ],
+      [
+        "Circuitos",
+        6.5
+      ],
+      [
+        "Problemas",
+        6.8
+      ]
+    ],
+    "mayor_progreso": "Teoría de circuitos — el análisis de mallas pasó de dudas a hacerse solo",
+    "resumen": "En noviembre has hecho 8 clases sin faltar a ninguna. En Física 1 ya resuelves con soltura los problemas de cinemática. En circuitos todavía necesitas apoyo con las mallas y los nudos. Diciembre: práctica de examen para el parcial de enero.",
+    "horario": "Martes y jueves, 19:00–20:30 · online",
+    "temas": [
+      [
+        "Física 1",
+        1.8
+      ],
+      [
+        "Circuitos",
+        1.5
+      ],
+      [
+        "Problemas",
+        1.0
+      ],
+      [
+        "Repaso",
+        0.5
+      ]
+    ],
+    "fuertes": [
+      "Física 1: cinemática y dinámica",
+      "Muy ordenada al plantear los problemas"
+    ],
+    "atencion": [
+      "Circuitos: mallas y nudos",
+      "Física: trabajo y energía"
+    ],
+    "casa": [
+      "Un problema de circuitos a la semana",
+      "Repasar las fórmulas de clase"
+    ],
+    "semanas": [
+      5.8,
+      6.3,
+      6.8,
+      7.2
+    ],
+    "metricas": [
+      [
+        "76%",
+        "Comprensión"
+      ],
+      [
+        "81%",
+        "Constancia"
+      ],
+      [
+        "62%",
+        "Autonomía"
+      ]
+    ],
+    "evol": [
+      [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      [
+        "a",
+        "b",
+        "c",
+        "d"
+      ]
+    ],
+    "conclusion": "Noviembre cierra con una tendencia muy positiva. En diciembre hacemos práctica de examen para el parcial de enero.",
+    "cal_mes": [
+      2026,
+      12
+    ],
+    "cal_titulo": "x",
+    "cal_dias_sesion": [
+      1
+    ],
+    "cal_examen": 16,
+    "cal_semanas": "3 sem",
+    "cal_semanas_txt": "x",
+    "antes": "x",
+    "ahora": "x",
+    "alumno": "",
+    "proxima_sesion_txt": "Teoría de circuitos: análisis por mallas y nudos."
+  },
+  "nombre_completo": "Paula Garrido"
+}
