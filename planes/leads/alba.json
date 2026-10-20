@@ -1,0 +1,220 @@
+{
+  "nombre": "Alba",
+  "etapa": "eso",
+  "curso": "1º ESO",
+  "asignaturas": [
+    "Matemáticas"
+  ],
+  "voz": "familia",
+  "archivo": "Plan_NEXO_Alba_1ESO_Matematicas_Paterna",
+  "cover_card_sub": "1º ESO · Matemáticas · Presencial en Paterna",
+  "presencial_label": "en su casa",
+  "bonos_recomendados": [
+    {
+      "horas": 12,
+      "frecuencia": "3h a la semana"
+    }
+  ],
+  "modalidades_recomendadas": [
+    "casa_alumno"
+  ],
+  "tarifas_mostrar": [
+    "casa_alumno"
+  ],
+  "textos": {
+    "cover_sub": "Un plan a medida para Alba: clases presenciales de Matemáticas de 1º de ESO en su casa, en Paterna.",
+    "p2_title": "Así acompañamos a Alba cada mes",
+    "p2_sub": "Sin burocracia. El profesor registra las sesiones, nuestro equipo analiza los datos y os llega el seguimiento sin que tengáis que pedirlo.",
+    "c1": "Alba tiene su profesor de referencia asignado, especializado en Matemáticas, con horario fijo cada semana en vuestra casa.",
+    "p3_sub": "Alba tiene su propio informe de seguimiento dentro del plan, sin coste adicional. Esto es lo que incluye cada mes:",
+    "informe_h2": "Un informe real para Alba",
+    "p4_pill": "ASÍ LO VERÉIS VOSOTROS",
+    "p4_sub": "Cuatro pantallas de ejemplo del informe que recibiréis en el área privada de Alba.",
+    "p10_sub": "Escribidnos para reservar el bono de prueba de Alba y empezar cuanto antes.",
+    "gestiones": "GESTIONES A CARGO VUESTRO"
+  },
+  "pasos": {
+    "base": 24,
+    "base_txt": "",
+    "modalidad_txt": "Presencial en su casa",
+    "nota": "",
+    "who": "1º ESO · Matemáticas · Presencial en Paterna",
+    "titulo": "Su plan, en dos pasos",
+    "lead": "Clases presenciales de Matemáticas en su casa, en Paterna. Primero una prueba y después el bono de 12 horas.",
+    "prueba": {
+      "horas": 2,
+      "precio": 44,
+      "tachado": 48,
+      "texto": "Dos horas presenciales en vuestra casa para conocer al profesor, ver cómo lleva Alba las Matemáticas y dejar fijado su plan. Recomendado al 100%."
+    },
+    "paso2_titulo": "Después, su bono de 12 horas",
+    "opciones": [
+      {
+        "horas": 12,
+        "precio": 270,
+        "frecuencia": "",
+        "destacado": true,
+        "etiqueta": "RECOMENDADO · MEJOR PRECIO POR HORA",
+        "alt": {
+          "oro": true,
+          "txt": "TU MEJOR OPCIÓN",
+          "hora": "22,50 €/h",
+          "bono": "el mejor precio por hora del curso"
+        }
+      }
+    ],
+    "resumen": [
+      "Clases presenciales de Matemáticas en vuestra casa, en Paterna, unas 3 horas a la semana.",
+      "Primero, bono de prueba de 2h (44 €) y, después, bono de 12h (270 €).",
+      "El bono de 12h es el que sale más económico por hora durante el curso: 22,50 €/h."
+    ],
+    "quote": "Un plan a medida para que Alba gane seguridad en Matemáticas con un profesor a su lado.",
+    "sin_mes": true
+  },
+  "informe_ejemplo": {
+    "asignatura": "Matemáticas",
+    "mes": "Noviembre 2026",
+    "comparado": "octubre",
+    "nota": "7,0",
+    "sesiones": 8,
+    "horas": "12h",
+    "destrezas_label": "Bloques trabajados",
+    "barras": [
+      [
+        "Números y operaciones",
+        7.0
+      ],
+      [
+        "Fracciones",
+        6.5
+      ],
+      [
+        "Geometría",
+        6.8
+      ]
+    ],
+    "mayor_progreso": "Matemáticas — las fracciones pasaron de generar dudas a resolverse solas",
+    "resumen": "En noviembre, Alba ha hecho 8 clases sin faltar a ninguna. Ya opera con soltura con números enteros y empieza a manejar las fracciones. Con los problemas todavía necesita apoyo para plantearlos. Diciembre: reforzar fracciones y problemas antes de los exámenes de la 1ª evaluación.",
+    "proxima_sesion": "PRÓXIMA CLASE — MARTES 1",
+    "proxima_sesion_txt": "Fracciones: suma y resta con distinto denominador.",
+    "horario": "Lunes y miércoles, 17:30–19:00 · en casa",
+    "temas": [
+      [
+        "Números y operaciones",
+        1.8
+      ],
+      [
+        "Fracciones",
+        1.5
+      ],
+      [
+        "Geometría",
+        1.0
+      ],
+      [
+        "Problemas",
+        0.5
+      ]
+    ],
+    "fuertes": [
+      "Operaciones con enteros consolidadas",
+      "Muy ordenada al presentar los ejercicios"
+    ],
+    "atencion": [
+      "Fracciones: denominadores distintos",
+      "Problemas: plantear el enunciado"
+    ],
+    "casa": [
+      "3 problemas a la semana",
+      "Repasar las tablas y la jerarquía de operaciones"
+    ],
+    "semanas": [
+      5.8,
+      6.3,
+      6.8,
+      7.2
+    ],
+    "metricas": [
+      [
+        "76%",
+        "Comprensión"
+      ],
+      [
+        "81%",
+        "Constancia"
+      ],
+      [
+        "62%",
+        "Autonomía"
+      ]
+    ],
+    "evol": [
+      [
+        "Resolución de problemas",
+        "Octubre: 60%",
+        "Noviembre: 79%",
+        "Plantea mejor el enunciado antes de operar."
+      ],
+      [
+        "Autonomía",
+        "Octubre: 50%",
+        "Noviembre: 62%",
+        "Cada vez necesita menos ayuda para empezar."
+      ]
+    ],
+    "conclusion": "Noviembre cierra con una tendencia muy positiva. En diciembre reforzamos fracciones y problemas antes de los exámenes de la 1ª evaluación.",
+    "cal_mes": [
+      2026,
+      12
+    ],
+    "cal_titulo": "Calendario — diciembre 2026",
+    "cal_dias_sesion": [
+      1,
+      3
+    ],
+    "cal_examen": 16,
+    "cal_semanas": "3 sem",
+    "cal_semanas_txt": "hasta los exámenes de la 1ª evaluación",
+    "antes": "Sin refuerzo fijo",
+    "ahora": "Clases semanales en casa · Bono de 12h"
+  },
+  "semana": {
+    "etiqueta": "SU SEMANA",
+    "pill": "VUESTRA ORGANIZACIÓN",
+    "titulo": "Dos tardes a la semana",
+    "lead": "Lunes y miércoles, de 17:30 a 19:00, en vuestra casa, en Paterna. Dos clases de 1 hora y media: unas 3 horas de Matemáticas a la semana.",
+    "hora_ini": 17,
+    "hora_fin": 19,
+    "alto": 100,
+    "asignaturas": [
+      "Matemáticas"
+    ],
+    "asig_cortas": [
+      "Matemáticas"
+    ],
+    "bloques": [
+      [
+        0,
+        17.5,
+        19,
+        0
+      ],
+      [
+        2,
+        17.5,
+        19,
+        0
+      ]
+    ],
+    "extra_titulo": "Calendario orientativo",
+    "extra_texto": "Los días y las horas son una propuesta: se adaptan a vuestro horario y el profesor ajusta el ritmo según cómo vaya Alba.",
+    "repartos": [
+      {
+        "nombre": "Cada semana · 3h",
+        "horas": [
+          3
+        ]
+      }
+    ]
+  }
+}
