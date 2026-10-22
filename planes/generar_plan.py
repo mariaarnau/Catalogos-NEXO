@@ -674,6 +674,7 @@ def page_pasos(d, t):
   <div class="bx-h"><b>{b["horas"]}h</b><span>{(b.get("lbl") or "bono de horas") if c.get("sin_mes") else "al mes · " + e(b["frecuencia"])}</span></div>
   <div class="bx-p">{eur(b["precio"], 0)}{"" if c.get("sin_mes") else "<small>/mes</small>"}</div>
   <div class="bx-hora"><b>{eur(ph)}</b><span>por hora</span><em>−{pct(base - ph, base)}%</em></div>
+  {f'<div class="bx-hora ex"><b>{eur(b["extra"], 0)}</b><span>cada hora extra · a partir de las {b["horas"]}h del bono</span></div>' if b.get("extra") else ""}
   <div class="bx-ref"><span>Tarifa base ({b["horas"]} × {eur(base, 0 if base == int(base) else 2)})</span><s>{eur(b["horas"] * base, 0)}</s></div>
   <div class="bx-ah">Ahorráis <b>{eur(b["horas"] * base - b["precio"], 0)}</b>{"" if c.get("sin_mes") else " al mes"} frente a la tarifa base</div>
 </div>'''

@@ -57,13 +57,14 @@
           "txt": "CADA HORA SALE A",
           "hora": "20,31 €/h",
           "bono": "frente a 24 €/h de tarifa base"
-        }
+        },
+        "extra": 19
       }
     ],
     "resumen": [
       "Clases presenciales en vuestra casa, en Patraix, de lunes a viernes, 2 horas cada día.",
       "Todas las asignaturas: Matemáticas, Física, Química, Biología y Geografía.",
-      "Bono de 16h por 325 €: 20,31 €/h."
+      "Bono de 16h por 325 € (20,31 €/h). Si hacen falta más horas, cada hora extra cuesta 19 €."
     ],
     "quote": "Un plan intensivo a medida para que Andrés llegue a cada examen con todo trabajado.",
     "sin_mes": true,
