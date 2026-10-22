@@ -658,8 +658,9 @@ def page_pasos(d, t):
     c = d["pasos"]
     base = c["base"]
     n = d["nombre"]
-    p1 = c["prueba"]
-    ph1 = p1["precio"] / p1["horas"]
+    solo = bool(c.get("solo_bono"))
+    p1 = c.get("prueba") or {"horas": 0, "precio": 1, "tachado": 0, "texto": ""}
+    ph1 = p1["precio"] / max(p1["horas"], 1)
     cards = ""
     side = ""
     for b in c["opciones"]:
@@ -681,18 +682,19 @@ def page_pasos(d, t):
     nv = c.get("nivel")
     k1 = 2 if nv else 1
     niv = (f'''<div class="niv"><div class="pnum">1</div><div class="p1t"><small>PASO 1 · PRIMERO DE TODO</small><b>{e(nv["titulo"])}</b><span>{e(nv["texto"])}</span></div></div>''' if nv else "")
+    paso1_html = "" if solo else f'''<div class="paso1">
+    <div class="pnum">{k1}</div>
+    <div class="p1t"><small>PASO {k1} · {"DESPUÉS" if niv else "PARA EMPEZAR"}</small><b>Bono de prueba de {p1["horas"]}h</b><span>{e(p1["texto"])}</span></div>
+    <div class="p1p">{f'<i class="p1lbl">{e(p1["lbl"].upper())}</i>' if p1.get("lbl") else ""}<s>{eur(p1["tachado"], 0)}</s><b>{eur(p1["precio"], 0 if p1["precio"] == int(p1["precio"]) else 2)}</b><span>{e(p1["sub"]) if p1.get("sub") else eur(ph1) + "/h · precio nuevos alumnos"}</span>{f'<em class="p1alt">{e(p1["alt"])}</em>' if p1.get("alt") else ""}</div>
+  </div>'''
     return f'''<section class="page pasosp">
   <div class="hdr"><span class="hdr-l">PLAN PERSONALIZADO{" · " + e(n.upper()) if n else ""}</span></div><div class="rule"></div>
   <div class="who"><div class="av">{e(n[:1] or "★")}</div><div><div class="wn">{e(n or "Tu plan")}</div><div class="ws">{e(c["who"].upper())}</div></div></div>
   <h2>{e(c["titulo"])}</h2>
   <p class="lead">{e(c["lead"])}</p>
   {niv}
-  <div class="paso1">
-    <div class="pnum">{k1}</div>
-    <div class="p1t"><small>PASO {k1} · {"DESPUÉS" if niv else "PARA EMPEZAR"}</small><b>Bono de prueba de {p1["horas"]}h</b><span>{e(p1["texto"])}</span></div>
-    <div class="p1p">{f'<i class="p1lbl">{e(p1["lbl"].upper())}</i>' if p1.get("lbl") else ""}<s>{eur(p1["tachado"], 0)}</s><b>{eur(p1["precio"], 0 if p1["precio"] == int(p1["precio"]) else 2)}</b><span>{e(p1["sub"]) if p1.get("sub") else eur(ph1) + "/h · precio nuevos alumnos"}</span>{f'<em class="p1alt">{e(p1["alt"])}</em>' if p1.get("alt") else ""}</div>
-  </div>
-  <div class="paso2h"><div class="pnum s">{k1 + 1}</div><div><small>PASO {k1 + 1} · DESPUÉS</small><b>{e(c["paso2_titulo"])}</b></div></div>
+  {paso1_html}
+  <div class="paso2h"><div class="pnum s">{k1 + (0 if solo else 1)}</div><div><small>{"SU BONO" if solo else f"PASO {k1 + 1} · DESPUÉS"}</small><b>{e(c["paso2_titulo"])}</b></div></div>
   <div class="bxs"{(' style="grid-template-columns: 520px 1fr; align-items: end"' if side else ' style="grid-template-columns: 1fr; max-width: 520px"') if len(c["opciones"]) == 1 else ""}>{cards}{side}</div>
   {basel}
   {footer()}
@@ -702,14 +704,15 @@ def page_pasos(d, t):
 def page_resumen_pasos(d, t):
     c = d["pasos"]
     n = d["nombre"]
-    p1 = c["prueba"]
+    solo = bool(c.get("solo_bono"))
+    p1 = c.get("prueba") or {"horas": 0, "precio": 0}
     nv = c.get("nivel")
     k1 = 2 if nv else 1
     rows = (f'''<div class="srow"><div class="av w">1</div><div class="st"><b>Paso 1 — {e(nv["titulo"])}</b><small>En la app de Nexo · antes de empezar</small></div></div>''' if nv else "")
-    rows += (f'''<div class="srow"><div class="av w">{k1}</div><div class="st"><b>Paso {k1} — Bono de prueba de {p1["horas"]}h</b><small>{e(c["modalidad_txt"])} · para empezar</small></div>
+    rows += ("" if solo else f'''<div class="srow"><div class="av w">{k1}</div><div class="st"><b>Paso {k1} — Bono de prueba de {p1["horas"]}h</b><small>{e(c["modalidad_txt"])} · para empezar</small></div>
   <div class="sps"><div class="sp"><small>{e(p1.get("lbl", "Una vez"))}</small><b>{eur(p1["precio"], 0 if p1["precio"] == int(p1["precio"]) else 2)}</b></div></div></div>''')
     for b in c["opciones"]:
-        rows += f'''<div class="srow ref"><div class="av w">{k1 + 1}</div><div class="st"><b>Paso {k1 + 1} — Bono de {b["horas"]}h{"" if c.get("sin_mes") else " al mes"}</b><small>{e(c["modalidad_txt"])}{"" if c.get("sin_mes") else " · " + e(b["frecuencia"])}</small></div>
+        rows += f'''<div class="srow ref"><div class="av w">{k1 + (0 if solo else 1)}</div><div class="st"><b>{"Su bono" if solo else f"Paso {k1 + 1}"} — Bono de {b["horas"]}h{"" if c.get("sin_mes") else " al mes"}</b><small>{e(c["modalidad_txt"])}{"" if c.get("sin_mes") else " · " + e(b["frecuencia"])}</small></div>
   <div class="sps"><div class="sp"><small>{"Bono" if c.get("sin_mes") else "Al mes"}</small><b>{eur(b["precio"], 0)}</b></div><div class="sp"><small>Por hora</small><b>{eur(b["precio"] / b["horas"])}</b></div></div></div>'''
     lis = "".join(f"<li>{e(x)}</li>" for x in c["resumen"])
     return f'''<section class="page">
