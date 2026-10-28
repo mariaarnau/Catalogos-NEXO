@@ -1,84 +1,228 @@
 {
   "nombre": "Daniel",
-  "etapa": "universidad",
-  "curso": "ADE",
+  "etapa": "bachillerato",
+  "curso": "2º Bachillerato",
   "asignaturas": [
-    "Matemáticas"
+    "Física",
+    "Matemáticas II"
   ],
   "voz": "tu",
+  "archivo": "Plan_NEXO_Daniel_2Bach_Fisica_Mates2_PAU",
+  "presencial_label": "en tu casa",
+  "cover_card_sub": "2º Bachillerato tecnológico · Física y Matemáticas II · PAU",
   "bonos_recomendados": [
     {
-      "horas": 8,
-      "frecuencia": "2h a la semana"
-    },
-    {
       "horas": 12,
-      "frecuencia": "3h a la semana"
+      "frecuencia": ""
     }
   ],
   "modalidades_recomendadas": [
     "online",
     "casa_alumno"
   ],
-  "informe_ejemplo": {
-    "asignatura": "Matemáticas",
-    "mes": "Noviembre 2026",
-    "nota": "7,0",
-    "sesiones": 8,
-    "horas": "8h",
-    "destrezas_label": "Bloques trabajados",
-    "barras": [
+  "tarifas_mostrar": [
+    "online",
+    "casa_alumno"
+  ],
+  "textos": {
+    "cover_sub": "Un plan a medida para Daniel: Física y Matemáticas II de 2º de Bachillerato tecnológico, con la PAU como meta.",
+    "p2_title": "Así te acompañamos cada mes, Daniel",
+    "p2_sub": "Un profesor especializado en Física y Matemáticas II, con sesiones centradas en tus asignaturas y ajuste continuo según lo que necesites reforzar.",
+    "c1": "Tienes tu profesor de referencia asignado, especializado en Física y Matemáticas II, con horario fijo cada semana.",
+    "p3_sub": "Tienes tu propio informe de seguimiento dentro del plan, sin coste adicional. Esto es lo que incluye cada mes:",
+    "informe_h2": "Un informe real para ti, Daniel",
+    "p4_pill": "ASÍ LO VERÁS TÚ",
+    "p4_sub": "Cuatro pantallas de ejemplo del informe que recibirás en tu área privada.",
+    "p10_sub": "Escríbenos para reservar tu bono de prueba y empezar cuanto antes.",
+    "gestiones": "GESTIONES A TU CARGO"
+  },
+  "trayectoria": {
+    "etiqueta": "HOJA DE RUTA",
+    "pill": "2º BACH. TECNOLÓGICO · FÍSICA Y MATEMÁTICAS II",
+    "titulo": "Tu camino a la PAU, de octubre a junio",
+    "lead": "Física y Matemáticas II avanzan juntas por bloques, para llegar a junio con todo preparado. Fechas orientativas.",
+    "meses": [
+      "Oct",
+      "Nov",
+      "Dic",
+      "Ene",
+      "Feb",
+      "Mar",
+      "Abr",
+      "May",
+      "Jun"
+    ],
+    "colores": [
+      "#5b8ee0",
+      "#8fb8ec",
+      "#7fcfa0",
+      "#e9d18f"
+    ],
+    "tramos": [
       [
-        "Funciones",
-        7.0
+        0,
+        3
       ],
       [
-        "Derivadas",
+        3,
+        5
+      ],
+      [
+        5,
         6.8
       ],
       [
-        "Optimización",
-        6.4
-      ],
-      [
-        "Matrices",
-        7.2
+        6.8,
+        8
       ]
     ],
-    "mayor_progreso": "Derivadas — de 6,0 a 7,0, muy buen ritmo este mes",
-    "resumen": "En noviembre, Daniel ha hecho 8 sesiones de Matemáticas sin faltar a ninguna. Domina bien las funciones y ha mejorado mucho con las derivadas. El punto de trabajo son los problemas de optimización aplicados a costes y beneficios.",
-    "proxima_sesion": "PRÓXIMA SESIÓN — MARTES 1",
-    "proxima_sesion_txt": "Optimización: máximos y mínimos + 4 problemas tipo examen.",
-    "horario": "Daniel · Martes y jueves, 18:00–19:00",
+    "bloques": [
+      {
+        "span": 3,
+        "simbolo": "[ ]",
+        "nombre": "Álgebra y campos",
+        "foco": "Matrices, determinantes y sistemas; campo gravitatorio y eléctrico.",
+        "fondo": "#12234a",
+        "borde": "#5b8ee0"
+      },
+      {
+        "span": 2,
+        "simbolo": "f′",
+        "nombre": "Análisis y magnetismo",
+        "foco": "Límites y derivadas; campo magnético e inducción.",
+        "fondo": "#16284a",
+        "borde": "#8fb8ec"
+      },
+      {
+        "span": 2,
+        "simbolo": "∫",
+        "nombre": "Integrales y ondas",
+        "foco": "Integrales y geometría en el espacio; ondas y óptica.",
+        "fondo": "#13302a",
+        "borde": "#7fcfa0"
+      },
+      {
+        "span": 2,
+        "simbolo": "★",
+        "nombre": "Recta final y PAU",
+        "foco": "Probabilidad y Física moderna, con simulacros de PAU.",
+        "fondo": "#3a3322",
+        "borde": "#e9d18f"
+      }
+    ],
+    "hitos": [
+      {
+        "nombre": "1ª evaluación",
+        "pos": 2.5
+      },
+      {
+        "nombre": "2ª evaluación",
+        "pos": 5.5
+      },
+      {
+        "nombre": "PAU",
+        "pos": 8,
+        "meta": true
+      }
+    ]
+  },
+  "dos_opciones": {
+    "etiqueta": "TUS OPCIONES",
+    "pill": "MODALIDAD",
+    "titulo": "Dos formas de prepararte",
+    "lead": "En las dos empiezas con un bono de prueba de 2 horas y después pasas al bono de 12 horas. Elige la modalidad que mejor te encaje.",
+    "pie": "Sin permanencia: pagas por adelantado el bono de horas. Solo pagas las horas de clase que se dan.",
+    "opciones": [
+      {
+        "letra": "OPCIÓN 1",
+        "nombre": "Online",
+        "sub": "Clases por videollamada",
+        "destacado": false,
+        "prueba": {
+          "horas": 2,
+          "precio": 42,
+          "tachado": 48
+        },
+        "bono": {
+          "horas": 12,
+          "precio": 270,
+          "base": 24
+        }
+      },
+      {
+        "letra": "OPCIÓN 2",
+        "nombre": "Presencial en tu casa",
+        "sub": "El profesor va a tu domicilio",
+        "destacado": false,
+        "prueba": {
+          "horas": 2,
+          "precio": 46,
+          "tachado": 50
+        },
+        "bono": {
+          "horas": 12,
+          "precio": 285,
+          "base": 25
+        }
+      }
+    ]
+  },
+  "informe_ejemplo": {
+    "asignatura": "Física y Matemáticas II",
+    "mes": "Noviembre 2026",
+    "comparado": "octubre",
+    "nota": "7,0",
+    "sesiones": 8,
+    "horas": "12h",
+    "destrezas_label": "Bloques trabajados",
+    "barras": [
+      [
+        "Física",
+        7.0
+      ],
+      [
+        "Matrices y sistemas",
+        6.5
+      ],
+      [
+        "Problemas",
+        6.8
+      ]
+    ],
+    "mayor_progreso": "Matemáticas II — los sistemas con determinantes pasaron de dudas a hacerse solos",
+    "resumen": "En noviembre has hecho 8 clases sin faltar a ninguna. En Matemáticas II ya dominas matrices y determinantes. En Física todavía necesitas apoyo con el campo eléctrico. Diciembre: reforzar Física antes de los exámenes de la 1ª evaluación.",
+    "proxima_sesion": "PRÓXIMA CLASE — MARTES 1",
+    "proxima_sesion_txt": "Física: campo eléctrico. Matemáticas II: límites.",
+    "horario": "Martes y jueves, 19:00–20:30",
     "temas": [
       [
-        "Funciones",
-        2.5
+        "Física",
+        2.0
       ],
       [
-        "Derivadas",
-        1.8
+        "Matemáticas II",
+        2.0
       ],
       [
-        "Optimización",
+        "Problemas",
         1.2
       ],
       [
-        "Matrices",
+        "Repaso PAU",
         0.5
       ]
     ],
     "fuertes": [
-      "Domina el estudio de funciones",
-      "Buen ritmo calculando derivadas"
+      "Matrices y determinantes consolidados",
+      "Muy ordenado al plantear los problemas"
     ],
     "atencion": [
-      "Optimización: le cuesta plantear el problema",
-      "Matrices: duda con el cálculo de inversas"
+      "Física: campo eléctrico",
+      "Matemáticas II: límites"
     ],
     "casa": [
-      "2 ejercicios diarios de derivadas",
-      "1 problema de optimización al día"
+      "3 problemas de Física a la semana",
+      "Un ejercicio de PAU de Matemáticas a la semana"
     ],
     "semanas": [
       5.8,
@@ -103,18 +247,18 @@
     "evol": [
       [
         "Resolución de problemas",
-        "Octubre: 60%",
-        "Noviembre: 79%",
-        "Plantea mejor el enunciado antes de empezar a calcular."
+        "Octubre: 40%",
+        "Noviembre: 70%",
+        "Plantea mejor el enunciado antes de operar."
       ],
       [
         "Autonomía",
-        "Octubre: 50%",
+        "Octubre: 35%",
         "Noviembre: 62%",
-        "Cada vez necesita menos ayuda para arrancar el ejercicio."
+        "Cada vez necesita menos ayuda para empezar."
       ]
     ],
-    "conclusion": "Noviembre cierra con una tendencia muy positiva. El foco de diciembre es consolidar la optimización antes del próximo examen.",
+    "conclusion": "Noviembre cierra con una tendencia muy positiva. En diciembre reforzamos Física antes de los exámenes de la 1ª evaluación.",
     "cal_mes": [
       2026,
       12
@@ -124,211 +268,11 @@
       1,
       3
     ],
-    "cal_examen": 17,
+    "cal_examen": 16,
     "cal_semanas": "3 sem",
-    "cal_semanas_txt": "desde la fecha de este informe hasta el próximo examen",
-    "antes": "Estudio por tu cuenta",
-    "ahora": "Sesiones semanales de Matemáticas · Bono mensual"
-  },
-  "ruta": {
-    "etiqueta": "TU HOJA DE RUTA",
-    "pill": "NUEVO · TU PLAN HASTA ENERO",
-    "titulo": "Mes a mes, hasta tu examen de enero",
-    "lead": "Tu examen de Matemáticas es la segunda semana de enero. Así repartimos el temario por bloques y las horas de cada semana para llegar con todo trabajado.",
-    "stats": [
-      [
-        "15 sem",
-        "hasta el examen (semana del 11 de enero)"
-      ],
-      [
-        "4",
-        "bloques: bases, derivadas, álgebra y repaso final"
-      ],
-      [
-        "32h",
-        "de clase con el bono de 8h"
-      ],
-      [
-        "48h",
-        "de clase con el bono de 12h"
-      ]
-    ],
-    "cal_titulo": "Tus semanas hasta el examen",
-    "leyenda": [
-      "Con el bono de 8h",
-      "Extra con el bono de 12h"
-    ],
-    "ocultar_total": true,
-    "semanas": [
-      {
-        "label": "28 sep",
-        "mes": "Octubre",
-        "horas": [
-          1.5,
-          0.5
-        ],
-        "top": "2h<small>1,5h</small>"
-      },
-      {
-        "label": "5 oct",
-        "mes": "Octubre",
-        "horas": [
-          1.5,
-          0.5
-        ],
-        "top": "2h<small>1,5h</small>"
-      },
-      {
-        "label": "12 oct",
-        "mes": "Octubre",
-        "horas": [
-          1.5,
-          0.5
-        ],
-        "top": "2h<small>1,5h</small>"
-      },
-      {
-        "label": "19 oct",
-        "mes": "Octubre",
-        "horas": [
-          1.5,
-          1.5
-        ],
-        "top": "3h<small>1,5h</small>"
-      },
-      {
-        "label": "26 oct",
-        "mes": "Octubre",
-        "horas": [
-          2,
-          1
-        ],
-        "top": "3h<small>2h</small>"
-      },
-      {
-        "label": "2 nov",
-        "mes": "Noviembre",
-        "horas": [
-          2,
-          1
-        ],
-        "top": "3h<small>2h</small>"
-      },
-      {
-        "label": "9 nov",
-        "mes": "Noviembre",
-        "horas": [
-          2,
-          1
-        ],
-        "top": "3h<small>2h</small>"
-      },
-      {
-        "label": "16 nov",
-        "mes": "Noviembre",
-        "horas": [
-          2,
-          1
-        ],
-        "top": "3h<small>2h</small>"
-      },
-      {
-        "label": "23 nov",
-        "mes": "Noviembre",
-        "horas": [
-          2,
-          1
-        ],
-        "top": "3h<small>2h</small>"
-      },
-      {
-        "label": "30 nov",
-        "mes": "Diciembre",
-        "horas": [
-          2,
-          1
-        ],
-        "top": "3h<small>2h</small>"
-      },
-      {
-        "label": "7 dic",
-        "mes": "Diciembre",
-        "horas": [
-          2,
-          1
-        ],
-        "top": "3h<small>2h</small>"
-      },
-      {
-        "label": "14 dic",
-        "mes": "Diciembre",
-        "horas": [
-          2,
-          1
-        ],
-        "top": "3h<small>2h</small>"
-      },
-      {
-        "label": "21 dic",
-        "mes": "Diciembre",
-        "horas": [
-          2,
-          1
-        ],
-        "top": "3h<small>2h</small>"
-      },
-      {
-        "label": "28 dic",
-        "mes": "Enero",
-        "horas": [
-          3,
-          2
-        ],
-        "top": "5h<small>3h</small>"
-      },
-      {
-        "label": "4 ene",
-        "mes": "Enero",
-        "horas": [
-          3,
-          2
-        ],
-        "top": "5h<small>3h</small>"
-      },
-      {
-        "label": "11 ene",
-        "mes": "Enero",
-        "examen": "Examen de enero"
-      }
-    ],
-    "meses": {
-      "Octubre": "Bases",
-      "Noviembre": "Derivadas",
-      "Diciembre": "Álgebra",
-      "Enero": "Repaso final"
-    },
-    "nota": "Arriba de cada barra, horas de la semana con el bono de 12h y, en dorado, con el de 8h. Cada mes suma exactamente el bono: en enero se incluyen 2h de repaso exprés la semana del examen. En Navidad subimos el ritmo para llegar al examen con simulacros hechos.",
-    "bloques": [
-      [
-        "OCTUBRE",
-        "Bases",
-        "Diagnóstico inicial, funciones, límites y continuidad."
-      ],
-      [
-        "NOVIEMBRE",
-        "Derivadas",
-        "Derivadas y optimización aplicada: costes, ingresos y beneficio."
-      ],
-      [
-        "DICIEMBRE",
-        "Álgebra",
-        "Matrices, determinantes y sistemas de ecuaciones."
-      ],
-      [
-        "NAVIDAD · ENERO",
-        "Repaso final",
-        "Exámenes de otros años y simulacros antes del examen."
-      ]
-    ]
+    "cal_semanas_txt": "hasta los exámenes de la 1ª evaluación",
+    "antes": "Sin refuerzo fijo",
+    "ahora": "Clases semanales en casa · Bono de 12h",
+    "alumno": ""
   }
 }
