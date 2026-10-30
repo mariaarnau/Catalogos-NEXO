@@ -1,0 +1,254 @@
+{
+  "nombre": "Fernanda",
+  "etapa": "universidad",
+  "curso": "Ingeniería de Organización Industrial · UPV",
+  "asignaturas": [
+    "Física 1"
+  ],
+  "voz": "tu",
+  "archivo": "Plan_NEXO_Fernanda_OrgIndustrial_Fisica1",
+  "presencial_label": "en tu casa",
+  "cover_card_sub": "Organización Industrial · UPV · Física 1",
+  "bonos_recomendados": [
+    {
+      "horas": 12,
+      "frecuencia": ""
+    }
+  ],
+  "modalidades_recomendadas": [
+    "online",
+    "casa_alumno"
+  ],
+  "tarifas_mostrar": [
+    "online",
+    "casa_alumno"
+  ],
+  "textos": {
+    "cover_sub": "Un plan a medida para Fernanda: Física 1 en Organización Industrial (UPV), de los parciales al examen final.",
+    "p2_title": "Así te acompañamos cada mes, Fernanda",
+    "p2_sub": "Un profesor especializado en Física 1, con sesiones centradas en tu asignatura y ajuste continuo según lo que necesites reforzar.",
+    "c1": "Tienes tu profesor de referencia asignado, especializado en Física 1, con horario fijo cada semana.",
+    "p3_sub": "Tienes tu propio informe de seguimiento dentro del plan, sin coste adicional. Esto es lo que incluye cada mes:",
+    "informe_h2": "Un informe real para ti, Fernanda",
+    "p4_pill": "ASÍ LO VERÁS TÚ",
+    "p4_sub": "Cuatro pantallas de ejemplo del informe que recibirás en tu área privada.",
+    "p10_sub": "Escríbenos para reservar tu bono de prueba y empezar cuanto antes.",
+    "gestiones": "GESTIONES A TU CARGO"
+  },
+  "trayectoria": {
+    "etiqueta": "HOJA DE RUTA",
+    "pill": "FÍSICA 1 · ORGANIZACIÓN INDUSTRIAL",
+    "titulo": "Física 1, de los parciales al examen",
+    "lead": "Física 1 pide constancia: lo organizamos por bloques, con los parciales como primeras metas y el examen final en enero. Fechas orientativas: las ajustamos a las tuyas.",
+    "meses": [
+      "Nov",
+      "Dic",
+      "Ene"
+    ],
+    "colores": [
+      "#5b8ee0",
+      "#7fcfa0",
+      "#e9d18f"
+    ],
+    "tramos": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        1.8
+      ],
+      [
+        1.8,
+        2
+      ]
+    ],
+    "bloques": [
+      {
+        "span": 1,
+        "simbolo": "v·a",
+        "nombre": "Cinemática y dinámica",
+        "foco": "Movimiento, leyes de Newton y problemas de parcial.",
+        "fondo": "#12234a",
+        "borde": "#5b8ee0"
+      },
+      {
+        "span": 1,
+        "simbolo": "J",
+        "nombre": "Energía y sólido rígido",
+        "foco": "Trabajo, energía, momentos y sólido rígido.",
+        "fondo": "#13302a",
+        "borde": "#7fcfa0"
+      },
+      {
+        "span": 1,
+        "simbolo": "★",
+        "nombre": "Repaso y examen",
+        "foco": "Problemas tipo examen y simulacros antes del final.",
+        "fondo": "#3a3322",
+        "borde": "#e9d18f"
+      }
+    ],
+    "hitos": [
+      {
+        "nombre": "Parciales",
+        "pos": 0.9
+      },
+      {
+        "nombre": "Examen final",
+        "pos": 2,
+        "meta": true
+      }
+    ]
+  },
+  "dos_opciones": {
+    "etiqueta": "TUS OPCIONES",
+    "pill": "MODALIDAD",
+    "titulo": "Dos formas de prepararte",
+    "lead": "En las dos empiezas con un bono de prueba de 2 horas y después pasas al bono de 12 horas. Elige la modalidad que mejor te encaje.",
+    "pie": "Sin permanencia: pagas por adelantado el bono de horas. Solo pagas las horas de clase que se dan.",
+    "opciones": [
+      {
+        "letra": "OPCIÓN 1",
+        "nombre": "Online",
+        "sub": "Clases por videollamada",
+        "destacado": false,
+        "prueba": {
+          "horas": 2,
+          "precio": 44,
+          "tachado": 50
+        },
+        "bono": {
+          "horas": 12,
+          "precio": 285,
+          "base": 25
+        }
+      },
+      {
+        "letra": "OPCIÓN 2",
+        "nombre": "Presencial en tu casa",
+        "sub": "El profesor va a tu domicilio",
+        "destacado": false,
+        "prueba": {
+          "horas": 2,
+          "precio": 49,
+          "tachado": 55
+        },
+        "bono": {
+          "horas": 12,
+          "precio": 300,
+          "base": 27.5
+        }
+      }
+    ]
+  },
+  "informe_ejemplo": {
+    "asignatura": "Física 1",
+    "mes": "Noviembre 2026",
+    "comparado": "octubre",
+    "nota": "7,0",
+    "sesiones": 8,
+    "horas": "12h",
+    "destrezas_label": "Bloques trabajados",
+    "barras": [
+      [
+        "Cinemática",
+        7.0
+      ],
+      [
+        "Dinámica",
+        6.5
+      ],
+      [
+        "Energía",
+        6.8
+      ]
+    ],
+    "mayor_progreso": "Física 1 — la cinemática pasó de dudas a resolverse sola",
+    "resumen": "En noviembre has hecho 8 clases sin faltar a ninguna. En cinemática ya resuelves con soltura los problemas de parcial. En dinámica todavía necesitas apoyo con los diagramas de fuerzas. Diciembre: reforzar dinámica y energía antes del examen final.",
+    "proxima_sesion": "PRÓXIMA CLASE — MARTES 1",
+    "proxima_sesion_txt": "Dinámica: diagramas de fuerzas y planos inclinados.",
+    "horario": "Martes y jueves, 19:00–20:30",
+    "temas": [
+      [
+        "Cinemática",
+        2.0
+      ],
+      [
+        "Dinámica",
+        1.8
+      ],
+      [
+        "Energía",
+        1.2
+      ],
+      [
+        "Repaso",
+        0.5
+      ]
+    ],
+    "fuertes": [
+      "Cinemática consolidada",
+      "Muy ordenada al plantear los problemas"
+    ],
+    "atencion": [
+      "Dinámica: diagramas de fuerzas",
+      "Energía: elegir el planteamiento"
+    ],
+    "casa": [
+      "3 problemas de Física a la semana",
+      "Repasar los exámenes de otros años"
+    ],
+    "semanas": [
+      5.8,
+      6.3,
+      6.8,
+      7.2
+    ],
+    "metricas": [
+      [
+        "76%",
+        "Comprensión"
+      ],
+      [
+        "81%",
+        "Constancia"
+      ],
+      [
+        "62%",
+        "Autonomía"
+      ]
+    ],
+    "evol": [
+      [
+        "Resolución de problemas",
+        "Octubre: 40%",
+        "Noviembre: 70%",
+        "Plantea mejor el enunciado antes de operar."
+      ],
+      [
+        "Autonomía",
+        "Octubre: 35%",
+        "Noviembre: 62%",
+        "Cada vez necesita menos ayuda para empezar."
+      ]
+    ],
+    "conclusion": "Noviembre cierra con una tendencia muy positiva. En diciembre reforzamos dinámica y energía antes del examen final.",
+    "cal_mes": [
+      2026,
+      12
+    ],
+    "cal_titulo": "Calendario de preparación — diciembre 2026",
+    "cal_dias_sesion": [
+      1,
+      3
+    ],
+    "cal_examen": 16,
+    "cal_semanas": "3 sem",
+    "cal_semanas_txt": "hasta los exámenes de la 1ª evaluación",
+    "antes": "Sin refuerzo fijo",
+    "ahora": "Clases semanales en casa · Bono de 12h",
+    "alumno": ""
+  }
+}
