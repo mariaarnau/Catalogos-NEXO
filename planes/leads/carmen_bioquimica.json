@@ -1,0 +1,229 @@
+{
+  "nombre": "Carmen",
+  "etapa": "universidad",
+  "curso": "Grado Superior · Laboratorio Clínico y Biomédico",
+  "asignaturas": [
+    "Análisis bioquímico"
+  ],
+  "voz": "tu",
+  "archivo": "Plan_NEXO_Carmen_GS_Laboratorio_Clinico_Analisis_Bioquimico",
+  "presencial_label": "en tu casa",
+  "cover_card_sub": "GS Laboratorio Clínico y Biomédico · Análisis bioquímico",
+  "bonos_recomendados": [
+    {
+      "horas": 12,
+      "frecuencia": ""
+    }
+  ],
+  "modalidades_recomendadas": [
+    "casa_alumno"
+  ],
+  "tarifas_mostrar": [
+    "online",
+    "casa_profesor",
+    "casa_alumno"
+  ],
+  "textos": {
+    "cover_sub": "Un plan a medida para Carmen: Análisis bioquímico de 2º de Grado Superior de Laboratorio Clínico y Biomédico, con clases presenciales en Valencia, siguiendo tu temario.",
+    "p2_title": "Así te acompañamos cada mes, Carmen",
+    "p2_sub": "Un profesor especializado en Análisis bioquímico, con sesiones centradas en tu temario y ajuste continuo según lo que necesites reforzar.",
+    "c1": "Tienes tu profesor de referencia asignado, especializado en Análisis bioquímico, con horario fijo cada semana.",
+    "p3_sub": "Tienes tu propio informe de seguimiento dentro del plan, sin coste adicional. Esto es lo que incluye cada mes:",
+    "informe_h2": "Un informe real para ti, Carmen",
+    "p4_pill": "ASÍ LO VERÁS TÚ",
+    "p4_sub": "Cuatro pantallas de ejemplo del informe que recibirás en tu área privada.",
+    "p10_sub": "Escríbenos para reservar tu bono de prueba y empezar cuanto antes.",
+    "gestiones": "GESTIONES A TU CARGO"
+  },
+  "dos_opciones": {
+    "etiqueta": "TUS OPCIONES",
+    "pill": "MODALIDAD",
+    "titulo": "Dos formas de prepararte",
+    "lead": "En las dos empiezas con un bono de prueba de 2 horas y después pasas al bono de 12 horas. Como prefieres clases presenciales, esa es la primera opción.",
+    "pie": "Sin permanencia: pagas por adelantado el bono de horas. Solo pagas las horas de clase que se dan.",
+    "opciones": [
+      {
+        "letra": "OPCIÓN 1",
+        "nombre": "Presencial en tu casa",
+        "sub": "El profesor va a tu domicilio, en Valencia",
+        "destacado": true,
+        "prueba": {
+          "horas": 2,
+          "precio": 49,
+          "tachado": 55
+        },
+        "bono": {
+          "horas": 12,
+          "precio": 300,
+          "base": 27.5
+        }
+      },
+      {
+        "letra": "OPCIÓN 2",
+        "nombre": "Online",
+        "sub": "(o también en casa del profesor)",
+        "destacado": false,
+        "prueba": {
+          "horas": 2,
+          "precio": 44,
+          "tachado": 50
+        },
+        "bono": {
+          "horas": 12,
+          "precio": 285,
+          "base": 25
+        }
+      }
+    ]
+  },
+  "informe_ejemplo": {
+    "asignatura": "Análisis bioquímico",
+    "mes": "Noviembre 2026",
+    "comparado": "octubre",
+    "nota": "7,0",
+    "sesiones": 8,
+    "horas": "12h",
+    "destrezas_label": "Bloques trabajados",
+    "barras": [
+      [
+        "Espectrofotometría",
+        7.0
+      ],
+      [
+        "Otras técnicas",
+        6.5
+      ],
+      [
+        "Cálculos",
+        6.8
+      ]
+    ],
+    "mayor_progreso": "Análisis bioquímico — la espectrofotometría pasó de dudas a hacerse sola",
+    "resumen": "En noviembre has hecho 8 clases sin faltar a ninguna. En espectrofotometría ya resuelves con soltura los cálculos de concentración. En otras técnicas todavía necesitas apoyo con los fundamentos. Diciembre: reforzar esas técnicas antes del examen.",
+    "proxima_sesion": "PRÓXIMA CLASE — MARTES 1",
+    "proxima_sesion_txt": "Cálculos de concentración con la ley de Lambert-Beer.",
+    "horario": "Lunes y miércoles, 17:00–18:30 · en tu casa",
+    "temas": [
+      [
+        "Espectrofotometría",
+        2.0
+      ],
+      [
+        "Otras técnicas",
+        1.8
+      ],
+      [
+        "Cálculos",
+        1.2
+      ],
+      [
+        "Repaso",
+        0.5
+      ]
+    ],
+    "fuertes": [
+      "Espectrofotometría consolidada",
+      "Muy ordenada al organizar el temario"
+    ],
+    "atencion": [
+      "Otras técnicas: fundamentos",
+      "Cálculos: unidades y diluciones"
+    ],
+    "casa": [
+      "Repasar un apartado del temario cada día",
+      "Resolver 3 ejercicios de cálculo a la semana"
+    ],
+    "semanas": [
+      5.8,
+      6.3,
+      6.8,
+      7.2
+    ],
+    "metricas": [
+      [
+        "76%",
+        "Comprensión"
+      ],
+      [
+        "81%",
+        "Constancia"
+      ],
+      [
+        "62%",
+        "Autonomía"
+      ]
+    ],
+    "evol": [
+      [
+        "Resolución de problemas",
+        "Octubre: 40%",
+        "Noviembre: 70%",
+        "Plantea mejor el enunciado antes de operar."
+      ],
+      [
+        "Autonomía",
+        "Octubre: 35%",
+        "Noviembre: 62%",
+        "Cada vez necesita menos ayuda para empezar."
+      ]
+    ],
+    "conclusion": "Noviembre cierra con una tendencia muy positiva. En diciembre reforzamos las otras técnicas antes del examen.",
+    "cal_mes": [
+      2026,
+      12
+    ],
+    "cal_titulo": "Calendario de preparación — diciembre 2026",
+    "cal_dias_sesion": [
+      1,
+      3
+    ],
+    "cal_examen": 16,
+    "cal_semanas": "3 sem",
+    "cal_semanas_txt": "hasta los exámenes de la 1ª evaluación",
+    "antes": "Sin refuerzo fijo",
+    "ahora": "Clases semanales en casa · Bono de 12h",
+    "alumno": ""
+  },
+  "semana": {
+    "etiqueta": "TU SEMANA",
+    "pill": "PLAN SEMANAL ORIENTATIVO",
+    "titulo": "3 horas a la semana, siguiendo tu temario",
+    "lead": "Dos clases de 1 hora y media a la semana, como mínimo 3 horas, para avanzar por las unidades del módulo. Es orientativo: se adapta a tu horario y a tus exámenes.",
+    "hora_ini": 17,
+    "hora_fin": 19,
+    "alto": 100,
+    "asignaturas": [
+      "UD1 · Técnicas espectrométricas",
+      "UP2 · Otras técnicas de bioquímica"
+    ],
+    "asig_cortas": [
+      "UD1 Espectrometría",
+      "UP2 Otras técnicas"
+    ],
+    "bloques": [
+      [
+        0,
+        17,
+        18.5,
+        0
+      ],
+      [
+        2,
+        17,
+        18.5,
+        1
+      ]
+    ],
+    "extra_titulo": "Más horas, si las necesitas",
+    "extra_texto": "Antes de un examen se pueden sumar clases extra: el profesor ajusta el ritmo según cómo avances.",
+    "repartos": [
+      {
+        "nombre": "Cada semana · 3h",
+        "horas": [
+          1.5,
+          1.5
+        ]
+      }
+    ]
+  }
+}
