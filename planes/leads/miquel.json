@@ -1,0 +1,227 @@
+{
+  "nombre": "Miquel",
+  "etapa": "universidad",
+  "curso": "Ingeniería Forestal · UPV",
+  "asignaturas": [
+    "Refuerzo de asignaturas del grado"
+  ],
+  "voz": "tu",
+  "archivo": "Plan_NEXO_Miquel_Prieto_Ing_Forestal_UPV",
+  "presencial_label": "en tu casa",
+  "cover_card_sub": "Ingeniería Forestal · UPV · 4 horas a la semana",
+  "bonos_recomendados": [
+    {
+      "horas": 12,
+      "frecuencia": ""
+    }
+  ],
+  "modalidades_recomendadas": [
+    "online",
+    "casa_alumno"
+  ],
+  "tarifas_mostrar": [
+    "online",
+    "casa_alumno"
+  ],
+  "textos": {
+    "cover_sub": "Un plan a medida para Miquel: refuerzo de las asignaturas de Ingeniería Forestal en la UPV, a un ritmo recomendado de unas 4 horas a la semana, con clases online o presenciales.",
+    "p2_title": "Así te acompañamos cada mes, Miquel",
+    "p2_sub": "Un profesor especializado, con sesiones centradas en tus asignaturas y ajuste continuo según lo que necesites reforzar.",
+    "c1": "Tienes tu profesor de referencia asignado, con horario fijo cada semana.",
+    "p3_sub": "Tienes tu propio informe de seguimiento dentro del plan, sin coste adicional. Esto es lo que incluye cada mes:",
+    "informe_h2": "Un informe real para ti, Miquel",
+    "p4_pill": "ASÍ LO VERÁS TÚ",
+    "p4_sub": "Cuatro pantallas de ejemplo del informe que recibirás en tu área privada.",
+    "p10_sub": "Escríbenos para reservar tu bono de prueba y empezar cuanto antes.",
+    "gestiones": "GESTIONES A TU CARGO"
+  },
+  "dos_opciones": {
+    "etiqueta": "TUS OPCIONES",
+    "pill": "MODALIDAD",
+    "titulo": "Dos formas de prepararte",
+    "lead": "En las dos empiezas con un bono de prueba de 2 horas y después pasas al bono de 12 horas. Elige la modalidad que mejor te encaje.",
+    "pie": "Sin permanencia: pagas por adelantado el bono de horas. Solo pagas las horas de clase que se dan.",
+    "opciones": [
+      {
+        "letra": "OPCIÓN 1",
+        "nombre": "Online",
+        "sub": "Clases por videollamada",
+        "destacado": false,
+        "prueba": {
+          "horas": 2,
+          "precio": 44,
+          "tachado": 50
+        },
+        "bono": {
+          "horas": 12,
+          "precio": 285,
+          "base": 25
+        }
+      },
+      {
+        "letra": "OPCIÓN 2",
+        "nombre": "Presencial en tu casa",
+        "sub": "El profesor va a tu domicilio",
+        "destacado": false,
+        "prueba": {
+          "horas": 2,
+          "precio": 49,
+          "tachado": 55
+        },
+        "bono": {
+          "horas": 12,
+          "precio": 300,
+          "base": 27.5
+        }
+      }
+    ]
+  },
+  "informe_ejemplo": {
+    "asignatura": "Matemáticas y Física",
+    "mes": "Noviembre 2026",
+    "comparado": "octubre",
+    "nota": "7,0",
+    "sesiones": 8,
+    "horas": "16h",
+    "destrezas_label": "Bloques trabajados",
+    "barras": [
+      [
+        "Matemáticas",
+        7.0
+      ],
+      [
+        "Física",
+        6.5
+      ],
+      [
+        "Problemas",
+        6.8
+      ]
+    ],
+    "mayor_progreso": "Matemáticas — las derivadas pasaron de dudas a hacerse solas",
+    "resumen": "En noviembre has hecho 16 horas de clase sin faltar a ninguna. En Matemáticas ya dominas las derivadas. En Física todavía necesitas apoyo con la cinemática. Diciembre: reforzar Física antes de los parciales.",
+    "proxima_sesion": "PRÓXIMA CLASE — MARTES 1",
+    "proxima_sesion_txt": "Física: cinemática. Matemáticas: integrales.",
+    "horario": "Martes y jueves, 17:00–19:00",
+    "temas": [
+      [
+        "Matemáticas",
+        2.0
+      ],
+      [
+        "Física",
+        1.8
+      ],
+      [
+        "Problemas",
+        1.2
+      ],
+      [
+        "Repaso",
+        0.5
+      ]
+    ],
+    "fuertes": [
+      "Derivadas consolidadas",
+      "Muy constante: no ha faltado a ninguna clase"
+    ],
+    "atencion": [
+      "Física: cinemática",
+      "Problemas: plantear el enunciado"
+    ],
+    "casa": [
+      "3 problemas a la semana",
+      "Repasar los apuntes de clase"
+    ],
+    "semanas": [
+      5.8,
+      6.3,
+      6.8,
+      7.2
+    ],
+    "metricas": [
+      [
+        "76%",
+        "Comprensión"
+      ],
+      [
+        "81%",
+        "Constancia"
+      ],
+      [
+        "62%",
+        "Autonomía"
+      ]
+    ],
+    "evol": [
+      [
+        "Resolución de problemas",
+        "Octubre: 40%",
+        "Noviembre: 70%",
+        "Plantea mejor el enunciado antes de operar."
+      ],
+      [
+        "Autonomía",
+        "Octubre: 35%",
+        "Noviembre: 62%",
+        "Cada vez necesita menos ayuda para empezar."
+      ]
+    ],
+    "conclusion": "Noviembre cierra con una tendencia muy positiva. En diciembre reforzamos Física antes de los parciales.",
+    "cal_mes": [
+      2026,
+      12
+    ],
+    "cal_titulo": "Calendario de preparación — diciembre 2026",
+    "cal_dias_sesion": [
+      1,
+      3
+    ],
+    "cal_examen": 16,
+    "cal_semanas": "3 sem",
+    "cal_semanas_txt": "hasta los exámenes de la 1ª evaluación",
+    "antes": "Sin refuerzo fijo",
+    "ahora": "Clases semanales en casa · Bono de 12h",
+    "alumno": ""
+  },
+  "nombre_completo": "Miquel Prieto",
+  "semana": {
+    "etiqueta": "TU SEMANA",
+    "pill": "RITMO RECOMENDADO",
+    "titulo": "Unas 4 horas a la semana",
+    "lead": "Dos clases de 2 horas a la semana, como ritmo recomendado para llevar tus asignaturas al día. Es orientativo: se adapta a tu horario y a tus exámenes.",
+    "hora_ini": 17,
+    "hora_fin": 19,
+    "alto": 100,
+    "asignaturas": [
+      "Clase de refuerzo"
+    ],
+    "asig_cortas": [
+      "Clase de refuerzo"
+    ],
+    "bloques": [
+      [
+        1,
+        17,
+        19,
+        0
+      ],
+      [
+        3,
+        17,
+        19,
+        0
+      ]
+    ],
+    "extra_titulo": "Calendario orientativo",
+    "extra_texto": "Los días, las horas y las asignaturas de cada clase son una propuesta: el profesor las ajusta según cómo avances y tus parciales.",
+    "repartos": [
+      {
+        "nombre": "Cada semana · 4h",
+        "horas": [
+          4
+        ]
+      }
+    ]
+  }
+}
