@@ -112,7 +112,7 @@
     "lead": "Clases online de Python y R con un profesor especializado, asignado en 24–48 horas. Primero una prueba y después el bono de 12 horas.",
     "prueba": {
       "horas": 2,
-      "precio": 44,
+      "precio": 46,
       "tachado": 50,
       "texto": "Dos horas online para conocer al profesor, ver en qué punto estás en Python y R y dejar fijado tu plan hasta final de año. Recomendado al 100%."
     },
@@ -134,7 +134,7 @@
     ],
     "resumen": [
       "Clases online de Python y R con un profesor especializado, asignado en 24–48 horas.",
-      "Primero, bono de prueba de 2h (44 €) y, después, bono de 12h (285 €).",
+      "Primero, bono de prueba de 2h (46 €) y, después, bono de 12h (285 €).",
       "El bono de 12h es el que sale más económico por hora: 23,75 €/h."
     ],
     "quote": "Un plan a medida para llegar a final de año con Python y R bajo control.",

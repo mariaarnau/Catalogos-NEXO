@@ -113,7 +113,7 @@
     "lead": "Tu profesor ya está asignado. Elige empezar con el bono de prueba o directamente con el de 12 horas.",
     "prueba": {
       "horas": 2,
-      "precio": 44,
+      "precio": 46,
       "tachado": 50,
       "texto": "Dos horas online para conocer al profesor, ver en qué punto estás en Física 1 y Teoría de circuitos y dejar fijado tu plan hasta el examen del 2 de noviembre. Recomendado al 100%."
     },
@@ -135,7 +135,7 @@
     ],
     "resumen": [
       "Clases online de Física 1 y Teoría de circuitos con tu profesor ya asignado.",
-      "Primero, bono de prueba de 2h (44 €) y, después, bono de 12h (285 €); también puedes empezar directamente con el de 12h.",
+      "Primero, bono de prueba de 2h (46 €) y, después, bono de 12h (285 €); también puedes empezar directamente con el de 12h.",
       "El bono de 12h es el que sale más económico por hora: 23,75 €/h."
     ],
     "quote": "Un plan a medida para que Paula llegue al examen del 2 de noviembre y al de enero con Física 1 y Teoría de circuitos bajo control.",

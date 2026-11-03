@@ -35,7 +35,7 @@ TARIFAS = {
                                  "casa_alumno": {2: 46, 4: 98, 8: 195, 12: 285}}},
     "universidad": {"nombre": "Universidad", "corto": "Universidad",
                     "base": {"online": 25, "casa_alumno": 27.5},
-                    "precios": {"online": {2: 44, 4: 98, 8: 195, 12: 285},
+                    "precios": {"online": {2: 46, 4: 98, 8: 195, 12: 285},
                                 "casa_alumno": {2: 49, 4: 105, 8: 205, 12: 300}}},
 }
 for _t in TARIFAS.values():
