@@ -114,3 +114,30 @@ h3 small { font-family:'Liberation Sans',sans-serif; font-weight:400; color:var(
 .cmpx .bl.ref .nota { display:none }
 .page.cmpx { padding-top:10mm } .cmpx .rule { margin:6px 0 10px } .cmpx .pill { margin-bottom:6px }
 .cmpx .rsw .rs { margin-bottom:6px } .cmpx .temas .tema { padding:2px 0 } .cmpx .bl h4 { margin-bottom:3px }
+
+/* ---------- bloques nuevos ---------- */
+.mini { margin-bottom:9px } .mini .mh { display:flex; justify-content:space-between; align-items:baseline }
+.mini .mh span { font-size:8pt; color:var(--mut) } .mini .ml { list-style:none; margin-top:4px }
+.mini .ml li { display:flex; gap:8px; font-size:9.2pt; margin:2px 0 } .mini .ml li i { font-style:normal; font-weight:700; color:var(--gold); width:12px; flex:none }
+.comp table { width:100%; border-collapse:collapse; margin-top:4px; font-size:9pt }
+.comp th { text-align:left; font-size:7pt; letter-spacing:.1em; color:var(--mut); padding:4px 6px; border-bottom:1px solid var(--line) }
+.comp td { padding:6px; border-bottom:1px solid var(--line); vertical-align:top } .comp td.ca { font-weight:700; width:24% }
+.comp td.ct2 { width:16px; font-size:11pt; text-align:center }
+.exr { display:flex; gap:12px; align-items:center; padding:7px 0; border-bottom:1px solid var(--line) } .exr:last-of-type { border-bottom:0 }
+.exr > b { flex:none; width:44px; text-align:center; font-family:'Liberation Serif',serif; font-size:16pt; color:var(--mut); line-height:1 }
+.exr > b small { display:block; font-family:'Liberation Sans',sans-serif; font-size:6.8pt; letter-spacing:.1em; text-transform:uppercase }
+.exr.fut > b { color:var(--gold) } .exr h4 { font-size:10pt } .exr p { font-size:8.6pt; color:var(--mut) }
+
+/* ---------- tema claro (fondo blanco) ---------- */
+body.claro { background:#fff; color:#1d2438;
+  --gold:#a8802a; --gold2:#c9a54f; --mut:#5c6274; --dim:#8a8f9c; --blue:#2f64b8; --green:#1f8a5b; --card:#f6f7fb; --line:#e1e5ee }
+.claro .page { background:#fff } .claro .cover { background:linear-gradient(180deg,#eef2f9 0%,#ffffff 42%) }
+.claro .page:not(.cover)::before { content:""; position:absolute; left:0; right:0; top:0; height:5px; background:linear-gradient(90deg,#0a1226,#2f64b8) }
+.claro h1, .claro h2, .claro h3, .claro .ct, .claro .fgrid b, .claro .pr h4, .claro .exr h4 { color:#0a1226 }
+.claro .txt, .claro .rs p, .claro .bl li, .claro .pr p, .claro .mini .ml li { color:#2a3146 }
+.claro .kpi, .claro .card, .claro .bl, .claro .pr, .claro .ficha, .claro .cc { box-shadow:0 1px 2px rgba(10,18,38,.05) }
+.claro .destaque { background:linear-gradient(90deg,#0d1b3d,#1f3f84); border-color:#0d1b3d } .claro .destaque small { color:#a9c6f2 }
+.claro .barra { background:rgba(10,18,38,.08) } .claro .hb i.x { background:repeating-linear-gradient(135deg,rgba(10,18,38,.12) 0 3px,transparent 3px 7px); border-color:rgba(10,18,38,.2) }
+.claro .cc circle { fill:#fff } .claro .cc .gl { stroke:rgba(10,18,38,.09) } .claro pattern line { stroke:rgba(10,18,38,.14) }
+.claro .cc rect { stroke:rgba(10,18,38,.2) } .claro .cpie { color:#8a8f9c }
+.claro .mej { border-left-color:#c0563f } .claro .mej h4, .claro .mej li i { color:#c0563f }

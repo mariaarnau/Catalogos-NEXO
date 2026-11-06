@@ -11,7 +11,7 @@ import base64, calendar, datetime as dt, html, json, subprocess, sys
 from pathlib import Path
 
 AQUI = Path(__file__).parent
-CHROME = "/opt/pw-browsers/chromium-1194/chrome-linux/chrome"
+CHROME = next(iter(sorted(__import__("glob").glob("/opt/pw-browsers/chromium-*/chrome-linux*/chrome"))), "chromium")
 MESES = ["", "enero", "febrero", "marzo", "abril", "mayo", "junio", "julio",
          "agosto", "septiembre", "octubre", "noviembre", "diciembre"]
 TENDENCIA = {"sube": ("▲", "#7fcfa0"), "baja": ("▼", "#e58a7b"),
@@ -19,6 +19,7 @@ TENDENCIA = {"sube": ("▲", "#7fcfa0"), "baja": ("▼", "#e58a7b"),
 ACCION = {"MANTENER": "#8fb8ec", "CONSOLIDAR": "#7fcfa0", "REFORZAR": "#e9d18f",
           "AUMENTAR": "#e9d18f", "REDUCIR": "#a49f8e", "AÑADIR": "#c3a6ec", "AVANZAR": "#7fcfa0", "ORGANIZAR": "#c3a6ec"}
 EJEMPLO = False
+NOTA_REFUERZO = "El profesor irá marcando las tareas necesarias en cada sesión."
 
 e = lambda s: html.escape(str(s))
 
@@ -204,13 +205,13 @@ def html_autonomia(a):
     barras = "".join(barra(n, x) for n, x in enumerate(a["autonomia_por_sesion"], 1))
     sub = a.get("autonomia_sub", "% resuelto solo por sesión")
     nota_g = a.get("autonomia_nota", "Dorado más intenso = mayor autonomía · % = ejercicios resueltos sin ayuda")
-    return f'<div class="card"><h3>Evolución de autonomía en el mes <small>({e(sub)})</small></h3><div class="cols">{barras}</div><p class="nota">{e(nota_g)}</p></div>'
+    return f'<div class="card"><h3>{e(a.get("grafico_titulo", "Evolución de autonomía en el mes"))} <small>({e(sub)})</small></h3><div class="cols">{barras}</div><p class="nota">{e(nota_g)}</p></div>'
 
 
 def html_detalle(a):
     ref = ""
     if a.get("refuerzo"):
-        ref = f'<div class="bl ref"><h4>REFUERZO RECOMENDADO</h4><p class="nota">El profesor irá marcando las tareas necesarias en cada sesión.</p><ul>{lista(a["refuerzo"], "›")}</ul></div>'
+        ref = f'<div class="bl ref"><h4>REFUERZO RECOMENDADO</h4><p class="nota">{NOTA_REFUERZO}</p><ul>{lista(a["refuerzo"], "›")}</ul></div>'
     graf = html_autonomia(a)
     fila = (f'<div class="dos"><div class="card temas">{html_temas(a)}</div>{graf}</div>' if graf
             else f'<div class="card temas">{html_temas(a)}</div>')
@@ -226,10 +227,58 @@ def html_evolucion(d):
     return evo
 
 
+def html_mini(a):
+    filas = "".join(f'<li><i>{m}</i><span>{e(t)}</span></li>' for clave, m in (("puntos_fuertes", "＋"), ("a_tener_en_cuenta", "!"), ("puntos_a_mejorar", "→")) for t in a.get(clave, []))
+    temas = " · ".join(f'{t["nombre"]} ({t["detalle"]})' if t.get("detalle") else t["nombre"] for t in a["temas"])
+    return (f'<div class="card mini"><div class="mh"><h3>{e(a["nombre"])}</h3><span>{e(a.get("meta", ""))}</span></div>'
+            f'<p class="nota">{e(temas)}</p><ul class="ml">{filas}</ul></div>')
+
+
+def html_comparativa(d):
+    c = d.get("comparativa")
+    if not c:
+        return f'<div class="card"><p class="txt">{e(d["sin_mes_anterior"])}</p></div>' if d.get("sin_mes_anterior") else ""
+    filas = ""
+    for f in c["filas"]:
+        sim, col = TENDENCIA[f["tendencia"]]
+        filas += (f'<tr><td class="ca">{e(f["aspecto"])}</td><td>{e(f["antes"])}</td><td>{e(f["ahora"])}</td>'
+                  f'<td class="ct2" style="color:{col}">{sim}</td></tr>')
+    return (f'<div class="card comp"><h3>{e(c["titulo"])}</h3><table><tr><th></th><th>{e(c["col_antes"])}</th><th>{e(c["col_ahora"])}</th><th></th></tr>{filas}</table>'
+            + (f'<p class="nota" style="margin-top:6px">{e(c["nota"])}</p>' if c.get("nota") else "") + '</div>')
+
+
+def html_examenes(d, informe):
+    filas = ""
+    for x in sorted(d["examenes_lista"], key=lambda z: z["fecha"]):
+        f = dt.date.fromisoformat(x["fecha"])
+        dias = (f - informe).days
+        if x.get("resultado"):
+            estado = f'Resultado: {x["resultado"]}'
+        elif dias < 0:
+            estado = "Ya realizado · resultado pendiente de registrar"
+        elif dias == 0:
+            estado = "Es hoy"
+        else:
+            estado = f"Dentro de {dias} días"
+        filas += (f'<div class="exr{" fut" if dias >= 0 else ""}"><b>{f.day}<small>{MESES[f.month][:3]}</small></b>'
+                  f'<div><h4>{e(x["asignatura"])} · {e(x["tema"])}</h4><p>{e(estado)}</p></div></div>')
+    texto = f'<p class="txt" style="margin-top:8px">{e(d["texto_examen"])}</p>' if d.get("texto_examen") else ""
+    return f'<div class="card"><h3>Exámenes</h3>{filas}{texto}</div>'
+
+
 def construir(d):
-    global EJEMPLO
+    global EJEMPLO, NOTA_REFUERZO
     EJEMPLO = bool(d.get("ejemplo"))
-    logo = "data:image/png;base64," + base64.b64encode((AQUI / "assets/logo_nexo.png").read_bytes()).decode()
+    if d.get("tema") == "claro":
+        NOTA_REFUERZO = "Las tareas concretas se irán marcando en cada sesión."
+    claro = d.get("tema") == "claro"
+    if claro:
+        COLORES.update({"blue": "#2f64b8", "green": "#1f8a5b", "gold": "#a8802a", "purple": "#7048b8"})
+        ACCION.update({"MANTENER": "#2f64b8", "CONSOLIDAR": "#1f8a5b", "REFORZAR": "#a8802a", "AUMENTAR": "#a8802a",
+                       "REDUCIR": "#6b7080", "AÑADIR": "#7048b8", "AVANZAR": "#1f8a5b", "ORGANIZAR": "#7048b8"})
+        TENDENCIA.update({"sube": ("▲", "#1f8a5b"), "baja": ("▼", "#c0563f"), "estable": ("■", "#2f64b8"),
+                          "irregular": ("●", "#a8802a"), "inicial": ("◆", "#2f64b8")})
+    logo = "data:image/png;base64," + base64.b64encode((AQUI / ("assets/logo_nexo_oscuro.png" if claro else "assets/logo_nexo.png")).read_bytes()).decode()
     mes, anio = d["mes"], d["anio"]
     mes_txt = f"{MESES[mes].capitalize()} {anio}"
     sig_mes, sig_anio = (mes % 12) + 1, anio + (mes == 12)
@@ -241,7 +290,7 @@ def construir(d):
     tot_prev = sum(a.get("sesiones_previstas", a["sesiones"]) for a in asigs)
     tot_h = d.get("horas_totales") or sum(a["horas"] for a in asigs)
     compacto = d.get("formato") == "compacto"
-    fusion = compacto and len(asigs) == 1
+    fusion = compacto and len(asigs) == 1 and not d.get("sin_fusion")
     auto = [(x["v"] if isinstance(x, dict) else x) for a in asigs for x in a.get("autonomia_por_sesion", [])]
     auto = [v for v in auto if v is not None]
     paginas = []
@@ -252,6 +301,19 @@ def construir(d):
         + kpi(f'{tot_ses}/{tot_prev}', 'ASISTENCIA') + kpi(hm(tot_h/tot_ses), 'DURACIÓN MEDIA'))
 
     paginas.append(portada(d, logo, mes_txt, tot_ses, tot_h))
+
+    minis = [x for x in asigs if x.get("mini")] if not fusion else []
+    intro_evo = d.get("evolucion_intro", "") if d.get("comparativa") else (d.get("sin_mes_anterior") or d.get("evolucion_intro", ""))
+    evo_cards = (f'<div class="pill" style="margin-top:4px">EVOLUCIÓN DENTRO DEL MES</div><p class="nota">{e(intro_evo)}</p>'
+                 f'<div class="evg{" dosc" if len(d.get("evolucion", [])) > 2 else ""}">{html_evolucion(d)}</div>') if d.get("evolucion") else ""
+    hay_evo = compacto and d.get("evolucion_pagina_propia") and (d.get("comparativa") or d.get("evolucion"))
+    junto_evo = hay_evo and d.get("evo_en_resumen") and not fusion
+    junto_minis = bool(minis) and d.get("minis_en_resumen")
+    bloque_evo_res = ((f'<div class="pill" style="margin-top:14px">{e(d.get("comparativa_pill", "EVOLUCIÓN"))}</div>{html_comparativa(d)}'
+                       if d.get("comparativa") else '<div style="height:10px"></div>') + evo_cards) if junto_evo else ""
+    bloque_minis_res = (f'<div class="pill" style="margin-top:14px">{e(d.get("mini_pill", "OTRAS ASIGNATURAS"))}</div>'
+                        '<p class="nota leyenda-mini">＋ punto fuerte &nbsp;·&nbsp; ! a tener en cuenta &nbsp;·&nbsp; → a mejorar</p>'
+                        + "".join(html_mini(x) for x in minis)) if junto_minis else ""
 
     # 1 · Resumen
     def grupo(g):
@@ -273,6 +335,8 @@ def construir(d):
 <h2>Resumen del mes</h2>{resumen_html}"""
     if fusion:
         paginas.append(pag(cabecera_res + html_detalle(asigs[0]), logo=logo, clase="cmpx"))
+    elif compacto and d.get("evolucion_pagina_propia"):
+        paginas.append(pag(cabecera_res + bloque_evo_res + bloque_minis_res, logo=logo, clase="cmpx"))
     elif compacto:
         evo_c = (f'<div class="pill" style="margin-top:6px">EVOLUCIÓN DENTRO DEL MES</div><p class="nota">{e(d["evolucion_intro"])}</p>'
                  f'<div class="evg{" dosc" if len(d["evolucion"]) > 2 else ""}">{html_evolucion(d)}</div>')
@@ -286,7 +350,7 @@ def construir(d):
 <div class="rsw" style="margin-top:14px">{"".join(grupo(g) for g in grupos[1:])}</div>""", logo=logo))
 
     # 2 · Una página por asignatura
-    for a in ([] if fusion else asigs):
+    for a in ([] if fusion else [x for x in asigs if not x.get("mini")]):
         kps = a.get("kpis")
         kp_a = "".join(kpi(v, l) for v, l in kps) if kps else (
             kpi(horas(a['horas']), 'HORAS DEDICADAS') + kpi(a['sesiones'], 'SESIONES TRABAJADAS') + kpi(hm(a['horas']/a['sesiones']), 'MEDIA POR SESIÓN'))
@@ -295,6 +359,20 @@ def construir(d):
 <h1>{e(a['nombre'])}</h1><p class="sub">{e(a['profesor'])} · {e(a['horario'])}</p>
 <div class="kpis k3">{kp_a}</div>
 {html_detalle(a)}""", logo=logo))
+
+    if minis and not junto_minis:
+        paginas.append(pag(f"""
+<div class="pill">{e(d.get("mini_pill", "OTRAS ASIGNATURAS"))}</div>
+<h1>{e(d.get("mini_titulo", "Otras asignaturas del mes"))}</h1><p class="sub">Asignaturas con pocas sesiones en {MESES[mes]}: una primera impresión.</p>
+<p class="nota leyenda-mini">＋ punto fuerte &nbsp;·&nbsp; ! a tener en cuenta &nbsp;·&nbsp; → a mejorar</p>
+{"".join(html_mini(x) for x in minis)}""", logo=logo))
+
+    # Evolución y comparativa en página propia
+    if hay_evo and not junto_evo:
+        paginas.append(pag(f"""
+<div class="pill">{e(d.get("comparativa_pill", "EVOLUCIÓN"))}</div>
+<h1>{e(d.get("comparativa_h1", "Cómo ha evolucionado"))}</h1>
+{html_comparativa(d)}{evo_cards}""", logo=logo))
 
     # 3 · Conclusiones + evolución
     if not compacto:
@@ -333,7 +411,9 @@ def construir(d):
 {cal_html}<p class="txt">{e(d['texto_examen'])}</p>{plan}</div>"""
         else:
             bloque_ex = f'<div class="card"><p class="txt"><b>Examen de {e(x["asignatura"])} ({e(x["tema"])}) — {fx.day} de {MESES[fx.month]}</b></p><p class="txt">{e(d["texto_examen"])}</p></div>'
-    if not ex and d.get("nota_proximo_mes"):
+    if d.get("examenes_lista"):
+        bloque_ex = html_examenes(d, informe)
+    elif not ex and d.get("nota_proximo_mes"):
         bloque_ex = f'<div class="card"><p class="txt">{e(d["nota_proximo_mes"])}</p></div>'
     bc = d.get("base_cientifica")
     base = (f'<div class="card refc"><h3>Base científica de las recomendaciones</h3><p class="nota">{e(bc["texto"])}</p>'
@@ -369,7 +449,8 @@ def construir(d):
 {org}{semana}{base}{cierre}""", logo=logo))
 
     css = (AQUI / "estilo.css").read_text()
-    return f"<!doctype html><html lang='es'><meta charset='utf-8'><style>{css}</style><body>{''.join(paginas)}</body></html>"
+    clase_body = ' class="claro"' if claro else ''
+    return f"<!doctype html><html lang='es'><meta charset='utf-8'><style>{css}</style><body{clase_body}>{''.join(paginas)}</body></html>"
 
 
 if __name__ == "__main__":
