@@ -37,10 +37,9 @@ def page_grupos():
 def page_incluye():
     it = [("01", "Profesor/a de inglés de Nexo", "Especializado en inglés, el mismo para los dos grupos durante todo el curso."),
           ("02", "Sustitución garantizada", "Si el profesor no puede asistir, enviamos a otro de nuestro equipo en Zaragoza: ningún jueves se queda sin clase."),
-          ("03", "Nuestra App, por grupos", "Un espacio para cada grupo donde el profesor hace tests cortos, envía tareas y material a todos y propone juegos dinámicos para practicar entre clase y clase."),
-          ("04", "Clases y materiales preparados", "Cada sesión llega planificada, con el material de trabajo incluido."),
-          ("05", "Seguimiento con la asociación", "Os contamos cómo avanza cada grupo y ajustamos las clases a lo que necesitéis."),
-          ("06", "Precio fijo", "La cuota no cambia aunque cada grupo varíe en 2 alumnos arriba o abajo.")]
+          ("03", "Clases y materiales preparados", "Cada sesión llega planificada, con el material de trabajo incluido."),
+          ("04", "Seguimiento con la asociación", "Os contamos cómo avanza cada grupo y ajustamos las clases a lo que necesitéis."),
+          ("05", "Mismo precio por hora", "El precio no cambia aunque varíe el número de alumnos de cada grupo.")]
     cards = "".join(f'<div class="ic"><em>{n}</em><b>{e(a)}</b><p>{e(b)}</p></div>' for n, a, b in it)
     return f'''<section class="page glow">
   <div class="hdr"><img class="logo-sm" src="{L}"><span class="hdr-r">QUÉ INCLUYE</span></div><div class="rule"></div>
@@ -52,18 +51,18 @@ def page_incluye():
 </section>'''
 
 def page_tarifa():
-    pts = ["Cuota mensual fija por los dos grupos (2 horas cada jueves).", "La cuota es la misma todos los meses: ya incluye festivos y vacaciones.",
-           "Noviembre de 2026 se calcula de forma proporcional a las semanas de clase.", "Desde noviembre de 2026 hasta junio de 2027.",
+    pts = ["30 € por cada hora de clase, sea del grupo que sea.", "Cada jueves hay 2 horas de clase (una por grupo): 60 € por jueves.",
+           "Solo se pagan las horas de clase que se dan.", "Desde noviembre de 2026 hasta junio de 2027.",
            "Empezamos la semana siguiente a vuestra confirmación."]
     lis = "".join(f"<li>{e(x)}</li>" for x in pts)
     return f'''<section class="page glow">
   <div class="hdr"><img class="logo-sm" src="{L}"><span class="hdr-r">TARIFA</span></div><div class="rule"></div>
   <div class="pill gold">VUESTRA TARIFA</div>
-  <h2>Una cuota mensual, los dos grupos</h2>
-  <p class="lead">Un precio sencillo y fijo, pensado para una asociación.</p>
+  <h2>Un precio sencillo por hora de clase</h2>
+  <p class="lead">Un precio claro y fijo, pensado para una asociación.</p>
   <div class="tf">
-    <div class="tf-a"><small>CUOTA MENSUAL · LOS DOS GRUPOS</small><b>480 €<i>/mes</i></b><span>Exento de IVA</span></div>
-    <div class="tf-b"><small>EQUIVALE DE MEDIA A</small><b>≈ 6,9 €</b><span>por alumno y hora</span></div>
+    <div class="tf-a"><small>PRECIO POR HORA DE CLASE</small><b>30 €<i>/hora</i></b><span>Exento de IVA</span></div>
+    <div class="tf-b"><small>CADA JUEVES · 2 HORAS</small><b>60 €</b><span>los dos grupos</span></div>
   </div>
   <ul class="dash tfl">{lis}</ul>
   {footer("Nexo Académico · Propuesta para la Asociación Cultural Cofisa")}
@@ -87,12 +86,13 @@ CSS_X = """
 .pg span { color: #8fb8ec; font-size: 14px; }
 .pg ul { list-style: none; margin-top: 18px; } .pg li { color: #c9c6ba; font-size: 14.5px; line-height: 1.45; padding: 9px 0 9px 22px; border-top: 1px solid #1d2744; position: relative; }
 .pg li::before { content: "✓"; position: absolute; left: 0; color: #e9d18f; font-weight: 700; }
-.ics { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-top: 28px; }
-.ic { border: 1px solid #2a3350; border-radius: 16px; padding: 20px 20px 18px; background: #0e1629; }
+.ics { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; margin-top: 28px; }
+.ic { grid-column: span 2; border: 1px solid #2a3350; border-radius: 16px; padding: 20px 20px 18px; background: #0e1629; }
 .ic em { font: italic 700 15px 'Liberation Serif', serif; color: #e9d18f; }
 .ic b { display: block; font: 700 18px 'Liberation Serif', serif; margin: 8px 0 6px; }
 .ic p { color: #a49f8e; font-size: 13.5px; line-height: 1.42; }
-.ic:nth-child(2), .ic:nth-child(3) { border-color: #c9a24b; background: linear-gradient(160deg, #2a2618, #0e1629); }
+.ic:nth-child(1), .ic:nth-child(2) { grid-column: span 3; }
+.ic:nth-child(1), .ic:nth-child(2) { border-color: #c9a24b; background: linear-gradient(160deg, #2a2618, #0e1629); }
 .tf { display: grid; grid-template-columns: 1.3fr 1fr; gap: 22px; margin-top: 30px; }
 .tf > div { border-radius: 18px; padding: 28px 30px; }
 .tf-a { border: 1px solid #c9a24b; background: linear-gradient(160deg, #2a2618, #0e1629); }
