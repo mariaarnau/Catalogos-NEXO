@@ -1,0 +1,247 @@
+{
+  "nombre": "Josué",
+  "etapa": "universidad",
+  "curso": "Relaciones Laborales · UOC",
+  "asignaturas": [
+    "Fundamentos estadísticos"
+  ],
+  "voz": "tu",
+  "archivo": "Plan_NEXO_Josue_UOC_Fundamentos_Estadisticos",
+  "cover_card_sub": "Relaciones Laborales · UOC · Fundamentos estadísticos · Online",
+  "presencial_label": "online",
+  "bonos_recomendados": [
+    {
+      "horas": 12,
+      "frecuencia": "3h a la semana"
+    }
+  ],
+  "modalidades_recomendadas": [
+    "online"
+  ],
+  "tarifas_mostrar": [
+    "online"
+  ],
+  "textos": {
+    "cover_sub": "Un plan a medida para Josué: entender de verdad Fundamentos estadísticos y llegar al examen de enero de la UOC con seguridad, con clases online que se adaptan a tus turnos.",
+    "p2_title": "Así te acompañamos cada mes, Josué",
+    "p2_sub": "Un profesor especializado en Estadística, con sesiones centradas en tu asignatura y ajuste continuo según lo que necesites reforzar.",
+    "c1": "Tienes tu profesor de referencia asignado, especializado en Estadística. Cada semana cuadráis las clases según tu turno.",
+    "p3_sub": "Tienes tu propio informe de seguimiento dentro del plan, sin coste adicional. Esto es lo que incluye cada mes:",
+    "informe_h2": "Un informe real para ti, Josué",
+    "p4_pill": "ASÍ LO VERÁS TÚ",
+    "p4_sub": "Cuatro pantallas de ejemplo del informe que recibirás en tu área privada.",
+    "p10_sub": "Escríbenos para reservar tu bono de prueba y empezar esta misma semana.",
+    "gestiones": "GESTIONES A TU CARGO"
+  },
+  "trayectoria": {
+    "etiqueta": "HOJA DE RUTA",
+    "pill": "FUNDAMENTOS ESTADÍSTICOS · UOC",
+    "titulo": "De la base al examen de enero",
+    "lead": "Primero entender los conceptos; después practicar con ejercicios y exámenes de la UOC; al final, simulacros. Sin horario fijo: cada semana cuadras las clases según tu turno. Fechas orientativas.",
+    "meses": [
+      "Nov",
+      "Dic",
+      "Ene"
+    ],
+    "colores": [
+      "#5b8ee0",
+      "#7fcfa0",
+      "#e9d18f"
+    ],
+    "tramos": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        1.6
+      ],
+      [
+        1.6,
+        2
+      ]
+    ],
+    "bloques": [
+      {
+        "span": 1,
+        "simbolo": "x̄",
+        "nombre": "La base",
+        "foco": "Qué es cada concepto y qué te piden en cada ejercicio: descriptiva, probabilidad y distribuciones.",
+        "fondo": "#12234a",
+        "borde": "#5b8ee0"
+      },
+      {
+        "span": 1,
+        "simbolo": "✓",
+        "nombre": "Práctica UOC",
+        "foco": "Ejercicios, PECs y exámenes de la UOC resueltos paso a paso.",
+        "fondo": "#13302a",
+        "borde": "#7fcfa0"
+      },
+      {
+        "span": 1,
+        "simbolo": "★",
+        "nombre": "Simulacros",
+        "foco": "Repaso final y exámenes cronometrados antes de enero.",
+        "fondo": "#3a3322",
+        "borde": "#e9d18f"
+      }
+    ],
+    "hitos": [
+      {
+        "nombre": "Base entendida",
+        "pos": 1
+      },
+      {
+        "nombre": "Examen de enero",
+        "pos": 2,
+        "meta": true
+      }
+    ]
+  },
+  "pasos": {
+    "base": 25,
+    "base_txt": "",
+    "modalidad_txt": "Online",
+    "nota": "",
+    "who": "Relaciones Laborales · UOC · Fundamentos estadísticos · Online",
+    "titulo": "Tu plan, en dos pasos",
+    "lead": "Clases online de Estadística, sin horario fijo: cada semana las cuadras con el profesor según tu turno. Primero una prueba y después el bono de 12 horas.",
+    "prueba": {
+      "horas": 2,
+      "precio": 46,
+      "tachado": 50,
+      "texto": "Dos horas online para conocer al profesor, ver en qué punto estás y empezar por la base que te falta. Recomendado al 100%."
+    },
+    "paso2_titulo": "Después, tu bono de 12 horas",
+    "opciones": [
+      {
+        "horas": 12,
+        "precio": 285,
+        "frecuencia": "",
+        "destacado": true,
+        "etiqueta": "RECOMENDADO · MEJOR PRECIO POR HORA",
+        "alt": {
+          "oro": true,
+          "txt": "TU MEJOR OPCIÓN",
+          "hora": "23,75 €/h",
+          "bono": "el mejor precio por hora del curso"
+        }
+      }
+    ],
+    "resumen": [
+      "Clases online de Fundamentos estadísticos, con pantalla compartida para ver los ejercicios juntos.",
+      "Sin horario fijo: cada semana las cuadras con el profesor según tu turno.",
+      "Primero, bono de prueba de 2h (46 €) y, después, bono de 12h (285 €, a 23,75 €/h)."
+    ],
+    "quote": "Un plan a medida para que Josué entienda la Estadística y apruebe en enero.",
+    "sin_mes": true
+  },
+  "informe_ejemplo": {
+    "asignatura": "Fundamentos estadísticos",
+    "mes": "Noviembre 2026",
+    "comparado": "octubre",
+    "nota": "7,0",
+    "sesiones": 6,
+    "horas": "9h",
+    "destrezas_label": "Destrezas trabajadas",
+    "barras": [
+      [
+        "Descriptiva",
+        7.0
+      ],
+      [
+        "Probabilidad",
+        6.5
+      ],
+      [
+        "Distribuciones",
+        6.0
+      ]
+    ],
+    "mayor_progreso": "Estadística — la estadística descriptiva ya se entiende y se resuelve sola",
+    "resumen": "En noviembre has hecho 6 clases. Ya entiendes y calculas sin ayuda la media, la desviación y las tablas de frecuencias. Con la probabilidad todavía necesitas apoyo para plantear los ejercicios. Diciembre: probabilidad y distribuciones con exámenes de la UOC.",
+    "horario": "Según turno · online",
+    "temas": [
+      [
+        "Descriptiva",
+        2.5
+      ],
+      [
+        "Probabilidad",
+        1.8
+      ],
+      [
+        "Distribuciones",
+        1.2
+      ],
+      [
+        "Repaso",
+        0.5
+      ]
+    ],
+    "fuertes": [
+      "Descriptiva consolidada",
+      "Muy constante pese a los turnos"
+    ],
+    "atencion": [
+      "Probabilidad: plantear el ejercicio",
+      "Interpretar los resultados"
+    ],
+    "casa": [
+      "2 ejercicios de examen a la semana",
+      "Explicar con tus palabras cada concepto nuevo"
+    ],
+    "semanas": [
+      5.8,
+      6.3,
+      6.8,
+      7.2
+    ],
+    "metricas": [
+      [
+        "76%",
+        "Comprensión"
+      ],
+      [
+        "81%",
+        "Constancia"
+      ],
+      [
+        "62%",
+        "Autonomía"
+      ]
+    ],
+    "evol": [
+      [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      [
+        "a",
+        "b",
+        "c",
+        "d"
+      ]
+    ],
+    "conclusion": "Noviembre cierra con una tendencia muy positiva. En diciembre trabajamos probabilidad y distribuciones con exámenes de la UOC.",
+    "cal_mes": [
+      2026,
+      12
+    ],
+    "cal_titulo": "x",
+    "cal_dias_sesion": [
+      1
+    ],
+    "cal_examen": 16,
+    "cal_semanas": "3 sem",
+    "cal_semanas_txt": "x",
+    "antes": "x",
+    "ahora": "x",
+    "alumno": "",
+    "proxima_sesion_txt": "Probabilidad: plantear el ejercicio paso a paso."
+  }
+}
