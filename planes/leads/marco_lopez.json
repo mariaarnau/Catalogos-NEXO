@@ -221,13 +221,13 @@
         "destacado": true,
         "prueba": {
           "horas": 2,
-          "precio": 49,
-          "tachado": 55
+          "precio": 54,
+          "tachado": 56
         },
         "bono": {
           "horas": 12,
-          "precio": 300,
-          "base": 27.5
+          "precio": 327,
+          "base": 28
         }
       },
       {
