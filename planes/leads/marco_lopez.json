@@ -1,0 +1,245 @@
+{
+  "nombre": "Marco",
+  "etapa": "universidad",
+  "curso": "Ingeniería Aeroespacial",
+  "asignaturas": [
+    "Termodinámica",
+    "Mecánica clásica"
+  ],
+  "voz": "familia",
+  "archivo": "Plan_NEXO_Marco_Lopez_Ing_Aeroespacial_Termodinamica_Mecanica",
+  "presencial_label": "en vuestra casa",
+  "cover_card_sub": "Ingeniería Aeroespacial · Termodinámica y Mecánica clásica · Presencial en Dos Hermanas",
+  "bonos_recomendados": [
+    {
+      "horas": 12,
+      "frecuencia": ""
+    }
+  ],
+  "modalidades_recomendadas": [
+    "casa_alumno"
+  ],
+  "tarifas_mostrar": [
+    "casa_alumno"
+  ],
+  "textos": {
+    "cover_sub": "Un plan a medida para Marco: Termodinámica hasta su examen de diciembre y Mecánica clásica hasta la convocatoria de enero, con clases presenciales por la mañana en Dos Hermanas.",
+    "p2_title": "Así acompañamos a Marco cada mes",
+    "p2_sub": "Sin burocracia. El profesor registra las sesiones, nuestro equipo analiza los datos y os llega el seguimiento sin que tengáis que pedirlo.",
+    "c1": "Marco tiene su profesor de referencia asignado, especializado en Física, con horario fijo cada semana.",
+    "p3_sub": "Marco tiene su propio informe de seguimiento dentro del plan, sin coste adicional. Esto es lo que incluye cada mes:",
+    "informe_h2": "Un informe real para Marco",
+    "p4_pill": "ASÍ LO VERÉIS VOSOTROS",
+    "p4_sub": "Cuatro pantallas de ejemplo del informe que recibiréis en el área privada de Marco.",
+    "p10_sub": "Escribidnos para reservar el bono de prueba de Marco y empezar cuanto antes.",
+    "gestiones": "GESTIONES A CARGO VUESTRO"
+  },
+  "trayectoria": {
+    "etiqueta": "HOJA DE RUTA",
+    "pill": "INGENIERÍA AEROESPACIAL · 2 H/SEMANA",
+    "titulo": "Dos asignaturas, dos exámenes",
+    "lead": "Unas 2 horas a la semana, por la mañana. Primero Termodinámica hasta su examen de mediados de diciembre; después, Mecánica clásica hasta la convocatoria de finales de enero. Fechas orientativas.",
+    "meses": [
+      "Nov",
+      "Dic",
+      "Ene"
+    ],
+    "colores": [
+      "#5b8ee0",
+      "#7fcfa0"
+    ],
+    "tramos": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        2
+      ]
+    ],
+    "bloques": [
+      {
+        "span": 1,
+        "simbolo": "ΔU",
+        "nombre": "Termodinámica",
+        "foco": "Primer y segundo principio, ciclos y problemas tipo examen.",
+        "fondo": "#12234a",
+        "borde": "#5b8ee0"
+      },
+      {
+        "span": 1,
+        "simbolo": "✓",
+        "nombre": "Examen y cambio",
+        "foco": "Simulacros antes del examen de Termodinámica y arranque de Mecánica.",
+        "fondo": "#3a3322",
+        "borde": "#e9d18f"
+      },
+      {
+        "span": 1,
+        "simbolo": "F=ma",
+        "nombre": "Mecánica clásica",
+        "foco": "Dinámica, energía y sólido rígido hasta la convocatoria de enero.",
+        "fondo": "#13302a",
+        "borde": "#7fcfa0"
+      }
+    ],
+    "hitos": [
+      {
+        "nombre": "Examen Termodinámica",
+        "pos": 1
+      },
+      {
+        "nombre": "Examen Mecánica",
+        "pos": 2,
+        "meta": true
+      }
+    ]
+  },
+  "informe_ejemplo": {
+    "asignatura": "Termodinámica",
+    "mes": "Noviembre 2026",
+    "comparado": "octubre",
+    "nota": "7,0",
+    "sesiones": 4,
+    "horas": "8h",
+    "destrezas_label": "Bloques trabajados",
+    "barras": [
+      [
+        "Primer principio",
+        7.0
+      ],
+      [
+        "Segundo principio",
+        6.5
+      ],
+      [
+        "Ciclos",
+        6.2
+      ]
+    ],
+    "mayor_progreso": "Termodinámica — el primer principio pasó de dudas a resolverse solo",
+    "resumen": "En noviembre, Marco ha hecho 8 horas de clase sin faltar a ninguna. Ya resuelve con soltura los problemas del primer principio. Con los ciclos todavía necesita apoyo. Diciembre: simulacros antes del examen de Termodinámica.",
+    "proxima_sesion": "PRÓXIMA CLASE — MARTES 1",
+    "proxima_sesion_txt": "Termodinámica: ciclos de potencia, problemas tipo examen.",
+    "horario": "Martes, 10:00–12:00 · en casa",
+    "temas": [
+      [
+        "Primer principio",
+        2.0
+      ],
+      [
+        "Segundo principio",
+        1.8
+      ],
+      [
+        "Ciclos",
+        1.2
+      ],
+      [
+        "Repaso",
+        0.5
+      ]
+    ],
+    "fuertes": [
+      "Primer principio consolidado",
+      "Muy ordenado al plantear los problemas"
+    ],
+    "atencion": [
+      "Ciclos: elegir el planteamiento",
+      "Entropía: interpretar resultados"
+    ],
+    "casa": [
+      "3 problemas de examen a la semana",
+      "Repasar las tablas de propiedades"
+    ],
+    "semanas": [
+      5.8,
+      6.3,
+      6.8,
+      7.2
+    ],
+    "metricas": [
+      [
+        "76%",
+        "Comprensión"
+      ],
+      [
+        "81%",
+        "Constancia"
+      ],
+      [
+        "62%",
+        "Autonomía"
+      ]
+    ],
+    "evol": [
+      [
+        "Resolución de problemas",
+        "Octubre: 40%",
+        "Noviembre: 70%",
+        "Plantea mejor el enunciado antes de operar."
+      ],
+      [
+        "Autonomía",
+        "Octubre: 35%",
+        "Noviembre: 62%",
+        "Cada vez necesita menos ayuda para empezar."
+      ]
+    ],
+    "conclusion": "Noviembre cierra con una tendencia muy positiva. En diciembre, simulacros antes del examen de Termodinámica.",
+    "cal_mes": [
+      2026,
+      12
+    ],
+    "cal_titulo": "Calendario de preparación — diciembre 2026",
+    "cal_dias_sesion": [
+      1,
+      3
+    ],
+    "cal_examen": 16,
+    "cal_semanas": "3 sem",
+    "cal_semanas_txt": "hasta los exámenes de la 1ª evaluación",
+    "antes": "Sin refuerzo fijo",
+    "ahora": "Clases semanales en casa · Bono de 12h",
+    "alumno": ""
+  },
+  "nombre_completo": "Marco López",
+  "pasos": {
+    "base": 27.5,
+    "base_txt": "",
+    "modalidad_txt": "Presencial en vuestra casa",
+    "who": "Ing. Aeroespacial · Termodinámica y Mecánica · Presencial en Dos Hermanas",
+    "titulo": "Su plan, en dos pasos",
+    "lead": "Clases presenciales por la mañana en Dos Hermanas, unas 2 horas a la semana. Primero una prueba y después el bono de 12 horas.",
+    "prueba": {
+      "horas": 2,
+      "precio": 49,
+      "tachado": 55,
+      "texto": "Dos horas presenciales para conocer al profesor, ver en qué punto está Marco en Termodinámica y dejar fijado su plan hasta el examen. Recomendado al 100%."
+    },
+    "paso2_titulo": "Después, su bono de 12 horas",
+    "opciones": [
+      {
+        "horas": 12,
+        "precio": 300,
+        "frecuencia": "",
+        "destacado": true,
+        "etiqueta": "RECOMENDADO · MEJOR PRECIO POR HORA",
+        "alt": {
+          "oro": true,
+          "txt": "TU MEJOR OPCIÓN",
+          "hora": "25 €/h",
+          "bono": "el mejor precio por hora del curso"
+        }
+      }
+    ],
+    "resumen": [
+      "Clases presenciales por la mañana en Dos Hermanas, unas 2 horas a la semana.",
+      "Termodinámica hasta el examen de diciembre y Mecánica clásica hasta la convocatoria de enero.",
+      "Primero, bono de prueba de 2h (49 €) y, después, bono de 12h (300 €, a 25 €/h)."
+    ],
+    "quote": "Un plan a medida para que Marco llegue a sus dos exámenes con todo preparado.",
+    "sin_mes": true
+  }
+}
