@@ -1,0 +1,270 @@
+{
+  "nombre": "Salma",
+  "etapa": "eso",
+  "curso": "2º ESO",
+  "asignaturas": [
+    "Matemáticas"
+  ],
+  "voz": "familia",
+  "archivo": "Plan_NEXO_Salma_2ESO_Matematicas_Torrefiel",
+  "cover_card_sub": "2º ESO · Matemáticas · Presencial en Torrefiel",
+  "presencial_label": "en casa",
+  "bonos_recomendados": [
+    {
+      "horas": 12,
+      "frecuencia": "3h a la semana"
+    }
+  ],
+  "modalidades_recomendadas": [
+    "casa_alumno"
+  ],
+  "tarifas_mostrar": [
+    "casa_alumno"
+  ],
+  "textos": {
+    "cover_sub": "Un plan a medida para Salma: clases presenciales de Matemáticas de 2º de ESO en su casa, en Torrefiel, con una profesora que encaje con ella.",
+    "p2_title": "Así acompañamos a Salma cada mes",
+    "p2_sub": "Una profesora especializada en Matemáticas, con sesiones centradas en lo que Salma necesita y un trato cercano y tranquilo para que gane confianza.",
+    "c1": "Salma tiene su profesora de referencia asignada, especializada en Matemáticas, con horario fijo cada semana en vuestra casa.",
+    "p3_sub": "Salma tiene su propio informe de seguimiento dentro del plan, sin coste adicional. Esto es lo que incluye cada mes:",
+    "informe_h2": "Un informe real para Salma",
+    "p4_pill": "ASÍ LO VERÉIS VOSOTROS",
+    "p4_sub": "Cuatro pantallas de ejemplo del informe que recibiréis en el área privada de Salma.",
+    "p10_sub": "Escribidnos para reservar el bono de prueba de Salma y empezar cuanto antes.",
+    "gestiones": "GESTIONES A CARGO VUESTRO"
+  },
+  "pasos": {
+    "base": 24,
+    "base_txt": "",
+    "modalidad_txt": "Presencial en su casa",
+    "nota": "",
+    "who": "2º ESO · Matemáticas · Presencial en Torrefiel",
+    "titulo": "Su plan, en dos pasos",
+    "lead": "Clases presenciales de Matemáticas en su casa, en Torrefiel, con una profesora. Primero una prueba y después el bono de 12 horas.",
+    "prueba": {
+      "horas": 2,
+      "precio": 44,
+      "tachado": 48,
+      "texto": "Dos horas presenciales en vuestra casa para que Salma conozca a su profesora con calma, ver cómo lleva las Matemáticas y dejar fijado su plan. Recomendado al 100%."
+    },
+    "paso2_titulo": "Después, su bono de 12 horas",
+    "opciones": [
+      {
+        "horas": 12,
+        "precio": 270,
+        "frecuencia": "",
+        "destacado": true,
+        "etiqueta": "RECOMENDADO · MEJOR PRECIO POR HORA",
+        "alt": {
+          "oro": true,
+          "txt": "TU MEJOR OPCIÓN",
+          "hora": "22,50 €/h",
+          "bono": "el mejor precio por hora del curso"
+        }
+      }
+    ],
+    "resumen": [
+      "Clases presenciales de Matemáticas en vuestra casa, en Torrefiel, con una profesora.",
+      "Primero, bono de prueba de 2h (44 €) y, después, bono de 12h (270 €).",
+      "El bono de 12h es el que sale más económico por hora durante el curso: 22,50 €/h."
+    ],
+    "quote": "Un plan a medida para que Salma gane confianza en Matemáticas, a su ritmo.",
+    "sin_mes": true
+  },
+  "informe_ejemplo": {
+    "asignatura": "Matemáticas",
+    "mes": "Noviembre 2026",
+    "comparado": "octubre",
+    "nota": "7,0",
+    "sesiones": 8,
+    "horas": "12h",
+    "destrezas_label": "Bloques trabajados",
+    "barras": [
+      [
+        "Fracciones",
+        7.0
+      ],
+      [
+        "Ecuaciones",
+        6.5
+      ],
+      [
+        "Proporcionalidad",
+        6.8
+      ]
+    ],
+    "mayor_progreso": "Matemáticas — las fracciones pasaron de generar dudas a resolverse solas",
+    "resumen": "En noviembre, Salma ha hecho 8 clases sin faltar a ninguna. Ya opera con soltura con fracciones y empieza a plantear ecuaciones. Con los problemas todavía necesita apoyo para dar el primer paso. Diciembre: reforzar ecuaciones antes de los exámenes de la 1ª evaluación.",
+    "proxima_sesion": "PRÓXIMA CLASE — MARTES 1",
+    "proxima_sesion_txt": "Ecuaciones de primer grado: problemas paso a paso.",
+    "horario": "Martes y jueves, 17:00–18:30 · en casa",
+    "temas": [
+      [
+        "Fracciones",
+        2.5
+      ],
+      [
+        "Ecuaciones",
+        1.8
+      ],
+      [
+        "Proporcionalidad",
+        1.2
+      ],
+      [
+        "Problemas",
+        0.5
+      ]
+    ],
+    "fuertes": [
+      "Fracciones consolidadas",
+      "Muy ordenada y constante"
+    ],
+    "atencion": [
+      "Problemas: dar el primer paso",
+      "Ecuaciones con paréntesis"
+    ],
+    "casa": [
+      "3 problemas de ecuaciones a la semana",
+      "Repasar las fracciones 10 minutos al día"
+    ],
+    "semanas": [
+      5.8,
+      6.3,
+      6.8,
+      7.2
+    ],
+    "metricas": [
+      [
+        "76%",
+        "Comprensión"
+      ],
+      [
+        "81%",
+        "Constancia"
+      ],
+      [
+        "62%",
+        "Autonomía"
+      ]
+    ],
+    "evol": [
+      [
+        "Resolución de problemas",
+        "Octubre: 60%",
+        "Noviembre: 79%",
+        "Plantea mejor el enunciado antes de operar."
+      ],
+      [
+        "Autonomía",
+        "Octubre: 50%",
+        "Noviembre: 62%",
+        "Cada vez necesita menos ayuda para empezar."
+      ]
+    ],
+    "conclusion": "Noviembre cierra con una tendencia muy positiva. En diciembre reforzamos ecuaciones antes de los exámenes de la 1ª evaluación.",
+    "cal_mes": [
+      2026,
+      12
+    ],
+    "cal_titulo": "Calendario — diciembre 2026",
+    "cal_dias_sesion": [
+      1,
+      3
+    ],
+    "cal_examen": 16,
+    "cal_semanas": "3 sem",
+    "cal_semanas_txt": "hasta los exámenes de la 1ª evaluación",
+    "antes": "Sin refuerzo fijo",
+    "ahora": "Clases semanales en casa · Bono de 12h"
+  },
+  "trayectoria": {
+    "etiqueta": "HOJA DE RUTA",
+    "pill": "2º ESO · MATEMÁTICAS",
+    "titulo": "El curso de Salma, de noviembre a junio",
+    "lead": "Un curso por bloques de Matemáticas de 2º de ESO, empezando por lo que más le cuesta, para llegar a junio con todo preparado. Fechas orientativas.",
+    "meses": [
+      "Nov",
+      "Dic",
+      "Ene",
+      "Feb",
+      "Mar",
+      "Abr",
+      "May",
+      "Jun"
+    ],
+    "colores": [
+      "#5b8ee0",
+      "#8fb8ec",
+      "#7fcfa0",
+      "#e9d18f"
+    ],
+    "tramos": [
+      [
+        0,
+        2
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        4,
+        6
+      ],
+      [
+        6,
+        7
+      ]
+    ],
+    "bloques": [
+      {
+        "span": 2,
+        "simbolo": "±",
+        "nombre": "Números",
+        "foco": "Enteros, fracciones, potencias y proporcionalidad.",
+        "fondo": "#12234a",
+        "borde": "#5b8ee0"
+      },
+      {
+        "span": 2,
+        "simbolo": "x",
+        "nombre": "Álgebra",
+        "foco": "Expresiones algebraicas, ecuaciones y sistemas.",
+        "fondo": "#16284a",
+        "borde": "#8fb8ec"
+      },
+      {
+        "span": 2,
+        "simbolo": "f(x)",
+        "nombre": "Funciones",
+        "foco": "Funciones y gráficas, y geometría: Pitágoras y semejanza.",
+        "fondo": "#13302a",
+        "borde": "#7fcfa0"
+      },
+      {
+        "span": 2,
+        "simbolo": "★",
+        "nombre": "Final",
+        "foco": "Estadística, cuerpos geométricos y repaso de final de curso.",
+        "fondo": "#3a3322",
+        "borde": "#e9d18f"
+      }
+    ],
+    "hitos": [
+      {
+        "nombre": "1ª evaluación",
+        "pos": 1.4
+      },
+      {
+        "nombre": "2ª evaluación",
+        "pos": 4.5
+      },
+      {
+        "nombre": "Final de curso",
+        "pos": 7,
+        "meta": true
+      }
+    ]
+  }
+}
