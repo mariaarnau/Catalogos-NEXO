@@ -1,12 +1,12 @@
 {
-  "nombre": "María",
+  "nombre": "Lucía",
   "etapa": "bachillerato",
   "curso": "1º Bachillerato",
   "asignaturas": [
     "Matemáticas I"
   ],
   "voz": "familia",
-  "archivo": "Plan_NEXO_Maria_1Bach_Matematicas_Benicalap",
+  "archivo": "Plan_NEXO_Lucia_1Bach_Matematicas_Benicalap",
   "cover_card_sub": "1º Bachillerato · Matemáticas I · Presencial en Benicalap",
   "presencial_label": "en casa",
   "bonos_recomendados": [
@@ -22,15 +22,15 @@
     "casa_alumno"
   ],
   "textos": {
-    "cover_sub": "Un plan a medida para María: clases presenciales de Matemáticas I de 1º de Bachillerato, en su casa, en Benicalap.",
-    "p2_title": "Así acompañamos a María cada mes",
+    "cover_sub": "Un plan a medida para Lucía: clases presenciales de Matemáticas I de 1º de Bachillerato, en su casa, en Benicalap.",
+    "p2_title": "Así acompañamos a Lucía cada mes",
     "p2_sub": "Sin burocracia. El profesor registra las sesiones, nuestro equipo analiza los datos y os llega el seguimiento sin que tengáis que pedirlo.",
-    "c1": "María tiene su profesor de referencia asignado, especializado en Matemáticas, con horario fijo cada semana.",
-    "p3_sub": "María tiene su propio informe de seguimiento dentro del plan, sin coste adicional. Esto es lo que incluye cada mes:",
-    "informe_h2": "Un informe real para María",
+    "c1": "Lucía tiene su profesor de referencia asignado, especializado en Matemáticas, con horario fijo cada semana.",
+    "p3_sub": "Lucía tiene su propio informe de seguimiento dentro del plan, sin coste adicional. Esto es lo que incluye cada mes:",
+    "informe_h2": "Un informe real para Lucía",
     "p4_pill": "ASÍ LO VERÉIS VOSOTROS",
-    "p4_sub": "Cuatro pantallas de ejemplo del informe que recibiréis en el área privada de María.",
-    "p10_sub": "Escribidnos para reservar el bono de prueba de María y empezar cuanto antes.",
+    "p4_sub": "Cuatro pantallas de ejemplo del informe que recibiréis en el área privada de Lucía.",
+    "p10_sub": "Escribidnos para reservar el bono de prueba de Lucía y empezar cuanto antes.",
     "gestiones": "GESTIONES A CARGO VUESTRO"
   },
   "pasos": {
@@ -45,7 +45,7 @@
       "horas": 2,
       "precio": 46,
       "tachado": 50,
-      "texto": "Dos horas presenciales en vuestra casa para conocer al profesor, ver cómo lleva María las Matemáticas y dejar fijado su plan. Recomendado al 100%."
+      "texto": "Dos horas presenciales en vuestra casa para conocer al profesor, ver cómo lleva Lucía las Matemáticas y dejar fijado su plan. Recomendado al 100%."
     },
     "paso2_titulo": "Después, su bono de 12 horas",
     "opciones": [
@@ -68,7 +68,7 @@
       "Primero, bono de prueba de 2h (46 €) y, después, bono de 12h (285 €).",
       "El bono de 12h es el que sale más económico por hora durante el curso: 23,75 €/h."
     ],
-    "quote": "Un plan a medida para que María llegue a junio con Matemáticas I preparadas.",
+    "quote": "Un plan a medida para que Lucía llegue a junio con Matemáticas I preparadas.",
     "sin_mes": true
   },
   "informe_ejemplo": {
@@ -94,7 +94,7 @@
       ]
     ],
     "mayor_progreso": "Matemáticas I — la trigonometría pasó de necesitar ayuda a resolverse sola",
-    "resumen": "En noviembre, María ha hecho 8 clases sin faltar a ninguna. Ya resuelve con soltura ecuaciones y sistemas. Con la trigonometría todavía necesita apoyo. Diciembre: reforzar trigonometría y funciones antes de los exámenes de la 1ª evaluación.",
+    "resumen": "En noviembre, Lucía ha hecho 8 clases sin faltar a ninguna. Ya resuelve con soltura ecuaciones y sistemas. Con la trigonometría todavía necesita apoyo. Diciembre: reforzar trigonometría y funciones antes de los exámenes de la 1ª evaluación.",
     "proxima_sesion": "PRÓXIMA CLASE — MARTES 1",
     "proxima_sesion_txt": "Trigonometría: razones y ecuaciones trigonométricas.",
     "horario": "Martes y jueves, 17:00–18:30 · en casa",
@@ -181,7 +181,7 @@
   "trayectoria": {
     "etiqueta": "HOJA DE RUTA",
     "pill": "1º BACHILLERATO · MATEMÁTICAS I",
-    "titulo": "El curso de María, de octubre a junio",
+    "titulo": "El curso de Lucía, de octubre a junio",
     "lead": "Un curso en cuatro etapas, una por bloque de Matemáticas I, para llegar a junio con todo preparado. Fechas orientativas.",
     "meses": [
       "Oct",
