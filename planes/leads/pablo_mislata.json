@@ -1,0 +1,224 @@
+{
+  "nombre": "Pablo",
+  "etapa": "bachillerato",
+  "curso": "1º Bachillerato",
+  "asignaturas": [
+    "Matemáticas I",
+    "Física y Química"
+  ],
+  "voz": "familia",
+  "archivo": "Plan_NEXO_Pablo_1Bach_Matematicas_FisicaQuimica_Mislata",
+  "cover_card_sub": "1º Bachillerato · Matemáticas y Física y Química · Presencial en Mislata",
+  "presencial_label": "en su casa",
+  "bonos_recomendados": [
+    {
+      "horas": 12,
+      "frecuencia": "3h a la semana"
+    }
+  ],
+  "modalidades_recomendadas": [
+    "casa_alumno"
+  ],
+  "tarifas_mostrar": [
+    "casa_alumno"
+  ],
+  "textos": {
+    "cover_sub": "Un plan a medida para Pablo: ponerse al día en Matemáticas y Física y Química de 1º de Bachillerato, reforzando las bases de 4º de ESO, con clases presenciales en Mislata.",
+    "p2_title": "Así acompañamos a Pablo cada mes",
+    "p2_sub": "Sin burocracia. El profesor registra las sesiones, nuestro equipo analiza los datos y os llega el seguimiento sin que tengáis que pedirlo.",
+    "c1": "Pablo tiene su profesor de referencia asignado, con horario fijo cada semana en vuestra casa.",
+    "p3_sub": "Pablo tiene su propio informe de seguimiento dentro del plan, sin coste adicional. Esto es lo que incluye cada mes:",
+    "informe_h2": "Un informe real para Pablo",
+    "p4_pill": "ASÍ LO VERÉIS VOSOTROS",
+    "p4_sub": "Cuatro pantallas de ejemplo del informe que recibiréis en el área privada de Pablo.",
+    "p10_sub": "Escribidnos para reservar el bono de prueba de Pablo y empezar cuanto antes.",
+    "gestiones": "GESTIONES A CARGO VUESTRO"
+  },
+  "pasos": {
+    "base": 25,
+    "base_txt": "",
+    "modalidad_txt": "Presencial en su casa",
+    "nota": "",
+    "who": "1º Bachillerato · Matemáticas y FyQ · Presencial en Mislata",
+    "titulo": "Su plan, en dos pasos",
+    "lead": "Clases presenciales en su casa, en Mislata, martes y jueves. Primero una prueba y después el bono de 12 horas.",
+    "prueba": {
+      "horas": 2,
+      "precio": 46,
+      "tachado": 50,
+      "texto": "Dos horas presenciales en vuestra casa para conocer al profesor, ver en qué punto está Pablo con Matemáticas y Física y Química y dejar fijado su plan para ponerse al día. Recomendado al 100%."
+    },
+    "paso2_titulo": "Después, su bono de 12 horas",
+    "opciones": [
+      {
+        "horas": 12,
+        "precio": 285,
+        "frecuencia": "",
+        "destacado": true,
+        "etiqueta": "RECOMENDADO · MEJOR PRECIO POR HORA",
+        "alt": {
+          "oro": true,
+          "txt": "TU MEJOR OPCIÓN",
+          "hora": "23,75 €/h",
+          "bono": "el mejor precio por hora del curso"
+        }
+      }
+    ],
+    "resumen": [
+      "Clases presenciales de Matemáticas y Física y Química en vuestra casa, en Mislata, martes y jueves desde las 17:00.",
+      "Primero, bono de prueba de 2h (46 €) y, después, bono de 12h (285 €).",
+      "El bono de 12h es el que sale más económico por hora durante el curso: 23,75 €/h."
+    ],
+    "quote": "Un plan a medida para que Pablo se ponga al día y apruebe con margen.",
+    "sin_mes": true
+  },
+  "informe_ejemplo": {
+    "asignatura": "Matemáticas I · Física y Química",
+    "mes": "Noviembre 2026",
+    "comparado": "octubre",
+    "nota": "7,0",
+    "sesiones": 8,
+    "horas": "12h",
+    "destrezas_label": "Bloques trabajados",
+    "barras": [
+      [
+        "Matemáticas",
+        6.5
+      ],
+      [
+        "Física",
+        6.2
+      ],
+      [
+        "Química",
+        6.8
+      ]
+    ],
+    "mayor_progreso": "Matemáticas I — las bases de 4º de ESO ya no frenan el temario nuevo",
+    "resumen": "En noviembre, Pablo ha hecho 8 clases sin faltar a ninguna. Ya maneja con soltura las ecuaciones y los polinomios que le faltaban de 4º. En Física todavía necesita apoyo con la cinemática. Diciembre: reforzar Física y trigonometría antes de los exámenes de la 1ª evaluación.",
+    "proxima_sesion": "PRÓXIMA CLASE — MARTES 1",
+    "proxima_sesion_txt": "Matemáticas: trigonometría. Física: problemas de cinemática.",
+    "horario": "Martes y jueves, 17:00–18:30 · en casa",
+    "temas": [
+      [
+        "Matemáticas",
+        1.8
+      ],
+      [
+        "Física",
+        1.2
+      ],
+      [
+        "Química",
+        1.2
+      ],
+      [
+        "Bases de 4º ESO",
+        0.8
+      ]
+    ],
+    "fuertes": [
+      "Ecuaciones y polinomios ya consolidados",
+      "Muy constante pese a los entrenamientos"
+    ],
+    "atencion": [
+      "Física: cinemática",
+      "Matemáticas: trigonometría"
+    ],
+    "casa": [
+      "3 problemas de Física a la semana",
+      "20 minutos de repaso de Matemáticas, dos días a la semana"
+    ],
+    "semanas": [
+      5.8,
+      6.3,
+      6.8,
+      7.2
+    ],
+    "metricas": [
+      [
+        "76%",
+        "Comprensión"
+      ],
+      [
+        "81%",
+        "Constancia"
+      ],
+      [
+        "62%",
+        "Autonomía"
+      ]
+    ],
+    "evol": [
+      [
+        "Resolución de problemas",
+        "Octubre: 60%",
+        "Noviembre: 79%",
+        "Plantea mejor el enunciado antes de operar."
+      ],
+      [
+        "Autonomía",
+        "Octubre: 50%",
+        "Noviembre: 62%",
+        "Cada vez necesita menos ayuda para empezar."
+      ]
+    ],
+    "conclusion": "Noviembre cierra con una tendencia muy positiva. En diciembre reforzamos Física y trigonometría antes de los exámenes de la 1ª evaluación.",
+    "cal_mes": [
+      2026,
+      12
+    ],
+    "cal_titulo": "Calendario — diciembre 2026",
+    "cal_dias_sesion": [
+      1,
+      3
+    ],
+    "cal_examen": 16,
+    "cal_semanas": "3 sem",
+    "cal_semanas_txt": "hasta los exámenes de la 1ª evaluación",
+    "antes": "Sin refuerzo fijo",
+    "ahora": "Clases semanales en casa · Bono de 12h"
+  },
+  "semana": {
+    "etiqueta": "SU SEMANA",
+    "pill": "HORARIO ORIENTATIVO",
+    "titulo": "Martes y jueves, a partir de las 17:00",
+    "lead": "Dos clases de 1 hora y media en vuestra casa, en Mislata: unas 3 horas a la semana. Además del temario de 1º de Bachillerato, el profesor repasa las bases de 4º de ESO que necesite para ponerse al día.",
+    "hora_ini": 17,
+    "hora_fin": 19,
+    "alto": 100,
+    "asignaturas": [
+      "Matemáticas",
+      "Física y Química"
+    ],
+    "asig_cortas": [
+      "Matemáticas",
+      "Física y Química"
+    ],
+    "bloques": [
+      [
+        1,
+        17,
+        18.5,
+        0
+      ],
+      [
+        3,
+        17,
+        18.5,
+        1
+      ]
+    ],
+    "extra_titulo": "Calendario orientativo",
+    "extra_texto": "Los fines de semana no hace falta: el horario se ajusta a sus entrenamientos y el profesor reparte el tiempo según sus exámenes.",
+    "repartos": [
+      {
+        "nombre": "Cada semana · 3h",
+        "horas": [
+          1.5,
+          1.5
+        ]
+      }
+    ]
+  }
+}
