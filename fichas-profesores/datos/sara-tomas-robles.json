@@ -1,0 +1,36 @@
+{
+  "nombre": "Sara Tomás Robles",
+  "foto": "../fotos/sara-tomas-robles.jpg",
+  "foto_posicion": "50% 30%",
+  "titular": "Maestra de Educación Infantil",
+  "edad": 22,
+  "ubicacion": "Valencia · Vehículo propio",
+  "materias": ["EDUCACIÓN INFANTIL", "EDUCACIÓN PRIMARIA", "CLASES DE REPASO"],
+  "telefono": "648 52 49 54",
+  "email": "saratr04@gmail.com",
+  "situacion_actual": "Graduada en Educación Infantil por la Universitat de València (2026). Ha hecho sus prácticas como maestra de apoyo en el Colegio El Niño Jesús y da clases de repaso de Educación Primaria.",
+  "estudios": [
+    {"titulo": "Grado en Educación Infantil", "detalle": "Universitat de València", "fecha": "2022 – 2026"},
+    {"titulo": "Título de monitora de animación y tiempo libre"},
+    {"titulo": "Bachillerato de Ciencias Sociales", "detalle": "Escuelas San José Jesuitas", "fecha": "2020 – 2022"}
+  ],
+  "idiomas": [
+    {"idioma": "Castellano", "nivel": "Nativo"},
+    {"idioma": "Valenciano", "nivel": "C1", "certificado": "Título acreditado"},
+    {"idioma": "Inglés", "nivel": "B2", "certificado": "Título acreditado"},
+    {"idioma": "Francés", "nivel": "A2", "certificado": "Título acreditado"}
+  ],
+  "experiencia_docente": [
+    {"titulo": "Maestra de apoyo en prácticas · Colegio El Niño Jesús", "detalle": "Prácticas curriculares del Grado en Educación Infantil.", "fecha": "Febrero – mayo 2026"},
+    {"titulo": "Clases particulares de repaso", "detalle": "Refuerzo escolar a alumnos de Educación Primaria."}
+  ],
+  "aptitudes": [
+    "Habilidad para trabajar con niños",
+    "Capacidad de adaptación",
+    "Habilidades comunicativas",
+    "Organización, esfuerzo y responsabilidad",
+    "Capacidad de resolución",
+    "Trabajo en equipo",
+    "Puntualidad"
+  ]
+}
