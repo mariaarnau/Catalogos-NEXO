@@ -520,7 +520,7 @@ def page_semana(d, t):
     """Horario semanal tipo (mañanas) con bloques por asignatura."""
     c = d["semana"]
     h0, h1 = c["hora_ini"], c["hora_fin"]
-    dias = [tr(x) for x in ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes"]]
+    dias = [tr(x) for x in c.get("dias", ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes"])]
     asig = c["asignaturas"]
     alto = c.get("alto", 58)  # px por hora
     hh = lambda x: f"{int(x)}:{int(round((x - int(x)) * 60)):02d}"
@@ -548,7 +548,7 @@ def page_semana(d, t):
   <div class="pill gold">{e(c["pill"])}</div>
   <h2>{e(c["titulo"])}</h2>
   <p class="lead">{e(c["lead"])}</p>
-  <div class="sgrid"><div class="shs" style="height:{(h1 - h0) * alto}px">{horas}</div>{cols}</div>
+  <div class="sgrid" style="grid-template-columns: 46px repeat({len(dias)}, 1fr)"><div class="shs" style="height:{(h1 - h0) * alto}px">{horas}</div>{cols}</div>
   <div class="extra-t"><i></i><div><b>{e(c["extra_titulo"])}</b><span>{e(c["extra_texto"])}</span></div></div>
   <div class="rps">{filas}</div>
   {footer()}

@@ -1,0 +1,278 @@
+{
+  "nombre": "Rodrigo",
+  "etapa": "bachillerato",
+  "curso": "2º Bachillerato",
+  "asignaturas": [
+    "Dibujo técnico II"
+  ],
+  "voz": "familia",
+  "presencial_label": "en su casa",
+  "cover_card_sub": "2º Bachillerato · Dibujo técnico · Presencial en La Cañada",
+  "bonos_recomendados": [
+    {
+      "horas": 12,
+      "frecuencia": "3h a la semana"
+    }
+  ],
+  "modalidades_recomendadas": [
+    "casa_alumno"
+  ],
+  "tarifas_mostrar": [
+    "casa_alumno"
+  ],
+  "textos": {
+    "cover_sub": "Un plan a medida para Rodrigo: Dibujo técnico II de 2º de Bachillerato, con clases presenciales en su casa, en La Cañada, los sábados por la mañana y la PAU como meta.",
+    "p10_sub": "Escríbenos para reservar el bono de prueba o para cualquier ajuste de horas de Rodrigo.",
+    "c1": "Rodrigo tiene su profesor de referencia asignado, especializado en Dibujo técnico, con horario fijo cada semana.",
+    "p2_sub": "Un profesor especializado en Dibujo técnico, con sesiones centradas en su asignatura y ajuste continuo según lo que necesite reforzar."
+  },
+  "camino": {
+    "etiqueta": "HOJA DE RUTA",
+    "pill": "EL CURSO DE UN VISTAZO",
+    "titulo": "El camino hasta la PAU",
+    "lead": "Dibujo técnico II por bloques, para llegar a junio con todas las láminas tipo examen dominadas. Fechas orientativas.",
+    "meses": [
+      "Oct",
+      "Nov",
+      "Dic",
+      "Ene",
+      "Feb",
+      "Mar",
+      "Abr",
+      "May",
+      "Jun"
+    ],
+    "fases": [
+      {
+        "span": 3,
+        "etiqueta": "1ER TRIMESTRE",
+        "nombre": "Geometría plana",
+        "foco": "Trazados, tangencias, transformaciones y curvas técnicas."
+      },
+      {
+        "span": 3,
+        "etiqueta": "2º TRIMESTRE",
+        "nombre": "Sistema diédrico",
+        "foco": "Intersecciones, abatimientos, giros y verdaderas magnitudes."
+      },
+      {
+        "span": 2,
+        "etiqueta": "3ER TRIMESTRE",
+        "nombre": "Axonometría y normalización",
+        "foco": "Isométrica, caballera, vistas, cortes y acotación."
+      },
+      {
+        "span": 1,
+        "etiqueta": "JUNIO",
+        "nombre": "PAU",
+        "foco": "Exámenes de otros años cronometrados y últimos ajustes."
+      }
+    ],
+    "hitos": [
+      {
+        "nombre": "1ª evaluación",
+        "pos": 2.75
+      },
+      {
+        "nombre": "2ª evaluación",
+        "pos": 6
+      },
+      {
+        "nombre": "Finales",
+        "pos": 8
+      },
+      {
+        "nombre": "PAU",
+        "pos": 9,
+        "meta": true
+      }
+    ]
+  },
+  "pasos": {
+    "base": 25,
+    "base_txt": "",
+    "modalidad_txt": "Presencial en su casa",
+    "who": "2º Bachillerato · Dibujo técnico · Presencial en La Cañada",
+    "titulo": "Su plan, en dos pasos",
+    "lead": "Clases presenciales de Dibujo técnico en su casa, en La Cañada, los sábados por la mañana. Primero una prueba y después el bono de 12 horas.",
+    "prueba": {
+      "horas": 2,
+      "precio": 46,
+      "tachado": 50,
+      "texto": "Dos horas presenciales en vuestra casa para conocer al profesor, ver cómo lleva Rodrigo el Dibujo técnico y dejar fijado su plan hasta la PAU. Recomendado al 100%."
+    },
+    "paso2_titulo": "Después, su bono de 12 horas",
+    "opciones": [
+      {
+        "horas": 12,
+        "precio": 285,
+        "frecuencia": "",
+        "destacado": true,
+        "etiqueta": "RECOMENDADO · MEJOR PRECIO POR HORA",
+        "alt": {
+          "oro": true,
+          "txt": "TU MEJOR OPCIÓN",
+          "hora": "23,75 €/h",
+          "bono": "el mejor precio por hora del curso"
+        }
+      }
+    ],
+    "resumen": [
+      "Clases presenciales de Dibujo técnico en vuestra casa, en La Cañada, los sábados por la mañana.",
+      "Primero, bono de prueba de 2h (46 €) y, después, bono de 12h (285 €).",
+      "El bono de 12h es el que sale más económico por hora durante el curso: 23,75 €/h.",
+      "Preparación de la PAU durante todo el curso, con exámenes de otros años en junio."
+    ],
+    "quote": "Un plan a medida para que Rodrigo llegue a la PAU con Dibujo técnico dominado.",
+    "sin_mes": true
+  },
+  "informe_ejemplo": {
+    "asignatura": "Dibujo técnico II",
+    "mes": "Febrero 2027",
+    "comparado": "enero",
+    "nota": "7,0",
+    "sesiones": 4,
+    "horas": "8h",
+    "destrezas_label": "Bloques trabajados",
+    "barras": [
+      [
+        "Geometría plana",
+        7.0
+      ],
+      [
+        "Tangencias",
+        6.5
+      ],
+      [
+        "Diédrico",
+        6.0
+      ]
+    ],
+    "mayor_progreso": "Dibujo técnico — las tangencias pasaron de dudas a trazarse solas",
+    "resumen": "En noviembre, Rodrigo ha hecho 4 clases sin faltar a ninguna. Ya resuelve con soltura los trazados de geometría plana. Con las tangencias complejas todavía necesita apoyo. Diciembre: reforzar tangencias y empezar el sistema diédrico.",
+    "proxima_sesion": "PRÓXIMA SESIÓN — MARTES 2",
+    "proxima_sesion_txt": "Tangencias: lámina tipo examen.",
+    "horario": "Sábados, 10:00–12:00 · en casa",
+    "temas": [
+      [
+        "Geometría plana",
+        3.0
+      ],
+      [
+        "Tangencias",
+        2.5
+      ],
+      [
+        "Curvas técnicas",
+        1.5
+      ],
+      [
+        "Repaso",
+        1.0
+      ]
+    ],
+    "fuertes": [
+      "Trazado limpio y preciso",
+      "Buena visión espacial"
+    ],
+    "atencion": [
+      "Tangencias: elegir el método",
+      "Gestión del tiempo en las láminas"
+    ],
+    "casa": [
+      "Una lámina de práctica a la semana",
+      "Repasar los métodos de tangencias"
+    ],
+    "semanas": [
+      5.8,
+      6.3,
+      6.8,
+      7.2
+    ],
+    "metricas": [
+      [
+        "76%",
+        "Comprensión"
+      ],
+      [
+        "81%",
+        "Constancia"
+      ],
+      [
+        "62%",
+        "Autonomía"
+      ]
+    ],
+    "evol": [
+      [
+        "Resolución de problemas",
+        "Enero: 60%",
+        "Febrero: 79%",
+        "Plantea mejor el enunciado antes de operar."
+      ],
+      [
+        "Autonomía",
+        "Enero: 50%",
+        "Febrero: 62%",
+        "Cada vez necesita menos ayuda para empezar."
+      ]
+    ],
+    "conclusion": "Noviembre cierra con una tendencia muy positiva. En diciembre reforzamos tangencias y empezamos el sistema diédrico.",
+    "cal_mes": [
+      2027,
+      3
+    ],
+    "cal_titulo": "Calendario — marzo 2027",
+    "cal_dias_sesion": [
+      1,
+      3
+    ],
+    "cal_examen": 17,
+    "cal_semanas": "3 sem",
+    "cal_semanas_txt": "hasta los exámenes de la 2ª evaluación",
+    "antes": "Sin refuerzo fijo",
+    "ahora": "Clases semanales en casa · Bono mensual"
+  },
+  "archivo": "Plan_NEXO_Rodrigo_2Bach_Dibujo_Tecnico_La_Canada",
+  "semana": {
+    "etiqueta": "SU SEMANA",
+    "pill": "HORARIO ORIENTATIVO",
+    "titulo": "Los sábados por la mañana",
+    "lead": "Una clase de 2 horas cada sábado por la mañana, en vuestra casa, en La Cañada. Dibujo técnico necesita tiempo seguido para terminar las láminas en clase. Es un horario orientativo: se ajusta a vuestra disponibilidad.",
+    "dias": [
+      "Lunes",
+      "Martes",
+      "Miércoles",
+      "Jueves",
+      "Viernes",
+      "Sábado"
+    ],
+    "hora_ini": 9,
+    "hora_fin": 13,
+    "alto": 58,
+    "asignaturas": [
+      "Dibujo técnico"
+    ],
+    "asig_cortas": [
+      "Dibujo técnico"
+    ],
+    "bloques": [
+      [
+        5,
+        10,
+        12,
+        0
+      ]
+    ],
+    "extra_titulo": "Horario orientativo",
+    "extra_texto": "La hora exacta del sábado la acordamos con vosotros. Antes de un examen se puede sumar alguna clase extra.",
+    "repartos": [
+      {
+        "nombre": "Cada semana · 2h",
+        "horas": [
+          2
+        ]
+      }
+    ]
+  }
+}
