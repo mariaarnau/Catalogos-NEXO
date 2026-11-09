@@ -9,7 +9,7 @@
   "voz": "familia",
   "archivo": "Plan_NEXO_Marco_Lopez_Ing_Aeroespacial_Termodinamica_Mecanica",
   "presencial_label": "en vuestra casa",
-  "cover_card_sub": "Ingeniería Aeroespacial · Termodinámica y Mecánica clásica · Presencial en Dos Hermanas",
+  "cover_card_sub": "Ingeniería Aeroespacial · Termodinámica y Mecánica clásica · Online o presencial",
   "bonos_recomendados": [
     {
       "horas": 12,
@@ -17,13 +17,15 @@
     }
   ],
   "modalidades_recomendadas": [
-    "casa_alumno"
+    "casa_alumno",
+    "online"
   ],
   "tarifas_mostrar": [
+    "online",
     "casa_alumno"
   ],
   "textos": {
-    "cover_sub": "Un plan a medida para Marco: Termodinámica hasta su examen de diciembre y Mecánica clásica hasta la convocatoria de enero, con clases presenciales por la mañana en Dos Hermanas.",
+    "cover_sub": "Un plan a medida para Marco: Termodinámica hasta su examen de diciembre y Mecánica clásica hasta la convocatoria de enero, por la mañana, con clases presenciales en Dos Hermanas u online.",
     "p2_title": "Así acompañamos a Marco cada mes",
     "p2_sub": "Sin burocracia. El profesor registra las sesiones, nuestro equipo analiza los datos y os llega el seguimiento sin que tengáis que pedirlo.",
     "c1": "Marco tiene su profesor de referencia asignado, especializado en Física, con horario fijo cada semana.",
@@ -205,41 +207,45 @@
     "alumno": ""
   },
   "nombre_completo": "Marco López",
-  "pasos": {
-    "base": 27.5,
-    "base_txt": "",
-    "modalidad_txt": "Presencial en vuestra casa",
-    "who": "Ing. Aeroespacial · Termodinámica y Mecánica · Presencial en Dos Hermanas",
-    "titulo": "Su plan, en dos pasos",
-    "lead": "Clases presenciales por la mañana en Dos Hermanas, unas 2 horas a la semana. Primero una prueba y después el bono de 12 horas.",
-    "prueba": {
-      "horas": 2,
-      "precio": 49,
-      "tachado": 55,
-      "texto": "Dos horas presenciales para conocer al profesor, ver en qué punto está Marco en Termodinámica y dejar fijado su plan hasta el examen. Recomendado al 100%."
-    },
-    "paso2_titulo": "Después, su bono de 12 horas",
+  "dos_opciones": {
+    "etiqueta": "VUESTRAS OPCIONES",
+    "pill": "MODALIDAD",
+    "titulo": "Dos formas de prepararse",
+    "lead": "En las dos se empieza con un bono de prueba de 2 horas y después se pasa al bono de 12 horas. Elegid la modalidad que mejor os encaje.",
+    "pie": "Sin permanencia: pagáis por adelantado el bono de horas. Solo pagáis las horas de clase que se dan.",
     "opciones": [
       {
-        "horas": 12,
-        "precio": 300,
-        "frecuencia": "",
+        "letra": "OPCIÓN 1",
+        "nombre": "Presencial en Dos Hermanas",
+        "sub": "El profesor va a vuestro domicilio",
         "destacado": true,
-        "etiqueta": "RECOMENDADO · MEJOR PRECIO POR HORA",
-        "alt": {
-          "oro": true,
-          "txt": "TU MEJOR OPCIÓN",
-          "hora": "25 €/h",
-          "bono": "el mejor precio por hora del curso"
+        "prueba": {
+          "horas": 2,
+          "precio": 49,
+          "tachado": 55
+        },
+        "bono": {
+          "horas": 12,
+          "precio": 300,
+          "base": 27.5
+        }
+      },
+      {
+        "letra": "OPCIÓN 2",
+        "nombre": "Online",
+        "sub": "Clases por videollamada",
+        "destacado": false,
+        "prueba": {
+          "horas": 2,
+          "precio": 46,
+          "tachado": 50
+        },
+        "bono": {
+          "horas": 12,
+          "precio": 285,
+          "base": 25
         }
       }
-    ],
-    "resumen": [
-      "Clases presenciales por la mañana en Dos Hermanas, unas 2 horas a la semana.",
-      "Termodinámica hasta el examen de diciembre y Mecánica clásica hasta la convocatoria de enero.",
-      "Primero, bono de prueba de 2h (49 €) y, después, bono de 12h (300 €, a 25 €/h)."
-    ],
-    "quote": "Un plan a medida para que Marco llegue a sus dos exámenes con todo preparado.",
-    "sin_mes": true
+    ]
   }
 }
