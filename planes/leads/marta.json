@@ -3,11 +3,11 @@
   "etapa": "eso",
   "curso": "3º ESO",
   "asignaturas": [
-    "Refuerzo escolar"
+    "Todas las asignaturas"
   ],
   "voz": "familia",
   "archivo": "Plan_NEXO_Marta_3ESO_Xirivella",
-  "cover_card_sub": "3º ESO · Clases de refuerzo · Presencial en Xirivella",
+  "cover_card_sub": "3º ESO · Todas las asignaturas · Presencial en Xirivella",
   "presencial_label": "en casa",
   "bonos_recomendados": [
     {
@@ -22,7 +22,7 @@
     "casa_alumno"
   ],
   "textos": {
-    "cover_sub": "Un plan a medida para Marta: clases presenciales de refuerzo de 3º de ESO en su casa, en Xirivella.",
+    "cover_sub": "Un plan a medida para Marta: refuerzo de todas las asignaturas de 3º de ESO, con clases presenciales en su casa, en Xirivella.",
     "p2_title": "Así acompañamos a Marta cada mes",
     "p2_sub": "Un profesor especializado, con sesiones centradas en lo que Marta necesita y ajuste continuo según sus exámenes.",
     "c1": "Marta tiene su profesor de referencia asignado, con horario fijo cada semana en vuestra casa.",
@@ -38,7 +38,7 @@
     "base_txt": "",
     "modalidad_txt": "Presencial en su casa",
     "nota": "",
-    "who": "3º ESO · Clases de refuerzo · Presencial en Xirivella",
+    "who": "3º ESO · Todas las asignaturas · Presencial en Xirivella",
     "titulo": "Su plan, en dos pasos",
     "lead": "Clases presenciales en su casa, en Xirivella, con un profesor especializado. Primero una prueba y después el bono de 12 horas.",
     "prueba": {
@@ -64,7 +64,7 @@
       }
     ],
     "resumen": [
-      "Clases presenciales de refuerzo en vuestra casa, en Xirivella.",
+      "Clases presenciales de refuerzo de todas las asignaturas, en vuestra casa, en Xirivella.",
       "Primero, bono de prueba de 2h (44 €) y, después, bono de 12h (270 €).",
       "El bono de 12h es el que sale más económico por hora durante el curso: 22,50 €/h."
     ],
