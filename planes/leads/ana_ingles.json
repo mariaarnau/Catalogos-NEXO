@@ -1,0 +1,310 @@
+{
+  "nombre": "Ana",
+  "etapa": "universidad",
+  "curso": "Inglés conversacional · A2–B1",
+  "asignaturas": [
+    "Inglés"
+  ],
+  "voz": "tu",
+  "archivo": "Plan_NEXO_Ana_Ingles_Conversacion_Azafata",
+  "cover_card_sub": "Inglés conversacional · A2–B1 · Objetivo: azafata de vuelo · Online",
+  "presencial_label": "online",
+  "bonos_recomendados": [
+    {
+      "horas": 12,
+      "frecuencia": "3h a la semana"
+    }
+  ],
+  "modalidades_recomendadas": [
+    "online"
+  ],
+  "tarifas_mostrar": [
+    "online"
+  ],
+  "textos": {
+    "cover_sub": "Un plan a medida para Ana: soltarte hablando inglés con clases dinámicas de conversación y roleplay, y después el inglés de azafata de vuelo, antes de empezar el curso en verano.",
+    "p2_title": "Así te acompañamos cada mes, Ana",
+    "p2_sub": "Un profesor de inglés con clases 100% de conversación: speaking, vocabulario útil y roleplays de situaciones reales. Nada de hacer ejercicios y ejercicios.",
+    "c1": "Tienes tu profesor de referencia asignado, especializado en inglés conversacional, con horario fijo cada semana por la tarde.",
+    "c2t": "Enfoque a tu objetivo",
+    "c2": "Cada sesión se centra en hablar: situaciones cotidianas primero y, después, las del trabajo de azafata.",
+    "p3_sub": "Tienes tu propio informe de seguimiento dentro del plan, sin coste adicional. Esto es lo que incluye cada mes:",
+    "informe_h2": "Un informe real para ti, Ana",
+    "p4_pill": "ASÍ LO VERÁS TÚ",
+    "p4_sub": "Cuatro pantallas de ejemplo del informe que recibirás en tu área privada.",
+    "p10_sub": "Escríbenos para reservar tu bono de prueba y empezar esta misma semana.",
+    "gestiones": "GESTIONES A TU CARGO"
+  },
+  "trayectoria": {
+    "etiqueta": "HOJA DE RUTA",
+    "pill": "INGLÉS · OBJETIVO AZAFATA DE VUELO",
+    "titulo": "De soltarte a hablar al inglés de cabina",
+    "lead": "Primero la base, para que hables con seguridad; después fluidez en conversaciones reales; y por último el inglés específico de azafata, para llegar al curso de verano con buen nivel. Fechas orientativas.",
+    "meses": [
+      "Nov",
+      "Dic",
+      "Ene",
+      "Feb",
+      "Mar",
+      "Abr",
+      "May",
+      "Jun"
+    ],
+    "colores": [
+      "#5b8ee0",
+      "#8fb8ec",
+      "#7fcfa0",
+      "#e9d18f"
+    ],
+    "tramos": [
+      [
+        0,
+        2
+      ],
+      [
+        2,
+        4.5
+      ],
+      [
+        4.5,
+        6.5
+      ],
+      [
+        6.5,
+        7
+      ]
+    ],
+    "bloques": [
+      {
+        "span": 2,
+        "simbolo": "Hi!",
+        "nombre": "La base",
+        "foco": "Presentarte, hablar de ti y del día a día sin bloquearte.",
+        "fondo": "#12234a",
+        "borde": "#5b8ee0"
+      },
+      {
+        "span": 3,
+        "simbolo": "💬",
+        "nombre": "Fluidez",
+        "foco": "Conversaciones cotidianas y roleplays: viajes, restaurantes, problemas, opiniones.",
+        "fondo": "#16284a",
+        "borde": "#8fb8ec"
+      },
+      {
+        "span": 2,
+        "simbolo": "✈",
+        "nombre": "Inglés de cabina",
+        "foco": "Atención al pasajero, anuncios a bordo y situaciones de vuelo.",
+        "fondo": "#13302a",
+        "borde": "#7fcfa0"
+      },
+      {
+        "span": 1,
+        "simbolo": "★",
+        "nombre": "Entrevistas",
+        "foco": "Simulacros de entrevista con aerolíneas.",
+        "fondo": "#3a3322",
+        "borde": "#e9d18f"
+      }
+    ],
+    "hitos": [
+      {
+        "nombre": "Te sueltas a hablar",
+        "pos": 2
+      },
+      {
+        "nombre": "Fluidez B1",
+        "pos": 4.5
+      },
+      {
+        "nombre": "Curso de verano",
+        "pos": 7,
+        "meta": true
+      }
+    ]
+  },
+  "pasos": {
+    "base": 25,
+    "base_txt": "",
+    "modalidad_txt": "Online",
+    "nota": "",
+    "who": "Inglés conversacional · Objetivo azafata · Online",
+    "titulo": "Tu plan, en dos pasos",
+    "lead": "Clases online de inglés conversacional, por la tarde, unas 3 horas a la semana. Primero una prueba y después el bono de 12 horas.",
+    "prueba": {
+      "horas": 2,
+      "precio": 46,
+      "tachado": 50,
+      "texto": "Dos horas online para conocer a tu profesor, ver tu nivel real hablando y comprobar que conectáis. Recomendado al 100%."
+    },
+    "paso2_titulo": "Después, tu bono de 12 horas",
+    "opciones": [
+      {
+        "horas": 12,
+        "precio": 285,
+        "frecuencia": "",
+        "destacado": true,
+        "etiqueta": "RECOMENDADO · MEJOR PRECIO POR HORA",
+        "alt": {
+          "oro": true,
+          "txt": "TU MEJOR OPCIÓN",
+          "hora": "23,75 €/h",
+          "bono": "el mejor precio por hora del curso"
+        }
+      }
+    ],
+    "resumen": [
+      "Clases online de inglés 100% conversación: speaking, vocabulario y roleplays.",
+      "Por la tarde, a partir de las 17:00, unas 3 horas a la semana.",
+      "Primero, bono de prueba de 2h (46 €) y, después, bono de 12h (285 €, a 23,75 €/h)."
+    ],
+    "quote": "Un plan a medida para que Ana hable inglés con soltura y llegue lista al curso de azafata.",
+    "sin_mes": true
+  },
+  "informe_ejemplo": {
+    "asignatura": "Inglés conversacional",
+    "mes": "Noviembre 2026",
+    "comparado": "octubre",
+    "nota": "7,0",
+    "sesiones": 8,
+    "horas": "12h",
+    "destrezas_label": "Destrezas trabajadas",
+    "barras": [
+      [
+        "Speaking",
+        7.0
+      ],
+      [
+        "Listening",
+        6.5
+      ],
+      [
+        "Vocabulary",
+        6.8
+      ]
+    ],
+    "mayor_progreso": "Speaking — ya mantiene una conversación de 10 minutos sin bloquearse",
+    "resumen": "En noviembre has hecho 8 clases. Ya te presentas y hablas de tu día a día con soltura. Todavía te frenan los tiempos pasados al contar algo. Diciembre: roleplays de viajes y practicar el pasado hablando.",
+    "horario": "Lunes y miércoles, 17:00–18:30 · online",
+    "temas": [
+      [
+        "Speaking",
+        3.0
+      ],
+      [
+        "Listening",
+        1.5
+      ],
+      [
+        "Vocabulary",
+        1.2
+      ],
+      [
+        "Roleplay",
+        1.0
+      ]
+    ],
+    "fuertes": [
+      "Ya no se bloquea al empezar a hablar",
+      "Buena pronunciación"
+    ],
+    "atencion": [
+      "Tiempos pasados al hablar",
+      "Vocabulario de viajes"
+    ],
+    "casa": [
+      "10 minutos diarios de podcast en inglés",
+      "Grabarte 2 minutos hablando de tu día"
+    ],
+    "semanas": [
+      5.8,
+      6.3,
+      6.8,
+      7.2
+    ],
+    "metricas": [
+      [
+        "76%",
+        "Comprensión"
+      ],
+      [
+        "81%",
+        "Constancia"
+      ],
+      [
+        "62%",
+        "Autonomía"
+      ]
+    ],
+    "evol": [
+      [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      [
+        "a",
+        "b",
+        "c",
+        "d"
+      ]
+    ],
+    "conclusion": "Noviembre cierra con una tendencia muy positiva. En diciembre, roleplays de viajes para ganar fluidez.",
+    "cal_mes": [
+      2026,
+      12
+    ],
+    "cal_titulo": "x",
+    "cal_dias_sesion": [
+      1
+    ],
+    "cal_examen": 16,
+    "cal_semanas": "3 sem",
+    "cal_semanas_txt": "x",
+    "antes": "x",
+    "ahora": "x",
+    "alumno": "",
+    "proxima_sesion_txt": "Roleplay: en el aeropuerto, facturación y control."
+  },
+  "semana": {
+    "etiqueta": "TU SEMANA",
+    "pill": "HORARIO ORIENTATIVO",
+    "titulo": "Dos tardes a la semana, a partir de las 17:00",
+    "lead": "Dos clases online de 1 hora y media, unas 3 horas a la semana, todo en inglés y basadas en conversación. Es orientativo: los días los cuadras con el profesor.",
+    "hora_ini": 17,
+    "hora_fin": 19,
+    "alto": 100,
+    "asignaturas": [
+      "Speaking y roleplay"
+    ],
+    "asig_cortas": [
+      "Speaking y roleplay"
+    ],
+    "bloques": [
+      [
+        0,
+        17,
+        18.5,
+        0
+      ],
+      [
+        2,
+        17,
+        18.5,
+        0
+      ]
+    ],
+    "extra_titulo": "Clases dinámicas, no de ejercicios",
+    "extra_texto": "Conversación, vocabulario útil y roleplays de situaciones reales para que te sueltes y ganes fluidez.",
+    "repartos": [
+      {
+        "nombre": "Cada semana · 3h",
+        "horas": [
+          3
+        ]
+      }
+    ]
+  }
+}
