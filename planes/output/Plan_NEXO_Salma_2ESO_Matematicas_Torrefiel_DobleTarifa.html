@@ -32,6 +32,15 @@
 .pda { border: 1px solid #2a3350; border-radius: 16px; padding: 18px 20px; background: #0e1629; margin-top: 14px; }
 .pda small { font-size: 10px; font-weight: 700; letter-spacing: .12em; color: #8fb8ec; } .pda b { display: block; font: 700 18px 'Liberation Serif', serif; margin-top: 4px; }
 .pdax { color: #a49f8e; font-size: 13.5px; margin-top: 6px; line-height: 1.5; } .pdax strong { font: 700 22px 'Liberation Serif', serif; color: #fff; }
+.inc > div { display: grid; grid-template-columns: repeat(3, auto); gap: 4px 18px; } .inc { align-items: flex-start; }
+.th span { font-size: 12.5px; color: #a49f8e; }
+.pon { margin-top: 8px; font-size: 12px; color: #c9c6ba; }
+.cuo { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 12px; } .cuo th { text-align: left; font-size: 9.5px; letter-spacing: .1em; color: #8fb8ec; font-weight: 700; padding: 3px 0; }
+.cuo td { padding: 4px 0; border-top: 1px solid #1d2744; color: #e7e7ea; } .cuo td small { color: #7d7f8a; font-size: 10.5px; }
+.fine.wide { font-size: 9.5px; margin-top: 10px; line-height: 1.35; }
+.cuo2 { margin-top: 8px; font-size: 12px; color: #c9c6ba; line-height: 1.5; } .cuo2 small { color: #7d7f8a; }
+.taho .plain li { font-size: 12.5px; padding: 4px 0 4px 16px; }
+.pdk { margin-top: 10px; font-size: 15px; font-weight: 700; color: #fff; }
 .srow.aho .sp b { color: #e7e7ea; }
 .srows + .quote { margin-top: 26px; }
 .srow.gold { border-color: #c9a24b !important; } .rec { font-style: normal; font-size: 10px; letter-spacing: .1em; background: #c9a24b; color: #0a1226; padding: 2px 8px; border-radius: 999px; margin-left: 8px; vertical-align: middle; }
@@ -678,15 +687,14 @@ h2.c { font-size: 34px; margin: 26px 0 18px; }
     <div><b>1</b><span>PROFESOR DE REFERENCIA</span></div>
     <div><b>0</b><span>GESTIONES A CARGO VUESTRO</span></div>
     <div><b>1</b><span>INTERLOCUTOR: NOSOTROS</span></div>
-    <div><b>24-48 h</b><span>SUSTITUTO (PREMIUM)</span></div>
+    <div><b>100%</b><span>SUSTITUCIÓN GARANTIZADA</span></div>
   </div>
   <div class="foot"><span>Nexo Académico · Plan personalizado</span><span>nexoacademico.com</span></div>
 </section><section class="page">
   <div class="hdr"><span class="hdr-l">LOS INFORMES</span></div><div class="rule"></div>
   <div class="pill gold">SEGUIMIENTO INCLUIDO</div>
   <h2>Un informe real para Salma</h2>
-  <p class="lead">Salma tiene su propio informe de seguimiento. Esto es lo que incluye cada mes:</p>
-  <p class="inf-note">Los informes están incluidos en la Tarifa Premium. En la Tarifa Ahorro se pueden añadir por 20 €.</p>
+  <p class="lead">Salma tiene su propio informe de seguimiento dentro del plan, sin coste adicional. Esto es lo que incluye cada mes:</p>
   <ul class="checks"><li>Horas dedicadas y sesiones realizadas</li><li>Evolución por asignatura, semana a semana</li><li>Puntos fuertes y áreas de mejora detectadas</li><li>Plan de trabajo propuesto para el mes siguiente</li><li>Qué puede reforzarse en casa</li><li>Acceso al área privada del alumno</li></ul>
   <div class="panel">
     <div class="panel-h"><b>Informe de seguimiento mensual</b><span>EJEMPLO</span></div>
@@ -736,30 +744,33 @@ h2.c { font-size: 34px; margin: 26px 0 18px; }
 </div></div><h5>Propuesta para el mes siguiente</h5><p>Organización y foco de cada asignatura.</p></div></div>
   <div class="foot"><span>Nexo Académico · Plan personalizado</span><span>nexoacademico.com</span></div>
 </section><section class="page">
-  <div class="hdr"><span class="hdr-l">TARIFAS · PRESENCIAL EN CASA DEL ALUMNO</span></div><div class="rule"></div>
-  <div class="pill blue">TARIFAS ESO · PRESENCIAL</div>
-  <h2>Dos tarifas. Vosotros elegís.</h2>
+  <div class="hdr"><span class="hdr-l">TARIFAS · ESO</span></div><div class="rule"></div>
+  <h2 style="margin-top:14px">Dos tarifas. Vosotros elegís.</h2>
   <div class="tp1"><span class="k">PASO 1 · PARA EMPEZAR</span><b>Bono de prueba de 2 h</b>
     <span class="pz"><s>48 €</s> <strong>44 €</strong></span>
     <span class="ps">22 €/h · precio para nuevos alumnos</span></div>
   <div class="tp2">PASO 2 · DESPUÉS, ELEGÍS UNA DE ESTAS DOS TARIFAS</div>
-  <div class="inc"><b>INCLUIDO EN LAS DOS TARIFAS</b><span>✓ Profesor filtrado y verificado</span><span>✓ Evaluación inicial</span><span>✓ Horario flexible</span></div>
+  <div class="inc"><b>INCLUIDO EN LAS DOS TARIFAS</b><div><span>✓ Profesor filtrado y verificado</span><span>✓ Evaluación inicial</span><span>✓ Horario flexible</span><span>✓ Sustitución garantizada si el profesor falla</span><span>✓ Informe de seguimiento mensual en el área privada</span></div></div>
   <div class="dtw">
     <div class="tprem"><div class="tag">RECOMENDADO</div>
       <div class="tn"><span>★★★</span> TARIFA PREMIUM</div>
-      <div class="th">desde <b>22,50 €/h</b></div>
+      <div class="th">desde <b>22,50 €/h</b> <span>presencial</span></div>
       <div class="pbs"><div class="pb"><b>4 h</b><span>94 €</span></div><div class="pb"><b>8 h</b><span>185 €</span></div><div class="pb f"><b>12 h</b><span>270 €</span><em>22,50 €/h · Más elegido</em></div></div>
-      <ul class="stars"><li class="big">Sin permanencia</li><li class="big">Sustituto en 24-48 h si el profesor falla</li><li class="big">Devolución íntegra de las horas no usadas</li><li>Informe de cada clase y informe mensual completo en el área privada</li><li>Plan de trabajo personalizado y ajuste de horas entre bloques</li><li>Bonos de 4, 8 o 12 h</li></ul>
+      <div class="pon">Online: 4 h: 90 € · 8 h: 175 € · 12 h: 260 € (21,67 €/h)</div>
+      <ul class="stars"><li class="big">Sin permanencia: paráis cuando queráis</li><li class="big">Devolución íntegra de las horas no usadas</li><li>Plan de trabajo personalizado y ajuste de horas entre bloques</li><li>Bonos de 4, 8 o 12 h</li></ul>
     </div>
     <div class="taho">
-      <div class="tn">TARIFA AHORRO</div>
-      <div class="th"><b>17,99 €/h</b></div>
-      <div class="tsub">Un único bono de 15 h · 269,85 €</div>
-      <ul class="plain"><li>Os asignamos el profesor que mejor encaja</li><li>Sustitución cuando haya otro profesor disponible</li>
-        <li>Informe de seguimiento opcional: +20 €</li></ul>
-      <p class="fine">* Bono de 15 h pagado por adelantado. Si lo dejáis antes de terminarlo, las horas ya dadas se cobran a la tarifa base de ESO (24 €/h) y os devolvemos el resto.</p>
+      <div class="tn">PLAN AHORRO</div>
+      <div class="th"><b>18,99 €/h</b> <span>presencial · 16,99 €/h online</span></div>
+      <div class="tsub">Cuota mensual · desde 67,96 € al mes</div>
+      <div class="cuo2">4 h: 75,96 € · 6 h: 113,94 € · 8 h: 151,92 € · 12 h: 227,88 € <small>al mes, presencial</small></div>
+      <ul class="plain"><li>Permanencia de 3 meses</li>
+        <li>Cuota mensual por adelantado (Bizum): la primera el día que empezáis y después el mismo día de cada mes</li>
+        <li>Las clases canceladas con 24 h de aviso se recuperan</li>
+        <li>Cada mes elegís cuántas horas queréis y se os guardan hasta 2 h para el mes siguiente</li></ul>
     </div>
   </div>
+  <p class="fine wide">* Permanencia de 3 meses. Durante los 3 meses, si un mes os sobran horas, se pasan al siguiente como máximo 2 horas (las demás se pierden, salvo causa justificada que valorará Nexo), y si un mes hacéis alguna de más, se descuenta del siguiente (máximo 2 horas). Cada mes podéis cambiar el número de horas. Las clases extra fuera de vuestro saldo se reservan con Nexo y se cobran a la tarifa base (24 €/h presencial, 23 €/h online). Al terminar los 3 meses, si renováis, conserváis las horas que os queden; si no renováis, esas horas se pierden. Si lo dejáis antes de los 3 meses, las horas ya dadas se recalculan a la tarifa base. Si Nexo no puede asignaros profesor, podéis dejarlo sin coste. El informe de cada mes se publica al abonar la cuota del mes siguiente.</p>
   <div class="foot"><span>Nexo Académico · Guía ESO</span><span>nexoacademico.com</span></div>
 </section><section class="page pasosp">
   <div class="hdr"><span class="hdr-l">PLAN PERSONALIZADO · SALMA</span></div><div class="rule"></div>
@@ -776,11 +787,10 @@ h2.c { font-size: 34px; margin: 26px 0 18px; }
     <div class="pdp"><div class="tag">RECOMENDADO</div>
       <div class="tn"><span>★★★</span> TARIFA PREMIUM · BONO DE 12 H</div>
       <div class="pdx"><b>270 €</b><span><strong>22,50 €</strong>/h</span></div>
-      <ul class="stars"><li class="big">Sin permanencia</li><li class="big">Sustituto en 24-48 h si el profesor falla</li><li class="big">Devolución íntegra de las horas no usadas</li></ul>
+      <div class="pdk">Sin permanencia · Devolución íntegra</div>
     </div>
-    <div class="pda"><small>¿BUSCÁIS EL PRECIO MÁS BAJO?</small><b>Tarifa Ahorro</b>
-      <div class="pdax">15 h por 269,85 €<br><strong>17,99 €/h</strong></div>
-      <p class="fine">* Bono de 15 h pagado por adelantado. Si lo dejáis antes de terminarlo, las horas ya dadas se cobran a la tarifa base de ESO (24 €/h) y os devolvemos el resto.</p></div>
+    <div class="pda"><small>¿PREFERÍS PAGAR MENOS?</small><b>Plan Ahorro</b>
+      <div class="pdax"><strong>18,99 €/h</strong> presencial o <strong>16,99 €/h</strong> online, desde 67,96 € al mes, con 3 meses de permanencia.</div></div>
   </div>
   <div class="foot"><span>Nexo Académico · Plan personalizado</span><span>nexoacademico.com</span></div>
 </section><section class="page">
@@ -790,10 +800,10 @@ h2.c { font-size: 34px; margin: 26px 0 18px; }
   <p class="lead">El plan de Salma: primero la prueba y, después, la tarifa que elijáis.</p>
   <div class="srows"><div class="srow"><div class="av w">1</div><div class="st"><b>Bono de prueba 2 h</b><small>Para empezar</small></div>
   <div class="sps"><div class="sp"><small>Una vez</small><b>44 €</b></div></div></div>
-<div class="srow ref gold"><div class="av w">2</div><div class="st"><b>Tarifa Premium 12 h <em class="rec">RECOMENDADA</em></b><small>Sin permanencia · sustituto en 24-48 h · devolución íntegra</small></div>
+<div class="srow ref gold"><div class="av w">2</div><div class="st"><b>Tarifa Premium 12 h <em class="rec">RECOMENDADA</em></b><small>Sin permanencia · devolución íntegra de las horas no usadas</small></div>
   <div class="sps"><div class="sp"><small>Bono</small><b>270 €</b></div><div class="sp"><small>Por hora</small><b>22,50 €</b></div></div></div>
-<div class="srow ref aho"><div class="av w">2</div><div class="st"><b>Tarifa Ahorro 15 h</b><small>Un único bono · informe opcional +20 €</small></div>
-  <div class="sps"><div class="sp"><small>Bono</small><b>269,85 €</b></div><div class="sp"><small>Por hora</small><b>17,99 €</b></div></div></div></div>
+<div class="srow ref aho"><div class="av w">2</div><div class="st"><b>Plan Ahorro</b><small>Cuota mensual · permanencia de 3 meses</small></div>
+  <div class="sps"><div class="sp"><small>Desde</small><b>67,96 €/mes</b></div></div></div></div>
   <div class="quote"><span>"</span><em>Un plan a medida para que Salma gane confianza en Matemáticas, a su ritmo.</em></div>
   <div class="foot"><span>Nexo Académico · Plan personalizado</span><span>nexoacademico.com</span></div>
 </section><section class="page cover">

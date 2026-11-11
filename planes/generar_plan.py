@@ -1007,7 +1007,7 @@ def page_proceso(d, t):
     <div><b>1</b><span>PROFESOR DE REFERENCIA</span></div>
     <div><b>0</b><span>{e(t["gestiones"])}</span></div>
     <div><b>1</b><span>INTERLOCUTOR: NOSOTROS</span></div>
-    {'<div><b>24-48 h</b><span>SUSTITUTO (PREMIUM)</span></div>' if d.get("tarifa_doble") else '<div><b>100%</b><span>SUSTITUCIÓN GARANTIZADA</span></div>'}
+    <div><b>100%</b><span>SUSTITUCIÓN GARANTIZADA</span></div>
   </div>
   {footer()}
 </section>'''
@@ -1027,7 +1027,6 @@ def page_informe(d, t):
   <div class="pill gold">SEGUIMIENTO INCLUIDO</div>
   <h2>{e(t.get("informe_h2") or ("Un informe real para " + d["nombre"] if d["nombre"] else "Un informe real, cada mes"))}</h2>
   <p class="lead">{e(t["p3_sub"])}</p>
-  {'<p class="inf-note">Los informes están incluidos en la Tarifa Premium. En la Tarifa Ahorro se pueden añadir por ' + num_eur(doble_cfg(d)["informe_extra"]) + '.</p>' if d.get("tarifa_doble") else ""}
   <ul class="checks">{checks}</ul>
   <div class="panel">
     <div class="panel-h"><b>Informe de seguimiento mensual</b><span>EJEMPLO</span></div>
@@ -1233,13 +1232,16 @@ def page_tarifas(d, t, mod):
 
 
 def doble_cfg(d):
-    """Datos de la doble tarifa (Premium / Ahorro). Por defecto, ESO presencial."""
+    """Datos de la doble tarifa: Premium (bonos, sin permanencia) / Plan Ahorro (cuota mensual, 3 meses). ESO."""
     tf = TARIFAS[d["etapa"]]
     pr, base = tf["precios"]["casa_alumno"], tf["base"]["casa_alumno"]
+    on = tf["precios"].get("online", {})
     c = {"prueba_precio": pr[2], "prueba_tachado": base * 2, "premium": {4: pr[4], 8: pr[8], 12: pr[12]},
-         "ahorro_horas": 15, "ahorro_precio": 269.85, "informe_extra": 20, "base": base}
+         "premium_online": {h: on[h] for h in (4, 8, 12) if h in on},
+         "ahorro_hora": 18.99, "ahorro_hora_online": 16.99, "ahorro_horas": [4, 6, 8, 12], "permanencia": 3,
+         "base": base, "base_online": tf["base"].get("online", 23)}
     c.update(d.get("tarifa_doble") if isinstance(d.get("tarifa_doble"), dict) else {})
-    c["ahorro_hora"] = c["ahorro_precio"] / c["ahorro_horas"]
+    c["ahorro_desde"] = min(c["ahorro_hora"], c["ahorro_hora_online"]) * min(c["ahorro_horas"])
     return c
 
 
@@ -1248,14 +1250,18 @@ def num_eur(x):
 
 
 def ahorro_letra(c):
-    return (f'Bono de {c["ahorro_horas"]} h pagado por adelantado. Si lo dejáis antes de terminarlo, las horas ya dadas '
-            f'se cobran a la tarifa base de ESO ({num_eur(c["base"])}/h) y os devolvemos el resto.')
+    return (f'Permanencia de {c["permanencia"]} meses. Durante los {c["permanencia"]} meses, si un mes os sobran horas, se pasan al siguiente '
+            'como máximo 2 horas (las demás se pierden, salvo causa justificada que valorará Nexo), y si un mes hacéis alguna de más, '
+            'se descuenta del siguiente (máximo 2 horas). Cada mes podéis cambiar el número de horas. Las clases extra fuera de vuestro '
+            f'saldo se reservan con Nexo y se cobran a la tarifa base ({num_eur(c["base"])}/h presencial, {num_eur(c["base_online"])}/h online). '
+            f'Al terminar los {c["permanencia"]} meses, si renováis, conserváis las horas que os queden; si no renováis, esas horas se pierden. '
+            f'Si lo dejáis antes de los {c["permanencia"]} meses, las horas ya dadas se recalculan a la tarifa base. Si Nexo no puede '
+            'asignaros profesor, podéis dejarlo sin coste. El informe de cada mes se publica al abonar la cuota del mes siguiente.')
 
 
-def premium_ventajas(grandes=True, todas=True):
-    top = ["Sin permanencia", "Sustituto en 24-48 h si el profesor falla", "Devolución íntegra de las horas no usadas"]
-    rest = ["Informe de cada clase y informe mensual completo en el área privada",
-            "Plan de trabajo personalizado y ajuste de horas entre bloques", "Bonos de 4, 8 o 12 h"]
+def premium_ventajas(todas=True):
+    top = ["Sin permanencia: paráis cuando queráis", "Devolución íntegra de las horas no usadas"]
+    rest = ["Plan de trabajo personalizado y ajuste de horas entre bloques", "Bonos de 4, 8 o 12 h"]
     li = "".join(f'<li class="big">{e(x)}</li>' for x in top)
     if todas:
         li += "".join(f"<li>{e(x)}</li>" for x in rest)
@@ -1263,20 +1269,24 @@ def premium_ventajas(grandes=True, todas=True):
 
 
 def incluido_ambas():
-    it = ["Profesor filtrado y verificado", "Evaluación inicial", "Horario flexible"]
-    return ('<div class="inc"><b>INCLUIDO EN LAS DOS TARIFAS</b>'
-            + "".join(f"<span>✓ {e(x)}</span>" for x in it) + "</div>")
+    it = ["Profesor filtrado y verificado", "Evaluación inicial", "Horario flexible",
+          "Sustitución garantizada si el profesor falla", "Informe de seguimiento mensual en el área privada"]
+    return ('<div class="inc"><b>INCLUIDO EN LAS DOS TARIFAS</b><div>'
+            + "".join(f"<span>✓ {e(x)}</span>" for x in it) + "</div></div>")
 
 
 def page_tarifas_doble(d, t):
     c = doble_cfg(d)
-    pm = c["premium"]
+    pm, po = c["premium"], c["premium_online"]
     bonos = "".join(f'<div class="pb{" f" if h == 12 else ""}"><b>{h} h</b><span>{num_eur(v)}</span>'
                     f'{"<em>" + num_eur(v / h) + "/h · Más elegido</em>" if h == 12 else ""}</div>' for h, v in pm.items())
+    online = (" · ".join(f"{h} h: {num_eur(v)}" for h, v in po.items()) + f" ({num_eur(po[12] / 12)}/h)") if 12 in po else ""
+    filas = "".join(f'<tr><td>{h} h <small>({str(h / 4).replace(".0", "").replace(".", ",")} h/sem)</small></td>'
+                    f'<td>{num_eur(round(h * c["ahorro_hora"], 2))}</td><td>{num_eur(round(h * c["ahorro_hora_online"], 2))}</td></tr>'
+                    for h in c["ahorro_horas"])
     return f'''<section class="page">
-  <div class="hdr"><span class="hdr-l">TARIFAS · PRESENCIAL EN CASA DEL ALUMNO</span></div><div class="rule"></div>
-  <div class="pill blue">TARIFAS {e(TARIFAS[d["etapa"]]["nombre"].upper())} · PRESENCIAL</div>
-  <h2>Dos tarifas. Vosotros elegís.</h2>
+  <div class="hdr"><span class="hdr-l">TARIFAS · {e(TARIFAS[d["etapa"]]["nombre"].upper())}</span></div><div class="rule"></div>
+  <h2 style="margin-top:14px">Dos tarifas. Vosotros elegís.</h2>
   <div class="tp1"><span class="k">PASO 1 · PARA EMPEZAR</span><b>Bono de prueba de 2 h</b>
     <span class="pz"><s>{num_eur(c["prueba_tachado"])}</s> <strong>{num_eur(c["prueba_precio"])}</strong></span>
     <span class="ps">{num_eur(c["prueba_precio"] / 2)}/h · precio para nuevos alumnos</span></div>
@@ -1285,19 +1295,23 @@ def page_tarifas_doble(d, t):
   <div class="dtw">
     <div class="tprem"><div class="tag">RECOMENDADO</div>
       <div class="tn"><span>★★★</span> TARIFA PREMIUM</div>
-      <div class="th">desde <b>{num_eur(pm[12] / 12)}/h</b></div>
+      <div class="th">desde <b>{num_eur(pm[12] / 12)}/h</b> <span>presencial</span></div>
       <div class="pbs">{bonos}</div>
+      {f'<div class="pon">Online: {online}</div>' if online else ""}
       {premium_ventajas()}
     </div>
     <div class="taho">
-      <div class="tn">TARIFA AHORRO</div>
-      <div class="th"><b>{num_eur(c["ahorro_hora"])}/h</b></div>
-      <div class="tsub">Un único bono de {c["ahorro_horas"]} h · {num_eur(c["ahorro_precio"])}</div>
-      <ul class="plain"><li>Os asignamos el profesor que mejor encaja</li><li>Sustitución cuando haya otro profesor disponible</li>
-        <li>Informe de seguimiento opcional: +{num_eur(c["informe_extra"])}</li></ul>
-      <p class="fine">* {e(ahorro_letra(c))}</p>
+      <div class="tn">PLAN AHORRO</div>
+      <div class="th"><b>{num_eur(c["ahorro_hora"])}/h</b> <span>presencial · {num_eur(c["ahorro_hora_online"])}/h online</span></div>
+      <div class="tsub">Cuota mensual · desde {num_eur(c["ahorro_desde"])} al mes</div>
+      <div class="cuo2">{" · ".join(f"{h} h: {num_eur(round(h * c['ahorro_hora'], 2))}" for h in c["ahorro_horas"])} <small>al mes, presencial</small></div>
+      <ul class="plain"><li>Permanencia de {c["permanencia"]} meses</li>
+        <li>Cuota mensual por adelantado (Bizum): la primera el día que empezáis y después el mismo día de cada mes</li>
+        <li>Las clases canceladas con 24 h de aviso se recuperan</li>
+        <li>Cada mes elegís cuántas horas queréis y se os guardan hasta 2 h para el mes siguiente</li></ul>
     </div>
   </div>
+  <p class="fine wide">* {e(ahorro_letra(c))}</p>
   {footer("Nexo Académico · Guía " + TARIFAS[d["etapa"]]["nombre"])}
 </section>'''
 
@@ -1322,11 +1336,10 @@ def page_pasos_doble(d, t):
     <div class="pdp"><div class="tag">RECOMENDADO</div>
       <div class="tn"><span>★★★</span> TARIFA PREMIUM · BONO DE 12 H</div>
       <div class="pdx"><b>{num_eur(p12)}</b><span><strong>{num_eur(p12 / 12)}</strong>/h</span></div>
-      {premium_ventajas(todas=False)}
+      <div class="pdk">Sin permanencia · Devolución íntegra</div>
     </div>
-    <div class="pda"><small>¿BUSCÁIS EL PRECIO MÁS BAJO?</small><b>Tarifa Ahorro</b>
-      <div class="pdax">{c["ahorro_horas"]} h por {num_eur(c["ahorro_precio"])}<br><strong>{num_eur(c["ahorro_hora"])}/h</strong></div>
-      <p class="fine">* {e(ahorro_letra(c))}</p></div>
+    <div class="pda"><small>¿PREFERÍS PAGAR MENOS?</small><b>Plan Ahorro</b>
+      <div class="pdax"><strong>{num_eur(c["ahorro_hora"])}/h</strong> presencial o <strong>{num_eur(c["ahorro_hora_online"])}/h</strong> online, desde {num_eur(c["ahorro_desde"])} al mes, con {c["permanencia"]} meses de permanencia.</div></div>
   </div>
   {footer()}
 </section>'''
@@ -1338,10 +1351,10 @@ def page_resumen_doble(d, t):
     p12 = c["premium"][12]
     rows = (f'''<div class="srow"><div class="av w">1</div><div class="st"><b>Bono de prueba 2 h</b><small>Para empezar</small></div>
   <div class="sps"><div class="sp"><small>Una vez</small><b>{num_eur(c["prueba_precio"])}</b></div></div></div>
-<div class="srow ref gold"><div class="av w">2</div><div class="st"><b>Tarifa Premium 12 h <em class="rec">RECOMENDADA</em></b><small>Sin permanencia · sustituto en 24-48 h · devolución íntegra</small></div>
+<div class="srow ref gold"><div class="av w">2</div><div class="st"><b>Tarifa Premium 12 h <em class="rec">RECOMENDADA</em></b><small>Sin permanencia · devolución íntegra de las horas no usadas</small></div>
   <div class="sps"><div class="sp"><small>Bono</small><b>{num_eur(p12)}</b></div><div class="sp"><small>Por hora</small><b>{num_eur(p12 / 12)}</b></div></div></div>
-<div class="srow ref aho"><div class="av w">2</div><div class="st"><b>Tarifa Ahorro {c["ahorro_horas"]} h</b><small>Un único bono · informe opcional +{num_eur(c["informe_extra"])}</small></div>
-  <div class="sps"><div class="sp"><small>Bono</small><b>{num_eur(c["ahorro_precio"])}</b></div><div class="sp"><small>Por hora</small><b>{num_eur(c["ahorro_hora"])}</b></div></div></div>''')
+<div class="srow ref aho"><div class="av w">2</div><div class="st"><b>Plan Ahorro</b><small>Cuota mensual · permanencia de {c["permanencia"]} meses</small></div>
+  <div class="sps"><div class="sp"><small>Desde</small><b>{num_eur(c["ahorro_desde"])}/mes</b></div></div></div>''')
     q = (d.get("pasos") or {}).get("quote") or (f"Un plan a medida para {n}." if n else "Un plan a medida.")
     return f'''<section class="page">
   <div class="hdr"><img class="logo-sm" src="{LOGO_URI}"><span class="hdr-r">RESUMEN DEL PLAN</span></div><div class="rule"></div>
@@ -1505,6 +1518,15 @@ CSS = r"""
 .pda { border: 1px solid #2a3350; border-radius: 16px; padding: 18px 20px; background: #0e1629; margin-top: 14px; }
 .pda small { font-size: 10px; font-weight: 700; letter-spacing: .12em; color: #8fb8ec; } .pda b { display: block; font: 700 18px 'Liberation Serif', serif; margin-top: 4px; }
 .pdax { color: #a49f8e; font-size: 13.5px; margin-top: 6px; line-height: 1.5; } .pdax strong { font: 700 22px 'Liberation Serif', serif; color: #fff; }
+.inc > div { display: grid; grid-template-columns: repeat(3, auto); gap: 4px 18px; } .inc { align-items: flex-start; }
+.th span { font-size: 12.5px; color: #a49f8e; }
+.pon { margin-top: 8px; font-size: 12px; color: #c9c6ba; }
+.cuo { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 12px; } .cuo th { text-align: left; font-size: 9.5px; letter-spacing: .1em; color: #8fb8ec; font-weight: 700; padding: 3px 0; }
+.cuo td { padding: 4px 0; border-top: 1px solid #1d2744; color: #e7e7ea; } .cuo td small { color: #7d7f8a; font-size: 10.5px; }
+.fine.wide { font-size: 9.5px; margin-top: 10px; line-height: 1.35; }
+.cuo2 { margin-top: 8px; font-size: 12px; color: #c9c6ba; line-height: 1.5; } .cuo2 small { color: #7d7f8a; }
+.taho .plain li { font-size: 12.5px; padding: 4px 0 4px 16px; }
+.pdk { margin-top: 10px; font-size: 15px; font-weight: 700; color: #fff; }
 .srow.aho .sp b { color: #e7e7ea; }
 .srows + .quote { margin-top: 26px; }
 .srow.gold { border-color: #c9a24b !important; } .rec { font-style: normal; font-size: 10px; letter-spacing: .1em; background: #c9a24b; color: #0a1226; padding: 2px 8px; border-radius: 999px; margin-left: 8px; vertical-align: middle; }
@@ -2130,7 +2152,6 @@ def main():
     t.update(d.get("textos", {}))  # ajustes de texto específicos del lead
     if d.get("tarifa_doble"):
         t["c1"] = t["c1"].replace("con horario fijo cada semana", "con un horario flexible que se adapta a vosotros")
-        t["p3_sub"] = t["p3_sub"].replace(" dentro del plan, sin coste adicional", "")
     tf = TARIFAS[d["etapa"]]
     for m in d["modalidades_recomendadas"]:
         assert m in tf["precios"], f"La etapa {d['etapa']} no tiene modalidad {m}"
