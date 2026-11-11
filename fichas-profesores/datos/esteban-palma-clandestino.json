@@ -1,0 +1,30 @@
+{
+  "nombre": "Esteban Palma Clandestino",
+  "foto": "../fotos/esteban-palma-clandestino.jpg",
+  "foto_posicion": "50% 32%",
+  "titular": "Profesor particular",
+  "edad": 25,
+  "telefono": "+34 610 92 58 35",
+  "email": "clandestino.e.palma@gmail.com",
+  "estudios": [
+    {"titulo": "Ingeniería Agronómica y del Medio Natural", "detalle": "Universitat Politècnica de València (UPV)"},
+    {"titulo": "Cursos de comunicación", "detalle": "Técnicas de negociación (Método Harvard) y comunicación interpersonal"}
+  ],
+  "idiomas": [
+    {"idioma": "Español", "nivel": "Nativo"},
+    {"idioma": "Inglés", "nivel": "B2", "certificado": "Trinity GESE Level 9"}
+  ],
+  "experiencia_docente": [
+    {"titulo": "Profesor de reemplazo · Instituto JM", "fecha": "Dic. 2025 – jun. 2026"},
+    {"titulo": "Clases particulares"}
+  ],
+  "aptitudes": [
+    "Buena comunicación",
+    "Habilidad social",
+    "Inteligencia emocional",
+    "Resolución de problemas",
+    "Manejo del estrés",
+    "Cuidado del equipo",
+    "Autonomía y autogestión"
+  ]
+}
