@@ -1336,6 +1336,7 @@ def page_pasos_doble(d, t):
     <div class="pdp"><div class="tag">RECOMENDADO</div>
       <div class="tn"><span>★★★</span> TARIFA PREMIUM · BONO DE 12 H</div>
       <div class="pdx"><b>{num_eur(p12)}</b><span><strong>{num_eur(p12 / 12)}</strong>/h</span></div>
+      {f'<div class="pdo">Online: {num_eur(c["premium_online"][12])} ({num_eur(c["premium_online"][12] / 12)}/h)</div>' if 12 in c["premium_online"] else ""}
       <div class="pdk">Sin permanencia · Devolución íntegra</div>
     </div>
     <div class="pda"><small>¿PREFERÍS PAGAR MENOS?</small><b>Plan Ahorro</b>
@@ -1351,7 +1352,7 @@ def page_resumen_doble(d, t):
     p12 = c["premium"][12]
     rows = (f'''<div class="srow"><div class="av w">1</div><div class="st"><b>Bono de prueba 2 h</b><small>Para empezar</small></div>
   <div class="sps"><div class="sp"><small>Una vez</small><b>{num_eur(c["prueba_precio"])}</b></div></div></div>
-<div class="srow ref gold"><div class="av w">2</div><div class="st"><b>Tarifa Premium 12 h <em class="rec">RECOMENDADA</em></b><small>Sin permanencia · devolución íntegra de las horas no usadas</small></div>
+<div class="srow ref gold"><div class="av w">2</div><div class="st"><b>Tarifa Premium 12 h <em class="rec">RECOMENDADA</em></b><small>Sin permanencia · devolución íntegra{" · online " + num_eur(c["premium_online"][12]) if 12 in c["premium_online"] else ""}</small></div>
   <div class="sps"><div class="sp"><small>Bono</small><b>{num_eur(p12)}</b></div><div class="sp"><small>Por hora</small><b>{num_eur(p12 / 12)}</b></div></div></div>
 <div class="srow ref aho"><div class="av w">2</div><div class="st"><b>Plan Ahorro</b><small>Cuota mensual · permanencia de {c["permanencia"]} meses</small></div>
   <div class="sps"><div class="sp"><small>Desde</small><b>{num_eur(c["ahorro_desde"])}/mes</b></div></div></div>''')
@@ -1526,6 +1527,7 @@ CSS = r"""
 .fine.wide { font-size: 9.5px; margin-top: 10px; line-height: 1.35; }
 .cuo2 { margin-top: 8px; font-size: 12px; color: #c9c6ba; line-height: 1.5; } .cuo2 small { color: #7d7f8a; }
 .taho .plain li { font-size: 12.5px; padding: 4px 0 4px 16px; }
+.pdo { margin-top: 4px; color: #c9c6ba; font-size: 13px; }
 .pdk { margin-top: 10px; font-size: 15px; font-weight: 700; color: #fff; }
 .srow.aho .sp b { color: #e7e7ea; }
 .srows + .quote { margin-top: 26px; }
