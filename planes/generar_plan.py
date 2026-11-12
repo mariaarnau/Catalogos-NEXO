@@ -1218,6 +1218,11 @@ def page_tarifas(d, t, mod):
     for h in (2, 4, 8, 12):
         precio = f'<div class="old">{eur(base*2)}</div><div class="price">{eur(pr[h])}</div><div class="new">★ Precio nuevos alumnos</div>' \
             if h == 2 else f'<div class="price solo">{eur(pr[h])}</div>'
+        dg = d.get("descuento_grupo")
+        if dg:
+            nuevo = pr[h] * (1 - dg / 100)
+            precio = (f'<div class="old">{eur(pr[h])}</div><div class="price">{eur(nuevo)}</div>'
+                      f'<div class="new">−{dg}% cada uno · {eur(nuevo / h)}/h</div>')
         feats = "".join(f"<li>{e(f)}</li>" for f in FEATURES[h])
         top = '<div class="top">Más elegido</div>' if h == 12 else ""
         cards += f'<div class="tc{" feat" if h == 12 else ""}">{top}<div class="hh">{h}h</div><div class="hs">{e(sub)}</div>{precio}<ul class="checks sm">{feats}</ul></div>'
