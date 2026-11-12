@@ -1,0 +1,197 @@
+{
+  "nombre": "Mateo",
+  "etapa": "primaria",
+  "curso": "Primaria",
+  "asignaturas": [
+    "Inglés"
+  ],
+  "voz": "familia",
+  "archivo": "Plan_NEXO_Mateo_Primaria_Ingles",
+  "cover_card_sub": "Primaria · Inglés · Presencial u online",
+  "presencial_label": "en casa",
+  "bonos_recomendados": [
+    {
+      "horas": 12,
+      "frecuencia": "3h a la semana"
+    }
+  ],
+  "modalidades_recomendadas": [
+    "casa_alumno",
+    "online"
+  ],
+  "tarifas_mostrar": [
+    "casa_alumno",
+    "online"
+  ],
+  "textos": {
+    "cover_sub": "Un plan a medida para Mateo: clases de Inglés de Primaria, presenciales en casa u online, para que gane confianza hablando y avance en clase.",
+    "p2_title": "Así acompañamos a Mateo cada mes",
+    "p2_sub": "Un profesor de Inglés con clases dinámicas: vocabulario, juegos y speaking, adaptadas a lo que trabaja en el cole.",
+    "c1": "Mateo tiene su profesor de referencia asignado, especializado en Inglés, con un horario flexible que se adapta a vosotros.",
+    "p3_sub": "Mateo tiene su propio informe de seguimiento dentro del plan, sin coste adicional. Esto es lo que incluye cada mes:",
+    "informe_h2": "Un informe real para Mateo",
+    "p4_pill": "ASÍ LO VERÉIS VOSOTROS",
+    "p4_sub": "Cuatro pantallas de ejemplo del informe que recibiréis en el área privada de Mateo.",
+    "p10_sub": "Escribidnos para reservar el bono de prueba de Mateo y empezar cuanto antes.",
+    "gestiones": "GESTIONES A CARGO VUESTRO"
+  },
+  "informe_ejemplo": {
+    "asignatura": "Inglés",
+    "mes": "Noviembre 2026",
+    "comparado": "octubre",
+    "nota": "7,0",
+    "sesiones": 8,
+    "horas": "12h",
+    "destrezas_label": "Destrezas trabajadas",
+    "barras": [
+      [
+        "Vocabulary",
+        7.0
+      ],
+      [
+        "Speaking",
+        6.5
+      ],
+      [
+        "Listening",
+        6.8
+      ]
+    ],
+    "mayor_progreso": "Inglés — ya se presenta y habla de su día a día sin vergüenza",
+    "resumen": "En noviembre, Mateo ha hecho 8 clases sin faltar a ninguna. Ya domina el vocabulario de la familia, la casa y el colegio. Con las frases completas todavía necesita apoyo. Diciembre: practicar speaking con juegos y canciones.",
+    "proxima_sesion": "PRÓXIMA CLASE — MARTES 1",
+    "proxima_sesion_txt": "Speaking: describir su habitación con frases completas.",
+    "horario": "Martes y jueves, 17:30–18:30",
+    "temas": [
+      [
+        "Vocabulary",
+        2.5
+      ],
+      [
+        "Speaking",
+        2.0
+      ],
+      [
+        "Listening",
+        1.2
+      ],
+      [
+        "Grammar",
+        0.8
+      ]
+    ],
+    "fuertes": [
+      "Vocabulario consolidado",
+      "Muy participativo y con ganas"
+    ],
+    "atencion": [
+      "Speaking: frases completas",
+      "Grammar: verbo to be y have got"
+    ],
+    "casa": [
+      "10 minutos diarios de dibujos en inglés",
+      "Repasar 5 palabras nuevas cada día"
+    ],
+    "semanas": [
+      5.8,
+      6.3,
+      6.8,
+      7.2
+    ],
+    "metricas": [
+      [
+        "76%",
+        "Comprensión"
+      ],
+      [
+        "81%",
+        "Constancia"
+      ],
+      [
+        "62%",
+        "Autonomía"
+      ]
+    ],
+    "evol": [
+      [
+        "Resolución de problemas",
+        "Octubre: 60%",
+        "Noviembre: 79%",
+        "Plantea mejor el enunciado antes de operar."
+      ],
+      [
+        "Autonomía",
+        "Octubre: 50%",
+        "Noviembre: 62%",
+        "Cada vez necesita menos ayuda para empezar."
+      ]
+    ],
+    "conclusion": "Noviembre cierra con una tendencia muy positiva. En diciembre practicamos speaking con juegos y canciones.",
+    "cal_mes": [
+      2026,
+      12
+    ],
+    "cal_titulo": "Calendario — diciembre 2026",
+    "cal_dias_sesion": [
+      1,
+      3
+    ],
+    "cal_examen": 16,
+    "cal_semanas": "3 sem",
+    "cal_semanas_txt": "hasta los exámenes de la 1ª evaluación",
+    "antes": "Sin refuerzo fijo",
+    "ahora": "Clases semanales en casa · Bono de 12h"
+  },
+  "tarifas_override": {
+    "online": {
+      "base": 19.8,
+      "precios": {
+        "2": 36,
+        "4": 77.4,
+        "8": 153,
+        "12": 225
+      }
+    }
+  },
+  "dos_opciones": {
+    "etiqueta": "VUESTRAS OPCIONES",
+    "pill": "MODALIDAD",
+    "titulo": "Dos formas de empezar",
+    "lead": "En las dos se empieza con un bono de prueba de 2 horas y después se pasa al bono de 12 horas. Elegid la modalidad que mejor os encaje.",
+    "pie": "Sin permanencia: pagáis por adelantado el bono de horas y solo se descuentan las horas de clase que se dan.",
+    "opciones": [
+      {
+        "letra": "OPCIÓN 1",
+        "nombre": "Presencial en casa",
+        "sub": "El profesor va a vuestro domicilio",
+        "destacado": false,
+        "prueba": {
+          "horas": 2,
+          "precio": 40,
+          "tachado": 44
+        },
+        "bono": {
+          "horas": 12,
+          "precio": 250,
+          "base": 22
+        }
+      },
+      {
+        "letra": "OPCIÓN 2",
+        "nombre": "Online",
+        "sub": "Un 10% más económico",
+        "destacado": false,
+        "prueba": {
+          "horas": 2,
+          "precio": 36,
+          "tachado": 40
+        },
+        "bono": {
+          "horas": 12,
+          "precio": 225,
+          "base": 22
+        }
+      }
+    ]
+  }
+}
