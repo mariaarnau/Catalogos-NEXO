@@ -2194,7 +2194,7 @@ def main():
     else:
         pages += [page_bono(d, t), page_resumen(d, t), page_cierre(d, t)]
     doc = f'<!DOCTYPE html><html lang="{LANG}"><head><meta charset="utf-8"><title>Plan NEXO — {e(d["nombre"] or d["curso"])}</title><style>{CSS}</style></head><body>{"".join(pages)}</body></html>'
-    if d.get("tema") == "claro":
+    if d.get("tema", "claro") == "claro":
         import tema_claro
         doc = tema_claro.aplicar(doc, LOGO_URI)
     out = ROOT / "output"
