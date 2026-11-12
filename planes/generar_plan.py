@@ -2194,6 +2194,9 @@ def main():
     else:
         pages += [page_bono(d, t), page_resumen(d, t), page_cierre(d, t)]
     doc = f'<!DOCTYPE html><html lang="{LANG}"><head><meta charset="utf-8"><title>Plan NEXO — {e(d["nombre"] or d["curso"])}</title><style>{CSS}</style></head><body>{"".join(pages)}</body></html>'
+    if d.get("tema") == "claro":
+        import tema_claro
+        doc = tema_claro.aplicar(doc, LOGO_URI)
     out = ROOT / "output"
     out.mkdir(exist_ok=True)
     # Nombre de archivo: Plan_NEXO_<Nombre>_<Curso>_<Asignaturas> (sin curso, la etapa)
