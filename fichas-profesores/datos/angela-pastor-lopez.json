@@ -1,0 +1,31 @@
+{
+  "nombre": "Ángela Pastor López",
+  "foto": "../fotos/angela-pastor-lopez.jpg",
+  "foto_posicion": "50% 30%",
+  "titular": "Profesora de Primaria y ESO",
+  "materias": ["MATEMÁTICAS", "FÍSICA", "QUÍMICA", "INGLÉS"],
+  "telefono": "669 90 63 53",
+  "email": "angelapaslopez@gmail.com",
+  "situacion_actual": "Estudiante de 2.º curso del Grado en Ingeniería Biomédica en la Universitat Politècnica de València, con muchas ganas de ayudar a otros estudiantes a mejorar su aprendizaje y ganar confianza.",
+  "estudios": [
+    {"titulo": "Grado en Ingeniería Biomédica", "detalle": "Universitat Politècnica de València · 2.º curso", "fecha": "Actualidad"},
+    {"titulo": "Bachillerato Científico (Ciencias de la Salud)", "detalle": "Colegio San Buenaventura Capuchinos", "fecha": "2019 – 2025"}
+  ],
+  "idiomas": [
+    {"idioma": "Español", "nivel": "Nativo"},
+    {"idioma": "Inglés", "nivel": "Avanzado"},
+    {"idioma": "Francés", "nivel": "Intermedio"}
+  ],
+  "experiencia_docente": [
+    {"titulo": "Voluntariado en centros educativos", "detalle": "Voluntariado comunitario en el entorno escolar."}
+  ],
+  "aptitudes": [
+    "Paciencia y cercanía",
+    "Facilidad para explicar conceptos",
+    "Adaptación a cada alumno",
+    "Responsabilidad y compromiso",
+    "Creatividad",
+    "Resolución de problemas",
+    "Actitud positiva"
+  ]
+}
