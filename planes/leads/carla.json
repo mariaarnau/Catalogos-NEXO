@@ -1,0 +1,276 @@
+{
+  "nombre": "Carla",
+  "etapa": "universidad",
+  "curso": "Grado de Gestión Administrativa",
+  "asignaturas": [
+    "Tesorería (OAGT)"
+  ],
+  "voz": "tu",
+  "archivo": "Plan_NEXO_Carla_Gestion_Administrativa_Tesoreria",
+  "presencial_label": "en tu casa",
+  "cover_card_sub": "Gestión Administrativa · Tesorería (OAGT) · Online o presencial",
+  "bonos_recomendados": [
+    {
+      "horas": 12,
+      "frecuencia": ""
+    }
+  ],
+  "modalidades_recomendadas": [
+    "online",
+    "casa_alumno"
+  ],
+  "tarifas_mostrar": [
+    "online",
+    "casa_alumno"
+  ],
+  "textos": {
+    "cover_sub": "Un plan a medida para Carla: Operaciones Auxiliares de Gestión de Tesorería, paso a paso y con muchos ejercicios, online o presencial.",
+    "p2_title": "Así te acompañamos cada mes, Carla",
+    "p2_sub": "Un profesor especializado en matemática financiera y tesorería, con sesiones centradas en tu temario y en los ejercicios tipo examen.",
+    "c1": "Tienes tu profesor de referencia asignado, especializado en tesorería, con un horario flexible que se adapta a ti.",
+    "p3_sub": "Tienes tu propio informe de seguimiento dentro del plan, sin coste adicional. Esto es lo que incluye cada mes:",
+    "informe_h2": "Un informe real para ti, Carla",
+    "p4_pill": "ASÍ LO VERÁS TÚ",
+    "p4_sub": "Cuatro pantallas de ejemplo del informe que recibirás en tu área privada.",
+    "p10_sub": "Escríbenos para reservar tu bono de prueba y empezar cuanto antes.",
+    "gestiones": "GESTIONES A TU CARGO"
+  },
+  "trayectoria": {
+    "etiqueta": "HOJA DE RUTA",
+    "pill": "TESORERÍA · OAGT",
+    "titulo": "La tesorería, paso a paso",
+    "lead": "Empezamos por la capitalización simple (tu UD3) y avanzamos por el temario con ejercicios tipo examen. Fechas orientativas: las ajustamos a tus exámenes.",
+    "meses": [
+      "Nov",
+      "Dic",
+      "Ene",
+      "Feb",
+      "Mar",
+      "Abr",
+      "May",
+      "Jun"
+    ],
+    "colores": [
+      "#5b8ee0",
+      "#8fb8ec",
+      "#7fcfa0",
+      "#e9d18f"
+    ],
+    "tramos": [
+      [
+        0,
+        2
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        4,
+        6
+      ],
+      [
+        6,
+        7
+      ]
+    ],
+    "bloques": [
+      {
+        "span": 2,
+        "simbolo": "i",
+        "nombre": "Capitalización simple",
+        "foco": "Interés simple, tantos equivalentes y aplazamientos de pago.",
+        "fondo": "#12234a",
+        "borde": "#5b8ee0"
+      },
+      {
+        "span": 2,
+        "simbolo": "D",
+        "nombre": "Descuento y compuesta",
+        "foco": "Descuento comercial, efectos y capitalización compuesta.",
+        "fondo": "#16284a",
+        "borde": "#8fb8ec"
+      },
+      {
+        "span": 2,
+        "simbolo": "€",
+        "nombre": "Préstamos y bancos",
+        "foco": "Rentas, préstamos, cuentas bancarias y medios de pago.",
+        "fondo": "#13302a",
+        "borde": "#7fcfa0"
+      },
+      {
+        "span": 2,
+        "simbolo": "★",
+        "nombre": "Repaso final",
+        "foco": "Previsión de tesorería y ejercicios de examen.",
+        "fondo": "#3a3322",
+        "borde": "#e9d18f"
+      }
+    ],
+    "hitos": [
+      {
+        "nombre": "1ª evaluación",
+        "pos": 1.5
+      },
+      {
+        "nombre": "2ª evaluación",
+        "pos": 4.5
+      },
+      {
+        "nombre": "Final",
+        "pos": 7,
+        "meta": true
+      }
+    ]
+  },
+  "dos_opciones": {
+    "etiqueta": "TUS OPCIONES",
+    "pill": "MODALIDAD",
+    "titulo": "Dos formas de prepararte",
+    "lead": "En las dos empiezas con un bono de prueba de 2 horas y después pasas al bono de 12 horas. Elige la modalidad que mejor te encaje.",
+    "pie": "Sin permanencia: pagas por adelantado el bono de horas. Solo pagas las horas de clase que se dan.",
+    "opciones": [
+      {
+        "letra": "OPCIÓN 1",
+        "nombre": "Online",
+        "sub": "Con pantalla compartida para ver los ejercicios juntos",
+        "destacado": false,
+        "prueba": {
+          "horas": 2,
+          "precio": 46,
+          "tachado": 50
+        },
+        "bono": {
+          "horas": 12,
+          "precio": 285,
+          "base": 25
+        }
+      },
+      {
+        "letra": "OPCIÓN 2",
+        "nombre": "Presencial en tu casa",
+        "sub": "El profesor va a tu domicilio",
+        "destacado": false,
+        "prueba": {
+          "horas": 2,
+          "precio": 54,
+          "tachado": 56
+        },
+        "bono": {
+          "horas": 12,
+          "precio": 327,
+          "base": 28
+        }
+      }
+    ]
+  },
+  "informe_ejemplo": {
+    "asignatura": "Tesorería (OAGT)",
+    "mes": "Noviembre 2026",
+    "comparado": "octubre",
+    "nota": "7,0",
+    "sesiones": 8,
+    "horas": "12h",
+    "destrezas_label": "Bloques trabajados",
+    "barras": [
+      [
+        "Capitalización simple",
+        7.0
+      ],
+      [
+        "Tantos equivalentes",
+        6.5
+      ],
+      [
+        "Aplazamientos",
+        6.0
+      ]
+    ],
+    "mayor_progreso": "Tesorería — el interés simple pasó de no entenderse a resolverse solo",
+    "resumen": "En noviembre has hecho 8 clases. Ya calculas con soltura el interés simple y el capital final. Con los tantos equivalentes todavía necesitas apoyo. Diciembre: tantos equivalentes y aplazamientos de pago antes del examen.",
+    "proxima_sesion": "PRÓXIMA CLASE — MARTES 1",
+    "proxima_sesion_txt": "Tantos equivalentes: semestral, trimestral y mensual.",
+    "horario": "Según tu horario",
+    "temas": [
+      [
+        "Interés simple",
+        2.5
+      ],
+      [
+        "Tantos equivalentes",
+        1.8
+      ],
+      [
+        "Aplazamientos",
+        1.2
+      ],
+      [
+        "Repaso",
+        0.5
+      ]
+    ],
+    "fuertes": [
+      "Interés simple consolidado",
+      "Muy constante haciendo ejercicios"
+    ],
+    "atencion": [
+      "Tantos equivalentes",
+      "Plantear los aplazamientos de pago"
+    ],
+    "casa": [
+      "5 ejercicios del libro a la semana",
+      "Repasar las fórmulas de la UD3"
+    ],
+    "semanas": [
+      5.8,
+      6.3,
+      6.8,
+      7.2
+    ],
+    "metricas": [
+      [
+        "76%",
+        "Comprensión"
+      ],
+      [
+        "81%",
+        "Constancia"
+      ],
+      [
+        "62%",
+        "Autonomía"
+      ]
+    ],
+    "evol": [
+      [
+        "Resolución de problemas",
+        "Octubre: 40%",
+        "Noviembre: 70%",
+        "Plantea mejor el enunciado antes de operar."
+      ],
+      [
+        "Autonomía",
+        "Octubre: 35%",
+        "Noviembre: 62%",
+        "Cada vez necesita menos ayuda para empezar."
+      ]
+    ],
+    "conclusion": "Noviembre cierra con una tendencia muy positiva. En diciembre trabajamos tantos equivalentes y aplazamientos antes del examen.",
+    "cal_mes": [
+      2026,
+      12
+    ],
+    "cal_titulo": "Calendario de preparación — diciembre 2026",
+    "cal_dias_sesion": [
+      1,
+      3
+    ],
+    "cal_examen": 16,
+    "cal_semanas": "3 sem",
+    "cal_semanas_txt": "hasta los exámenes de la 1ª evaluación",
+    "antes": "Sin refuerzo fijo",
+    "ahora": "Clases semanales en casa · Bono de 12h",
+    "alumno": ""
+  }
+}
