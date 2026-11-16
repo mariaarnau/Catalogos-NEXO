@@ -7,7 +7,7 @@
   ],
   "voz": "familia",
   "presencial_label": "en su casa",
-  "cover_card_sub": "2º Bachillerato · Matemáticas CCSS · Presencial en Sevilla",
+  "cover_card_sub": "2º Bachillerato · Matemáticas CCSS · Presencial en Sevilla u online",
   "bonos_recomendados": [
     {
       "horas": 12,
@@ -15,13 +15,15 @@
     }
   ],
   "modalidades_recomendadas": [
-    "casa_alumno"
+    "casa_alumno",
+    "online"
   ],
   "tarifas_mostrar": [
+    "online",
     "casa_alumno"
   ],
   "textos": {
-    "cover_sub": "Un plan a medida para Candela: Matemáticas aplicadas a las Ciencias Sociales de 2º de Bachillerato, con clases presenciales en su casa en Sevilla y la PAU como meta.",
+    "cover_sub": "Un plan a medida para Candela: Matemáticas aplicadas a las Ciencias Sociales de 2º de Bachillerato, con clases presenciales en su casa en Sevilla u online, y la PAU como meta.",
     "p10_sub": "Escríbenos para reservar el bono de prueba o para cualquier ajuste de horas de Candela."
   },
   "camino": {
@@ -84,44 +86,6 @@
         "meta": true
       }
     ]
-  },
-  "pasos": {
-    "base": 25,
-    "base_txt": "",
-    "modalidad_txt": "Presencial en su casa",
-    "who": "2º Bachillerato · Matemáticas CCSS · Presencial en su casa",
-    "titulo": "Su plan, en dos pasos",
-    "lead": "Clases presenciales de Matemáticas CCSS en su casa, con un profesor especializado en la PAU. Primero una prueba y después el bono de 12 horas.",
-    "prueba": {
-      "horas": 2,
-      "precio": 46,
-      "tachado": 50,
-      "texto": "Dos horas presenciales en vuestra casa para conocer al profesor, ver cómo lleva Candela las Matemáticas CCSS y dejar fijado su plan hasta la PAU. Recomendado al 100%."
-    },
-    "paso2_titulo": "Después, su bono de 12 horas",
-    "opciones": [
-      {
-        "horas": 12,
-        "precio": 285,
-        "frecuencia": "",
-        "destacado": true,
-        "etiqueta": "RECOMENDADO · MEJOR PRECIO POR HORA",
-        "alt": {
-          "oro": true,
-          "txt": "TU MEJOR OPCIÓN",
-          "hora": "23,75 €/h",
-          "bono": "el mejor precio por hora del curso"
-        }
-      }
-    ],
-    "resumen": [
-      "Clases presenciales de Matemáticas CCSS en vuestra casa.",
-      "Primero, bono de prueba de 2h (46 €) y, después, bono de 12h (285 €).",
-      "El bono de 12h es el que sale más económico por hora durante el curso: 23,75 €/h.",
-      "Preparación de la PAU durante todo el curso, con simulacros en junio."
-    ],
-    "quote": "Un plan a medida para que Candela llegue a la PAU con Matemáticas CCSS preparadas.",
-    "sin_mes": true
   },
   "informe_ejemplo": {
     "asignatura": "Matemáticas aplicadas",
@@ -226,5 +190,46 @@
     "antes": "Sin refuerzo fijo",
     "ahora": "Clases semanales en casa · Bono mensual"
   },
-  "archivo": "Plan_NEXO_Candela_2Bach_Matematicas_CCSS_Sevilla"
+  "archivo": "Plan_NEXO_Candela_2Bach_Matematicas_CCSS_Sevilla",
+  "dos_opciones": {
+    "etiqueta": "VUESTRAS OPCIONES",
+    "pill": "MODALIDAD",
+    "titulo": "Dos formas de prepararse",
+    "lead": "En las dos se empieza con un bono de prueba de 2 horas y después se pasa al bono de 12 horas. Elegid la modalidad que mejor os encaje.",
+    "pie": "Sin permanencia: pagáis por adelantado el bono de horas. Solo pagáis las horas de clase que se dan.",
+    "opciones": [
+      {
+        "letra": "OPCIÓN 1",
+        "nombre": "Presencial en vuestra casa",
+        "sub": "El profesor va a vuestro domicilio",
+        "destacado": true,
+        "prueba": {
+          "horas": 2,
+          "precio": 46,
+          "tachado": 50
+        },
+        "bono": {
+          "horas": 12,
+          "precio": 285,
+          "base": 25
+        }
+      },
+      {
+        "letra": "OPCIÓN 2",
+        "nombre": "Online",
+        "sub": "Clases por videollamada con pantalla compartida",
+        "destacado": false,
+        "prueba": {
+          "horas": 2,
+          "precio": 44,
+          "tachado": 48
+        },
+        "bono": {
+          "horas": 12,
+          "precio": 270,
+          "base": 24
+        }
+      }
+    ]
+  }
 }
