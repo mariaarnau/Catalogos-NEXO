@@ -31,7 +31,7 @@ TARIFAS = {
                         "casa_alumno": {2: 44, 4: 94, 8: 185, 12: 270}}},
     "bachillerato": {"nombre": "Bachillerato", "corto": "Bach",
                      "base": {"online": 24, "casa_alumno": 25},
-                     "precios": {"online": {2: 42, 4: 94, 8: 185, 12: 270},
+                     "precios": {"online": {2: 44, 4: 94, 8: 185, 12: 270},
                                  "casa_alumno": {2: 46, 4: 98, 8: 195, 12: 285}}},
     "universidad": {"nombre": "Universidad", "corto": "Universidad",
                     "base": {"online": 25, "casa_alumno": 28},
