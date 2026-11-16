@@ -9,7 +9,7 @@
   ],
   "voz": "familia",
   "archivo": "Plan_NEXO_Saul_2Bach_Mates_Fisica_DibujoTecnico",
-  "presencial_label": "en su casa",
+  "presencial_label": "online",
   "cover_card_sub": "2º Bachillerato · Matemáticas, Física y Dibujo técnico · Online",
   "bonos_recomendados": [
     {
@@ -18,12 +18,10 @@
     }
   ],
   "modalidades_recomendadas": [
-    "online",
-    "casa_alumno"
+    "online"
   ],
   "tarifas_mostrar": [
-    "online",
-    "casa_alumno"
+    "online"
   ],
   "textos": {
     "cover_sub": "Un plan a medida para Saúl: Matemáticas, Física y Dibujo técnico de 2º de Bachillerato, dos tardes a la semana, con clases online y la PAU como meta.",
@@ -36,47 +34,6 @@
     "p4_sub": "Cuatro pantallas de ejemplo del informe que recibiréis en el área privada de Saúl.",
     "p10_sub": "Escribidnos para reservar el bono de prueba de Saúl y empezar cuanto antes.",
     "gestiones": "GESTIONES A CARGO VUESTRO"
-  },
-  "dos_opciones": {
-    "etiqueta": "TUS OPCIONES",
-    "pill": "MODALIDAD",
-    "titulo": "Dos formas de empezar",
-    "lead": "En las dos se empieza con un bono de prueba de 2 horas y después se pasa al bono de 12 horas. Como preferís online, esa es la primera opción.",
-    "pie": "Sin permanencia: pagáis por adelantado el bono de horas. Solo pagáis las horas de clase que se dan.",
-    "opciones": [
-      {
-        "letra": "OPCIÓN 1",
-        "nombre": "Online",
-        "sub": "Clases por videollamada",
-        "destacado": true,
-        "prueba": {
-          "horas": 2,
-          "precio": 44,
-          "tachado": 48
-        },
-        "bono": {
-          "horas": 12,
-          "precio": 270,
-          "base": 24
-        }
-      },
-      {
-        "letra": "OPCIÓN 2",
-        "nombre": "Presencial en vuestra casa",
-        "sub": "El profesor va a vuestro domicilio",
-        "destacado": false,
-        "prueba": {
-          "horas": 2,
-          "precio": 46,
-          "tachado": 50
-        },
-        "bono": {
-          "horas": 12,
-          "precio": 285,
-          "base": 25
-        }
-      }
-    ]
   },
   "informe_ejemplo": {
     "asignatura": "Matemáticas II, Física y Dibujo técnico",
@@ -232,5 +189,42 @@
         ]
       }
     ]
+  },
+  "pasos": {
+    "base": 24,
+    "base_txt": "",
+    "modalidad_txt": "Online",
+    "who": "2º Bachillerato · Mates, Física y Dibujo técnico · Online",
+    "titulo": "Su plan, en dos pasos",
+    "lead": "Clases online de Matemáticas, Física y Dibujo técnico, dos tardes a la semana. Primero una prueba y después el bono de 12 horas.",
+    "prueba": {
+      "horas": 2,
+      "precio": 44,
+      "tachado": 48,
+      "texto": "Dos horas online para conocer al profesor, ver en qué punto está Saúl y dejar fijado su plan hasta la PAU. Recomendado al 100%."
+    },
+    "paso2_titulo": "Después, su bono de 12 horas",
+    "opciones": [
+      {
+        "horas": 12,
+        "precio": 270,
+        "frecuencia": "",
+        "destacado": true,
+        "etiqueta": "RECOMENDADO · MEJOR PRECIO POR HORA",
+        "alt": {
+          "oro": true,
+          "txt": "TU MEJOR OPCIÓN",
+          "hora": "22,50 €/h",
+          "bono": "el mejor precio por hora del curso"
+        }
+      }
+    ],
+    "resumen": [
+      "Clases online de Matemáticas, Física y Dibujo técnico, dos tardes a la semana a partir de las 16:30.",
+      "Primero, bono de prueba de 2h (44 €) y, después, bono de 12h (270 €).",
+      "El bono de 12h es el que sale más económico por hora durante el curso: 22,50 €/h."
+    ],
+    "quote": "Un plan a medida para que Saúl llegue a la PAU con todo preparado.",
+    "sin_mes": true
   }
 }
