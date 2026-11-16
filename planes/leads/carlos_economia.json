@@ -1,0 +1,279 @@
+{
+  "nombre": "",
+  "etapa": "bachillerato",
+  "curso": "2º Bachillerato",
+  "asignaturas": [
+    "Economía"
+  ],
+  "voz": "familia",
+  "archivo": "Plan_NEXO_Carlos_Ripoll_2Bach_Economia_Online",
+  "presencial_label": "online",
+  "cover_card_sub": "2º Bachillerato · Economía · EvAU · Online",
+  "bonos_recomendados": [
+    {
+      "horas": 12,
+      "frecuencia": ""
+    }
+  ],
+  "modalidades_recomendadas": [
+    "online"
+  ],
+  "tarifas_mostrar": [
+    "online"
+  ],
+  "textos": {
+    "cover_sub": "Un plan a medida para preparar Economía de 2º de Bachillerato y la EvAU, con dos clases online a la semana.",
+    "p2_title": "Así os acompañamos cada mes",
+    "p2_sub": "Sin burocracia. El profesor registra las sesiones, nuestro equipo analiza los datos y os llega el seguimiento sin que tengáis que pedirlo.",
+    "c1": "Profesor de referencia asignado, especializado en Economía, con un horario flexible que se adapta a vosotros.",
+    "p3_sub": "Informe de seguimiento propio dentro del plan, sin coste adicional. Esto es lo que incluye cada mes:",
+    "informe_h2": "Un informe real cada mes",
+    "p4_pill": "ASÍ LO VERÉIS VOSOTROS",
+    "p4_sub": "Cuatro pantallas de ejemplo del informe que recibiréis en el área privada del alumno.",
+    "p10_sub": "Escribidnos para reservar el bono de prueba y empezar cuanto antes.",
+    "gestiones": "GESTIONES A CARGO VUESTRO"
+  },
+  "informe_ejemplo": {
+    "asignatura": "Economía",
+    "mes": "Noviembre 2026",
+    "comparado": "octubre",
+    "nota": "7,0",
+    "sesiones": 8,
+    "horas": "8h",
+    "destrezas_label": "Bloques trabajados",
+    "barras": [
+      [
+        "Teoría",
+        7.2
+      ],
+      [
+        "Problemas",
+        6.4
+      ],
+      [
+        "Contabilidad",
+        6.0
+      ]
+    ],
+    "mayor_progreso": "Problemas — el umbral de rentabilidad pasó de dudas a resolverse solo",
+    "resumen": "En noviembre se han hecho 8 clases sin faltar a ninguna. La teoría de empresa y entorno está consolidada. En los problemas de VAN y TIR todavía necesita apoyo. Diciembre: reforzar problemas antes de los exámenes de la 1ª evaluación.",
+    "proxima_sesion": "PRÓXIMA CLASE — MARTES 1",
+    "proxima_sesion_txt": "Economía: VAN y TIR, problemas tipo EvAU.",
+    "horario": "Martes y jueves, 17:00–18:00 · online",
+    "temas": [
+      [
+        "Teoría",
+        3.0
+      ],
+      [
+        "Problemas",
+        3.5
+      ],
+      [
+        "Contabilidad",
+        1.5
+      ]
+    ],
+    "fuertes": [
+      "Teoría bien estructurada",
+      "Umbral de rentabilidad consolidado"
+    ],
+    "atencion": [
+      "VAN y TIR",
+      "Interpretar ratios"
+    ],
+    "casa": [
+      "2 problemas tipo EvAU a la semana",
+      "Esquema de teoría por tema"
+    ],
+    "semanas": [
+      5.8,
+      6.3,
+      6.8,
+      7.2
+    ],
+    "metricas": [
+      [
+        "76%",
+        "Comprensión"
+      ],
+      [
+        "81%",
+        "Constancia"
+      ],
+      [
+        "62%",
+        "Autonomía"
+      ]
+    ],
+    "evol": [
+      [
+        "Resolución de problemas",
+        "Octubre: 40%",
+        "Noviembre: 70%",
+        "Plantea mejor el enunciado antes de operar."
+      ],
+      [
+        "Autonomía",
+        "Octubre: 35%",
+        "Noviembre: 62%",
+        "Cada vez necesita menos ayuda para empezar."
+      ]
+    ],
+    "conclusion": "Noviembre cierra con una tendencia muy positiva. En diciembre reforzamos los problemas antes de los exámenes de la 1ª evaluación.",
+    "cal_mes": [
+      2026,
+      12
+    ],
+    "cal_titulo": "Calendario de preparación — diciembre 2026",
+    "cal_dias_sesion": [
+      1,
+      3
+    ],
+    "cal_examen": 16,
+    "cal_semanas": "3 sem",
+    "cal_semanas_txt": "hasta los exámenes de la 1ª evaluación",
+    "antes": "Sin refuerzo fijo",
+    "ahora": "Clases online semanales · Bono de 12h",
+    "alumno": ""
+  },
+  "semana": {
+    "etiqueta": "SU SEMANA",
+    "pill": "HORARIO ORIENTATIVO",
+    "titulo": "Dos clases a la semana, online",
+    "lead": "Dos clases online de 1 hora, en los días que mejor os vengan. Es orientativo: el profesor ajusta el contenido según los exámenes y la carga de cada semana.",
+    "hora_ini": 16,
+    "hora_fin": 19,
+    "alto": 80,
+    "asignaturas": [
+      "Economía"
+    ],
+    "asig_cortas": [
+      "Economía"
+    ],
+    "bloques": [
+      [
+        1,
+        17,
+        18,
+        0
+      ],
+      [
+        3,
+        17,
+        18,
+        0
+      ]
+    ],
+    "extra_titulo": "Horario orientativo",
+    "extra_texto": "Los días y las horas se adaptan a vosotros y a la carga de exámenes.",
+    "repartos": [
+      {
+        "nombre": "Cada semana · 2h",
+        "horas": [
+          2
+        ]
+      }
+    ]
+  },
+  "pasos": {
+    "base": 24,
+    "base_txt": "",
+    "modalidad_txt": "Online",
+    "who": "2º Bachillerato · Economía · Online",
+    "titulo": "Vuestro plan, en dos pasos",
+    "lead": "Clases online de Economía, dos días a la semana, con un profesor especializado en la EvAU. Primero una prueba y después el bono de 12 horas.",
+    "prueba": {
+      "horas": 2,
+      "precio": 44,
+      "tachado": 48,
+      "texto": "Dos horas online para conocer al profesor, ver en qué punto está con Economía y dejar fijado el plan hasta la EvAU. Recomendado al 100%."
+    },
+    "paso2_titulo": "Después, el bono de 12 horas",
+    "opciones": [
+      {
+        "horas": 12,
+        "precio": 270,
+        "frecuencia": "",
+        "destacado": true,
+        "etiqueta": "RECOMENDADO · MEJOR PRECIO POR HORA",
+        "alt": {
+          "oro": true,
+          "txt": "TU MEJOR OPCIÓN",
+          "hora": "22,50 €/h",
+          "bono": "el mejor precio por hora del curso"
+        }
+      }
+    ],
+    "resumen": [
+      "Clases online de Economía, 2 días a la semana, 1 hora cada día.",
+      "Primero, bono de prueba de 2h (44 €) y, después, bono de 12h (270 €).",
+      "El bono de 12h es el que sale más económico por hora durante el curso: 22,50 €/h.",
+      "Preparación de la EvAU durante todo el curso, con simulacros en junio."
+    ],
+    "quote": "Un plan a medida para llegar a la EvAU con Economía preparada.",
+    "sin_mes": true
+  },
+  "nombre_completo": "Plan de Economía",
+  "camino": {
+    "etiqueta": "HOJA DE RUTA",
+    "pill": "EL CURSO DE UN VISTAZO",
+    "titulo": "El camino hasta la EvAU",
+    "lead": "Lo que queda de curso, organizado por bloques del examen de Economía, para llegar a la EvAU con la teoría y los problemas preparados. Fechas orientativas; las ajustamos a sus exámenes.",
+    "meses": [
+      "Nov",
+      "Dic",
+      "Ene",
+      "Feb",
+      "Mar",
+      "Abr",
+      "May",
+      "Jun"
+    ],
+    "fases": [
+      {
+        "span": 2,
+        "etiqueta": "1ER TRIMESTRE",
+        "nombre": "Empresa y entorno",
+        "foco": "Teoría clave: tipos de empresa, entorno, estrategia y desarrollo."
+      },
+      {
+        "span": 3,
+        "etiqueta": "2º TRIMESTRE",
+        "nombre": "Producción y finanzas",
+        "foco": "Problemas: productividad, umbral de rentabilidad, VAN y TIR."
+      },
+      {
+        "span": 2,
+        "etiqueta": "3ER TRIMESTRE",
+        "nombre": "Contabilidad",
+        "foco": "Balances, ratios y exámenes de otros años."
+      },
+      {
+        "span": 1,
+        "etiqueta": "JUNIO",
+        "nombre": "EvAU",
+        "foco": "Simulacros cronometrados y últimos ajustes antes del examen."
+      }
+    ],
+    "hitos": [
+      {
+        "nombre": "1ª evaluación",
+        "pos": 1.75
+      },
+      {
+        "nombre": "2ª evaluación",
+        "pos": 5
+      },
+      {
+        "nombre": "Finales",
+        "pos": 7
+      },
+      {
+        "nombre": "EvAU",
+        "pos": 8,
+        "meta": true
+      }
+    ]
+  }
+}
