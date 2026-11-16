@@ -60,7 +60,11 @@ COVER = """
 .page.cover .name-card { background: #0e1629; border-color: #2a3350; }
 .page.cover .name-card .nm { color: #e9d18f; } .page.cover .name-card .cs { color: #a49f8e; }
 .rule { background: linear-gradient(90deg, transparent, #c9a24b, transparent) !important; opacity: .55; }
-.scr, .scr * { }
+.a0 { background: #fbf1d6 !important; border-color: #c9a24b !important; color: #7a5a12 !important; }
+.a1 { background: #e3ecfb !important; border-color: #5b8ee0 !important; color: #1d4a8f !important; }
+.a2 { background: #ece6fa !important; border-color: #8a78d0 !important; color: #4a3a8f !important; }
+.a3 { background: #e2f3ea !important; border-color: #3f8a64 !important; color: #1f6a45 !important; }
+.a4 { background: #fbe6ec !important; border-color: #c27088 !important; color: #8a2a44 !important; }
 """
 
 def aplicar(doc, logo_blanco_uri):
