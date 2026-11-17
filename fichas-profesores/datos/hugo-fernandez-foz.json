@@ -1,0 +1,29 @@
+{
+  "nombre": "Hugo Fernández Foz",
+  "foto": "../fotos/hugo-fernandez-foz.png",
+  "foto_posicion": "50% 35%",
+  "titular": "Profesor particular de Matemáticas, Física y Tecnología",
+  "ubicacion": "Zaragoza",
+  "materias": ["MATEMÁTICAS", "FÍSICA", "TECNOLOGÍA", "ESO", "BACHILLERATO"],
+  "email": "fernandezfozhugo@gmail.com",
+  "situacion_actual": "Estudiante de 3.º curso de Ingeniería Industrial que da clases particulares de Matemáticas, Física y Tecnología. Explica con calma y paso a paso, conectando la teoría con ejemplos prácticos para que el alumno entienda los conceptos y no solo los memorice.",
+  "estudios": [
+    {"titulo": "Grado en Ingeniería Industrial", "detalle": "Cursando 3.º. Base sólida en cálculo, álgebra, física, mecánica, electrotecnia y electrónica: las mismas materias que enseña, vistas a nivel universitario.", "fecha": "Actualidad"}
+  ],
+  "experiencia_docente": [
+    {"titulo": "Profesor de clases particulares", "detalle": "ESO y Bachillerato: refuerzo de lo visto en clase, ejercicios resueltos paso a paso, preparación de exámenes, técnicas de estudio y seguimiento del progreso.", "fecha": "Actualidad"},
+    {"titulo": "Temario de Matemáticas", "detalle": "Álgebra y ecuaciones, funciones y gráficas, derivadas e integrales, trigonometría."},
+    {"titulo": "Temario de Física", "detalle": "Cinemática y dinámica, trabajo y energía, electricidad y magnetismo, ondas y óptica."},
+    {"titulo": "Temario de Tecnología", "detalle": "Circuitos eléctricos, electrónica básica, mecanismos y máquinas, estructuras."}
+  ],
+  "aptitudes": [
+    "Explicaciones claras y paso a paso",
+    "Entender, no memorizar",
+    "Paciencia y adaptación a cada alumno",
+    "Cercanía: estudiante reciente",
+    "Objetivos claros antes de cada examen",
+    "Resolución de problemas",
+    "Organización y puntualidad",
+    "Recursos digitales e IA para estudiar"
+  ]
+}
