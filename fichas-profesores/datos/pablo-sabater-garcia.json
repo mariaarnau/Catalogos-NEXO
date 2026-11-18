@@ -1,0 +1,65 @@
+{
+  "nombre": "Pablo Sabater García",
+  "foto": "../fotos/pablo-sabater-garcia.jpg",
+  "foto_posicion": "50% 45%",
+  "titular": "Matemático · Profesor universitario",
+  "materias": [
+    "ESTADÍSTICA",
+    "FÍSICA",
+    "MATEMÁTICAS",
+    "CÁLCULO"
+  ],
+  "telefono": "+34 665 23 60 67",
+  "email": "sabater.pablo99@gmail.com",
+  "situacion_actual": "Graduado en Ciencias Matemáticas, con un máster en Investigación Matemática y otro en Investigación en Inteligencia Artificial en curso. Da clases particulares desde 2021, de la ESO a la universidad.",
+  "estudios": [
+    {
+      "titulo": "Máster en Investigación en Inteligencia Artificial",
+      "detalle": "UNED · En curso",
+      "fecha": "2023 –"
+    },
+    {
+      "titulo": "Máster en Investigación Matemática",
+      "detalle": "Universitat de València y Universitat Politècnica de València",
+      "fecha": "2021 – 2023"
+    },
+    {
+      "titulo": "Grado en Ciencias Matemáticas",
+      "detalle": "Universitat de València",
+      "fecha": "2017 – 2021"
+    }
+  ],
+  "idiomas": [
+    {
+      "idioma": "Español",
+      "nivel": "Nativo"
+    },
+    {
+      "idioma": "Valenciano",
+      "nivel": "Avanzado"
+    },
+    {
+      "idioma": "Inglés",
+      "nivel": "Avanzado"
+    }
+  ],
+  "experiencia_docente": [
+    {
+      "titulo": "Clases particulares de Matemáticas",
+      "detalle": "ESO, Bachillerato y Universidad: Álgebra, Análisis Matemático, Cálculo y Métodos Numéricos.",
+      "fecha": "2021 – 2026"
+    },
+    {
+      "titulo": "Asignaturas universitarias",
+      "detalle": "Estadística, Física y Matemáticas a nivel universitario."
+    }
+  ],
+  "aptitudes": [
+    "Dominio de las matemáticas, de la ESO a la universidad",
+    "Explica con claridad conceptos complicados",
+    "Empatía",
+    "Formación investigadora: dos másteres",
+    "Análisis y predicción de datos",
+    "Inteligencia artificial y aprendizaje automático"
+  ]
+}
