@@ -1,14 +1,14 @@
 {
   "nombre": "Joel",
   "etapa": "primaria",
-  "curso": "3º Infantil (5 años)",
+  "curso": "1º Primaria",
   "asignaturas": [
     "Lectoescritura",
     "Números"
   ],
   "voz": "familia",
-  "archivo": "Plan_NEXO_Joel_Giner_Infantil5_Lectoescritura_Numeros",
-  "cover_card_sub": "3º Infantil · Lectoescritura y números · Presencial en Nou Benicalap",
+  "archivo": "Plan_NEXO_Joel_Giner_1Primaria_Lectoescritura_Numeros",
+  "cover_card_sub": "1º Primaria · Lectoescritura y números · Presencial en Nou Benicalap",
   "presencial_label": "en casa",
   "bonos_recomendados": [
     {
@@ -23,10 +23,10 @@
     "casa_alumno"
   ],
   "textos": {
-    "cover_sub": "Un plan a medida para Joel: reforzar la lectoescritura y los números de forma amena, con una profesora o profesor con experiencia en Infantil, en vuestra casa de Nou Benicalap.",
+    "cover_sub": "Un plan a medida para Joel: reforzar la lectoescritura y los números de forma amena, con una profesora o profesor con experiencia en niños pequeños, en vuestra casa de Nou Benicalap.",
     "p2_title": "Así acompañamos a Joel cada mes",
     "p2_sub": "Sin burocracia. El profesor registra las sesiones, nuestro equipo analiza los datos y os llega el seguimiento sin que tengáis que pedirlo.",
-    "c1": "Joel tiene su profesor de referencia asignado, con experiencia en niños de Infantil, y un horario flexible que se adapta a vosotros.",
+    "c1": "Joel tiene su profesor de referencia asignado, con experiencia en niños pequeños, y un horario flexible que se adapta a vosotros.",
     "p3_sub": "Joel tiene su propio informe de seguimiento dentro del plan, sin coste adicional. Esto es lo que incluye cada mes:",
     "informe_h2": "Un informe real para Joel",
     "p4_pill": "ASÍ LO VERÉIS VOSOTROS",
@@ -35,16 +35,16 @@
     "gestiones": "GESTIONES A CARGO VUESTRO",
     "c2t": "Aprender jugando",
     "c2": "Cada sesión combina lectura, escritura y números con juegos y actividades cortas, para que Joel esté motivado.",
-    "c3": "Si el colegio marca algo concreto que reforzar, el profesor adapta las sesiones sin coste extra."
+    "c3": "Si el colegio marca algo concreto que reforzar o hay un examen, el profesor adapta las sesiones sin coste extra."
   },
   "pasos": {
     "base": 22,
     "base_txt": "",
     "modalidad_txt": "Presencial en su casa",
     "nota": "",
-    "who": "3º Infantil · Lectoescritura y números · Presencial en casa",
+    "who": "1º Primaria · Lectoescritura y números · Presencial en casa",
     "titulo": "Su plan, en dos pasos",
-    "lead": "Clases presenciales en vuestra casa, con un profesor con experiencia en Infantil y una forma de enseñar amena. Primero una prueba y después el bono de 12 horas.",
+    "lead": "Clases presenciales en vuestra casa, con un profesor con experiencia en niños pequeños y una forma de enseñar amena. Primero una prueba y después el bono de 12 horas.",
     "prueba": {
       "horas": 2,
       "precio": 40,
@@ -182,9 +182,9 @@
   },
   "trayectoria": {
     "etiqueta": "HOJA DE RUTA",
-    "pill": "3º INFANTIL · LECTOESCRITURA Y NÚMEROS",
+    "pill": "1º PRIMARIA · LECTOESCRITURA Y NÚMEROS",
     "titulo": "El curso de Joel, de noviembre a junio",
-    "lead": "Vamos paso a paso, al ritmo de Joel, para que llegue a 1º de Primaria con la lectura y los números al nivel de su clase. Fechas orientativas.",
+    "lead": "Vamos paso a paso, al ritmo de Joel, para que se ponga al nivel de su clase y termine 1º con la lectura y los números bien asentados. Fechas orientativas.",
     "meses": [
       "Nov",
       "Dic",
@@ -223,44 +223,44 @@
       {
         "span": 2,
         "simbolo": "Aa",
-        "nombre": "Letras y sonidos",
-        "foco": "Vocales, primeras consonantes y números hasta el 10.",
+        "nombre": "Letras y sílabas",
+        "foco": "Repaso de letras y sonidos; números hasta el 20.",
         "fondo": "#12234a",
         "borde": "#5b8ee0"
       },
       {
         "span": 2,
         "simbolo": "ma",
-        "nombre": "Sílabas",
-        "foco": "Leer y escribir sílabas; contar y sumar con objetos.",
+        "nombre": "Palabras",
+        "foco": "Leer y escribir palabras; sumas sencillas.",
         "fondo": "#16284a",
         "borde": "#8fb8ec"
       },
       {
         "span": 2,
         "simbolo": "+−",
-        "nombre": "Palabras y cuentas",
-        "foco": "Palabras y frases cortas; sumas y restas sencillas.",
+        "nombre": "Frases y cuentas",
+        "foco": "Frases cortas y dictados; sumas y restas hasta el 99.",
         "fondo": "#13302a",
         "borde": "#7fcfa0"
       },
       {
         "span": 2,
         "simbolo": "★",
-        "nombre": "Listo para 1º",
-        "foco": "Leer frases solo y pequeños problemas.",
+        "nombre": "Listo para 2º",
+        "foco": "Leer con fluidez y resolver problemas sencillos.",
         "fondo": "#3a3322",
         "borde": "#e9d18f"
       }
     ],
     "hitos": [
       {
-        "nombre": "2º trimestre",
-        "pos": 2
+        "nombre": "1ª evaluación",
+        "pos": 1
       },
       {
-        "nombre": "3er trimestre",
-        "pos": 5
+        "nombre": "2ª evaluación",
+        "pos": 4
       },
       {
         "nombre": "Final de curso",
