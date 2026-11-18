@@ -1,0 +1,300 @@
+{
+  "nombre": "",
+  "etapa": "eso",
+  "curso": "4º ESO",
+  "asignaturas": [
+    "Matemáticas B"
+  ],
+  "voz": "familia",
+  "archivo": "Plan_NEXO_4ESO_MatematicasB_Benicalap",
+  "cover_card_sub": "4º ESO · Matemáticas B · Presencial en Benicalap",
+  "presencial_label": "en la biblioteca",
+  "bonos_recomendados": [
+    {
+      "horas": 12,
+      "frecuencia": "3h a la semana"
+    }
+  ],
+  "modalidades_recomendadas": [
+    "casa_alumno"
+  ],
+  "tarifas_mostrar": [
+    "casa_alumno"
+  ],
+  "textos": {
+    "cover_sub": "Un plan a medida para vuestra hija: asentar los temas de Matemáticas B de 4º de ESO que se le han atascado y preparar los próximos exámenes, con clases presenciales en la biblioteca del Pabellón de Benicalap.",
+    "p2_title": "Así acompañamos a vuestra hija cada mes",
+    "p2_sub": "Un profesor especializado en Matemáticas, con sesiones centradas en lo que necesita y ajuste continuo según sus exámenes.",
+    "c1": "Tiene su profesor de referencia asignado, especializado en Matemáticas, con un horario flexible que se adapta a vosotros.",
+    "p3_sub": "Vuestra hija tiene su propio informe de seguimiento dentro del plan, sin coste adicional. Esto es lo que incluye cada mes:",
+    "informe_h2": "Un informe real, cada mes",
+    "p4_pill": "ASÍ LO VERÉIS VOSOTROS",
+    "p4_sub": "Cuatro pantallas de ejemplo del informe que recibiréis en vuestra área privada.",
+    "p10_sub": "Escribidnos para reservar el bono de prueba y empezar cuanto antes.",
+    "gestiones": "GESTIONES A CARGO VUESTRO"
+  },
+  "pasos": {
+    "base": 24,
+    "base_txt": "",
+    "modalidad_txt": "Presencial en la biblioteca",
+    "nota": "",
+    "who": "4º ESO · Matemáticas B · Presencial en Benicalap",
+    "titulo": "Su plan, en dos pasos",
+    "lead": "Clases presenciales de Matemáticas B en la biblioteca del Pabellón de Benicalap.",
+    "prueba": {
+      "horas": 2,
+      "precio": 44,
+      "tachado": 48,
+      "texto": "Dos horas presenciales para conocer al profesor, revisar los dos últimos exámenes y el temario, y dejar fijado su plan."
+    },
+    "paso2_titulo": "Después, su bono de 12 horas",
+    "opciones": [
+      {
+        "horas": 12,
+        "precio": 270,
+        "frecuencia": "",
+        "destacado": true,
+        "etiqueta": "RECOMENDADO · MEJOR PRECIO POR HORA",
+        "alt": {
+          "oro": true,
+          "txt": "TU MEJOR OPCIÓN",
+          "hora": "22,50 €/h",
+          "bono": "el mejor precio por hora del curso"
+        }
+      }
+    ],
+    "resumen": [
+      "Clases presenciales de Matemáticas B en la biblioteca del Pabellón de Benicalap."
+    ],
+    "quote": "Un plan a medida para que vuestra hija vuelva a ir segura en Matemáticas.",
+    "sin_mes": true
+  },
+  "informe_ejemplo": {
+    "asignatura": "Matemáticas B",
+    "mes": "Noviembre 2026",
+    "comparado": "octubre",
+    "nota": "7,0",
+    "sesiones": 4,
+    "horas": "4h",
+    "destrezas_label": "Bloques trabajados",
+    "barras": [
+      [
+        "Polinomios",
+        7.6
+      ],
+      [
+        "Ecuaciones",
+        7.0
+      ],
+      [
+        "Inecuaciones",
+        6.2
+      ]
+    ],
+    "mayor_progreso": "Matemáticas — los temas de los últimos exámenes ya están asentados",
+    "resumen": "En noviembre ha hecho 4 clases sin faltar a ninguna. Ya domina los polinomios y las ecuaciones que le fallaron en los últimos exámenes. Con las inecuaciones todavía necesita práctica. Diciembre: preparar el examen de trigonometría con antelación.",
+    "proxima_sesion": "PRÓXIMA CLASE — MARTES 1",
+    "proxima_sesion_txt": "Inecuaciones y primeros ejercicios de trigonometría.",
+    "horario": "Martes, 17:30–18:30 · biblioteca",
+    "temas": [
+      [
+        "Polinomios",
+        1.5
+      ],
+      [
+        "Ecuaciones",
+        1.5
+      ],
+      [
+        "Inecuaciones",
+        1.0
+      ]
+    ],
+    "fuertes": [
+      "Muy buena base y constancia",
+      "Polinomios y ecuaciones asentados"
+    ],
+    "atencion": [
+      "Inecuaciones con fracciones",
+      "Revisar los pasos antes de entregar"
+    ],
+    "casa": [
+      "3 ejercicios del tema cada semana",
+      "Repasar los errores del último examen"
+    ],
+    "semanas": [
+      5.8,
+      6.3,
+      6.8,
+      7.2
+    ],
+    "metricas": [
+      [
+        "76%",
+        "Comprensión"
+      ],
+      [
+        "81%",
+        "Constancia"
+      ],
+      [
+        "62%",
+        "Autonomía"
+      ]
+    ],
+    "evol": [
+      [
+        "Seguridad en los exámenes",
+        "Octubre: 50%",
+        "Noviembre: 75%",
+        "Ya no se bloquea con los temas que le fallaron."
+      ],
+      [
+        "Autonomía",
+        "Octubre: 60%",
+        "Noviembre: 80%",
+        "Resuelve sola la mayoría de ejercicios del tema."
+      ]
+    ],
+    "conclusion": "Noviembre cierra con una tendencia muy positiva. En diciembre preparamos el examen de trigonometría con antelación.",
+    "cal_mes": [
+      2026,
+      12
+    ],
+    "cal_titulo": "Calendario — diciembre 2026",
+    "cal_dias_sesion": [
+      1,
+      8,
+      15
+    ],
+    "cal_examen": 16,
+    "cal_semanas": "3 sem",
+    "cal_semanas_txt": "hasta los exámenes de la 1ª evaluación",
+    "antes": "Sin refuerzo fijo",
+    "ahora": "Clase semanal en la biblioteca"
+  },
+  "trayectoria": {
+    "etiqueta": "HOJA DE RUTA",
+    "pill": "4º ESO · MATEMÁTICAS B",
+    "titulo": "El curso, de noviembre a junio",
+    "lead": "Primero asentamos los temas de los dos últimos exámenes y, a partir de ahí, preparamos cada examen con antelación, de cara al Bachillerato de Ciencias. Fechas orientativas; las ajustamos al temario del profesor.",
+    "meses": [
+      "Nov",
+      "Dic",
+      "Ene",
+      "Feb",
+      "Mar",
+      "Abr",
+      "May",
+      "Jun"
+    ],
+    "colores": [
+      "#5b8ee0",
+      "#8fb8ec",
+      "#7fcfa0",
+      "#e9d18f"
+    ],
+    "tramos": [
+      [
+        0,
+        2
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        4,
+        6
+      ],
+      [
+        6,
+        7
+      ]
+    ],
+    "bloques": [
+      {
+        "span": 2,
+        "simbolo": "↺",
+        "nombre": "Repaso y álgebra",
+        "foco": "Los temas de los dos últimos exámenes; polinomios, ecuaciones e inecuaciones.",
+        "fondo": "#12234a",
+        "borde": "#5b8ee0"
+      },
+      {
+        "span": 2,
+        "simbolo": "sen",
+        "nombre": "Trigonometría",
+        "foco": "Razones trigonométricas y resolución de triángulos.",
+        "fondo": "#16284a",
+        "borde": "#8fb8ec"
+      },
+      {
+        "span": 2,
+        "simbolo": "f(x)",
+        "nombre": "Funciones",
+        "foco": "Funciones, gráficas y geometría analítica.",
+        "fondo": "#13302a",
+        "borde": "#7fcfa0"
+      },
+      {
+        "span": 2,
+        "simbolo": "★",
+        "nombre": "Final",
+        "foco": "Estadística, probabilidad y repaso para llegar lista a 1º de Bachillerato.",
+        "fondo": "#3a3322",
+        "borde": "#e9d18f"
+      }
+    ],
+    "hitos": [
+      {
+        "nombre": "1ª evaluación",
+        "pos": 1.4
+      },
+      {
+        "nombre": "2ª evaluación",
+        "pos": 4.5
+      },
+      {
+        "nombre": "Final de curso",
+        "pos": 7,
+        "meta": true
+      }
+    ]
+  },
+  "tarifa_doble": true,
+  "alumno_informe": "Vuestra hija",
+  "semana": {
+    "etiqueta": "SU SEMANA",
+    "pill": "HORARIO ORIENTATIVO",
+    "titulo": "1 hora a la semana, en la biblioteca",
+    "lead": "Una clase presencial de 1 hora en la biblioteca del Pabellón de Benicalap, el martes o el jueves a las 17:30 o a las 18:00. Antes de un examen se puede añadir alguna hora más. Horario orientativo.",
+    "hora_ini": 17,
+    "hora_fin": 19,
+    "alto": 90,
+    "asignaturas": [
+      "Matemáticas B"
+    ],
+    "asig_cortas": [
+      "Matemáticas"
+    ],
+    "bloques": [
+      [
+        1,
+        17.5,
+        18.5,
+        0
+      ]
+    ],
+    "extra_titulo": "Martes o jueves",
+    "extra_texto": "Si os viene mejor el jueves, la misma clase pasa a ese día.",
+    "repartos": [
+      {
+        "nombre": "Cada semana · 1h",
+        "horas": [
+          1
+        ]
+      }
+    ]
+  }
+}
