@@ -1213,6 +1213,7 @@ def page_tarifas(d, t, mod):
     pr, base = tf["precios"][mod], tf["base"][mod]
     etiqueta = {"online": "ONLINE", "casa_profesor": "EN CASA DEL PROFESOR",
                 "casa_alumno": "PRESENCIAL EN CASA DEL ALUMNO"}[mod]
+    etiqueta = d.get("etiqueta_tarifas", {}).get(mod, etiqueta)
     sub = tf["corto"] + (" · Online" if mod == "online" else "")
     cards = ""
     for h in (2, 4, 8, 12):

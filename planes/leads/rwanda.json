@@ -40,12 +40,12 @@
     "nota": "",
     "who": "4º ESO · Matemáticas B · Presencial en Benicalap",
     "titulo": "Su plan, en dos pasos",
-    "lead": "Clases presenciales de Matemáticas B en la biblioteca del Pabellón de Benicalap.",
+    "lead": "Clases presenciales de Matemáticas B en la biblioteca del Pabellón de Benicalap. Primero una prueba y después el bono de 12 horas.",
     "prueba": {
       "horas": 2,
       "precio": 44,
       "tachado": 48,
-      "texto": "Dos horas presenciales para conocer al profesor, revisar los dos últimos exámenes y el temario, y dejar fijado su plan."
+      "texto": "Dos horas presenciales para conocer al profesor, revisar los dos últimos exámenes y el temario, y dejar fijado su plan. Precio para nuevos alumnos. Recomendado al 100%."
     },
     "paso2_titulo": "Después, su bono de 12 horas",
     "opciones": [
@@ -64,7 +64,10 @@
       }
     ],
     "resumen": [
-      "Clases presenciales de Matemáticas B en la biblioteca del Pabellón de Benicalap."
+      "Clases presenciales de Matemáticas B en la biblioteca del Pabellón de Benicalap, 1 hora a la semana.",
+      "Primero, bono de prueba de 2h (44 €) y, después, bono de 12h (270 €).",
+      "El bono de 12h es el que sale más económico por hora durante el curso: 22,50 €/h.",
+      "A 1 hora por semana, el bono de 12h dura unos 3 meses."
     ],
     "quote": "Un plan a medida para que vuestra hija vuelva a ir segura en Matemáticas.",
     "sin_mes": true
@@ -262,7 +265,6 @@
       }
     ]
   },
-  "tarifa_doble": true,
   "alumno_informe": "Vuestra hija",
   "semana": {
     "etiqueta": "SU SEMANA",
@@ -296,5 +298,8 @@
         ]
       }
     ]
+  },
+  "etiqueta_tarifas": {
+    "casa_alumno": "PRESENCIAL EN BENICALAP"
   }
 }
