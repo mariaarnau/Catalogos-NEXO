@@ -1,0 +1,322 @@
+{
+  "nombre": "Joel",
+  "etapa": "primaria",
+  "curso": "3º Infantil (5 años)",
+  "asignaturas": [
+    "Lectoescritura",
+    "Números"
+  ],
+  "voz": "familia",
+  "archivo": "Plan_NEXO_Joel_Giner_Infantil5_Lectoescritura_Numeros",
+  "cover_card_sub": "3º Infantil · Lectoescritura y números · Presencial en Nou Benicalap",
+  "presencial_label": "en casa",
+  "bonos_recomendados": [
+    {
+      "horas": 12,
+      "frecuencia": ""
+    }
+  ],
+  "modalidades_recomendadas": [
+    "casa_alumno"
+  ],
+  "tarifas_mostrar": [
+    "casa_alumno"
+  ],
+  "textos": {
+    "cover_sub": "Un plan a medida para Joel: reforzar la lectoescritura y los números de forma amena, con una profesora o profesor con experiencia en Infantil, en vuestra casa de Nou Benicalap.",
+    "p2_title": "Así acompañamos a Joel cada mes",
+    "p2_sub": "Sin burocracia. El profesor registra las sesiones, nuestro equipo analiza los datos y os llega el seguimiento sin que tengáis que pedirlo.",
+    "c1": "Joel tiene su profesor de referencia asignado, con experiencia en niños de Infantil, y un horario flexible que se adapta a vosotros.",
+    "p3_sub": "Joel tiene su propio informe de seguimiento dentro del plan, sin coste adicional. Esto es lo que incluye cada mes:",
+    "informe_h2": "Un informe real para Joel",
+    "p4_pill": "ASÍ LO VERÉIS VOSOTROS",
+    "p4_sub": "Cuatro pantallas de ejemplo del informe que recibiréis en el área privada de Joel.",
+    "p10_sub": "Escribidnos para reservar el bono de prueba de Joel y empezar cuanto antes.",
+    "gestiones": "GESTIONES A CARGO VUESTRO",
+    "c2t": "Aprender jugando",
+    "c2": "Cada sesión combina lectura, escritura y números con juegos y actividades cortas, para que Joel esté motivado.",
+    "c3": "Si el colegio marca algo concreto que reforzar, el profesor adapta las sesiones sin coste extra."
+  },
+  "pasos": {
+    "base": 22,
+    "base_txt": "",
+    "modalidad_txt": "Presencial en su casa",
+    "nota": "",
+    "who": "3º Infantil · Lectoescritura y números · Presencial en casa",
+    "titulo": "Su plan, en dos pasos",
+    "lead": "Clases presenciales en vuestra casa, con un profesor con experiencia en Infantil y una forma de enseñar amena. Primero una prueba y después el bono de 12 horas.",
+    "prueba": {
+      "horas": 2,
+      "precio": 40,
+      "tachado": 44,
+      "texto": "Dos horas presenciales en vuestra casa para que Joel conozca al profesor, ver en qué punto está con la lectura y los números y dejar fijado su plan. Precio para nuevos alumnos. Recomendado al 100%."
+    },
+    "paso2_titulo": "Después, su bono de 12 horas",
+    "opciones": [
+      {
+        "horas": 12,
+        "precio": 250,
+        "frecuencia": "",
+        "destacado": true,
+        "etiqueta": "RECOMENDADO · MEJOR PRECIO POR HORA",
+        "alt": {
+          "oro": true,
+          "txt": "TU MEJOR OPCIÓN",
+          "hora": "20,83 €/h",
+          "bono": "el mejor precio por hora del curso"
+        }
+      }
+    ],
+    "resumen": [
+      "Clases presenciales en vuestra casa de Nou Benicalap, los jueves por la tarde.",
+      "Lectoescritura y números, con juegos y actividades adaptadas a su edad.",
+      "Primero, bono de prueba de 2h (40 €) y, después, bono de 12h (250 €).",
+      "El bono de 12h es el que sale más económico por hora durante el curso: 20,83 €/h."
+    ],
+    "quote": "Un plan a medida para que Joel se ponga al nivel de su clase disfrutando de aprender.",
+    "sin_mes": true
+  },
+  "informe_ejemplo": {
+    "asignatura": "Lectoescritura y números",
+    "mes": "Noviembre 2026",
+    "comparado": "octubre",
+    "nota": "7,0",
+    "sesiones": 4,
+    "horas": "4h",
+    "destrezas_label": "Bloques trabajados",
+    "barras": [
+      [
+        "Lectura",
+        7.0
+      ],
+      [
+        "Escritura",
+        6.4
+      ],
+      [
+        "Números",
+        7.2
+      ]
+    ],
+    "mayor_progreso": "Lectura — ya reconoce todas las vocales y sus primeras sílabas",
+    "resumen": "En noviembre, Joel ha hecho 4 clases sin faltar a ninguna. Ya reconoce las vocales y cuenta sin ayuda hasta el 10. Con el trazo de las letras todavía necesita apoyo. Diciembre: primeras sílabas y sumas con objetos.",
+    "proxima_sesion": "PRÓXIMA CLASE — JUEVES 3",
+    "proxima_sesion_txt": "Sílabas con m y p; sumas con objetos hasta el 10.",
+    "horario": "Jueves, 17:30–18:30 · en casa",
+    "temas": [
+      [
+        "Lectura",
+        1.5
+      ],
+      [
+        "Escritura",
+        1.0
+      ],
+      [
+        "Números",
+        1.5
+      ]
+    ],
+    "fuertes": [
+      "Vocales consolidadas",
+      "Muy participativo con los juegos"
+    ],
+    "atencion": [
+      "Trazo de las letras",
+      "Mantener la atención al final de la clase"
+    ],
+    "casa": [
+      "5 minutos de lectura con un adulto cada día",
+      "Contar objetos en casa"
+    ],
+    "semanas": [
+      5.8,
+      6.3,
+      6.8,
+      7.2
+    ],
+    "metricas": [
+      [
+        "76%",
+        "Comprensión"
+      ],
+      [
+        "81%",
+        "Constancia"
+      ],
+      [
+        "62%",
+        "Autonomía"
+      ]
+    ],
+    "evol": [
+      [
+        "Lectura",
+        "Octubre: 30%",
+        "Noviembre: 60%",
+        "Reconoce las vocales y empieza con las sílabas."
+      ],
+      [
+        "Atención",
+        "Octubre: 40%",
+        "Noviembre: 65%",
+        "Aguanta más tiempo concentrado gracias a los juegos."
+      ]
+    ],
+    "conclusion": "Noviembre cierra con una tendencia muy positiva. En diciembre, primeras sílabas y sumas con objetos.",
+    "cal_mes": [
+      2026,
+      12
+    ],
+    "cal_titulo": "Calendario — diciembre 2026",
+    "cal_dias_sesion": [
+      3,
+      10,
+      17
+    ],
+    "cal_examen": 16,
+    "cal_semanas": "3 sem",
+    "cal_semanas_txt": "hasta las vacaciones de Navidad",
+    "antes": "Sin refuerzo fijo",
+    "ahora": "Clase semanal en casa · Bono de 12h"
+  },
+  "trayectoria": {
+    "etiqueta": "HOJA DE RUTA",
+    "pill": "3º INFANTIL · LECTOESCRITURA Y NÚMEROS",
+    "titulo": "El curso de Joel, de noviembre a junio",
+    "lead": "Vamos paso a paso, al ritmo de Joel, para que llegue a 1º de Primaria con la lectura y los números al nivel de su clase. Fechas orientativas.",
+    "meses": [
+      "Nov",
+      "Dic",
+      "Ene",
+      "Feb",
+      "Mar",
+      "Abr",
+      "May",
+      "Jun"
+    ],
+    "colores": [
+      "#5b8ee0",
+      "#8fb8ec",
+      "#7fcfa0",
+      "#e9d18f"
+    ],
+    "tramos": [
+      [
+        0,
+        2
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        4,
+        6
+      ],
+      [
+        6,
+        7
+      ]
+    ],
+    "bloques": [
+      {
+        "span": 2,
+        "simbolo": "Aa",
+        "nombre": "Letras y sonidos",
+        "foco": "Vocales, primeras consonantes y números hasta el 10.",
+        "fondo": "#12234a",
+        "borde": "#5b8ee0"
+      },
+      {
+        "span": 2,
+        "simbolo": "ma",
+        "nombre": "Sílabas",
+        "foco": "Leer y escribir sílabas; contar y sumar con objetos.",
+        "fondo": "#16284a",
+        "borde": "#8fb8ec"
+      },
+      {
+        "span": 2,
+        "simbolo": "+−",
+        "nombre": "Palabras y cuentas",
+        "foco": "Palabras y frases cortas; sumas y restas sencillas.",
+        "fondo": "#13302a",
+        "borde": "#7fcfa0"
+      },
+      {
+        "span": 2,
+        "simbolo": "★",
+        "nombre": "Listo para 1º",
+        "foco": "Leer frases solo y pequeños problemas.",
+        "fondo": "#3a3322",
+        "borde": "#e9d18f"
+      }
+    ],
+    "hitos": [
+      {
+        "nombre": "2º trimestre",
+        "pos": 2
+      },
+      {
+        "nombre": "3er trimestre",
+        "pos": 5
+      },
+      {
+        "nombre": "Final de curso",
+        "pos": 7,
+        "meta": true
+      }
+    ]
+  },
+  "nombre_completo": "Joel Giner",
+  "semana": {
+    "etiqueta": "SU SEMANA",
+    "pill": "HORARIO ORIENTATIVO",
+    "titulo": "Los jueves por la tarde, en casa",
+    "lead": "Una clase de 1 hora los jueves: un rato de lectoescritura y otro de números, con juegos y actividades para que Joel no se canse. Si más adelante queréis ampliar, se añade el lunes o el miércoles. Horario orientativo.",
+    "hora_ini": 17,
+    "hora_fin": 19,
+    "alto": 90,
+    "asignaturas": [
+      "Lectoescritura",
+      "Números"
+    ],
+    "asig_cortas": [
+      "Lectura",
+      "Números"
+    ],
+    "bloques": [
+      [
+        3,
+        17.5,
+        18,
+        0
+      ],
+      [
+        3,
+        18,
+        18.5,
+        1
+      ]
+    ],
+    "extra_titulo": "Horario orientativo",
+    "extra_texto": "Si queréis una segunda tarde, el lunes o el miércoles con el mismo formato.",
+    "repartos": [
+      {
+        "nombre": "Jueves · 1h",
+        "horas": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "nombre": "Con una tarde más · 2h",
+        "horas": [
+          1,
+          1
+        ]
+      }
+    ]
+  }
+}
