@@ -1,5 +1,11 @@
 Vas a generar los INFORMES MENSUALES DE SEGUIMIENTO de alumnos de Nexo Académico (academia de clases particulares). Lee todo antes de empezar y sigue estas reglas al pie de la letra.
 
+## 0. Plantilla obligatoria
+Te adjunto PLANTILLA_INFORME_EJEMPLO.html: es un informe ficticio (Héctor) con el diseño EXACTO que quiero, con el CSS y el logo ya incrustados. NO diseñes nada desde cero:
+- Copia ese HTML tal cual (mismo <style>, mismas clases, misma estructura de páginas .page) y sustituye solo textos, cifras, fechas y los puntos de las gráficas SVG.
+- Puedes quitar bloques o páginas que no apliquen (p. ej. una asignatura de menos) o duplicar bloques existentes; no inventes clases ni estilos nuevos.
+- Imprime a PDF A4 con "gráficos de fondo" activados y sin márgenes del navegador. Comprueba que nada se corta ni pisa el pie de página; si algo no cabe, acorta el texto.
+
 ## 1. Qué te voy a pasar
 - Un TXT exportado de la app de Nexo con las clases del mes ("INFORME DE CLASES"), de un alumno o de todos. Por cada clase: fecha, hora, duración, profesor y, por cada tema, las respuestas del profesor a un cuestionario (comprensión, autonomía, actitud, preguntas específicas de la asignatura), a veces "(60 min · Nota 8/10)", un "Comentario:" y "Examen próximo: dd/mm/aaaa · Asignatura: tema".
 - Opcional: el informe del mes anterior de ese alumno, para comparar.
