@@ -1,0 +1,5 @@
+# El contenido de salida/ (PDF y PNG generados) no se sube a git.
+salida/*
+!salida/.gitkeep
+__pycache__/
+*.pyc

@@ -1,0 +1,37 @@
+{
+  "nombre": "Daniel Ferrer",
+  "foto": "",
+  "foto_encuadre": "50% 30%",
+  "titular": "Graduado en Física · 6 años dando clase",
+  "edad": 27,
+  "modalidad": "Online y presencial en Valencia",
+  "presentacion": "Daniel es graduado en Física por la Universitat de València y cursó después el Máster de Profesorado de Secundaria, en cuyas prácticas dio clase en un instituto público. Lleva seis años con alumnos de ESO y Bachillerato, sobre todo en Física y Matemáticas. Suele abrir cada sesión repasando el último examen corregido, para detectar qué conceptos conviene reforzar antes de seguir avanzando.",
+  "asignaturas": [
+    {"nombre": "Física", "niveles": "ESO y Bachillerato"},
+    {"nombre": "Matemáticas", "niveles": "ESO y Bachillerato"},
+    {"nombre": "Química", "niveles": "ESO"},
+    {"nombre": "Tecnología", "niveles": "ESO"}
+  ],
+  "formacion": [
+    {"titulo": "Máster de Profesorado de Secundaria (Física y Química)", "centro": "Universitat de València", "periodo": "2020-2021"},
+    {"titulo": "Grado en Física", "centro": "Universitat de València", "periodo": "2016-2020"},
+    {"titulo": "Curso de didáctica de la Física con simuladores", "centro": "Universitat de València", "periodo": "2022"}
+  ],
+  "experiencia": [
+    {"puesto": "Clases particulares de Física y Matemáticas", "lugar": "", "periodo": "2020-actualidad", "detalle": "Alumnos de ESO y Bachillerato, en sesiones individuales de una hora y en grupos de dos o tres."},
+    {"puesto": "Prácticas del máster en Física y Química", "lugar": "Instituto público de Valencia", "periodo": "2021", "detalle": "Dio clase a dos grupos de 4.º de ESO durante tres meses."},
+    {"puesto": "Profesor de refuerzo", "lugar": "Academia de refuerzo en Valencia", "periodo": "2021-2023", "detalle": "Grupos de seis alumnos de 3.º y 4.º de ESO, dos tardes por semana."}
+  ],
+  "puntos_fuertes": [
+    "Repasa el último examen al empezar",
+    "Corrige los errores junto al alumno",
+    "Prepara ejercicios propios por tema",
+    "Ha dado clase uno a uno y en grupo"
+  ],
+  "idiomas": [
+    {"idioma": "Español", "nivel": "Nativo", "certificado": ""},
+    {"idioma": "Valenciano", "nivel": "C1", "certificado": "Certificado de la JQCV"},
+    {"idioma": "Inglés", "nivel": "B2", "certificado": "Cambridge First"}
+  ],
+  "notas_revision": []
+}

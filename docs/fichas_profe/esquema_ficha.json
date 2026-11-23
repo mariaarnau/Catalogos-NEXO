@@ -1,0 +1,184 @@
+{
+  "version": 1,
+  "descripcion": "Formato fijo de los datos de la ficha del profesor de Nexo Académico. Es la única fuente de verdad: el validador del generador lee este archivo, así que si cambias un largo máximo aquí, cambia en todas partes. Los campos opcionales que no se conozcan se devuelven vacíos (\"\" en texto, [] en lista, null en número) y la ficha no los muestra.",
+  "tipos": {
+    "texto": "Cadena de texto de una sola línea.",
+    "entero": "Número entero, o null si no se conoce.",
+    "lista_de_texto": "Lista de cadenas.",
+    "lista_de_objetos": "Lista de objetos con los campos indicados en «elementos»."
+  },
+  "reglas_generales": [
+    "No se inventa nada que no esté en el CV (o en las notas de Nexo, que cuentan como dato verificado).",
+    "Nunca aparecen DNI, NIE, dirección, fecha de nacimiento, teléfono, email, redes sociales, estado civil ni ningún otro dato sensible.",
+    "Sin guiones largos (— ni –), sin emojis y sin frases hechas. Los periodos se escriben con guion corto: 2022-2024.",
+    "Los largos máximos cuentan caracteres, espacios incluidos.",
+    "Al menos uno de estos dos campos debe tener contenido: experiencia o puntos_fuertes."
+  ],
+  "campos": {
+    "nombre": {
+      "tipo": "texto",
+      "obligatorio": true,
+      "max": 40,
+      "descripcion": "Nombre y primer apellido, tal como figura en el CV. Ejemplo: «Irene Soler»."
+    },
+    "foto": {
+      "tipo": "texto",
+      "obligatorio": false,
+      "max": 120,
+      "descripcion": "Nombre del archivo de la foto carnet (ejemplo: «irene_soler.jpg»), relativo a la carpeta del JSON. Solo lo usa la línea de comandos cuando no se le pasa la foto como segundo argumento. La función generar() recibe la foto en bytes y ignora este campo. Si no hay foto, la ficha muestra un círculo con las iniciales."
+    },
+    "foto_encuadre": {
+      "tipo": "texto",
+      "obligatorio": false,
+      "max": 12,
+      "formato": "^\\d{1,3}% \\d{1,3}%$",
+      "descripcion": "Punto de la foto que queda centrado en el círculo, en porcentajes «horizontal vertical». Por defecto «50% 30%», que centra la cara en una foto carnet vertical. Se sube el segundo número (por ejemplo «50% 45%») si la cara sale cortada por arriba."
+    },
+    "titular": {
+      "tipo": "texto",
+      "obligatorio": true,
+      "max": 70,
+      "descripcion": "Una línea que resume quién es el profe: situación académica o profesional y experiencia dando clase, separadas por « · ». Ejemplo: «Estudiante de 4.º de Matemáticas · 4 años dando clase». Solo cifras que se deduzcan de las fechas del CV."
+    },
+    "edad": {
+      "tipo": "entero",
+      "obligatorio": false,
+      "min": 16,
+      "max": 99,
+      "descripcion": "Edad en años. Solo si el CV da la edad o la fecha de nacimiento; en ese caso se calcula con la fecha de hoy y NUNCA se escribe la fecha de nacimiento. Si el CV no lo dice, null."
+    },
+    "modalidad": {
+      "tipo": "texto",
+      "obligatorio": false,
+      "max": 60,
+      "descripcion": "Cómo da las clases. Ejemplos: «Online», «Presencial en Valencia», «Online y presencial en Valencia». Solo si lo dice el CV o las notas de Nexo."
+    },
+    "presentacion": {
+      "tipo": "texto",
+      "obligatorio": true,
+      "min": 90,
+      "max": 480,
+      "descripcion": "Entre 2 y 4 frases en tercera persona, cálidas y concretas, que cuenten quién es el profe y cómo da clase. Cada afirmación debe salir del CV. Sin frases hechas."
+    },
+    "asignaturas": {
+      "tipo": "lista_de_objetos",
+      "obligatorio": true,
+      "min_elementos": 1,
+      "max_elementos": 5,
+      "descripcion": "Asignaturas que imparte, cada una con sus niveles. Se escribe la asignatura concreta (Estadística, Física, Química), no solo «Ciencias». Cuando son varias asignaturas del mismo nivel, una entrada por asignatura.",
+      "elementos": {
+        "nombre": {
+          "tipo": "texto",
+          "obligatorio": true,
+          "max": 28,
+          "descripcion": "Asignatura. Ejemplo: «Matemáticas»."
+        },
+        "niveles": {
+          "tipo": "texto",
+          "obligatorio": false,
+          "max": 40,
+          "descripcion": "Niveles. Ejemplo: «ESO y Bachillerato» o «Nivel universitario»."
+        }
+      }
+    },
+    "formacion": {
+      "tipo": "lista_de_objetos",
+      "obligatorio": true,
+      "min_elementos": 1,
+      "max_elementos": 3,
+      "descripcion": "Estudios del profe, del más reciente al más antiguo. Se incluyen los títulos universitarios, los másteres y, si es joven y no tiene más, el Bachillerato. Se omiten la ESO y los cursos sueltos que no tengan que ver con enseñar.",
+      "elementos": {
+        "titulo": {
+          "tipo": "texto",
+          "obligatorio": true,
+          "max": 64,
+          "descripcion": "Título o estudios. Ejemplo: «Grado en Matemáticas (4.º curso)»."
+        },
+        "centro": {
+          "tipo": "texto",
+          "obligatorio": false,
+          "max": 48,
+          "descripcion": "Universidad o centro. Ejemplo: «Universitat de València»."
+        },
+        "periodo": {
+          "tipo": "texto",
+          "obligatorio": false,
+          "max": 24,
+          "descripcion": "Años, con guion corto. Ejemplo: «2022-2026» o «2023-actualidad»."
+        }
+      }
+    },
+    "experiencia": {
+      "tipo": "lista_de_objetos",
+      "obligatorio": false,
+      "max_elementos": 3,
+      "descripcion": "Solo experiencia relacionada con dar clase: clases particulares, academias, colegios, prácticas docentes, monitorías de refuerzo, voluntariado educativo. Nada de camarero, dependiente, repartidor ni similares. Del más reciente al más antiguo. Si no hay ninguna, lista vacía.",
+      "elementos": {
+        "puesto": {
+          "tipo": "texto",
+          "obligatorio": true,
+          "max": 60,
+          "descripcion": "Qué hacía. Ejemplo: «Clases particulares de Matemáticas»."
+        },
+        "lugar": {
+          "tipo": "texto",
+          "obligatorio": false,
+          "max": 48,
+          "descripcion": "Centro o entidad, si lo hay. Ejemplo: «Academia Vèrtex»."
+        },
+        "periodo": {
+          "tipo": "texto",
+          "obligatorio": false,
+          "max": 24,
+          "descripcion": "Años, con guion corto. Ejemplo: «2022-actualidad»."
+        },
+        "detalle": {
+          "tipo": "texto",
+          "obligatorio": false,
+          "max": 120,
+          "descripcion": "Una frase con lo que hacía y con quién, solo con datos del CV."
+        }
+      }
+    },
+    "puntos_fuertes": {
+      "tipo": "lista_de_texto",
+      "obligatorio": false,
+      "max_elementos": 5,
+      "max": 40,
+      "descripcion": "Lo que más pesa a la hora de dar clase con este profe, en frases cortas y concretas, todas respaldadas por el CV. Si no tiene experiencia docente, aquí van sus aptitudes. Ejemplo: «Resuelve cada ejercicio en voz alta, paso a paso»."
+    },
+    "idiomas": {
+      "tipo": "lista_de_objetos",
+      "obligatorio": false,
+      "max_elementos": 3,
+      "descripcion": "Idiomas que figuran en el CV, con el nivel y el certificado si los hay. Se omite el idioma del que el CV no dé ningún dato.",
+      "elementos": {
+        "idioma": {
+          "tipo": "texto",
+          "obligatorio": true,
+          "max": 20,
+          "descripcion": "Ejemplo: «Inglés»."
+        },
+        "nivel": {
+          "tipo": "texto",
+          "obligatorio": false,
+          "max": 20,
+          "descripcion": "Ejemplo: «B2», «Nativo», «Avanzado»."
+        },
+        "certificado": {
+          "tipo": "texto",
+          "obligatorio": false,
+          "max": 36,
+          "descripcion": "Solo si el CV nombra el título. Ejemplo: «Cambridge First»."
+        }
+      }
+    },
+    "notas_revision": {
+      "tipo": "lista_de_texto",
+      "obligatorio": false,
+      "max_elementos": 8,
+      "max": 200,
+      "descripcion": "Avisos para la persona que revisa la ficha antes de enviarla. NO se muestran en la ficha. Ejemplos: «El CV no dice qué asignaturas imparte; se han tomado de las notas de Nexo.», «La fecha de fin del máster no figura.». Lista vacía si no hay nada que avisar."
+    }
+  }
+}

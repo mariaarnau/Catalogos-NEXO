@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Instrucciones de la ficha del profesor</title><style>
+:root{--noche:#0a1226;--azul:#154CA9;--crema:#F4F1E8;--oro:#a8802a;--linea:rgba(10,18,38,.14)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--crema);color:var(--noche);font:16px/1.6 "Liberation Sans",Arial,Helvetica,sans-serif}
+header.cab{background:var(--noche);color:var(--crema);padding:34px 20px 30px;border-bottom:4px solid var(--oro)}
+header.cab div{max-width:980px;margin:0 auto}
+header.cab small{letter-spacing:.2em;color:var(--oro);font-weight:700;font-size:12px}
+header.cab h1{margin:6px 0 0;font:700 34px/1.15 "Liberation Serif","Times New Roman",serif}
+main{max-width:980px;margin:0 auto;padding:12px 20px 60px}
+h2{font:700 26px/1.2 "Liberation Serif","Times New Roman",serif;color:var(--azul);margin:40px 0 10px;padding-bottom:8px;border-bottom:2px solid var(--oro)}
+h3{font:700 20px/1.3 "Liberation Serif","Times New Roman",serif;margin:26px 0 6px}
+p,li{max-width:84ch}
+code{background:rgba(21,76,169,.10);color:var(--azul);padding:1px 6px;border-radius:5px;font:14px Consolas,"Liberation Mono",monospace}
+pre{background:var(--noche);color:var(--crema);padding:16px 18px;border-radius:10px;overflow:auto}
+pre code{background:none;color:inherit;padding:0;font-size:13.5px;line-height:1.5}
+blockquote{margin:12px 0;padding:10px 18px;border-left:4px solid var(--oro);background:rgba(168,128,42,.10);max-width:84ch}
+.tabla{overflow-x:auto;margin:14px 0}
+table{border-collapse:collapse;width:100%;font-size:14.5px;background:#fff}
+th{background:var(--noche);color:var(--crema);text-align:left;padding:9px 12px}
+td{padding:8px 12px;border-bottom:1px solid var(--linea);vertical-align:top}
+tr:nth-child(even) td{background:rgba(244,241,232,.55)}
+strong{color:var(--noche)}
+@media print{header.cab{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style></head>
+<body><header class="cab"><div><small>NEXO ACADÉMICO · EQUIPO DOCENTE</small><h1>Instrucciones de la ficha del profesor</h1></div></header>
+<main>
+<h2 id='1-que-es-y-como-se-usa'>1. Qué es y cómo se usa</h2>
+<p>La <strong>ficha del profesor</strong> es un PDF de una sola hoja A4 que la familia recibe cuando paga, para conocer a su profe antes de la primera clase. Se genera también como imagen PNG, que se ve bien en WhatsApp. Su trabajo es dar confianza: quién es el profe, qué ha estudiado, qué ha hecho dando clase y cómo trabaja, con datos comprobables y sin adornos.</p>
+<p>El circuito completo es este:</p>
+<ol>
+<li>Se parte del <strong>CV del profe</strong> (PDF, Word o foto) y de su <strong>foto carnet</strong>.</li>
+<li>Una IA lee el CV con el prompt de <code>extraer_del_cv.md</code> y devuelve <strong>solo un JSON</strong> con el formato de <code>esquema_ficha.json</code>.</li>
+<li>Se <strong>valida</strong> el JSON: <code>python generar_ficha.py --validar ficha.json</code>.</li>
+<li>Se <strong>genera</strong> el PDF y el PNG con <code>generador/generar_ficha.py</code>.</li>
+<li>Una persona <strong>revisa</strong> el resultado con la lista del apartado 9.</li>
+<li>Se envía a la familia por WhatsApp. El teléfono del profe se pasa aparte, nunca va en la ficha.</li>
+</ol>
+<h2 id='2-que-hay-en-esta-carpeta'>2. Qué hay en esta carpeta</h2>
+<div class='tabla'><table><thead><tr><th>Archivo</th><th>Para qué sirve</th></tr></thead><tbody>
+<tr><td><code>INSTRUCCIONES_FICHAS_PROFE.md</code> y <code>.html</code></td><td>Este documento. La copia <code>.html</code> es la misma, para leerla cómodamente.</td></tr>
+<tr><td><code>extraer_del_cv.md</code></td><td>El prompt exacto que usa la IA para pasar de un CV al JSON.</td></tr>
+<tr><td><code>esquema_ficha.json</code></td><td>El formato de los datos, campo por campo, con obligatoriedad y largos máximos. Lo lee también el validador.</td></tr>
+<tr><td><code>plantilla_ficha_profe.html</code></td><td>La plantilla visual, con huecos para los datos y la foto.</td></tr>
+<tr><td><code>ficha_ejemplo.json</code></td><td>Un ejemplo completo y realista, con todos los campos.</td></tr>
+<tr><td><code>cv_ejemplo.txt</code> y <code>cv_ejemplo_resultado.json</code></td><td>Un CV inventado (con datos sensibles incluidos a propósito) y el JSON que debe salir de él.</td></tr>
+<tr><td><code>generador/generar_ficha.py</code></td><td>Genera el PDF y el PNG. Valida los datos antes.</td></tr>
+<tr><td><code>generador/probar_generador.py</code></td><td>Pruebas automáticas del generador.</td></tr>
+<tr><td><code>generador/prueba_limites.json</code></td><td>Ficha con todos los campos en su largo máximo, para comprobar que cabe en una hoja.</td></tr>
+<tr><td><code>ejemplo/</code></td><td>El PDF y el PNG de ejemplo ya generados.</td></tr>
+<tr><td><code>salida/</code></td><td>Aquí se guardan los PDF y PNG que se generen. No se sube a git.</td></tr>
+<tr><td><code>assets/logo_nexo.png</code></td><td>Logotipo de Nexo para la cabecera.</td></tr>
+</tbody></table></div>
+<h2 id='3-apartados-de-la-ficha-de-arriba-abajo'>3. Apartados de la ficha, de arriba abajo</h2>
+<p>Paleta Nexo: azul noche <code>#0a1226</code>, azul <code>#154CA9</code>, crema <code>#F4F1E8</code> y dorado <code>#a8802a</code>. La ficha es sobria, de nivel profesional, y siempre ocupa una sola hoja A4.</p>
+<div class='tabla'><table><thead><tr><th>Orden</th><th>Apartado</th><th>Campo</th><th>Qué va</th><th>Obligatorio</th></tr></thead><tbody>
+<tr><td>1</td><td>Cabecera</td><td><code>foto</code></td><td>Foto carnet en un círculo. Sin foto, un círculo con las iniciales.</td><td>No</td></tr>
+<tr><td>1</td><td>Cabecera</td><td><code>nombre</code></td><td>Nombre y primer apellido.</td><td>Sí</td></tr>
+<tr><td>1</td><td>Cabecera</td><td><code>titular</code></td><td>Una línea que resume al profe.</td><td>Sí</td></tr>
+<tr><td>1</td><td>Cabecera</td><td><code>edad</code>, <code>modalidad</code></td><td>Debajo del titular, en una línea: «27 años · Online y presencial en Valencia».</td><td>No</td></tr>
+<tr><td>2</td><td>Presentación</td><td><code>presentacion</code></td><td>De 2 a 4 frases en tercera persona.</td><td>Sí</td></tr>
+<tr><td>3</td><td>Qué enseña</td><td><code>asignaturas</code></td><td>Cada asignatura con sus niveles.</td><td>Sí</td></tr>
+<tr><td>4</td><td>Formación</td><td><code>formacion</code></td><td>Estudios, del más reciente al más antiguo.</td><td>Sí</td></tr>
+<tr><td>4</td><td>Idiomas</td><td><code>idiomas</code></td><td>Idioma, nivel y certificado. Va al lado de Formación.</td><td>No</td></tr>
+<tr><td>5</td><td>Experiencia dando clase</td><td><code>experiencia</code></td><td>Solo experiencia relacionada con la docencia.</td><td>No (ver nota)</td></tr>
+<tr><td>6</td><td>Puntos fuertes</td><td><code>puntos_fuertes</code></td><td>Frases cortas y concretas.</td><td>No (ver nota)</td></tr>
+<tr><td>Pie</td><td>Pie de página</td><td>(fijo)</td><td>«Nexo Académico · Equipo docente» y nexoacademico.com.</td><td>No se rellena</td></tr>
+</tbody></table></div>
+<p><strong>Nota.</strong> Hace falta contenido en <code>experiencia</code> o en <code>puntos_fuertes</code>; al menos uno de los dos. Si el profe no ha dado clase nunca, la ficha se apoya en los puntos fuertes (aptitudes que consten en el CV).</p>
+<p>Los campos opcionales que no se conozcan se dejan vacíos (<code>""</code>, <code>[]</code> o <code>null</code>) y la ficha <strong>no muestra</strong> ni el apartado ni su título. Quitar cualquier opcional no rompe el diseño.</p>
+<p>Campos que no se ven en la ficha: <code>foto_encuadre</code> (ajusta el recorte de la foto) y <code>notas_revision</code> (avisos para quien revisa).</p>
+<h2 id='4-limites-y-tono-de-cada-texto'>4. Límites y tono de cada texto</h2>
+<p>Los largos cuentan <strong>caracteres, espacios incluidos</strong>. El validador rechaza lo que se pase. Si un texto no cabe, se reescribe más corto; nunca se corta a mitad de frase.</p>
+<div class='tabla'><table><thead><tr><th>Campo</th><th>Máx. caracteres</th><th>Elementos máx.</th><th>Tono y contenido</th></tr></thead><tbody>
+<tr><td><code>nombre</code></td><td>40</td><td></td><td>Tal como figura en el CV. Nombre y primer apellido.</td></tr>
+<tr><td><code>titular</code></td><td>70</td><td></td><td>Seco y informativo. Dos datos separados por « · »: situación y años dando clase.</td></tr>
+<tr><td><code>edad</code></td><td>16 a 99 (número)</td><td></td><td>Solo si el CV da la edad o la fecha de nacimiento.</td></tr>
+<tr><td><code>modalidad</code></td><td>60</td><td></td><td>Neutro. «Online», «Presencial en Valencia» u «Online y presencial en Valencia».</td></tr>
+<tr><td><code>presentacion</code></td><td>90 a 480</td><td></td><td>Cálido y concreto. Tercera persona. De 2 a 4 frases.</td></tr>
+<tr><td><code>asignaturas</code></td><td></td><td>5</td><td>Una entrada por asignatura.</td></tr>
+<tr><td><code>asignaturas.nombre</code></td><td>28</td><td></td><td>La asignatura concreta (Estadística, no «Ciencias»).</td></tr>
+<tr><td><code>asignaturas.niveles</code></td><td>40</td><td></td><td>«ESO y Bachillerato», «Nivel universitario».</td></tr>
+<tr><td><code>formacion</code></td><td></td><td>3</td><td>Del más reciente al más antiguo.</td></tr>
+<tr><td><code>formacion.titulo</code></td><td>64</td><td></td><td>Título completo, sin abreviar.</td></tr>
+<tr><td><code>formacion.centro</code></td><td>48</td><td></td><td>Universidad o centro.</td></tr>
+<tr><td><code>formacion.periodo</code></td><td>24</td><td></td><td>«2022-2026» o «2023-actualidad».</td></tr>
+<tr><td><code>experiencia</code></td><td></td><td>3</td><td>Del más reciente al más antiguo.</td></tr>
+<tr><td><code>experiencia.puesto</code></td><td>60</td><td></td><td>Qué hacía, en una expresión corta.</td></tr>
+<tr><td><code>experiencia.lugar</code></td><td>48</td><td></td><td>Centro o entidad, si lo hay.</td></tr>
+<tr><td><code>experiencia.periodo</code></td><td>24</td><td></td><td>«2022-actualidad».</td></tr>
+<tr><td><code>experiencia.detalle</code></td><td>120</td><td></td><td>Una frase con qué hacía y con quién.</td></tr>
+<tr><td><code>puntos_fuertes</code></td><td></td><td>5</td><td>Frases cortas, todas respaldadas por el CV.</td></tr>
+<tr><td><code>puntos_fuertes</code> (cada uno)</td><td>40</td><td></td><td>Empiezan por un verbo o por un hecho. Sin adjetivos vacíos.</td></tr>
+<tr><td><code>idiomas</code></td><td></td><td>3</td><td>Solo los que figuran en el CV.</td></tr>
+<tr><td><code>idiomas.idioma</code></td><td>20</td><td></td><td>«Inglés».</td></tr>
+<tr><td><code>idiomas.nivel</code></td><td>20</td><td></td><td>«B2», «Nativo», «Avanzado».</td></tr>
+<tr><td><code>idiomas.certificado</code></td><td>36</td><td></td><td>Solo si el CV nombra el título.</td></tr>
+<tr><td><code>notas_revision</code></td><td></td><td>8</td><td>Avisos internos, no se muestran.</td></tr>
+<tr><td><code>notas_revision</code> (cada una)</td><td>200</td><td></td><td>Claras y breves, para la persona que revisa.</td></tr>
+</tbody></table></div>
+<p>Con todos los campos al máximo a la vez, la ficha se reduce hasta el 75 % para seguir cabiendo en una hoja. Con datos normales (como <code>ficha_ejemplo.json</code>) no se reduce nada. Si el generador avisa de que ha tenido que reducirla, conviene acortar algún texto.</p>
+<h2 id='5-como-se-saca-cada-dato-del-cv'>5. Cómo se saca cada dato del CV</h2>
+<p><strong><code>nombre</code>.</strong> El nombre propio y el primer apellido que aparecen en el CV. Si el CV trae dos apellidos, se deja el primero. Si el profe usa un nombre distinto del legal (por ejemplo, «Pau» por «Paulina»), se respeta el que escribe en el CV.</p>
+<p><strong><code>foto</code>.</strong> No se saca del CV: es la foto carnet que se entrega aparte. El campo puede llevar el nombre del archivo (<code>irene_soler.jpg</code>) para la línea de comandos, o ir vacío. Si el profe no tiene foto, la ficha muestra un círculo con sus iniciales.</p>
+<p><strong><code>titular</code>.</strong> Combina la situación académica o profesional con los años dando clase, separados por « · ».</p>
+<ul>
+<li>Situación: «Estudiante de 4.º de Matemáticas», «Graduado en Física», «Ingeniera industrial», «Maestra de Educación Infantil».</li>
+<li>Años dando clase: se calculan con la fecha de hoy a partir del inicio de la primera experiencia docente que figure en el CV, y se redondean hacia abajo. Si el CV no da fechas, no se pone cifra: «Estudiante de 4.º de Matemáticas».</li>
+<li>Ejemplos: «Estudiante de 4.º de Matemáticas · 4 años dando clase»; «Graduado en Física · 6 años dando clase».</li>
+</ul>
+<p><strong><code>edad</code>.</strong> Solo si el CV da la edad o la fecha de nacimiento; en ese caso se calcula con la fecha de hoy. <strong>La fecha de nacimiento no se escribe nunca</strong>, ni en este campo, ni en la presentación, ni en las notas. Si el profe es menor de edad, se deja vacío y se avisa en <code>notas_revision</code>.</p>
+<p><strong><code>modalidad</code>.</strong> Se toma del CV («clases online y a domicilio») o de las notas de Nexo. Si ninguno lo dice, se deja vacío.</p>
+<p><strong><code>presentacion</code>.</strong> Se redacta con datos del CV, sin añadir ninguno. Estructura recomendada:</p>
+<ol>
+<li>Quién es y qué estudia o ha estudiado, con el nombre de pila.</li>
+<li>A quién da clase y desde cuándo, con las cifras que dé el CV (alumnos, años, niveles).</li>
+<li>Cómo trabaja, <strong>solo si el CV lo cuenta</strong>: un método, una costumbre de trabajo, un tipo de ejercicio. Si el CV no dice nada de cómo da clase, esta frase se sustituye por un dato de experiencia (una academia, unas prácticas, un grupo reducido).</li>
+</ol>
+<p><strong><code>asignaturas</code>.</strong> Las que el CV dice que imparte. Si el CV solo da «matemáticas», se pone «Matemáticas». Las asignaturas o niveles que Nexo comunica aparte (por ejemplo, «va a dar Estadística universitaria») se aceptan como dato verificado, aunque no estén en el CV, y se anota en <code>notas_revision</code> que proceden de las notas de Nexo.</p>
+<p><strong><code>formacion</code>.</strong> De más a menos reciente. Entran los grados, másteres y, si el profe es joven y no tiene más, el Bachillerato. No entran la ESO, la formación obligatoria ni los cursos sueltos que no tengan que ver con enseñar. Se respeta el estado: «(4.º curso)», «(en curso)».</p>
+<p><strong><code>experiencia</code>.</strong> Solo lo relacionado con dar clase: clases particulares, academias, colegios, prácticas docentes, monitorías de refuerzo, voluntariado educativo. <strong>Se descartan</strong> los trabajos de camarero, dependiente, repartidor, azafata, cajero y similares, aunque ocupen media página del CV. Las clases particulares que el CV mencione sin fechas se incluyen sin periodo.</p>
+<p><strong><code>puntos_fuertes</code>.</strong> Hechos del CV convertidos en frases cortas: un método, un tipo de alumno, una cifra, una circunstancia («Ha dado clase uno a uno y en grupo»). Si no hay experiencia docente, aquí van las aptitudes que consten en el CV (paciencia, organización, facilidad para explicar), sin adornarlas.</p>
+<p><strong><code>idiomas</code>.</strong> Los que figuran en el CV con nivel o certificado. Si el CV pone «inglés» sin más, se pone «Inglés» sin nivel. El idioma materno solo se incluye si el CV lo menciona.</p>
+<p><strong><code>notas_revision</code>.</strong> Todo lo que la persona que revisa debería saber: datos que faltan, asignaturas que no salen del CV, fechas ambiguas, discrepancias dentro del CV, disponibilidad que se ha omitido. Nunca incluyen datos sensibles. Ejemplo: «El CV no indica qué asignaturas imparte; se han tomado de las notas de Nexo.»</p>
+<h2 id='6-reglas-de-contenido'>6. Reglas de contenido</h2>
+<h3 id='6-1-no-inventar-nada'>6.1 No inventar nada</h3>
+<p>Cada dato de la ficha sale del CV o de las notas de Nexo. Si falta, el campo queda vacío y no se muestra. Eso incluye cifras, centros, métodos, resultados, cualidades y nombres. Está prohibido deducir lo que «probablemente» sabe el profe.</p>
+<h3 id='6-2-datos-que-no-aparecen-nunca'>6.2 Datos que no aparecen NUNCA</h3>
+<ul>
+<li>DNI, NIE, pasaporte, número de la Seguridad Social, SIP.</li>
+<li>Dirección o domicilio, ni siquiera el barrio o la calle.</li>
+<li>Fecha de nacimiento.</li>
+<li>Teléfono y email del profe. Los pasa Nexo a la familia aparte.</li>
+<li>Redes sociales, LinkedIn y enlaces.</li>
+<li>Estado civil, nacionalidad, situación administrativa, religión, salud.</li>
+<li>Datos económicos o laborales no docentes.</li>
+</ul>
+<p>El validador rechaza lo que parezca un email, un teléfono, un DNI o NIE, una fecha completa, un enlace, una dirección o una de esas palabras. Es una red de seguridad: la responsabilidad es de quien redacta.</p>
+<h3 id='6-3-tono'>6.3 Tono</h3>
+<ul>
+<li><strong>Tercera persona</strong>, con respeto y cercanía: «Irene da clase desde 2022», no «yo» ni «usted».</li>
+<li><strong>Cálido y concreto.</strong> Cada frase debe contener un dato que la familia pueda imaginarse: un número, un nivel, un método, un lugar.</li>
+<li><strong>Vocabulario amplio y preciso.</strong> Verbos concretos (explica, corrige, repasa, prepara, acompaña, resuelve) en lugar de «ayuda», «hace» o «trabaja con».</li>
+<li><strong>Voz humana</strong>, como la escribiría una persona de la academia que ha leído el CV con atención. Nada de aire corporativo.</li>
+<li><strong>Sin frases hechas.</strong> Se evitan, entre otras: «apasionado por la enseñanza», «comprometido con la excelencia», «dinámico y proactivo», «amplia experiencia», «gran capacidad», «perfil», «alto nivel», «orientado a resultados», «excelentes habilidades», «trabajo en equipo» (como adjetivo suelto), «motivado».</li>
+<li><strong>Sin superlativos ni promesas.</strong> No se promete aprobar ni subir nota. Se describe cómo trabaja el profe.</li>
+<li><strong>Sin guiones largos</strong> (— o –), sin puntos suspensivos de relleno y <strong>sin emojis</strong>.</li>
+</ul>
+<h3 id='6-4-ortografia-y-formato'>6.4 Ortografía y formato</h3>
+<ul>
+<li>Sin faltas de ortografía ni de puntuación. Con tildes, incluidas las de las mayúsculas.</li>
+<li>Ordinales con punto y ordinal volado: «4.º de ESO», «1.º de Bachillerato», «3.er curso».</li>
+<li>Nombres propios con su ortografía oficial: «Universitat de València», «Universitat Politècnica de València», «Bachillerato», «ESO».</li>
+<li>Periodos con guion corto y sin espacios: «2022-2024», «2023-actualidad».</li>
+<li>En el texto corrido, los números del uno al nueve van con letra («cuatro años», «cinco alumnos») y del 10 en adelante con cifra. En el titular y en los datos cortos se usa la cifra: «4 años dando clase».</li>
+<li>Si necesitas comillas dentro de un texto, usa las españolas: «así».</li>
+</ul>
+<h3 id='6-5-genero'>6.5 Género</h3>
+<p>Se escribe en masculino o en femenino solo cuando el CV lo deja claro («graduada», «monitora», «Sra.»). Si no lo deja claro, se usan construcciones neutras: «Titulación en Matemáticas», «Estudia cuarto», «da clase desde 2022». Nunca se deduce el género a partir del nombre de pila.</p>
+<h3 id='6-6-cifras-y-fechas'>6.6 Cifras y fechas</h3>
+<p>Los años dando clase, los alumnos y los cursos se calculan solo con lo que dice el CV y con la fecha de hoy. Si el CV dice «2021-2026», se entiende que la actividad llega hasta la actualidad y se avisa en <code>notas_revision</code> si hay duda.</p>
+<h2 id='7-ejemplos-de-redaccion'>7. Ejemplos de redacción</h2>
+<p><strong>Presentación</strong></p>
+<p>Mal, por vaga y llena de frases hechas:</p>
+<blockquote>Irene es una estudiante muy comprometida y apasionada por la enseñanza, con amplia experiencia y gran capacidad para conectar con los alumnos.</blockquote>
+<p>Bien, concreta y verificable en el CV:</p>
+<blockquote>Irene cursa cuarto de Matemáticas en la Universitat de València y da clases particulares desde septiembre de 2022, con unos doce alumnos de ESO y Bachillerato. Siempre empieza pidiendo al alumno que cuente con sus palabras qué entiende del enunciado, y desde ahí corrige el rumbo sin darle el resultado hecho.</blockquote>
+<p><strong>Puntos fuertes</strong></p>
+<p>Mal: «Paciente», «Responsable», «Buena comunicadora». Bien: «Parte de lo que el alumno ya entiende», «Ha dado clase uno a uno y en grupo», «Cuatro años seguidos dando clase».</p>
+<p><strong>Titular</strong></p>
+<p>Mal: «Profesora muy preparada y entusiasta». Bien: «Estudiante de 4.º de Matemáticas · 4 años dando clase».</p>
+<p><strong>Experiencia</strong></p>
+<p>Mal: puesto «Camarera de eventos» (no tiene que ver con dar clase). Bien: puesto «Monitora de refuerzo», lugar «Academia Vèrtex», detalle «Grupos de cinco alumnos de 3.º y 4.º de ESO, dos tardes por semana».</p>
+<h2 id='8-generar-la-ficha'>8. Generar la ficha</h2>
+<p>Requisitos: Python 3 y Playwright (<code>pip install playwright</code> y, una vez, <code>playwright install chromium</code>). Sin más dependencias.</p>
+<p><strong>Por línea de comandos</strong></p>
+<pre><code>python generar_ficha.py ficha_ejemplo.json            (sin foto: sale el círculo con iniciales)
+python generar_ficha.py ficha_ejemplo.json foto.jpg   (con foto carnet)
+python generar_ficha.py --validar ficha.json          (solo comprueba el JSON)</code></pre>
+<p>Crea <code>Nombre_Apellido_AAAA.pdf</code> y <code>.png</code> en <code>docs/fichas_profe/salida/</code> (por ejemplo, <code>Irene_Soler_2026.pdf</code>). Opciones: <code>--salida CARPETA</code> y <code>--anio AAAA</code>. Si no se indica foto, usa el campo <code>foto</code> del JSON (ruta relativa al JSON).</p>
+<p><strong>Códigos de salida:</strong> 0 si todo va bien; 2 si el JSON no es válido (los errores salen por la salida de errores, uno por línea, para que la IA pueda corregirlos y repetir); 3 si el navegador no se puede abrir (Playwright o el navegador no están instalados).</p>
+<p><strong>Desde otro programa</strong></p>
+<pre><code>from generar_ficha import generar, generar_imagen, validar
+
+errores, avisos = validar(datos)           # sin abrir el navegador
+pdf = generar(datos, foto_en_bytes)        # bytes del PDF
+png = generar_imagen(datos, foto_en_bytes) # bytes del PNG</code></pre>
+<p><code>foto_en_bytes</code> es el contenido de un JPG, PNG o WEBP (hasta 8 MB), o <code>None</code>. Si los datos no son válidos, <code>generar</code> lanza <code>ValueError</code> con todos los errores.</p>
+<p><strong>Navegador.</strong> Por defecto usa el Chromium de Playwright. Para usar Edge en el ordenador de Nexo, define la variable de entorno <code>NEXO_CANAL=msedge</code> (en Windows: <code>set NEXO_CANAL=msedge</code>). Para un ejecutable concreto, <code>NEXO_NAVEGADOR=ruta</code>. No hay que tocar el código.</p>
+<p><strong>Pruebas.</strong> <code>python probar_generador.py</code> comprueba el validador, la plantilla, el PDF de una hoja A4 y el PNG. Conviene pasarlas después de cualquier cambio.</p>
+<h2 id='9-lista-de-comprobacion-antes-de-enviar'>9. Lista de comprobación antes de enviar</h2>
+<ol>
+<li>¿Está el nombre bien escrito, con tildes?</li>
+<li>¿La foto es del profe correcto y se ve la cara completa en el círculo? Si sale cortada, se ajusta <code>foto_encuadre</code> (por ejemplo, <code>50% 45%</code>).</li>
+<li>¿Cada dato está en el CV o en las notas de Nexo? Se leen las <code>notas_revision</code>.</li>
+<li>¿Hay algún teléfono, email, dirección, DNI o fecha de nacimiento? No debe haberlo.</li>
+<li>¿La presentación suena a una persona y no a un folleto? ¿Tiene datos concretos y ninguna frase hecha?</li>
+<li>¿Las asignaturas son concretas y los niveles correctos (sobre todo si Nexo los comunicó aparte)?</li>
+<li>¿La experiencia es solo de dar clase?</li>
+<li>¿Cabe en una hoja sin que la letra se vea pequeña? El generador avisa si se ha reducido.</li>
+<li>¿Hay faltas de ortografía? Se lee entero, una vez, en voz alta.</li>
+<li>¿Va a la familia correcta? El nombre del archivo lleva el del profe.</li>
+</ol>
+<h2 id='10-cambios-de-diseno'>10. Cambios de diseño</h2>
+<ul>
+<li><strong>Textos fijos y colores:</strong> <code>plantilla_ficha_profe.html</code> (la paleta está al principio, en variables CSS).</li>
+<li><strong>Campos y largos máximos:</strong> <code>esquema_ficha.json</code>. El validador lo lee, así que basta con cambiarlo ahí; después hay que actualizar la tabla del apartado 4 y <code>extraer_del_cv.md</code>. La prueba <code>test_documentos_coinciden_con_el_esquema</code> avisa si algún número se desfasa.</li>
+<li><strong>Logotipo:</strong> <code>assets/logo_nexo.png</code>.</li>
+</ul>
+</main></body></html>

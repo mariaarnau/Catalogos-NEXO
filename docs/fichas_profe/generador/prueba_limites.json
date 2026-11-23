@@ -1,0 +1,93 @@
+{
+  "nombre": "Nombre Largo Apellido Largoooooooo",
+  "foto": "",
+  "foto_encuadre": "50% 30%",
+  "titular": "Explica cada concepto con ejemplos de la vida diaria y revisa los ejer",
+  "edad": 27,
+  "modalidad": "Explica cada concepto con ejemplos de la vida diaria y revis",
+  "presentacion": "Explica cada concepto con ejemplos de la vida diaria y revisa los ejercicios resueltos junto al alumno antes de pasar al tema siguiente. Prepara fichas propias para cada unidad y corrige los errores a medida que aparecen, sin apresurar el ritmo de la clase. Explica cada concepto con ejemplos de la vida diaria y revisa los ejercicios resueltos junto al alumno antes de pasar al tema siguiente. Prepara fichas propias para cada unidad y corrige los errores a medida que aparecen",
+  "asignaturas": [
+    {
+      "nombre": "Explica cada concepto con ej",
+      "niveles": "Explica cada concepto con ejemplos de la"
+    },
+    {
+      "nombre": "Explica cada concepto con ej",
+      "niveles": "Explica cada concepto con ejemplos de la"
+    },
+    {
+      "nombre": "Explica cada concepto con ej",
+      "niveles": "Explica cada concepto con ejemplos de la"
+    },
+    {
+      "nombre": "Explica cada concepto con ej",
+      "niveles": "Explica cada concepto con ejemplos de la"
+    },
+    {
+      "nombre": "Explica cada concepto con ej",
+      "niveles": "Explica cada concepto con ejemplos de la"
+    }
+  ],
+  "formacion": [
+    {
+      "titulo": "Explica cada concepto con ejemplos de la vida diaria y revisa lo",
+      "centro": "Explica cada concepto con ejemplos de la vida di",
+      "periodo": "Explica cada concepto co"
+    },
+    {
+      "titulo": "Explica cada concepto con ejemplos de la vida diaria y revisa lo",
+      "centro": "Explica cada concepto con ejemplos de la vida di",
+      "periodo": "Explica cada concepto co"
+    },
+    {
+      "titulo": "Explica cada concepto con ejemplos de la vida diaria y revisa lo",
+      "centro": "Explica cada concepto con ejemplos de la vida di",
+      "periodo": "Explica cada concepto co"
+    }
+  ],
+  "experiencia": [
+    {
+      "puesto": "Explica cada concepto con ejemplos de la vida diaria y revis",
+      "lugar": "Explica cada concepto con ejemplos de la vida di",
+      "periodo": "Explica cada concepto co",
+      "detalle": "Explica cada concepto con ejemplos de la vida diaria y revisa los ejercicios resueltos junto al alumno antes de pasar al"
+    },
+    {
+      "puesto": "Explica cada concepto con ejemplos de la vida diaria y revis",
+      "lugar": "Explica cada concepto con ejemplos de la vida di",
+      "periodo": "Explica cada concepto co",
+      "detalle": "Explica cada concepto con ejemplos de la vida diaria y revisa los ejercicios resueltos junto al alumno antes de pasar al"
+    },
+    {
+      "puesto": "Explica cada concepto con ejemplos de la vida diaria y revis",
+      "lugar": "Explica cada concepto con ejemplos de la vida di",
+      "periodo": "Explica cada concepto co",
+      "detalle": "Explica cada concepto con ejemplos de la vida diaria y revisa los ejercicios resueltos junto al alumno antes de pasar al"
+    }
+  ],
+  "puntos_fuertes": [
+    "Explica cada concepto con ejemplos de la",
+    "Explica cada concepto con ejemplos de la",
+    "Explica cada concepto con ejemplos de la",
+    "Explica cada concepto con ejemplos de la",
+    "Explica cada concepto con ejemplos de la"
+  ],
+  "idiomas": [
+    {
+      "idioma": "Explica cada concept",
+      "nivel": "Explica cada concept",
+      "certificado": "Explica cada concepto con ejemplos d"
+    },
+    {
+      "idioma": "Explica cada concept",
+      "nivel": "Explica cada concept",
+      "certificado": "Explica cada concepto con ejemplos d"
+    },
+    {
+      "idioma": "Explica cada concept",
+      "nivel": "Explica cada concept",
+      "certificado": "Explica cada concepto con ejemplos d"
+    }
+  ],
+  "notas_revision": []
+}

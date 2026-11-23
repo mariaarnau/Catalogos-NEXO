@@ -1,0 +1,36 @@
+{
+  "nombre": "Irene Soler",
+  "foto": "",
+  "foto_encuadre": "",
+  "titular": "Estudiante de 4.º de Matemáticas · 4 años dando clase",
+  "edad": 22,
+  "modalidad": "Online y presencial en Valencia",
+  "presentacion": "Irene cursa cuarto de Matemáticas en la Universitat de València y da clases particulares desde septiembre de 2022, con unos doce alumnos de ESO y Bachillerato. Siempre empieza pidiendo al alumno que cuente con sus palabras qué entiende del enunciado, y desde ahí corrige el rumbo sin darle el resultado hecho. Pasó además un curso escolar como monitora de refuerzo en una academia, con grupos de cinco alumnos de 3.º y 4.º de ESO.",
+  "asignaturas": [
+    {"nombre": "Matemáticas", "niveles": "ESO y Bachillerato"},
+    {"nombre": "Física y Química", "niveles": "4.º de ESO"}
+  ],
+  "formacion": [
+    {"titulo": "Grado en Matemáticas (4.º curso)", "centro": "Universitat de València", "periodo": "2022-actualidad"},
+    {"titulo": "Bachillerato de Ciencias", "centro": "IES Camí Fondo", "periodo": "2020-2022"}
+  ],
+  "experiencia": [
+    {"puesto": "Clases particulares de Matemáticas, Física y Química", "lugar": "", "periodo": "2022-actualidad", "detalle": "Unos doce alumnos, en sesiones individuales de una hora, a domicilio y por videollamada."},
+    {"puesto": "Monitora de refuerzo", "lugar": "Academia Vèrtex", "periodo": "2023-2024", "detalle": "Grupos de cinco alumnos de 3.º y 4.º de ESO, dos tardes por semana."}
+  ],
+  "puntos_fuertes": [
+    "Parte de lo que el alumno ya entiende",
+    "Guía sin dar el resultado hecho",
+    "Ha dado clase uno a uno y en grupo",
+    "Cuatro años seguidos dando clase"
+  ],
+  "idiomas": [
+    {"idioma": "Valenciano", "nivel": "C1", "certificado": "JQCV"},
+    {"idioma": "Inglés", "nivel": "B2", "certificado": "Cambridge First"},
+    {"idioma": "Francés", "nivel": "Básico", "certificado": ""}
+  ],
+  "notas_revision": [
+    "La modalidad procede de las notas de Nexo; el CV solo menciona clases a domicilio y por videollamada.",
+    "El CV indica disponibilidad por las tardes de lunes a jueves; no se ha incluido en la ficha."
+  ]
+}
