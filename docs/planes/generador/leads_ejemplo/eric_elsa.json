@@ -1,0 +1,198 @@
+{
+  "nombre": "Eric y Elsa",
+  "etapa": "eso",
+  "curso": "1º ESO",
+  "asignaturas": [
+    "Matemáticas"
+  ],
+  "voz": "familia",
+  "archivo": "Plan_NEXO_Eric_y_Elsa_1ESO_Matematicas_CortesValencianas",
+  "cover_card_sub": "1º ESO · Matemáticas · Presencial en Cortes Valencianas",
+  "presencial_label": "en casa",
+  "bonos_recomendados": [
+    {
+      "horas": 12,
+      "frecuencia": "3h a la semana"
+    }
+  ],
+  "modalidades_recomendadas": [
+    "casa_alumno"
+  ],
+  "tarifas_mostrar": [
+    "casa_alumno"
+  ],
+  "textos": {
+    "cover_sub": "Un plan a medida para Eric y Elsa: clases presenciales de Matemáticas de 1º de ESO, los dos juntos en la misma clase, con un 30% de descuento para cada uno.",
+    "p2_title": "Así acompañamos a Eric y Elsa cada mes",
+    "p2_sub": "Un profesor especializado en Matemáticas, con clases para los dos a la vez y seguimiento individual de cada uno.",
+    "c1": "Eric y Elsa tienen su profesor de referencia asignado, especializado en Matemáticas, con un horario flexible que se adapta a vosotros.",
+    "p3_sub": "Eric y Elsa tienen cada uno su propio informe de seguimiento dentro del plan, sin coste adicional. Esto es lo que incluye cada mes:",
+    "informe_h2": "Un informe real para cada uno",
+    "p4_pill": "ASÍ LO VERÉIS VOSOTROS",
+    "p4_sub": "Cuatro pantallas de ejemplo del informe que recibiréis en el área privada de cada uno.",
+    "p10_sub": "Escribidnos para reservar el bono de prueba de Eric y Elsa y empezar cuanto antes.",
+    "gestiones": "GESTIONES A CARGO VUESTRO"
+  },
+  "pasos": {
+    "base": 22.5,
+    "base_txt": "",
+    "modalidad_txt": "Presencial en vuestra casa · los dos juntos",
+    "nota": "",
+    "who": "1º ESO · Matemáticas · Presencial, clase conjunta",
+    "titulo": "Su plan, en dos pasos",
+    "lead": "Eric y Elsa en la misma clase: un 30% de descuento en todos los bonos, para cada uno. Primero una prueba y después el bono de 12 horas.",
+    "prueba": {
+      "horas": 2,
+      "precio": 30.8,
+      "tachado": 44,
+      "lbl": "Cada uno",
+      "sub": "15,40 €/h cada uno · −30% clase conjunta",
+      "texto": "Dos horas presenciales en vuestra casa, los dos juntos, para conocer al profesor y dejar fijado el plan. 30,80 € cada uno, con el 30% de clase conjunta."
+    },
+    "paso2_titulo": "Después, su bono de 12 horas",
+    "opciones": [
+      {
+        "horas": 12,
+        "precio": 189,
+        "frecuencia": "",
+        "lbl": "bono por alumno",
+        "destacado": true,
+        "etiqueta": "RECOMENDADO · −30% PARA CADA UNO",
+        "alt": {
+          "oro": true,
+          "txt": "CADA UNO PAGA",
+          "hora": "15,75 €/h",
+          "bono": "en vez de 22,50 €/h · −30%"
+        }
+      }
+    ],
+    "resumen": [
+      "Clases presenciales de Matemáticas en vuestra casa, en Cortes Valencianas, con Eric y Elsa en la misma clase.",
+      "30% de descuento en todos los bonos, para cada uno, siempre que den la clase juntos.",
+      "Bono de prueba de 2h: 30,80 € cada uno. Bono de 12h: 189 € cada uno (15,75 €/h)."
+    ],
+    "quote": "Un plan a medida para que Eric y Elsa avancen juntos en Matemáticas.",
+    "sin_mes": true
+  },
+  "informe_ejemplo": {
+    "asignatura": "Matemáticas",
+    "mes": "Noviembre 2026",
+    "comparado": "octubre",
+    "nota": "7,0",
+    "sesiones": 8,
+    "horas": "12h",
+    "destrezas_label": "Bloques trabajados",
+    "barras": [
+      [
+        "Números",
+        7.0
+      ],
+      [
+        "Fracciones",
+        6.5
+      ],
+      [
+        "Problemas",
+        6.8
+      ]
+    ],
+    "mayor_progreso": "Matemáticas — las fracciones pasaron de generar dudas a resolverse solas",
+    "resumen": "En noviembre, Eric ha hecho 8 clases sin faltar a ninguna. Ya opera con soltura con números enteros. Con las fracciones todavía necesita apoyo. Diciembre: reforzar fracciones antes de los exámenes de la 1ª evaluación.",
+    "proxima_sesion": "PRÓXIMA CLASE — MARTES 1",
+    "proxima_sesion_txt": "Fracciones: suma y resta paso a paso.",
+    "horario": "Según vuestro horario · en casa",
+    "temas": [
+      [
+        "Números",
+        2.5
+      ],
+      [
+        "Fracciones",
+        1.8
+      ],
+      [
+        "Problemas",
+        1.2
+      ],
+      [
+        "Repaso",
+        0.5
+      ]
+    ],
+    "fuertes": [
+      "Números enteros consolidados",
+      "Muy participativo en clase"
+    ],
+    "atencion": [
+      "Fracciones: denominadores distintos",
+      "Problemas: plantear el enunciado"
+    ],
+    "casa": [
+      "3 problemas a la semana",
+      "Repasar las tablas 10 minutos al día"
+    ],
+    "semanas": [
+      5.8,
+      6.3,
+      6.8,
+      7.2
+    ],
+    "metricas": [
+      [
+        "76%",
+        "Comprensión"
+      ],
+      [
+        "81%",
+        "Constancia"
+      ],
+      [
+        "62%",
+        "Autonomía"
+      ]
+    ],
+    "evol": [
+      [
+        "Resolución de problemas",
+        "Octubre: 60%",
+        "Noviembre: 79%",
+        "Plantea mejor el enunciado antes de operar."
+      ],
+      [
+        "Autonomía",
+        "Octubre: 50%",
+        "Noviembre: 62%",
+        "Cada vez necesita menos ayuda para empezar."
+      ]
+    ],
+    "conclusion": "Noviembre cierra con una tendencia muy positiva. En diciembre reforzamos fracciones antes de los exámenes de la 1ª evaluación.",
+    "cal_mes": [
+      2026,
+      12
+    ],
+    "cal_titulo": "Calendario — diciembre 2026",
+    "cal_dias_sesion": [
+      1,
+      3
+    ],
+    "cal_examen": 16,
+    "cal_semanas": "3 sem",
+    "cal_semanas_txt": "hasta los exámenes de la 1ª evaluación",
+    "antes": "Sin refuerzo fijo",
+    "ahora": "Clases semanales en casa · Bono de 12h"
+  },
+  "alumno_informe": "Eric",
+  "hijos": [
+    {
+      "nombre": "Eric",
+      "curso": "1º ESO · Matemáticas"
+    },
+    {
+      "nombre": "Elsa",
+      "curso": "1º ESO · Matemáticas"
+    }
+  ],
+  "cover_title": "Vuestro plan a medida en",
+  "descuento_grupo": 30,
+  "omitir_proceso": false
+}

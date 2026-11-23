@@ -1,0 +1,311 @@
+{
+  "_comentario": "Plantilla de lead. Sustituye todo lo que va entre corchetes. Ver INSTRUCCIONES_PLANES_NEXO.md.",
+  "nombre": "[NOMBRE]",
+  "etapa": "eso",
+  "curso": "4º ESO",
+  "asignaturas": [
+    "Matemáticas"
+  ],
+  "voz": "familia",
+  "archivo": "Plan_NEXO_PLANTILLA",
+  "cover_card_sub": "4º ESO · Matemáticas · Presencial en [ZONA]",
+  "presencial_label": "en vuestra casa",
+  "bonos_recomendados": [
+    {
+      "horas": 12,
+      "frecuencia": "3h a la semana"
+    }
+  ],
+  "modalidades_recomendadas": [
+    "casa_alumno"
+  ],
+  "tarifas_mostrar": [
+    "casa_alumno"
+  ],
+  "textos": {
+    "cover_sub": "Un plan a medida para [NOMBRE]: Matemáticas de 4º de ESO, con clases presenciales en vuestra casa en [ZONA], 2 horas a la semana.",
+    "p2_title": "Así acompañamos a [NOMBRE] cada mes",
+    "p2_sub": "Un profesor especializado en Matemáticas, con sesiones centradas en lo que necesita y ajuste continuo según sus exámenes.",
+    "c1": "[NOMBRE] tiene su profesor de referencia asignado, especializado en Matemáticas, con un horario flexible que se adapta a vosotros.",
+    "p3_sub": "[NOMBRE] tiene su propio informe de seguimiento dentro del plan, sin coste adicional. Esto es lo que incluye cada mes:",
+    "informe_h2": "Un informe real para [NOMBRE]",
+    "p4_pill": "ASÍ LO VERÉIS VOSOTROS",
+    "p4_sub": "Cuatro pantallas de ejemplo del informe que recibiréis en el área privada de [NOMBRE].",
+    "p10_sub": "Escribidnos para reservar el bono de prueba de [NOMBRE] y empezar cuanto antes.",
+    "gestiones": "GESTIONES A CARGO VUESTRO"
+  },
+  "pasos": {
+    "base": 24,
+    "base_txt": "",
+    "modalidad_txt": "Presencial en su casa",
+    "nota": "",
+    "who": "4º ESO · Matemáticas · Presencial en [ZONA]",
+    "titulo": "Su plan, en dos pasos",
+    "lead": "Clases presenciales de Matemáticas en vuestra casa, en [ZONA]. Primero una prueba y después el bono de 12 horas.",
+    "prueba": {
+      "horas": 2,
+      "precio": 44,
+      "tachado": 48,
+      "texto": "Dos horas presenciales en vuestra casa para conocer al profesor, ver en qué punto está [NOMBRE] y dejar fijado su plan. Precio para nuevos alumnos. Recomendado al 100%."
+    },
+    "paso2_titulo": "Después, su bono de 12 horas",
+    "opciones": [
+      {
+        "horas": 12,
+        "precio": 270,
+        "frecuencia": "",
+        "destacado": true,
+        "etiqueta": "RECOMENDADO · MEJOR PRECIO POR HORA",
+        "alt": {
+          "oro": true,
+          "txt": "TU MEJOR OPCIÓN",
+          "hora": "22,50 €/h",
+          "bono": "el mejor precio por hora del curso"
+        }
+      }
+    ],
+    "resumen": [
+      "Clases presenciales de Matemáticas en vuestra casa, en [ZONA], 2 horas a la semana.",
+      "Primero, bono de prueba de 2h (44 €) y, después, bono de 12h (270 €).",
+      "El bono de 12h es el que sale más económico por hora durante el curso: 22,50 €/h.",
+      "A 2 horas por semana, el bono de 12h dura unas 6 semanas."
+    ],
+    "quote": "Un plan a medida para que [NOMBRE] llegue a final de curso con las Matemáticas bien preparadas.",
+    "sin_mes": true
+  },
+  "informe_ejemplo": {
+    "asignatura": "Matemáticas",
+    "mes": "Noviembre 2026",
+    "comparado": "octubre",
+    "nota": "7,0",
+    "sesiones": 4,
+    "horas": "8h",
+    "destrezas_label": "Bloques trabajados",
+    "barras": [
+      [
+        "Polinomios",
+        7.6
+      ],
+      [
+        "Ecuaciones",
+        7.0
+      ],
+      [
+        "Inecuaciones",
+        6.2
+      ]
+    ],
+    "mayor_progreso": "Matemáticas — las ecuaciones pasaron de generar dudas a resolverse solas",
+    "resumen": "En noviembre, [NOMBRE] ha hecho 4 clases de 2 horas sin faltar a ninguna. Ya domina los polinomios y las ecuaciones. Con las inecuaciones todavía necesita práctica. Diciembre: preparar el examen de la 1ª evaluación con antelación.",
+    "proxima_sesion": "PRÓXIMA CLASE — VIERNES 4",
+    "proxima_sesion_txt": "Inecuaciones y primeros ejercicios de trigonometría.",
+    "horario": "Viernes, 17:00–19:00 · en casa",
+    "temas": [
+      [
+        "Polinomios",
+        3.0
+      ],
+      [
+        "Ecuaciones",
+        3.0
+      ],
+      [
+        "Inecuaciones",
+        2.0
+      ]
+    ],
+    "fuertes": [
+      "Muy buena base y constancia",
+      "Polinomios y ecuaciones asentados"
+    ],
+    "atencion": [
+      "Inecuaciones con fracciones",
+      "Revisar los pasos antes de entregar"
+    ],
+    "casa": [
+      "3 ejercicios del tema cada semana",
+      "Repasar los errores del último examen"
+    ],
+    "semanas": [
+      5.8,
+      6.3,
+      6.8,
+      7.2
+    ],
+    "metricas": [
+      [
+        "76%",
+        "Comprensión"
+      ],
+      [
+        "81%",
+        "Constancia"
+      ],
+      [
+        "62%",
+        "Autonomía"
+      ]
+    ],
+    "evol": [
+      [
+        "Seguridad en los exámenes",
+        "Octubre: 50%",
+        "Noviembre: 75%",
+        "Afronta los ejercicios con más confianza."
+      ],
+      [
+        "Autonomía",
+        "Octubre: 60%",
+        "Noviembre: 80%",
+        "Resuelve sola la mayoría de ejercicios del tema."
+      ]
+    ],
+    "conclusion": "Noviembre cierra con una tendencia muy positiva. En diciembre preparamos el examen de la 1ª evaluación con antelación.",
+    "cal_mes": [
+      2026,
+      12
+    ],
+    "cal_titulo": "Calendario — diciembre 2026",
+    "cal_dias_sesion": [
+      4,
+      11,
+      18
+    ],
+    "cal_examen": 16,
+    "cal_semanas": "3 sem",
+    "cal_semanas_txt": "hasta los exámenes de la 1ª evaluación",
+    "antes": "Sin refuerzo fijo",
+    "ahora": "Clase semanal en casa · Bono de 12h"
+  },
+  "trayectoria": {
+    "etiqueta": "HOJA DE RUTA",
+    "pill": "4º ESO · MATEMÁTICAS",
+    "titulo": "El curso de [NOMBRE], de noviembre a junio",
+    "lead": "Avanzamos por bloques, al ritmo de sus exámenes, para llegar a junio con todo preparado. Fechas orientativas; las ajustamos al temario de su clase.",
+    "meses": [
+      "Nov",
+      "Dic",
+      "Ene",
+      "Feb",
+      "Mar",
+      "Abr",
+      "May",
+      "Jun"
+    ],
+    "colores": [
+      "#5b8ee0",
+      "#8fb8ec",
+      "#7fcfa0",
+      "#e9d18f"
+    ],
+    "tramos": [
+      [
+        0,
+        2
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        4,
+        6
+      ],
+      [
+        6,
+        7
+      ]
+    ],
+    "bloques": [
+      {
+        "span": 2,
+        "simbolo": "x",
+        "nombre": "Álgebra",
+        "foco": "Números reales, polinomios, ecuaciones e inecuaciones.",
+        "fondo": "#12234a",
+        "borde": "#5b8ee0"
+      },
+      {
+        "span": 2,
+        "simbolo": "sen",
+        "nombre": "Trigonometría",
+        "foco": "Razones trigonométricas y resolución de triángulos.",
+        "fondo": "#16284a",
+        "borde": "#8fb8ec"
+      },
+      {
+        "span": 2,
+        "simbolo": "f(x)",
+        "nombre": "Funciones",
+        "foco": "Funciones, gráficas y geometría analítica.",
+        "fondo": "#13302a",
+        "borde": "#7fcfa0"
+      },
+      {
+        "span": 2,
+        "simbolo": "★",
+        "nombre": "Final",
+        "foco": "Estadística, probabilidad y repaso de final de curso.",
+        "fondo": "#3a3322",
+        "borde": "#e9d18f"
+      }
+    ],
+    "hitos": [
+      {
+        "nombre": "1ª evaluación",
+        "pos": 1.4
+      },
+      {
+        "nombre": "2ª evaluación",
+        "pos": 4.5
+      },
+      {
+        "nombre": "Final de curso",
+        "pos": 7,
+        "meta": true
+      }
+    ]
+  },
+  "semana": {
+    "etiqueta": "SU SEMANA",
+    "pill": "HORARIO ORIENTATIVO",
+    "titulo": "2 horas a la semana, en casa",
+    "lead": "Una clase presencial de 2 horas en vuestra casa, el viernes por la tarde o el sábado por la mañana. Horario orientativo: lo cerramos con vosotros y el profesor.",
+    "hora_ini": 17,
+    "hora_fin": 19,
+    "alto": 80,
+    "asignaturas": [
+      "Matemáticas"
+    ],
+    "asig_cortas": [
+      "Matemáticas"
+    ],
+    "bloques": [
+      [
+        4,
+        17,
+        19,
+        0
+      ]
+    ],
+    "extra_titulo": "Viernes o sábado",
+    "extra_texto": "Si os viene mejor el sábado por la mañana (por ejemplo, de 10:00 a 12:00), la clase pasa a ese día.",
+    "repartos": [
+      {
+        "nombre": "Cada semana · 2h",
+        "horas": [
+          2
+        ]
+      }
+    ],
+    "dias": [
+      "Lunes",
+      "Martes",
+      "Miércoles",
+      "Jueves",
+      "Viernes",
+      "Sábado"
+    ]
+  },
+  "nombre_completo": "[NOMBRE COMPLETO]"
+}

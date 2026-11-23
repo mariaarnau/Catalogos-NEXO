@@ -1,0 +1,255 @@
+{
+  "nombre": "Gonzalo",
+  "etapa": "universidad",
+  "curso": "1º de carrera",
+  "asignaturas": [
+    "Cálculo"
+  ],
+  "voz": "tu",
+  "archivo": "Plan_NEXO_Gonzalo_Beutel_1Carrera_Calculo",
+  "presencial_label": "en tu casa",
+  "cover_card_sub": "1º de carrera · Cálculo · Online, con clases presenciales cuando las necesites",
+  "bonos_recomendados": [
+    {
+      "horas": 12,
+      "frecuencia": ""
+    }
+  ],
+  "modalidades_recomendadas": [
+    "online",
+    "casa_alumno"
+  ],
+  "tarifas_mostrar": [
+    "online",
+    "casa_alumno"
+  ],
+  "textos": {
+    "cover_sub": "Un plan a medida para Gonzalo: pasar de entender la teoría de Cálculo a resolver los ejercicios solo, con clases online y alguna presencial cuando un tema se atasque.",
+    "p2_title": "Así te acompañamos cada mes",
+    "p2_sub": "Sin burocracia. El profesor registra las sesiones, nuestro equipo analiza los datos y te llega el seguimiento sin que tengas que pedirlo.",
+    "c1": "Tienes un profesor de referencia asignado, especializado en Matemáticas, con un horario flexible que se adapta a ti.",
+    "p3_sub": "Tienes tu propio informe de seguimiento dentro del plan, sin coste adicional. Esto es lo que incluye cada mes:",
+    "informe_h2": "Un informe real para Gonzalo",
+    "p4_pill": "ASÍ LO VERÁS TÚ",
+    "p4_sub": "Cuatro pantallas de ejemplo del informe que recibirás en tu área privada.",
+    "p10_sub": "Escríbenos para reservar tu bono de prueba y empezar cuanto antes.",
+    "gestiones": "GESTIONES A TU CARGO"
+  },
+  "trayectoria": {
+    "etiqueta": "HOJA DE RUTA",
+    "pill": "CÁLCULO · 1º DE CARRERA",
+    "titulo": "De la teoría a los ejercicios",
+    "lead": "La teoría ya la entiendes: el trabajo es aplicarla. Cada bloque se centra en ejercicios tipo examen, de menos a más. Fechas orientativas; las ajustamos a tus parciales y al examen de enero.",
+    "meses": [
+      "Nov",
+      "Dic",
+      "Ene"
+    ],
+    "colores": [
+      "#5b8ee0",
+      "#7fcfa0",
+      "#e9d18f"
+    ],
+    "tramos": [
+      [
+        0,
+        0.9
+      ],
+      [
+        0.9,
+        1.5
+      ],
+      [
+        1.5,
+        2
+      ]
+    ],
+    "bloques": [
+      {
+        "span": 1,
+        "simbolo": "f′",
+        "nombre": "Límites y derivadas",
+        "foco": "Elegir la técnica correcta en cada ejercicio; optimización y Taylor.",
+        "fondo": "#12234a",
+        "borde": "#5b8ee0"
+      },
+      {
+        "span": 1,
+        "simbolo": "∫",
+        "nombre": "Integrales",
+        "foco": "Métodos de integración y cuándo usar cada uno.",
+        "fondo": "#13302a",
+        "borde": "#7fcfa0"
+      },
+      {
+        "span": 1,
+        "simbolo": "★",
+        "nombre": "Examen",
+        "foco": "Exámenes de otros años, cronometrados y corregidos.",
+        "fondo": "#3a3322",
+        "borde": "#e9d18f"
+      }
+    ],
+    "hitos": [
+      {
+        "nombre": "Parcial",
+        "pos": 0.9
+      },
+      {
+        "nombre": "Examen",
+        "pos": 2,
+        "meta": true
+      }
+    ]
+  },
+  "informe_ejemplo": {
+    "asignatura": "Cálculo",
+    "mes": "Noviembre 2026",
+    "comparado": "octubre",
+    "nota": "7,0",
+    "sesiones": 4,
+    "horas": "8h",
+    "destrezas_label": "Bloques trabajados",
+    "barras": [
+      [
+        "Límites",
+        7.2
+      ],
+      [
+        "Derivadas",
+        6.6
+      ],
+      [
+        "Integrales",
+        6.0
+      ]
+    ],
+    "mayor_progreso": "Cálculo — ya elige solo la técnica en los ejercicios de límites",
+    "resumen": "En noviembre, Gonzalo ha hecho 8 horas de clase sin faltar a ninguna. La teoría la tiene clara; ahora ya resuelve solo los ejercicios de límites. En derivadas todavía duda al plantear los problemas de optimización. Diciembre: integrales y ejercicios de examen.",
+    "proxima_sesion": "PRÓXIMA CLASE — MARTES 1",
+    "proxima_sesion_txt": "Cálculo: optimización y ejercicios tipo examen.",
+    "horario": "Martes, 18:00–19:30 · online",
+    "temas": [
+      [
+        "Límites",
+        2.0
+      ],
+      [
+        "Derivadas",
+        1.8
+      ],
+      [
+        "Integrales",
+        1.2
+      ],
+      [
+        "Repaso",
+        0.5
+      ]
+    ],
+    "fuertes": [
+      "Muy buena base teórica",
+      "Límites consolidados"
+    ],
+    "atencion": [
+      "Optimización: plantear el problema",
+      "Integrales: elegir el método"
+    ],
+    "casa": [
+      "3 ejercicios de examen a la semana",
+      "Hoja de técnicas de integración"
+    ],
+    "semanas": [
+      5.8,
+      6.3,
+      6.8,
+      7.2
+    ],
+    "metricas": [
+      [
+        "76%",
+        "Comprensión"
+      ],
+      [
+        "81%",
+        "Constancia"
+      ],
+      [
+        "62%",
+        "Autonomía"
+      ]
+    ],
+    "evol": [
+      [
+        "Aplicar la teoría a ejercicios",
+        "Octubre: 40%",
+        "Noviembre: 70%",
+        "Ya identifica qué técnica pide cada ejercicio."
+      ],
+      [
+        "Autonomía",
+        "Octubre: 35%",
+        "Noviembre: 62%",
+        "Cada vez necesita menos ayuda para empezar."
+      ]
+    ],
+    "conclusion": "Noviembre cierra con una tendencia muy positiva. En diciembre, integrales y ejercicios de examen.",
+    "cal_mes": [
+      2026,
+      12
+    ],
+    "cal_titulo": "Calendario de preparación — diciembre 2026",
+    "cal_dias_sesion": [
+      1,
+      3
+    ],
+    "cal_examen": 16,
+    "cal_semanas": "3 sem",
+    "cal_semanas_txt": "hasta el parcial",
+    "antes": "Entiende la teoría, se bloquea en los ejercicios",
+    "ahora": "Clases online semanales · Bono de 12h",
+    "alumno": ""
+  },
+  "nombre_completo": "Gonzalo Beutel",
+  "dos_opciones": {
+    "etiqueta": "TUS OPCIONES",
+    "pill": "MODALIDAD",
+    "titulo": "Online, y presencial cuando lo necesites",
+    "lead": "La base son las clases online. Si algún tema se te atasca, podemos hacer alguna clase presencial en tu casa. En las dos se empieza con un bono de prueba de 2 horas y después se pasa al bono de 12 horas.",
+    "pie": "Sin permanencia: pagas por adelantado el bono de horas y solo pagas las horas de clase que se dan.",
+    "opciones": [
+      {
+        "letra": "RECOMENDADO",
+        "nombre": "Online",
+        "sub": "Clases por videollamada con pantalla compartida",
+        "destacado": true,
+        "prueba": {
+          "horas": 2,
+          "precio": 46,
+          "tachado": 50
+        },
+        "bono": {
+          "horas": 12,
+          "precio": 285,
+          "base": 25
+        }
+      },
+      {
+        "letra": "CUANDO LO NECESITES",
+        "nombre": "Presencial en tu casa",
+        "sub": "El profesor va a tu domicilio",
+        "destacado": false,
+        "prueba": {
+          "horas": 2,
+          "precio": 54,
+          "tachado": 56
+        },
+        "bono": {
+          "horas": 12,
+          "precio": 327,
+          "base": 28
+        }
+      }
+    ]
+  }
+}
