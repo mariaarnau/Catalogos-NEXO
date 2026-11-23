@@ -1,0 +1,447 @@
+{
+  "nombre": "Joel",
+  "etapa": "primaria",
+  "curso": "1º Primaria",
+  "asignaturas": [
+    "Lectoescritura",
+    "Números",
+    "Inglés"
+  ],
+  "voz": "familia",
+  "archivo": "Plan_NEXO_Joel_Giner_Mananas_Intensivo",
+  "cover_card_sub": "1º Primaria · Plan de mañanas · Presencial en Nou Benicalap",
+  "presencial_label": "en casa",
+  "bonos_recomendados": [
+    {
+      "horas": 12,
+      "frecuencia": ""
+    }
+  ],
+  "modalidades_recomendadas": [
+    "casa_alumno"
+  ],
+  "tarifas_mostrar": [],
+  "textos": {
+    "cover_sub": "Un plan a medida para Joel mientras encontráis colegio: mañanas de lunes a viernes en vuestra casa, con lectoescritura, números e inglés, alternando aprendizaje, juego y descansos.",
+    "p2_title": "Así acompañamos a Joel cada mes",
+    "p2_sub": "Sin burocracia. El profesor registra las sesiones, nuestro equipo analiza los datos y os llega el seguimiento sin que tengáis que pedirlo.",
+    "c1": "Joel tiene su profesora de referencia asignada, con experiencia en niños pequeños, que sabe poner límites y mantener su atención.",
+    "p3_sub": "Joel tiene su propio informe de seguimiento dentro del plan, sin coste adicional. Esto es lo que incluye cada mes:",
+    "informe_h2": "Un informe real para Joel",
+    "p4_pill": "ASÍ LO VERÉIS VOSOTROS",
+    "p4_sub": "Cuatro pantallas de ejemplo del informe que recibiréis en el área privada de Joel.",
+    "p10_sub": "Escribidnos para reservar la clase de prueba de Joel y empezar cuanto antes.",
+    "gestiones": "GESTIONES A CARGO VUESTRO",
+    "c2t": "Aprender jugando",
+    "c2": "Cada mañana alterna bloques cortos de trabajo con juegos, descansos y actividades, porque con 5 años no se puede estar tres horas seguidas.",
+    "c3": "Además de lo académico: concentración, autonomía y seguir normas, en español y en inglés."
+  },
+  "pasos": {
+    "base": 22,
+    "base_txt": "",
+    "modalidad_txt": "Presencial en su casa",
+    "nota": "",
+    "who": "1º Primaria · Plan de mañanas · Presencial en casa",
+    "titulo": "Su plan, en dos pasos",
+    "lead": "Primero una clase de prueba para conocer a la profesora. Después, un bono semanal con precio especial por volumen de horas, que se paga semana a semana.",
+    "prueba": {
+      "horas": 2,
+      "precio": 40,
+      "tachado": 44,
+      "texto": "Una primera clase para que Joel conozca a la profesora y veamos cómo encajan. Precio para nuevos alumnos.",
+      "alt": "¿Queréis probar con 2 o 3 profesoras? Cada prueba se paga igual y elegís con cuál seguir."
+    },
+    "paso2_titulo": "Después, su bono semanal",
+    "opciones": [
+      {
+        "horas": 15,
+        "precio": 240,
+        "frecuencia": "",
+        "destacado": true,
+        "etiqueta": "RECOMENDADO · LUNES A VIERNES",
+        "lbl": "bono semanal · 3h cada mañana"
+      },
+      {
+        "horas": 12,
+        "precio": 192,
+        "frecuencia": "",
+        "destacado": false,
+        "etiqueta": "4 MAÑANAS",
+        "lbl": "bono semanal · 3h, 4 días"
+      }
+    ],
+    "resumen": [
+      "Clases presenciales en vuestra casa de Nou Benicalap, de lunes a viernes por la mañana.",
+      "Lectoescritura, números e inglés, alternando trabajo, juego y descansos.",
+      "Primero, bono de prueba de 2h (40 €). Después, bono semanal de 15h (240 €): 16 €/h.",
+      "Precio especial por volumen: frente a la tarifa de Primaria, ahorráis 90 € cada semana.",
+      "Se paga semana a semana, sin permanencia: cuando empiece en el colegio, lo dejáis."
+    ],
+    "quote": "Un plan a medida para que Joel aproveche estas semanas y llegue al nuevo colegio con rutina y ganas.",
+    "sin_mes": true
+  },
+  "informe_ejemplo": {
+    "asignatura": "Lectoescritura, números e inglés",
+    "mes": "Noviembre 2026",
+    "comparado": "octubre",
+    "nota": "7,0",
+    "sesiones": 20,
+    "horas": "60h",
+    "destrezas_label": "Bloques trabajados",
+    "barras": [
+      [
+        "Lectura",
+        7.0
+      ],
+      [
+        "Números",
+        7.2
+      ],
+      [
+        "Inglés",
+        6.5
+      ]
+    ],
+    "mayor_progreso": "Lectura — ya reconoce todas las vocales y sus primeras sílabas",
+    "resumen": "En noviembre, Joel ha hecho 20 mañanas de clase. Ya tiene la rutina asentada y sigue las normas sin protestar. Reconoce las sílabas y cuenta hasta el 20; en inglés, colores y números. Diciembre: primeras palabras y sumas sencillas.",
+    "proxima_sesion": "PRÓXIMA CLASE — JUEVES 3",
+    "proxima_sesion_txt": "Sílabas con m y p; sumas con objetos hasta el 10.",
+    "horario": "Lunes a viernes, 9:30–12:30 · en casa",
+    "temas": [
+      [
+        "Lectura",
+        20
+      ],
+      [
+        "Números",
+        20
+      ],
+      [
+        "Inglés",
+        10
+      ],
+      [
+        "Juego",
+        10
+      ]
+    ],
+    "fuertes": [
+      "Vocales consolidadas",
+      "Muy participativo con los juegos"
+    ],
+    "atencion": [
+      "Trazo de las letras",
+      "Mantener la atención en el último bloque"
+    ],
+    "casa": [
+      "5 minutos de lectura con un adulto cada día",
+      "Contar objetos en casa"
+    ],
+    "semanas": [
+      5.8,
+      6.3,
+      6.8,
+      7.2
+    ],
+    "metricas": [
+      [
+        "76%",
+        "Comprensión"
+      ],
+      [
+        "81%",
+        "Constancia"
+      ],
+      [
+        "62%",
+        "Autonomía"
+      ]
+    ],
+    "evol": [
+      [
+        "Lectura",
+        "Octubre: 30%",
+        "Noviembre: 60%",
+        "Reconoce las vocales y empieza con las sílabas."
+      ],
+      [
+        "Atención",
+        "Octubre: 40%",
+        "Noviembre: 65%",
+        "Aguanta más tiempo concentrado gracias a los juegos."
+      ]
+    ],
+    "conclusion": "Noviembre cierra con una tendencia muy positiva. En diciembre, primeras sílabas y sumas con objetos.",
+    "cal_mes": [
+      2026,
+      12
+    ],
+    "cal_titulo": "Calendario — diciembre 2026",
+    "cal_dias_sesion": [
+      1,
+      2,
+      3,
+      4,
+      7,
+      8,
+      9,
+      10,
+      11,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "cal_examen": 16,
+    "cal_semanas": "3 sem",
+    "cal_semanas_txt": "hasta las vacaciones de Navidad",
+    "antes": "Sin refuerzo fijo",
+    "ahora": "Mañanas en casa · Bono semanal"
+  },
+  "trayectoria": {
+    "etiqueta": "HOJA DE RUTA",
+    "pill": "PLAN DE MAÑANAS · 1º PRIMARIA",
+    "titulo": "Las primeras semanas de Joel",
+    "lead": "Un plan pensado para estas semanas hasta que empiece en su nuevo colegio. Si se alarga, seguimos avanzando con el mismo ritmo.",
+    "meses": [
+      "Sem 1",
+      "Sem 2",
+      "Sem 3",
+      "Sem 4"
+    ],
+    "colores": [
+      "#5b8ee0",
+      "#8fb8ec",
+      "#7fcfa0",
+      "#e9d18f"
+    ],
+    "tramos": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        2.6
+      ],
+      [
+        2.6,
+        3
+      ]
+    ],
+    "bloques": [
+      {
+        "span": 1,
+        "simbolo": "☀",
+        "nombre": "Rutinas",
+        "foco": "Conocer a la profesora, rutinas de la mañana y normas claras.",
+        "fondo": "#12234a",
+        "borde": "#5b8ee0"
+      },
+      {
+        "span": 1,
+        "simbolo": "Aa",
+        "nombre": "Letras y números",
+        "foco": "Sílabas, primeras palabras y contar hasta el 20.",
+        "fondo": "#16284a",
+        "borde": "#8fb8ec"
+      },
+      {
+        "span": 1,
+        "simbolo": "+−",
+        "nombre": "Palabras y cuentas",
+        "foco": "Frases cortas, sumas y restas sencillas; vocabulario en inglés.",
+        "fondo": "#13302a",
+        "borde": "#7fcfa0"
+      },
+      {
+        "span": 1,
+        "simbolo": "★",
+        "nombre": "Autonomía",
+        "foco": "Trabajar más rato solo y llegar con rutina al nuevo colegio.",
+        "fondo": "#3a3322",
+        "borde": "#e9d18f"
+      }
+    ],
+    "hitos": [
+      {
+        "nombre": "Rutina asentada",
+        "pos": 1
+      },
+      {
+        "nombre": "Listo para el cole",
+        "pos": 3,
+        "meta": true
+      }
+    ]
+  },
+  "nombre_completo": "Joel Giner",
+  "semana": {
+    "etiqueta": "SU SEMANA",
+    "pill": "HORARIO ORIENTATIVO",
+    "titulo": "Mañanas de lunes a viernes, en casa",
+    "lead": "3 horas cada mañana, de 9:30 a 12:30 (o de 10:00 a 13:00). Bloques cortos de trabajo alternados con juego y descanso. Es orientativo: la profesora ajusta el ritmo según cómo esté Joel cada día.",
+    "hora_ini": 9,
+    "hora_fin": 13,
+    "alto": 85,
+    "asignaturas": [
+      "Lectoescritura",
+      "Números",
+      "Inglés",
+      "Juego y descanso"
+    ],
+    "asig_cortas": [
+      "Lectura",
+      "Números",
+      "Inglés",
+      "Juego"
+    ],
+    "bloques": [
+      [
+        0,
+        9.5,
+        10.5,
+        0
+      ],
+      [
+        0,
+        10.5,
+        11,
+        3
+      ],
+      [
+        0,
+        11,
+        12,
+        1
+      ],
+      [
+        0,
+        12,
+        12.5,
+        2
+      ],
+      [
+        1,
+        9.5,
+        10.5,
+        0
+      ],
+      [
+        1,
+        10.5,
+        11,
+        3
+      ],
+      [
+        1,
+        11,
+        12,
+        1
+      ],
+      [
+        1,
+        12,
+        12.5,
+        2
+      ],
+      [
+        2,
+        9.5,
+        10.5,
+        0
+      ],
+      [
+        2,
+        10.5,
+        11,
+        3
+      ],
+      [
+        2,
+        11,
+        12,
+        1
+      ],
+      [
+        2,
+        12,
+        12.5,
+        2
+      ],
+      [
+        3,
+        9.5,
+        10.5,
+        0
+      ],
+      [
+        3,
+        10.5,
+        11,
+        3
+      ],
+      [
+        3,
+        11,
+        12,
+        1
+      ],
+      [
+        3,
+        12,
+        12.5,
+        2
+      ],
+      [
+        4,
+        9.5,
+        10.5,
+        0
+      ],
+      [
+        4,
+        10.5,
+        11,
+        3
+      ],
+      [
+        4,
+        11,
+        12,
+        1
+      ],
+      [
+        4,
+        12,
+        12.5,
+        2
+      ]
+    ],
+    "extra_titulo": "Horario orientativo",
+    "extra_texto": "Si algún día os viene mejor de 10:00 a 13:00, se ajusta sin problema.",
+    "repartos": [
+      {
+        "nombre": "Cada semana · 15h",
+        "horas": [
+          5,
+          5,
+          2.5,
+          2.5
+        ]
+      }
+    ],
+    "dias": [
+      "Lunes",
+      "Martes",
+      "Miércoles",
+      "Jueves",
+      "Viernes"
+    ]
+  }
+}
