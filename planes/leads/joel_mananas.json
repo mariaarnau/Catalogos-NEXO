@@ -43,7 +43,7 @@
     "nota": "",
     "who": "1º Primaria · Plan de mañanas · Presencial en casa",
     "titulo": "Su plan, en dos pasos",
-    "lead": "Primero una clase de prueba para conocer a la profesora. Después, un bono semanal con precio especial por volumen de horas, que se paga semana a semana.",
+    "lead": "Primero una clase de prueba para conocer a la profesora. Después, bonos semanales de 15 horas, de lunes a viernes, cuyo precio baja cada 4 semanas.",
     "prueba": {
       "horas": 2,
       "precio": 40,
@@ -51,34 +51,36 @@
       "texto": "Una primera clase para que Joel conozca a la profesora y veamos cómo encajan. Precio para nuevos alumnos.",
       "alt": "¿Queréis probar con 2 o 3 profesoras? Cada prueba se paga igual y elegís con cuál seguir."
     },
-    "paso2_titulo": "Después, su bono semanal",
+    "paso2_titulo": "Después, bono semanal de 15h: cuanto más tiempo, mejor precio",
     "opciones": [
       {
         "horas": 15,
         "precio": 240,
-        "frecuencia": "",
-        "destacado": true,
-        "etiqueta": "RECOMENDADO · LUNES A VIERNES",
-        "lbl": "bono semanal · 3h cada mañana"
+        "tramo": "Bonos 1 a 4"
       },
       {
-        "horas": 12,
-        "precio": 192,
-        "frecuencia": "",
-        "destacado": false,
-        "etiqueta": "4 MAÑANAS",
-        "lbl": "bono semanal · 3h, 4 días"
+        "horas": 15,
+        "precio": 225,
+        "tramo": "Bonos 5 a 8"
+      },
+      {
+        "horas": 15,
+        "precio": 210,
+        "tramo": "Bonos 9 a 12"
+      },
+      {
+        "horas": 15,
+        "precio": 200,
+        "tramo": "Desde el bono 13"
       }
     ],
     "resumen": [
-      "Clases presenciales en vuestra casa de Nou Benicalap, de lunes a viernes por la mañana.",
-      "Lectoescritura, números e inglés, alternando trabajo, juego y descansos.",
-      "Primero, bono de prueba de 2h (40 €). Después, bono semanal de 15h (240 €): 16 €/h.",
-      "Precio especial por volumen: frente a la tarifa de Primaria, ahorráis 90 € cada semana.",
-      "Se paga semana a semana, sin permanencia: cuando empiece en el colegio, lo dejáis."
+      "Se paga semana a semana, sin permanencia: cuando Joel empiece en el colegio, lo dejáis."
     ],
-    "quote": "Un plan a medida para que Joel aproveche estas semanas y llegue al nuevo colegio con rutina y ganas.",
-    "sin_mes": true
+    "quote": "Para que Joel llegue al nuevo colegio con rutina y ganas.",
+    "sin_mes": true,
+    "escala": true,
+    "escala_nota": "Cada tramo son 4 bonos semanales seguidos. A partir del bono 13, el precio se queda en 200 € por semana (13,33 €/h) mientras sigáis con el plan de mañanas."
   },
   "informe_ejemplo": {
     "asignatura": "Lectoescritura, números e inglés",
