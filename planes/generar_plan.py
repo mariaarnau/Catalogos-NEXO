@@ -686,7 +686,7 @@ def page_pasos(d, t):
   <small>{e(b["tramo"])}</small>
   <div class="escl-h">{eur(ph)}<span>/h</span></div>
   <div class="escl-p">{eur(b["precio"], 0)} <span>por bono de {b["horas"]}h</span></div>
-  <div class="escl-a">Ahorráis {eur(b["horas"] * base - b["precio"], 0)} cada semana</div>
+  <div class="escl-a">Ahorráis {eur(b["horas"] * base - b["precio"], 0)} por bono</div>
 </div>'''
         cards = f'<div class="escl">{steps}</div>' + (f'<div class="escl-n">{e(c["escala_nota"])}</div>' if c.get("escala_nota") else "")
         side = ""

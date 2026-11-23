@@ -43,7 +43,7 @@
     "nota": "",
     "who": "1º Primaria · Plan de mañanas · Presencial en casa",
     "titulo": "Su plan, en dos pasos",
-    "lead": "Primero una clase de prueba para conocer a la profesora. Después, bonos semanales de 15 horas, de lunes a viernes, cuyo precio baja cada 4 semanas.",
+    "lead": "Primero una clase de prueba para conocer a la profesora. Después, bonos de 15 horas para las mañanas de lunes a viernes, con un precio que baja cada 4 bonos.",
     "prueba": {
       "horas": 2,
       "precio": 40,
@@ -51,7 +51,7 @@
       "texto": "Una primera clase para que Joel conozca a la profesora y veamos cómo encajan. Precio para nuevos alumnos.",
       "alt": "¿Queréis probar con 2 o 3 profesoras? Cada prueba se paga igual y elegís con cuál seguir."
     },
-    "paso2_titulo": "Después, bono semanal de 15h: cuanto más tiempo, mejor precio",
+    "paso2_titulo": "Después, bonos de 15h: cuanto más tiempo, mejor precio",
     "opciones": [
       {
         "horas": 15,
@@ -75,12 +75,12 @@
       }
     ],
     "resumen": [
-      "Se paga semana a semana, sin permanencia: cuando Joel empiece en el colegio, lo dejáis."
+      "Sin permanencia. Cuando queráis, pasáis al plan de tardes (una o dos tardes a la semana) con la tarifa de Primaria."
     ],
     "quote": "Para que Joel llegue al nuevo colegio con rutina y ganas.",
     "sin_mes": true,
     "escala": true,
-    "escala_nota": "Cada tramo son 4 bonos semanales seguidos. A partir del bono 13, el precio se queda en 200 € por semana (13,33 €/h) mientras sigáis con el plan de mañanas."
+    "escala_nota": "Cada tramo son 4 bonos de 15h completos. Lo que se consume son las horas del bono: si una semana hacéis alguna hora menos, se quedan en el bono y se usan después. Al completar 4 bonos, el siguiente pasa al precio del tramo siguiente, y desde el bono 13 se queda en 200 €."
   },
   "informe_ejemplo": {
     "asignatura": "Lectoescritura, números e inglés",
