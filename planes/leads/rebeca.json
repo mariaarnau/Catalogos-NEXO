@@ -1,0 +1,268 @@
+{
+  "nombre": "Rebeca",
+  "etapa": "bachillerato",
+  "curso": "FP Grado Medio",
+  "asignaturas": [
+    "Termodinámica"
+  ],
+  "voz": "tu",
+  "presencial_label": "en tu casa",
+  "cover_card_sub": "FP Grado Medio · Termodinámica · Presencial en Valencia",
+  "bonos_recomendados": [
+    {
+      "horas": 12,
+      "frecuencia": "3h a la semana"
+    }
+  ],
+  "modalidades_recomendadas": [
+    "casa_alumno"
+  ],
+  "tarifas_mostrar": [
+    "casa_alumno"
+  ],
+  "textos": {
+    "cover_sub": "Un plan a medida para Rebeca: Termodinámica de FP de Grado Medio, con clases presenciales en tu casa, en Valencia (zona sur).",
+    "p2_title": "Así te acompañamos cada mes",
+    "p2_sub": "Sin burocracia. El profesor registra las sesiones, nuestro equipo analiza los datos y te llega el seguimiento sin que tengas que pedirlo.",
+    "c1": "Tienes un profesor de referencia asignado, especializado en Física y Termodinámica, con un horario flexible que se adapta a ti.",
+    "p3_sub": "Tienes tu propio informe de seguimiento dentro del plan, sin coste adicional. Esto es lo que incluye cada mes:",
+    "informe_h2": "Un informe real para Rebeca",
+    "p4_pill": "ASÍ LO VERÁS TÚ",
+    "p4_sub": "Cuatro pantallas de ejemplo del informe que recibirás en tu área privada.",
+    "p10_sub": "Escríbenos para reservar tu bono de prueba y empezar cuanto antes.",
+    "gestiones": "GESTIONES A TU CARGO"
+  },
+  "pasos": {
+    "base": 25,
+    "base_txt": "",
+    "modalidad_txt": "Presencial en tu casa",
+    "who": "FP Grado Medio · Termodinámica · Presencial",
+    "titulo": "Tu plan, en dos pasos",
+    "lead": "Clases presenciales de Termodinámica en tu casa, con un profesor especializado. Primero una prueba y después el bono de 12 horas.",
+    "prueba": {
+      "horas": 2,
+      "precio": 46,
+      "tachado": 50,
+      "texto": "Dos horas presenciales en tu casa para conocer al profesor, ver en qué punto estás con Termodinámica y dejar fijado tu plan. Precio para nuevos alumnos. Recomendado al 100%."
+    },
+    "paso2_titulo": "Después, tu bono de 12 horas",
+    "opciones": [
+      {
+        "horas": 12,
+        "precio": 285,
+        "frecuencia": "",
+        "destacado": true,
+        "etiqueta": "RECOMENDADO · MEJOR PRECIO POR HORA",
+        "alt": {
+          "oro": true,
+          "txt": "TU MEJOR OPCIÓN",
+          "hora": "23,75 €/h",
+          "bono": "el mejor precio por hora del curso"
+        }
+      }
+    ],
+    "resumen": [
+      "Clases presenciales de Termodinámica en tu casa, en Valencia (zona sur).",
+      "Primero, bono de prueba de 2h (46 €) y, después, bono de 12h (285 €).",
+      "El bono de 12h es el que sale más económico por hora durante el curso: 23,75 €/h."
+    ],
+    "quote": "Un plan a medida para que Rebeca apruebe Termodinámica con seguridad.",
+    "sin_mes": true
+  },
+  "informe_ejemplo": {
+    "asignatura": "Termodinámica",
+    "mes": "Diciembre 2026",
+    "comparado": "noviembre",
+    "nota": "7,0",
+    "sesiones": 4,
+    "horas": "8h",
+    "destrezas_label": "Bloques trabajados",
+    "barras": [
+      [
+        "Bases",
+        7.4
+      ],
+      [
+        "Primer principio",
+        6.6
+      ],
+      [
+        "Gases",
+        6.0
+      ]
+    ],
+    "mayor_progreso": "Termodinámica — las unidades y conversiones ya no le dan problemas",
+    "resumen": "En diciembre, Rebeca ha hecho 8 horas de clase sin faltar a ninguna. Ya maneja con soltura las unidades y los conceptos de calor y temperatura. En los ejercicios del primer principio todavía necesita apoyo. Enero: transformaciones de gases.",
+    "proxima_sesion": "PRÓXIMA CLASE — MARTES 1",
+    "proxima_sesion_txt": "Primer principio: ejercicios tipo examen.",
+    "horario": "Martes, 17:00–19:00 · en casa",
+    "temas": [
+      [
+        "Bases",
+        2.5
+      ],
+      [
+        "Primer principio",
+        2.5
+      ],
+      [
+        "Gases",
+        1.5
+      ],
+      [
+        "Repaso",
+        1.5
+      ]
+    ],
+    "fuertes": [
+      "Unidades y conversiones",
+      "Muy constante"
+    ],
+    "atencion": [
+      "Primer principio: signos de calor y trabajo",
+      "Interpretar los enunciados"
+    ],
+    "casa": [
+      "3 ejercicios a la semana",
+      "Formulario resumen por tema"
+    ],
+    "semanas": [
+      5.8,
+      6.3,
+      6.8,
+      7.2
+    ],
+    "metricas": [
+      [
+        "76%",
+        "Comprensión"
+      ],
+      [
+        "81%",
+        "Constancia"
+      ],
+      [
+        "62%",
+        "Autonomía"
+      ]
+    ],
+    "evol": [
+      [
+        "Resolución de ejercicios",
+        "Noviembre: 40%",
+        "Diciembre: 70%",
+        "Plantea mejor el enunciado antes de operar."
+      ],
+      [
+        "Autonomía",
+        "Noviembre: 35%",
+        "Diciembre: 60%",
+        "Cada vez necesita menos ayuda para empezar."
+      ]
+    ],
+    "conclusion": "Diciembre cierra con una tendencia muy positiva. En enero, transformaciones de gases.",
+    "cal_mes": [
+      2027,
+      1
+    ],
+    "cal_titulo": "Calendario — enero 2027",
+    "cal_dias_sesion": [
+      1,
+      3
+    ],
+    "cal_examen": 16,
+    "cal_semanas": "3 sem",
+    "cal_semanas_txt": "hasta el examen",
+    "antes": "Dudas con los ejercicios",
+    "ahora": "Clases semanales en casa · Bono de 12h",
+    "alumno": ""
+  },
+  "archivo": "Plan_NEXO_Rebeca_FPGM_Termodinamica_Valencia",
+  "nombre_completo": "Rebeca",
+  "trayectoria": {
+    "etiqueta": "HOJA DE RUTA",
+    "pill": "TERMODINÁMICA · FP GRADO MEDIO",
+    "titulo": "Termodinámica, paso a paso",
+    "lead": "Empezamos por las bases y avanzamos con muchos ejercicios, al ritmo de tus exámenes. Fechas orientativas; las ajustamos a tu calendario.",
+    "meses": [
+      "Dic",
+      "Ene",
+      "Feb",
+      "Mar"
+    ],
+    "colores": [
+      "#5b8ee0",
+      "#8fb8ec",
+      "#7fcfa0",
+      "#e9d18f"
+    ],
+    "tramos": [
+      [
+        0,
+        0.8
+      ],
+      [
+        0.8,
+        1.6
+      ],
+      [
+        1.6,
+        2.4
+      ],
+      [
+        2.4,
+        3
+      ]
+    ],
+    "bloques": [
+      {
+        "span": 1,
+        "simbolo": "T",
+        "nombre": "Bases",
+        "foco": "Temperatura, calor, presión y unidades.",
+        "fondo": "#12234a",
+        "borde": "#5b8ee0"
+      },
+      {
+        "span": 1,
+        "simbolo": "ΔU",
+        "nombre": "Primer principio",
+        "foco": "Energía, trabajo y calor en ejercicios.",
+        "fondo": "#16284a",
+        "borde": "#8fb8ec"
+      },
+      {
+        "span": 1,
+        "simbolo": "pV",
+        "nombre": "Gases y ciclos",
+        "foco": "Transformaciones de gases y ciclos básicos.",
+        "fondo": "#13302a",
+        "borde": "#7fcfa0"
+      },
+      {
+        "span": 1,
+        "simbolo": "★",
+        "nombre": "Exámenes",
+        "foco": "Ejercicios tipo examen, corregidos.",
+        "fondo": "#3a3322",
+        "borde": "#e9d18f"
+      }
+    ],
+    "hitos": [
+      {
+        "nombre": "1er examen",
+        "pos": 1
+      },
+      {
+        "nombre": "Evaluación",
+        "pos": 3,
+        "meta": true
+      }
+    ]
+  },
+  "tarifa_nombre": "FP Grado Medio",
+  "tarifa_corto": "FP",
+  "etiqueta_tarifas": {
+    "casa_alumno": "PRESENCIAL EN TU CASA"
+  }
+}

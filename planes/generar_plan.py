@@ -1226,7 +1226,8 @@ def page_tarifas(d, t, mod):
     etiqueta = {"online": "ONLINE", "casa_profesor": "EN CASA DEL PROFESOR",
                 "casa_alumno": "PRESENCIAL EN CASA DEL ALUMNO"}[mod]
     etiqueta = d.get("etiqueta_tarifas", {}).get(mod, etiqueta)
-    sub = tf["corto"] + (" · Online" if mod == "online" else "")
+    nom, cor = d.get("tarifa_nombre", tf["nombre"]), d.get("tarifa_corto", tf["corto"])
+    sub = cor + (" · Online" if mod == "online" else "")
     cards = ""
     for h in (2, 4, 8, 12):
         precio = f'<div class="old">{eur(base*2)}</div><div class="price">{eur(pr[h])}</div><div class="new">★ Precio nuevos alumnos</div>' \
@@ -1241,11 +1242,11 @@ def page_tarifas(d, t, mod):
         cards += f'<div class="tc{" feat" if h == 12 else ""}">{top}<div class="hh">{h}h</div><div class="hs">{e(sub)}</div>{precio}<ul class="checks sm">{feats}</ul></div>'
     return f'''<section class="page">
   <div class="hdr"><span class="hdr-l">TARIFAS · {etiqueta}</span></div><div class="rule"></div>
-  <div class="pill blue">TARIFAS {e(tf["nombre"].upper())} · {etiqueta}</div>
+  <div class="pill blue">TARIFAS {e(nom.upper())} · {etiqueta}</div>
   <h2>Bonos de horas. Sin permanencia.</h2>
   <p class="lead">{e(t["pagais"])}</p>
   <div class="tcards">{cards}</div>
-  {footer("Nexo Académico · Guía " + tf["nombre"])}
+  {footer("Nexo Académico · Guía " + nom)}
 </section>'''
 
 
