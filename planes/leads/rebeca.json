@@ -1,13 +1,13 @@
 {
   "nombre": "Rebeca",
-  "etapa": "bachillerato",
+  "etapa": "universidad",
   "curso": "FP Grado Medio",
   "asignaturas": [
     "Termodinámica"
   ],
   "voz": "tu",
   "presencial_label": "en tu casa",
-  "cover_card_sub": "FP Grado Medio · Termodinámica · Presencial en Valencia",
+  "cover_card_sub": "FP Grado Medio · Termodinámica · Presencial u online",
   "bonos_recomendados": [
     {
       "horas": 12,
@@ -15,13 +15,15 @@
     }
   ],
   "modalidades_recomendadas": [
-    "casa_alumno"
+    "casa_alumno",
+    "online"
   ],
   "tarifas_mostrar": [
+    "online",
     "casa_alumno"
   ],
   "textos": {
-    "cover_sub": "Un plan a medida para Rebeca: Termodinámica de FP de Grado Medio, con clases presenciales en tu casa, en Valencia (zona sur).",
+    "cover_sub": "Un plan a medida para Rebeca: Termodinámica de FP de Grado Medio, con clases presenciales en tu casa, en Valencia (zona sur), u online.",
     "p2_title": "Así te acompañamos cada mes",
     "p2_sub": "Sin burocracia. El profesor registra las sesiones, nuestro equipo analiza los datos y te llega el seguimiento sin que tengas que pedirlo.",
     "c1": "Tienes un profesor de referencia asignado, especializado en Física y Termodinámica, con un horario flexible que se adapta a ti.",
@@ -31,43 +33,6 @@
     "p4_sub": "Cuatro pantallas de ejemplo del informe que recibirás en tu área privada.",
     "p10_sub": "Escríbenos para reservar tu bono de prueba y empezar cuanto antes.",
     "gestiones": "GESTIONES A TU CARGO"
-  },
-  "pasos": {
-    "base": 25,
-    "base_txt": "",
-    "modalidad_txt": "Presencial en tu casa",
-    "who": "FP Grado Medio · Termodinámica · Presencial",
-    "titulo": "Tu plan, en dos pasos",
-    "lead": "Clases presenciales de Termodinámica en tu casa, con un profesor especializado. Primero una prueba y después el bono de 12 horas.",
-    "prueba": {
-      "horas": 2,
-      "precio": 46,
-      "tachado": 50,
-      "texto": "Dos horas presenciales en tu casa para conocer al profesor, ver en qué punto estás con Termodinámica y dejar fijado tu plan. Precio para nuevos alumnos. Recomendado al 100%."
-    },
-    "paso2_titulo": "Después, tu bono de 12 horas",
-    "opciones": [
-      {
-        "horas": 12,
-        "precio": 285,
-        "frecuencia": "",
-        "destacado": true,
-        "etiqueta": "RECOMENDADO · MEJOR PRECIO POR HORA",
-        "alt": {
-          "oro": true,
-          "txt": "TU MEJOR OPCIÓN",
-          "hora": "23,75 €/h",
-          "bono": "el mejor precio por hora del curso"
-        }
-      }
-    ],
-    "resumen": [
-      "Clases presenciales de Termodinámica en tu casa, en Valencia (zona sur).",
-      "Primero, bono de prueba de 2h (46 €) y, después, bono de 12h (285 €).",
-      "El bono de 12h es el que sale más económico por hora durante el curso: 23,75 €/h."
-    ],
-    "quote": "Un plan a medida para que Rebeca apruebe Termodinámica con seguridad.",
-    "sin_mes": true
   },
   "informe_ejemplo": {
     "asignatura": "Termodinámica",
@@ -264,5 +229,46 @@
   "tarifa_corto": "FP",
   "etiqueta_tarifas": {
     "casa_alumno": "PRESENCIAL EN TU CASA"
+  },
+  "dos_opciones": {
+    "etiqueta": "TUS OPCIONES",
+    "pill": "MODALIDAD",
+    "titulo": "Dos formas de prepararte",
+    "lead": "En las dos se empieza con un bono de prueba de 2 horas y después se pasa al bono de 12 horas. Elige la modalidad que mejor te encaje.",
+    "pie": "Sin permanencia: pagas por adelantado el bono de horas y solo pagas las horas de clase que se dan.",
+    "opciones": [
+      {
+        "letra": "OPCIÓN 1",
+        "nombre": "Presencial en tu casa",
+        "sub": "El profesor va a tu domicilio",
+        "destacado": true,
+        "prueba": {
+          "horas": 2,
+          "precio": 54,
+          "tachado": 56
+        },
+        "bono": {
+          "horas": 12,
+          "precio": 327,
+          "base": 28
+        }
+      },
+      {
+        "letra": "OPCIÓN 2",
+        "nombre": "Online",
+        "sub": "Clases por videollamada con pantalla compartida",
+        "destacado": false,
+        "prueba": {
+          "horas": 2,
+          "precio": 46,
+          "tachado": 50
+        },
+        "bono": {
+          "horas": 12,
+          "precio": 285,
+          "base": 25
+        }
+      }
+    ]
   }
 }

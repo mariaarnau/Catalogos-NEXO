@@ -79,6 +79,8 @@ Las tarifas están en el diccionario `TARIFAS`, al principio de `generar_plan.py
 
 ### Reglas fijas
 
+- **Formación Profesional (Grado Medio y Superior) se cobra con la tarifa de Universidad.** Se usa `"etapa": "universidad"` con `"tarifa_nombre": "FP Grado Medio"` y `"tarifa_corto": "FP"`.
+- **Siempre se muestran también las tarifas online**, aunque pidan presencial: `"tarifas_mostrar": ["online", "casa_alumno"]` y la comparativa `dos_opciones`, con la presencial destacada si la han pedido.
 - **Presencial = en casa del alumno.** Nunca en casa del profesor, salvo que se pida expresamente. Si la clase es en otro sitio (por ejemplo, una biblioteca), se cobra precio presencial y se cambia la etiqueta con `etiqueta_tarifas`.
 - **Nunca "al mes" ni "/mes" en los bonos.** Las familias solo pagan las horas que se dan. Usar `"sin_mes": true` en `pasos`.
 - **Recomendación por defecto:**
