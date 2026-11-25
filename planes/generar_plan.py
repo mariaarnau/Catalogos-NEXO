@@ -698,7 +698,7 @@ def page_pasos(d, t):
     paso1_html = "" if solo else f'''<div class="paso1">
     <div class="pnum">{k1}</div>
     <div class="p1t"><small>PASO {k1} · {"DESPUÉS" if niv else "PARA EMPEZAR"}</small><b>Bono de prueba de {p1["horas"]}h</b><span>{e(p1["texto"])}</span></div>
-    <div class="p1p">{f'<i class="p1lbl">{e(p1["lbl"].upper())}</i>' if p1.get("lbl") else ""}<s>{eur(p1["tachado"], 0)}</s><b>{eur(p1["precio"], 0 if p1["precio"] == int(p1["precio"]) else 2)}</b><span>{e(p1["sub"]) if p1.get("sub") else eur(ph1) + "/h · precio nuevos alumnos"}</span>{f'<em class="p1alt">{e(p1["alt"])}</em>' if p1.get("alt") else ""}</div>
+    <div class="p1p">{f'<i class="p1lbl">{e(p1["lbl"].upper())}</i>' if p1.get("lbl") else ""}{f'<s>{eur(p1["tachado"], 0)}</s>' if d.get("nuevos_alumnos") else ""}<b>{eur(p1["precio"], 0 if p1["precio"] == int(p1["precio"]) else 2)}</b><span>{e(p1["sub"]) if p1.get("sub") else (eur(ph1) + "/h · precio nuevos alumnos" if d.get("nuevos_alumnos") else "para empezar")}</span>{f'<em class="p1alt">{e(p1["alt"])}</em>' if p1.get("alt") else ""}</div>
   </div>'''
     return f'''<section class="page pasosp">
   <div class="hdr"><span class="hdr-l">PLAN PERSONALIZADO{" · " + e(n.upper()) if n else ""}</span></div><div class="rule"></div>
@@ -879,7 +879,7 @@ def page_dos_opciones(d, t):
   <div class="do-l">{e(o["letra"])}</div>
   <div class="do-n">{e(o["nombre"])}</div><div class="do-s">{e(o["sub"])}</div>
   <div class="do-st"><i>1</i><div><small>PASO 1 · BONO DE PRUEBA</small><b>{pr["horas"]} horas</b></div>
-    <div class="do-pp"><s>{eur(pr["tachado"], 0)}</s><b>{eur(pr["precio"], 0)}</b></div></div>
+    <div class="do-pp">{f'<s>{eur(pr["tachado"], 0)}</s>' if d.get("nuevos_alumnos") else ""}<b>{eur(pr["precio"], 0)}</b></div></div>
   <div class="do-st g"><i>2</i><div><small>PASO 2 · DESPUÉS</small><b>Bono de {bo["horas"]} horas</b></div>
     <div class="do-pp"><b>{eur(bo["precio"], 0)}</b></div></div>
   <div class="do-h"><b>{eur(ph)}</b><span>por hora en el bono de {bo["horas"]}h</span></div>
@@ -1230,7 +1230,7 @@ def page_tarifas(d, t, mod):
     sub = cor + (" · Online" if mod == "online" else "")
     cards = ""
     for h in (2, 4, 8, 12):
-        precio = f'<div class="old">{eur(base*2)}</div><div class="price">{eur(pr[h])}</div><div class="new">★ Precio nuevos alumnos</div>' \
+        precio = (f'<div class="old">{eur(base*2)}</div><div class="price">{eur(pr[h])}</div><div class="new">★ Precio nuevos alumnos</div>' if d.get("nuevos_alumnos") else f'<div class="price solo">{eur(pr[h])}</div><div class="new">★ Bono de prueba</div>') \
             if h == 2 else f'<div class="price solo">{eur(pr[h])}</div>'
         dg = d.get("descuento_grupo")
         if dg:

@@ -678,6 +678,18 @@ def page_pasos(d, t):
   <div class="bx-ref"><span>Tarifa base ({b["horas"]} × {eur(base, 0 if base == int(base) else 2)})</span><s>{eur(b["horas"] * base, 0)}</s></div>
   <div class="bx-ah">Ahorráis <b>{eur(b["horas"] * base - b["precio"], 0)}</b>{"" if c.get("sin_mes") else " al mes"} frente a la tarifa base</div>
 </div>'''
+    if c.get("escala"):  # precio decreciente por tramos (p. ej. cada 4 bonos)
+        steps = ""
+        for i, b in enumerate(c["opciones"]):
+            ph = b["precio"] / b["horas"]
+            steps += f'''<div class="escl-s{" on" if i == 0 else ""}" style="margin-top:{(len(c["opciones"]) - 1 - i) * 0}px">
+  <small>{e(b["tramo"])}</small>
+  <div class="escl-h">{eur(ph)}<span>/h</span></div>
+  <div class="escl-p">{eur(b["precio"], 0)} <span>por bono de {b["horas"]}h</span></div>
+  <div class="escl-a">Ahorráis {eur(b["horas"] * base - b["precio"], 0)} por bono</div>
+</div>'''
+        cards = f'<div class="escl">{steps}</div>' + (f'<div class="escl-n">{e(c["escala_nota"])}</div>' if c.get("escala_nota") else "")
+        side = ""
     nota_t = f" · {e(c['nota'])}" if c.get("nota") else ""
     basel = f'<div class="base-l">{e(c["base_txt"])}: <b>{eur(base)}/h</b>{nota_t}</div>' if c.get("base_txt") else ""
     nv = c.get("nivel")
@@ -686,7 +698,7 @@ def page_pasos(d, t):
     paso1_html = "" if solo else f'''<div class="paso1">
     <div class="pnum">{k1}</div>
     <div class="p1t"><small>PASO {k1} · {"DESPUÉS" if niv else "PARA EMPEZAR"}</small><b>Bono de prueba de {p1["horas"]}h</b><span>{e(p1["texto"])}</span></div>
-    <div class="p1p">{f'<i class="p1lbl">{e(p1["lbl"].upper())}</i>' if p1.get("lbl") else ""}<s>{eur(p1["tachado"], 0)}</s><b>{eur(p1["precio"], 0 if p1["precio"] == int(p1["precio"]) else 2)}</b><span>{e(p1["sub"]) if p1.get("sub") else eur(ph1) + "/h · precio nuevos alumnos"}</span>{f'<em class="p1alt">{e(p1["alt"])}</em>' if p1.get("alt") else ""}</div>
+    <div class="p1p">{f'<i class="p1lbl">{e(p1["lbl"].upper())}</i>' if p1.get("lbl") else ""}{f'<s>{eur(p1["tachado"], 0)}</s>' if d.get("nuevos_alumnos") else ""}<b>{eur(p1["precio"], 0 if p1["precio"] == int(p1["precio"]) else 2)}</b><span>{e(p1["sub"]) if p1.get("sub") else (eur(ph1) + "/h · precio nuevos alumnos" if d.get("nuevos_alumnos") else "para empezar")}</span>{f'<em class="p1alt">{e(p1["alt"])}</em>' if p1.get("alt") else ""}</div>
   </div>'''
     return f'''<section class="page pasosp">
   <div class="hdr"><span class="hdr-l">PLAN PERSONALIZADO{" · " + e(n.upper()) if n else ""}</span></div><div class="rule"></div>
@@ -696,7 +708,7 @@ def page_pasos(d, t):
   {niv}
   {paso1_html}
   <div class="paso2h"><div class="pnum s">{k1 + (0 if solo else 1)}</div><div><small>{"SU BONO" if solo else f"PASO {k1 + 1} · DESPUÉS"}</small><b>{e(c["paso2_titulo"])}</b></div></div>
-  <div class="bxs"{(' style="grid-template-columns: 520px 1fr; align-items: end"' if side else ' style="grid-template-columns: 1fr; max-width: 520px"') if len(c["opciones"]) == 1 else ""}>{cards}{side}</div>
+  {cards if c.get("escala") else ""}<div class="bxs"{(' style="grid-template-columns: 520px 1fr; align-items: end"' if side else ' style="grid-template-columns: 1fr; max-width: 520px"') if len(c["opciones"]) == 1 else ""}{' hidden' if c.get("escala") else ""}>{"" if c.get("escala") else cards}{side}</div>
   {basel}
   {footer()}
 </section>'''
@@ -713,7 +725,7 @@ def page_resumen_pasos(d, t):
     rows += ("" if solo else f'''<div class="srow"><div class="av w">{k1}</div><div class="st"><b>Paso {k1} — Bono de prueba de {p1["horas"]}h</b><small>{e(c["modalidad_txt"])} · para empezar</small></div>
   <div class="sps"><div class="sp"><small>{e(p1.get("lbl", "Una vez"))}</small><b>{eur(p1["precio"], 0 if p1["precio"] == int(p1["precio"]) else 2)}</b></div></div></div>''')
     for b in c["opciones"]:
-        rows += f'''<div class="srow ref"><div class="av w">{k1 + (0 if solo else 1)}</div><div class="st"><b>{"Su bono" if solo else f"Paso {k1 + 1}"} — Bono de {b["horas"]}h{"" if c.get("sin_mes") else " al mes"}</b><small>{e(c["modalidad_txt"])}{"" if c.get("sin_mes") else " · " + e(b["frecuencia"])}</small></div>
+        rows += f'''<div class="srow ref"><div class="av w">{k1 + (0 if solo else 1)}</div><div class="st"><b>{"Su bono" if solo else f"Paso {k1 + 1}"} — Bono de {b["horas"]}h{"" if c.get("sin_mes") else " al mes"}{" · " + e(b["tramo"].lower()) if b.get("tramo") else ""}</b><small>{e(c["modalidad_txt"])}{"" if c.get("sin_mes") else " · " + e(b["frecuencia"])}</small></div>
   <div class="sps"><div class="sp"><small>{"Bono" if c.get("sin_mes") else "Al mes"}</small><b>{eur(b["precio"], 0)}</b></div><div class="sp"><small>Por hora</small><b>{eur(b["precio"] / b["horas"])}</b></div></div></div>'''
     lis = "".join(f"<li>{e(x)}</li>" for x in c["resumen"])
     return f'''<section class="page">
@@ -721,7 +733,7 @@ def page_resumen_pasos(d, t):
   <div class="pill gold">RESUMEN</div>
   <h2>Su plan, de un vistazo</h2>
   <p class="lead">{e("El plan de " + n if n else "Tu plan")}, paso a paso.</p>
-  <div class="srows">{rows}</div>
+  <div class="srows{" compact" if c.get("escala") else ""}">{rows}</div>
   <ul class="dash">{lis}</ul>
   <div class="quote"><span>"</span><em>{e(c["quote"])}</em></div>
   {footer()}
@@ -867,7 +879,7 @@ def page_dos_opciones(d, t):
   <div class="do-l">{e(o["letra"])}</div>
   <div class="do-n">{e(o["nombre"])}</div><div class="do-s">{e(o["sub"])}</div>
   <div class="do-st"><i>1</i><div><small>PASO 1 · BONO DE PRUEBA</small><b>{pr["horas"]} horas</b></div>
-    <div class="do-pp"><s>{eur(pr["tachado"], 0)}</s><b>{eur(pr["precio"], 0)}</b></div></div>
+    <div class="do-pp">{f'<s>{eur(pr["tachado"], 0)}</s>' if d.get("nuevos_alumnos") else ""}<b>{eur(pr["precio"], 0)}</b></div></div>
   <div class="do-st g"><i>2</i><div><small>PASO 2 · DESPUÉS</small><b>Bono de {bo["horas"]} horas</b></div>
     <div class="do-pp"><b>{eur(bo["precio"], 0)}</b></div></div>
   <div class="do-h"><b>{eur(ph)}</b><span>por hora en el bono de {bo["horas"]}h</span></div>
@@ -1214,10 +1226,11 @@ def page_tarifas(d, t, mod):
     etiqueta = {"online": "ONLINE", "casa_profesor": "EN CASA DEL PROFESOR",
                 "casa_alumno": "PRESENCIAL EN CASA DEL ALUMNO"}[mod]
     etiqueta = d.get("etiqueta_tarifas", {}).get(mod, etiqueta)
-    sub = tf["corto"] + (" · Online" if mod == "online" else "")
+    nom, cor = d.get("tarifa_nombre", tf["nombre"]), d.get("tarifa_corto", tf["corto"])
+    sub = cor + (" · Online" if mod == "online" else "")
     cards = ""
     for h in (2, 4, 8, 12):
-        precio = f'<div class="old">{eur(base*2)}</div><div class="price">{eur(pr[h])}</div><div class="new">★ Precio nuevos alumnos</div>' \
+        precio = (f'<div class="old">{eur(base*2)}</div><div class="price">{eur(pr[h])}</div><div class="new">★ Precio nuevos alumnos</div>' if d.get("nuevos_alumnos") else f'<div class="price solo">{eur(pr[h])}</div><div class="new">★ Bono de prueba</div>') \
             if h == 2 else f'<div class="price solo">{eur(pr[h])}</div>'
         dg = d.get("descuento_grupo")
         if dg:
@@ -1229,11 +1242,11 @@ def page_tarifas(d, t, mod):
         cards += f'<div class="tc{" feat" if h == 12 else ""}">{top}<div class="hh">{h}h</div><div class="hs">{e(sub)}</div>{precio}<ul class="checks sm">{feats}</ul></div>'
     return f'''<section class="page">
   <div class="hdr"><span class="hdr-l">TARIFAS · {etiqueta}</span></div><div class="rule"></div>
-  <div class="pill blue">TARIFAS {e(tf["nombre"].upper())} · {etiqueta}</div>
+  <div class="pill blue">TARIFAS {e(nom.upper())} · {etiqueta}</div>
   <h2>Bonos de horas. Sin permanencia.</h2>
   <p class="lead">{e(t["pagais"])}</p>
   <div class="tcards">{cards}</div>
-  {footer("Nexo Académico · Guía " + tf["nombre"])}
+  {footer("Nexo Académico · Guía " + nom)}
 </section>'''
 
 
@@ -1734,6 +1747,7 @@ h2.c { font-size: 34px; margin: 26px 0 18px; }
 .rs { grid-column: 1 / -1; color: #7fcfa0; font-size: 12px; margin-top: 4px; }
 .srow { display: flex; align-items: center; gap: 16px; border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; padding: 16px 30px; margin-top: 16px; background: linear-gradient(90deg, rgba(8,12,26,0.8), rgba(16,33,74,0.8)); }
 .srows { margin-top: 30px; }
+.srows.compact { margin-top: 20px; } .srows.compact .srow { padding: 10px 30px; margin-top: 10px; }
 .srows .srow:first-child { margin-top: 0; }
 .st { flex: 1; } .st b { display: block; font-size: 19px; } .st small { color: #7d7f8a; font-size: 13px; }
 .sps { display: flex; gap: 26px; }
@@ -2041,6 +2055,16 @@ h2.c { font-size: 34px; margin: 26px 0 18px; }
 .rpc b { font: 700 12px 'Liberation Sans', Arial; white-space: nowrap; overflow: hidden; }
 .rpc span { font-size: 12px; font-weight: 700; margin-left: 6px; }
 .semp .foot { margin-top: 16px; }
+.escl { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 22px; align-items: end; }
+.escl-s { border: 1px solid #2a3350; border-radius: 14px; padding: 16px 16px 14px; background: #0e1629; }
+.escl-s:nth-child(2) { padding-top: 24px; } .escl-s:nth-child(3) { padding-top: 32px; } .escl-s:nth-child(4) { padding-top: 40px; border-color: #c9a24b; }
+.escl-s small { display: block; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: #c9a24b; font-weight: 700; }
+.escl-h { font-family: Georgia, serif; font-size: 34px; color: #e9d18f; margin-top: 8px; }
+.escl-h span { font-size: 15px; color: #9aa3b8; }
+.escl-p { font-size: 15px; color: #e7e7ea; margin-top: 6px; font-weight: 700; }
+.escl-p span { font-weight: 400; color: #9aa3b8; font-size: 12px; }
+.escl-a { font-size: 12px; color: #7fcfa0; margin-top: 6px; }
+.escl-n { font-size: 13px; color: #9aa3b8; margin-top: 14px; line-height: 1.5; }
 .bxs { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 30px; }
 .bx { position: relative; border: 1px solid #2a3350; border-radius: 16px; padding: 24px 24px 20px; background: #0e1629; }
 .bx.star { border-color: #c9a24b; background: linear-gradient(160deg, #2a2618, #0e1629); }
@@ -2128,7 +2152,7 @@ h2.c { font-size: 34px; margin: 26px 0 18px; }
 .ejemplo { margin-top: 18px; border-top: 1px dashed #5d5438; padding-top: 14px; color: #a49f8e; font-size: 14px; }
 .ejemplo b { color: #e9d18f; }
 .escs { margin-top: 26px; display: grid; gap: 14px; }
-.esc { display: grid; grid-template-columns: 110px 1fr 200px; gap: 20px; align-items: center; border: 1px solid #2a3350; border-radius: 14px; padding: 16px 20px; background: #0e1629; }
+.ldr { display: grid; grid-template-columns: 110px 1fr 200px; gap: 20px; align-items: center; border: 1px solid #2a3350; border-radius: 14px; padding: 16px 20px; background: #0e1629; }
 .esc.top { border-color: #9c8550; background: linear-gradient(160deg, #2a2618, #0e1629); }
 .eh b { display: block; font: 700 30px 'Liberation Serif', serif; }
 .eh span { color: #a49f8e; font-size: 12.5px; }

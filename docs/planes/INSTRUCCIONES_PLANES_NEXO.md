@@ -84,7 +84,7 @@ Las tarifas están en el diccionario `TARIFAS`, al principio de `generar_plan.py
 - **Presencial = en casa del alumno.** Nunca en casa del profesor, salvo que se pida expresamente. Si la clase es en otro sitio (por ejemplo, una biblioteca), se cobra precio presencial y se cambia la etiqueta con `etiqueta_tarifas`.
 - **Nunca "al mes" ni "/mes" en los bonos.** Las familias solo pagan las horas que se dan. Usar `"sin_mes": true` en `pasos`.
 - **Recomendación por defecto:**
-  1. Primero el bono de prueba de 2 h.
+  1. Primero el bono de prueba de 2 h. **Sin precio tachado, sin "precio nuevos alumnos" y sin €/h** (es el comportamiento por defecto del generador; `"nuevos_alumnos": true` lo vuelve a mostrar).
   2. Después el bono de 12 h, destacando el €/h en dorado.
   3. Frase: "el mejor precio por hora del curso".
 - **Plan Ahorro:** de momento **NO se vende**. No usar `tarifa_doble` hasta nueva orden. Solo bonos.
