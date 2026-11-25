@@ -1,0 +1,240 @@
+{
+  "nombre": "Pau",
+  "etapa": "bachillerato",
+  "curso": "2º Bachillerato",
+  "asignaturas": [
+    "Inglés"
+  ],
+  "voz": "familia",
+  "presencial_label": "en vuestra casa",
+  "cover_card_sub": "2º Bachillerato · Inglés · PAU · Presencial en La Cañada u online",
+  "bonos_recomendados": [
+    {
+      "horas": 12,
+      "frecuencia": "3h a la semana"
+    }
+  ],
+  "modalidades_recomendadas": [
+    "casa_alumno",
+    "online"
+  ],
+  "tarifas_mostrar": [
+    "online",
+    "casa_alumno"
+  ],
+  "textos": {
+    "cover_sub": "Un plan a medida para Pau: Inglés de 2º de Bachillerato con la PAU como meta, con clases presenciales en vuestra casa de La Cañada u online.",
+    "p10_sub": "Escríbenos para reservar el bono de prueba o para cualquier ajuste de horas de Pau."
+  },
+  "camino": {
+    "etiqueta": "HOJA DE RUTA",
+    "pill": "EL CURSO DE UN VISTAZO",
+    "titulo": "El camino hasta la PAU",
+    "lead": "Lo que queda de curso, organizado por las partes del examen de Inglés de la PAU, para llegar a junio con todo preparado. Fechas orientativas; las ajustamos a sus exámenes.",
+    "meses": [
+      "Nov",
+      "Dic",
+      "Ene",
+      "Feb",
+      "Mar",
+      "Abr",
+      "May",
+      "Jun"
+    ],
+    "fases": [
+      {
+        "span": 2,
+        "etiqueta": "1ER TRIMESTRE",
+        "nombre": "Gramática",
+        "foco": "Tiempos verbales, pasiva, estilo indirecto, condicionales y oraciones de relativo."
+      },
+      {
+        "span": 3,
+        "etiqueta": "2º TRIMESTRE",
+        "nombre": "Reading y writing",
+        "foco": "Comprensión de textos tipo PAU y redacciones (opinion essay, for and against)."
+      },
+      {
+        "span": 2,
+        "etiqueta": "3ER TRIMESTRE",
+        "nombre": "Exámenes",
+        "foco": "Exámenes de otros años, vocabulario y corrección de redacciones."
+      },
+      {
+        "span": 1,
+        "etiqueta": "JUNIO",
+        "nombre": "PAU",
+        "foco": "Simulacros cronometrados y últimos ajustes antes del examen."
+      }
+    ],
+    "hitos": [
+      {
+        "nombre": "1ª evaluación",
+        "pos": 1.75
+      },
+      {
+        "nombre": "2ª evaluación",
+        "pos": 5
+      },
+      {
+        "nombre": "Finales",
+        "pos": 7
+      },
+      {
+        "nombre": "PAU",
+        "pos": 8,
+        "meta": true
+      }
+    ]
+  },
+  "informe_ejemplo": {
+    "asignatura": "Inglés",
+    "mes": "Febrero 2027",
+    "comparado": "enero",
+    "nota": "7,0",
+    "sesiones": 8,
+    "horas": "12h",
+    "destrezas_label": "Bloques trabajados",
+    "barras": [
+      [
+        "Gramática",
+        7.2
+      ],
+      [
+        "Reading",
+        7.0
+      ],
+      [
+        "Writing",
+        6.2
+      ]
+    ],
+    "mayor_progreso": "Inglés — la pasiva y el estilo indirecto ya no le cuestan",
+    "resumen": "En noviembre, Pau ha hecho 8 horas de clase sin faltar a ninguna. La gramática del 1er trimestre está consolidada. En el writing todavía necesita trabajar la estructura del essay. Diciembre: redacciones tipo PAU y repaso para la 1ª evaluación.",
+    "proxima_sesion": "PRÓXIMA SESIÓN — MARTES 2",
+    "proxima_sesion_txt": "Writing: opinion essay tipo PAU.",
+    "horario": "Pau · martes y jueves, 17:00–18:30",
+    "temas": [
+      [
+        "Gramática",
+        3.0
+      ],
+      [
+        "Reading",
+        2.0
+      ],
+      [
+        "Writing",
+        2.0
+      ],
+      [
+        "Vocabulario",
+        1.0
+      ]
+    ],
+    "fuertes": [
+      "Gramática consolidada",
+      "Buena comprensión lectora"
+    ],
+    "atencion": [
+      "Estructura del essay",
+      "Conectores"
+    ],
+    "casa": [
+      "Un writing a la semana",
+      "Lista de vocabulario PAU"
+    ],
+    "semanas": [
+      5.8,
+      6.3,
+      6.8,
+      7.2
+    ],
+    "metricas": [
+      [
+        "76%",
+        "Comprensión"
+      ],
+      [
+        "81%",
+        "Constancia"
+      ],
+      [
+        "62%",
+        "Autonomía"
+      ]
+    ],
+    "evol": [
+      [
+        "Resolución de problemas",
+        "Enero: 60%",
+        "Febrero: 79%",
+        "Plantea mejor el enunciado antes de operar."
+      ],
+      [
+        "Autonomía",
+        "Enero: 50%",
+        "Febrero: 62%",
+        "Cada vez necesita menos ayuda para empezar."
+      ]
+    ],
+    "conclusion": "Noviembre cierra con una tendencia muy positiva. En diciembre, redacciones tipo PAU.",
+    "cal_mes": [
+      2027,
+      3
+    ],
+    "cal_titulo": "Calendario — marzo 2027",
+    "cal_dias_sesion": [
+      1,
+      3
+    ],
+    "cal_examen": 17,
+    "cal_semanas": "3 sem",
+    "cal_semanas_txt": "hasta los exámenes de la 2ª evaluación",
+    "antes": "Sin refuerzo fijo",
+    "ahora": "Clases semanales en casa · Bono mensual"
+  },
+  "archivo": "Plan_NEXO_Pau_2Bach_Ingles_LaCanada",
+  "dos_opciones": {
+    "etiqueta": "VUESTRAS OPCIONES",
+    "pill": "MODALIDAD",
+    "titulo": "Dos formas de prepararse",
+    "lead": "En las dos se empieza con un bono de prueba de 2 horas y después se pasa al bono de 12 horas. Elegid la modalidad que mejor os encaje.",
+    "pie": "Sin permanencia: pagáis por adelantado el bono de horas. Solo pagáis las horas de clase que se dan.",
+    "opciones": [
+      {
+        "letra": "OPCIÓN 1",
+        "nombre": "Presencial en vuestra casa",
+        "sub": "El profesor va a vuestro domicilio en La Cañada",
+        "destacado": true,
+        "prueba": {
+          "horas": 2,
+          "precio": 46,
+          "tachado": 50
+        },
+        "bono": {
+          "horas": 12,
+          "precio": 285,
+          "base": 25
+        }
+      },
+      {
+        "letra": "OPCIÓN 2",
+        "nombre": "Online",
+        "sub": "Clases por videollamada con pantalla compartida",
+        "destacado": false,
+        "prueba": {
+          "horas": 2,
+          "precio": 44,
+          "tachado": 48
+        },
+        "bono": {
+          "horas": 12,
+          "precio": 270,
+          "base": 24
+        }
+      }
+    ]
+  },
+  "nombre_completo": "Pau"
+}
