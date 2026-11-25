@@ -209,7 +209,7 @@
         "destacado": true,
         "prueba": {
           "horas": 2,
-          "precio": 46,
+          "precio": 50,
           "tachado": 50
         },
         "bono": {
@@ -225,7 +225,7 @@
         "destacado": false,
         "prueba": {
           "horas": 2,
-          "precio": 44,
+          "precio": 48,
           "tachado": 48
         },
         "bono": {

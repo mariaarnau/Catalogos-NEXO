@@ -38,6 +38,10 @@ TARIFAS = {
                     "precios": {"online": {2: 46, 4: 98, 8: 195, 12: 285},
                                 "casa_alumno": {2: 54, 4: 111, 8: 220, 12: 327}}},
 }
+# Bono de prueba de 2h = tarifa base × 2 (ya no hay precio de "nuevos alumnos").
+for _t in TARIFAS.values():
+    for _m, _pr in _t["precios"].items():
+        _pr[2] = _t["base"][_m] * 2
 for _t in TARIFAS.values():
     if "online" in _t["precios"]:
         _t["precios"]["casa_profesor"] = _t["precios"]["online"]

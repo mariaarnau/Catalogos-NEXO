@@ -61,14 +61,14 @@ Bonos de horas, sin permanencia. Las de casa del profesor son las mismas que las
 
 | Etapa | Modalidad | 2h (prueba) | 4h | 8h | 12h | €/h con 12h | Base €/h |
 |---|---|---|---|---|---|---|---|
-| Primaria | Presencial | 40 (tachado 44) | 86 | 170 | 250 | 20,83 | 22 |
-| Primaria | Online (solo si se pide) | 36 | 77,40 | 153 | 225 | 18,75 | — |
-| ESO | Online | 40 (tachado 44) | 86 | 170 | 250 | 20,83 | 22 |
-| ESO | Presencial | 44 (tachado 48) | 94 | 185 | 270 | 22,50 | 24 |
-| Bachillerato | Online | 44 (tachado 48) | 94 | 185 | 270 | 22,50 | 24 |
-| Bachillerato | Presencial | 46 (tachado 50) | 98 | 195 | 285 | 23,75 | 25 |
-| Universidad | Online | 46 (tachado 50) | 98 | 195 | 285 | 23,75 | 25 |
-| Universidad | Presencial | 54 (tachado 56) | 111 | 220 | 327 | 27,25 | 28 |
+| Primaria | Presencial | 44 | 86 | 170 | 250 | 20,83 | 22 |
+| Primaria | Online (solo si se pide) | 40 | 77,40 | 153 | 225 | 18,75 | — |
+| ESO | Online | 44 | 86 | 170 | 250 | 20,83 | 22 |
+| ESO | Presencial | 48 | 94 | 185 | 270 | 22,50 | 24 |
+| Bachillerato | Online | 48 | 94 | 185 | 270 | 22,50 | 24 |
+| Bachillerato | Presencial | 50 | 98 | 195 | 285 | 23,75 | 25 |
+| Universidad | Online | 50 | 98 | 195 | 285 | 23,75 | 25 |
+| Universidad | Presencial | 56 | 111 | 220 | 327 | 27,25 | 28 |
 
 Equivalencias rápidas:
 - ESO online = Primaria presencial.
@@ -84,7 +84,7 @@ Las tarifas están en el diccionario `TARIFAS`, al principio de `generar_plan.py
 - **Presencial = en casa del alumno.** Nunca en casa del profesor, salvo que se pida expresamente. Si la clase es en otro sitio (por ejemplo, una biblioteca), se cobra precio presencial y se cambia la etiqueta con `etiqueta_tarifas`.
 - **Nunca "al mes" ni "/mes" en los bonos.** Las familias solo pagan las horas que se dan. Usar `"sin_mes": true` en `pasos`.
 - **Recomendación por defecto:**
-  1. Primero el bono de prueba de 2 h. **Sin precio tachado, sin "precio nuevos alumnos" y sin €/h** (es el comportamiento por defecto del generador; `"nuevos_alumnos": true` lo vuelve a mostrar).
+  1. Primero el bono de prueba de 2 h, al precio de tarifa base × 2 (ya no existe el precio de "nuevos alumnos"). Sin precio tachado y sin €/h.
   2. Después el bono de 12 h, destacando el €/h en dorado.
   3. Frase: "el mejor precio por hora del curso".
 - **Plan Ahorro:** de momento **NO se vende**. No usar `tarifa_doble` hasta nueva orden. Solo bonos.
